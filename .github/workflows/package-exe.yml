@@ -8,14 +8,16 @@ on:
         required: false
         default: ''
         type: string
-      architecture:
-        description: Native installer architecture
+      x64:
+        description: Build the x64 installer
         required: true
-        default: x64
-        type: choice
-        options:
-          - x64
-          - arm64
+        default: true
+        type: boolean
+      arm64:
+        description: Build the ARM64 installer
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -25,21 +27,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  package:
+  plan:
     if: github.ref == 'refs/heads/main'
-    name: Build ${{ inputs.architecture }} EXE
+    name: Select installer targets
     runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
-    timeout-minutes: 180
+    timeout-minutes: 10
+    outputs:
+      architectures: ${{ steps.targets.outputs.architectures }}
+      version: ${{ steps.version.outputs.version }}
     defaults:
       run:
         shell: pwsh
     env:
-      RELEASE_ARCHITECTURE: ${{ inputs.architecture }}
       RODEL_MICROSOFT_CLIENT_ID: ${{ secrets.RODEL_MICROSOFT_CLIENT_ID }}
     steps:
+      - name: Require at least one architecture
+        id: targets
+        env:
+          BUILD_X64: ${{ inputs.x64 }}
+          BUILD_ARM64: ${{ inputs.arm64 }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $architectures = @()
+          if ($env:BUILD_X64 -ceq 'true') { $architectures += 'x64' }
+          if ($env:BUILD_ARM64 -ceq 'true') { $architectures += 'arm64' }
+          if ($architectures.Count -eq 0) { throw 'Select at least one installer architecture.' }
+          $matrix = ConvertTo-Json -InputObject $architectures -Compress
+          "architectures=$matrix" >> $env:GITHUB_OUTPUT
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
           persist-credentials: false
       - name: Resolve the installer version and require Microsoft login configuration
         id: version
@@ -60,8 +76,31 @@ jobs:
           if (-not [guid]::TryParse($env:RODEL_MICROSOFT_CLIENT_ID, [ref]$clientId) -or $clientId -eq [guid]::Empty) {
             throw 'Configure the RODEL_MICROSOFT_CLIENT_ID Actions secret before packaging.'
           }
-          "RELEASE_VERSION=$version" >> $env:GITHUB_ENV
           "version=$version" >> $env:GITHUB_OUTPUT
+
+  package:
+    needs: plan
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        architecture: ${{ fromJSON(needs.plan.outputs.architectures) }}
+    if: github.ref == 'refs/heads/main'
+    name: Build ${{ matrix.architecture }} EXE
+    runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
+    timeout-minutes: 180
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_ARCHITECTURE: ${{ matrix.architecture }}
+      RELEASE_VERSION: ${{ needs.plan.outputs.version }}
+      RODEL_MICROSOFT_CLIENT_ID: ${{ secrets.RODEL_MICROSOFT_CLIENT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
       - uses: actions/setup-dotnet@v5
         env:
           DOTNET_INSTALL_DIR: ${{ runner.temp }}\dotnet
@@ -84,7 +123,7 @@ jobs:
           distribution: temurin
           java-version: '25'
       - name: Prepare isolated pinned Rust for the ARM64 filesystem MCP
-        if: inputs.architecture == 'arm64'
+        if: matrix.architecture == 'arm64'
         run: |
           $env:CARGO_HOME = Join-Path $env:RUNNER_TOOL_CACHE 'rodel-cargo'
           $env:RUSTUP_HOME = Join-Path $env:RUNNER_TOOL_CACHE 'rodel-rustup'
@@ -143,10 +182,10 @@ jobs:
       - name: Upload the installer and SHA256 checksum
         uses: actions/upload-artifact@v4
         with:
-          name: rmcl-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-exe
+          name: rmcl-${{ needs.plan.outputs.version }}-win-${{ matrix.architecture }}-exe
           path: |
-            artifacts/release/${{ steps.version.outputs.version }}/win-${{ inputs.architecture }}/exe/RMCL-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-setup.exe
-            artifacts/release/${{ steps.version.outputs.version }}/win-${{ inputs.architecture }}/exe/RMCL-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-setup.exe.sha256
+            artifacts/release/${{ needs.plan.outputs.version }}/win-${{ matrix.architecture }}/exe/RMCL-${{ needs.plan.outputs.version }}-win-${{ matrix.architecture }}-setup.exe
+            artifacts/release/${{ needs.plan.outputs.version }}/win-${{ matrix.architecture }}/exe/RMCL-${{ needs.plan.outputs.version }}-win-${{ matrix.architecture }}-setup.exe.sha256
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
