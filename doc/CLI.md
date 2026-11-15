@@ -648,6 +648,8 @@ pack update-online INSTANCE [--project PROJECT] [--pack-version VERSION_ID] [--c
 
 未指定窗口宽高时使用1280×720；已保存的实例宽高及单次启动覆盖保留，查看启动计划不会改写它们。
 
+默认窗口化。实际启动前同步所选 `fullscreen` 到游戏的 `options.txt`，覆盖整合包或上次游戏保存的全屏值；计划只展示选择，不写文件。同步保留其它选项及文件编码，写入失败时保留原文件并在会话 `windowModeWarning` 中报告，游戏仍可启动。
+
 ```text
 config set width 1024 --instance INSTANCE
 config set height 576 --instance INSTANCE

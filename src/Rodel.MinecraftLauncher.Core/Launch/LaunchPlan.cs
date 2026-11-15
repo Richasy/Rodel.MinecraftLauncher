@@ -29,6 +29,8 @@ public sealed record LaunchPlan(string VersionId, string JavaPath, string[] Argu
     public string? ServerConnectionMode { get; init; }
     /// <summary>Gets the resolved Minecraft language option to apply only during actual session preparation.</summary>
     public string? GameLanguage { get; init; }
+    /// <summary>Gets the launcher window-mode choice to synchronize with saved game options only when starting a session.</summary>
+    public bool? Fullscreen { get; init; }
     public JsonObject? EnvironmentOverrides { get; init; }
     /// <summary>Gets the typed Java recommendation and candidate snapshot associated with this plan.</summary>
     public JavaSelectionReport? JavaSelection { get; init; }
@@ -54,6 +56,7 @@ public sealed record LaunchPlan(string VersionId, string JavaPath, string[] Argu
             ["accountId"] = AccountId,
             ["gameBridgeEnabled"] = GameBridgeEnabled,
             ["gameBridgeOffline"] = GameBridgeOffline,
+            ["fullscreen"] = Fullscreen,
             ["gameBridgeMinecraftDirectory"] = GameBridgeMinecraftDirectory,
             ["useCachedExternalSession"] = UseCachedExternalSession,
             ["server"] = Server,

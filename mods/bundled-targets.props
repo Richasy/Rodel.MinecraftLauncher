@@ -8,6 +8,7 @@
     <BundledModAsset Include="26.3/forge/rodel-ai.jar;26.3/forge/world-reroll.jar;26.3/forge/bettertools.jar" />
     <BundledModAsset Include="26.3/neoforge/rodel-ai.jar;26.3/neoforge/world-reroll.jar;26.3/neoforge/bettertools.jar" />
     <BundledModAsset Include="1.21.11/fabric/bettertools.jar;1.21.11/fabric/fabric-api.jar" />
+    <BundledModAsset Include="1.21.1/fabric/rodel-ai.jar;1.21.1/fabric/world-reroll.jar;1.21.1/fabric/bettertools.jar;1.21.1/fabric/fabric-api.jar" />
     <BundledModAsset Include="1.20.1/forge/rodel-ai.jar" />
   </ItemGroup>
 </Project>

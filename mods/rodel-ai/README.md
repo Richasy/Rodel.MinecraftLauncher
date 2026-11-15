@@ -2,7 +2,7 @@
 
 由启动器随包提供，在“内容 → 模组 → 内置模组”勾选Rodel AI并点击“安装所选”。按实际游戏及加载器选择精确包和依赖，不使用社区分发。Fabric/Quilt 需要匹配 Fabric API；Forge/NeoForge 使用原生包。所有目标均不依赖 Rodel UI。
 
-客户端目标包括**26.3 / Fabric、Quilt、Forge、NeoForge / Java25**，既有Fabric26.2、26.1.2，以及**1.20.1 / Forge / Java17**。发布版本统一为0.0.1，具体范围见[兼容矩阵](../COMPATIBILITY.md)。默认模型、上下文、持久历史、工具与许可复用C# Core；Java只负责命令、消息和渲染，不保存密钥或另建模型循环。
+客户端目标包括**26.3 / Fabric、Quilt、Forge、NeoForge / Java25**，既有Fabric26.2、26.1.2，**1.21.1 / Fabric / Java21**，以及**1.20.1 / Forge / Java17**。发布版本统一为0.0.2，具体范围见[兼容矩阵](../COMPATIBILITY.md)。默认模型、上下文、持久历史、工具与许可复用C# Core；Java只负责命令、消息和渲染，不保存密钥或另建模型循环。
 
 ## 安装与入口
 

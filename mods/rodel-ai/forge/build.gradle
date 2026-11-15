@@ -40,6 +40,7 @@ compileJava.dependsOn tasks.named('prepareCommonSources')
 tasks.withType(JavaCompile).configureEach { options.release = 17; options.encoding = 'UTF-8' }
 sourceSets.main.resources.srcDir('../src/main/resources')
 processResources {
+    inputs.property('modVersion', project.version.toString())
     exclude 'fabric.mod.json', 'rodel-ai.mixins.json'
     filesMatching('META-INF/mods.toml') { expand version: project.version }
 }

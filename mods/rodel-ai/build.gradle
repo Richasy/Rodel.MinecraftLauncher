@@ -31,10 +31,10 @@ processResources {
 }
 
 // The launcher carries the matching runtime dependency alongside its three private mods.
+configurations { bundledFabricApi { canBeConsumed = false; canBeResolved = true; transitive = false } }
+dependencies { bundledFabricApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}" }
 tasks.register('bundleFabricApi', Copy) {
-    from({ configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.find {
-        it.moduleVersion.id.group == 'net.fabricmc.fabric-api' && it.name == 'fabric-api'
-    }.file })
+    from configurations.bundledFabricApi
     into layout.buildDirectory.dir('bundled-dependencies')
     rename { 'fabric-api.jar' }
 }

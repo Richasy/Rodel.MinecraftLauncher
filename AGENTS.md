@@ -67,7 +67,7 @@
 
 - Rodel UI 不参与内置模组与正常打包，源码保留为独立实验模块；Rodel AI、World Reroll 与 BetterTools 不得对其建立编译、运行时或反射依赖，主题开关和持久化归各自模组设置。既有玩家安装不自动删除或禁用。
 
-- 三个第一方模组由启动器内部持有，不走社区分发。正常构建从模块源码生成并随CLI/App携带`Assets/BuiltInMods`；所需Fabric API一同打包，玩家安装不依赖JDK、Gradle或开发目录。内容页使用DropDownButton与轻量Flyout勾选安装，Core提供目录、依赖闭包、冻结审核及同ID可恢复替换，复用既有内容任务/事务，不把业务移到UI。版本统一由mods/gradle.properties维护，初始为0.0.1；已实机通过的Minecraft目标单一登记于mods/bundled-targets.props，按实例选择精确包，兼容状态见mods/COMPATIBILITY.md。已有兼容且启用的共享依赖保留，兼容性包含Minecraft声明；取消勾选不代表卸载。CLI复用`content bundled`、`review-bundled`及`apply-review`。
+- 三个第一方模组由启动器内部持有，不走社区分发。正常构建从模块源码生成并随CLI/App携带`Assets/BuiltInMods`；所需Fabric API一同打包，玩家安装不依赖JDK、Gradle或开发目录。内容页使用DropDownButton与轻量Flyout勾选安装，Core提供目录、依赖闭包、冻结审核及同ID可恢复替换，复用既有内容任务/事务，不把业务移到UI。版本统一由mods/gradle.properties维护；项目正式开源后，内置模组发布变更须递增版本，无大改时优先递增末位补丁号，不再沿用固定初始版本；已实机通过的Minecraft目标单一登记于mods/bundled-targets.props，按实例选择精确包，兼容状态见mods/COMPATIBILITY.md。已有兼容且启用的共享依赖保留，兼容性包含Minecraft声明；取消勾选不代表卸载。CLI复用`content bundled`、`review-bundled`及`apply-review`。
 
 - Rodel UI设置是对游戏真实设置页面/控件的布局与外观覆盖，不是新造设置系统。禁止以手写HTML目录、options.txt快照、反射到的全部字段或猜测的枚举/范围生成产品表单；保留原版校验、延迟提交、保存与返回生命周期。第三方配置一律原样打开，包括采用原版控件的页面，不转换/重排/换肤/改字体/接管保存。的新例外仅为Mod Menu的minecraft工厂返回的确切原版OptionsScreen：它是Minecraft自身设置，需现代化；其他模组及Mod Menu自身配置不变。Mod Menu列表/详情与原版资源包管理已做独立现代页面，禁止统合进设置侧栏；继续复用真实搜索、模型、排序和原生配置/提交回调，不接管模组自有配置。原生警告/确认及鸣谢页面仅在自有UI进入的限定页面应用样式。另明确授权Artifact Blueprint七个确切自有页面的字体兼容：仅增强默认/均匀字体与真实粗体，复用既有字体管线，不接管其布局、输入、保存或业务；白名单与边界见mods/rodel-ui/doc/ARTIFACT_BLUEPRINT_FONTS.md。
 

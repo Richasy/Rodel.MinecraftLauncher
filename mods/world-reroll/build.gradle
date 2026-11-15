@@ -79,3 +79,4 @@ java {
 }
 jar { from('LICENSE') }
 apply from: '../gradle/target-sources.gradle'
+if (minecraft_version == '1.21.1') apply from: 'gradle/legacy-client-check.gradle'

@@ -5,7 +5,7 @@ using System.Text.Json.Nodes;
 
 namespace Rodel.MinecraftLauncher.Cli.Tests;
 
-/// <summary>Protects language application and process-versus-window evidence through real CLI sessions.</summary>
+/// <summary>Protects launch-time game options and process-versus-window evidence through real CLI sessions.</summary>
 [TestClass]
 [TestCategory("Integration")]
 [DoNotParallelize]
@@ -14,30 +14,40 @@ public sealed class LaunchExperienceTests
     /// <summary>
     /// The reporting worker supplies a real initially hidden window; only an explicit file barrier shows it.
     /// This distinguishes actual visible-window evidence from process creation, elapsed time and unrelated windows.
-    /// Plan-only must not edit options; the real monitor must change only lang before starting the child.
+    /// Plan-only must not edit options; the real monitor must apply language and window mode before starting the child.
     /// Locale variants exercise App's three targets, legacy asset spelling and omission preserving player choice.
+    /// The saved fullscreen=true fixture distinguishes a windowed launch from merely removing --fullscreen;
+    /// the explicit true variant protects the opposite choice without duplicating the process lifecycle fixture.
+    /// Persisted global true and its one-shot false override protect consumption/precedence, beyond configuration storage tests.
     /// </summary>
     [TestMethod]
-    [DataRow("zh_cn", "zh_cn", false)]
-    [DataRow("en_us", "en_us", false)]
-    [DataRow("ar_sa", "ar_sa", false)]
-    [DataRow("zh_cn", "zh_CN", true)]
-    [DataRow(null, "de_de", false)]
-    public async Task Launch_LanguageAndHiddenWindow_ApplyOnlyAtStartAndObserveVisibility(string? language, string expected, bool legacy)
+    [DataRow("zh_cn", "zh_cn", false, null, null)]
+    [DataRow("en_us", "en_us", false, false, true)]
+    [DataRow("ar_sa", "ar_sa", false, null, null)]
+    [DataRow("zh_cn", "zh_CN", true, null, null)]
+    [DataRow(null, "de_de", false, null, null)]
+    [DataRow(null, "de_de", false, true, null)]
+    [DataRow(null, "de_de", false, null, true)]
+    public async Task Launch_LanguageAndHiddenWindow_ApplyOnlyAtStartAndObserveVisibility(string? language, string expected, bool legacy, bool? fullscreen, bool? storedFullscreen)
     {
         using var cli = new CliSandbox();
         var java = new JavaProbeFixture(cli.Root);
         var instance = await PrepareAsync(cli, legacy);
+        if (storedFullscreen is { } stored)
+            (await cli.RunAsync("config", "set", "fullscreen", stored.ToString().ToLowerInvariant())).ReadEnvelope(0);
+        var expectedFullscreen = fullscreen ?? storedFullscreen ?? false;
         var game = instance["gameDirectory"]!.GetValue<string>();
         var optionsFile = Path.Combine(game, "options.txt");
-        const string original = "futureOption:unchanged\r\nlang:de_de\r\nresourcePacks:[\"vanilla\"]\r\n# retained tail";
+        const string original = "futureOption:unchanged\r\nlang:de_de\r\nfullscreen:true\r\nresourcePacks:[\"vanilla\"]\r\n# retained tail";
         var encoding = new UTF8Encoding(true);
         await File.WriteAllTextAsync(optionsFile, original, encoding, TestContext.CancellationToken);
         var before = await File.ReadAllBytesAsync(optionsFile, TestContext.CancellationToken);
         string[] arguments = ["launch", instance["id"]!.GetValue<string>(), "--offline", "--java", java.Executable,
-            .. language is null ? [] : new[] { "--game-language", language }];
+            .. language is null ? [] : new[] { "--game-language", language },
+            .. fullscreen is null ? [] : new[] { "--fullscreen=" + fullscreen.Value.ToString().ToLowerInvariant() }];
         var plan = (await cli.RunAsync([.. arguments, "--plan"])).ReadEnvelope(0)["data"]!;
         Assert.AreEqual(language is null ? null : expected, plan["gameLanguage"]?.ToString());
+        Assert.AreEqual(expectedFullscreen, plan["fullscreen"]?.GetValue<bool>());
         CollectionAssert.AreEqual(before, await File.ReadAllBytesAsync(optionsFile, TestContext.CancellationToken));
         var started = (await cli.RunAsync(arguments)).ReadEnvelope(0)["data"]!;
         var session = started["id"]!.GetValue<string>();
@@ -49,7 +59,9 @@ public sealed class LaunchExperienceTests
             var hidden = (await cli.RunAsync("process", "show", session)).ReadEnvelope(0)["data"]!;
             Assert.AreEqual("running", hidden["status"]?.ToString());
             Assert.AreEqual("process_started", hidden["readiness"]?.ToString(), "A hidden window must not trigger launcher minimization.");
-            var expectedBytes = encoding.GetPreamble().Concat(encoding.GetBytes(original.Replace("lang:de_de", "lang:" + expected, StringComparison.Ordinal))).ToArray();
+            var expectedText = original.Replace("lang:de_de", "lang:" + expected, StringComparison.Ordinal)
+                .Replace("fullscreen:true", "fullscreen:" + (expectedFullscreen ? "true" : "false"), StringComparison.Ordinal);
+            var expectedBytes = encoding.GetPreamble().Concat(encoding.GetBytes(expectedText)).ToArray();
             CollectionAssert.AreEqual(expectedBytes, await File.ReadAllBytesAsync(optionsFile, TestContext.CancellationToken));
 
             await File.WriteAllTextAsync(Path.Combine(java.Home, "show-window"), string.Empty, TestContext.CancellationToken);
@@ -122,6 +134,7 @@ public sealed class LaunchExperienceTests
             monitor = Process.GetProcessById(started["monitorId"]!.GetValue<int>());
             Assert.AreEqual("running", started["status"]?.ToString());
             Assert.IsFalse(string.IsNullOrWhiteSpace(started["gameLanguageWarning"]?.ToString()));
+            Assert.IsFalse(string.IsNullOrWhiteSpace(started["windowModeWarning"]?.ToString()));
             Assert.Contains(item => item!.ToString().Contains("Game language", StringComparison.Ordinal), started["warnings"]!.AsArray());
             Assert.AreEqual(original, await File.ReadAllTextAsync(file, TestContext.CancellationToken));
         }
