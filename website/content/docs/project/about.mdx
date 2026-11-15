@@ -1,0 +1,46 @@
+---
+title: 关于这个 PoC
+description: 一个用来验证 Sprout 原生 UI、探索 Minecraft AI 辅助的实验项目。
+---
+
+## 为什么做 RMCL
+
+RMCL 是一个面向 Windows 的 Minecraft Java 版启动器 PoC。最初目的是用真实的桌面场景验证 Sprout UI 框架，逐步把账户、游戏准备、实例、内容和世界管理串成可以操作的流程。
+
+它不是以竞争或替代其他启动器为目标。对这类原生界面或 AI 玩法感兴趣，可以关注进展，在适合自己的环境中尝试。
+
+支持范围是 Windows 10 版本 2004（内部版本 19041）及以上，x64 和 ARM64。RMCL 免费使用，可通过 [Microsoft Store](https://apps.microsoft.com/detail/9MW9ZMS2K47C) 或 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载，安装和更新见[安装与准备](/docs/start/install)。
+
+## 日常功能
+
+项目已经围绕新手常用任务建设：创建与迁入实例、管理账户、准备运行环境、安装内容、导入整合包、收藏与连接服务器，以及世界备份与恢复。
+
+现在也可以用[陶瓦房间](/docs/play/multiplayer)邀请朋友进入自己的世界，通过[种子探索器](/docs/create/seed-explorer)看地形、筛选开局和查看存档地图。
+
+独立[皮肤设计器](/docs/create/skins)支持人物与披风、PNG 图层、透明蒙版、搭配预览、历史和 AI 编辑。[截图管理](/docs/play/screenshots)按实例浏览、整理与导出游戏图片。[内置模组](/docs/play/built-in-mods)提供 Rodel AI、World Reroll 与 Better Tools，按实际版本选择安装。
+
+## 正在探索的方向
+
+**AI 辅助**会占据更重要的位置：帮助新玩家理解术语和错误，围绕具体实例查找依据，在明确范围内协助准备、内容管理、问题处理与皮肤创作。
+
+在游戏里，可以用 `/rai` 或暂停菜单侧栏追问，也能结合适配整合包的实际配方、任务进度和手册回答问题。启用方式见[游戏内 AI](/docs/create/game-ai)。
+
+**原生界面**继续围绕日常任务改进。游戏内的 Rodel UI 已退出内置分发，源码仅作为独立实验保留；其他内置模组不依赖它，启动器也不会自动改动已有玩家安装。
+
+## 进阶入口
+
+除原生 App 外，项目还提供命令行入口，让需要脚本、诊断或外部 AI 接入的用户复用同一套管理能力。普通玩家不需要先学命令，按本站手册使用原生界面即可。
+
+游戏数据桥可读取当前游戏信息，并在本地世界执行受限操作；服务器始终只读。启用与游戏内入口见[游戏内 AI](/docs/create/game-ai)。
+
+## 使用与项目关系
+
+RMCL 免费使用，保留低调的 UI 与 AI 实验项目定位。它与 Minecraft、Mojang、Microsoft 没有隶属关系，不宣称获得其认证、赞助或背书。
+
+Minecraft 与相关标识属于其各自权利人。RMCL 是独立项目，游戏资格仍需按官方渠道与相应规则取得。
+
+## 开源与交流
+
+启动器自有代码采用 **[GNU AGPL v3（AGPL-3.0-only）](https://github.com/Richasy/Rodel.MinecraftLauncher/blob/main/LICENSE)** 开源；独立模块与第三方组件保留原许可证。 项目入口为 [GitHub 仓库](https://github.com/Richasy/Rodel.MinecraftLauncher)，问题与建议请按[反馈指南](/docs/help/feedback)提交 Issues。
+
+关于登录、数据和使用边界，请阅读[微软登录状态](/docs/project/microsoft)、[隐私说明](/docs/project/privacy)和[使用说明](/docs/project/terms)。

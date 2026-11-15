@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Launcher: Build",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["build", "${workspaceFolder}\\src\\Rodel.MinecraftLauncher.App"],
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Launcher: Packaged Watch",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["watch", "--project", "${workspaceFolder}\\src\\Rodel.MinecraftLauncher.App", "run"],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Launcher: Publish MSIX",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["publish", "${workspaceFolder}\\src\\Rodel.MinecraftLauncher.App", "-c", "Release", "-r", "win-x64"],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

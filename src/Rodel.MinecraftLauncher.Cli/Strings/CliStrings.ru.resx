@@ -1,0 +1,1554 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve">
+    <value>Создайте личность офлайн-игрока без входа в систему Microsoft.</value>
+  </data>
+  <data name="AccountListDescription" xml:space="preserve">
+    <value>Список сохраненных в автономном режиме и Microsoft личности игроков без учетных данных.</value>
+  </data>
+  <data name="AccountRemoveDescription" xml:space="preserve">
+    <value>Удалите все сохраненные офлайн-аккаунты или Microsoft аккаунты.</value>
+  </data>
+  <data name="ArgumentAddressDescription" xml:space="preserve">
+    <value>Адрес сервера или избранный ID.</value>
+  </data>
+  <data name="ArgumentChangesDescription" xml:space="preserve">
+    <value>JSON объект реальных ключей настроек игры и необработанных значений.</value>
+  </data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve">
+    <value>Выходной путь, имя или идентификатор резервной копии.</value>
+  </data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve">
+    <value>Путь к команде для описания.</value>
+  </data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve">
+    <value>Зарегистрированный экземпляр ID.</value>
+  </data>
+  <data name="ArgumentItemDescription" xml:space="preserve">
+    <value>Файл содержимого, мировая папка, идентификатор версии или восстановления.</value>
+  </data>
+  <data name="ArgumentItemsDescription" xml:space="preserve">
+    <value>Выбранные файлы или источники.</value>
+  </data>
+  <data name="ArgumentKeyDescription" xml:space="preserve">
+    <value>Клавиша настройки; неизвестные ключи остаются поддерживаемыми.</value>
+  </data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve">
+    <value>Записанная игровая сессия ID.</value>
+  </data>
+  <data name="ArgumentNameDescription" xml:space="preserve">
+    <value>Отображаемое имя; пробелы остаются в пределах одного аргумента.</value>
+  </data>
+  <data name="ArgumentNamesDescription" xml:space="preserve">
+    <value>Упорядоченные имена resource-pack; пусто: дополнительные пакеты не выбираются.</value>
+  </data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve">
+    <value>Дополнительная клавиша настройки.</value>
+  </data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve">
+    <value>Необязательный путь к архиву или месту назначения.</value>
+  </data>
+  <data name="ArgumentTargetDescription" xml:space="preserve">
+    <value>Путь к источнику, идентификатор проекта, среды выполнения или операции.</value>
+  </data>
+  <data name="ArgumentValueDescription" xml:space="preserve">
+    <value>JSON или литеральная строка.</value>
+  </data>
+  <data name="BackupCreateDescription" xml:space="preserve">
+    <value>Создайте полную или ограниченную резервную копию экземпляра.</value>
+  </data>
+  <data name="BackupDeleteDescription" xml:space="preserve">
+    <value>Удалить выбранную резервную копию.</value>
+  </data>
+  <data name="BackupInspectDescription" xml:space="preserve">
+    <value>Проверьте резервную копию и ее записанное содержимое.</value>
+  </data>
+  <data name="BackupListDescription" xml:space="preserve">
+    <value>Список резервных копий, при необходимости отфильтрованный по экземпляру.</value>
+  </data>
+  <data name="BackupRestoreDescription" xml:space="preserve">
+    <value>Восстановить резервную копию в исходный или явно выбранный экземпляр.</value>
+  </data>
+  <data name="BackupRollbackDescription" xml:space="preserve">
+    <value>Откат записанного восстановления из резервной копии.</value>
+  </data>
+  <data name="ConfigurationGetDescription" xml:space="preserve">
+    <value>Считайте один ключ или все действующие значения.</value>
+  </data>
+  <data name="ConfigurationSetDescription" xml:space="preserve">
+    <value>Сохраните JSON, если он действителен; в противном случае сохраните литеральную строку. Изменяются только запрошенные ключи.</value>
+  </data>
+  <data name="ContentAddDescription" xml:space="preserve">
+    <value>Добавление контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve">
+    <value>Контент-анализ; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve">
+    <value>Применяйте ранее замороженную проверку контента только после окончательного одобрения пользователя.</value>
+  </data>
+  <data name="ContentDetachDescription" xml:space="preserve">
+    <value>Отключение контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentDisableDescription" xml:space="preserve">
+    <value>Отключение контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentEnableDescription" xml:space="preserve">
+    <value>Включение контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentIdentifyDescription" xml:space="preserve">
+    <value>Идентификация контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentInstallDescription" xml:space="preserve">
+    <value>Установка контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentListDescription" xml:space="preserve">
+    <value>Список контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentPinDescription" xml:space="preserve">
+    <value>Значок контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentPolicyDescription" xml:space="preserve">
+    <value>Контентная политика; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentProjectDescription" xml:space="preserve">
+    <value>Чтение метаданных удаленного проекта.</value>
+  </data>
+  <data name="ContentRecoverDescription" xml:space="preserve">
+    <value>Восстановление контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentRemoveDescription" xml:space="preserve">
+    <value>Удаление контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentRepairDescription" xml:space="preserve">
+    <value>Запланируйте полное восстановление зависимостей из сеанса или примените замороженную проверку с явным подтверждением.</value>
+  </data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve">
+    <value>Просмотр смешанных локальных файлов с использованием актуальных метаданных.</value>
+  </data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve">
+    <value>Просмотрите точный список проекта и зависимостей без установки.</value>
+  </data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve">
+    <value>Заморозить выбранные корневые обновления и необходимые зависимости, сохранив отключенные/закрепленные политики; проверьте перед apply-review.</value>
+  </data>
+  <data name="ContentSearchDescription" xml:space="preserve">
+    <value>Поиск удаленного контента без необходимости использования экземпляра.</value>
+  </data>
+  <data name="ContentUnpinDescription" xml:space="preserve">
+    <value>Открепить контент; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentUpdateDescription" xml:space="preserve">
+    <value>Обновление контента; сохранять несвязанные файлы и явный выбор пользователя.</value>
+  </data>
+  <data name="ContentVersionsDescription" xml:space="preserve">
+    <value>Чтение удаленных версий проекта.</value>
+  </data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve">
+    <value>Требуется пункт назначения ZIP без --plan.</value>
+  </data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve">
+    <value>Для этой операции требуется --confirm после просмотра ее эффектов.</value>
+  </data>
+  <data name="ErrorContextLimit" xml:space="preserve">
+    <value>--limit должно быть от 1 до 100.</value>
+  </data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve">
+    <value>Укажите ровно один экземпляр: --session или --report.</value>
+  </data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve">
+    <value>--directory требуется.</value>
+  </data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve">
+    <value>Дублирующаяся команда или псевдоним «{0}» в «{1}».</value>
+  </data>
+  <data name="ErrorDuplicateOption" xml:space="preserve">
+    <value>Дублирующая опция или псевдоним «{0}» на «{1}».</value>
+  </data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve">
+    <value>Изменения должны быть объектом options.txt ключей и необработанных значений; null удаляет ключ.</value>
+  </data>
+  <data name="ErrorHostStartFailed" xml:space="preserve">
+    <value>Фоновый хост не запустился.</value>
+  </data>
+  <data name="ErrorJobNotResumable" xml:space="preserve">
+    <value>Возможно, эта операция уже создала файлы или игровой сеанс. Проверьте это задание и его последствия, а затем, если необходимо, явно повторите исходную команду.</value>
+  </data>
+  <data name="ErrorLogStateConflict" xml:space="preserve">
+    <value>--state и --state-file являются взаимоисключающими.</value>
+  </data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve">
+    <value>--minecraft VERSION требуется.</value>
+  </data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve">
+    <value>Отсутствует запрос команды CLI.</value>
+  </data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve">
+    <value>--{0} должно быть неотрицательным.</value>
+  </data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve">
+    <value>Опция «{0}» не объявлена ​​для «{1}».</value>
+  </data>
+  <data name="ErrorOptionRange" xml:space="preserve">
+    <value>--{0} должен быть от {1} до {2}.</value>
+  </data>
+  <data name="ErrorOptionRequired" xml:space="preserve">
+    <value>{0} требуется.</value>
+  </data>
+  <data name="ErrorOptionScalar" xml:space="preserve">
+    <value>Опция «{0}» требует скалярных значений; используйте Values для повторяющихся токенов.</value>
+  </data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve">
+    <value>Для применения проверки восстановления зависимостей требуется --confirm после окончательного одобрения пользователя.</value>
+  </data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve">
+    <value>Применение проверенной партии нельзя сочетать с --plan, --session или выбором новой версии.</value>
+  </data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve">
+    <value>--confirm требует ранее сгенерированного --review.</value>
+  </data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve">
+    <value>--session требуется для планирования восстановления зависимостей.</value>
+  </data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve">
+    <value>Укажите --session, чтобы спланировать ремонт, или --review с --confirm, чтобы применить замороженную партию.</value>
+  </data>
+  <data name="ErrorSessionRequired" xml:space="preserve">
+    <value>Требуется сеанс ID.</value>
+  </data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve">
+    <value>Эта команда является точкой входа в хост терминала, а не операцией запуска.</value>
+  </data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve">
+    <value>--arguments и --arguments-file являются взаимоисключающими.</value>
+  </data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve">
+    <value>Неизвестная тема справки: {0}.</value>
+  </data>
+  <data name="ErrorUnknownOption" xml:space="preserve">
+    <value>Неизвестный вариант: {0}. Ставьте -- перед позиционными значениями, начинающимися с --.</value>
+  </data>
+  <data name="ErrorUnknownTool" xml:space="preserve">
+    <value>Нет инструмента с именем {0}</value>
+  </data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve">
+    <value>Неподдерживаемая операция задания CLI «{0}».</value>
+  </data>
+  <data name="ErrorUpdateContext" xml:space="preserve">
+    <value>--update-context ожидает current или source.</value>
+  </data>
+  <data name="ErrorVersionRequired" xml:space="preserve">
+    <value>--version требуется.</value>
+  </data>
+  <data name="ErrorVersionSelection" xml:space="preserve">
+    <value>--select-version ожидает PROJECT=VERSION.</value>
+  </data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve">
+    <value>Применить ожидающие изменения после выхода.</value>
+  </data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve">
+    <value>Отменить ожидающие изменения без изменения options.txt.</value>
+  </data>
+  <data name="GameSettingsGetDescription" xml:space="preserve">
+    <value>Прочтите текущие настройки игры.</value>
+  </data>
+  <data name="GameSettingsSetDescription" xml:space="preserve">
+    <value>Изменить запрошенные необработанные ключи; JSON null удаляет ключ.</value>
+  </data>
+  <data name="GroupAccountDescription" xml:space="preserve">
+    <value>Управление офлайн-аккаунтами и Microsoft. Автономные удостоверения работают без входа в систему Microsoft; Для входа в браузер Microsoft требуется настроенный пользователем клиент ID.</value>
+  </data>
+  <data name="GroupBackupDescription" xml:space="preserve">
+    <value>Создание, проверка и восстановление полных или ограниченных резервных копий экземпляра.</value>
+  </data>
+  <data name="GroupCacheDescription" xml:space="preserve">
+    <value>Сохранять активное использование кэша, внешние корни, зависимости и неизвестные файлы.</value>
+  </data>
+  <data name="GroupConfigDescription" xml:space="preserve">
+    <value>Прочтите действующие настройки и их источники. Неизвестные клавиши настройки сохраняются.</value>
+  </data>
+  <data name="GroupContentDescription" xml:space="preserve">
+    <value>Управление локальными файлами и содержимым Modrinth. Неизвестные локальные файлы не требуют идентификации. CurseForge онлайн требует внедренного провайдера; автономные пакеты остаются пригодными для использования.</value>
+  </data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve">
+    <value>Редактировать фактические необработанные значения options.txt, сохраняя несвязанные строки и кодировку. Активные игры откладывают запись; применить после выхода с обнаружением конфликтов.</value>
+  </data>
+  <data name="GroupInstanceDescription" xml:space="preserve">
+    <value>Управление независимым игровым контентом и общими зависимостями времени выполнения. Импортирует полное копирование содержимого без изменения источника.</value>
+  </data>
+  <data name="GroupJavaDescription" xml:space="preserve">
+    <value>Обнаружение, управление и выбор Java сред выполнения.</value>
+  </data>
+  <data name="GroupJobDescription" xml:space="preserve">
+    <value>Постоянные операции. Отмена — запрос; проверить окончательный статус. Возобновляйте только операции, последствия которых безопасно повторить.</value>
+  </data>
+  <data name="GroupLoaderDescription" xml:space="preserve">
+    <value>Подготовьте известных установщиков загрузчика; пользовательские профили запуска, установленные вручную, продолжают поддерживаться.
+Адаптер</value>
+  </data>
+  <data name="GroupMcpDescription" xml:space="preserve">
+    <value>MCP через командный контракт CLI.</value>
+  </data>
+  <data name="GroupPackDescription" xml:space="preserve">
+    <value>Автономный mrpack/CurseForge ZIP импорт и онлайн-пакеты Modrinth. Отсутствующие файлы вручную можно восстановить.</value>
+  </data>
+  <data name="GroupProcessDescription" xml:space="preserve">
+    <value>Наблюдайте за игровыми сессиями. Остановка игры отличается от отмены задания запуска.</value>
+  </data>
+  <data name="GroupResourcepackDescription" xml:space="preserve">
+    <value>Установленные пакеты и выбранный порядок различны. Сохранять встроенные/неотслеживаемые выборки до замены; Запись активной игры отложена.</value>
+  </data>
+  <data name="GroupResultDescription" xml:space="preserve">
+    <value>Чтение сохраненных выходных данных инструмента с превышением размера без повторения операции; результаты истекают через семь дней.</value>
+  </data>
+  <data name="GroupRuntimeDescription" xml:space="preserve">
+    <value>Подготовьте файлы перед сохранением одной записи настроек времени выполнения. Сохранять игровой контент; Совет по совместимости не является отправной точкой.</value>
+  </data>
+  <data name="GroupSelfDescription" xml:space="preserve">
+    <value>Версия программы запуска и дополнительный поиск обновлений.</value>
+  </data>
+  <data name="GroupServerDescription" xml:space="preserve">
+    <value>Управляйте избранным, разрешайте Windows DNS/SRV и запрашивайте текущий статус.</value>
+  </data>
+  <data name="GroupToolsDescription" xml:space="preserve">
+    <value>Проверьте и вызовите инструменты MCP с терминала.</value>
+  </data>
+  <data name="GroupVersionsDescription" xml:space="preserve">
+    <value>Откройте для себя версии Minecraft.</value>
+  </data>
+  <data name="GroupWorldDescription" xml:space="preserve">
+    <value>Сохраняйте исходные источники мира и неизвестные файлы. Встроенные блокировки предотвращают небезопасную запись; разрушительные операции сохраняют восстанавливаемые резервные копии.</value>
+  </data>
+  <data name="HelpDescription" xml:space="preserve">
+    <value>Опишите команду, используя те же объявления, которые ее анализируют.</value>
+  </data>
+  <data name="HelpEntryPoints" xml:space="preserve">
+    <value>Используйте help COMMAND SUBCOMMAND или --help для детализации команды. Записи хоста терминала не могут быть вызваны с помощью execute. Настроенный каталог данных фиксируется хостом, а не аргументами execute.</value>
+  </data>
+  <data name="HelpTaskLifetimes" xml:space="preserve">
+    <value>--background выдерживает этот вызов инструмента; job_cancel отменяет задание,process_stop останавливает игру. У них разные жизни.</value>
+  </data>
+  <data name="HelpTokenBoundaries" xml:space="preserve">
+    <value>Каждая запись execute.arguments представляет собой одну token. Храните пути и имена с пробелами в одной записи. Используйте --name=VALUE для значений option-like; put -- после пути к команде и параметров, перед позиционными значениями option-like.</value>
+  </data>
+  <data name="HostingCallDescription" xml:space="preserve">
+    <value>Вызов именованного инструмента с вводом JSON.</value>
+  </data>
+  <data name="HostingJobHostDescription" xml:space="preserve">
+    <value>Внутренний исполнитель постоянных заданий.</value>
+  </data>
+  <data name="HostingListDescription" xml:space="preserve">
+    <value>Перечислите общие определения инструментов MCP.</value>
+  </data>
+  <data name="HostingServeDescription" xml:space="preserve">
+    <value>Обслуживать MCP через stdio. stdout зарезервирован для протокола.</value>
+  </data>
+  <data name="HostingSessionHostDescription" xml:space="preserve">
+    <value>Внутренний отдельный игровой сессионный монитор.</value>
+  </data>
+  <data name="InformationResultReadDescription" xml:space="preserve">
+    <value>Считайте JSON Pointer, страницу свойств объекта или фрагмент текста из сохраненного результата.</value>
+  </data>
+  <data name="InformationVersionsListDescription" xml:space="preserve">
+    <value>Список кэшированных или удаленно доступных версий Minecraft.</value>
+  </data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve">
+    <value>Откройте для себя инструменты и те же определения команд, что и execute.</value>
+  </data>
+  <data name="InformationRootContextDescription" xml:space="preserve">
+    <value>Читать ограниченный обзор, сохраняя ошибки для каждого раздела, не скрывая другие разделы.</value>
+  </data>
+  <data name="InformationRootVersionDescription" xml:space="preserve">
+    <value>Информация о сборке и времени выполнения программы запуска.</value>
+  </data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve">
+    <value>Проверьте наличие версий программы запуска, не устанавливая их.</value>
+  </data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve">
+    <value>Информация о сборке и времени выполнения программы запуска.</value>
+  </data>
+  <data name="InstanceContentContextDescription" xml:space="preserve">
+    <value>Прочтите фактический контекст совместимости контента.</value>
+  </data>
+  <data name="InstanceCopyDescription" xml:space="preserve">
+    <value>Создайте независимую копию зарегистрированного экземпляра.</value>
+  </data>
+  <data name="InstanceCreateDescription" xml:space="preserve">
+    <value>Создайте пустой экземпляр для точной версии Minecraft.</value>
+  </data>
+  <data name="InstanceImportDescription" xml:space="preserve">
+    <value>Скопируйте полный исходный экземпляр, а затем зарегистрируйте его после успешной миграции.</value>
+  </data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve">
+    <value>Чтение исходных профилей без регистрации или копирования экземпляра.</value>
+  </data>
+  <data name="InstanceListDescription" xml:space="preserve">
+    <value>Список зарегистрированных экземпляров.</value>
+  </data>
+  <data name="InstanceMoveDescription" xml:space="preserve">
+    <value>Переместить зарегистрированный экземпляр в запрошенный каталог.</value>
+  </data>
+  <data name="InstancePrepareDescription" xml:space="preserve">
+    <value>Подготовьте перенесенные компоненты среды выполнения.</value>
+  </data>
+  <data name="InstanceRelinkDescription" xml:space="preserve">
+    <value>Обновить ссылку на каталог игры существующего экземпляра.</value>
+  </data>
+  <data name="InstanceRemoveDescription" xml:space="preserve">
+    <value>Удалить экземпляр и его резервные копии; игровые файлы сохраняются, если явно не указано иное.</value>
+  </data>
+  <data name="InstanceRenameDescription" xml:space="preserve">
+    <value>Измените отображаемое имя экземпляра, не перемещая его файлы.</value>
+  </data>
+  <data name="InstanceShowDescription" xml:space="preserve">
+    <value>Чтение зарегистрированного экземпляра.</value>
+  </data>
+  <data name="JavaAvailableDescription" xml:space="preserve">
+    <value>Список доступных управляемых версий среды выполнения Java.</value>
+  </data>
+  <data name="JavaImportDescription" xml:space="preserve">
+    <value>Импортируйте существующую среду выполнения Java в управление программой запуска.</value>
+  </data>
+  <data name="JavaInstallDescription" xml:space="preserve">
+    <value>Загрузите и установите управляемую среду выполнения Java.</value>
+  </data>
+  <data name="JavaListDescription" xml:space="preserve">
+    <value>Обнаружение Java среды выполнения, включая явно указанный путь.</value>
+  </data>
+  <data name="JavaManagedDescription" xml:space="preserve">
+    <value>Список Java сред выполнения, управляемых программой запуска.</value>
+  </data>
+  <data name="JavaRemoveDescription" xml:space="preserve">
+    <value>Полностью удалить управляемую среду выполнения Java, на которую нет ссылки, или отменить регистрацию внешнего Java, не удаляя его файлы.</value>
+  </data>
+  <data name="JavaSelectDescription" xml:space="preserve">
+    <value>Выберите Java для глобальных настроек или указанного экземпляра.</value>
+  </data>
+  <data name="JobCancelDescription" xml:space="preserve">
+    <value>Запросить отмену задания; проверьте его окончательный статус отдельно.</value>
+  </data>
+  <data name="JobListDescription" xml:space="preserve">
+    <value>Список сохраненных заданий запуска и их записанных состояний.</value>
+  </data>
+  <data name="JobResumeDescription" xml:space="preserve">
+    <value>Возобновляйте прерванное или невыполненное задание только тогда, когда его повторение безопасно.</value>
+  </data>
+  <data name="JobShowDescription" xml:space="preserve">
+    <value>Прочитайте статус, ход выполнения и результат сохраненного задания.</value>
+  </data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve">
+    <value>Подготовить необходимые файлы Minecraft для экземпляра; не запускает игру.</value>
+  </data>
+  <data name="LaunchLaunchDescription" xml:space="preserve">
+    <value>Запустите игру или верните план, доступный только для чтения. Запуск процесса не является доказательством игрового процесса. Время жизни игры не зависит от подключения модели.</value>
+  </data>
+  <data name="LoaderInstallDescription" xml:space="preserve">
+    <value>Установить загрузчик без замены игрового контента.</value>
+  </data>
+  <data name="LoaderListDescription" xml:space="preserve">
+    <value>Список выпусков загрузчика для базовой версии Minecraft.</value>
+  </data>
+  <data name="LogBundleDescription" xml:space="preserve">
+    <value>Экспортируйте диагностический пакет или проверьте включенные файлы с помощью --plan.</value>
+  </data>
+  <data name="LogEventsDescription" xml:space="preserve">
+    <value>Чтение проанализированных событий журнала. Pass возвращает parserState и сдвигает поток до следующего непрерывного чтения.</value>
+  </data>
+  <data name="LogExportDescription" xml:space="preserve">
+    <value>Экспортируйте доступное окно консоли или сохраненный снимок сбоя, включая сведения об усечении.</value>
+  </data>
+  <data name="LogLogsDescription" xml:space="preserve">
+    <value>Прочитайте окно консоли в реальном времени или сохраненный снимок сбоя. Используйте nextOffset каждого потока, чтобы продолжить; сообщается о выселенных префиксах.</value>
+  </data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve">
+    <value>Анализ экземпляра, записанного сеанса или отчета о сбое; Результаты являются доказательствами и предположениями, а не доказательством основной причины.</value>
+  </data>
+  <data name="MaintenancePruneDescription" xml:space="preserve">
+    <value>Пересмотреть правила возврата при исполнении; --plan не изменяет файлы.</value>
+  </data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve">
+    <value>Использование кэша чтения.</value>
+  </data>
+  <data name="OptionAccountDescription" xml:space="preserve">
+    <value>Сохранено в автономном режиме или Microsoft удостоверение ID; опустите, чтобы наследовать экземпляр/глобальный выбор.</value>
+  </data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve">
+    <value>Хэш идентификации контента.</value>
+  </data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve">
+    <value>Зафиксируйте явное принятие запрошенных несовместимых пакетов ресурсов.</value>
+  </data>
+  <data name="OptionArchitectureDescription" xml:space="preserve">
+    <value>Архитектура времени выполнения.</value>
+  </data>
+  <data name="OptionArgumentsDescription" xml:space="preserve">
+    <value>Ввод инструмента JSON; по умолчанию — {}.</value>
+  </data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve">
+    <value>Файл, содержащий входные данные инструмента JSON.</value>
+  </data>
+  <data name="OptionAttachDescription" xml:space="preserve">
+    <value>Прикрепите проверенное отслеживание платформы к локальному файлу.</value>
+  </data>
+  <data name="OptionBackgroundDescription" xml:space="preserve">
+    <value>Поставить в очередь постоянный job; проверьте job show на предмет окончательного результата.</value>
+  </data>
+  <data name="OptionBytesDescription" xml:space="preserve">
+    <value>Необработанный бюджет байтов журнала, от 8 до 1048576.</value>
+  </data>
+  <data name="OptionChannelDescription" xml:space="preserve">
+    <value>Разрешенный канал обновления.</value>
+  </data>
+  <data name="OptionCharactersDescription" xml:space="preserve">
+    <value>Сохранен размер текстового фрагмента JSON, от 256 до 8000.</value>
+  </data>
+  <data name="OptionConfirmDescription" xml:space="preserve">
+    <value>Подтвердите проверенную операцию и ее последствия.</value>
+  </data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve">
+    <value>Пропустить подготовку к выполнению.</value>
+  </data>
+  <data name="OptionContentVersionDescription" xml:space="preserve">
+    <value>Точная версия контента платформы ID.</value>
+  </data>
+  <data name="OptionCopyDescription" xml:space="preserve">
+    <value>Копировать полный исходный контент; никогда не удаляйте источник.</value>
+  </data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve">
+    <value>Каталог данных программы запуска; по умолчанию используется .rmcl пользователя.</value>
+  </data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve">
+    <value>Также удалите игровые файлы, принадлежащие экземпляру.</value>
+  </data>
+  <data name="OptionDirectoryDescription" xml:space="preserve">
+    <value>Исходный каталог.</value>
+  </data>
+  <data name="OptionEncodingDescription" xml:space="preserve">
+    <value>Кодовое имя для устаревших файлов BOM-less.</value>
+  </data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve">
+    <value>NAME=VALUE переопределяет переменную; NAME удаляет его. Повторите для нескольких переменных.</value>
+  </data>
+  <data name="OptionEventsDescription" xml:space="preserve">
+    <value>Записывать события прогресса в stderr.</value>
+  </data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve">
+    <value>Необязательный относительный путь для исключения; повторите для нескольких файлов.</value>
+  </data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve">
+    <value>Ожидаемый отпечаток файла в результате чтения/планирования.</value>
+  </data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve">
+    <value>Ожидаемый отпечаток пальца блокировки контента; отсутствие означает отсутствие блокировки.</value>
+  </data>
+  <data name="OptionForceDescription" xml:space="preserve">
+    <value>Явно завершить записанное дерево процессов.</value>
+  </data>
+  <data name="OptionFormatDescription" xml:space="preserve">
+    <value>Формат экспорта пакета.</value>
+  </data>
+  <data name="OptionFullscreenDescription" xml:space="preserve">
+    <value>Переопределение полноэкранного режима; опустите, чтобы наследовать настройки.</value>
+  </data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve">
+    <value>Дополнительный игровой аргумент; используйте --game-arg=--TOKEN для значений option-like.</value>
+  </data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve">
+    <value>Каталог явного игрового контента.</value>
+  </data>
+  <data name="OptionHeightDescription" xml:space="preserve">
+    <value>Высота игрового окна.</value>
+  </data>
+  <data name="OptionIdDescription" xml:space="preserve">
+    <value>Явно управляемая среда выполнения или избранная ID.</value>
+  </data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve">
+    <value>Включить файлы, которые обычно можно загрузить повторно.</value>
+  </data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve">
+    <value>Включить в экспорт неотслеживаемые локальные моды.</value>
+  </data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve">
+    <value>Необязательный относительный путь для включения; повторите для нескольких файлов.</value>
+  </data>
+  <data name="OptionIndexDescription" xml:space="preserve">
+    <value>Порядок поиска.</value>
+  </data>
+  <data name="OptionInstanceDescription" xml:space="preserve">
+    <value>Экземпляр ID; опустить для глобальной области видимости.</value>
+  </data>
+  <data name="OptionJavaDescription" xml:space="preserve">
+    <value>Явный Java исполняемый или домашний файл.</value>
+  </data>
+  <data name="OptionJsonDescription" xml:space="preserve">
+    <value>Запишите компактно JSON.</value>
+  </data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve">
+    <value>Дополнительный аргумент JVM; повторите вариант для каждого token.</value>
+  </data>
+  <data name="OptionKindDescription" xml:space="preserve">
+    <value>Тип каталога контента; по умолчанию — mods.</value>
+  </data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve">
+    <value>Конфигурация средства запуска исходного кода.</value>
+  </data>
+  <data name="OptionLevelDescription" xml:space="preserve">
+    <value>Дополнительный фильтр уровня log-events.</value>
+  </data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve">
+    <value>Основание зеркала библиотеки URL; повторите для нескольких зеркал.</value>
+  </data>
+  <data name="OptionLimitDescription" xml:space="preserve">
+    <value>Размер страницы или раздела: от 1 до 100.</value>
+  </data>
+  <data name="OptionLoaderDescription" xml:space="preserve">
+    <value>Идентификатор загрузчика; пользовательские значения остаются разрешенными. none выбирает ваниль.</value>
+  </data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve">
+    <value>Точная версия загрузчика.</value>
+  </data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve">
+    <value>stdout/stderr encoding; не меняется file.encoding.</value>
+  </data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve">
+    <value>Известное переопределение совместимости устаревших протоколов.</value>
+  </data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve">
+    <value>Каталог, содержащий загруженные вручную файлы пакета.</value>
+  </data>
+  <data name="OptionMemoryDescription" xml:space="preserve">
+    <value>Максимальная куча Java в MiB.</value>
+  </data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve">
+    <value>Политика выбора памяти.</value>
+  </data>
+  <data name="OptionMigrateDescription" xml:space="preserve">
+    <value>Перевести метаданные средства запуска исходного кода.</value>
+  </data>
+  <data name="OptionMinecraftDescription" xml:space="preserve">
+    <value>Базовая версия совместимости Minecraft, а не профиль загрузчика ID.</value>
+  </data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve">
+    <value>Общий каталог среды выполнения Minecraft.</value>
+  </data>
+  <data name="OptionNameDescription" xml:space="preserve">
+    <value>Отображение имени или папки назначения.</value>
+  </data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve">
+    <value>Оставьте управление зависимостями пользователю.</value>
+  </data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve">
+    <value>Запуск без интерактивных подсказок.</value>
+  </data>
+  <data name="OptionOfflineDescription" xml:space="preserve">
+    <value>Используйте локальные файлы вместо автоматических загрузок.</value>
+  </data>
+  <data name="OptionOffsetDescription" xml:space="preserve">
+    <value>Поиск с отсчетом от нуля, смещение по массиву или тексту.</value>
+  </data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve">
+    <value>Минимальный возраст кэша в днях; по умолчанию 30.</value>
+  </data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve">
+    <value>Явная необязательная файловая политика; опустите, чтобы сохранить выбор.</value>
+  </data>
+  <data name="OptionOverwriteDescription" xml:space="preserve">
+    <value>Явно применять запрошенные значения настроек игры, несмотря на конфликты.</value>
+  </data>
+  <data name="OptionPackVersionDescription" xml:space="preserve">
+    <value>Точная версия онлайн-пакета ID.</value>
+  </data>
+  <data name="OptionPlanDescription" xml:space="preserve">
+    <value>План только для чтения; не применять изменения.</value>
+  </data>
+  <data name="OptionPlatformDescription" xml:space="preserve">
+    <value>Контент-платформа; по умолчанию — modrinth. Онлайн-поддержка по умолчанию CurseForge недоступна.</value>
+  </data>
+  <data name="OptionPlayerDescription" xml:space="preserve">
+    <value>Имя офлайн-игрока.</value>
+  </data>
+  <data name="OptionPointerDescription" xml:space="preserve">
+    <value>RFC 6901 JSON Pointer в сохраненном результате.</value>
+  </data>
+  <data name="OptionProfileDescription" xml:space="preserve">
+    <value>Точный профиль запуска исходного кода ID.</value>
+  </data>
+  <data name="OptionProjectDescription" xml:space="preserve">
+    <value>Проект онлайн-пакета ID.</value>
+  </data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve">
+    <value>Смещение от нуля в списке property-name объекта.</value>
+  </data>
+  <data name="OptionRedactDescription" xml:space="preserve">
+    <value>Максимальное удаление общих учетных данных из диагностического пакета; значения по умолчанию true.</value>
+  </data>
+  <data name="OptionReplaceDescription" xml:space="preserve">
+    <value>Замените весь выбор resource-pack.</value>
+  </data>
+  <data name="OptionReportDescription" xml:space="preserve">
+    <value>Локальный путь Minecraft или JVM для отчета о сбое.</value>
+  </data>
+  <data name="OptionReviewDescription" xml:space="preserve">
+    <value>Обзор восстановления ранее замороженных зависимостей ID.</value>
+  </data>
+  <data name="OptionScopeDescription" xml:space="preserve">
+    <value>Область резервного копирования.</value>
+  </data>
+  <data name="OptionServerDescription" xml:space="preserve">
+    <value>Многопользовательский адрес или избранное.</value>
+  </data>
+  <data name="OptionSessionDescription" xml:space="preserve">
+    <value>Записанная игровая сессия ID.</value>
+  </data>
+  <data name="OptionStateDescription" xml:space="preserve">
+    <value>Состояние анализатора JSON из предыдущего непрерывного чтения log-events.</value>
+  </data>
+  <data name="OptionStateFileDescription" xml:space="preserve">
+    <value>Файл, содержащий состояние парсера log-events.</value>
+  </data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve">
+    <value>Абсолютное смещение сохраняемого байта stderr.</value>
+  </data>
+  <data name="OptionStdioDescription" xml:space="preserve">
+    <value>Обслуживает MCP через стандартный ввод/вывод.</value>
+  </data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve">
+    <value>Абсолютное сохраненное stdout смещение байта.</value>
+  </data>
+  <data name="OptionTailDescription" xml:space="preserve">
+    <value>Максимальное количество строк конца журнала, когда байтовый курсор не указан.</value>
+  </data>
+  <data name="OptionTimeoutDescription" xml:space="preserve">
+    <value>Тайм-аут сети в миллисекундах; по умолчанию 5000.</value>
+  </data>
+  <data name="OptionToolDescription" xml:space="preserve">
+    <value>Точное имя инструмента.</value>
+  </data>
+  <data name="OptionTopicDescription" xml:space="preserve">
+    <value>CLI раздел справки по команде.</value>
+  </data>
+  <data name="OptionTypeDescription" xml:space="preserve">
+    <value>Категория поиска контента; по умолчанию — all.</value>
+  </data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve">
+    <value>Контекст совместимости кандидата; не меняет время выполнения экземпляра.</value>
+  </data>
+  <data name="OptionVerifyDescription" xml:space="preserve">
+    <value>Проверьте хэши установленных файлов.</value>
+  </data>
+  <data name="OptionVersionDescription" xml:space="preserve">
+    <value>Minecraft версия или локальный/пользовательский профиль запуска ID.</value>
+  </data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve">
+    <value>PROJECT=VERSION точный выбор; повторите для корневых и зависимых проектов.</value>
+  </data>
+  <data name="OptionWaitDescription" xml:space="preserve">
+    <value>Дождитесь выхода игры; отмена не останавливает игру.</value>
+  </data>
+  <data name="OptionWidthDescription" xml:space="preserve">
+    <value>Ширина игрового окна.</value>
+  </data>
+  <data name="OptionWorldDescription" xml:space="preserve">
+    <value>Папка мира или цель быстрого воспроизведения.</value>
+  </data>
+  <data name="PackApplyDescription" xml:space="preserve">
+    <value>Примените точную проверку обновлений сохраненного пакета.</value>
+  </data>
+  <data name="PackCompleteDescription" xml:space="preserve">
+    <value>Заполните недостающие файлы пакета, включая файлы, загруженные вручную.</value>
+  </data>
+  <data name="PackExportDescription" xml:space="preserve">
+    <value>Экспортируйте экземпляр как mrpack или CurseForge ZIP.</value>
+  </data>
+  <data name="PackImportDescription" xml:space="preserve">
+    <value>Импортируйте mrpack или CurseForge ZIP с выбранными дополнительными файлами.</value>
+  </data>
+  <data name="PackInspectDescription" xml:space="preserve">
+    <value>Проверка локального архива пакета без создания экземпляра.</value>
+  </data>
+  <data name="PackInstallDescription" xml:space="preserve">
+    <value>Установите онлайн-пакет Modrinth; дополнительные файлы следуют явной политике выбора.</value>
+  </data>
+  <data name="PackPrepareDescription" xml:space="preserve">
+    <value>Заполните сохраненный пакет и автоматически подготовьте его среду выполнения и Java; Режимы «только контент» и «офлайн» сохраняют свою явную область действия.</value>
+  </data>
+  <data name="PackReviewDescription" xml:space="preserve">
+    <value>Заморозить просмотр обновлений архива; apply использует сохраненную точную операцию.</value>
+  </data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve">
+    <value>Заморозить онлайн-проверку обновления пакета, сохранив сохраненные дополнительные параметры, если они не изменены явным образом.</value>
+  </data>
+  <data name="PackRollbackDescription" xml:space="preserve">
+    <value>Откат записанной операции упаковки.</value>
+  </data>
+  <data name="PackUpdateDescription" xml:space="preserve">
+    <value>Обновить пакет из архива, сохраняя сохраненные дополнительные варианты, если они не были изменены явным образом.</value>
+  </data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve">
+    <value>Обновить пакет из его онлайн-источника, сохраняя сохраненные дополнительные параметры, если они не изменены явным образом.</value>
+  </data>
+  <data name="ResourcePackListDescription" xml:space="preserve">
+    <value>Список установленных и выбранных пакетов.</value>
+  </data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve">
+    <value>Установить упорядоченные названия пакетов; пустой список не выбирает дополнительные пакеты.</value>
+  </data>
+  <data name="OptionLanguageDescription" xml:space="preserve">
+    <value>Язык интерфейса лаунчера; имеет приоритет над RODEL_CLI_LANGUAGE и языком системы.</value>
+  </data>
+  <data name="RootDescription" xml:space="preserve">
+    <value>Windows Minecraft Java пусковая установка. CLI → Core; Инструменты MCP повторно используют это дерево команд.</value>
+  </data>
+  <data name="RuntimeChangeDescription" xml:space="preserve">
+    <value>Подготовьте запрошенные компоненты среды выполнения перед сохранением настроек экземпляра.</value>
+  </data>
+  <data name="RuntimeOperationDescription" xml:space="preserve">
+    <value>Проверка записанной операции выполнения экземпляра.</value>
+  </data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve">
+    <value>Список записанных изменений во время выполнения экземпляра.</value>
+  </data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve">
+    <value>Подготовьте стандартную среду выполнения и удалите выбор загрузчика экземпляра.</value>
+  </data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve">
+    <value>Откат записанного изменения среды выполнения экземпляра.</value>
+  </data>
+  <data name="RuntimeShowDescription" xml:space="preserve">
+    <value>Чтение эффективной Minecraft, среды загрузчика и Java экземпляра.</value>
+  </data>
+  <data name="ServerAddDescription" xml:space="preserve">
+    <value>Добавьте или обновите избранный именованный сервер.</value>
+  </data>
+  <data name="ServerConnectDescription" xml:space="preserve">
+    <value>Соедините ADDRESS_OR_FAVORITE [--instance ID], используя предпочтительный или только связанный instance, если он опущен. INSTANCE ADDRESS продолжает поддерживаться. Фоновые задания замораживают конкретную цель и идентификатор перед постановкой в ​​очередь.</value>
+  </data>
+  <data name="ServerListDescription" xml:space="preserve">
+    <value>Список сохраненных избранных серверов.</value>
+  </data>
+  <data name="ServerRemoveDescription" xml:space="preserve">
+    <value>Удалить фаворита сервера без изменения игровых данных.</value>
+  </data>
+  <data name="ServerResolveDescription" xml:space="preserve">
+    <value>Разрешите адрес сервера, используя записи Windows, DNS и SRV.</value>
+  </data>
+  <data name="ServerStatusDescription" xml:space="preserve">
+    <value>Запросить текущий статус сервера Minecraft.</value>
+  </data>
+  <data name="SessionListDescription" xml:space="preserve">
+    <value>Перечислите записанные игровые сессии и их наблюдаемые состояния.</value>
+  </data>
+  <data name="SessionShowDescription" xml:space="preserve">
+    <value>Прочтите одну записанную игровую сессию и ее наблюдаемое состояние.</value>
+  </data>
+  <data name="SessionStopDescription" xml:space="preserve">
+    <value>Запросить закрытие системного меню; --force завершает записанное дерево процессов. Прочтите show, чтобы увидеть выход.</value>
+  </data>
+  <data name="WorldBackupDescription" xml:space="preserve">
+    <value>Резервное копирование мира.</value>
+  </data>
+  <data name="WorldBackupsDescription" xml:space="preserve">
+    <value>Резервные копии мира.</value>
+  </data>
+  <data name="WorldCompressDescription" xml:space="preserve">
+    <value>Мировой компресс.</value>
+  </data>
+  <data name="WorldDirectoryDescription" xml:space="preserve">
+    <value>Мировой каталог.</value>
+  </data>
+  <data name="WorldExportDescription" xml:space="preserve">
+    <value>Мировой экспорт.</value>
+  </data>
+  <data name="WorldImportDescription" xml:space="preserve">
+    <value>Мировой импорт.</value>
+  </data>
+  <data name="WorldListDescription" xml:space="preserve">
+    <value>Мировой список.</value>
+  </data>
+  <data name="WorldRecoverDescription" xml:space="preserve">
+    <value>Мир восстанавливается.</value>
+  </data>
+  <data name="WorldRecoveryDescription" xml:space="preserve">
+    <value>Восстановление мира.</value>
+  </data>
+  <data name="WorldRemoveDescription" xml:space="preserve">
+    <value>Удаление мира.</value>
+  </data>
+  <data name="WorldRestoreDescription" xml:space="preserve">
+    <value>Восстановление мира.</value>
+  </data>
+  <data name="OptionServerAddressDescription" xml:space="preserve">
+    <value>Используйте конкретный многопользовательский адрес без интерпретации избранного; имеет приоритет над --server.</value>
+  </data>
+  <data name="OptionPreferredDescription" xml:space="preserve">
+    <value>Сделайте этот связанный экземпляр предпочтительным экземпляром избранного сервера.</value>
+  </data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve">
+    <value>Идентификатор предпочтительного экземпляра из предоставленных ассоциаций.</value>
+  </data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve">
+    <value>Передний план Microsoft Метод входа: browser (по умолчанию) или device-code.</value>
+  </data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve">
+    <value>Необязательный адрес или избранное, если первый аргумент является явным экземпляром.</value>
+  </data>
+  <data name="AccountCurrentDescription" xml:space="preserve">
+    <value>Прочитать текущий сохраненный выбор личности.</value>
+  </data>
+  <data name="AccountSelectDescription" xml:space="preserve">
+    <value>Выберите сохраненную автономную личность или Microsoft.</value>
+  </data>
+  <data name="AccountClearDescription" xml:space="preserve">
+    <value>Очистить сохраненный текущий выбор личности.</value>
+  </data>
+  <data name="AccountLoginDescription" xml:space="preserve">
+    <value>Войдите в систему Microsoft на переднем плане, используя настроенный локальный клиент ID; ни один клиент ID не входит в комплект.</value>
+  </data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve">
+    <value>Возобновите незавершенный вход Microsoft, используя защищенные локальные ожидающие учетные данные.
+Для входа в систему</value>
+  </data>
+  <data name="AccountRefreshDescription" xml:space="preserve">
+    <value>Обновить сохранённую сетевую учётную запись на переднем плане.</value>
+  </data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve">
+    <value>Microsoft требуется взаимодействие с пользователем.</value>
+  </data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve">
+    <value>Используйте account login --method device-code --events для отображения запроса авторизации на переднем плане.</value>
+  </data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve">
+    <value>Операции с учетной записью выполняются на переднем плане, поэтому учетные данные и запросы авторизации не сохраняются в качестве заданий.</value>
+  </data>
+  <data name="ServerShowDescription" xml:space="preserve">
+    <value>Чтение сохраненного избранного сервера и ассоциаций с его экземплярами.</value>
+  </data>
+  <data name="ServerBindDescription" xml:space="preserve">
+    <value>Свяжите существующий экземпляр с сохраненным избранным сервером.</value>
+  </data>
+  <data name="ServerUnbindDescription" xml:space="preserve">
+    <value>Удалить ассоциацию экземпляра из сохраненного избранного сервера.</value>
+  </data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve">
+    <value>Заменить связанные экземпляры сохраненного избранного сервера; пустой список очищает все ассоциации.</value>
+  </data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve">
+    <value>Чтение записанных свидетельств подключения к серверу для игровой сессии.</value>
+  </data>
+  <data name="OptionNoServerDescription" xml:space="preserve">
+    <value>Запуск без наследования сервера-владельца экземпляра; явные аргументы сервера по-прежнему имеют приоритет.</value>
+  </data>
+  <data name="OptionDedicatedDescription" xml:space="preserve">
+    <value>Сделайте этот экземпляр выделенным клиентом, принадлежащим выбранному серверу, не копируя его файлы.</value>
+  </data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve">
+    <value>Зарегистрируйте недавно импортированный пакет в качестве выделенного клиента этого избранного сервера.</value>
+  </data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve">
+    <value>Верните выделенный клиент под обычное локальное управление без перемещения и удаления файлов.</value>
+  </data>
+  <data name="PackCheckDescription" xml:space="preserve">
+    <value>Проверьте сохраненный дистрибутив HMCL и проведите точную проверку; apply отдельно от pack apply.</value>
+  </data>
+  <data name="PackHistoryDescription" xml:space="preserve">
+    <value>Список сохраненных пакетных транзакций и текущая цель отката.</value>
+  </data>
+  <data name="PackDetachDescription" xml:space="preserve">
+    <value>Отключайте обновления на основе исходного кода, не удаляя клиент или его источник.</value>
+  </data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve">
+    <value>Автоматически исправляйте выбранные настройки средства запуска или удаляйте переопределения, сохраняя несвязанные поля.</value>
+  </data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve">
+    <value>JSON объект, содержащий только поля для изменения. Явный null сохраняется; используйте --remove для наследования.</value>
+  </data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve">
+    <value>Удалите ключ блокировки. Повторите эту опцию, чтобы удалить несколько ключей.</value>
+  </data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve">
+    <value>Изменения конфигурации должны быть объектом JSON.</value>
+  </data>
+  <data name="ContentShowReviewDescription" xml:space="preserve">
+    <value>Прочтите точный обзор сохраненного контента и сообщите, не устарела ли его базовая версия.</value>
+  </data>
+  <data name="AppCommandsDescription" xml:space="preserve">
+    <value>Управляет собственными настройками и состоянием переднего плана выбранного работающего App.</value>
+  </data>
+  <data name="AppExpectedFingerprint" xml:space="preserve">
+    <value>Точный отпечаток пальца, возвращаемый app show; изменения отклоняются, если состояние App изменилось.</value>
+  </data>
+  <data name="AppPreferenceFile" xml:space="preserve">
+    <value>JSON файл, содержащий явные изменения предпочтений пакета.</value>
+  </data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve">
+    <value>Укажите объект предпочтения App JSON.</value>
+  </data>
+  <data name="AppPage" xml:space="preserve">
+    <value>Ключ страницы: home, instances, content, settings или assistant.</value>
+  </data>
+  <data name="AppCategory" xml:space="preserve">
+    <value>Дополнительный ключ категории стабильных настроек.</value>
+  </data>
+  <data name="AppWindowState" xml:space="preserve">
+    <value>Состояние окна: normal, maximized, minimized или tray.</value>
+  </data>
+  <data name="AppWallpaperTheme" xml:space="preserve">
+    <value>Слот для обоев: light или dark.</value>
+  </data>
+  <data name="AppWallpaperId" xml:space="preserve">
+    <value>Обои ID, возвращенные из каталога этого App.</value>
+  </data>
+  <data name="AppWallpaperSource" xml:space="preserve">
+    <value>Изображение для копирования в магазин обоев App; источник сохранен.</value>
+  </data>
+  <data name="AppWallpaperName" xml:space="preserve">
+    <value>Отображаемое имя пользовательского изображения выбранного слота.</value>
+  </data>
+  <data name="AppList" xml:space="preserve">
+    <value>Перечислите действующие экземпляры App, используя выбранный корень данных.</value>
+  </data>
+  <data name="AppShow" xml:space="preserve">
+    <value>Чтение фактического состояния App, предпочтений и отпечатков мутаций.</value>
+  </data>
+  <data name="AppPreferences" xml:space="preserve">
+    <value>Управляйте настройками пакета без редактирования файлов личного хранилища.</value>
+  </data>
+  <data name="AppUpdatePreferences" xml:space="preserve">
+    <value>Примените явные поля предпочтений через реальные контроллеры App.</value>
+  </data>
+  <data name="AppNavigation" xml:space="preserve">
+    <value>Управляет текущей страницей и выбором App, а не состоянием игры.</value>
+  </data>
+  <data name="AppNavigate" xml:space="preserve">
+    <value>Навигация без отмены активных черновиков или модальных операций.</value>
+  </data>
+  <data name="AppWindow" xml:space="preserve">
+    <value>Управление выбранным окном App.</value>
+  </data>
+  <data name="AppSetWindow" xml:space="preserve">
+    <value>Применение явного собственного состояния окна; задачи и игры сохраняют свою собственность.</value>
+  </data>
+  <data name="AppClose" xml:space="preserve">
+    <value>Запрос App на выход после точного подтверждения состояния и существующих охранников собственных работ.</value>
+  </data>
+  <data name="AppWallpapers" xml:space="preserve">
+    <value>Управляйте слотами обоев для конкретной темы App.</value>
+  </data>
+  <data name="AppWallpaperList" xml:space="preserve">
+    <value>Прочтите настоящий каталог обоев и выберите ID.</value>
+  </data>
+  <data name="AppWallpaperSelect" xml:space="preserve">
+    <value>Выберите существующие обои ID.</value>
+  </data>
+  <data name="AppWallpaperImport" xml:space="preserve">
+    <value>Декодируйте и импортируйте изображение через обычный конвейер обоев App.
+Элемент управления</value>
+  </data>
+  <data name="AppWallpaperRename" xml:space="preserve">
+    <value>Переименуйте собственные обои слота.</value>
+  </data>
+  <data name="AppWallpaperRemove" xml:space="preserve">
+    <value>После подтверждения удаляйте только пользовательские обои, принадлежащие приложению.</value>
+  </data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve">
+    <value>App нацелен на работающий хост и не может быть поставлен в очередь в качестве воспроизводимой фоновой команды.</value>
+  </data>
+  <data name="AppImageCache" xml:space="preserve">
+    <value>Проверьте и очистите только кэш изображений App, а не зависимости средства запуска.</value>
+  </data>
+  <data name="AppImageCacheShow" xml:space="preserve">
+    <value>Измерьте текущие App байты кэша изображений.</value>
+  </data>
+  <data name="AppImageCacheClear" xml:space="preserve">
+    <value>Очистите кеш изображения App через его фактический загрузчик после подтверждения.</value>
+  </data>
+  <data name="LocalContextLengthDescription" xml:space="preserve">
+    <value>Длина локального рабочего контекста в токенах; отдельно от истории и ограничений вывода. Ненастроенные модели используют значение по умолчанию 64K в программе запуска.</value>
+  </data>
+  <data name="SkinGroupDescription" xml:space="preserve">
+    <value>Рисуйте, проверяйте, экспортируйте и просматривайте стандартные скины Java.</value>
+  </data>
+  <data name="SkinCreateDescription" xml:space="preserve">
+    <value>Создайте документ скина, при необходимости импортировав PNG.</value>
+  </data>
+  <data name="SkinInspectDescription" xml:space="preserve">
+    <value>Прочтите модель, версию, историю состояния и отображение лиц.</value>
+  </data>
+  <data name="SkinReadDescription" xml:space="preserve">
+    <value>Считайте точные цвета пикселей с лица одной модели.</value>
+  </data>
+  <data name="SkinEditDescription" xml:space="preserve">
+    <value>Примените атомарный, невыполнимый пакет основных действий рисования.</value>
+  </data>
+  <data name="SkinUndoDescription" xml:space="preserve">
+    <value>Отменить одну транзакцию рисования.</value>
+  </data>
+  <data name="SkinRedoDescription" xml:space="preserve">
+    <value>Повторить одну отмененную транзакцию.</value>
+  </data>
+  <data name="SkinExportDescription" xml:space="preserve">
+    <value>Экспортировать PNG в размере текстуры документа; не загружает и не меняет скин аккаунта.</value>
+  </data>
+  <data name="SkinSaveAsDescription" xml:space="preserve">
+    <value>Сохраните независимый редактируемый снимок .rmcs со всеми слоями и сохраненной историей; источник без изменений.</value>
+  </data>
+  <data name="SkinPreviewDescription" xml:space="preserve">
+    <value>Отрисуйте 3D-снимок PNG.</value>
+  </data>
+  <data name="SkinModelDescription" xml:space="preserve">
+    <value>Classic (четырехпиксельные ручки) или Slim (трехпиксельные ручки).</value>
+  </data>
+  <data name="SkinInputDescription" xml:space="preserve">
+    <value>Необязательно 64x64, HD 128x128 или устаревший 64x32 PNG для импорта.</value>
+  </data>
+  <data name="SkinOutputDescription" xml:space="preserve">
+    <value>Предварительный просмотр места назначения, PNG или редактируемый файл проекта.</value>
+  </data>
+  <data name="SkinColorDescription" xml:space="preserve">
+    <value>Непрозрачный базовый цвет в формате #RRGGBB или #RRGGBBAA.</value>
+  </data>
+  <data name="SkinRevisionDescription" xml:space="preserve">
+    <value>Последняя наблюдаемая редакция; устаревшие изменения отклоняются.</value>
+  </data>
+  <data name="SkinEditsDescription" xml:space="preserve">
+    <value>JSON массив typed действий рисования, локальных на грани.</value>
+  </data>
+  <data name="SkinEditsFileDescription" xml:space="preserve">
+    <value>Файл, содержащий массив действий рисования JSON.</value>
+  </data>
+  <data name="SkinPartDescription" xml:space="preserve">
+    <value>Head, Body, RightArm, LeftArm, RightLeg или LeftLeg.</value>
+  </data>
+  <data name="SkinLayerDescription" xml:space="preserve">
+    <value>Base (непрозрачная) или Outer (прозрачная одежда).</value>
+  </data>
+  <data name="SkinFaceDescription" xml:space="preserve">
+    <value>Front, Back, Right, Left, Top или Bottom.</value>
+  </data>
+  <data name="SkinYawDescription" xml:space="preserve">
+    <value>PNG отклонение камеры в градусах; по умолчанию 25.</value>
+  </data>
+  <data name="SkinPitchDescription" xml:space="preserve">
+    <value>PNG шаг камеры от -89 до 89 градусов; по умолчанию 10.</value>
+  </data>
+  <data name="SkinToolProfileDescription" xml:space="preserve">
+    <value>Каталог MCP: launcher (по умолчанию), discovery (компактный) или отдельный skins.</value>
+  </data>
+  <data name="SkinEditsRequiredError" xml:space="preserve">
+    <value>Поставьте ровно один из --edits и --edits-file.</value>
+  </data>
+  <data name="SkinViewDescription" xml:space="preserve">
+    <value>Напечатали JSON предпросмотр камеры, размеры, Minecraft слои и видимые части тела.</value>
+  </data>
+  <data name="SkinRequestDescription" xml:space="preserve">
+    <value>Набран запрос JSON на выборку или захват буфера обмена.</value>
+  </data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve">
+    <value>Считайте слой краски ID или background; опустите, чтобы прочитать видимую композицию.</value>
+  </data>
+  <data name="SkinPickDescription" xml:space="preserve">
+    <value>Выберите реальную поверхность модели с помощью луча пространства модели.</value>
+  </data>
+  <data name="SkinSelectionDescription" xml:space="preserve">
+    <value>Создайте геометрическое или цветовое выделение без редактирования пикселей.</value>
+  </data>
+  <data name="SkinCaptureDescription" xml:space="preserve">
+    <value>Захват выбранной области лица в виде редактируемых пикселей буфера обмена.</value>
+  </data>
+  <data name="SkinViewConflictError" xml:space="preserve">
+    <value>Используйте либо --view, либо простые варианты --yaw/--pitch, но не оба варианта.</value>
+  </data>
+  <data name="SkinRequestRequiredError" xml:space="preserve">
+    <value>Требуется ненулевой запрос скина typed.</value>
+  </data>
+  <data name="SkinRequestError" xml:space="preserve">
+    <value>Неверный запрос скина: {0}</value>
+  </data>
+  <data name="SkinSizeDescription" xml:space="preserve">
+    <value>Размер текстуры: 64 или 128 текселей.</value>
+  </data>
+  <data name="SkinTemplateDescription" xml:space="preserve">
+    <value>Исходный шаблон ID; список с шаблонами скинов.</value>
+  </data>
+  <data name="SkinNameDescription" xml:space="preserve">
+    <value>Отображаемое имя проекта.</value>
+  </data>
+  <data name="SkinIndexDescription" xml:space="preserve">
+    <value>Сохранена позиция истории в наблюдаемой ревизии.</value>
+  </data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve">
+    <value>Выберите шаблон или вход PNG, но не оба одновременно.</value>
+  </data>
+  <data name="SkinSizeError" xml:space="preserve">
+    <value>Размер скина должен быть 64 или 128.</value>
+  </data>
+  <data name="SkinListDescription" xml:space="preserve">
+    <value>Список редактируемых проектов скинов.</value>
+  </data>
+  <data name="SkinTemplatesDescription" xml:space="preserve">
+    <value>Перечислите оригинальные шаблоны basic-person и предложения моделей.</value>
+  </data>
+  <data name="SkinCloneDescription" xml:space="preserve">
+    <value>Клонировать редактируемый контент в новый проект.</value>
+  </data>
+  <data name="SkinRenameDescription" xml:space="preserve">
+    <value>Переименуйте проект скина.</value>
+  </data>
+  <data name="SkinHistoryDescription" xml:space="preserve">
+    <value>Прочитать сохраненную историю транзакций.</value>
+  </data>
+  <data name="SkinRestoreToDescription" xml:space="preserve">
+    <value>атомарно восстановить позицию истории.</value>
+  </data>
+  <data name="SkinImportDescription" xml:space="preserve">
+    <value>Импортируйте PNG как одну отменяемую замену контента.
+Требуется вход</value>
+  </data>
+  <data name="SkinInputRequiredError" xml:space="preserve">
+    <value>PNG.</value>
+  </data>
+  <data name="SkinFootprintDescription" xml:space="preserve">
+    <value>Чтение растрового покрытия кисти без рисования.</value>
+  </data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve">
+    <value>Предварительный просмотр незафиксированного жеста.</value>
+  </data>
+  <data name="SkinLabelDescription" xml:space="preserve">
+    <value>Необязательное описание кандидата.</value>
+  </data>
+  <data name="SkinOperationDescription" xml:space="preserve">
+    <value>Идентификатор операции принятия кандидата.</value>
+  </data>
+  <data name="SkinScopeDescription" xml:space="preserve">
+    <value>Гранты на редактирование скинов, принадлежащие хосту.</value>
+  </data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve">
+    <value>Создайте разрешение на редактирование документа, слоя и пикселя.</value>
+  </data>
+  <data name="SkinScopeShowDescription" xml:space="preserve">
+    <value>Осмотрите грант на редактирование скинов.</value>
+  </data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve">
+    <value>Отозвать разрешение на редактирование скинов.</value>
+  </data>
+  <data name="SkinProposalDescription" xml:space="preserve">
+    <value>Подготовьте и проверите кандидатов на замороженную кожу.</value>
+  </data>
+  <data name="SkinProposeDescription" xml:space="preserve">
+    <value>Подбор кандидата в рамках гранта принимающей стороны.</value>
+  </data>
+  <data name="SkinProposalShowDescription" xml:space="preserve">
+    <value>Проверить проверку кандидата и состояние фиксации.</value>
+  </data>
+  <data name="SkinAcceptDescription" xml:space="preserve">
+    <value>Примите проверенного кандидата с надежной квитанцией.</value>
+  </data>
+  <data name="SkinRejectDescription" xml:space="preserve">
+    <value>Отклонить непринятого кандидата.</value>
+  </data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve">
+    <value>Отрисовывайте кандидата в каталоге управляемого предварительного просмотра.</value>
+  </data>
+  <data name="SkinReceiptDescription" xml:space="preserve">
+    <value>Найдите долгосрочный результат принятия кандидата.</value>
+  </data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve">
+    <value>Привязать скины MCP к гранту хоста; только генерация кандидатов, без прямого редактирования или принятия.</value>
+  </data>
+  <data name="SkinScopeProfileError" xml:space="preserve">
+    <value>Для области скинов требуется профиль инструмента скинов.</value>
+  </data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve">
+    <value>Minecraft язык, который необходимо применить перед запуском, например zh_cn, en_us или ar_sa; пропустите, чтобы сохранить настройки игры.</value>
+  </data>
+  <data name="AiReferenceImages" xml:space="preserve">
+    <value>PNG/JPEG/WebP справочный файл для этого хода. Повторите до трех раз; исходные байты замораживаются перед отправкой.</value>
+  </data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve">
+    <value>Прикрепите не более трех эталонных изображений к одному повороту чата.</value>
+  </data>
+  <data name="AiUserPromptRespond" xml:space="preserve">
+    <value>Отправьте или пропустите точный ожидающий вопрос, используя файл JSON AiUserResponse; ответы не авторизуют инструменты.</value>
+  </data>
+  <data name="AiCancelQueued" xml:space="preserve">
+    <value>Также отмените сообщения этого разговора в очереди, прежде чем останавливать выбранный ход.</value>
+  </data>
+  <data name="RepairApply" xml:space="preserve">
+    <value>Примените один замороженный обратимый план один раз.</value>
+  </data>
+  <data name="RepairCreate" xml:space="preserve">
+    <value>Разрешить ремонт одного зарегистрированного неудачного запуска или задачи подготовки.</value>
+  </data>
+  <data name="RepairGroup" xml:space="preserve">
+    <value>Обратимое исправление зарегистрированного сбоя экземпляра.</value>
+  </data>
+  <data name="RepairJob" xml:space="preserve">
+    <value>Неудачное исходное задание по подготовке ID.</value>
+  </data>
+  <data name="RepairKind" xml:space="preserve">
+    <value>Вид ремонта: disable_mod, java, memory или dependencies.</value>
+  </data>
+  <data name="RepairMemory" xml:space="preserve">
+    <value>Предлагаемый предел кучи в MiB.</value>
+  </data>
+  <data name="RepairPlan" xml:space="preserve">
+    <value>Заморозить один минимальный план ремонта, подтвержденный фактическими данными.</value>
+  </data>
+  <data name="RepairReason" xml:space="preserve">
+    <value>Объясните фактические доказательства, подтверждающие это исследование.</value>
+  </data>
+  <data name="RepairRestore" xml:space="preserve">
+    <value>Восстановить неизмененные цели, принадлежащие пробной версии.</value>
+  </data>
+  <data name="RepairSession" xml:space="preserve">
+    <value>Исходный неудачный сеанс ID.</value>
+  </data>
+  <data name="RepairShow" xml:space="preserve">
+    <value>Прочтите первоначальные доказательства и текущее состояние ремонта.</value>
+  </data>
+  <data name="RepairTarget" xml:space="preserve">
+    <value>Имя установленного файла мода или существующего Java исполняемого файла.</value>
+  </data>
+  <data name="RepairVerify" xml:space="preserve">
+    <value>Запустите и наблюдайте за одним прогоном проверки с тегами.</value>
+  </data>
+  <data name="ExternalGroup" xml:space="preserve">
+    <value>Внешние аккаунты Yggdrasil и авторизация LittleSkin.</value>
+  </data>
+  <data name="ExternalAddress" xml:space="preserve">
+    <value>Веб-сайт или Yggdrasil API адрес; опущено при повторном входе в систему.</value>
+  </data>
+  <data name="ExternalAttempt" xml:space="preserve">
+    <value>Ожидается попытка внешнего входа в систему ID.</value>
+  </data>
+  <data name="ExternalProfile" xml:space="preserve">
+    <value>Игрок UUID, предложенный этой попыткой входа в систему.</value>
+  </data>
+  <data name="ExternalUsername" xml:space="preserve">
+    <value>Адрес электронной почты или имя пользователя, принятые службой.</value>
+  </data>
+  <data name="ExternalPasswordStdin" xml:space="preserve">
+    <value>Прочитайте одну строку пароля из стандартного ввода; никогда не добавляйте его в аргументы команды.</value>
+  </data>
+  <data name="ExternalComponentFile" xml:space="preserve">
+    <value>Существующий authlib-injector JAR для проверки и копирования в хранилище средства запуска.</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Войдите в систему с паролем и сохраните или выберите возвращенную роль игрока.</value>
+  </data>
+  <data name="ExternalDevice" xml:space="preserve">
+    <value>Запустите LittleSkin авторизацию устройства для этого приложения.</value>
+  </data>
+  <data name="ExternalPoll" xml:space="preserve">
+    <value>Опрос LittleSkin с учетом его интервала; --wait продолжается до завершения авторизации.</value>
+  </data>
+  <data name="ExternalShow" xml:space="preserve">
+    <value>Прочтите общедоступное состояние ожидания входа в систему без токенов.</value>
+  </data>
+  <data name="ExternalSelect" xml:space="preserve">
+    <value>Привяжите предложенную роль и зарегистрируйте ее, не меняя текущий аккаунт.</value>
+  </data>
+  <data name="ExternalCancel" xml:space="preserve">
+    <value>Отменить ожидающую внешнюю авторизацию и ее защищенное временное состояние.</value>
+  </data>
+  <data name="ExternalComponent" xml:space="preserve">
+    <value>Управление внешним компонентом входа в систему, принадлежащим средству запуска.</value>
+  </data>
+  <data name="ExternalComponentShow" xml:space="preserve">
+    <value>Осмотрите и проверьте существующий компонент без загрузки.</value>
+  </data>
+  <data name="ExternalComponentPrepare" xml:space="preserve">
+    <value>Повторно используйте проверенный компонент, загрузите официальный артефакт или импортируйте --file.</value>
+  </data>
+  <data name="ExternalPasswordRequired" xml:space="preserve">
+    <value>Используйте --password-stdin и введите пароль через стандартный ввод.</value>
+  </data>
+  <data name="ExternalCachedLaunch" xml:space="preserve">
+    <value>Явно попробуйте ту же внешнюю роль с полными кэшированными учетными данными и компонентом; мультиплеер не гарантируется.</value>
+  </data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve">
+    <value>Ввод пароля доступен только при прямом вызове на переднем плане CLI.</value>
+  </data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve">
+    <value>Выберите один установленный пакет шейдеров; опустите --file, чтобы отключить шейдеры.</value>
+  </data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve">
+    <value>Владелец конфигурации: iris, oculus или optifine; не использовать наблюдаемое открытие.</value>
+  </data>
+  <data name="ShaderPackListDescription" xml:space="preserve">
+    <value>Прочтите установленные пакеты шейдеров и выбранный механизм рендеринга.</value>
+  </data>
+  <data name="ShaderPackFileDescription" xml:space="preserve">
+    <value>Имя установленного shader-pack файла; опустите, чтобы отключить шейдеры.</value>
+  </data>
+  <data name="GroupShaderpackDescription" xml:space="preserve">
+    <value>Осмотрите и выберите пакеты шейдеров.</value>
+  </data>
+  <data name="AiRunQueuedTurn" xml:space="preserve">
+    <value>Остановить активный ход и запустить следующее сообщение в очереди.</value>
+  </data>
+  <data name="BridgeGroup" xml:space="preserve">
+    <value>Осмотрите дополнительный игровой мост.</value>
+  </data>
+  <data name="BridgeShow" xml:space="preserve">
+    <value>Прочтите состояние соединения моста сеанса.</value>
+  </data>
+  <data name="BridgeGameGroup" xml:space="preserve">
+    <value>Наблюдайте за игровыми данными в реальном времени и редактируйте принадлежащие вам локальные миры.</value>
+  </data>
+  <data name="BridgeSnapshot" xml:space="preserve">
+    <value>Чтение свежего синхронизированного снимка игрока/мира.</value>
+  </data>
+  <data name="BridgeEdit" xml:space="preserve">
+    <value>Отправьте одно напечатанное локальное редактирование; серверы всегда остаются доступными только для чтения.</value>
+  </data>
+  <data name="BridgeEditRequest" xml:space="preserve">
+    <value>GameEditRequest JSON с operationId, идентификатором наблюдаемого мира, видом и его полезной нагрузкой dayTime/health/control/click/button/command.</value>
+  </data>
+  <data name="BridgeOperationGroup" xml:space="preserve">
+    <value>Просмотрите или отмените существующее редактирование игры.</value>
+  </data>
+  <data name="BridgeOperationShow" xml:space="preserve">
+    <value>Прочтите точную квитанцию ​​об редактировании, не воспроизводя ее.</value>
+  </data>
+  <data name="BridgeOperationCancel" xml:space="preserve">
+    <value>Отменить только редактирование, выполнение которого еще не началось.</value>
+  </data>
+  <data name="BridgeLaunch" xml:space="preserve">
+    <value>Включите дополнительный игровой мост Java для этого запуска.</value>
+  </data>
+  <data name="BridgeRegion" xml:space="preserve">
+    <value>Чтение ограниченных видимых блоков, объектов и инвентаря без загрузки фрагментов.</value>
+  </data>
+  <data name="BridgeRegionRequest" xml:space="preserve">
+    <value>GameRegionRequest JSON с gameIncarnation, worldEpoch, dimension, x/y/z и sizeX/Y/Z (1..16).</value>
+  </data>
+  <data name="BridgeInterval" xml:space="preserve">
+    <value>Интервал наблюдения в миллисекундах (200..10000).</value>
+  </data>
+  <data name="BridgeEvents" xml:space="preserve">
+    <value>Потоковая передача свежих снимков через --events до отмены.</value>
+  </data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve">
+    <value>Используйте --events для получения потока наблюдения в реальном времени.</value>
+  </data>
+  <data name="BridgeQuery" xml:space="preserve">
+    <value>Чтение семантического игрового запроса или ограниченного собственного выбора NBT.</value>
+  </data>
+  <data name="BridgeQueryRequest" xml:space="preserve">
+    <value>GameQueryRequest JSON с наблюдаемой идентичностью мира, типом и дополнительным выбором/постраничным поиском.</value>
+  </data>
+  <data name="BridgeAi" xml:space="preserve">
+    <value>Отправьте или наблюдайте за запросом программы запуска игры AI.</value>
+  </data>
+  <data name="BridgeAiRequest" xml:space="preserve">
+    <value>GameAiRequest JSON с действием, стабильной worldKey и свежим снапшотом; мутации требуют их точной идентификации запроса/поворота/решения.</value>
+  </data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve">
+    <value>Операции запуска в настроенном каталоге данных. выполнение предоставляет реализованные операции CLI. Дополнительный аутентифицированный игровой мост наблюдает за текущей игрой; мутации требуют наличия собственного локального мира и существующих разрешений.</value>
+  </data>
+  <data name="ContentBundledDescription" xml:space="preserve">
+    <value>Список модов, принадлежащих программе запуска, и их состояние в экземпляре.</value>
+  </data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve">
+    <value>Просмотр выбранных встроенных модов ID и связанных с ними зависимостей без установки.</value>
+  </data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>Восстановить по умолчанию: Длина контекста.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: Длина контекста.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>Прочитать сохранённое изображение по запросу; MCP возвращает изображение, а не текст base64.</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>Добавить PNG того же размера новым слоем, сохранив RGBA и существующее содержимое.</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>Используйте --name только с --as-layer; --model предназначен для импорта целого скина.</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>Выбрать сочетание</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>Выбрать сочетание (ID)</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>Показать отдельно</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>Укажите --with ID или --clear.</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>Типизированный запрос сида в JSON</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>Файл UTF-8 с запросом сида</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>Код языка установленной игры для названий биомов</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>Путь для экспорта PNG</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>Исследование сидов точной оригинальной генерацией</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>Список установленных версий и поддержки сидов</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>Подготовка зависимостей оригинальной игры и Java</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>Чтение исходных реестров биомов, структур и измерений</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>Создание исходного фрагмента карты или чтение кэша</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>Экспорт исходной карты в PNG с контекстом</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>Управление ограниченным поиском с подтверждениями</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>Создание и запуск сохраняемого поиска</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>Список сохранённых поисков</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>Чтение результатов и позиции продолжения</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>Продолжение поиска с подтверждённой позиции</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>Управление закладками сидов и мест</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>Список обоих типов закладок</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>Сохранение или изменение закладки сида или места</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>Удаление указанной закладки</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>Укажите только --request или --request-file.</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>Запрос сида не может быть null.</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>Некорректный JSON запроса сида: {0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>Найти собранные структуры вокруг координаты в одном сиде с сортировкой по расстоянию.</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>Создаёт ограниченный предпросмотр оригинальных блоков, добычи контейнеров и количества материалов.</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>Вычислить исходную точку появления мира или прочитать её из кэша</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>Журналы действий лаунчера</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>Экспорт сохранённых журналов без сеанса игры.</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>Управление одной сетевой комнатой через общий Core.</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>Создать комнату; --background запускает независимую задачу.</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>Войти по штатному коду, сохранив локальную среду.</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>Прочитать комнату и состояния игры и сети.</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>Закрыть комнату, сохранив игру и экземпляр.</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>Повторить подключение с ограничением попыток.</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>Запустить подготовленный гостевой экземпляр через вход комнаты.</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>Использовать адрес сервера, предоставленный хозяином.</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>Экспортировать ограниченный журнал без кодов приглашения и данных игроков.</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>Штатный код комнаты, в том числе внутри текста.</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>Существующий игровой сеанс выбранного экземпляра.</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>Автоматически открыть первый локальный мир, если поддерживается.</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>Принудительно обновить общий каталог версий.</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>Изменить код комнаты участника, сохранив экземпляр игры.</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>Подготовить файл VALUE для отсутствующего ITEM экземпляра TARGET; проверить при продолжении.</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>Экспортировать общие файлы и настройки игры без личных настроек и локальных файлов без источника загрузки.</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>Также запросить обычное завершение игры, без принудительного закрытия.</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>Автоматически запустить игру после подключения сети.</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>Явно разрешить обычное закрытие и перезапуск выбранной игры.</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>Экспортировать сохранённую карту в PNG.</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>Дополнить неизведанную местность изолированным предпросмотром оригинальной генерации.</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>Просмотр сохранённых карт и позиций игроков.</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>Прочитать текущую или сохранённую позицию с проверкой мира.</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>UUID сохранённого игрока или локальный идентификатор.</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>Прогнозирует добычу по сохранённой таблице и зерну в изолированной исходной среде, не меняя сохранённое содержимое.</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>Прочитать сохранённую карту без генерации чанков.</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>Читает сохранённые блоки, материалы и инвентари без генерации чанков и добычи.</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>Типизированный запрос сохранённой карты в JSON.</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>Файл с типизированным запросом сохранённой карты.</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>Проверить модели, текстуры и геометрию сохранённых блоков.</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>Прочитать зерно, настройки и сохранённых игроков.</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>Находит сохранённые записи структур в указанном радиусе.</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>Обновить только данные скина, не обновляя учётные данные для входа.</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>Просмотр и управление снимками экземпляра.</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>Имя файла снимка.</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>Имена файлов снимков.</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>Имя файла; без него открывается папка снимков.</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>Список снимков по времени изменения, сначала новые.</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>Путь, размер и время изменения одного снимка.</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>Открыть снимок в стандартной программе или папку снимков.</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>Переименовать снимок без замены других файлов.</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>Скопировать выбранные снимки в папку без замены файлов.</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>Удалить выбранные снимки (по умолчанию в корзину); требуется --confirm.</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>Операция отменена; выполненные изменения файлов сохранены.</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>Не удалось обработать некоторые снимки. Проверьте результаты для каждого файла.</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Удалить навсегда, минуя корзину. Требуется --confirm.</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Выберите источник локального файла: FILE=PROJECT; повторите для нескольких файлов.</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>Используйте --select-source FILE=PROJECT.</value></data>
+</root>

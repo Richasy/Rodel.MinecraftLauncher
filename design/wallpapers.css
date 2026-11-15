@@ -1,0 +1,101 @@
+/* Wallpaper review extends the approved material and theme roles. */
+.launcher { height: calc(100dvh - var(--prototype-chrome-height, 136px)); min-height: 560px; max-height: none; overflow: clip; }
+.wallpaper-settings { padding: 22px 0; border-bottom: 1px solid var(--tone-line, var(--edge-light)); }
+.wallpaper-heading { margin-bottom: 16px; }
+.wallpaper-heading h3 { font-size: 15px; font-weight: 500; margin: 0; }
+.wallpaper-heading p,.wallpaper-contrast-note,.wallpaper-selection-note { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 7px 0 0; }
+.wallpaper-slots { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.wallpaper-slot { min-width: 0; border: 1px solid var(--edge-light); background: var(--surface); }
+.wallpaper-slot > header { display: flex; align-items: center; justify-content: space-between; min-height: 39px; padding: 10px 12px; font-size: 12px; }
+.wallpaper-slot small { font-size: 11px; color: var(--muted); }
+.wallpaper-slot > img { width: 100%; height: auto; aspect-ratio:16 / 9; max-height:280px; object-fit:cover; display:block; }
+.wallpaper-slot-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; padding: 12px; }
+.wallpaper-slot-actions .small-button { min-width: 0; padding: 9px 6px; white-space: nowrap; }
+.wallpaper-modal { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 24px; background: #0c141819; }
+.wallpaper-dialog { width: min(840px,100%); max-height: 100%; min-height: 0; display: flex; flex-direction: column; }
+.wallpaper-dialog::after { display: none; }
+.wallpaper-dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-shrink: 0; padding: 20px 20px 16px; border-bottom: 1px solid var(--edge-light); }
+.wallpaper-dialog-header .pixel-label { color: var(--muted); }
+.wallpaper-dialog-header h2 { font-size: 23px; font-weight: 500; margin: 8px 0 0; }
+.wallpaper-dialog-header .close-button { width: 32px; height: 32px; display: grid; place-items: center; }
+.wallpaper-dialog-header svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.wallpaper-dialog-body { min-height: 0; overflow-y: auto; padding: 0; margin: 0 0 20px; scrollbar-width: thin; scrollbar-color: var(--quiet) transparent; scroll-padding: 8px; }
+.wallpaper-grid { padding: 0 20px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; }
+.wallpaper-tile { display: block; padding: 0; text-align: left; min-width: 0; border: 1px solid var(--edge-light); background: var(--surface); box-shadow: inset 0 1px var(--bevel-top),0 2px var(--shadow); }
+.wallpaper-tile > img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.wallpaper-tile > span { min-height: 45px; padding: 11px 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.wallpaper-tile strong { font-size: 13px; font-weight: 500; }
+.wallpaper-tile small { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.wallpaper-tile:hover { background: var(--surface-hover); }
+.wallpaper-tile[aria-pressed="true"] { background: var(--selected-face); color: var(--selected-ink); border-color: var(--selected-edge, var(--edge-dark)); box-shadow: inset 0 3px var(--bevel-bottom),inset 3px 0 var(--bevel-right),inset 0 -1px var(--bevel-top); }
+.wallpaper-tile[aria-pressed="true"] small { color: inherit; }
+.wallpaper-tile[aria-pressed="true"] > span { border-top: 2px solid var(--selected-edge, var(--edge-dark)); padding-top: 9px; }
+.wallpaper-tile:focus-visible { outline-offset: 3px; }
+.wallpaper-selection-note { margin-top: 17px; }
+:root[data-theme="contrast"] .wallpaper-slot { background: var(--surface); border-color: var(--edge-light); }
+:root[data-theme="contrast"] .wallpaper-contrast-note { margin: 0 0 14px; }
+:root[data-theme="contrast"] .wallpaper-slot-actions button { color: var(--quiet); border: 1px dashed var(--quiet); box-shadow: none; background: var(--surface); opacity: 1; }
+@media (max-width: 1000px) {
+  .wallpaper-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .wallpaper-slots { grid-template-columns: 1fr; }
+  .wallpaper-modal { padding: 12px; }
+  .wallpaper-dialog-header { padding: 20px 20px 16px; }
+  .wallpaper-dialog-body { padding: 0; }
+}
+
+.wallpaper-tile strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.launcher > .toast { z-index: 30; }
+/* Keep global scene gradients; no localized radial wash behind home text. */
+:root[data-theme] .launcher[data-page="home"] :where(.eyebrow,.hero h1,.hero-copy,.runtime span,.runtime b,.launch-caption) {
+  text-shadow: none; -webkit-text-stroke: 0 transparent;
+}
+:root[data-theme] .launcher[data-page="home"] [data-wallpaper-outline="true"] {
+  paint-order: stroke fill;
+  -webkit-text-stroke: var(--wallpaper-outline-width,.85px) rgba(var(--wallpaper-outline-rgb,0,0,0),var(--wallpaper-outline-alpha,.302));
+  text-shadow: 0 0 1px rgba(var(--wallpaper-outline-rgb,0,0,0),.18);
+}
+:root[data-theme] .launcher[data-page="home"] .hero h1 { --wallpaper-outline-width: 1.4px; }
+
+.wallpaper-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.wallpaper-header-actions .small-button { white-space: nowrap; min-height: 34px; padding: 7px 12px; }
+.wallpaper-context-menu { position: absolute; z-index: 2; min-width: 160px; padding: 4px; border: 1px solid var(--edge-light); background: var(--surface-solid,var(--surface)); box-shadow: 0 3px 8px var(--shadow); backdrop-filter: blur(24px); }
+.wallpaper-context-menu button { display: block; width: 100%; padding: 10px 12px; text-align: left; background: transparent; border: 0; box-shadow: none; color: var(--ink); font: inherit; font-size: 13px; }
+.wallpaper-context-menu button:hover,.wallpaper-context-menu button:focus-visible { background: var(--selected-face); color: var(--selected-ink); outline: 0; }
+.wallpaper-context-menu button:active { box-shadow: inset 1px 2px var(--bevel-bottom),inset -1px -1px var(--bevel-top); }
+.wallpaper-editor { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; padding: 20px; background: #0c141830; }
+.wallpaper-dialog[hidden] { display: none; }
+.wallpaper-rename { width: min(480px,100%); padding: 0; }
+.wallpaper-rename header { padding: 20px 24px 16px; border-bottom: 1px solid var(--edge-light); }
+.wallpaper-rename h2 { margin: 0; font-size: 19px; font-weight: 600; }
+.wallpaper-rename-body { padding: 20px 24px; }
+.wallpaper-rename label { display: block; font-size: 12px; color: var(--ink); margin-bottom: 8px; }
+.wallpaper-rename input { display: block; width: 100%; height: 40px; min-width: 0; padding: 0 12px; border: 1px solid var(--edge-light); border-radius: 0; background: var(--tone-inset,var(--surface)); color: var(--ink); font: inherit; font-size: 13px; line-height: 38px; }
+.wallpaper-rename footer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 24px 20px; border-top: 1px solid var(--edge-light); }
+.wallpaper-rename footer button { height: 40px; }
+:root[data-theme] .wallpaper-rename button.dialog-primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent-dark); box-shadow: inset 0 1px var(--accent-light),0 2px var(--accent-dark); }
+:root[data-theme] .wallpaper-rename button.dialog-primary:hover:not(:disabled) { background: var(--accent-hover); }
+:root[data-theme] .wallpaper-rename button.dialog-primary:active:not(:disabled) { background: var(--accent-dark); box-shadow: inset 0 2px var(--shadow); transform: none; }
+
+/* Full-scene review: keep every part of the wallpaper visible, including the foot. */
+:root[data-theme="light"] .launcher[data-page="home"] { --scene-ink: #27231c; --scene-shadow: rgba(255,253,245,.42); }
+:root[data-theme="dark"] .launcher[data-page="home"] { --scene-ink: #f6f2e8; --scene-shadow: rgba(5,14,18,.5); }
+:root[data-theme] .launcher[data-page="home"] .world { mask-image: none; -webkit-mask-image: none; }
+:root[data-theme="light"] .launcher[data-page="home"] .world-shade { background: linear-gradient(60deg,rgba(249,246,235,.62),rgba(249,246,235,.56) 24%,rgba(249,246,235,.24) 42%,transparent 56%); }
+:root[data-theme="dark"] .launcher[data-page="home"] .world-shade { background: linear-gradient(60deg,rgba(9,22,27,.68),rgba(9,22,27,.58) 32%,rgba(9,22,27,.25) 64%,rgba(9,22,27,.16)); }
+:root[data-theme] .launcher[data-page="home"] :is(.eyebrow,.hero h1,.hero-copy,.runtime span,.runtime b,.launch-caption) {
+  color: var(--scene-ink); text-shadow: 0 1px 1px var(--scene-shadow);
+}
+:root[data-theme] .launcher[data-page="home"] :is(.eyebrow,.hero-copy,.runtime,.launch-caption) { font-weight: 500; }
+:root[data-theme] .launcher[data-page="home"] :is(.runtime,.runtime span,.runtime b,.hero-copy) { color: color-mix(in srgb,var(--scene-ink) 76%,transparent); }
+:root[data-theme] .launcher[data-page="home"] :is(.eyebrow,.eyebrow .pixel-label,.launch-caption) { color: color-mix(in srgb,var(--scene-ink) 56%,transparent); }
+:root[data-theme="contrast"] .launcher[data-page="home"] :is(.eyebrow,.eyebrow .pixel-label,.runtime,.runtime span,.runtime b,.hero-copy,.launch-caption) { color: CanvasText; }
+
+/* A retained blurred copy blends into the untouched scene, before the tone layer. */
+:root[data-theme] .launcher[data-page="home"] .world::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: inherit; filter: blur(10px);
+  mask-image: linear-gradient(60deg,#000 0,#000 14%,#000000a6 28%,#00000033 42%,transparent 54%);
+  -webkit-mask-image: linear-gradient(60deg,#000 0,#000 14%,#000000a6 28%,#00000033 42%,transparent 54%);
+}

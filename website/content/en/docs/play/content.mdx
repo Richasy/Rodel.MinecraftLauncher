@@ -1,0 +1,132 @@
+---
+title: Install mods, resource packs and shaders
+description: Choose a target instance, check versions and dependencies, then add content.
+---
+
+## How the three types differ
+
+| Type          | Main purpose                                 | Also check                                           |
+| ------------- | -------------------------------------------- | ---------------------------------------------------- |
+| Mod           | Add features or change gameplay              | Game version, loader and dependencies                |
+| Resource pack | Replace textures, sounds and other resources | Select it; pack order affects the result             |
+| Shader pack   | Change lighting and rendering                | Needs a compatible shader engine and a selected pack |
+
+A mod that provides shader support is still a mod. Files sharing ZIP or JAR extensions are not interchangeable.
+
+<figure>
+  <img
+    src="/assets/en-content.webp"
+    alt="Content page with instance selection, installed mods and search"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>Check the current instance before adding content.</figcaption>
+</figure>
+
+## 1. Get the base game running first
+
+Prepare a matching game and loader. If a mod needs Fabric, Forge or another loader, prepare that version through the instance runtime actions. Dropping a mod into a vanilla instance does not automatically configure a loader.
+
+Launch once, back up important worlds, then exit before changing files.
+
+## 2. Search Modrinth
+
+Open **Content**, check the instance and search by name or keyword. The current online source is Modrinth. Search also finds installed local content.
+
+Read the project description and actual version candidates, checking Minecraft and loader versions. If no recommended match exists, do not pick the newest file at random.
+
+## 3. Review the complete install list
+
+After selecting a version, review the item, required dependencies and conflicts. Distinguish new content, reuse, enabling an existing file and replacing a tracked version before confirming.
+
+Do not remove required dependencies just to complete the list. Cancel and check the project instructions if compatibility is unclear.
+
+Watch actual progress. A batch may partly succeed; use the result to identify unfinished items.
+
+## Import or drop local files
+
+Choose **Add from files** and select one or more files in the system picker, or drop them onto the Content page. The review stays bound to the instance you started from; you do not enter paths again.
+
+Read each file's name, version and source. Remove unwanted items, resolve an ambiguous type if asked, then confirm. Source files remain; canceling the review does not install them.
+
+<figure>
+  <img
+    src="/assets/en-content-import.webp"
+    alt="File review with names, versions, source paths and individual removal actions"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Select the target instance before choosing files. Remove any mistaken
+    selections in the review.
+  </figcaption>
+</figure>
+
+A different file with the same name needs conflict handling. For an unrecognized pack, check its file format and supported game version before deciding whether to keep it.
+
+## Resource packs: select and reorder
+
+Switch to **Resource packs**, select the packs to use and adjust their order. Ordering determines which resource wins when packs change the same item. RMCL writes the selected instance's game configuration for its next launch.
+
+<figure>
+  <img
+    src="/assets/en-resourcepacks.webp"
+    alt="Resource-pack selection and ordering controls"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Change the selection to try another appearance without deleting the files.
+  </figcaption>
+</figure>
+
+## Shaders: choose an engine and a pack
+
+Switch to **Shader packs**, check the detected engine, then select one pack. Only one shader pack is selected at a time. Turning shaders off keeps their files. Install a matching Iris, OptiFine or other supported engine first if needed.
+
+<figure>
+  <img
+    src="/assets/en-shaders.webp"
+    alt="Shader engine and installed shader-pack selection"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Check installation, engine availability and pack selection separately.
+  </figcaption>
+</figure>
+
+## Temporarily disable a mod
+
+For troubleshooting, disable a clearly related mod first so it remains available to restore. Avoid changing many unrelated things at once.
+
+## Update content
+
+Check for updates from content actions, select items, review exact target versions and dependencies, then apply. Review again after changing the selection.
+
+Pinned items do not join normal updates automatically. Local sources, unidentified sources and failed checks are reported separately; they do not all mean “up to date.” CurseForge has no default online updates at present.
+
+## Remove and recover
+
+Check the instance and item before removal. Removed content is kept in the launcher's content recovery directory, with its location in operation details. Worlds and configuration are not deleted by that action.
+
+> [!WARNING]
+> A world may contain data from a removed mod. Back up before opening it without that mod, and read the game's missing-content warning. Saving the only copy with content missing may damage progress. Check version compatibility before restoring or enabling a mod.
+
+## Three included mods
+
+Open **Built-in mods** to install Rodel AI, World Reroll and Better Tools with their matching dependencies.
+
+Rodel AI adds in-game conversation, World Reroll provides a fresh singleplayer opening, and Better Tools stores equipment in an automatically switching Tool Cube. None requires Rodel UI, which is no longer bundled. See [built-in mods](/en/docs/play/built-in-mods) for installation, version combinations and existing installations.
+
+## Worlds and screenshots
+
+The same Content page also has **Worlds** and **Screenshots** categories. Read [World management](/en/docs/play/worlds) for save backup and recovery, or [Screenshot management](/en/docs/play/screenshots) for browsing, organizing and exporting images. Screenshots belong to the instance, not individual worlds.
+
+## If the game stops loading
+
+Keep the complete error, game and loader versions, and the recent change list. Follow [Launch problems](/en/docs/help/launch), or ask the [AI assistant](/en/docs/create/assistant) to explain the evidence first. Reinstalling everything is usually not the first step.

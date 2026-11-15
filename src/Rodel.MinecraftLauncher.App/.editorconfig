@@ -1,0 +1,17 @@
+# App-only layout rules; preserve the repository's other C# conventions.
+[*.cs]
+indent_style = space
+indent_size = 4
+# Keep qualified names and short calls intact; UI nesting is not a line-width budget.
+# dotnet format preserves authored expression/chain wrapping; "off" does not request collapsing.
+max_line_length = off
+csharp_preserve_single_line_blocks = true
+csharp_preserve_single_line_statements = true
+csharp_new_line_before_open_brace = all
+# Generated Sprout markup factories need imports that design-time analysis can miss.
+dotnet_diagnostic.IDE0005.severity = none
+
+[*.resw]
+indent_style = space
+indent_size = 2
+end_of_line = crlf

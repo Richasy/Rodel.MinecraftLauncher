@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "worldreroll_test",
+  "version": "1.0.0",
+  "name": "World Reroll isolated game tests",
+  "environment": "client",
+  "mixins": ["worldreroll-test.mixins.json"],
+  "entrypoints": {
+    "fabric-client-gametest": [
+      "dev.richasy.worldreroll.VillageSpawnGameTest",
+      "dev.richasy.worldreroll.FirstPartyMenusGameTest",
+      "dev.richasy.worldreroll.RerollPresentationGameTest",
+      "dev.richasy.worldreroll.CreationGameTest",
+      "dev.richasy.worldreroll.RerollGameTest"
+    ]
+  }
+}

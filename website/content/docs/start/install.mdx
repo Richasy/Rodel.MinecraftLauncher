@@ -1,0 +1,55 @@
+---
+title: 安装与准备
+description: 从 Microsoft Store 或 GitHub Release 安装 RMCL，再选择游戏数据位置。
+---
+
+## 安装 RMCL
+
+RMCL 是免费使用的 Minecraft Java 版启动器，可从 Microsoft Store 或 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载。
+
+<StoreBadge />
+
+1. 点击上方徽章，打开 RMCL 的 Microsoft Store 页面。
+2. 核对应用为 **Rodel Minecraft Launcher**，发布者为 **云之幻**，选择获取或安装。
+3. 商店会为设备选择适用架构；安装完成后，从开始菜单打开 RMCL。
+
+商店产品 ID 为 `9MW9ZMS2K47C`。安装遇到问题时，保留商店显示的完整提示，按[反馈与日志](/docs/help/feedback)提供系统版本和发生步骤。
+
+## EXE 安装包
+
+从 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载 `win-x64-setup.exe` 和对应 SHA256 文件。EXE 版适用于 x64，以当前用户身份安装，不需要商店、管理员权限或手动信任 MSIX 证书，且已包含 .NET 运行时。安装包未进行 Authenticode 签名，可先核对下载摘要。它与商店版分别保存应用偏好，游戏数据沿用所选 Core 数据根。
+
+## 更新 RMCL
+
+打开 Microsoft Store 中的 RMCL 页面，有新版本时选择更新。启用商店的应用自动更新后，新版也会由商店安装。EXE 版从 GitHub Release 下载新版并运行安装程序更新。游戏、模组和整合包的更新仍在启动器相应页面处理。
+
+## 电脑要求
+
+支持 **Windows 10 版本 2004（内部版本 19041）及以上**，支持 **x64 和 ARM64**。
+
+这是启动器的系统范围。Minecraft、Java、模组和光影还有各自的硬件与版本要求；启动器能打开，不代表任何大型整合包都能流畅运行。
+
+- 留出游戏、下载资源、世界和备份所需空间。导入已有游戏还需要完整副本的空间。
+- 首次准备游戏通常需要网络；已有本地内容可按实际情况继续使用。
+- 微软登录、第三方内容和 AI 是独立的可选能力，不必先配置 AI 才能管理游戏。
+
+## 选择游戏数据目录
+
+默认目录是用户文件夹中的 **.rmcl**，保存启动器管理的实例与相关数据。空间紧张时，可以在设置中选择其他磁盘。
+
+> [!WARNING]
+> **更改目录在重启后生效，不会自动迁移已有数据。** 已经有游戏时，应使用[导入已有游戏](/docs/play/import)复制迁入，确认可用后再处理旧副本。不要把数据目录设为会被自动清理的临时文件夹。
+
+## Java 要先装吗
+
+Minecraft 需要 Java，但第一次使用不必先研究参数。按创建实例的准备流程选择合适运行环境；已有 Java 也可以在[Java 与内存设置](/docs/create/settings#java-与内存)中添加、发现或管理。
+
+游戏版本不同，需要的 Java 可能不同。优先按实例的准备结果处理，不要为了新游戏把所有旧实例都切到同一份 Java。
+
+## 费用与源码
+
+RMCL 本身不收费。启动器自有代码采用 **[GNU AGPL v3（AGPL-3.0-only）](https://github.com/Richasy/Rodel.MinecraftLauncher/blob/main/LICENSE)** 开源；独立模块与第三方组件保留原许可证。 Minecraft 购买及可选模型服务费用由对应提供方收取。
+
+## 下一步
+
+继续[第一次启动游戏](/docs/start/first-launch)。已经有可玩的目录，走[迁移导入](/docs/play/import)；拿到包文件，走[导入整合包](/docs/play/modpacks)。

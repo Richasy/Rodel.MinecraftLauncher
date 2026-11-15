@@ -1,0 +1,1551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve">
+    <value>Microsoft oturum açmadan çevrimdışı oyuncu kimliği oluşturun.</value>
+  </data>
+  <data name="AccountListDescription" xml:space="preserve">
+    <value>Çevrimdışı kaydedilenleri ve kimlik bilgileri olmadan Microsoft oyuncu kimliklerini listeleyin.</value>
+  </data>
+  <data name="AccountRemoveDescription" xml:space="preserve">
+    <value>Kaydedilmiş herhangi bir çevrimdışı veya Microsoft hesabını kaldırın.</value>
+  </data>
+  <data name="ArgumentAddressDescription" xml:space="preserve">
+    <value>Sunucu adresi veya favori ID.</value>
+  </data>
+  <data name="ArgumentChangesDescription" xml:space="preserve">
+    <value>JSON Gerçek oyun ayar tuşlarının ve ham değerlerin nesnesi.</value>
+  </data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve">
+    <value>Çıkış yolu, adı veya yedek tanımlayıcısı.</value>
+  </data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve">
+    <value>Tanımlanacak komut yolu.</value>
+  </data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve">
+    <value>Kayıtlı örnek ID.</value>
+  </data>
+  <data name="ArgumentItemDescription" xml:space="preserve">
+    <value>İçerik dosyası, dünya klasörü, sürüm veya kurtarma tanımlayıcı.</value>
+  </data>
+  <data name="ArgumentItemsDescription" xml:space="preserve">
+    <value>Seçilen dosyalar veya kaynaklar.</value>
+  </data>
+  <data name="ArgumentKeyDescription" xml:space="preserve">
+    <value>Ayar tuşu; bilinmeyen anahtarlar desteklenmeye devam eder.</value>
+  </data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve">
+    <value>Kaydedilmiş oyun oturumu ID.</value>
+  </data>
+  <data name="ArgumentNameDescription" xml:space="preserve">
+    <value>Görünen ad; boşluklar tek bir argüman içinde kalır.</value>
+  </data>
+  <data name="ArgumentNamesDescription" xml:space="preserve">
+    <value>Sıralı resource-pack isimleri; boş ek paket yok seçeneğini seçer.</value>
+  </data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve">
+    <value>İsteğe bağlı ayar tuşu.</value>
+  </data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve">
+    <value>İsteğe bağlı arşiv veya hedef yolu.</value>
+  </data>
+  <data name="ArgumentTargetDescription" xml:space="preserve">
+    <value>Kaynak yolu, proje, çalışma zamanı veya işlem tanımlayıcısı.</value>
+  </data>
+  <data name="ArgumentValueDescription" xml:space="preserve">
+    <value>JSON değer veya değişmez dize.</value>
+  </data>
+  <data name="BackupCreateDescription" xml:space="preserve">
+    <value>Tam veya kapsamlı bir örnek yedeği oluşturun.</value>
+  </data>
+  <data name="BackupDeleteDescription" xml:space="preserve">
+    <value>Seçilen yedeği silin.</value>
+  </data>
+  <data name="BackupInspectDescription" xml:space="preserve">
+    <value>Bir yedeği ve kayıtlı içeriğini inceleyin.</value>
+  </data>
+  <data name="BackupListDescription" xml:space="preserve">
+    <value>Yedeklemeleri isteğe bağlı olarak örneğe göre filtrelenmiş olarak listeleyin.</value>
+  </data>
+  <data name="BackupRestoreDescription" xml:space="preserve">
+    <value>Bir yedeği orijinaline veya açıkça seçilmiş örneğine geri yükleyin.</value>
+  </data>
+  <data name="BackupRollbackDescription" xml:space="preserve">
+    <value>Kaydedilen yedekleme geri yüklemesini geri alın.</value>
+  </data>
+  <data name="ConfigurationGetDescription" xml:space="preserve">
+    <value>Bir anahtarı veya tüm etkin değerleri okuyun.</value>
+  </data>
+  <data name="ConfigurationSetDescription" xml:space="preserve">
+    <value>Geçerli olduğunda JSON'yi saklayın; aksi takdirde değişmez dizeyi saklayın. Yalnızca istenen anahtar değişir.</value>
+  </data>
+  <data name="ContentAddDescription" xml:space="preserve">
+    <value>İçerik ekleme; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve">
+    <value>İçerik analizi; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve">
+    <value>Daha önce dondurulmuş içerik incelemesini yalnızca son kullanıcı onayından sonra uygulayın.</value>
+  </data>
+  <data name="ContentDetachDescription" xml:space="preserve">
+    <value>İçerik ayrılması; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentDisableDescription" xml:space="preserve">
+    <value>İçerik devre dışı bırakma; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentEnableDescription" xml:space="preserve">
+    <value>İçerik etkinleştirme; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentIdentifyDescription" xml:space="preserve">
+    <value>İçerik tanımlama; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentInstallDescription" xml:space="preserve">
+    <value>İçerik yükleme; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentListDescription" xml:space="preserve">
+    <value>İçerik listesi; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentPinDescription" xml:space="preserve">
+    <value>İçerik pini; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentPolicyDescription" xml:space="preserve">
+    <value>İçerik politikası; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentProjectDescription" xml:space="preserve">
+    <value>Uzak proje meta verilerini okuyun.</value>
+  </data>
+  <data name="ContentRecoverDescription" xml:space="preserve">
+    <value>İçerik kurtarma; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentRemoveDescription" xml:space="preserve">
+    <value>İçerik kaldırma; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentRepairDescription" xml:space="preserve">
+    <value>Bir oturumdan tam bir bağımlılık onarımı planlayın veya dondurulmuş incelemesini açık onayla uygulayın.</value>
+  </data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve">
+    <value>Gerçek meta verileri kullanarak karışık yerel dosyaları inceleyin.</value>
+  </data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve">
+    <value>Kurulum yapmadan tam bir proje ve bağımlılık listesini inceleyin.</value>
+  </data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve">
+    <value>Devre dışı bırakılmış/sabitlenmiş politikaları koruyarak seçilen kök güncellemelerini ve gerekli bağımlılıkları dondurun; apply-review'dan önce inceleyin.</value>
+  </data>
+  <data name="ContentSearchDescription" xml:space="preserve">
+    <value>Bir örneğe ihtiyaç duymadan uzak içeriği arayın.</value>
+  </data>
+  <data name="ContentUnpinDescription" xml:space="preserve">
+    <value>İçeriğin sabitlemesini kaldır; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentUpdateDescription" xml:space="preserve">
+    <value>İçerik güncellemesi; ilgisiz dosyaları ve açık kullanıcı seçimlerini koruyun.</value>
+  </data>
+  <data name="ContentVersionsDescription" xml:space="preserve">
+    <value>Uzak proje sürümlerini okuyun.</value>
+  </data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve">
+    <value>--plan olmadan bir ZIP hedefi gereklidir.</value>
+  </data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve">
+    <value>Bu işlem, etkilerini inceledikten sonra --confirm gerektirir.</value>
+  </data>
+  <data name="ErrorContextLimit" xml:space="preserve">
+    <value>--limit 1'den 100'e kadar olmalıdır.</value>
+  </data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve">
+    <value>Tam olarak bir örnek belirtin, --session veya --report.</value>
+  </data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve">
+    <value>--directory gereklidir.</value>
+  </data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve">
+    <value>'{1}' altındaki '{0}' komutunu veya takma adını çoğaltın.</value>
+  </data>
+  <data name="ErrorDuplicateOption" xml:space="preserve">
+    <value>'{1}' üzerinde kopya seçeneği veya '{0}' takma adı.</value>
+  </data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve">
+    <value>Değişiklikler options.txt tuşlarının ve ham değerlerin nesnesi olmalıdır; null bir anahtarı kaldırır.</value>
+  </data>
+  <data name="ErrorHostStartFailed" xml:space="preserve">
+    <value>Arka plan ana bilgisayarı başlamadı.</value>
+  </data>
+  <data name="ErrorJobNotResumable" xml:space="preserve">
+    <value>Bu işlem zaten dosyalar veya bir oyun oturumu oluşturmuş olabilir. Bu işi ve etkilerini inceleyin, ardından gerekirse orijinal komutu açıkça tekrarlayın.</value>
+  </data>
+  <data name="ErrorLogStateConflict" xml:space="preserve">
+    <value>--state ve --state-file birbirini dışlar.</value>
+  </data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve">
+    <value>--minecraft VERSION gereklidir.</value>
+  </data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve">
+    <value>CLI komut isteği eksik.</value>
+  </data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve">
+    <value>--{0} negatif olmamalıdır.</value>
+  </data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve">
+    <value>'{0}' seçeneği '{1}' için bildirilmedi.</value>
+  </data>
+  <data name="ErrorOptionRange" xml:space="preserve">
+    <value>--{0} {1} ile {2} arasında olmalıdır.</value>
+  </data>
+  <data name="ErrorOptionRequired" xml:space="preserve">
+    <value>{0} gereklidir.</value>
+  </data>
+  <data name="ErrorOptionScalar" xml:space="preserve">
+    <value>'{0}' seçeneği skaler değerler gerektirir; Tekrarlanan jetonlar için Values kullanın.</value>
+  </data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve">
+    <value>Bağımlılık onarım incelemesinin uygulanması, son kullanıcı onayından sonra --confirm gerektirir.</value>
+  </data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve">
+    <value>İncelenen bir grubun uygulanması --plan, --session veya yeni sürüm seçimleriyle birleştirilemez.</value>
+  </data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve">
+    <value>--confirm önceden oluşturulmuş bir --review gerektirir.</value>
+  </data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve">
+    <value>--session bağımlılık onarımını planlamak için gereklidir.</value>
+  </data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve">
+    <value>Bir onarım planlamak için --session belirtin veya dondurulmuş toplu işlemi uygulamak için --confirm ile --review belirtin.</value>
+  </data>
+  <data name="ErrorSessionRequired" xml:space="preserve">
+    <value>Bir ID oturumu gereklidir.</value>
+  </data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve">
+    <value>Bu komut, bir başlatıcı işlemi değil, terminal ana bilgisayar giriş noktasıdır.</value>
+  </data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve">
+    <value>--arguments ve --arguments-file birbirini dışlar.</value>
+  </data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve">
+    <value>Bilinmeyen yardım konusu: {0}.</value>
+  </data>
+  <data name="ErrorUnknownOption" xml:space="preserve">
+    <value>Bilinmeyen seçenek: {0}. -- ile başlayan konumsal değerlerin önüne -- koyun.</value>
+  </data>
+  <data name="ErrorUnknownTool" xml:space="preserve">
+    <value>{0} adında bir araç yok</value>
+  </data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve">
+    <value>Desteklenmiyor CLI iş işlemi '{0}'.</value>
+  </data>
+  <data name="ErrorUpdateContext" xml:space="preserve">
+    <value>--update-context, current veya source'yi bekler.</value>
+  </data>
+  <data name="ErrorVersionRequired" xml:space="preserve">
+    <value>--version gereklidir.</value>
+  </data>
+  <data name="ErrorVersionSelection" xml:space="preserve">
+    <value>--select-version, PROJECT=VERSION'yi bekliyor.</value>
+  </data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve">
+    <value>Çıkıştan sonra bekleyen değişiklikleri uygula.</value>
+  </data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve">
+    <value>options.txt'yi değiştirmeden bekleyen değişiklikleri atın.</value>
+  </data>
+  <data name="GameSettingsGetDescription" xml:space="preserve">
+    <value>Gerçek oyun ayarlarını okuyun.</value>
+  </data>
+  <data name="GameSettingsSetDescription" xml:space="preserve">
+    <value>İstenen ham anahtarları değiştirin; JSON null bir anahtarı kaldırır.</value>
+  </data>
+  <data name="GroupAccountDescription" xml:space="preserve">
+    <value>Çevrimdışı ve Microsoft hesapları yönetin. Çevrimdışı kimlikler Microsoft oturum açmadan çalışır; Microsoft tarayıcıda oturum açmak, kullanıcı tarafından yapılandırılmış bir İstemci ID gerektirir.</value>
+  </data>
+  <data name="GroupBackupDescription" xml:space="preserve">
+    <value>Tam veya kapsamlı örnek yedeklemeleri oluşturun, inceleyin ve geri yükleyin.</value>
+  </data>
+  <data name="GroupCacheDescription" xml:space="preserve">
+    <value>Etkin önbellek kullanımını, dış kökleri, başvurulan bağımlılıkları ve bilinmeyen dosyaları koruyun.</value>
+  </data>
+  <data name="GroupConfigDescription" xml:space="preserve">
+    <value>Etkili ayarları ve kaynaklarını okuyun. Bilinmeyen ayar tuşları korunur.</value>
+  </data>
+  <data name="GroupContentDescription" xml:space="preserve">
+    <value>Yerel dosyaları ve Modrinth içeriği yönetin. Bilinmeyen yerel dosyaların kimliklendirilmesine gerek yoktur. CurseForge çevrimiçi, enjekte edilmiş bir sağlayıcı gerektirir; çevrimdışı paketler kullanılabilir durumda kalır.</value>
+  </data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve">
+    <value>İlgisiz satırları ve kodlamayı koruyarak gerçek options.txt ham değerlerini düzenleyin. Aktif oyunlar yazma işlemlerini erteler; Çakışma tespiti ile çıkıştan sonra uygulayın.</value>
+  </data>
+  <data name="GroupInstanceDescription" xml:space="preserve">
+    <value>Bağımsız oyun içeriğini ve paylaşılan çalışma zamanı bağımlılıklarını yönetin. Kaynağı değiştirmeden içeriğin tamamını kopyalayarak içe aktarır.</value>
+  </data>
+  <data name="GroupJavaDescription" xml:space="preserve">
+    <value>Java çalışma zamanlarını keşfedin, yönetin ve seçin.</value>
+  </data>
+  <data name="GroupJobDescription" xml:space="preserve">
+    <value>Kalıcı işlemler. İptal bir istektir; son durumu inceleyin. Yalnızca etkilerinin tekrarlanması güvenli olan işlemleri sürdürün.</value>
+  </data>
+  <data name="GroupLoaderDescription" xml:space="preserve">
+    <value>Bilinen yükleyici yükleyicilerini hazırlayın; manuel olarak yüklenen özel başlatma profilleri desteklenmeye devam eder.</value>
+  </data>
+  <data name="GroupMcpDescription" xml:space="preserve">
+    <value>MCP bağdaştırıcısı, CLI komut sözleşmesi üzerinden.</value>
+  </data>
+  <data name="GroupPackDescription" xml:space="preserve">
+    <value>Çevrimdışı mrpack/CurseForge ZIP içe aktarma ve çevrimiçi Modrinth paketleri. Eksik manuel dosyalar kurtarılabilir durumda kalır.</value>
+  </data>
+  <data name="GroupProcessDescription" xml:space="preserve">
+    <value>Oyun oturumlarını gözlemleyin. Bir oyunu durdurmak, başlatıcı işini iptal etmekten farklıdır.</value>
+  </data>
+  <data name="GroupResourcepackDescription" xml:space="preserve">
+    <value>Kurulu paketler ve seçilen sıra farklıdır. Yerleşik/izlenmeyen seçimleri, değiştirilmediği sürece koru; aktif oyun yazmaları ertelenir.</value>
+  </data>
+  <data name="GroupResultDescription" xml:space="preserve">
+    <value>Bir işlemi tekrarlamadan büyük boyutlu kaydedilen araç çıktısını okuyun; Sonuçlar yedi gün sonra sona erer.</value>
+  </data>
+  <data name="GroupRuntimeDescription" xml:space="preserve">
+    <value>Bir çalışma zamanı ayarları kaydını işlemeden önce dosyaları hazırlayın. Oyun içeriğini koruyun; uyumluluk tavsiyesi bir lansman kapısı değildir.</value>
+  </data>
+  <data name="GroupSelfDescription" xml:space="preserve">
+    <value>Başlatıcı sürümü ve isteğe bağlı güncelleme araması.</value>
+  </data>
+  <data name="GroupServerDescription" xml:space="preserve">
+    <value>Favorileri yönetin, Windows DNS/SRV çözümleyin ve canlı durumu sorgulayın.</value>
+  </data>
+  <data name="GroupToolsDescription" xml:space="preserve">
+    <value>Terminalden MCP araçlarını inceleyin ve çağırın.</value>
+  </data>
+  <data name="GroupVersionsDescription" xml:space="preserve">
+    <value>Minecraft versiyonlarını keşfedin.</value>
+  </data>
+  <data name="GroupWorldDescription" xml:space="preserve">
+    <value>Orijinal dünya kaynaklarını ve bilinmeyen dosyaları koruyun. Yerel kilitler güvenli olmayan yazma işlemlerini önler; yıkıcı işlemler kurtarılabilir yedekleri korur.</value>
+  </data>
+  <data name="HelpDescription" xml:space="preserve">
+    <value>Bir komutu, onu ayrıştıran aynı bildirimleri kullanarak tanımlayın.</value>
+  </data>
+  <data name="HelpEntryPoints" xml:space="preserve">
+    <value>Bir komutu detaylandırmak için help COMMAND SUBCOMMAND veya --help tuşlarını kullanın. Terminal ana bilgisayar girişleri execute tarafından çağrılamaz. Yapılandırılmış veri dizini execute argümanlarıyla değil, ana bilgisayar tarafından sabitlenir.</value>
+  </data>
+  <data name="HelpTaskLifetimes" xml:space="preserve">
+    <value>--background bu araç çağrısından sağ çıkar; job_cancel bir işi iptal eder, process_stop bir oyunu durdurur. Ayrı ömürleri var.</value>
+  </data>
+  <data name="HelpTokenBoundaries" xml:space="preserve">
+    <value>Her execute.arguments girişi bir token'dir. Yolları ve adları boşluklarla birlikte tek bir girişte tutun. option-like değerleri için --name=VALUE kullanın; koy -- komut yolu ve seçeneklerden sonra, option-like konum değerlerinden önce.</value>
+  </data>
+  <data name="HostingCallDescription" xml:space="preserve">
+    <value>JSON girişi yazılan adlandırılmış bir aracı çağırın.</value>
+  </data>
+  <data name="HostingJobHostDescription" xml:space="preserve">
+    <value>Dahili kalıcı iş yürütücüsü.</value>
+  </data>
+  <data name="HostingListDescription" xml:space="preserve">
+    <value>Paylaşılan MCP araç tanımlarını listeleyin.</value>
+  </data>
+  <data name="HostingServeDescription" xml:space="preserve">
+    <value>stdio yerine MCP servis yapın. stdout protokol için ayrılmıştır.</value>
+  </data>
+  <data name="HostingSessionHostDescription" xml:space="preserve">
+    <value>Dahili müstakil oyun oturumu monitörü.</value>
+  </data>
+  <data name="InformationResultReadDescription" xml:space="preserve">
+    <value>Tutulan bir sonuçtan JSON Pointer, nesne özellik sayfasını veya metin parçasını okuyun.</value>
+  </data>
+  <data name="InformationVersionsListDescription" xml:space="preserve">
+    <value>Önbelleğe alınmış veya uzaktan kullanılabilen Minecraft sürümlerini listeleyin.</value>
+  </data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve">
+    <value>Araçları ve execute tarafından kullanılan aynı komut tanımlarını keşfedin.</value>
+  </data>
+  <data name="InformationRootContextDescription" xml:space="preserve">
+    <value>Diğer bölümleri gizlemeden bölüm başına hataları koruyarak sınırlı bir genel bakış okuyun.</value>
+  </data>
+  <data name="InformationRootVersionDescription" xml:space="preserve">
+    <value>Başlatıcı oluşturma ve çalışma zamanı bilgileri.</value>
+  </data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve">
+    <value>Başlatıcı sürümlerini yüklemeden kontrol edin.</value>
+  </data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve">
+    <value>Başlatıcı oluşturma ve çalışma zamanı bilgileri.</value>
+  </data>
+  <data name="InstanceContentContextDescription" xml:space="preserve">
+    <value>Gerçek içerik uyumluluğu bağlamını okuyun.</value>
+  </data>
+  <data name="InstanceCopyDescription" xml:space="preserve">
+    <value>Kayıtlı bir örneğin bağımsız bir kopyasını oluşturun.</value>
+  </data>
+  <data name="InstanceCreateDescription" xml:space="preserve">
+    <value>Tam Minecraft sürümü için boş bir örnek oluşturun.</value>
+  </data>
+  <data name="InstanceImportDescription" xml:space="preserve">
+    <value>Kaynak örneğinin tamamını kopyalayın ve geçiş başarılı olduktan sonra kaydedin.</value>
+  </data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve">
+    <value>Bir örneği kaydetmeden veya kopyalamadan kaynak profillerini okuyun.</value>
+  </data>
+  <data name="InstanceListDescription" xml:space="preserve">
+    <value>Kayıtlı örnekleri listeleyin.</value>
+  </data>
+  <data name="InstanceMoveDescription" xml:space="preserve">
+    <value>Kayıtlı bir örneği istenen dizine taşıyın.</value>
+  </data>
+  <data name="InstancePrepareDescription" xml:space="preserve">
+    <value>Taşınan çalışma zamanı bileşenlerini hazırlayın.</value>
+  </data>
+  <data name="InstanceRelinkDescription" xml:space="preserve">
+    <value>Mevcut bir örneğin oyun dizini referansını güncelleyin.</value>
+  </data>
+  <data name="InstanceRemoveDescription" xml:space="preserve">
+    <value>Örneği ve yedeklerini kaldır; açıkça istenmedikçe oyun dosyalarını koru.</value>
+  </data>
+  <data name="InstanceRenameDescription" xml:space="preserve">
+    <value>Bir örneğin görünen adını, dosyalarını taşımadan değiştirin.</value>
+  </data>
+  <data name="InstanceShowDescription" xml:space="preserve">
+    <value>Kayıtlı bir örneği okuyun.</value>
+  </data>
+  <data name="JavaAvailableDescription" xml:space="preserve">
+    <value>Mevcut yönetilen Java çalışma zamanı sürümlerini listeleyin.</value>
+  </data>
+  <data name="JavaImportDescription" xml:space="preserve">
+    <value>Mevcut bir Java çalışma zamanını başlatıcı yönetimine aktarın.</value>
+  </data>
+  <data name="JavaInstallDescription" xml:space="preserve">
+    <value>Yönetilen bir Java çalışma zamanını indirip yükleyin.</value>
+  </data>
+  <data name="JavaListDescription" xml:space="preserve">
+    <value>Açıkça sağlanan bir yol da dahil olmak üzere Java çalışma zamanlarını keşfedin.</value>
+  </data>
+  <data name="JavaManagedDescription" xml:space="preserve">
+    <value>Başlatıcı tarafından yönetilen Java çalışma zamanlarını listeleyin.</value>
+  </data>
+  <data name="JavaRemoveDescription" xml:space="preserve">
+    <value>Referans verilmeyen bir yönetilen Java çalışma zamanını kalıcı olarak silin veya dosyalarını silmeden harici Java'nin kaydını silin.</value>
+  </data>
+  <data name="JavaSelectDescription" xml:space="preserve">
+    <value>Genel ayarlar veya belirtilen örnek için Java öğesini seçin.</value>
+  </data>
+  <data name="JobCancelDescription" xml:space="preserve">
+    <value>İşin iptalini isteyin; son durumunu ayrı ayrı inceleyin.</value>
+  </data>
+  <data name="JobListDescription" xml:space="preserve">
+    <value>Kalıcı başlatıcı işlerini ve kayıtlı durumlarını listeleyin.</value>
+  </data>
+  <data name="JobResumeDescription" xml:space="preserve">
+    <value>Kesintiye uğrayan veya başarısız olan bir işi yalnızca tekrarlanması güvenli olduğunda devam ettirin.</value>
+  </data>
+  <data name="JobShowDescription" xml:space="preserve">
+    <value>Devam eden bir işin durumunu, ilerlemesini ve sonucunu okuyun.</value>
+  </data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve">
+    <value>Örnek için gerekli Minecraft dosyalarını hazırlayın; oyunu başlatmıyor.</value>
+  </data>
+  <data name="LaunchLaunchDescription" xml:space="preserve">
+    <value>Bir oyun başlatın veya salt okunur bir planı iade edin. Bir süreci başlatmak, oyunun oynandığının kanıtı değildir. Oyunun ömrü model bağlantısından bağımsızdır.</value>
+  </data>
+  <data name="LoaderInstallDescription" xml:space="preserve">
+    <value>Oyun içeriğini değiştirmeden bir yükleyici yükleyin.</value>
+  </data>
+  <data name="LoaderListDescription" xml:space="preserve">
+    <value>Temel Minecraft sürümü için yükleyici sürümlerini listeleyin.</value>
+  </data>
+  <data name="LogBundleDescription" xml:space="preserve">
+    <value>Bir tanılama paketini dışa aktarın veya --plan ile dahil edilen dosyaları inceleyin.</value>
+  </data>
+  <data name="LogEventsDescription" xml:space="preserve">
+    <value>Ayrıştırılmış günlük olaylarını okuyun. Geçiş parserState değerini döndürdü ve akış sonraki bitişik okumaya kaydırıldı.</value>
+  </data>
+  <data name="LogExportDescription" xml:space="preserve">
+    <value>Mevcut konsol penceresini veya kayıtlı kilitlenme anlık görüntüsünü, kesme ayrıntıları da dahil olmak üzere dışa aktarın.</value>
+  </data>
+  <data name="LogLogsDescription" xml:space="preserve">
+    <value>Canlı konsol penceresini veya kayıtlı kilitlenme anlık görüntüsünü okuyun. Devam etmek için her akışın nextOffset tuşunu kullanın; çıkarılan önekler rapor edilir.</value>
+  </data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve">
+    <value>Bir örneği, kayıtlı oturumu veya kilitlenme raporunu analiz edin; bulgular kanıt ve öneridir, temel nedenin kanıtı değildir.</value>
+  </data>
+  <data name="MaintenancePruneDescription" xml:space="preserve">
+    <value>Uygulama sırasında ıslah kurallarını yeniden değerlendirin; --plan dosyaları değiştirmez.</value>
+  </data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve">
+    <value>Önbellek kullanımını okuyun.</value>
+  </data>
+  <data name="OptionAccountDescription" xml:space="preserve">
+    <value>Çevrimdışı kaydedilmiş veya Microsoft kimlik ID; örneği/genel seçimi devralmayı ihmal edin.</value>
+  </data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve">
+    <value>İçerik tanımlama karması.</value>
+  </data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve">
+    <value>Talep edilen uyumsuz kaynak paketlerinin açık kabulünü kaydedin.</value>
+  </data>
+  <data name="OptionArchitectureDescription" xml:space="preserve">
+    <value>Çalışma zamanı mimarisi.</value>
+  </data>
+  <data name="OptionArgumentsDescription" xml:space="preserve">
+    <value>Takım girişi JSON; varsayılan olarak {}'dır.</value>
+  </data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve">
+    <value>Araç girişini içeren dosya JSON.</value>
+  </data>
+  <data name="OptionAttachDescription" xml:space="preserve">
+    <value>Doğrulanmış platform takibini yerel bir dosyaya ekleyin.</value>
+  </data>
+  <data name="OptionBackgroundDescription" xml:space="preserve">
+    <value>Kalıcı bir job'yi sıraya koy; job show'yi terminal sonucu açısından inceleyin.</value>
+  </data>
+  <data name="OptionBytesDescription" xml:space="preserve">
+    <value>Ham günlük bayt bütçesi, 8'den 1048576'ya kadar.</value>
+  </data>
+  <data name="OptionChannelDescription" xml:space="preserve">
+    <value>İzin verilen güncelleme kanalı.</value>
+  </data>
+  <data name="OptionCharactersDescription" xml:space="preserve">
+    <value>Kaydedilen JSON metin öbeği boyutu, 256 ila 8000.</value>
+  </data>
+  <data name="OptionConfirmDescription" xml:space="preserve">
+    <value>İncelenen işlemi ve etkilerini onaylayın.</value>
+  </data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve">
+    <value>Çalışma zamanı hazırlığını atlayın.</value>
+  </data>
+  <data name="OptionContentVersionDescription" xml:space="preserve">
+    <value>Tam platform içeriği sürümü ID.</value>
+  </data>
+  <data name="OptionCopyDescription" xml:space="preserve">
+    <value>Kaynak içeriğinin tamamını kopyalayın; asla kaynağı çıkarmayın.</value>
+  </data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve">
+    <value>Başlatıcı veri dizini; varsayılan olarak kullanıcının .rmcl dosyasıdır.</value>
+  </data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve">
+    <value>Ayrıca örneğin sahip olduğu oyun dosyalarını da kaldırın.</value>
+  </data>
+  <data name="OptionDirectoryDescription" xml:space="preserve">
+    <value>Kaynak dizini.</value>
+  </data>
+  <data name="OptionEncodingDescription" xml:space="preserve">
+    <value>BOM-less eski dosyalar için kodlama adı.</value>
+  </data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve">
+    <value>NAME=VALUE bir değişkeni geçersiz kılar; NAME onu kaldırır. Birden çok değişken için tekrarlayın.</value>
+  </data>
+  <data name="OptionEventsDescription" xml:space="preserve">
+    <value>İlerleme olaylarını stderr'a yazın.</value>
+  </data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve">
+    <value>Hariç tutulacak isteğe bağlı göreli yol; birden fazla dosya için tekrarlayın.</value>
+  </data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve">
+    <value>Okuma/planlama sonucundan beklenen dosya parmak izi.</value>
+  </data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve">
+    <value>Beklenen içerik kilidi parmak izi; eksik, kilidin olmadığını gösterir.</value>
+  </data>
+  <data name="OptionForceDescription" xml:space="preserve">
+    <value>Kaydedilen süreç ağacını açıkça sonlandırın.</value>
+  </data>
+  <data name="OptionFormatDescription" xml:space="preserve">
+    <value>Paketi dışa aktarma formatı.</value>
+  </data>
+  <data name="OptionFullscreenDescription" xml:space="preserve">
+    <value>Tam ekranı geçersiz kılma; ayarları devralmayı atlayın.</value>
+  </data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve">
+    <value>Ek oyun argümanı; option-like değerleri için --game-arg=--TOKEN kullanın.</value>
+  </data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve">
+    <value>Açık oyun içeriği dizini.</value>
+  </data>
+  <data name="OptionHeightDescription" xml:space="preserve">
+    <value>Oyun penceresi yüksekliği.</value>
+  </data>
+  <data name="OptionIdDescription" xml:space="preserve">
+    <value>Açık yönetilen çalışma zamanı veya favori ID.</value>
+  </data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve">
+    <value>Normalde tekrar indirilebilecek dosyaları ekleyin.</value>
+  </data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve">
+    <value>İzlenmeyen yerel modları dışa aktarmaya dahil edin.</value>
+  </data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve">
+    <value>Eklenecek isteğe bağlı göreceli yol; birden fazla dosya için tekrarlayın.</value>
+  </data>
+  <data name="OptionIndexDescription" xml:space="preserve">
+    <value>Arama sıralaması.</value>
+  </data>
+  <data name="OptionInstanceDescription" xml:space="preserve">
+    <value>Örnek ID; küresel kapsam için ihmal edin.</value>
+  </data>
+  <data name="OptionJavaDescription" xml:space="preserve">
+    <value>Açık Java çalıştırılabilir veya ana sayfa.</value>
+  </data>
+  <data name="OptionJsonDescription" xml:space="preserve">
+    <value>Kompakt JSON yazın.</value>
+  </data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve">
+    <value>Ek JVM argümanı; seçeneği her token için tekrarlayın.</value>
+  </data>
+  <data name="OptionKindDescription" xml:space="preserve">
+    <value>İçerik dizini türü; varsayılan olarak mods'dir.</value>
+  </data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve">
+    <value>Kaynak başlatıcı yapılandırması.</value>
+  </data>
+  <data name="OptionLevelDescription" xml:space="preserve">
+    <value>İsteğe bağlı log-events seviye filtresi.</value>
+  </data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve">
+    <value>Kütüphane ayna tabanı URL; birden fazla ayna için tekrarlayın.</value>
+  </data>
+  <data name="OptionLimitDescription" xml:space="preserve">
+    <value>Sayfa veya bölüm boyutu, 1'den 100'e kadar.</value>
+  </data>
+  <data name="OptionLoaderDescription" xml:space="preserve">
+    <value>Yükleyici tanımlayıcı; özel değerlere izin verilmeye devam edilir. none vanilyayı seçer.</value>
+  </data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve">
+    <value>Tam yükleyici sürümü.</value>
+  </data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve">
+    <value>stdout/stderr encoding; file.encoding değişmez.
+Kaydedilmiş bir sonuçta</value>
+  </data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve">
+    <value>Bilinen eski günlük kaydı uyumluluğunu geçersiz kılma.</value>
+  </data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve">
+    <value>Manuel olarak indirilen paket dosyalarını içeren dizin.</value>
+  </data>
+  <data name="OptionMemoryDescription" xml:space="preserve">
+    <value>MiB'de maksimum Java yığın.</value>
+  </data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve">
+    <value>Bellek seçim politikası.</value>
+  </data>
+  <data name="OptionMigrateDescription" xml:space="preserve">
+    <value>Kaynak başlatıcı meta verilerini çevirin.</value>
+  </data>
+  <data name="OptionMinecraftDescription" xml:space="preserve">
+    <value>Temel Minecraft uyumluluk sürümü, yükleyici profili değil ID.</value>
+  </data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve">
+    <value>Paylaşılan Minecraft çalışma zamanı dizini.</value>
+  </data>
+  <data name="OptionNameDescription" xml:space="preserve">
+    <value>Görüntü adı veya hedef klasör.</value>
+  </data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve">
+    <value>Bağımlılık yönetimini kullanıcıya bırakın.</value>
+  </data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve">
+    <value>Etkileşimli istemler olmadan çalıştırın.</value>
+  </data>
+  <data name="OptionOfflineDescription" xml:space="preserve">
+    <value>Otomatik indirmeler yerine yerel dosyaları kullanın.</value>
+  </data>
+  <data name="OptionOffsetDescription" xml:space="preserve">
+    <value>Sıfır tabanlı arama, dizi veya metin ofseti.</value>
+  </data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve">
+    <value>Gün cinsinden önbellek minimum yaşı; varsayılan olarak 30'dur.</value>
+  </data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve">
+    <value>Açık isteğe bağlı dosya politikası; seçimleri korumayı ihmal edin.</value>
+  </data>
+  <data name="OptionOverwriteDescription" xml:space="preserve">
+    <value>Çakışmalara rağmen istenen oyun ayarı değerlerini açıkça uygulayın.</value>
+  </data>
+  <data name="OptionPackVersionDescription" xml:space="preserve">
+    <value>Tam çevrimiçi paket sürümü ID.</value>
+  </data>
+  <data name="OptionPlanDescription" xml:space="preserve">
+    <value>Salt okunur plan; değişiklikleri uygulamayın.</value>
+  </data>
+  <data name="OptionPlatformDescription" xml:space="preserve">
+    <value>İçerik platformu; varsayılan olarak modrinth'tir. Varsayılan CurseForge çevrimiçi destek mevcut değil.</value>
+  </data>
+  <data name="OptionPlayerDescription" xml:space="preserve">
+    <value>Çevrimdışı oyuncu adı.</value>
+  </data>
+  <data name="OptionPointerDescription" xml:space="preserve">
+    <value>RFC 6901 JSON Pointer.</value>
+  </data>
+  <data name="OptionProfileDescription" xml:space="preserve">
+    <value>Tam kaynak başlatıcı profili ID.</value>
+  </data>
+  <data name="OptionProjectDescription" xml:space="preserve">
+    <value>Çevrimiçi paket projesi ID.</value>
+  </data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve">
+    <value>Bir nesnenin property-name listesindeki sıfır tabanlı ofset.</value>
+  </data>
+  <data name="OptionRedactDescription" xml:space="preserve">
+    <value>Tanılama paketinden ortak kimlik bilgilerinin kaldırılması için en iyi çabayı gösterin; varsayılanlar true.</value>
+  </data>
+  <data name="OptionReplaceDescription" xml:space="preserve">
+    <value>resource-pack seçiminin tamamını değiştirin.</value>
+  </data>
+  <data name="OptionReportDescription" xml:space="preserve">
+    <value>Yerel Minecraft veya JVM kilitlenme raporu yolu.</value>
+  </data>
+  <data name="OptionReviewDescription" xml:space="preserve">
+    <value>Daha önce dondurulmuş bağımlılık onarımı incelemesi ID.</value>
+  </data>
+  <data name="OptionScopeDescription" xml:space="preserve">
+    <value>Yedekleme kapsamı.</value>
+  </data>
+  <data name="OptionServerDescription" xml:space="preserve">
+    <value>Çok oyunculu adres veya favori.</value>
+  </data>
+  <data name="OptionSessionDescription" xml:space="preserve">
+    <value>Kaydedilmiş oyun oturumu ID.</value>
+  </data>
+  <data name="OptionStateDescription" xml:space="preserve">
+    <value>Ayrıştırıcı durumu JSON önceki bitişik log-events okumasından.</value>
+  </data>
+  <data name="OptionStateFileDescription" xml:space="preserve">
+    <value>log-events ayrıştırıcı durumunu içeren dosya.</value>
+  </data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve">
+    <value>Mutlak tutulan stderr bayt ofseti.</value>
+  </data>
+  <data name="OptionStdioDescription" xml:space="preserve">
+    <value>Standart giriş/çıkış üzerinden MCP servis yapın.</value>
+  </data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve">
+    <value>Mutlak tutulan stdout bayt ofseti.</value>
+  </data>
+  <data name="OptionTailDescription" xml:space="preserve">
+    <value>Bayt imleci sağlanmadığında maksimum günlük kuyruk satırları.</value>
+  </data>
+  <data name="OptionTimeoutDescription" xml:space="preserve">
+    <value>Milisaniye cinsinden ağ zaman aşımı; varsayılan olarak 5000'dir.</value>
+  </data>
+  <data name="OptionToolDescription" xml:space="preserve">
+    <value>Tam araç adı.</value>
+  </data>
+  <data name="OptionTopicDescription" xml:space="preserve">
+    <value>CLI komut yardım konusu.</value>
+  </data>
+  <data name="OptionTypeDescription" xml:space="preserve">
+    <value>İçerik arama kategorisi; varsayılan olarak all'dir.</value>
+  </data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve">
+    <value>Aday uyumluluk bağlamı; örneğin çalışma zamanını değiştirmez.</value>
+  </data>
+  <data name="OptionVerifyDescription" xml:space="preserve">
+    <value>Yüklü dosya karmalarını doğrulayın.</value>
+  </data>
+  <data name="OptionVersionDescription" xml:space="preserve">
+    <value>Minecraft sürümü veya yerel/özel başlatma profili ID.</value>
+  </data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve">
+    <value>PROJECT=VERSION kesin seçim; kök ve bağımlılık projeleri için tekrarlayın.</value>
+  </data>
+  <data name="OptionWaitDescription" xml:space="preserve">
+    <value>Oyunun çıkmasını bekleyin; iptal oyunu durdurmaz.</value>
+  </data>
+  <data name="OptionWidthDescription" xml:space="preserve">
+    <value>Oyun penceresi genişliği.</value>
+  </data>
+  <data name="OptionWorldDescription" xml:space="preserve">
+    <value>Dünya klasörü veya hızlı oynatma hedefi.</value>
+  </data>
+  <data name="PackApplyDescription" xml:space="preserve">
+    <value>Tutulan paket güncelleme incelemesini tam olarak uygulayın.</value>
+  </data>
+  <data name="PackCompleteDescription" xml:space="preserve">
+    <value>Manuel olarak indirilen dosyalar da dahil olmak üzere eksik paket dosyalarını tamamlayın.</value>
+  </data>
+  <data name="PackExportDescription" xml:space="preserve">
+    <value>Bir örneği mrpack veya CurseForge ZIP olarak dışa aktarın.</value>
+  </data>
+  <data name="PackImportDescription" xml:space="preserve">
+    <value>Seçilen isteğe bağlı dosyalarla bir mrpack veya CurseForge ZIP'yi içe aktarın.</value>
+  </data>
+  <data name="PackInspectDescription" xml:space="preserve">
+    <value>Bir örnek oluşturmadan yerel paket arşivini inceleyin.</value>
+  </data>
+  <data name="PackInstallDescription" xml:space="preserve">
+    <value>Çevrimiçi bir Modrinth paketi yükleyin; isteğe bağlı dosyalar açık seçim politikasını izler.</value>
+  </data>
+  <data name="PackPrepareDescription" xml:space="preserve">
+    <value>Tutulan bir paketi tamamlayın ve çalışma süresini otomatik olarak hazırlayın ve Java; yalnızca içerik ve çevrimdışı modlar açık kapsamlarını korur.</value>
+  </data>
+  <data name="PackReviewDescription" xml:space="preserve">
+    <value>Arşiv güncelleme incelemesini dondurun; apply korunan tam işlemi kullanır.</value>
+  </data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve">
+    <value>Açıkça değiştirilmediği sürece kayıtlı isteğe bağlı seçenekleri koruyarak çevrimiçi paket güncelleme incelemesini dondurun.</value>
+  </data>
+  <data name="PackRollbackDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir paketleme işlemini geri alın.</value>
+  </data>
+  <data name="PackUpdateDescription" xml:space="preserve">
+    <value>Açıkça değiştirilmediği sürece kayıtlı isteğe bağlı seçenekleri koruyarak bir arşivden paketi güncelleyin.</value>
+  </data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve">
+    <value>Açıkça değiştirilmediği sürece kayıtlı isteğe bağlı seçenekleri koruyarak bir paketi çevrimiçi kaynağından güncelleyin.</value>
+  </data>
+  <data name="ResourcePackListDescription" xml:space="preserve">
+    <value>Kurulu ve seçilen paketleri listeleyin.</value>
+  </data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve">
+    <value>Sipariş edilen paket adlarını ayarlayın; boş bir liste ek paket seçmez.</value>
+  </data>
+  <data name="OptionLanguageDescription" xml:space="preserve">
+    <value>Başlatıcının arayüz dili; RODEL_CLI_LANGUAGE ve sistem dilinden önceliklidir.</value>
+  </data>
+  <data name="RootDescription" xml:space="preserve">
+    <value>Windows Minecraft Java başlatıcısı. CLI → Core; MCP araçları bu komut ağacını yeniden kullanır.</value>
+  </data>
+  <data name="RuntimeChangeDescription" xml:space="preserve">
+    <value>Örnek ayarlarını gerçekleştirmeden önce istenen çalışma zamanı bileşenlerini hazırlayın.</value>
+  </data>
+  <data name="RuntimeOperationDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir örnek çalışma zamanı işlemini inceleyin.</value>
+  </data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve">
+    <value>Bir örnek için kaydedilen çalışma zamanı değişikliklerini listeleyin.</value>
+  </data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve">
+    <value>Bir vanilya çalışma zamanı hazırlayın ve örneğin yükleyici seçimini kaldırın.</value>
+  </data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir örnek çalışma zamanı değişikliğini geri alın.</value>
+  </data>
+  <data name="RuntimeShowDescription" xml:space="preserve">
+    <value>Bir örneğin etkili Minecraft, yükleyicisini ve Java çalışma zamanını okuyun.</value>
+  </data>
+  <data name="ServerAddDescription" xml:space="preserve">
+    <value>Adlandırılmış bir sunucu favorisi ekleyin veya güncelleyin.</value>
+  </data>
+  <data name="ServerConnectDescription" xml:space="preserve">
+    <value>Tercih edilen veya atlandığında yalnızca ilişkili instance'yi kullanarak ADDRESS_OR_FAVORITE [--instance ID]'yi bağlayın. INSTANCE ADDRESS desteklenmeye devam eder. Arka plan işleri, kuyruğa alınmadan önce somut hedefi ve kimliği dondurur.</value>
+  </data>
+  <data name="ServerListDescription" xml:space="preserve">
+    <value>Kaydedilmiş sunucu favorilerini listeleyin.</value>
+  </data>
+  <data name="ServerRemoveDescription" xml:space="preserve">
+    <value>Oyun verilerini değiştirmeden bir sunucu favorisini kaldırın.</value>
+  </data>
+  <data name="ServerResolveDescription" xml:space="preserve">
+    <value>Windows DNS ve SRV kayıtlarını kullanarak bir sunucu adresini çözümleyin.</value>
+  </data>
+  <data name="ServerStatusDescription" xml:space="preserve">
+    <value>Bir sunucunun canlı Minecraft durumunu sorgulayın.</value>
+  </data>
+  <data name="SessionListDescription" xml:space="preserve">
+    <value>Kaydedilen oyun oturumlarını ve gözlemlenen durumlarını listeleyin.</value>
+  </data>
+  <data name="SessionShowDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir oyun oturumunu ve gözlemlenen durumunu okuyun.</value>
+  </data>
+  <data name="SessionStopDescription" xml:space="preserve">
+    <value>Sistem menüsünün kapatılmasını talep edin; --force kaydedilen süreç ağacını sonlandırır. Çıkışı gözlemlemek için show'i okuyun.</value>
+  </data>
+  <data name="WorldBackupDescription" xml:space="preserve">
+    <value>Dünya yedekleme.</value>
+  </data>
+  <data name="WorldBackupsDescription" xml:space="preserve">
+    <value>Dünya yedeklemeleri.</value>
+  </data>
+  <data name="WorldCompressDescription" xml:space="preserve">
+    <value>Dünya sıkıştırması.</value>
+  </data>
+  <data name="WorldDirectoryDescription" xml:space="preserve">
+    <value>Dünya dizini.</value>
+  </data>
+  <data name="WorldExportDescription" xml:space="preserve">
+    <value>Dünya ihracatı.</value>
+  </data>
+  <data name="WorldImportDescription" xml:space="preserve">
+    <value>Dünya ithalatı.</value>
+  </data>
+  <data name="WorldListDescription" xml:space="preserve">
+    <value>Dünya listesi.</value>
+  </data>
+  <data name="WorldRecoverDescription" xml:space="preserve">
+    <value>Dünya düzeliyor.</value>
+  </data>
+  <data name="WorldRecoveryDescription" xml:space="preserve">
+    <value>Dünyanın iyileşmesi.</value>
+  </data>
+  <data name="WorldRemoveDescription" xml:space="preserve">
+    <value>Dünya kaldır.</value>
+  </data>
+  <data name="WorldRestoreDescription" xml:space="preserve">
+    <value>Dünyayı geri yükleme.</value>
+  </data>
+  <data name="OptionServerAddressDescription" xml:space="preserve">
+    <value>Favorileri yorumlamadan somut bir çok oyunculu adresi kullanın; --server'ye göre önceliklidir.</value>
+  </data>
+  <data name="OptionPreferredDescription" xml:space="preserve">
+    <value>Bu ilişkili örneği favori sunucunun tercih edilen örneği yapın.</value>
+  </data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve">
+    <value>Sağlanan ilişkilerden tercih edilen örnek tanımlayıcı.</value>
+  </data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve">
+    <value>Ön plan Microsoft oturum açma yöntemi: browser (varsayılan) veya device-code.</value>
+  </data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve">
+    <value>İlk argüman açık bir örnek olduğunda isteğe bağlı adres veya favori.</value>
+  </data>
+  <data name="AccountCurrentDescription" xml:space="preserve">
+    <value>Mevcut kayıtlı kimlik seçimini okuyun.</value>
+  </data>
+  <data name="AccountSelectDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir çevrimdışı veya Microsoft kimliğini seçin.</value>
+  </data>
+  <data name="AccountClearDescription" xml:space="preserve">
+    <value>Kaydedilmiş mevcut kimlik seçimini temizleyin.</value>
+  </data>
+  <data name="AccountLoginDescription" xml:space="preserve">
+    <value>Yapılandırılmış bir yerel istemci ID kullanarak ön planda Microsoft'de oturum açın; hiçbir istemci ID paketlenmemiştir.</value>
+  </data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve">
+    <value>Korunan yerel bekleyen kimlik bilgilerini kullanarak tamamlanmamış bir Microsoft oturum açma işlemini sürdürün.</value>
+  </data>
+  <data name="AccountRefreshDescription" xml:space="preserve">
+    <value>Kaydedilmiş çevrimiçi kimliği ön planda yenileyin.</value>
+  </data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve">
+    <value>Microsoft oturum açmak kullanıcı etkileşimi gerektirir.</value>
+  </data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve">
+    <value>Ön plan yetkilendirme istemini görüntülemek için account login --method device-code --events öğesini kullanın.</value>
+  </data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve">
+    <value>Hesap işlemleri ön planda yürütülür, böylece kimlik bilgileri ve yetkilendirme istemleri iş olarak kalıcı olmaz.</value>
+  </data>
+  <data name="ServerShowDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir sunucu favorisini ve onun örnek ilişkilerini okuyun.</value>
+  </data>
+  <data name="ServerBindDescription" xml:space="preserve">
+    <value>Mevcut bir örneği kayıtlı bir sunucu favorisiyle ilişkilendirin.</value>
+  </data>
+  <data name="ServerUnbindDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir sunucu favorisinden bir örnek ilişkisini kaldırın.</value>
+  </data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve">
+    <value>Kaydedilmiş bir sunucu favorisinin ilişkili örneklerini değiştirin; boş bir liste tüm ilişkileri temizler.</value>
+  </data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve">
+    <value>Bir oyun oturumu için kayıtlı sunucu bağlantısı kanıtlarını okuyun.</value>
+  </data>
+  <data name="OptionNoServerDescription" xml:space="preserve">
+    <value>Örneğin sahibi olan sunucuyu devralmadan başlatın; açık sunucu argümanları hâlâ önceliklidir.</value>
+  </data>
+  <data name="OptionDedicatedDescription" xml:space="preserve">
+    <value>Bu örneği, dosyalarını kopyalamadan, seçilen sunucuya ait özel bir istemci yapın.</value>
+  </data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve">
+    <value>Yeni içe aktarılan bir paketi bu sunucu favorisinin özel istemcisi olarak kaydedin.</value>
+  </data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve">
+    <value>Dosyaları taşımadan veya silmeden, özel bir istemciyi sıradan yerel yönetime döndürün.</value>
+  </data>
+  <data name="PackCheckDescription" xml:space="preserve">
+    <value>Saklanan HMCL dağılımını kontrol edin ve tam bir inceleme yapın; apply pack apply ile ayrı ayrı.</value>
+  </data>
+  <data name="PackHistoryDescription" xml:space="preserve">
+    <value>Tutulan paket işlemlerini ve mevcut geri alma hedefini listeleyin.</value>
+  </data>
+  <data name="PackDetachDescription" xml:space="preserve">
+    <value>İstemciyi veya kaynağını silmeden kaynak odaklı güncellemeleri ayırın.</value>
+  </data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve">
+    <value>İlgisiz alanları koruyarak seçilen başlatıcı ayarlarına atomik yama uygulayın veya geçersiz kılmaları kaldırın.</value>
+  </data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve">
+    <value>JSON yalnızca değiştirilecek alanları içeren nesne. Açık null saklanır; Miras için --remove kullanın.</value>
+  </data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve">
+    <value>Geçersiz kılma anahtarını kaldırın. Birden fazla anahtarı kaldırmak için bu seçeneği tekrarlayın.</value>
+  </data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve">
+    <value>Konfigürasyon değişiklikleri bir JSON nesnesi olmalıdır.</value>
+  </data>
+  <data name="ContentShowReviewDescription" xml:space="preserve">
+    <value>Kaydedilmiş içerik incelemesini tam olarak okuyun ve temelinin eski olup olmadığını bildirin.</value>
+  </data>
+  <data name="AppCommandsDescription" xml:space="preserve">
+    <value>Seçilen bir çalışan App'nin kendi tercihlerini ve ön plan durumunu kontrol edin.</value>
+  </data>
+  <data name="AppExpectedFingerprint" xml:space="preserve">
+    <value>app show tarafından döndürülen tam parmak izi; App durumu değişirse değişiklikler reddedilir.</value>
+  </data>
+  <data name="AppPreferenceFile" xml:space="preserve">
+    <value>JSON açık paket tercihi değişikliklerini içeren dosya.</value>
+  </data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve">
+    <value>Bir App tercihi JSON nesnesi sağlayın.</value>
+  </data>
+  <data name="AppPage" xml:space="preserve">
+    <value>Sayfa tuşu: home, instances, content, settings veya assistant.</value>
+  </data>
+  <data name="AppCategory" xml:space="preserve">
+    <value>İsteğe bağlı kararlı ayarlar kategorisi tuşu.</value>
+  </data>
+  <data name="AppWindowState" xml:space="preserve">
+    <value>Pencere durumu: normal, maximized, minimized veya tray.</value>
+  </data>
+  <data name="AppWallpaperTheme" xml:space="preserve">
+    <value>Duvar kağıdı yuvası: light veya dark.</value>
+  </data>
+  <data name="AppWallpaperId" xml:space="preserve">
+    <value>Duvar kağıdı ID bu App kataloğu tarafından döndürüldü.</value>
+  </data>
+  <data name="AppWallpaperSource" xml:space="preserve">
+    <value>App duvar kağıdı mağazasına kopyalanacak resim; kaynak korunur.</value>
+  </data>
+  <data name="AppWallpaperName" xml:space="preserve">
+    <value>Seçilen yuvanın özel görselinin görünen adı.</value>
+  </data>
+  <data name="AppList" xml:space="preserve">
+    <value>Seçilen veri kökünü kullanarak canlı App örneklerini listeleyin.</value>
+  </data>
+  <data name="AppShow" xml:space="preserve">
+    <value>Gerçek App durumunu, tercihlerini ve mutasyon parmak izini okuyun.</value>
+  </data>
+  <data name="AppPreferences" xml:space="preserve">
+    <value>Özel depolama dosyalarını düzenlemeden paket tercihlerini yönetin.</value>
+  </data>
+  <data name="AppUpdatePreferences" xml:space="preserve">
+    <value>Gerçek App denetleyiciler aracılığıyla açık tercih alanlarını uygulayın.</value>
+  </data>
+  <data name="AppNavigation" xml:space="preserve">
+    <value>App'nin mevcut sayfasını ve seçimini yönetin, oyun durumunu değil.</value>
+  </data>
+  <data name="AppNavigate" xml:space="preserve">
+    <value>Etkin taslakları veya kalıcı işlemleri atmadan gezinin.</value>
+  </data>
+  <data name="AppWindow" xml:space="preserve">
+    <value>Seçilen App penceresini yönetin.</value>
+  </data>
+  <data name="AppSetWindow" xml:space="preserve">
+    <value>Açık bir yerel pencere durumu uygulayın; görevler ve oyunlar sahipliklerini korur.</value>
+  </data>
+  <data name="AppClose" xml:space="preserve">
+    <value>Kesin durum onayı ve mevcut sahipli iş korumalarının ardından App çıkış talebinde bulunun.</value>
+  </data>
+  <data name="AppWallpapers" xml:space="preserve">
+    <value>App'nin gerçek temaya özel duvar kağıdı yuvalarını yönetin.</value>
+  </data>
+  <data name="AppWallpaperList" xml:space="preserve">
+    <value>Gerçek duvar kağıdı kataloğunu okuyun ve ID'yi seçin.</value>
+  </data>
+  <data name="AppWallpaperSelect" xml:space="preserve">
+    <value>Mevcut bir duvar kağıdını seçin ID.</value>
+  </data>
+  <data name="AppWallpaperImport" xml:space="preserve">
+    <value>App'nin normal duvar kağıdı hattı aracılığıyla bir görüntünün kodunu çözün ve içe aktarın.</value>
+  </data>
+  <data name="AppWallpaperRename" xml:space="preserve">
+    <value>Yuvanın özel duvar kağıdını yeniden adlandırın.</value>
+  </data>
+  <data name="AppWallpaperRemove" xml:space="preserve">
+    <value>Onaylandıktan sonra yalnızca Uygulamaya ait özel duvar kağıdını kaldırın.</value>
+  </data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve">
+    <value>App kontrolü canlı bir ana bilgisayarı hedefler ve tekrar oynatılabilir bir arka plan komutu olarak sıraya alınamaz.</value>
+  </data>
+  <data name="AppImageCache" xml:space="preserve">
+    <value>Başlatıcı bağımlılıklarını değil, yalnızca App'nin görüntü önbelleğini inceleyin ve temizleyin.</value>
+  </data>
+  <data name="AppImageCacheShow" xml:space="preserve">
+    <value>Geçerli App görüntü önbellek baytlarını ölçün.</value>
+  </data>
+  <data name="AppImageCacheClear" xml:space="preserve">
+    <value>Onaylandıktan sonra App görüntü önbelleğini gerçek yükleyici aracılığıyla temizleyin.</value>
+  </data>
+  <data name="LocalContextLengthDescription" xml:space="preserve">
+    <value>Belirteçlerdeki yerel çalışan bağlam uzunluğu; geçmişten ve çıkış limitlerinden ayrı. Yapılandırılmamış modeller, başlatıcının 64K varsayılanını kullanır.</value>
+  </data>
+  <data name="SkinGroupDescription" xml:space="preserve">
+    <value>Standart Java kaplamaları çizin, inceleyin, dışa aktarın ve önizleyin.</value>
+  </data>
+  <data name="SkinCreateDescription" xml:space="preserve">
+    <value>İsteğe bağlı olarak PNG'ı içe aktararak bir dış görünüş belgesi oluşturun.</value>
+  </data>
+  <data name="SkinInspectDescription" xml:space="preserve">
+    <value>Modeli, revizyonu, geçmiş durumunu ve yüz haritasını okuyun.</value>
+  </data>
+  <data name="SkinReadDescription" xml:space="preserve">
+    <value>Bir model yüzünden tam piksel renklerini okuyun.</value>
+  </data>
+  <data name="SkinEditDescription" xml:space="preserve">
+    <value>Atomik, geri alınamaz bir dizi temel çizim eylemi uygulayın.</value>
+  </data>
+  <data name="SkinUndoDescription" xml:space="preserve">
+    <value>Bir çizim işlemini geri alın.</value>
+  </data>
+  <data name="SkinRedoDescription" xml:space="preserve">
+    <value>Geri alınan bir işlemi yeniden yapın.</value>
+  </data>
+  <data name="SkinExportDescription" xml:space="preserve">
+    <value>PNG'yi belge doku boyutunda dışa aktarın; hesap dış görünümünü yüklemez veya değiştirmez.</value>
+  </data>
+  <data name="SkinSaveAsDescription" xml:space="preserve">
+    <value>Tüm katmanları ve tutulan geçmişi içeren, bağımsız, düzenlenebilir bir .rmcs anlık görüntüsünü kaydedin; kaynak değişmedi.</value>
+  </data>
+  <data name="SkinPreviewDescription" xml:space="preserve">
+    <value>Bir 3D PNG anlık görüntüsünü oluşturun.</value>
+  </data>
+  <data name="SkinModelDescription" xml:space="preserve">
+    <value>Classic (dört pikselli kollar) veya Slim (üç pikselli kollar).</value>
+  </data>
+  <data name="SkinInputDescription" xml:space="preserve">
+    <value>İçe aktarmak için isteğe bağlı 64x64, HD 128x128 veya eski 64x32 PNG.</value>
+  </data>
+  <data name="SkinOutputDescription" xml:space="preserve">
+    <value>Hedef önizlemesi, PNG veya düzenlenebilir proje dosyası.</value>
+  </data>
+  <data name="SkinColorDescription" xml:space="preserve">
+    <value>#RRGGBB veya #RRGGBBAA formatında opak taban rengi.</value>
+  </data>
+  <data name="SkinRevisionDescription" xml:space="preserve">
+    <value>Son gözlemlenen revizyon; eski düzenlemeler reddedilir.</value>
+  </data>
+  <data name="SkinEditsDescription" xml:space="preserve">
+    <value>JSON typed yüz-yerel çizim eylemleri dizisi.</value>
+  </data>
+  <data name="SkinEditsFileDescription" xml:space="preserve">
+    <value>JSON çizim eylem dizisini içeren dosya.</value>
+  </data>
+  <data name="SkinPartDescription" xml:space="preserve">
+    <value>Head, Body, RightArm, LeftArm, RightLeg veya LeftLeg.</value>
+  </data>
+  <data name="SkinLayerDescription" xml:space="preserve">
+    <value>Base (opak) veya Outer (şeffaf giysi).</value>
+  </data>
+  <data name="SkinFaceDescription" xml:space="preserve">
+    <value>Front, Back, Right, Left, Top veya Bottom.</value>
+  </data>
+  <data name="SkinYawDescription" xml:space="preserve">
+    <value>PNG derece cinsinden kamera yalpalaması; varsayılan 25.</value>
+  </data>
+  <data name="SkinPitchDescription" xml:space="preserve">
+    <value>PNG -89'dan 89 dereceye kadar kamera açısı; varsayılan 10.</value>
+  </data>
+  <data name="SkinToolProfileDescription" xml:space="preserve">
+    <value>MCP kataloğu: launcher (varsayılan), discovery (kompakt) veya ayrı skins.</value>
+  </data>
+  <data name="SkinEditsRequiredError" xml:space="preserve">
+    <value>--edits ve --edits-file'den tam olarak birini sağlayın.</value>
+  </data>
+  <data name="SkinViewDescription" xml:space="preserve">
+    <value>Yazılan JSON önizleme kamerası, boyutlar, Minecraft katmanlar ve görünür gövde parçaları.</value>
+  </data>
+  <data name="SkinRequestDescription" xml:space="preserve">
+    <value>Toplama, seçme veya pano yakalama için JSON isteği yazıldı.</value>
+  </data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve">
+    <value>Bir boya katmanını okuyun ID veya background; görünür bileşiği okumayı ihmal edin.</value>
+  </data>
+  <data name="SkinPickDescription" xml:space="preserve">
+    <value>Model uzayı ışınıyla gerçek bir model yüzeyi seçin.</value>
+  </data>
+  <data name="SkinSelectionDescription" xml:space="preserve">
+    <value>Pikselleri düzenlemeden geometrik veya renk tabanlı bir seçim oluşturun.</value>
+  </data>
+  <data name="SkinCaptureDescription" xml:space="preserve">
+    <value>Seçilen bir yüz bölgesini düzenlenebilir pano pikselleri olarak yakalayın.</value>
+  </data>
+  <data name="SkinViewConflictError" xml:space="preserve">
+    <value>--view veya basit --yaw/--pitch seçeneklerini kullanın, ikisini birden değil.</value>
+  </data>
+  <data name="SkinRequestRequiredError" xml:space="preserve">
+    <value>Boş olmayan bir typed görünüm isteği gereklidir.</value>
+  </data>
+  <data name="SkinRequestError" xml:space="preserve">
+    <value>Geçersiz görünüm isteği: {0}</value>
+  </data>
+  <data name="SkinSizeDescription" xml:space="preserve">
+    <value>Doku boyutu: 64 veya 128 texel.</value>
+  </data>
+  <data name="SkinTemplateDescription" xml:space="preserve">
+    <value>Orijinal şablon ID; dış görünüm şablonlarını içeren liste.</value>
+  </data>
+  <data name="SkinNameDescription" xml:space="preserve">
+    <value>Projenin görünen adı.</value>
+  </data>
+  <data name="SkinIndexDescription" xml:space="preserve">
+    <value>Gözlemlenen revizyonda tutulan geçmiş konumu.</value>
+  </data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve">
+    <value>Bir şablon veya PNG girişi seçin, ikisini birden değil.</value>
+  </data>
+  <data name="SkinSizeError" xml:space="preserve">
+    <value>Cilt boyutu 64 veya 128 olmalıdır.</value>
+  </data>
+  <data name="SkinListDescription" xml:space="preserve">
+    <value>Düzenlenebilir dış görünüm projelerini listeleyin.</value>
+  </data>
+  <data name="SkinTemplatesDescription" xml:space="preserve">
+    <value>Orijinal basic-person şablonlarını ve model önerilerini listeleyin.</value>
+  </data>
+  <data name="SkinCloneDescription" xml:space="preserve">
+    <value>Düzenlenebilir içeriği yeni bir projeye kopyalayın.</value>
+  </data>
+  <data name="SkinRenameDescription" xml:space="preserve">
+    <value>Bir dış görünüm projesini yeniden adlandırın.</value>
+  </data>
+  <data name="SkinHistoryDescription" xml:space="preserve">
+    <value>Saklanan işlem geçmişini okuyun.</value>
+  </data>
+  <data name="SkinRestoreToDescription" xml:space="preserve">
+    <value>Geçmiş konumunu atomik olarak geri yükleyin.</value>
+  </data>
+  <data name="SkinImportDescription" xml:space="preserve">
+    <value>PNG'ı geri alınamaz bir içerik değişimi olarak içe aktarın.</value>
+  </data>
+  <data name="SkinInputRequiredError" xml:space="preserve">
+    <value>PNG girişi gereklidir.</value>
+  </data>
+  <data name="SkinFootprintDescription" xml:space="preserve">
+    <value>Çizim yapmadan tarama doğruluğunda fırça kapsamını okuyun.</value>
+  </data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve">
+    <value>Kaydedilmemiş bir hareket önizlemesi oluşturun.</value>
+  </data>
+  <data name="SkinLabelDescription" xml:space="preserve">
+    <value>İsteğe bağlı aday açıklaması.</value>
+  </data>
+  <data name="SkinOperationDescription" xml:space="preserve">
+    <value>Aday kabul işlemi tanımlayıcısı.</value>
+  </data>
+  <data name="SkinScopeDescription" xml:space="preserve">
+    <value>Sunucuya ait dış görünüm düzenleme hibeleri.</value>
+  </data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve">
+    <value>Belge, katman ve piksel düzenleme izni oluşturun.</value>
+  </data>
+  <data name="SkinScopeShowDescription" xml:space="preserve">
+    <value>Bir cilt düzenleme iznini inceleyin.</value>
+  </data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve">
+    <value>Bir dış görünüm düzenleme iznini iptal edin.</value>
+  </data>
+  <data name="SkinProposalDescription" xml:space="preserve">
+    <value>Dondurulmuş cilt adaylarını hazırlayın ve inceleyin.</value>
+  </data>
+  <data name="SkinProposeDescription" xml:space="preserve">
+    <value>Ev sahibi hibesi kapsamında bir adayı sahneye çıkarın.</value>
+  </data>
+  <data name="SkinProposalShowDescription" xml:space="preserve">
+    <value>Aday incelemesini ve taahhüt durumunu inceleyin.</value>
+  </data>
+  <data name="SkinAcceptDescription" xml:space="preserve">
+    <value>İncelenen bir adayı dayanıklı bir makbuzla kabul edin.</value>
+  </data>
+  <data name="SkinRejectDescription" xml:space="preserve">
+    <value>Kabul edilmeyen bir adayı atın.</value>
+  </data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve">
+    <value>Yönetilen önizleme dizininde bir aday oluşturun.</value>
+  </data>
+  <data name="SkinReceiptDescription" xml:space="preserve">
+    <value>Kalıcı bir aday kabul sonucuna bakın.</value>
+  </data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve">
+    <value>Görünümleri MCP bir ana bilgisayar bağışına bağlayın; yalnızca aday oluşturma, doğrudan düzenleme veya kabul yoktur.</value>
+  </data>
+  <data name="SkinScopeProfileError" xml:space="preserve">
+    <value>Dış görünüm kapsamı, dış görünüm aracı profilini gerektirir.</value>
+  </data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve">
+    <value>Minecraft lansmandan önce uygulanacak dil, örneğin zh_cn, en_us veya ar_sa; oyun ayarını korumayı ihmal edin.</value>
+  </data>
+  <data name="AiReferenceImages" xml:space="preserve">
+    <value>PNG/JPEG/WebP bu dönüş için referans dosyası. Üç defaya kadar tekrarlayın; kaynak baytları gönderilmeden önce dondurulur.</value>
+  </data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve">
+    <value>Bir sohbet turuna en fazla üç referans resmi ekleyin.</value>
+  </data>
+  <data name="AiUserPromptRespond" xml:space="preserve">
+    <value>JSON AiUserResponse dosyasını kullanarak tam olarak bekleyen soruyu gönderin veya atlayın; cevaplar araçlara yetki vermez.</value>
+  </data>
+  <data name="AiCancelQueued" xml:space="preserve">
+    <value>Ayrıca seçilen dönüşü durdurmadan önce bu konuşmanın sıraya alınmış mesajlarını da iptal edin.</value>
+  </data>
+  <data name="RepairApply" xml:space="preserve">
+    <value>Dondurulmuş geri dönüşümlü planı bir kez uygulayın.</value>
+  </data>
+  <data name="RepairCreate" xml:space="preserve">
+    <value>Kaydedilmiş bir başarısız çalıştırma veya hazırlık görevinin onarımına yetki verin.</value>
+  </data>
+  <data name="RepairGroup" xml:space="preserve">
+    <value>Kaydedilmiş bir örnek hatasının geri döndürülebilir onarımı.</value>
+  </data>
+  <data name="RepairJob" xml:space="preserve">
+    <value>Orijinal başarısız hazırlık işi ID.</value>
+  </data>
+  <data name="RepairKind" xml:space="preserve">
+    <value>Onarım türü: disable_mod, java, memory veya dependencies.</value>
+  </data>
+  <data name="RepairMemory" xml:space="preserve">
+    <value>MiB'de önerilen yığın sınırı.</value>
+  </data>
+  <data name="RepairPlan" xml:space="preserve">
+    <value>Minimal kanıta dayalı bir onarım planını dondurun.</value>
+  </data>
+  <data name="RepairReason" xml:space="preserve">
+    <value>Bu araştırmayı destekleyen gerçek kanıtları açıklayın.</value>
+  </data>
+  <data name="RepairRestore" xml:space="preserve">
+    <value>Denemeye ait değişmeyen hedefleri geri yükleyin.</value>
+  </data>
+  <data name="RepairSession" xml:space="preserve">
+    <value>Orijinal başarısız oturum ID.</value>
+  </data>
+  <data name="RepairShow" xml:space="preserve">
+    <value>Orijinal kanıtları ve mevcut onarım durumunu okuyun.</value>
+  </data>
+  <data name="RepairTarget" xml:space="preserve">
+    <value>Yüklü mod dosyası adı veya mevcut Java yürütülebilir dosyası.</value>
+  </data>
+  <data name="RepairVerify" xml:space="preserve">
+    <value>Etiketli bir doğrulama çalıştırmasını başlatın ve gözlemleyin.</value>
+  </data>
+  <data name="ExternalGroup" xml:space="preserve">
+    <value>Harici Yggdrasil hesapları ve LittleSkin yetkilendirmesi.</value>
+  </data>
+  <data name="ExternalAddress" xml:space="preserve">
+    <value>Web sitesi veya Yggdrasil API adresi; tekrar oturum açarken atlandı.</value>
+  </data>
+  <data name="ExternalAttempt" xml:space="preserve">
+    <value>Harici giriş denemesi bekleniyor ID.</value>
+  </data>
+  <data name="ExternalProfile" xml:space="preserve">
+    <value>Oyuncu UUID bu giriş denemesi tarafından teklif edildi.</value>
+  </data>
+  <data name="ExternalUsername" xml:space="preserve">
+    <value>Hizmet tarafından kabul edilen e-posta adresi veya kullanıcı adı.</value>
+  </data>
+  <data name="ExternalPasswordStdin" xml:space="preserve">
+    <value>Standart girişten bir şifre satırını okuyun; asla komut argümanlarına koymayın.</value>
+  </data>
+  <data name="ExternalComponentFile" xml:space="preserve">
+    <value>Mevcut authlib-injector JAR doğrulamak ve başlatıcı deposuna kopyalamak için.</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Bir şifreyle oturum açın ve geri dönen oyuncu rolünü koruyun veya seçin.</value>
+  </data>
+  <data name="ExternalDevice" xml:space="preserve">
+    <value>Bu uygulama için LittleSkin cihaz yetkilendirmesini başlatın.</value>
+  </data>
+  <data name="ExternalPoll" xml:space="preserve">
+    <value>Aralığına göre LittleSkin anketi; --wait yetkilendirme bitene kadar devam eder.</value>
+  </data>
+  <data name="ExternalShow" xml:space="preserve">
+    <value>Belirteçler olmadan, bekleyen bir oturum açma işleminin genel durumunu okuyun.</value>
+  </data>
+  <data name="ExternalSelect" xml:space="preserve">
+    <value>Teklif edilen bir rolü bağlayın ve cari hesabı değiştirmeden kaydedin.</value>
+  </data>
+  <data name="ExternalCancel" xml:space="preserve">
+    <value>Bekleyen bir harici yetkilendirmeyi ve korumalı geçici durumunu atın.</value>
+  </data>
+  <data name="ExternalComponent" xml:space="preserve">
+    <value>Başlatıcıya ait harici oturum açma bileşenini yönetin.</value>
+  </data>
+  <data name="ExternalComponentShow" xml:space="preserve">
+    <value>Mevcut bileşeni indirmeden inceleyin ve doğrulayın.</value>
+  </data>
+  <data name="ExternalComponentPrepare" xml:space="preserve">
+    <value>Doğrulanmış bir bileşeni yeniden kullanın, resmi yapıyı indirin veya --file'yi içe aktarın.</value>
+  </data>
+  <data name="ExternalPasswordRequired" xml:space="preserve">
+    <value>--password-stdin kullanın ve şifreyi standart giriş yoluyla girin.</value>
+  </data>
+  <data name="ExternalCachedLaunch" xml:space="preserve">
+    <value>Tam önbelleğe alınmış kimlik bilgileri ve bileşenle aynı harici rolü açıkça deneyin; çok oyunculu garanti edilmez.</value>
+  </data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve">
+    <value>Şifre girişi yalnızca doğrudan çağrılan ön planda CLI kullanılabilir.</value>
+  </data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve">
+    <value>Yüklü bir gölgelendirici paketi seçin; Gölgelendiricileri devre dışı bırakmak için --file'yi atlayın.</value>
+  </data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve">
+    <value>Yapılandırma sahibi: iris, oculus veya optifine; gözlemlenen keşfi kullanmayı ihmal edin.</value>
+  </data>
+  <data name="ShaderPackListDescription" xml:space="preserve">
+    <value>Kurulu gölgelendirici paketlerini ve işleme motoru seçimini okuyun.</value>
+  </data>
+  <data name="ShaderPackFileDescription" xml:space="preserve">
+    <value>Yüklü shader-pack dosya adı; Gölgelendiricileri devre dışı bırakmayı unutmayın.</value>
+  </data>
+  <data name="GroupShaderpackDescription" xml:space="preserve">
+    <value>Gölgelendirici paketlerini inceleyin ve seçin.</value>
+  </data>
+  <data name="AiRunQueuedTurn" xml:space="preserve">
+    <value>Aktif dönüşü durdurun ve sıradaki bu mesajı çalıştırın.</value>
+  </data>
+  <data name="BridgeGroup" xml:space="preserve">
+    <value>İsteğe bağlı oyun köprüsünü inceleyin.</value>
+  </data>
+  <data name="BridgeShow" xml:space="preserve">
+    <value>Bu oturumun köprü bağlantı durumunu okuyun.</value>
+  </data>
+  <data name="BridgeGameGroup" xml:space="preserve">
+    <value>Canlı oyun verilerini gözlemleyin ve sahip olunan yerel dünyaları düzenleyin.</value>
+  </data>
+  <data name="BridgeSnapshot" xml:space="preserve">
+    <value>Yeni bir senkronize oynatıcı/dünya anlık görüntüsünü okuyun.</value>
+  </data>
+  <data name="BridgeEdit" xml:space="preserve">
+    <value>Yazılı bir yerel düzenleme gönderin; sunucular her zaman salt okunur kalır.</value>
+  </data>
+  <data name="BridgeEditRequest" xml:space="preserve">
+    <value>GameEditRequest JSON ile operationId, gözlemlenen dünya kimliği, türü ve dayTime/health/control/click/button/command yükü.</value>
+  </data>
+  <data name="BridgeOperationGroup" xml:space="preserve">
+    <value>Mevcut bir oyun düzenlemesini gözlemleyin veya iptal edin.</value>
+  </data>
+  <data name="BridgeOperationShow" xml:space="preserve">
+    <value>Düzenleme metnini tekrar oynatmadan tam olarak okuyun.</value>
+  </data>
+  <data name="BridgeOperationCancel" xml:space="preserve">
+    <value>Yalnızca yürütülmeye başlamamış bir düzenlemeyi iptal edin.</value>
+  </data>
+  <data name="BridgeLaunch" xml:space="preserve">
+    <value>Bu lansman için isteğe bağlı Java oyun köprüsünü etkinleştirin.</value>
+  </data>
+  <data name="BridgeRegion" xml:space="preserve">
+    <value>Parça yüklemeden sınırlı görünür blokları, varlıkları ve envanteri okuyun.</value>
+  </data>
+  <data name="BridgeRegionRequest" xml:space="preserve">
+    <value>GameRegionRequest JSON ile gameIncarnation, worldEpoch, dimension, x/y/z ve sizeX/Y/Z (1..16).</value>
+  </data>
+  <data name="BridgeInterval" xml:space="preserve">
+    <value>Milisaniye cinsinden gözlem aralığı (200..10000).</value>
+  </data>
+  <data name="BridgeEvents" xml:space="preserve">
+    <value>İptal edilene kadar --events aracılığıyla yeni anlık görüntüleri yayınlayın.</value>
+  </data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve">
+    <value>Canlı gözlem akışını almak için --events tuşunu kullanın.</value>
+  </data>
+  <data name="BridgeQuery" xml:space="preserve">
+    <value>Anlamsal bir oyun sorgusunu veya sınırlı yerel NBT seçimini okuyun.</value>
+  </data>
+  <data name="BridgeQueryRequest" xml:space="preserve">
+    <value>GameQueryRequest JSON gözlemlenen dünya kimliği, tür ve isteğe bağlı seçim/sayfalama ile.</value>
+  </data>
+  <data name="BridgeAi" xml:space="preserve">
+    <value>Oyun kapsamlı bir başlatıcı AI isteği gönderin veya gözlemleyin.</value>
+  </data>
+  <data name="BridgeAiRequest" xml:space="preserve">
+    <value>GameAiRequest JSON aksiyon, kararlı worldKey ve yeni bir anlık görüntü ile; mutasyonlar tam istek/dönüş/karar kimliklerini gerektirir.</value>
+  </data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve">
+    <value>Yapılandırılmış veri dizinindeki başlatıcı işlemleri. yürütme, uygulanan CLI işlemlerini ortaya çıkarır. İsteğe bağlı kimliği doğrulanmış oyun köprüsü mevcut oyunu gözlemler; mutasyonlar, sahip olunan yerel dünyayı ve mevcut izinleri gerektirir.</value>
+  </data>
+  <data name="ContentBundledDescription" xml:space="preserve">
+    <value>Başlatıcıya ait modları ve durumlarını bir örnekte listeleyin.</value>
+  </data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve">
+    <value>Seçilen yerleşik mod ID'leri ve bunların paketlenmiş bağımlılıklarını yüklemeden inceleyin.</value>
+  </data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>Varsayılanı geri yükle: Bağlam uzunluğu.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: Bağlam uzunluğu.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>Kaydedilmiş bir görüntüyü gerektiğinde okuyun; MCP base64 metni yerine görüntü döndürür.</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>Aynı boyutta PNG dosyasını yeni katman olarak ekler; RGBA ve mevcut içerik korunur.</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>--name yalnızca --as-layer ile kullanılır; --model yalnızca tüm görünüm içe aktarımlarında kullanılır.</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>Eşleştirme seç</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>Eşleştirme seç (ID)</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>Tek başına göster</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>--with ID veya --clear belirtin.</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>JSON biçiminde türlenmiş tohum isteği</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>Tohum isteğini içeren UTF-8 dosyası</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>Biyom adları için kurulu oyunun dil kodu</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>Hedef PNG dosyası yolu</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>Tam özgün üretimle tohumları keşfet</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>Kurulu sürümleri ve tohum desteğini listele</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>Özgün oyun bağımlılıklarını ve Java ortamını hazırla</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>Özgün biyom, yapı ve boyut kayıtlarını oku</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>Özgün harita döşemesini üret veya önbellekten oku</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>Özgün haritayı bağlamıyla PNG olarak dışa aktar</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>Olumlu kanıtlı sınırlı aramaları yönet</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>Kalıcı arama oluştur ve çalıştır</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>Kalıcı aramaları listele</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>Sonuçları ve devam konumunu oku</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>Onaylanan konumdan aramaya devam et</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>Tohum ve yer işaretlerini yönet</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>Her iki işaret türünü listele</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>Tohum veya yer işaretini kaydet veya güncelle</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>Belirtilen işareti kaldır</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>Yalnızca --request veya --request-file belirtin.</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>Tohum isteği null olamaz.</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>Geçersiz tohum isteği JSON biçimi: {0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>Bir tohumdaki koordinatın çevresinde oluşturulmuş yapıları uzaklığa göre bulur.</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>Sınırlı bir alanda özgün blok önizlemesi, kap ganimeti ve malzeme sayımı oluşturur.</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>Orijinal dünya doğma noktasını hesapla veya önbellekten oku</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>Başlatıcı etkinlik günlükleri</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>Oyun oturumu olmadan saklanan başlatıcı günlüklerini dışa aktarın.</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>Paylaşılan Core ile bir çok oyunculu odayı yönetin.</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>Oda barındırın; --background bağımsız bir görev başlatır.</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>Yerel ortamı koruyarak yerel oda koduyla katılın.</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>Odayı, oyun ve ağ durumunu okuyun.</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>Oyunu ve örneği koruyarak odayı kapatın.</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>Sınırlı denemelerle bağlantıyı yeniden deneyin.</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>Hazır konuk örneğini oda girişiyle başlatın.</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>Oda sahibinin sağladığı sunucu adresini kullanın.</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>Davet ve oyuncu verilerini içermeyen sınırlı bağlantı kaydını dışa aktarın.</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>Metin içinde de bulunabilen yerel oda kodu.</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>Seçili örneğe ait mevcut oyun oturumu.</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>Destekleniyorsa ilk yerel dünyayı otomatik olarak açın.</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>Paylaşılan sürüm kataloğunu açıkça yenileyin.</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>Oyun örneğini koruyarak misafirin oda kodunu değiştirin.</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>TARGET örneğinin eksik ITEM öğesi için VALUE dosyasını hazırlayın; devam ederken doğrulanır.</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>Yalnızca ortak oyun içeriğini ve yapılandırmayı aktar; kişisel ayarları ve kaynaksız yerel dosyaları hariç tut.</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>Oyunun zorlamadan normal kapanmasını da isteyin.</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>Ağ hazır olduğunda oyunu otomatik başlatın.</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>Seçilen oyunun normal kapanıp yeniden başlamasına açıkça izin verin.</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>Kayıtlı haritayı PNG olarak dışa aktarın.</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>Keşfedilmemiş araziyi yalıtılmış özgün oluşturma önizlemesiyle tamamla.</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>Kayıtlı dünya haritalarını ve oyuncu konumlarını inceleyin.</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>Dünya doğrulamasıyla canlı veya kayıtlı konumları okuyun.</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>Kayıtlı oyuncu UUID değeri veya yerel kayıt kimliği.</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>Kayıtlı ganimet tablosu ve tohumla yalıtılmış özgün ortamda tahmin yapar; kayıtlı içerik değişmez.</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>Bölge üretmeden kayıtlı haritayı okuyun.</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>Bölge veya ganimet üretmeden kaydedilmiş blokları, malzemeleri ve envanterleri okur.</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>JSON biçiminde türlenmiş kayıtlı harita isteği.</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>Türlenmiş kayıtlı harita isteği içeren dosya.</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>Kayıtlı blok modellerini, dokularını ve geometrisini incele.</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>Dünya tohumunu, ayarlarını ve kayıtlı oyuncuları okuyun.</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>İstenen yarıçaptaki kayıtlı yapı kayıtlarını bulur.</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>Oturum açma kimlik bilgilerini yenilemeden yalnızca görünüm bilgilerini güncelleyin.</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>Örneğin ekran görüntülerini görüntüleyin ve yönetin.</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>Ekran görüntüsünün dosya adı.</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>Ekran görüntülerinin dosya adları.</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>Dosya adı; belirtilmezse ekran görüntüsü klasörü açılır.</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>Ekran görüntülerini değişiklik zamanına göre yeniden eskiye listeleyin.</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>Bir ekran görüntüsünün yolunu, boyutunu ve değişiklik zamanını okuyun.</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>Ekran görüntüsünü varsayılan görüntüleyicide veya klasörünü açın.</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>Başka dosyaları değiştirmeden ekran görüntüsünü yeniden adlandırın.</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>Seçili ekran görüntülerini dosyaları değiştirmeden bir klasöre kopyalayın.</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>Seçili ekran görüntülerini kaldırır (varsayılan olarak Geri Dönüşüm Kutusu'na); --confirm gerektirir.</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>İşlem iptal edildi; tamamlanan dosya değişiklikleri korunur.</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>Bazı ekran görüntüleri işlenemedi. Dosya sonuçlarını inceleyin.</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Geri Dönüşüm Kutusu'nu kullanmadan kalıcı olarak siler. --confirm gerektirir.</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Yerel dosyanın kaynağını seçin: FILE=PROJECT; birden fazla dosya için tekrarlayın.</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>--select-source FILE=PROJECT biçimini kullanın.</value></data>
+</root>

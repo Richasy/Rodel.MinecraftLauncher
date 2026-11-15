@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/external/" />
+  <Folder Name="/external/Rodel.Inference/" />
+  <Folder Name="/external/Rodel.Inference/src/">
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Abstractions/Rodel.Inference.Abstractions.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Core/Rodel.Inference.Core.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Payloads/Rodel.Inference.Payloads.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Runtime.AudioCpp/Rodel.Inference.Runtime.AudioCpp.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Runtime.LlamaCpp/Rodel.Inference.Runtime.LlamaCpp.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference.Runtime.OnnxRuntimeGenAI/Rodel.Inference.Runtime.OnnxRuntimeGenAI.csproj" />
+    <Project Path="external/Rodel.Inference/src/Rodel.Inference/Rodel.Inference.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Rodel.MinecraftLauncher.SettingsGenerator/Rodel.MinecraftLauncher.SettingsGenerator.csproj" />
+    <Project Path="src/Rodel.Minecraft.Seeds/Rodel.Minecraft.Seeds.csproj" />
+    <Project Path="src/Rodel.Minecraft.Skins/Rodel.Minecraft.Skins.csproj" />
+    <Project Path="src/Rodel.MinecraftLauncher.App/Rodel.MinecraftLauncher.App.csproj" />
+    <Project Path="src/Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
+    <Project Path="src/Rodel.MinecraftLauncher.Assistant/Rodel.MinecraftLauncher.Assistant.csproj" />
+    <Project Path="src/Rodel.MinecraftLauncher.Cli/Rodel.MinecraftLauncher.Cli.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Rodel.MinecraftLauncher.Rendering.Tests/Rodel.MinecraftLauncher.Rendering.Tests.csproj" />
+    <Project Path="test/Rodel.MinecraftLauncher.App.Tests/Rodel.MinecraftLauncher.App.Tests.csproj" />
+    <Project Path="test/Rodel.MinecraftLauncher.Assistant.Tests/Rodel.MinecraftLauncher.Assistant.Tests.csproj" />
+    <Project Path="test/Rodel.Minecraft.Skins.Tests/Rodel.Minecraft.Skins.Tests.csproj" />
+    <Project Path="test/Rodel.MinecraftLauncher.Cli.Tests/Rodel.MinecraftLauncher.Cli.Tests.csproj" />
+    <Project Path="test/Rodel.MinecraftLauncher.Core.Tests/Rodel.MinecraftLauncher.Core.Tests.csproj" />
+  </Folder>
+  <Folder Name="/test/Fixtures/">
+    <Project Path="test/Fixtures/ClaudeMcp/ClaudeMcpFixture.csproj" />
+    <Project Path="test/Fixtures/JavaProbe/JavaProbe.csproj" />
+  </Folder>
+</Solution>

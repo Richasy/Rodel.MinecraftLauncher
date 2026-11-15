@@ -1,0 +1,42 @@
+<Project Sdk="MSTest.Sdk/4.1.0">
+  <PropertyGroup>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+    <EnableMicrosoftTestingExtensionsTrxReport>true</EnableMicrosoftTestingExtensionsTrxReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../Fixtures/WorldMaps/*.fixture" Link="world-map-fixtures/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Settings/SettingsBase.cs" Link="AppPreferences/SettingsBase.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/SeedExplorer/SeedMapPlanning.cs" Link="Presentation/SeedMapPlanning.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/SeedExplorer/SeedWorldMapLoading.cs" Link="Presentation/SeedWorldMapLoading.cs" />
+    <Compile Include="../Fixtures/SeedScene/SceneFixture.cs" Link="Infrastructure/SceneFixture.cs" />
+    <Compile Include="../Fixtures/GameBridge/BridgePeerFixture.cs" Link="Infrastructure/BridgePeerFixture.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Accounts/Avatars/AccountAvatarStore.cs" Link="AppPreferences/AccountAvatarStore.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Images/ImageCrop.cs" Link="AppPreferences/ImageCrop.cs" />
+    <!-- Palette ownership and commit ordering are UI-independent; actual LocalSettings and controls are verified in the packaged app. -->
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinEditorPalettes.cs" Link="Presentation\SkinEditorPalettes.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinPaletteStore.cs" Link="Presentation\SkinPaletteStore.cs" />
+    <ProjectReference Include="../../src/Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
+    <ProjectReference Include="../Fixtures/JavaProbe/JavaProbe.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <Target Name="CopyJavaProbeFixture" AfterTargets="Build">
+    <MSBuild Projects="../Fixtures/JavaProbe/JavaProbe.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
+      <Output TaskParameter="TargetOutputs" ItemName="JavaProbeAssembly" />
+    </MSBuild>
+    <PropertyGroup>
+      <JavaProbeDirectory>@(JavaProbeAssembly->'%(RootDir)%(Directory)')</JavaProbeDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <JavaProbeFiles Include="$(JavaProbeDirectory)java.*" Exclude="$(JavaProbeDirectory)java.pdb" />
+    </ItemGroup>
+    <RemoveDir Directories="$(OutDir)java-probe" />
+    <Copy SourceFiles="@(JavaProbeFiles)" DestinationFolder="$(OutDir)java-probe" />
+  </Target>
+  <Target Name="CompileJavaBridgeRegressions" BeforeTargets="Build" Condition="'$(DesignTimeBuild)' != 'true'">
+    <PropertyGroup>
+      <BridgeTestJavaArgument Condition="'$(GameBridgeJavaHome)' != ''">-JavaHome &quot;$(GameBridgeJavaHome)&quot;</BridgeTestJavaArgument>
+      <ObservationTestJavaArgument Condition="'$(GameObservationJavaHome)' != ''">-ObservationJavaHome &quot;$(GameObservationJavaHome)&quot;</ObservationTestJavaArgument>
+    </PropertyGroup>
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../Fixtures/GameBridge/build.ps1&quot; -OutputDirectory &quot;$(OutDir)java-bridge-tests&quot; $(BridgeTestJavaArgument) $(ObservationTestJavaArgument)" />
+  </Target>
+</Project>

@@ -1,0 +1,41 @@
+<Project Sdk="MSTest.Sdk/4.1.0">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+    <EnableMicrosoftTestingExtensionsTrxReport>true</EnableMicrosoftTestingExtensionsTrxReport>
+    <SkinRenderingSource>$(MSBuildProjectDirectory)/../../src/Rodel.MinecraftLauncher.App/Features/Skins</SkinRenderingSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Exercise the real native worker without launching Sprout UI or adding graphics dependencies to Core tests. -->
+    <PackageReference Include="Sprout.Interop" Version="$(SproutPackageVersion)" />
+    <PackageReference Include="Sprout" Version="$(SproutPackageVersion)" />
+    <Compile Include="$(SkinRenderingSource)/../Ai/Transcript/AiTurnLayout.cs" Link="Presentation/AiTurnLayout.cs" />
+    <Compile Include="$(SkinRenderingSource)/../Content/Worlds/WorldListStore.cs" Link="Presentation/WorldListStore.cs" />
+    <ProjectReference Include="../../src/Rodel.Minecraft.Skins/Rodel.Minecraft.Skins.csproj" />
+    <ProjectReference Include="../../src/Rodel.Minecraft.Seeds/Rodel.Minecraft.Seeds.csproj" />
+    <Compile Include="../Fixtures/SeedScene/SceneFixture.cs" Link="Rendering/SceneFixture.cs" />
+    <Compile Include="$(SkinRenderingSource)/../SeedExplorer/Rendering/SeedSceneGpuRenderer.cs" Link="Rendering/SeedSceneGpuRenderer.cs" />
+    <Compile Include="$(SkinRenderingSource)/../SeedExplorer/Rendering/SeedSceneOrbitGesture.cs" Link="Rendering/SeedSceneOrbitGesture.cs" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SeedScene/VS.cso" LogicalName="SeedScene.VS" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SeedScene/PS.cso" LogicalName="SeedScene.PS" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinGpuRenderer.cs" Link="Rendering/SkinGpuRenderer.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinRenderThread.cs" Link="Rendering/SkinRenderThread.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinGpuRenderer.SceneCache.cs" Link="Rendering/SkinGpuRenderer.SceneCache.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinCamera.cs" Link="Rendering/SkinCamera.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinAnimation.cs" Link="Rendering/SkinAnimation.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinShaderScene.cs" Link="Rendering/SkinShaderScene.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinPreviewEffect.cs" Link="Rendering/SkinPreviewEffect.cs" />
+    <Compile Include="$(SkinRenderingSource)/Rendering/SkinBrushOverlay.cs" Link="Rendering/SkinBrushOverlay.cs" />
+    <Compile Include="$(SkinRenderingSource)/Workspace/SkinEditorSelection.cs" Link="Rendering/SkinEditorSelection.cs" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/VS.cso" LogicalName="SkinShaders.VS" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/PS.cso" LogicalName="SkinShaders.PS" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/Resolve.cso" LogicalName="SkinShaders.Resolve" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/Preview.cso" LogicalName="SkinShaders.Preview" />
+  </ItemGroup>
+  <Target Name="CompileSkinShaders" BeforeTargets="PrepareResources" Inputs="$(SkinRenderingSource)/Rendering/SkinViewport.hlsl;$(SkinRenderingSource)/Rendering/Build-Shaders.ps1" Outputs="$(IntermediateOutputPath)SkinShaders/VS.cso;$(IntermediateOutputPath)SkinShaders/PS.cso;$(IntermediateOutputPath)SkinShaders/Resolve.cso;$(IntermediateOutputPath)SkinShaders/Preview.cso">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SkinRenderingSource)/Rendering/Build-Shaders.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)SkinShaders&quot;" />
+  </Target>
+  <Target Name="CompileSeedSceneShaders" BeforeTargets="PrepareResources" Inputs="$(SkinRenderingSource)/../SeedExplorer/Rendering/SeedScene.hlsl;$(SkinRenderingSource)/../SeedExplorer/Rendering/Build-Shaders.ps1" Outputs="$(IntermediateOutputPath)SeedScene/VS.cso;$(IntermediateOutputPath)SeedScene/PS.cso">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SkinRenderingSource)/../SeedExplorer/Rendering/Build-Shaders.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)SeedScene&quot;" />
+  </Target>
+</Project>

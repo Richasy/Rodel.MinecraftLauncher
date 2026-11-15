@@ -1,0 +1,8 @@
+.game-bridge-dialog { width: min(480px, calc(100vw - 48px)); }
+.game-bridge-dialog .instance-dialog-body { display: grid; gap: 16px; }
+.game-bridge-dialog .bridge-enable { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.game-bridge-dialog .bridge-enable input { width: auto; }
+.game-bridge-dialog .bridge-observation { padding: 16px; border: 1px solid var(--tone-line, var(--edge-light)); }
+.game-bridge-dialog .bridge-observation p { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.game-bridge-dialog .bridge-edit, .game-bridge-dialog .bridge-edit label { display: grid; gap: 10px; }
+.game-bridge-dialog footer { grid-template-columns: 1fr; }

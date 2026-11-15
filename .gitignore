@@ -1,0 +1,69 @@
+# Local products and experiments
+bin/
+obj/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+# Generated test captures, not synthetic fixture assets.
+/test/**/screenshots/
+/test/**/Screenshots/
+/test/**/test-results/
+/test/**/playwright-report/
+# Design review captures stay local. Runtime prototype assets live in design/assets/.
+/screenshots/
+/design/*.png
+/design/*.jpg
+/design/*.jpeg
+/design/*.webp
+/design/*.gif
+/design/*.bmp
+.vs/
+.idea/
+.local/
+/.gradle/
+artifacts/
+/publish/
+node_modules/
+__pycache__/
+*.user
+*.suo
+*.log
+/.sprout-devtools/
+/logs/
+.env
+.env.*
+*.pfx
+*.key
+# Exploratory verification sources, probes and reports stay local; formal tests live in /test/.
+/scripts/verification/
+/doc/verification/
+# Never commit game instances or account stores
+.minecraft/
+instances/
+!src/Rodel.MinecraftLauncher.Core/Instances/
+!src/Rodel.MinecraftLauncher.Core/Instances/**
+!src/Rodel.MinecraftLauncher.App/Features/Instances/
+!src/Rodel.MinecraftLauncher.App/Features/Instances/**
+!src/Rodel.MinecraftLauncher.App/Features/Home/Instances/
+!src/Rodel.MinecraftLauncher.App/Features/Home/Instances/**
+accounts.json
+tokens.json
+
+# Local credentials, dumps and editor recovery files
+*.pem
+*.p12
+*.p8
+*.jks
+*.keystore
+*.dmp
+*.dump
+*.heapdump
+*.tmp
+*.bak
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+desktop.ini
+.rmcl/

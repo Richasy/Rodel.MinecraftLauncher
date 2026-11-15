@@ -1,0 +1,22 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "rodel_game_ui:system_chinese_regular.ttc",
+      "size": 9,
+      "oversample": 8,
+      "shift": [0, 0]
+    },
+    {
+      "type": "ttf",
+      "file": "rodel_game_ui:system_ui_regular.ttf",
+      "size": 9,
+      "oversample": 8,
+      "shift": [0, 0]
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:default"
+    }
+  ]
+}

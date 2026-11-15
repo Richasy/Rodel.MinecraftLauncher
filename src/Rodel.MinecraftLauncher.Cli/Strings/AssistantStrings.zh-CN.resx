@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>使用Core AI 服务、对话和配置的提供程序。</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>运行内部后台Core AI 运行时。</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>管理离线模型服务和受保护的凭据。</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>管理显式模型绑定和默认模型。</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>管理持久对话和实际执行步骤。</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>检查打包并显式注册的用户指令。脚本永远不会被执行。</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>管理显式启用的 stdio MCP 进程并检查其真实目录。</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>管理独立文件和网络默认设置。</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>列出当前记录。</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>读取所选记录。</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存带有修订检查的显式字段。</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>经过必要的审核后删除选定的拥有记录。</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>无需更改手动绑定即可发现实际模型。</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>运行真实连接或生成检查。</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>选择新对话的默认值。</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>创建持久对话。</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>提交回合。 --wait观察； --cancel-on-exit 拥有取消权。</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>重试不成功的回合而不重播未知效果。</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>读取一个没有私有提供者延续状态的回合。</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>读取序列游标后的有序持久步骤。</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>通过对话和存档标识符读取原始压缩上下文，无需私有提供者状态。</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>每个存档页面返回 256 到 16000 个字符。默认值：12000。</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>通过从零开始的归档索引读取一条原始消息。</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消本回合，不是独立游戏或工作。</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>重命名而不改变对话内容。</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>更改显式操作模式。</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>将公共历史记录导出到明确选择的JSON 或文本文件。</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>检查实际配置的指令和每个文件的警告。</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>注册明确选择的本地目录。</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>启用此注册源以供将来使用。</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>禁用此注册源以供将来使用。</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>无需对话或工具即可运行一个前台模型请求。</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>查看实际的助手主机和运行模式。</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>显式{0} 值。</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>启用此命令的{0}。</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>{0} 显式为 true 或 false。</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>切勿将凭据放入命令参数中。使用 --credential-stdin、--credential-prompt 或 --credential-env。</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>助手命令或键入的选项无效。使用--help作为可接受的语法。</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>读取当前配置，然后提供--expected-revision。</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>请提供 --{0}。</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>选择一种型号进行此操作。</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>输入超出其有限的字符预算。</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>选择一种受保护的凭证输入方法。</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>使用--credential-stdin 进行重定向凭证输入。</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>凭证： </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>回复简短的问候。</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>配置的服务不再存在。</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI 轮流已经管理它们的执行生命周期。省略--background；使用 chat send 和可选的 --wait。</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>交互式凭证输入只能通过直接 CLI 调用实现，不能通过 MCP 工具或后台作业实现。</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>仅针对此提交的目标及其明确范围授权支持的突变。这不会绕过产品确认。</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>检查当前 Core 状态与停止回合的不完整突变意图，而无需重放调用。</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>显式 true 表示批准或 false 表示拒绝确切的操作指纹。</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>记录用户对确切的待处理操作的决定。模型论证无法提供此决定。</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>读取确切待处理操作、参数和冻结审查的有限页面。</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>指定 --approve true 或 --approve false 以进行此精确确认。</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>管理显式授权的本地目录及其读/写模式。</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>规划、安装、检查或移除产品拥有的Codex 和Claude 代码技能和MCP 注册。</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>在进行更改之前检查确切的目标、当前所有权和绑定。</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>应用当前的精确计划并报告每个安装结果。</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>检查安装所有权、当前客户端配置和 data-root 绑定。</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>接受检查后确切剩余的未知效果，仅适用于新的授权目标。不证明结果或允许重演旧目标。</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>管理启动器拥有的嵌入式本地模型推理，无需单独安装服务。</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>卸载空闲的嵌入式引擎及其拥有的本机模型工作人员，而不更改模型文件。</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>从重定向的标准输入读取提示（仅限直接CLI），最多 64000 个字符。</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>仅选择--prompt、--prompt-file 或--prompt-stdin 之一。</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>提示标准输入仅可通过直接调用 CLI 获得； MCP stdin 承载协议消息。</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>通过管道将文本输入此命令或使用 --prompt 或 --prompt-file。</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>供应--prompt、--prompt-file 或--prompt-stdin。</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>观察现有的转弯而不重新提交它。 --events 将有序的 events 写入 stderr； --after 恢复光标。观察者超时并不会取消回合。</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>使用非负--after 游标，--timeout-seconds 介于 1 到 3600 之间。</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>观察超时。轮次未被取消或重新提交；使用其标识符和事件光标恢复。</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>配置时实际型号参考；生成或选择对话模型时保存的模型绑定ID。仅在创建服务时重复。</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>明确的正输出令牌限制。请求/聊天仅覆盖此调用；模型保存会保留它。省略时，使用保存的设置或观察到的模型容量；未知容量使提供商默认值保持不变。</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>请求/回合截止时间（以秒为单位）（1..3600）；聊天等待使用仅限观察者的截止日期，并且不会取消生成。</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>32 位GUID 幂等密钥。重复相同的输入会返回相同的回合；使用相同密钥更改的输入将被拒绝。</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>本轮最大模型调用数 (1..64)，包括上下文选择。这不是对话消息的限制。</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>观察并控制现有的对话轮次。</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>阅读并确定确切的待处理操作确认。</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>检查并确认停止转弯效果，无需重放。</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>在一次修订检查操作中更新显式对话字段。</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>指定标题、实例、模型、模式、文件访问或网络访问更改。</value>
+  </data>
+</root>

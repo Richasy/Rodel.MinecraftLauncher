@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN" data-input="pointer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101719">
+  <link rel="icon" href="data:,">
+  <title>世界选择与新建 · Rodel UI 设计评审</title>
+  <link rel="stylesheet" href="worlds.css">
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7l-5-5L4 14z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h12v12H8zM4 15V4h11"/></symbol>
+    <symbol id="i-delete" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/></symbol>
+    <symbol id="i-world" viewBox="0 0 24 24"><path d="m12 2 10 6v9l-10 5-10-5V8zM2 8l10 5 10-5M12 13v9M7 5l10 5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-rules" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></symbol>
+    <symbol id="i-pack" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7zm-10 5v10l10 5 10-5V7M12 12v10"/></symbol>
+    <symbol id="i-lab" viewBox="0 0 24 24"><path d="M8 3h8M10 3v7l-6 9q-1 2 2 2h12q3 0 2-2l-6-9V3M7 15h10"/></symbol>
+  </svg>
+  <div class="review-shell">
+    <header class="review-toolbar">
+      <strong>世界页面 · HTML 设计稿</strong>
+      <nav aria-label="评审页面">
+        <button data-review-page="select" aria-pressed="true">选择世界</button>
+        <button data-review-page="create" aria-pressed="false">新建世界</button>
+      </nav>
+      <div class="review-group" aria-label="主题">
+        <button data-theme="dark" aria-pressed="true">Dark</button>
+        <button data-theme="light" aria-pressed="false">Light</button>
+        <button data-theme="contrast" aria-pressed="false">高对比度</button>
+      </div>
+      <label class="review-size">画布
+        <select id="review-size" aria-label="评审尺寸">
+          <option value="1280,720">1280 × 720</option>
+          <option value="800,560">800 × 560</option>
+          <option value="640,560">640 × 560</option>
+        </select>
+      </label>
+      <button id="review-empty" aria-pressed="false" disabled>空列表</button>
+      <button id="review-motion" aria-pressed="false">暂停全景</button>
+    </header>
+    <main class="review-stage">
+      <div id="frame">
+        <div id="viewport" data-theme="dark">
+          <canvas id="panorama" aria-hidden="true"></canvas>
+          <div class="backdrop-shade" aria-hidden="true"></div>
+          <section id="select-page" class="page" aria-labelledby="select-title">
+            <header class="page-header">
+              <a href="index.html" class="button icon-button" aria-label="返回主菜单" data-tip="返回主菜单"><svg><use href="#i-back"/></svg></a>
+              <div class="heading-group"><h1 id="select-title">选择世界</h1></div>
+              <button id="open-create" class="button header-action"><svg><use href="#i-plus"/></svg>新建世界</button>
+            </header>
+            <div class="world-browser surface">
+              <div class="list-toolbar">
+                <div class="search-field"><svg><use href="#i-search"/></svg><input id="world-search" name="world-search" type="search" placeholder="搜索世界…" aria-label="搜索世界" autocomplete="off" spellcheck="false"></div>
+                <p id="world-count" class="secondary" aria-live="polite">正在读取本机存档…</p>
+              </div>
+              <div id="world-list" role="listbox" aria-label="本机世界" tabindex="-1"></div>
+              <div id="list-empty" class="empty-state" hidden>
+                <svg class="empty-icon"><use href="#i-world"/></svg>
+                <h2 id="empty-title">还没有世界</h2>
+                <p id="empty-description">创建一个世界，开始新的冒险。</p>
+                <button id="empty-create" class="button"><svg><use href="#i-plus"/></svg>新建世界</button>
+              </div>
+            </div>
+            <footer class="page-footer">
+              <div class="world-actions" aria-label="所选世界操作">
+                <button id="edit-world" class="button" disabled><svg><use href="#i-edit"/></svg>编辑</button>
+                <button id="recreate-world" class="button" disabled><svg><use href="#i-copy"/></svg>重新创建</button>
+                <button id="delete-world" class="button critical" disabled><svg><use href="#i-delete"/></svg>删除</button>
+              </div>
+              <button id="play-world" class="button primary" disabled><span class="button-face"><svg><use href="#i-play"/></svg>进入世界</span></button>
+            </footer>
+          </section>
+          <section id="create-page" class="page" aria-labelledby="create-title" hidden>
+            <header class="page-header">
+              <button id="create-back" class="button icon-button" aria-label="返回世界列表" data-tip="返回世界列表"><svg><use href="#i-back"/></svg></button>
+              <div class="heading-group"><h1 id="create-title">新建世界</h1></div>
+              <div class="tabs" role="tablist" aria-label="新建世界设置">
+                <button id="tab-game" role="tab" aria-controls="panel-game" aria-selected="true" tabindex="0" data-tab="game">游戏</button>
+                <button id="tab-world" role="tab" aria-controls="panel-world" aria-selected="false" tabindex="-1" data-tab="world">世界</button>
+                <button id="tab-more" role="tab" aria-controls="panel-more" aria-selected="false" tabindex="-1" data-tab="more">更多</button>
+              </div>
+            </header>
+            <div class="create-panel surface">
+              <div class="form-scroll">
+                <div id="panel-game" role="tabpanel" aria-labelledby="tab-game">
+                  <div class="name-field">
+                    <label for="world-name">世界名称</label>
+                    <input id="world-name" name="world-name" type="text" value="新的世界" autocomplete="off" spellcheck="false" aria-describedby="name-error">
+                    <p id="name-error" class="field-error" aria-live="polite" hidden>请输入世界名称。</p>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-row">
+                      <div class="field-label"><label for="game-mode">游戏模式</label><p id="game-mode-description">收集资源，建造并探索世界。</p></div>
+                      <select id="game-mode" name="game-mode"><option value="survival">生存</option><option value="creative">创造</option><option value="hardcore">极限</option></select>
+                    </div>
+                    <div class="form-row">
+                      <div class="field-label"><label for="difficulty">难度</label><p id="difficulty-description">影响敌对生物、伤害和生存挑战。</p></div>
+                      <select id="difficulty" name="difficulty"><option value="peaceful">和平</option><option value="easy">简单</option><option value="normal" selected>普通</option><option value="hard">困难</option></select>
+                    </div>
+                    <div class="form-row">
+                      <div class="field-label"><label id="commands-label" for="allow-commands">允许使用命令</label><p id="commands-description">允许使用传送、调整时间等游戏命令。</p></div>
+                      <button id="allow-commands" type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="commands-label"><span></span></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="panel-world" role="tabpanel" aria-labelledby="tab-world" hidden>
+                  <div class="name-field">
+                    <label for="world-seed">世界种子</label>
+                    <input id="world-seed" name="world-seed" type="text" placeholder="留空以随机生成…" autocomplete="off" spellcheck="false">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-row">
+                      <div class="field-label"><label for="world-type">世界类型</label><p id="world-type-description">原版的生物群系与自然地形。</p></div>
+                      <div class="world-type-field"><select id="world-type" name="world-type" aria-label="世界类型"></select><button id="customize-world" class="button" hidden>自定义</button></div>
+                    </div>
+                    <div class="form-row">
+                      <div class="field-label"><label id="structures-label" for="generate-structures">生成结构</label><p>生成村庄、神殿和其他结构。</p></div>
+                      <button id="generate-structures" class="switch" role="switch" aria-checked="true" aria-labelledby="structures-label"><span></span></button>
+                    </div>
+                    <div class="form-row">
+                      <div class="field-label"><label id="bonus-label" for="bonus-chest">奖励箱</label><p id="bonus-description">在出生点附近放置装有基础物资的箱子。</p></div>
+                      <button id="bonus-chest" class="switch" role="switch" aria-checked="false" aria-labelledby="bonus-label"><span></span></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="panel-more" role="tabpanel" aria-labelledby="tab-more" hidden>
+                  <button class="more-row" data-native-page="游戏规则"><svg><use href="#i-rules"/></svg><span><strong>游戏规则</strong><small>调整这个世界的游戏行为。</small></span><svg class="chevron"><use href="#i-chevron"/></svg></button>
+                  <button class="more-row" data-native-page="数据包"><svg><use href="#i-pack"/></svg><span><strong>数据包</strong><small>选择创建世界时启用的数据包。</small></span><svg class="chevron"><use href="#i-chevron"/></svg></button>
+                  <button class="more-row" data-native-page="实验性功能"><svg><use href="#i-lab"/></svg><span><strong>实验性功能</strong><small>体验尚未正式启用的游戏功能。</small></span><svg class="chevron"><use href="#i-chevron"/></svg></button>
+                </div>
+              </div>
+            </div>
+            <footer class="page-footer create-footer">
+              <p id="create-summary" class="secondary">生存 · 普通 · 默认世界</p>
+              <button id="create-world" class="button primary"><span class="button-face"><svg><use href="#i-plus"/></svg>创建世界</span></button>
+            </footer>
+          </section>
+          <dialog id="world-dialog" aria-labelledby="dialog-title">
+            <h2 id="dialog-title"></h2>
+            <div id="dialog-body"></div>
+            <div id="dialog-actions" class="dialog-actions"></div>
+          </dialog>
+          <p id="resource-error" role="alert" hidden></p>
+        </div>
+      </div>
+    </main>
+    <footer class="review-notes">
+      <span id="source-note">只读加载本机世界摘要；不上传、不写回存档。</span>
+      <span id="review-message" role="status">设计交互仅在浏览器内存生效，不执行游戏操作。</span>
+    </footer>
+  </div>
+  <script type="module" src="worlds.js"></script>
+</body>
+</html>

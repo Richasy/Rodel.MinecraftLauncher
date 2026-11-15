@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>皮肤编辑器 · Rodel</title>
+  <link rel="stylesheet" href="../prototype.css">
+  <link rel="stylesheet" href="../themes.css">
+  <link rel="stylesheet" href="editor.css?skin-ai=20261025">
+  <link rel="stylesheet" href="palette.css">
+  <link rel="stylesheet" href="layers.css">
+  <link rel="stylesheet" href="color-picker.css">
+</head>
+<body class="skin-prototype">
+  <div class="design-bar">
+    <a href="../index.html">RODEL <span>/ SKIN STUDIO</span></a>
+    <div class="design-options" role="group" aria-label="设计评审">
+      <button data-theme="light" aria-pressed="true">浅色</button>
+      <button data-theme="dark" aria-pressed="false">深色</button>
+      <button data-theme="contrast" aria-pressed="false">高对比度</button>
+      <span class="separator"></span>
+      <button data-scenario="manual" aria-pressed="true">手动编辑</button>
+      <button data-scenario="ai" aria-pressed="false">AI 编辑演示</button>
+    </div>
+    <span class="design-note">独立窗口 · 交互设计原型</span>
+  </div>
+
+  <main class="skin-window launcher" aria-label="独立皮肤编辑器">
+    <div class="editor-scene" aria-hidden="true"></div>
+    <header class="editor-titlebar" aria-label="皮肤编辑器标题栏">
+      <button id="app-menu" class="titlebar-trigger app-menu" aria-label="Rodel 应用菜单" aria-haspopup="menu" aria-expanded="false" aria-controls="app-flyout" title="应用菜单"><img class="app-icon" src="../../src/Rodel.MinecraftLauncher.App/Assets/AppIcons/Square44x44Logo.targetsize-48_altform-unplated.png" alt=""><img class="app-icon-hc" src="../../src/Rodel.MinecraftLauncher.App/Assets/Icons/launcher-hc-black.svg" alt=""></button>
+      <h1 class="document-title"><button id="document-menu" class="titlebar-trigger" aria-label="未命名皮肤，工程信息" aria-haspopup="dialog" aria-expanded="false" aria-controls="document-flyout"><span>未命名皮肤</span><i class="disclosure" data-icon="chevron"></i></button></h1>
+      <span class="titlebar-divider" aria-hidden="true"></span>
+      <button id="tool-menu" class="titlebar-trigger tool-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="tool-flyout"><span id="tool-name"><i data-icon="brush"></i><span>画笔</span></span><span id="tool-summary">1 px</span><i class="disclosure" data-icon="chevron"></i></button>
+      <div class="titlebar-drag-space" aria-hidden="true"></div>
+      <div class="history-actions" aria-label="编辑历史">
+        <button class="titlebar-icon" id="undo" aria-label="撤销 (Ctrl+Z)" title="撤销 · Ctrl+Z" disabled><i data-icon="undo"></i></button>
+        <button class="titlebar-icon" id="redo" aria-label="重做 (Ctrl+Shift+Z)" title="重做 · Ctrl+Shift+Z" disabled><i data-icon="redo"></i></button>
+      </div>
+      <button class="e-button titlebar-export" id="preview-document">预览</button>
+      <div class="titlebar-export-group"><button class="e-button primary titlebar-export" id="export-document"><i data-icon="export"></i><span>导出 PNG</span></button><button class="e-button primary titlebar-trigger export-overflow" id="export-menu" aria-label="更多导出选项" aria-haspopup="menu" aria-expanded="false" aria-controls="export-flyout" hidden><i data-icon="chevron"></i></button></div>
+      <div id="export-flyout" class="titlebar-flyout flyout-actions" role="menu" aria-label="更多导出选项" hidden><button id="export-64" role="menuitem"><i data-icon="export"></i><span>导出为 64×64</span></button></div>
+      <div class="caption-preview" aria-label="原生窗口按钮示意">
+        <span aria-hidden="true">─</span><span aria-hidden="true">□</span>
+        <button id="close-window" aria-label="关闭编辑器示意"><i data-icon="close"></i></button>
+      </div>
+
+      <div id="app-flyout" class="titlebar-flyout app-flyout flyout-actions" role="menu" aria-label="应用菜单" hidden>
+        <button id="new-document" role="menuitem"><i data-icon="plus"></i><span>新建工程</span></button>
+        <button id="save-project" role="menuitem"><i data-icon="export"></i><span>工程另存为…</span></button>
+        <button id="import-document" role="menuitem"><i data-icon="folder"></i><span>导入 PNG</span></button>
+      </div>
+      <section id="document-flyout" class="titlebar-flyout document-flyout" role="dialog" aria-labelledby="document-flyout-title" tabindex="-1" hidden>
+        <div class="flyout-heading"><div><span class="flyout-eyebrow">Rodel · 皮肤编辑器</span><h2 id="document-flyout-title">未命名皮肤</h2></div><button class="inline-icon" data-close-flyout aria-label="关闭工程信息" title="关闭"><i data-icon="close"></i></button></div>
+        <dl class="document-metadata">
+          <div><dt>尺寸</dt><dd id="metadata-size">64 × 64 px</dd></div>
+          <div><dt>模型</dt><dd id="metadata-model">Classic · 标准手臂</dd></div>
+          <div><dt>绘图图层</dt><dd id="metadata-layers">1 个图层</dd></div>
+          <div><dt>当前版本</dt><dd id="metadata-revision">1</dd></div>
+        </dl>
+        <p class="flyout-note">本页内存草稿，刷新后重置。</p>
+      </section>
+      <section id="tool-flyout" class="titlebar-flyout tool-options" role="dialog" aria-labelledby="tool-flyout-title" tabindex="-1" hidden>
+        <div class="flyout-heading"><h2 id="tool-flyout-title">画笔选项</h2><button class="inline-icon" data-close-flyout aria-label="关闭工具选项" title="关闭"><i data-icon="close"></i></button></div>
+        <p id="tool-description" hidden></p>
+        <div class="option-field"><label for="brush-size">大小</label><input id="brush-size" type="range" min="1" max="5" value="1"><output id="brush-size-value">1 px</output></div>
+        <div class="brush-shape"><div class="brush-shape-sample"><span id="brush-square"></span></div><span id="brush-footprint-label">方形 · 1 × 1 像素</span></div>
+        <div class="paint-target"><span>绘制目标</span><strong id="target-description">基础皮肤 · 底层</strong></div>
+        <button class="flyout-shortcuts" id="shortcuts"><i data-icon="keyboard"></i><span>快捷键</span></button>
+      </section>
+    </header>
+    <input id="import-file" type="file" accept="image/png" hidden>
+    <input id="layer-png-file" type="file" accept="image/png" hidden>
+
+    <div class="editor-body">
+      <nav class="tools-rail" aria-label="绘图工具">
+        <div class="rail-group">
+          <button class="tool-button" data-tool="brush" aria-pressed="true" aria-label="画笔 B" title="画笔 · B"><i data-icon="brush"></i><kbd>B</kbd></button>
+          <button class="tool-button" data-tool="eraser" aria-pressed="false" aria-label="橡皮 E" title="橡皮 · E"><i data-icon="eraser"></i><kbd>E</kbd></button>
+          <button class="tool-button" data-tool="fill" aria-pressed="false" aria-label="填充 G" title="连通填充 · G"><i data-icon="fill"></i><kbd>G</kbd></button>
+          <button class="tool-button" data-tool="picker" aria-pressed="false" aria-label="取色 I" title="取色 · I"><i data-icon="picker"></i><kbd>I</kbd></button>
+        </div>
+        <div class="rail-group">
+          <button id="mirror-toggle" class="tool-button" aria-label="左右镜像" aria-pressed="false" title="左右镜像"><i data-icon="mirror"></i></button>
+          <button class="tool-button" data-tool="select" aria-pressed="false" aria-label="矩形选区 M" title="矩形选区（平面贴图）· M"><i data-icon="select"></i><kbd>M</kbd></button>
+        </div>
+        <div class="rail-bottom">
+          <button class="active-color" id="rail-color" aria-label="前景色，打开颜色选择器" title="前景色"></button>
+          <span class="rail-label">颜色</span>
+        </div>
+      </nav>
+
+      <section class="workspace" aria-label="皮肤画布">
+        <div class="viewport-toolbar">
+          <div class="view-switch" role="group" aria-label="主画布视图">
+            <button data-view="3d" aria-pressed="true">3D</button>
+            <button data-view="uv" aria-pressed="false">平面</button>
+          </div>
+          <div class="view-actions">
+            <button class="text-tool" id="grid-toggle" aria-pressed="false"><i data-icon="grid"></i><span>网格</span></button>
+            <button class="text-tool" id="uv-toggle" aria-pressed="true" aria-controls="uv-window"><i data-icon="split"></i><span>展开图</span></button>
+            <button class="text-tool" id="reset-camera"><i data-icon="fit"></i><span>复位视角</span></button>
+            <button class="text-tool" id="clear-selection" hidden>取消选区</button>
+          </div>
+        </div>
+        <div class="canvas-layout" data-view="3d">
+          <div class="model-viewport">
+            <div class="viewport-label"><span class="eyebrow" id="main-view-label">MODEL</span><span id="main-view-title">立体绘制</span></div>
+            <div class="model-ground" aria-hidden="true"></div>
+            <canvas id="model-canvas" tabindex="0" aria-label="3D皮肤画布，左键绘制，Ctrl拖动平移，Alt拖动旋转，滚轮缩放"></canvas>
+            <div id="main-selection-rect" class="selection-rect" hidden></div>
+            <div class="camera-controls" role="group" aria-label="标准视角">
+              <button data-camera="front" aria-pressed="false">正面</button><button data-camera="back" aria-pressed="false">背面</button><button data-camera="angle" aria-pressed="true">透视</button>
+            </div>
+            <div class="model-caption"><i data-icon="mouse"></i><span id="main-view-hint">左键绘制 <b>·</b> Ctrl 拖动平移 <b>·</b> Alt 拖动旋转 <b>·</b> 滚轮缩放</span></div>
+          </div>
+          <div class="uv-viewport" id="uv-window" role="region" aria-label="独立 UV 展开图">
+            <div class="uv-window-heading"><span>展开图 <small id="uv-dimensions">64 × 64</small></span><div><button id="reset-uv" class="inline-icon" aria-label="复位展开图" title="复位展开图"><i data-icon="fit"></i></button><button id="close-uv" class="inline-icon" aria-label="收起展开图" title="收起展开图"><i data-icon="close"></i></button></div></div>
+            <div class="uv-canvas-wrap"><canvas id="uv-canvas" tabindex="0" aria-label="独立UV展开图，可绘制，Alt拖动平移，滚轮缩放"></canvas><div id="selection-rect" class="selection-rect" hidden></div></div>
+            <div class="uv-caption">Alt 拖动 · 滚轮缩放</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="inspector" aria-label="编辑属性与AI助手">
+        <div id="sidebar-splitter" role="separator" aria-label="调整侧栏宽度" aria-orientation="vertical" aria-valuemin="240" aria-valuemax="640" aria-valuenow="320" tabindex="0"></div>
+        <div class="inspector-tabs" role="tablist" aria-label="属性面板">
+          <button role="tab" id="tab-edit" data-tab="edit" aria-controls="panel-edit" aria-selected="true">编辑</button>
+          <button role="tab" id="tab-ai" data-tab="ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1"><i data-icon="spark"></i>AI 助手<span class="unread-dot" hidden></span></button>
+          <button role="tab" id="tab-history" data-tab="history" aria-controls="panel-history" aria-selected="false" tabindex="-1">历史</button>
+        </div>
+        <div id="panel-edit" role="tabpanel" aria-labelledby="tab-edit" class="inspector-panel">
+          <section class="property-section color-section">
+            <div class="section-heading"><h2>颜色</h2></div>
+            <div class="color-editor">
+              <input id="color-picker" type="color" value="#638b4d" aria-label="前景颜色">
+              <div class="hex-input"><label for="hex-color">HEX</label><input id="hex-color" value="#638B4D" maxlength="9" spellcheck="false" aria-label="十六进制颜色"></div>
+            </div>
+            <p class="field-error" id="color-error" hidden>请输入 # 加 6 位 RGB 或 8 位 RGBA 十六进制颜色。</p>
+            <div id="palette-editor"></div>
+          </section>
+          <section class="property-section">
+            <div class="section-heading"><h2>身体部位</h2><button class="inline-action" id="show-all">显示全部</button></div>
+            <div class="skin-surface-control"><span>绘制位置</span><div role="group" aria-label="Minecraft皮肤层"><button data-surface="base" aria-pressed="true">底层</button><button data-surface="outer" aria-pressed="false">外层</button></div></div>
+            <p class="surface-help" id="surface-help">底层构成人物本体，始终保持不透明。</p>
+            <div class="body-parts" role="group" aria-label="隔离编辑部位">
+              <button data-part="head" aria-pressed="false">头部</button><button data-part="body" aria-pressed="false">躯干</button>
+              <button data-part="rightArm" aria-pressed="false">右臂</button><button data-part="leftArm" aria-pressed="false">左臂</button>
+              <button data-part="rightLeg" aria-pressed="false">右腿</button><button data-part="leftLeg" aria-pressed="false">左腿</button>
+            </div>
+            <label class="check-row"><input id="outer-visible" type="checkbox" checked><span>显示外层</span><span class="muted">帽子 / 衣物</span></label>
+          </section>
+          <section class="property-section layers-section">
+            <div class="section-heading"><h2>绘图图层</h2><div><button class="inline-icon" id="import-layer" aria-label="将 PNG 导入为新图层" title="将 PNG 导入为新图层"><i data-icon="import"></i></button><button class="inline-icon" id="add-layer" aria-label="添加绘图图层" title="添加图层"><i data-icon="plus"></i></button></div></div>
+            <div id="layer-list" class="layer-list" aria-label="绘图图层"></div>
+            <p class="section-help">绘图图层可覆盖底层与外层；导出时合成为一张 PNG。</p>
+          </section>
+        </div>
+        <div id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" class="inspector-panel ai-panel" hidden>
+          <div class="ai-conversation" id="ai-conversation">
+            <div class="ai-empty" id="ai-empty"><i data-icon="spark"></i><h2>一起设计这张皮肤</h2><p>描述你想要的变化。</p></div>
+            <div id="ai-result"></div>
+          </div>
+          <div class="ai-composer-area">
+            <div id="ai-reference-images" class="ai-reference-images" hidden></div>
+            <input id="ai-reference-files" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" multiple hidden>
+            <textarea id="ai-prompt" rows="3" placeholder="想怎么修改皮肤？"></textarea>
+            <div class="composer-footer">
+              <select aria-label="选择模型"><option>演示模型</option></select>
+              <button id="ai-new-chat" class="e-button" aria-label="新会话" title="新会话" hidden><i data-icon="chatAdd"></i></button>
+              <button id="ai-add-images" class="e-button" aria-label="添加参考图" title="PNG/JPG/WebP，最多3张"><i data-icon="image"></i></button>
+              <button id="generate-proposal" class="e-button" aria-label="发送"><i data-icon="arrow"></i></button>
+            </div>
+          </div>
+        </div>
+        <div id="panel-history" role="tabpanel" aria-labelledby="tab-history" class="inspector-panel history-panel" hidden>
+          <div class="section-heading"><h2>操作历史</h2><span id="history-count">0 次编辑</span></div>
+          <p class="section-help">手动笔划与接受的 AI 修改共用撤销记录。每次拖动是一笔。</p>
+          <ol id="history-list"></ol>
+        </div>
+      </aside>
+    </div>
+    <footer class="editor-status"><span><span class="status-dot"></span><span id="save-status">新建皮肤 · 修改仅保留在本页</span></span><span id="selection-status">未选择区域</span><span id="revision-status">版本 1</span></footer>
+    <div class="editor-toast" id="editor-toast" role="status" hidden></div>
+  </main>
+  <footer class="design-footer"><span>设计原型：可实际涂绘、旋转、撤销与导出 PNG；AI 为固定示例。</span><a href="DESIGN.md">交互与接线说明 ↗</a><a href="RESEARCH.md">社区参考 ↗</a></footer>
+  <dialog id="editor-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title"></h2><button id="dialog-close" class="inline-icon" aria-label="关闭对话框"><i data-icon="close"></i></button></div><div id="dialog-body"></div><div id="dialog-actions"></div></dialog>
+  <dialog id="animation-dialog" aria-label="皮肤动态预览">
+    <button id="animation-close" class="inline-icon" aria-label="关闭预览"><i data-icon="close"></i></button>
+    <canvas id="animation-canvas" aria-label="当前皮肤的动态预览"></canvas>
+  </dialog>
+  <script src="../controls.js"></script>
+  <script type="module" src="editor.js?skin-ai=20261025"></script>
+</body>
+</html>

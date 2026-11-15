@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>14</LangVersion>
+    <SproutPackageVersion Condition="'$(SproutPackageVersion)' == ''">0.1.0-rodel.122.1.g41856b1f6736</SproutPackageVersion>
+    <Deterministic>true</Deterministic>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+    <EnableLocalInference Condition="'$(EnableLocalInference)' == ''">false</EnableLocalInference>
+    <DefineConstants Condition="'$(EnableLocalInference)' == 'true'">$(DefineConstants);RODEL_LOCAL_INFERENCE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Roslynator.Analyzers" Version="5.0.1" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

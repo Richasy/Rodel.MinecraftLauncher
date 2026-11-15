@@ -1,0 +1,69 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.18.2' apply false
+    id 'net.fabricmc.fabric-loom-remap' version '1.18.2' apply false
+}
+
+apply from: '../gradle/game-target.gradle'
+apply plugin: legacy_minecraft ? 'net.fabricmc.fabric-loom-remap' : 'net.fabricmc.fabric-loom'
+
+base {
+    archivesName = 'rodel-ui'
+}
+
+loom {
+    accessWidenerPath = target_access_widener
+}
+
+repositories {
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+configurations { bundledFabricApi { canBeConsumed = false; canBeResolved = true; transitive = false } }
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    if (legacy_minecraft) mappings loom.officialMojangMappings()
+    add(legacy_minecraft ? 'modImplementation' : 'implementation', 'net.fabricmc:fabric-loader:0.19.5')
+    add(legacy_minecraft ? 'modImplementation' : 'implementation', "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
+    bundledFabricApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+    add(legacy_minecraft ? 'modCompileOnly' : 'compileOnly', "com.terraformersmc:modmenu:${modmenu_version}")
+}
+
+// UI-only Quilt targets carry the same exact dependency without building another first-party module.
+tasks.register('bundleFabricApi', Copy) {
+    from configurations.bundledFabricApi
+    into layout.buildDirectory.dir('bundled-dependencies')
+    rename { 'fabric-api.jar' }
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion(java_version)
+    targetCompatibility = JavaVersion.toVersion(java_version)
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = Integer.parseInt(bytecode_version)
+    options.encoding = 'UTF-8'
+}
+
+def resourceTokens = [version: project.version.toString(), minecraft_version: project.minecraft_version,
+    fabric_api_version: project.fabric_api_version, java_version: project.java_version, modmenu_version: project.modmenu_version]
+def workstationPoc = minecraft_version == '26.3'
+if (workstationPoc) {
+    sourceSets.main.java.srcDir('src/workstationPoc/java')
+    sourceSets.main.resources.srcDir('src/workstationPoc/resources')
+}
+processResources {
+    inputs.properties(resourceTokens)
+    inputs.property('workstationPoc', workstationPoc)
+    filesMatching('fabric.mod.json') {
+        expand(resourceTokens)
+        if (workstationPoc) filter { line ->
+            line.replace('["rodel-game-ui.mixins.json"]',
+                '["rodel-game-ui.mixins.json", "rodel-workstation-poc.mixins.json"]')
+        }
+    }
+    if (legacy_minecraft) filesMatching('*.accesswidener') { filter { line -> line.replace('accessWidener v2 official', 'accessWidener v2 named') } }
+}
+apply from: '../gradle/target-sources.gradle'

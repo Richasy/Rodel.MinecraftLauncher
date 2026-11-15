@@ -1,0 +1,96 @@
+<Project Sdk="MSTest.Sdk/4.1.0">
+  <PropertyGroup>
+    <TargetFramework>net11.0-windows10.0.19041.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+    <EnableMicrosoftTestingExtensionsTrxReport>true</EnableMicrosoftTestingExtensionsTrxReport>
+    <SproutDefaultLanguage>en</SproutDefaultLanguage>
+    <LangVersion>preview</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Include="..\Common\ModelEndpoint.cs" Link="Infrastructure\ModelEndpoint.cs" />
+    <ProjectReference Include="..\..\src\Rodel.MinecraftLauncher.Core\Rodel.MinecraftLauncher.Core.csproj" />
+    <ProjectReference Include="..\..\src\Rodel.MinecraftLauncher.App\Rodel.MinecraftLauncher.App.csproj" Aliases="NativeApp" />
+    <PackageReference Include="Sprout" Version="$(SproutPackageVersion)" />
+    <PackageReference Include="Sprout.Svg" Version="$(SproutPackageVersion)" />
+    <PackageReference Include="Sprout.HttpImages" Version="$(SproutPackageVersion)" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="2.3.12" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="2.1.9" />
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.275" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
+    <ProjectReference Include="..\..\src\Rodel.MinecraftLauncher.SettingsGenerator\Rodel.MinecraftLauncher.SettingsGenerator.csproj" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Localization\PluralRules.cs" Link="Presentation\PluralRules.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Localization\LauncherErrorText.cs" Link="Presentation\LauncherErrorText.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\Worlds\WorldCountText.cs" Link="Presentation\WorldCountText.cs" />
+    <!-- Compile the real state owners, not the packaged window host or copies of its behavior. -->
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Instances\InstanceListStore.cs" Link="Presentation\InstanceListStore.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Instances\InstanceManagementState.cs" Link="Presentation\InstanceManagementState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Instances\InstanceManagementController.cs" Link="Presentation\InstanceManagementController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Accounts\Avatars\AccountSkinRefresh.cs" Link="Presentation\AccountSkinRefresh.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Accounts\Avatars\AccountAvatarImages.cs" Link="Presentation\AccountAvatarImages.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Controls\Reports\PopupPreparationClose.cs" Link="Presentation\PopupPreparationClose.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Controls\Menus\CriticalMenuItem.cs" Link="Presentation\CriticalMenuItem.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Controls\Versions\GameVersionChoices.cs" Link="Presentation\GameVersionChoices.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Multiplayer\MultiplayerPresentation.cs" Link="Presentation\MultiplayerPresentation.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\SeedExplorer\SeedWorkspaceDraft.cs" Link="Presentation\SeedWorkspaceDraft.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\SeedExplorer\SeedVersionSelection.cs" Link="Presentation\SeedVersionSelection.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\SeedExplorer\SeedMapPanPresentation.cs" Link="Presentation\SeedMapPanPresentation.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\SeedExplorer\SeedLootPredictionController.cs" Link="Presentation\SeedLootPredictionController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Configuration\AiConfigurationModels.cs" Link="Presentation\AiConfigurationModels.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Configuration\AiConfigurationStore.cs" Link="Presentation\AiConfigurationStore.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\AiOperationGate.cs" Link="Presentation\AiOperationGate.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Chat\AiUiState.cs" Link="Presentation\AiUiState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Settings\AppStorage.cs" Link="Presentation\AppStorage.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Settings\RegistrySettings.cs" Link="Presentation\RegistrySettings.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Ai\SkinAiWorkspace.cs" Link="Presentation\SkinAiWorkspace.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Workspace\SkinEditorInput.cs" Link="Presentation\SkinEditorInput.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Workspace\SkinEditorSelection.cs" Link="Presentation\SkinEditorSelection.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\SkinEditorState.cs" Link="Presentation\SkinEditorState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Rendering\SkinBrushOverlay.cs" Link="Presentation\SkinBrushOverlay.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinPaletteImage.cs" Link="Presentation\SkinPaletteImage.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinPaletteQuantizer.cs" Link="Presentation\SkinPaletteQuantizer.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinPaletteRefinement.cs" Link="Presentation\SkinPaletteRefinement.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinReferenceTransform.cs" Link="Presentation\SkinReferenceTransform.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Chat\AiChatController.cs" Link="Presentation\AiChatController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Interaction\AiApproval.cs" Link="Presentation\AiApproval.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Interaction\AiUserAnswer.cs" Link="Presentation\AiUserAnswer.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Chat\AiTurnObservation.cs" Link="Presentation\AiTurnObservation.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Transcript\AiTranscriptContent.cs" Link="Presentation\AiTranscriptContent.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Configuration\AiBrandArtwork.cs" Link="Presentation\AiBrandArtwork.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\Discovery\ContentInstallStore.cs" Link="Presentation\ContentInstallStore.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\ContentFinding.cs" Link="Presentation\ContentFinding.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\Discovery\ContentVersion.cs" Link="Presentation\ContentVersion.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\ContentKind.cs" Link="Presentation\ContentKind.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\Screenshots\ScreenshotStore.cs" Link="Presentation\ScreenshotStore.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Content\Screenshots\ScreenshotSelectionController.cs" Link="Presentation\ScreenshotSelectionController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Settings\Preferences\CorePreferencesStore.cs" Link="Presentation\CorePreferencesStore.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Settings\Preferences\CorePreferenceFields.cs" Link="Presentation\CorePreferenceFields.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Settings\Maintenance\DiagnosticsExportController.cs" Link="Presentation\DiagnosticsExportController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Packs\Import\PackImportController.cs" Link="Presentation\PackImportController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Tasks\FeatureTaskController.cs" Link="Presentation\FeatureTaskController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Shell\GameWindowReturn.cs" Link="Presentation\GameWindowReturn.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\HomeController.cs" Link="Presentation\HomeController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\HomePageState.cs" Link="Presentation\HomePageState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Instances\HomeInstanceReader.cs" Link="Presentation\HomeInstanceReader.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Instances\InstanceDetailsCache.cs" Link="Presentation\InstanceDetailsCache.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Instances\InstanceSummary.cs" Link="Presentation\InstanceSummary.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\HomeLaunchReader.cs" Link="Presentation\HomeLaunchReader.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\HomeLaunchPresentation.cs" Link="Presentation\HomeLaunchPresentation.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\HomeLaunchSettingsService.cs" Link="Presentation\HomeLaunchSettingsService.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\LaunchSettingsDraft.cs" Link="Presentation\LaunchSettingsDraft.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\LaunchProblemObserver.cs" Link="Presentation\LaunchProblemObserver.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Home\Launch\LaunchProblemText.cs" Link="Presentation\LaunchProblemText.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Create\CreateController.cs" Link="Presentation\CreateController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Create\CreateState.cs" Link="Presentation\CreateState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Import\ImportController.cs" Link="Presentation\ImportController.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Import\ImportState.cs" Link="Presentation\ImportState.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Imaging\AppImageCache.cs" Link="Presentation\AppImageCache.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Imaging\ImageHttpHandler.cs" Link="Presentation\ImageHttpHandler.cs" />
+    <AdditionalFiles Include="..\..\src\Rodel.MinecraftLauncher.App\Strings\**\Resources.resw" />
+    <Using Include="Rodel.MinecraftLauncher.App.Tests.Resources" Alias="Resources" />
+  </ItemGroup>
+</Project>

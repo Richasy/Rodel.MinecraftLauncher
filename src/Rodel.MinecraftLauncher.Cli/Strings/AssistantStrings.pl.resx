@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>Korzystaj z usług, rozmów i skonfigurowanych dostawców Core AI.</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>Uruchom wewnętrzne środowisko wykonawcze Core AI w tle.</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Zarządzaj modelowymi usługami offline i chronionymi danymi uwierzytelniającymi.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Zarządzaj jawnymi powiązaniami modelu i modelem domyślnym.</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Zarządzaj ciągłymi rozmowami i rzeczywistymi etapami wykonania.</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>Sprawdź zapakowane i wyraźnie zarejestrowane instrukcje użytkownika. Skrypty nigdy nie są wykonywane.</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>Zarządzaj jawnie włączonymi procesami stdio MCP i sprawdzaj ich rzeczywiste katalogi.</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>Zarządzaj niezależnymi ustawieniami plików i sieci.</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Lista bieżących rekordów.</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Przeczytaj wybrany rekord.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz jawne pola ze sprawdzaniem wersji.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Po wymaganym sprawdzeniu usuń wybrany posiadany rekord.</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Odkryj aktualne modele bez zmiany ręcznych wiązań.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Uruchom sprawdzenie rzeczywistego połączenia lub generacji.</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Wybierz ustawienie domyślne dla nowych rozmów.</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Stwórz trwałą rozmowę.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Oddaj turę. --wait obserwuje; --cancel-on-exit jest właścicielem anulowania.</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Ponów nieudaną turę bez powtarzania nieznanych efektów.</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>Odczytaj turę bez stanu kontynuacji dostawcy prywatnego.</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Przeczytaj uporządkowane, trwałe kroki po kursorze sekwencji.</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Przeczytaj oryginalny, skompresowany kontekst według identyfikatorów konwersacji i archiwów, bez stanu dostawcy prywatnego.</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>Zwraca od 256 do 16000 znaków na stronę archiwum. Wartość domyślna: 12000.</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>Przeczytaj jedną oryginalną wiadomość według indeksu archiwum liczonego od zera.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj tę turę, a nie niezależną grę lub zadanie.</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Zmień nazwę bez zmiany treści konwersacji.</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Zmień jawny tryb działania.</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Eksportuj historię publiczną do wyraźnie wybranego JSON lub pliku tekstowego.</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Sprawdź aktualnie skonfigurowane instrukcje i ostrzeżenia dotyczące poszczególnych plików.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Zarejestruj jawnie wybrany katalog lokalny.</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Włącz to zarejestrowane źródło na przyszłe tury.</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Wyłącz to zarejestrowane źródło na przyszłe tury.</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Uruchom jedno żądanie modelu na pierwszym planie bez konwersacji i narzędzi.</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Sprawdź aktualny host asystenta i tryb środowiska wykonawczego.</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>Jawna wartość {0}.</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>Włącz {0} dla tego polecenia.</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>Wyraźne true lub false dla {0}.
+Zakręty</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>Nigdy nie umieszczaj poświadczeń w argumentach poleceń. Użyj --credential-stdin, --credential-prompt lub --credential-env.</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>Nieprawidłowe polecenie asystenta lub wpisana opcja. Użyj --help dla zaakceptowanej składni.</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>Przeczytaj bieżącą konfigurację, a następnie podaj --expected-revision.</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>Zasilanie --{0}.</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>Wybierz jeden model do tej operacji.</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>Dane wejściowe przekraczają ograniczony budżet znaków.</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>Wybierz jedną chronioną metodę wprowadzania danych uwierzytelniających.</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>Użyj --credential-stdin, aby przekierować wprowadzanie danych uwierzytelniających.</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>Poświadczenie: </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>Odpowiedz krótkim powitaniem.</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>Skonfigurowana usługa już nie istnieje.
+Zakręty</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI już zarządzają czasem życia wykonania. Pomiń --background; użyj chat send i opcjonalnie --wait.</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>Interaktywne wprowadzanie danych uwierzytelniających jest dostępne tylko poprzez bezpośrednie wywołanie CLI, a nie poprzez narzędzia MCP czy zadania w tle.</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>Autoryzuj obsługiwane mutacje tylko dla tego zgłoszonego celu i jego wyraźnego zakresu. Nie omija to potwierdzeń produktów.</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>Sprawdź bieżący stan Core względem niekompletnych zamiarów mutacji zatrzymanej tury bez konieczności ponownego odtwarzania wywołań.</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Wyraźne true, aby zatwierdzić lub false, aby odrzucić dokładny odcisk palca operacji.</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>Zapisz decyzję użytkownika dotyczącą dokładnej oczekującej operacji. Argumenty modelowe nie mogą zapewnić takiej decyzji.</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>Przeczytaj ograniczone strony dokładnie oczekującej operacji, argumentów i zamrożonej recenzji.</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>Podaj --approve true lub --approve false dla tego dokładnego potwierdzenia.</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>Zarządzaj jawnie autoryzowanymi katalogami lokalnymi i ich trybami odczytu/zapisu.</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Planuj, instaluj, sprawdzaj lub usuwaj posiadane przez produkt umiejętności Codex i Claude Kodowania oraz rejestrację MCP.</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>Przed wprowadzeniem zmian sprawdź dokładne cele, aktualnego właściciela i powiązania.</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Zastosuj aktualny dokładny plan i raportuj wyniki każdej instalacji.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Sprawdź własność instalacji, bieżącą konfigurację klienta i powiązanie data-root.</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>Zaakceptuj dokładnie pozostały nieznany efekt po inspekcji, tylko w przypadku nowych autoryzowanych celów. Nie gwarantuje wyniku ani nie pozwala na powtórzenie dawnego celu.</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>Zarządzaj wnioskowaniem o osadzonym modelu lokalnym należącym do programu uruchamiającego bez oddzielnie instalowanej usługi.</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>Wyładuj bezczynny wbudowany silnik i należące do niego natywne procesy robocze modelu, bez zmiany plików modelu.</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>Odczytaj zachętę z przekierowanego standardowego wejścia (tylko bezpośrednie CLI), do 64000 znaków.</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>Wybierz dokładnie jedno z --prompt, --prompt-file lub --prompt-stdin.</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>Stdin podpowiedzi jest dostępne tylko poprzez bezpośrednie wywołanie CLI; Stdin MCP przenosi komunikaty protokołu.</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>Wpisz tekst do tego polecenia lub użyj --prompt lub --prompt-file.</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>Zasilanie --prompt, --prompt-file lub --prompt-stdin.</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>Obserwuj istniejącą turę bez ponownego jej przesyłania. --events zapisuje uporządkowane events na stderr; --after przywraca kursor. Limit czasu obserwatora nie anuluje tury.</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>Użyj nieujemnego kursora --after i --timeout-seconds z zakresu od 1 do 3600.</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>Upłynął limit czasu obserwacji. Tura nie została anulowana ani przesłana ponownie; wznów przy użyciu jego identyfikatorów i kursora zdarzenia.</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>Rzeczywiste odniesienia do modelu podczas konfiguracji; zapisane powiązanie modelu ID podczas generowania lub wybierania modelu konwersacji. Powtórz tę czynność tylko podczas tworzenia usługi.</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>Jawny dodatni limit tokena wyjściowego. żądanie/czat zastępuje tylko to połączenie; zapisanie modelu utrzymuje to. W przypadku pominięcia użyj zapisanego ustawienia lub zaobserwowanej wydajności modelu; nieznana pojemność pozostawia domyślnego dostawcę bez zmian.</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>Termin żądania/zwrotu w sekundach (1..3600); chat wait korzysta z terminu przeznaczonego wyłącznie dla obserwatora i nie anuluje generowania.</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>32-cyfrowy klucz idempotencji GUID. Powtarzanie identycznych danych wejściowych zwraca ten sam obrót; zmienione dane wejściowe z tym samym kluczem zostaną odrzucone.</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>Maksymalne wywołania modelu w tej turze (1..64), łącznie z wyborem kontekstu. Nie jest to limit wiadomości w konwersacjach.</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>Obserwuj i kontroluj istniejące zwroty w rozmowie.</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>Przeczytaj i zdecyduj o dokładnych potwierdzeniach oczekujących operacji.</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>Sprawdź i potwierdź efekty zatrzymania tury bez ponownego odtwarzania.</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>Zaktualizuj jawne pola konwersacji w jednej operacji sprawdzonej pod kątem wersji.</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>Określ tytuł, instancję, model, tryb, dostęp do pliku lub zmianę dostępu do sieci.</value>
+  </data>
+</root>

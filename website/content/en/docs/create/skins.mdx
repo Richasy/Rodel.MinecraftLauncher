@@ -1,0 +1,227 @@
+---
+title: Skin designer
+description: Paint skins and capes, combine PNG layers, preview an outfit and export textures.
+---
+
+## Start with one small change
+
+The skin designer opens in its own window. You can draw manually or ask AI to help with the current skin. Changing one jacket's color is an easier first task than repainting an entire character.
+
+Open it from the account avatar menu at the upper left. Manual editing does not need a model service or Microsoft sign-in.
+
+<figure>
+  <img
+    src="/assets/en-skins.webp"
+    alt="Skin designer with a 3D character, painting tools, layers and AI panel"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Rotate the character while working to check the front, back and sides.
+  </figcaption>
+</figure>
+
+## 1. Create or import
+
+Use the **Project** menu to create a project and choose its name, template, arm model and texture size. You can also open an existing project or import a PNG.
+
+- **Classic / Slim arms:** controls the arm shape. If a PNG does not identify its model, confirm it yourself.
+- **64×64:** suitable for a standard Java account skin.
+- **128×128:** for HD texture work; it cannot be uploaded directly as a standard Java account skin.
+- Older 64×32 PNG files can be converted to a modern layout during import.
+
+Read the prompt before replacing current content. Import can replace the model, size and layers, with undo available through history.
+
+## 2. Know the views and tools
+
+Switch the main canvas between **3D / Flat**. The UV panel can stay open alongside it; both edit the same project. Use 3D to inspect the worn result and Flat or UV for edges, small regions and seams.
+
+| Tool         | Useful for                                     |
+| ------------ | ---------------------------------------------- |
+| Brush        | Adding pixels in strokes                       |
+| Eraser       | Removing content where transparency is allowed |
+| Fill         | Changing an area's color                       |
+| Color picker | Reusing an existing pixel color                |
+| Selection    | Limiting an area, copying, cutting or moving   |
+| Mirror       | Painting corresponding parts symmetrically     |
+
+### Move the view, not the pixels
+
+| Gesture                        | 3D canvas                                            | Flat / UV                                  |
+| ------------------------------ | ---------------------------------------------------- | ------------------------------------------ |
+| Left drag                      | Use the current painting or selection tool           | Use the current painting or selection tool |
+| Right drag, or Alt + left drag | Rotate the character                                 | Pan the texture                            |
+| Ctrl + left drag               | Pan the model view without changing rotation or zoom | Pan the texture                            |
+| Mouse wheel                    | Zoom                                                 | Zoom                                       |
+
+After zooming in, use **Ctrl + left drag** to bring a face or clothing detail into the center without clearing the selection. Use Reset view if you lose your orientation. Drag the right panel's divider to resize it, and open tool options from the current-tool button at the top.
+
+### Useful shortcuts
+
+| Shortcut                         | Action                                     |
+| -------------------------------- | ------------------------------------------ |
+| B / E / G / I / R                | Brush / Eraser / Fill / Picker / Selection |
+| M                                | Toggle mirroring                           |
+| 1 / 2                            | 3D / Flat view                             |
+| [ / ]                            | Smaller / larger brush                     |
+| Ctrl+Z / Ctrl+Y, or Ctrl+Shift+Z | Undo / redo                                |
+| Ctrl+C / Ctrl+X / Ctrl+V         | Copy / cut / paste selection               |
+| Ctrl+D                           | Clear selection                            |
+| Ctrl+S                           | Save or retry saving                       |
+| Ctrl+Shift+S / Ctrl+Shift+E      | Save project as / export PNG               |
+
+Text input, IME composition and popups keep their own keys; typing letters there does not switch painting tools.
+
+### Select and paste
+
+Drag with Selection to define an area; subsequent painting stays inside it. Drag inside an existing selection with that tool to move the selected pixels. After copying or cutting and pasting, move the preview into place, then click or press **Enter** to confirm. **Esc** cancels an unplaced paste.
+
+With Brush, Eraser or Fill, the **first press outside the selection only clears it**. Continuing that same drag does not paint; press again to resume ordinary drawing. **Ctrl+D** clears it directly. When cutting or moving the Background's Base surface, check the source fill color required by tool options.
+
+## 3. Keep options with layers
+
+A body's **Base / Outer surface** and the editable **Paint layers** are different concepts. The first describes the skin surface; the second stacks editable content.
+
+<figure className="detail-figure narrow">
+  <img
+    src="/assets/en-skin-layers.webp"
+    alt="Add a paint layer above Background for edits you can erase or hide."
+    width="774"
+    height="434"
+    loading="lazy"
+  />
+  <figcaption>
+    Add a paint layer above Background for edits you can erase or hide.
+  </figcaption>
+</figure>
+
+Name separate layers for hair, clothing or accessories. Hide them to compare, adjust opacity or reorder them. Copy a working layer before a large change if you want the original.
+
+If paint does not appear, check whether the active layer is hidden, locked or fully transparent. Also check the selection, body part and Show outer layer option.
+
+## Transparent color and a reversible mask
+
+The ordinary eraser edits the active paint layer; the Background's Base surface retains an opaque backing. To make part of the final appearance transparent, select **Transparent color**:
+
+- The transparent brush adds a transparency mask over the affected pixels, preserving the original background and paint layers underneath.
+- The eraser removes the mask first on masked pixels, revealing existing artwork instead of erasing it. This also works while transparent mode is selected.
+- Return to an ordinary color to paint normally. Clear the relevant mask or undo to reveal hidden work.
+
+The mask participates in previews, saved projects and PNG exports. Whether exported transparent pixels display as expected still depends on the skin format and game environment; this does not imply that standard Java account skins support arbitrary transparent Base pixels.
+
+## 4. Manage useful colors
+
+Choose from built-in palettes. Built-in palettes are read-only; make a copy to rename it, add the foreground color, edit colors or remove them.
+
+Custom palettes stay on this computer across projects and restarts. Deleting a palette does not remove pixels already painted.
+
+<figure className="detail-figure narrow">
+  <img
+    src="/assets/en-skin-palette.webp"
+    alt="Choose a color. Copy a built-in palette before changing its colors."
+    width="784"
+    height="494"
+    loading="lazy"
+  />
+  <figcaption>
+    Choose a color. Copy a built-in palette before changing its colors.
+  </figcaption>
+</figure>
+
+## Add a PNG as a layer
+
+Use **Import PNG layer** in the layer area to bring in clothing or decoration drawn separately. It adds a drawing layer and keeps the background and other layers. This works well for a jacket, emblem or cape pattern.
+
+The image must match the current project's texture dimensions: 64×64 or 128×128 for a character, and 64×32 or 128×64 for a cape. Convert a legacy 64×32 character skin through whole-skin import first; it cannot be added directly as a modern character layer.
+
+The layer menu can export an individual PNG too. It saves that layer's raw pixels for editing elsewhere and importing back. A whole-project PNG combines the currently visible layers.
+
+| Action                      | Effect                                                  |
+| --------------------------- | ------------------------------------------------------- |
+| Import a whole skin or cape | Create or replace content through the confirmation flow |
+| Import PNG layer            | Add one layer to the current project                    |
+| Export layer PNG            | Save one layer without changing the project             |
+| Export whole PNG            | Combine visible layers into a game texture              |
+
+<figure>
+  <img
+    src="/assets/en-skin-png.webp"
+    alt="PNG export in the drawing-layer menu"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Export a single layer for editing elsewhere; keep the project for its full
+    editing state.
+  </figcaption>
+</figure>
+
+## Draw a cape and preview an outfit
+
+Choose **Blank cape** on the start page or use **Import cape PNG**. A cape has its own front, back, edges and texture size. Layers, picking, filling and history work with it.
+
+In the outfit area, select the other piece: a cape for a character project, or a character for a cape project. You can also import an outfit PNG. The combined 3D preview helps you check colors, back coverage and proportions.
+
+The companion is a preview; painting still changes the current work. Use Switch work to edit the other piece. Use Solo or remove the companion to inspect the current work alone. Saving remembers the selection, and a project copy retains the association.
+
+A cape PNG is an editable texture. Exporting it does not grant an official Microsoft-account cape; apply it through a game environment that supports it.
+
+<figure>
+  <img
+    src="/assets/en-skin-cape.webp"
+    alt="A cape project previewed on its paired character"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Preview the cape on a character to check its back design and colors.
+  </figcaption>
+</figure>
+
+## 5. Ask AI to help with this skin
+
+Add a working model in the launcher's [AI settings](/en/docs/create/assistant#1-add-a-model-service), then open the designer's AI panel.
+
+Give it a clear, limited goal:
+
+> Make this jacket dark green and keep the face and hair. Use separate clothing layers and check that the back is consistent.
+
+> Use this image's hairstyle and colors as a reference, simplified into a Minecraft pixel skin. Keep the current proportions and avoid too many tiny decorations.
+
+Add or paste PNG, JPG or WebP reference images, up to **three per turn**. The selected model's actual vision capability determines whether it can understand them.
+
+> [!CAUTION]
+> Skin AI **edits the current skin directly**, without approval for each stroke. Save a separate project copy before large changes. Its scope remains this skin; it does not gain access to other instances or arbitrary files.
+
+## 6. Check and undo
+
+Look at the full character and then the head close-up. Check the top, back, inner limbs and outer-layer seams as well as the front.
+
+Expand the AI tool process to inspect reads, painting and save results. After saving, rotate the character and check the face, clothing edges and back seams against your request.
+
+Use **History**, Undo and Redo to return to a useful state. After interruption, inspect saved changes first. If the result is not yet confirmed, use the original request's recovery action to avoid painting twice.
+
+Open the animation preview to see the current work and its companion walking. This does not change any pixels; close the preview to return to editing.
+
+## Save a project or export a PNG
+
+| Action                       | Purpose                                                                     |
+| ---------------------------- | --------------------------------------------------------------------------- |
+| Save / saved-state indicator | Check whether current edits are stored                                      |
+| Save project as              | Keep a separate editable project with layers and history                    |
+| Export PNG                   | Create a flattened skin image for other tools or a supported upload flow    |
+| Export as 64×64              | Produce a standard-size image where appropriate; inspect details afterwards |
+
+> [!IMPORTANT]
+> **A PNG does not preserve editable layers or history and cannot replace the `.rmcs` project file.** A project copy preserves an editable version without AI chat or reference images; exporting that copy does not redirect subsequent autosaves to the exported file. A 128×128 HD texture cannot be uploaded directly as a standard Java account skin.
+
+Export does not upload the skin to an account or install HD support. Use the actual account or game environment's supported skin controls.
+
+## If saving fails
+
+If the app says saving failed and a draft was kept, keep the window open, check free space and file access, then retry or preserve an available copy. Closing the window is not proof of saving.
+
+For painting issues, check the layer, surface, selection and color first. For model connection issues, read [AI assistant](/en/docs/create/assistant).

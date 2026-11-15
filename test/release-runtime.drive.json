@@ -1,0 +1,11 @@
+[
+  { "op": "find", "automationId": "nav.settings" },
+  { "op": "invoke" },
+  { "op": "find", "automationId": "settings.category.ai" },
+  { "op": "invoke" },
+  { "op": "find", "automationId": "settings.ai.services" },
+  { "op": "invoke" },
+  { "op": "find", "automationId": "ai.service.kind" },
+  { "op": "expand" },
+  { "op": "find", "controlType": "ListItem" }
+]

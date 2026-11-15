@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "rodel_ai",
+  "version": "${version}",
+  "name": "Rodel AI",
+  "description": "In-game conversations with your Rodel launcher's AI.",
+  "icon": "assets/rodel_ai/icon.png",
+  "authors": [
+    "Richasy"
+  ],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.richasy.rodel.ai.RodelAiClient"
+    ],
+    "modmenu": [
+      "io.github.richasy.rodel.ai.compat.AiModMenu"
+    ]
+  },
+  "mixins": [
+    "rodel-ai.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=${fabric_api_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}"
+  }
+}

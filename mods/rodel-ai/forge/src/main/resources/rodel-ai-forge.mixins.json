@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.richasy.rodel.ai.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "rodel-ai.refmap.json",
+  "client": ["ChatHistoryMixin", "ConsoleChatMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

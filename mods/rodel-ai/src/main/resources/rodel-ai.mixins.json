@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "io.github.richasy.rodel.ai.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ChatHistoryMixin", "ComposerPaletteMixin", "ConsoleChatMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

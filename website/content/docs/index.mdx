@@ -1,0 +1,85 @@
+---
+title: RMCL 使用手册
+description: 从第一次启动到 AI 与皮肤创作，按你现在想做的事阅读。
+---
+
+RMCL 是一个面向 Windows 的 Minecraft Java 版启动器 PoC，也是用来验证 Sprout 原生 UI 框架的实验项目。它提供日常游戏管理，并持续探索 AI 怎样帮助刚接触 Minecraft 的玩家理解问题、完成准备和尝试创作。
+
+不需要先学命令行。从一套能正常启动的游戏开始，遇到需要的功能再回来查。
+
+> [!NOTE]
+> RMCL 免费使用，可通过 Microsoft Store 或 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载。 启动器自有代码采用 **[GNU AGPL v3（AGPL-3.0-only）](https://github.com/Richasy/Rodel.MinecraftLauncher/blob/main/LICENSE)** 开源；独立模块与第三方组件保留原许可证。
+
+## 选一条路线
+
+<div className="guide-grid">
+  <GuideCard href="/docs/start/first-launch" title="第一次玩 Java 版">
+    添加身份，创建原版实例，完成第一次启动。
+  </GuideCard>
+  <GuideCard href="/docs/play/import" title="已经有游戏和存档">
+    复制迁入已有内容，保留来源，再检查熟悉的世界。
+  </GuideCard>
+  <GuideCard href="/docs/create/assistant" title="想请 AI 帮忙">
+    连接模型，提出一个具体问题，了解操作权限。
+  </GuideCard>
+  <GuideCard href="/docs/create/skins" title="想画自己的皮肤">
+    从模板开始，边画边看立体效果，也可以请 AI 协助。
+  </GuideCard>
+  <GuideCard href="/docs/play/multiplayer" title="和朋友玩同一个世界">
+    创建陶瓦房间，分享游戏环境，用房间码邀请朋友。
+  </GuideCard>
+  <GuideCard href="/docs/create/seed-explorer" title="找一个喜欢的开局">
+    看种子地图、找结构，或按出生点附近的条件筛选。
+  </GuideCard>
+</div>
+
+## 先认识三个名字
+
+**账户**是你以谁的身份进入游戏。它关系到在线身份和服务器里的角色，但不是存档，也不会因为添加账户就自动获得游戏使用资格。
+
+**实例**是一套分开管理的游戏环境，有自己的版本、模组、设置和世界。“原版生存”“方块建筑”“朋友联机”可以各建一套。
+
+**世界**是实际游玩的存档。一个实例可以有多个世界。准备更换版本、模组或实例之前，先备份重要世界。
+
+<figure>
+  <img
+    src="/assets/zh-home.webp"
+    alt="RMCL 首页，左侧导航、当前游戏信息和多个实例"
+    width="1600"
+    height="1000"
+  />
+  <figcaption>先选好实例与本次身份，再启动游戏。</figcaption>
+</figure>
+
+## 按想做的事找功能
+
+| 你想做什么                  | 阅读                                                                 |
+| --------------------------- | -------------------------------------------------------------------- |
+| 安装启动器，确认电脑要求    | [安装与准备](/docs/start/install)                                    |
+| 第一次启动或切换玩家        | [第一次启动](/docs/start/first-launch)、[账户](/docs/start/accounts) |
+| 整理版本、备份或创建副本    | [实例管理](/docs/play/instances)                                     |
+| 收藏服务器或加入朋友房间    | [服务器](/docs/play/servers)、[联机房间](/docs/play/multiplayer)     |
+| 安装模组、资源包或光影      | [添加内容](/docs/play/content)、[整合包](/docs/play/modpacks)        |
+| 搬入或保护存档              | [世界与备份](/docs/play/worlds)                                      |
+| 整理、导出或删除游戏截图    | [截图管理](/docs/play/screenshots)                                   |
+| 安装 AI、重开或工具魔方     | [内置模组](/docs/play/built-in-mods)                                 |
+| 在游戏里问配方与任务        | [游戏内 AI](/docs/create/game-ai)                                    |
+| 查看世界地图或筛选种子      | [种子探索器](/docs/create/seed-explorer)                             |
+| 理解报错，请助手操作        | [AI 助手](/docs/create/assistant)                                    |
+| 画皮肤与披风，叠加 PNG 图层 | [皮肤设计器](/docs/create/skins)                                     |
+| 更改语言、Java、内存和网络  | [设置](/docs/create/settings)                                        |
+| 游戏没能启动                | [启动问题](/docs/help/launch)                                        |
+
+## 第一次使用的建议顺序
+
+1. 确认 Windows 10 版本 2004（内部版本 19041）或更高，使用 x64 或 ARM64 设备。
+2. 阅读安装和账户说明，选好数据目录。
+3. 先让一个原版实例正常启动，再添加模组。
+4. 为重要世界建立备份，然后尝试自己的玩法。
+5. 有不明白的地方，可以查手册或请 AI 解释当前问题。
+
+## 手册怎么用
+
+文档按使用任务分组。顶部搜索可查找标题和正文；窄屏打开菜单后可以查看目录。截图中的实例、玩家和服务器名称只是操作示例，你的列表会随自己的配置变化。
+
+更多背景见[关于项目](/docs/project/about)。需要反馈时，请按[反馈与日志](/docs/help/feedback)保留必要信息。

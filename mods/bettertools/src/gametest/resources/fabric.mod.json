@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "bettertools_test",
+  "version": "1.0.0",
+  "name": "BetterTools isolated behavior tests",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-client-gametest": ["io.github.richasy.bettertools.BetterToolsGameTest", "io.github.richasy.bettertools.CombatGameTest", "io.github.richasy.bettertools.FarmingGameTest", "io.github.richasy.bettertools.MiningGameTest"]
+  }
+}

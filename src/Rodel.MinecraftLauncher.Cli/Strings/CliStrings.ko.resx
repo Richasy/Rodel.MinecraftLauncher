@@ -1,0 +1,1551 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve">
+    <value>Microsoft 로그인 없이 오프라인 플레이어 ID를 생성하세요.</value>
+  </data>
+  <data name="AccountListDescription" xml:space="preserve">
+    <value>오프라인에 저장된 목록과 자격 증명 없이 Microsoft 플레이어 ID를 나열합니다.</value>
+  </data>
+  <data name="AccountRemoveDescription" xml:space="preserve">
+    <value>저장된 오프라인 또는 Microsoft 계정을 모두 삭제하세요.</value>
+  </data>
+  <data name="ArgumentAddressDescription" xml:space="preserve">
+    <value>서버 주소 또는 즐겨찾기 ID.</value>
+  </data>
+  <data name="ArgumentChangesDescription" xml:space="preserve">
+    <value>JSON 실제 게임 설정 키와 원시 값의 개체입니다.</value>
+  </data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve">
+    <value>출력 경로, 이름 또는 백업 식별자.</value>
+  </data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve">
+    <value>설명할 명령 경로입니다.</value>
+  </data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve">
+    <value>등록된 인스턴스 ID.</value>
+  </data>
+  <data name="ArgumentItemDescription" xml:space="preserve">
+    <value>콘텐츠 파일, 월드 폴더, 버전 또는 복구 식별자입니다.</value>
+  </data>
+  <data name="ArgumentItemsDescription" xml:space="preserve">
+    <value>선택한 파일 또는 소스.</value>
+  </data>
+  <data name="ArgumentKeyDescription" xml:space="preserve">
+    <value>설정 키; 알 수 없는 키는 계속 지원됩니다.</value>
+  </data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve">
+    <value>녹화된 게임 세션 ID.</value>
+  </data>
+  <data name="ArgumentNameDescription" xml:space="preserve">
+    <value>표시 이름; 공백은 하나의 인수 내에 유지됩니다.</value>
+  </data>
+  <data name="ArgumentNamesDescription" xml:space="preserve">
+    <value>resource-pack 이름을 주문했습니다. 비어 있으면 추가 팩이 선택되지 않습니다.</value>
+  </data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve">
+    <value>옵션 설정키입니다.</value>
+  </data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve">
+    <value>선택적 아카이브 또는 대상 경로.</value>
+  </data>
+  <data name="ArgumentTargetDescription" xml:space="preserve">
+    <value>소스 경로, 프로젝트, 런타임 또는 작업 식별자.</value>
+  </data>
+  <data name="ArgumentValueDescription" xml:space="preserve">
+    <value>JSON 값 또는 리터럴 문자열.</value>
+  </data>
+  <data name="BackupCreateDescription" xml:space="preserve">
+    <value>전체 또는 범위가 지정된 인스턴스 백업을 만듭니다.</value>
+  </data>
+  <data name="BackupDeleteDescription" xml:space="preserve">
+    <value>선택한 백업을 삭제하세요.</value>
+  </data>
+  <data name="BackupInspectDescription" xml:space="preserve">
+    <value>백업과 기록된 내용을 검사합니다.</value>
+  </data>
+  <data name="BackupListDescription" xml:space="preserve">
+    <value>백업을 나열하고 선택적으로 인스턴스별로 필터링합니다.</value>
+  </data>
+  <data name="BackupRestoreDescription" xml:space="preserve">
+    <value>백업을 원래 인스턴스 또는 명시적으로 선택한 인스턴스로 복원합니다.</value>
+  </data>
+  <data name="BackupRollbackDescription" xml:space="preserve">
+    <value>녹화된 백업 복원을 롤백합니다.</value>
+  </data>
+  <data name="ConfigurationGetDescription" xml:space="preserve">
+    <value>하나의 키 또는 모든 유효 값을 읽습니다.</value>
+  </data>
+  <data name="ConfigurationSetDescription" xml:space="preserve">
+    <value>유효할 경우 JSON를 저장합니다. 그렇지 않으면 리터럴 문자열을 저장합니다. 요청된 키만 변경됩니다.</value>
+  </data>
+  <data name="ContentAddDescription" xml:space="preserve">
+    <value>콘텐츠 추가; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve">
+    <value>콘텐츠 분석; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve">
+    <value>기존 동결된 콘텐츠 리뷰는 최종 사용자 승인 후에만 적용됩니다.</value>
+  </data>
+  <data name="ContentDetachDescription" xml:space="preserve">
+    <value>콘텐츠 분리; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentDisableDescription" xml:space="preserve">
+    <value>콘텐츠 비활성화; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentEnableDescription" xml:space="preserve">
+    <value>콘텐츠 활성화; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentIdentifyDescription" xml:space="preserve">
+    <value>콘텐츠 식별; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentInstallDescription" xml:space="preserve">
+    <value>콘텐츠 설치; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentListDescription" xml:space="preserve">
+    <value>콘텐츠 목록; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentPinDescription" xml:space="preserve">
+    <value>콘텐츠 핀; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentPolicyDescription" xml:space="preserve">
+    <value>콘텐츠 정책; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentProjectDescription" xml:space="preserve">
+    <value>원격 프로젝트 메타데이터를 읽습니다.</value>
+  </data>
+  <data name="ContentRecoverDescription" xml:space="preserve">
+    <value>콘텐츠 복구; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentRemoveDescription" xml:space="preserve">
+    <value>콘텐츠 삭제; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentRepairDescription" xml:space="preserve">
+    <value>세션에서 완전한 종속성 복구를 계획하거나 명시적인 확인을 통해 동결된 검토를 적용합니다.</value>
+  </data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve">
+    <value>실제 메타데이터를 사용하여 혼합 로컬 파일을 검토합니다.</value>
+  </data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve">
+    <value>설치하지 않고도 정확한 프로젝트와 종속성 목록을 검토할 수 있습니다.</value>
+  </data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve">
+    <value>선택한 루트 업데이트 및 필수 종속성을 동결하고 비활성화/고정된 정책을 유지합니다. apply-review 이전에 검사하세요.</value>
+  </data>
+  <data name="ContentSearchDescription" xml:space="preserve">
+    <value>인스턴스 없이 원격 콘텐츠를 검색합니다.</value>
+  </data>
+  <data name="ContentUnpinDescription" xml:space="preserve">
+    <value>콘텐츠 고정 해제; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentUpdateDescription" xml:space="preserve">
+    <value>콘텐츠 업데이트; 관련 없는 파일과 명시적인 사용자 선택을 보존합니다.</value>
+  </data>
+  <data name="ContentVersionsDescription" xml:space="preserve">
+    <value>원격 프로젝트 버전을 읽어보세요.</value>
+  </data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve">
+    <value>목적지 ZIP는 --plan 없이 필수입니다.</value>
+  </data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve">
+    <value>이 작업은 효과를 검토한 후 --confirm가 필요합니다.</value>
+  </data>
+  <data name="ErrorContextLimit" xml:space="preserve">
+    <value>--limit은 1에서 100 사이여야 합니다.</value>
+  </data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve">
+    <value>정확히 하나의 인스턴스, --session 또는 --report를 지정하세요.</value>
+  </data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve">
+    <value>--directory가 필요합니다.</value>
+  </data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve">
+    <value>'{1}' 아래에 '{0}' 명령 또는 별칭이 중복되었습니다.</value>
+  </data>
+  <data name="ErrorDuplicateOption" xml:space="preserve">
+    <value>'{1}'에 '{0}' 옵션 또는 별칭이 중복되었습니다.</value>
+  </data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve">
+    <value>변경 사항은 options.txt 키와 원시 값의 개체여야 합니다. null는 키를 제거합니다.</value>
+  </data>
+  <data name="ErrorHostStartFailed" xml:space="preserve">
+    <value>백그라운드 호스트가 시작되지 않았습니다.</value>
+  </data>
+  <data name="ErrorJobNotResumable" xml:space="preserve">
+    <value>이 작업으로 이미 파일이나 게임 세션이 생성되었을 수 있습니다. 이 작업과 그 효과를 검사한 후 필요한 경우 원래 명령을 명시적으로 반복합니다.</value>
+  </data>
+  <data name="ErrorLogStateConflict" xml:space="preserve">
+    <value>--state 및 --state-file는 상호 배타적입니다.</value>
+  </data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve">
+    <value>--minecraft VERSION이 필요합니다.</value>
+  </data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve">
+    <value>CLI 명령 요청이 누락되었습니다.</value>
+  </data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve">
+    <value>--{0}는 음수가 아니어야 합니다.</value>
+  </data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve">
+    <value>'{1}'에 '{0}' 옵션이 선언되지 않았습니다.</value>
+  </data>
+  <data name="ErrorOptionRange" xml:space="preserve">
+    <value>--{0}는 {1}부터 {2}까지여야 합니다.</value>
+  </data>
+  <data name="ErrorOptionRequired" xml:space="preserve">
+    <value>{0}가 필요합니다.</value>
+  </data>
+  <data name="ErrorOptionScalar" xml:space="preserve">
+    <value>옵션 '{0}'에는 스칼라 값이 필요합니다. 반복되는 토큰에는 Values를 사용하세요.</value>
+  </data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve">
+    <value>종속성 복구 검토를 적용하려면 최종 사용자 승인 후 --confirm가 필요합니다.</value>
+  </data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve">
+    <value>검토된 배치 적용은 --plan, --session 또는 새 버전 선택과 결합될 수 없습니다.</value>
+  </data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve">
+    <value>--confirm에는 이전에 생성된 --review이 필요합니다.</value>
+  </data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve">
+    <value>--session는 종속성 복구를 계획하는 데 필요합니다.</value>
+  </data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve">
+    <value>--session를 지정하여 수리를 계획하거나 --review를 --confirm로 지정하여 고정된 배치를 적용합니다.</value>
+  </data>
+  <data name="ErrorSessionRequired" xml:space="preserve">
+    <value>세션 ID이 필요합니다.</value>
+  </data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve">
+    <value>이 명령은 런처 작업이 아닌 터미널 호스트 진입점입니다.</value>
+  </data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve">
+    <value>--arguments 및 --arguments-file는 상호 배타적입니다.</value>
+  </data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve">
+    <value>알 수 없는 도움말 항목: {0}.</value>
+  </data>
+  <data name="ErrorUnknownOption" xml:space="preserve">
+    <value>알 수 없는 옵션: {0}. --로 시작하는 위치 값 앞에 --를 추가합니다.</value>
+  </data>
+  <data name="ErrorUnknownTool" xml:space="preserve">
+    <value>이름이 {0}인 도구가 없습니다.</value>
+  </data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve">
+    <value>지원되지 않는 CLI 작업 '{0}'입니다.</value>
+  </data>
+  <data name="ErrorUpdateContext" xml:space="preserve">
+    <value>--update-context는 current 또는 source를 예상합니다.</value>
+  </data>
+  <data name="ErrorVersionRequired" xml:space="preserve">
+    <value>--version가 필요합니다.</value>
+  </data>
+  <data name="ErrorVersionSelection" xml:space="preserve">
+    <value>--select-version는 PROJECT=VERSION를 예상합니다.</value>
+  </data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve">
+    <value>종료 후 대기 중인 변경사항을 적용합니다.</value>
+  </data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve">
+    <value>options.txt을 변경하지 않고 보류 중인 변경 사항을 삭제합니다.</value>
+  </data>
+  <data name="GameSettingsGetDescription" xml:space="preserve">
+    <value>실제 게임 설정을 읽어보세요.</value>
+  </data>
+  <data name="GameSettingsSetDescription" xml:space="preserve">
+    <value>요청된 원시 키를 변경합니다. JSON null 키를 제거합니다.</value>
+  </data>
+  <data name="GroupAccountDescription" xml:space="preserve">
+    <value>오프라인 및 Microsoft 계정을 관리하세요. 오프라인 ID는 Microsoft 로그인 없이 작동합니다. Microsoft 브라우저 로그인에는 사용자가 구성한 클라이언트 ID가 필요합니다.</value>
+  </data>
+  <data name="GroupBackupDescription" xml:space="preserve">
+    <value>전체 또는 범위가 지정된 인스턴스 백업을 생성, 검사 및 복원합니다.</value>
+  </data>
+  <data name="GroupCacheDescription" xml:space="preserve">
+    <value>활성 캐시 사용, 외부 루트, 참조된 종속성 및 알 수 없는 파일을 유지합니다.</value>
+  </data>
+  <data name="GroupConfigDescription" xml:space="preserve">
+    <value>효과적인 설정과 해당 소스를 읽어보세요. 알 수 없는 설정 키가 유지됩니다.</value>
+  </data>
+  <data name="GroupContentDescription" xml:space="preserve">
+    <value>로컬 파일 및 Modrinth 콘텐츠를 관리합니다. 알 수 없는 로컬 파일에는 식별이 필요하지 않습니다. CurseForge 온라인에는 주입된 공급자가 필요합니다. 오프라인 팩은 계속 사용할 수 있습니다.</value>
+  </data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve">
+    <value>관련 없는 줄과 인코딩을 유지하면서 실제 options.txt 원시 값을 편집합니다. 활성 게임은 쓰기를 연기합니다. 충돌 감지로 종료 후 적용됩니다.</value>
+  </data>
+  <data name="GroupInstanceDescription" xml:space="preserve">
+    <value>독립적인 게임 콘텐츠와 공유 런타임 종속성을 관리합니다. 소스를 변경하지 않고 전체 콘텐츠를 복사하여 가져옵니다.</value>
+  </data>
+  <data name="GroupJavaDescription" xml:space="preserve">
+    <value>Java 런타임을 검색, 관리 및 선택합니다.</value>
+  </data>
+  <data name="GroupJobDescription" xml:space="preserve">
+    <value>지속적인 작업. 취소는 요청입니다. 최종 상태를 검사합니다. 반복해도 안전한 작업만 재개합니다.</value>
+  </data>
+  <data name="GroupLoaderDescription" xml:space="preserve">
+    <value>알려진 로더 설치 프로그램을 준비합니다. 사용자 정의 수동 설치 실행 프로필은 계속 지원됩니다.</value>
+  </data>
+  <data name="GroupMcpDescription" xml:space="preserve">
+    <value>MCP 어댑터는 CLI 명령 계약을 따릅니다.</value>
+  </data>
+  <data name="GroupPackDescription" xml:space="preserve">
+    <value>오프라인 mrpack/CurseForge ZIP 가져오기 및 온라인 Modrinth 팩. 누락된 수동 파일은 복구 가능한 상태로 유지됩니다.</value>
+  </data>
+  <data name="GroupProcessDescription" xml:space="preserve">
+    <value>게임 세션을 관찰하세요. 게임을 중지하는 것은 런처 작업을 취소하는 것과 별개입니다.</value>
+  </data>
+  <data name="GroupResourcepackDescription" xml:space="preserve">
+    <value>설치된 팩과 선택한 순서가 다릅니다. 교체하지 않는 한 내장/추적되지 않은 선택을 유지합니다. 활성 게임 쓰기가 연기됩니다.</value>
+  </data>
+  <data name="GroupResultDescription" xml:space="preserve">
+    <value>작업을 반복하지 않고 대용량으로 저장된 도구 출력을 읽습니다. 결과는 7일 후에 만료됩니다.</value>
+  </data>
+  <data name="GroupRuntimeDescription" xml:space="preserve">
+    <value>하나의 런타임 설정 기록을 커밋하기 전에 파일을 준비하세요. 게임 콘텐츠를 보존합니다. 호환성 조언은 시작 관문이 아닙니다.</value>
+  </data>
+  <data name="GroupSelfDescription" xml:space="preserve">
+    <value>런처 버전 및 선택적 업데이트 조회.</value>
+  </data>
+  <data name="GroupServerDescription" xml:space="preserve">
+    <value>즐겨찾기를 관리하고, Windows DNS/SRV를 해결하고 실시간 상태를 쿼리합니다.</value>
+  </data>
+  <data name="GroupToolsDescription" xml:space="preserve">
+    <value>터미널에서 MCP 도구를 검사하고 호출합니다.</value>
+  </data>
+  <data name="GroupVersionsDescription" xml:space="preserve">
+    <value>Minecraft 버전을 찾아보세요.</value>
+  </data>
+  <data name="GroupWorldDescription" xml:space="preserve">
+    <value>원본 월드 소스와 알 수 없는 파일을 보존하세요. 기본 잠금은 안전하지 않은 쓰기를 방지합니다. 파괴적인 작업에서는 복구 가능한 백업이 유지됩니다.</value>
+  </data>
+  <data name="HelpDescription" xml:space="preserve">
+    <value>명령을 구문 분석하는 것과 동일한 선언을 사용하여 명령을 설명하세요.</value>
+  </data>
+  <data name="HelpEntryPoints" xml:space="preserve">
+    <value>help COMMAND SUBCOMMAND 또는 --help를 사용하여 명령어를 자세히 살펴보세요. 터미널 호스트 항목은 execute로 호출할 수 없습니다. 구성된 데이터 디렉터리는 execute 인수가 아닌 호스트에 의해 고정됩니다.</value>
+  </data>
+  <data name="HelpTaskLifetimes" xml:space="preserve">
+    <value>--background는 이 도구 호출에서 살아남습니다. job_cancel는 작업을 취소하고, process_stop는 게임을 중지합니다. 그들은 별도의 수명을 가지고 있습니다.</value>
+  </data>
+  <data name="HelpTokenBoundaries" xml:space="preserve">
+    <value>각 execute.arguments 항목은 하나의 token입니다. 하나의 항목에 공백이 포함된 경로와 이름을 유지합니다. option-like 값에는 --name=VALUE를 사용하세요. put -- 명령 경로 및 옵션 뒤, option-like 위치 값 앞.</value>
+  </data>
+  <data name="HostingCallDescription" xml:space="preserve">
+    <value>JSON 입력을 입력하여 명명된 도구를 호출합니다.</value>
+  </data>
+  <data name="HostingJobHostDescription" xml:space="preserve">
+    <value>내부 영구 작업 실행자.</value>
+  </data>
+  <data name="HostingListDescription" xml:space="preserve">
+    <value>공유 MCP 도구 정의를 나열합니다.</value>
+  </data>
+  <data name="HostingServeDescription" xml:space="preserve">
+    <value>stdio보다 MCP를 서브하세요. stdout는 프로토콜용으로 예약되어 있습니다.</value>
+  </data>
+  <data name="HostingSessionHostDescription" xml:space="preserve">
+    <value>내부 분리형 게임 세션 모니터.</value>
+  </data>
+  <data name="InformationResultReadDescription" xml:space="preserve">
+    <value>보유된 결과에서 JSON Pointer, 개체 속성 페이지 또는 텍스트 청크를 읽습니다.</value>
+  </data>
+  <data name="InformationVersionsListDescription" xml:space="preserve">
+    <value>캐시되었거나 원격으로 사용 가능한 Minecraft 버전을 나열합니다.</value>
+  </data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve">
+    <value>execute에서 사용하는 도구와 동일한 명령 정의를 찾아보세요.</value>
+  </data>
+  <data name="InformationRootContextDescription" xml:space="preserve">
+    <value>다른 섹션을 숨기지 않고 섹션별 오류를 유지하면서 제한된 개요를 읽습니다.</value>
+  </data>
+  <data name="InformationRootVersionDescription" xml:space="preserve">
+    <value>런처 빌드 및 런타임 정보.</value>
+  </data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve">
+    <value>런처 릴리스를 설치하지 않고 확인하세요.</value>
+  </data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve">
+    <value>런처 빌드 및 런타임 정보.</value>
+  </data>
+  <data name="InstanceContentContextDescription" xml:space="preserve">
+    <value>실제 콘텐츠 호환성 컨텍스트를 읽어보세요.</value>
+  </data>
+  <data name="InstanceCopyDescription" xml:space="preserve">
+    <value>등록된 인스턴스의 독립 복사본을 만듭니다.</value>
+  </data>
+  <data name="InstanceCreateDescription" xml:space="preserve">
+    <value>정확한 Minecraft 버전을 위해 빈 인스턴스를 만듭니다.</value>
+  </data>
+  <data name="InstanceImportDescription" xml:space="preserve">
+    <value>전체 소스 인스턴스를 복사한 후 마이그레이션 성공 후 등록합니다.</value>
+  </data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve">
+    <value>인스턴스를 등록하거나 복사하지 않고도 소스 프로필을 읽을 수 있습니다.</value>
+  </data>
+  <data name="InstanceListDescription" xml:space="preserve">
+    <value>등록된 인스턴스를 나열합니다.</value>
+  </data>
+  <data name="InstanceMoveDescription" xml:space="preserve">
+    <value>등록된 인스턴스를 요청된 디렉터리로 이동합니다.</value>
+  </data>
+  <data name="InstancePrepareDescription" xml:space="preserve">
+    <value>마이그레이션된 런타임 구성 요소를 준비합니다.</value>
+  </data>
+  <data name="InstanceRelinkDescription" xml:space="preserve">
+    <value>기존 인스턴스의 게임 디렉터리 참조를 업데이트합니다.</value>
+  </data>
+  <data name="InstanceRemoveDescription" xml:space="preserve">
+    <value>인스턴스 등록과 백업을 삭제합니다. 명시적으로 지정하지 않으면 게임 파일은 유지됩니다.</value>
+  </data>
+  <data name="InstanceRenameDescription" xml:space="preserve">
+    <value>파일을 이동하지 않고 인스턴스의 표시 이름을 변경합니다.</value>
+  </data>
+  <data name="InstanceShowDescription" xml:space="preserve">
+    <value>등록된 인스턴스를 읽습니다.</value>
+  </data>
+  <data name="JavaAvailableDescription" xml:space="preserve">
+    <value>사용 가능한 관리형 Java 런타임 릴리스를 나열합니다.</value>
+  </data>
+  <data name="JavaImportDescription" xml:space="preserve">
+    <value>기존 Java 런타임을 런처 관리로 가져옵니다.</value>
+  </data>
+  <data name="JavaInstallDescription" xml:space="preserve">
+    <value>관리형 Java 런타임을 다운로드하고 설치하세요.</value>
+  </data>
+  <data name="JavaListDescription" xml:space="preserve">
+    <value>명시적으로 제공된 경로를 포함하여 Java 런타임을 검색합니다.</value>
+  </data>
+  <data name="JavaManagedDescription" xml:space="preserve">
+    <value>런처에서 관리하는 Java 런타임을 나열합니다.</value>
+  </data>
+  <data name="JavaRemoveDescription" xml:space="preserve">
+    <value>참조되지 않은 관리형 Java 런타임을 영구적으로 삭제하거나 해당 파일을 삭제하지 않고 외부 Java 등록을 취소합니다.</value>
+  </data>
+  <data name="JavaSelectDescription" xml:space="preserve">
+    <value>전역 설정 또는 지정된 인스턴스에 대해 Java를 선택합니다.</value>
+  </data>
+  <data name="JobCancelDescription" xml:space="preserve">
+    <value>채용 취소 요청; 최종 상태를 별도로 검사합니다.</value>
+  </data>
+  <data name="JobListDescription" xml:space="preserve">
+    <value>지속형 실행 프로그램 작업과 기록된 상태를 나열합니다.</value>
+  </data>
+  <data name="JobResumeDescription" xml:space="preserve">
+    <value>중단되거나 실패한 작업은 안전하게 반복할 수 있는 경우에만 재개하세요.</value>
+  </data>
+  <data name="JobShowDescription" xml:space="preserve">
+    <value>지속형 작업의 상태, 진행률 및 결과를 읽습니다.</value>
+  </data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve">
+    <value>인스턴스에 필요한 Minecraft 파일을 준비합니다. 게임을 실행하지 않습니다.</value>
+  </data>
+  <data name="LaunchLaunchDescription" xml:space="preserve">
+    <value>게임을 시작하거나 읽기 전용 계획을 반환하세요. 프로세스를 시작하는 것은 게임 플레이의 증거가 아닙니다. 게임 수명은 모델 연결과 무관합니다.</value>
+  </data>
+  <data name="LoaderInstallDescription" xml:space="preserve">
+    <value>게임 콘텐츠를 교체하지 않고 로더를 설치합니다.</value>
+  </data>
+  <data name="LoaderListDescription" xml:space="preserve">
+    <value>기본 Minecraft 버전에 대한 로더 릴리스를 나열합니다.</value>
+  </data>
+  <data name="LogBundleDescription" xml:space="preserve">
+    <value>진단 번들을 내보내거나 --plan를 사용하여 포함된 파일을 검사하세요.</value>
+  </data>
+  <data name="LogEventsDescription" xml:space="preserve">
+    <value>구문 분석된 로그 이벤트를 읽습니다. 반환된 parserState 및 스트림 오프셋을 다음 연속 읽기에 전달합니다.</value>
+  </data>
+  <data name="LogExportDescription" xml:space="preserve">
+    <value>잘림 세부정보를 포함하여 사용 가능한 콘솔 창이나 저장된 충돌 스냅샷을 내보냅니다.</value>
+  </data>
+  <data name="LogLogsDescription" xml:space="preserve">
+    <value>라이브 콘솔 창이나 저장된 충돌 스냅샷을 읽어보세요. 계속하려면 각 스트림의 nextOffset를 사용하세요. 제거된 접두사가 보고됩니다.</value>
+  </data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve">
+    <value>인스턴스, 기록된 세션 또는 충돌 보고서를 분석합니다. 조사 결과는 증거이자 제안일 뿐 근본 원인에 대한 증거는 아닙니다.</value>
+  </data>
+  <data name="MaintenancePruneDescription" xml:space="preserve">
+    <value>실행 시 회수 규칙을 재평가합니다. --plan는 파일을 수정하지 않습니다.</value>
+  </data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve">
+    <value>캐시 사용량을 읽습니다.</value>
+  </data>
+  <data name="OptionAccountDescription" xml:space="preserve">
+    <value>오프라인에 저장됨 또는 Microsoft ID ID; 인스턴스/전역 선택을 상속하는 것을 생략합니다.</value>
+  </data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve">
+    <value>콘텐츠 식별 해시.</value>
+  </data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve">
+    <value>요청된 호환되지 않는 리소스 팩의 명시적인 수락을 기록합니다.</value>
+  </data>
+  <data name="OptionArchitectureDescription" xml:space="preserve">
+    <value>런타임 아키텍처.</value>
+  </data>
+  <data name="OptionArgumentsDescription" xml:space="preserve">
+    <value>도구 입력 JSON; 기본값은 {}입니다.</value>
+  </data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve">
+    <value>도구 입력이 포함된 파일 JSON.</value>
+  </data>
+  <data name="OptionAttachDescription" xml:space="preserve">
+    <value>확인된 플랫폼 추적을 로컬 파일에 첨부합니다.</value>
+  </data>
+  <data name="OptionBackgroundDescription" xml:space="preserve">
+    <value>영구 job를 큐에 넣습니다. job show의 최종 결과를 검사하세요.</value>
+  </data>
+  <data name="OptionBytesDescription" xml:space="preserve">
+    <value>원시 로그 바이트 예산, 8~1048576.</value>
+  </data>
+  <data name="OptionChannelDescription" xml:space="preserve">
+    <value>업데이트 채널을 허용했습니다.</value>
+  </data>
+  <data name="OptionCharactersDescription" xml:space="preserve">
+    <value>저장됨 JSON 텍스트 청크 크기, 256~8000.</value>
+  </data>
+  <data name="OptionConfirmDescription" xml:space="preserve">
+    <value>검토한 작업과 효과를 확인합니다.</value>
+  </data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve">
+    <value>런타임 준비를 건너뜁니다.</value>
+  </data>
+  <data name="OptionContentVersionDescription" xml:space="preserve">
+    <value>정확한 플랫폼 콘텐츠 버전 ID.</value>
+  </data>
+  <data name="OptionCopyDescription" xml:space="preserve">
+    <value>전체 소스 콘텐츠를 복사하세요. 절대로 소스를 제거하지 마세요.</value>
+  </data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve">
+    <value>실행기 데이터 디렉토리; 기본값은 사용자의 .rmcl입니다.</value>
+  </data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve">
+    <value>인스턴스가 소유한 게임 파일도 제거하세요.</value>
+  </data>
+  <data name="OptionDirectoryDescription" xml:space="preserve">
+    <value>소스 디렉토리.</value>
+  </data>
+  <data name="OptionEncodingDescription" xml:space="preserve">
+    <value>BOM-less 레거시 파일의 인코딩 이름입니다.</value>
+  </data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve">
+    <value>NAME=VALUE는 변수를 재정의합니다. NAME가 이를 제거합니다. 여러 변수에 대해 반복합니다.</value>
+  </data>
+  <data name="OptionEventsDescription" xml:space="preserve">
+    <value>진행 이벤트를 stderr에 씁니다.</value>
+  </data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve">
+    <value>제외할 선택적 상대 경로; 여러 파일에 대해 반복합니다.</value>
+  </data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve">
+    <value>읽기/계획 결과에서 예상되는 파일 지문입니다.</value>
+  </data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve">
+    <value>콘텐츠 잠금 지문이 필요합니다. 누락은 잠금이 없음을 나타냅니다.</value>
+  </data>
+  <data name="OptionForceDescription" xml:space="preserve">
+    <value>기록된 프로세스 트리를 명시적으로 종료합니다.</value>
+  </data>
+  <data name="OptionFormatDescription" xml:space="preserve">
+    <value>팩 내보내기 형식.</value>
+  </data>
+  <data name="OptionFullscreenDescription" xml:space="preserve">
+    <value>전체화면 재정의; 설정 상속을 생략합니다.</value>
+  </data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve">
+    <value>추가 게임 인수; option-like 값에는 --game-arg=--TOKEN를 사용하세요.</value>
+  </data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve">
+    <value>명시적인 게임 콘텐츠 디렉토리.</value>
+  </data>
+  <data name="OptionHeightDescription" xml:space="preserve">
+    <value>게임 창 높이.</value>
+  </data>
+  <data name="OptionIdDescription" xml:space="preserve">
+    <value>명시적 관리형 런타임 또는 즐겨찾기 ID.</value>
+  </data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve">
+    <value>일반적으로 다시 다운로드할 수 있는 파일을 포함합니다.</value>
+  </data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve">
+    <value>내보내기에 추적되지 않은 로컬 모드를 포함합니다.</value>
+  </data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve">
+    <value>포함할 선택적 상대 경로; 여러 파일에 대해 반복합니다.</value>
+  </data>
+  <data name="OptionIndexDescription" xml:space="preserve">
+    <value>검색순서.</value>
+  </data>
+  <data name="OptionInstanceDescription" xml:space="preserve">
+    <value>인스턴스 ID; 전역 범위는 생략하세요.</value>
+  </data>
+  <data name="OptionJavaDescription" xml:space="preserve">
+    <value>명시적 Java 실행 파일 또는 홈.</value>
+  </data>
+  <data name="OptionJsonDescription" xml:space="preserve">
+    <value>압축 JSON을 작성하세요.</value>
+  </data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve">
+    <value>추가 JVM 인수; 각 token에 대해 옵션을 반복합니다.</value>
+  </data>
+  <data name="OptionKindDescription" xml:space="preserve">
+    <value>콘텐츠 디렉터리 종류; 기본값은 mods입니다.</value>
+  </data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve">
+    <value>소스 런처 구성.</value>
+  </data>
+  <data name="OptionLevelDescription" xml:space="preserve">
+    <value>옵션 log-events 레벨 필터.</value>
+  </data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve">
+    <value>라이브러리 미러 베이스 URL; 여러 거울에 대해 반복합니다.</value>
+  </data>
+  <data name="OptionLimitDescription" xml:space="preserve">
+    <value>페이지 또는 섹션 크기(1~100).</value>
+  </data>
+  <data name="OptionLoaderDescription" xml:space="preserve">
+    <value>로더 식별자; 사용자 정의 값은 계속 허용됩니다. none는 바닐라를 선택합니다.</value>
+  </data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve">
+    <value>정확한 로더 버전.</value>
+  </data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve">
+    <value>stdout/stderr encoding; 변경되지 않습니다 file.encoding.</value>
+  </data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve">
+    <value>알려진 레거시 로깅 호환성 재정의.</value>
+  </data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve">
+    <value>수동으로 다운로드한 팩 파일이 포함된 디렉터리입니다.</value>
+  </data>
+  <data name="OptionMemoryDescription" xml:space="preserve">
+    <value>MiB 단위의 최대 Java 힙입니다.</value>
+  </data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve">
+    <value>메모리 선택 정책입니다.</value>
+  </data>
+  <data name="OptionMigrateDescription" xml:space="preserve">
+    <value>소스 런처 메타데이터를 번역합니다.</value>
+  </data>
+  <data name="OptionMinecraftDescription" xml:space="preserve">
+    <value>기본 Minecraft 호환 버전이며 로더 프로필 ID이 아닙니다.</value>
+  </data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve">
+    <value>공유 Minecraft 런타임 디렉터리.</value>
+  </data>
+  <data name="OptionNameDescription" xml:space="preserve">
+    <value>표시 이름 또는 대상 폴더.</value>
+  </data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve">
+    <value>종속성 관리는 사용자에게 맡기세요.</value>
+  </data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve">
+    <value>대화형 프롬프트 없이 실행하세요.</value>
+  </data>
+  <data name="OptionOfflineDescription" xml:space="preserve">
+    <value>자동 다운로드 대신 로컬 파일을 사용하세요.</value>
+  </data>
+  <data name="OptionOffsetDescription" xml:space="preserve">
+    <value>0 기반 검색, 배열 또는 텍스트 오프셋.</value>
+  </data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve">
+    <value>캐시 최소 수명(일); 기본값은 30입니다.</value>
+  </data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve">
+    <value>명시적인 선택적 파일 정책; 선택 사항을 보존하려면 생략하세요.</value>
+  </data>
+  <data name="OptionOverwriteDescription" xml:space="preserve">
+    <value>충돌에도 불구하고 요청된 게임 설정 값을 명시적으로 적용합니다.</value>
+  </data>
+  <data name="OptionPackVersionDescription" xml:space="preserve">
+    <value>정확한 온라인 팩 버전 ID.</value>
+  </data>
+  <data name="OptionPlanDescription" xml:space="preserve">
+    <value>읽기 전용 계획; 변경 사항을 적용하지 마십시오.</value>
+  </data>
+  <data name="OptionPlatformDescription" xml:space="preserve">
+    <value>콘텐츠 플랫폼; 기본값은 modrinth입니다. 기본 CurseForge 온라인 지원은 불가능합니다.</value>
+  </data>
+  <data name="OptionPlayerDescription" xml:space="preserve">
+    <value>오프라인 플레이어 이름.</value>
+  </data>
+  <data name="OptionPointerDescription" xml:space="preserve">
+    <value>RFC 6901 JSON Pointer 저장된 결과.</value>
+  </data>
+  <data name="OptionProfileDescription" xml:space="preserve">
+    <value>정확한 소스 실행기 프로필 ID.</value>
+  </data>
+  <data name="OptionProjectDescription" xml:space="preserve">
+    <value>온라인 팩 프로젝트 ID.</value>
+  </data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve">
+    <value>개체의 property-name 목록에 있는 0 기반 오프셋입니다.</value>
+  </data>
+  <data name="OptionRedactDescription" xml:space="preserve">
+    <value>진단 번들에서 공통 자격 증명을 최선을 다해 제거합니다. 기본값은 true입니다.</value>
+  </data>
+  <data name="OptionReplaceDescription" xml:space="preserve">
+    <value>전체 resource-pack 선택을 교체합니다.</value>
+  </data>
+  <data name="OptionReportDescription" xml:space="preserve">
+    <value>로컬 Minecraft 또는 JVM 충돌 보고서 경로.</value>
+  </data>
+  <data name="OptionReviewDescription" xml:space="preserve">
+    <value>이전에 동결된 종속성 복구 검토 ID.</value>
+  </data>
+  <data name="OptionScopeDescription" xml:space="preserve">
+    <value>백업 범위.</value>
+  </data>
+  <data name="OptionServerDescription" xml:space="preserve">
+    <value>멀티플레이어 주소 또는 즐겨찾기.</value>
+  </data>
+  <data name="OptionSessionDescription" xml:space="preserve">
+    <value>녹화된 게임 세션 ID.</value>
+  </data>
+  <data name="OptionStateDescription" xml:space="preserve">
+    <value>이전 연속 log-events 읽기에서 파서 상태 JSON.</value>
+  </data>
+  <data name="OptionStateFileDescription" xml:space="preserve">
+    <value>log-events 파서 상태가 포함된 파일입니다.</value>
+  </data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve">
+    <value>절대 유지 stderr 바이트 오프셋.</value>
+  </data>
+  <data name="OptionStdioDescription" xml:space="preserve">
+    <value>표준 입력/출력을 통해 MCP를 제공합니다.</value>
+  </data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve">
+    <value>절대 보유 stdout 바이트 오프셋.</value>
+  </data>
+  <data name="OptionTailDescription" xml:space="preserve">
+    <value>바이트 커서가 제공되지 않은 경우 최대 로그 꼬리 줄입니다.</value>
+  </data>
+  <data name="OptionTimeoutDescription" xml:space="preserve">
+    <value>네트워크 시간 초과(밀리초); 기본값은 5000입니다.</value>
+  </data>
+  <data name="OptionToolDescription" xml:space="preserve">
+    <value>정확한 도구 이름.</value>
+  </data>
+  <data name="OptionTopicDescription" xml:space="preserve">
+    <value>CLI 명령 도움말 항목입니다.</value>
+  </data>
+  <data name="OptionTypeDescription" xml:space="preserve">
+    <value>콘텐츠 검색 카테고리; 기본값은 all입니다.</value>
+  </data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve">
+    <value>후보 호환성 컨텍스트; 인스턴스 런타임은 변경되지 않습니다.</value>
+  </data>
+  <data name="OptionVerifyDescription" xml:space="preserve">
+    <value>설치된 파일 해시를 확인하세요.</value>
+  </data>
+  <data name="OptionVersionDescription" xml:space="preserve">
+    <value>Minecraft 버전 또는 로컬/사용자 정의 실행 프로필 ID.</value>
+  </data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve">
+    <value>PROJECT=VERSION 정확한 선택; 루트 및 종속성 프로젝트에 대해 반복합니다.</value>
+  </data>
+  <data name="OptionWaitDescription" xml:space="preserve">
+    <value>게임이 종료될 때까지 기다리세요. 취소해도 게임은 멈추지 않습니다.</value>
+  </data>
+  <data name="OptionWidthDescription" xml:space="preserve">
+    <value>게임 창 너비.</value>
+  </data>
+  <data name="OptionWorldDescription" xml:space="preserve">
+    <value>월드 폴더 또는 빠른 재생 대상.</value>
+  </data>
+  <data name="PackApplyDescription" xml:space="preserve">
+    <value>정확한 보유 팩 업데이트 검토를 적용합니다.</value>
+  </data>
+  <data name="PackCompleteDescription" xml:space="preserve">
+    <value>수동으로 다운로드한 파일을 포함하여 누락된 팩 파일을 완성하세요.</value>
+  </data>
+  <data name="PackExportDescription" xml:space="preserve">
+    <value>인스턴스를 mrpack 또는 CurseForge ZIP로 내보냅니다.</value>
+  </data>
+  <data name="PackImportDescription" xml:space="preserve">
+    <value>선택한 옵션 파일과 함께 mrpack 또는 CurseForge ZIP를 가져옵니다.</value>
+  </data>
+  <data name="PackInspectDescription" xml:space="preserve">
+    <value>인스턴스를 생성하지 않고 로컬 팩 아카이브를 검사합니다.</value>
+  </data>
+  <data name="PackInstallDescription" xml:space="preserve">
+    <value>온라인 Modrinth 팩을 설치하세요. 선택적 파일은 명시적 선택 정책을 따릅니다.</value>
+  </data>
+  <data name="PackPrepareDescription" xml:space="preserve">
+    <value>보유 팩을 완성하고 자동으로 런타임을 준비하며 Java; 콘텐츠 전용 및 오프라인 모드는 명시적인 범위를 유지합니다.</value>
+  </data>
+  <data name="PackReviewDescription" xml:space="preserve">
+    <value>아카이브 업데이트 검토를 중지합니다. apply는 유지된 정확한 연산을 사용합니다.</value>
+  </data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve">
+    <value>온라인 팩 업데이트 검토를 중단하고 명시적으로 변경하지 않는 한 저장된 옵션 선택을 유지합니다.</value>
+  </data>
+  <data name="PackRollbackDescription" xml:space="preserve">
+    <value>기록된 팩 작업을 롤백합니다.</value>
+  </data>
+  <data name="PackUpdateDescription" xml:space="preserve">
+    <value>아카이브에서 팩을 업데이트하고 명시적으로 변경하지 않는 한 저장된 옵션 선택을 유지합니다.</value>
+  </data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve">
+    <value>온라인 소스에서 팩을 업데이트하고 명시적으로 변경하지 않는 한 저장된 옵션 선택을 유지합니다.</value>
+  </data>
+  <data name="ResourcePackListDescription" xml:space="preserve">
+    <value>설치된 팩과 선택한 팩을 나열합니다.</value>
+  </data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve">
+    <value>주문한 팩 이름을 설정합니다. 빈 목록은 추가 팩을 선택하지 않습니다.</value>
+  </data>
+  <data name="OptionLanguageDescription" xml:space="preserve">
+    <value>런처 표시 언어입니다. RODEL_CLI_LANGUAGE 및 시스템 표시 언어보다 우선합니다.</value>
+  </data>
+  <data name="RootDescription" xml:space="preserve">
+    <value>Windows Minecraft Java 런처. CLI → Core; MCP 도구는 이 명령 트리를 재사용합니다.</value>
+  </data>
+  <data name="RuntimeChangeDescription" xml:space="preserve">
+    <value>인스턴스 설정을 커밋하기 전에 요청된 런타임 구성 요소를 준비하세요.</value>
+  </data>
+  <data name="RuntimeOperationDescription" xml:space="preserve">
+    <value>기록된 인스턴스 런타임 작업을 검사합니다.</value>
+  </data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve">
+    <value>인스턴스에 대해 기록된 런타임 변경 사항을 나열합니다.</value>
+  </data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve">
+    <value>바닐라 런타임을 준비하고 인스턴스의 로더 선택을 제거합니다.</value>
+  </data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve">
+    <value>기록된 인스턴스 런타임 변경 사항을 롤백합니다.</value>
+  </data>
+  <data name="RuntimeShowDescription" xml:space="preserve">
+    <value>인스턴스의 유효 Minecraft, 로더 및 Java 런타임을 읽습니다.</value>
+  </data>
+  <data name="ServerAddDescription" xml:space="preserve">
+    <value>네임드 서버 즐겨찾기를 추가하거나 업데이트하세요.</value>
+  </data>
+  <data name="ServerConnectDescription" xml:space="preserve">
+    <value>ADDRESS_OR_FAVORITE [--instance ID]를 연결합니다. 생략된 경우 선호하는 또는 연결된 instance만 사용합니다. INSTANCE ADDRESS는 계속 지원됩니다. 백그라운드 작업은 큐에 대기하기 전에 구체적인 대상과 ID를 고정합니다.</value>
+  </data>
+  <data name="ServerListDescription" xml:space="preserve">
+    <value>저장된 서버 즐겨찾기를 나열합니다.</value>
+  </data>
+  <data name="ServerRemoveDescription" xml:space="preserve">
+    <value>게임 데이터를 변경하지 않고 서버 즐겨찾기를 제거합니다.</value>
+  </data>
+  <data name="ServerResolveDescription" xml:space="preserve">
+    <value>Windows DNS 및 SRV 레코드를 사용하여 서버 주소를 확인합니다.</value>
+  </data>
+  <data name="ServerStatusDescription" xml:space="preserve">
+    <value>서버의 실시간 Minecraft 상태를 쿼리합니다.</value>
+  </data>
+  <data name="SessionListDescription" xml:space="preserve">
+    <value>녹화된 게임 세션과 관찰된 상태를 나열합니다.</value>
+  </data>
+  <data name="SessionShowDescription" xml:space="preserve">
+    <value>하나의 녹화된 게임 세션과 관찰된 상태를 읽습니다.</value>
+  </data>
+  <data name="SessionStopDescription" xml:space="preserve">
+    <value>시스템 메뉴 폐쇄를 요청합니다. --force는 기록된 프로세스 트리를 종료합니다. 종료를 관찰하려면 show를 읽으세요.</value>
+  </data>
+  <data name="WorldBackupDescription" xml:space="preserve">
+    <value>월드 백업.</value>
+  </data>
+  <data name="WorldBackupsDescription" xml:space="preserve">
+    <value>월드 백업.</value>
+  </data>
+  <data name="WorldCompressDescription" xml:space="preserve">
+    <value>월드 압축.</value>
+  </data>
+  <data name="WorldDirectoryDescription" xml:space="preserve">
+    <value>월드 디렉토리.</value>
+  </data>
+  <data name="WorldExportDescription" xml:space="preserve">
+    <value>세계수출.</value>
+  </data>
+  <data name="WorldImportDescription" xml:space="preserve">
+    <value>세계수입.</value>
+  </data>
+  <data name="WorldListDescription" xml:space="preserve">
+    <value>세계 목록.</value>
+  </data>
+  <data name="WorldRecoverDescription" xml:space="preserve">
+    <value>세계가 회복됩니다.</value>
+  </data>
+  <data name="WorldRecoveryDescription" xml:space="preserve">
+    <value>세계 회복.</value>
+  </data>
+  <data name="WorldRemoveDescription" xml:space="preserve">
+    <value>월드 삭제.</value>
+  </data>
+  <data name="WorldRestoreDescription" xml:space="preserve">
+    <value>월드 복원.</value>
+  </data>
+  <data name="OptionServerAddressDescription" xml:space="preserve">
+    <value>즐겨찾기를 해석하지 않고 구체적인 멀티플레이어 주소를 사용하세요. --server보다 우선합니다.</value>
+  </data>
+  <data name="OptionPreferredDescription" xml:space="preserve">
+    <value>이 연결된 인스턴스를 즐겨찾는 서버의 기본 인스턴스로 만듭니다.</value>
+  </data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve">
+    <value>제공된 연결의 기본 인스턴스 식별자입니다.</value>
+  </data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve">
+    <value>포그라운드 Microsoft 로그인 방법: browser(기본값) 또는 device-code.</value>
+  </data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve">
+    <value>첫 번째 인수가 명시적 인스턴스인 경우 선택적 주소 또는 즐겨찾기입니다.</value>
+  </data>
+  <data name="AccountCurrentDescription" xml:space="preserve">
+    <value>현재 저장된 ID 선택을 읽습니다.</value>
+  </data>
+  <data name="AccountSelectDescription" xml:space="preserve">
+    <value>오프라인에 저장된 ID 또는 Microsoft ID를 선택하세요.</value>
+  </data>
+  <data name="AccountClearDescription" xml:space="preserve">
+    <value>저장된 현재 신원 선택을 지웁니다.</value>
+  </data>
+  <data name="AccountLoginDescription" xml:space="preserve">
+    <value>구성된 로컬 클라이언트 ID를 사용하여 포그라운드에서 Microsoft에 로그인합니다. 클라이언트 ID는 번들로 제공되지 않습니다.</value>
+  </data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve">
+    <value>보호된 로컬 보류 자격 증명을 사용하여 완료되지 않은 Microsoft 로그인을 재개합니다.</value>
+  </data>
+  <data name="AccountRefreshDescription" xml:space="preserve">
+    <value>저장된 온라인 계정을 포그라운드에서 새로 고칩니다.</value>
+  </data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve">
+    <value>Microsoft 로그인하려면 사용자 상호작용이 필요합니다.</value>
+  </data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve">
+    <value>account login --method device-code --events를 사용하여 전경 인증 프롬프트를 표시합니다.</value>
+  </data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve">
+    <value>계정 작업은 포그라운드에서 실행되므로 자격 증명 및 승인 프롬프트가 작업으로 유지되지 않습니다.</value>
+  </data>
+  <data name="ServerShowDescription" xml:space="preserve">
+    <value>저장된 서버 즐겨찾기 및 해당 인스턴스 연결을 읽습니다.</value>
+  </data>
+  <data name="ServerBindDescription" xml:space="preserve">
+    <value>기존 인스턴스를 저장된 서버 즐겨찾기와 연결하세요.</value>
+  </data>
+  <data name="ServerUnbindDescription" xml:space="preserve">
+    <value>저장된 서버 즐겨찾기에서 인스턴스 연결을 제거합니다.</value>
+  </data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve">
+    <value>저장된 서버 즐겨찾기의 관련 인스턴스를 교체합니다. 빈 목록은 모든 연결을 지웁니다.</value>
+  </data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve">
+    <value>게임 세션에 대해 기록된 서버 연결 증거를 읽습니다.</value>
+  </data>
+  <data name="OptionNoServerDescription" xml:space="preserve">
+    <value>인스턴스 소유 서버를 상속받지 않고 실행합니다. 명시적인 서버 인수가 여전히 우선 적용됩니다.</value>
+  </data>
+  <data name="OptionDedicatedDescription" xml:space="preserve">
+    <value>파일을 복사하지 않고 이 인스턴스를 선택한 서버가 소유한 전용 클라이언트로 만듭니다.</value>
+  </data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve">
+    <value>새로 가져온 팩을 이 서버 즐겨찾기의 전용 클라이언트로 등록하세요.</value>
+  </data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve">
+    <value>파일을 이동하거나 삭제하지 않고 전용 클라이언트를 일반 로컬 관리로 되돌립니다.</value>
+  </data>
+  <data name="PackCheckDescription" xml:space="preserve">
+    <value>저장된 HMCL 분포를 확인하고 정확한 검토를 진행합니다. apply pack apply와 별도로 사용합니다.</value>
+  </data>
+  <data name="PackHistoryDescription" xml:space="preserve">
+    <value>보유된 팩 트랜잭션과 현재 롤백 대상을 나열합니다.</value>
+  </data>
+  <data name="PackDetachDescription" xml:space="preserve">
+    <value>클라이언트나 출처를 삭제하지 않고 소스 기반 업데이트를 분리합니다.</value>
+  </data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve">
+    <value>선택한 실행기 설정을 원자적으로 패치하거나 재정의를 제거하여 관련 없는 필드를 유지합니다.</value>
+  </data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve">
+    <value>JSON 변경할 필드만 포함된 객체입니다. 명시적 null이 저장됩니다. 상속에는 --remove를 사용하세요.</value>
+  </data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve">
+    <value>재정의 키를 제거합니다. 여러 키를 제거하려면 이 옵션을 반복하세요.</value>
+  </data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve">
+    <value>구성 변경은 JSON 개체여야 합니다.</value>
+  </data>
+  <data name="ContentShowReviewDescription" xml:space="preserve">
+    <value>정확한 저장된 콘텐츠 리뷰를 읽고 기준이 오래된지 여부를 보고합니다.</value>
+  </data>
+  <data name="AppCommandsDescription" xml:space="preserve">
+    <value>선택한 실행 중인 App의 기본 설정과 전경 상태를 제어합니다.</value>
+  </data>
+  <data name="AppExpectedFingerprint" xml:space="preserve">
+    <value>app show에서 반환된 정확한 지문; App 상태가 변경되면 변경 사항이 거부됩니다.</value>
+  </data>
+  <data name="AppPreferenceFile" xml:space="preserve">
+    <value>JSON 파일에는 명시적인 패키지 기본 설정 변경 사항이 포함되어 있습니다.</value>
+  </data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve">
+    <value>App 기본 설정 JSON 개체를 제공합니다.</value>
+  </data>
+  <data name="AppPage" xml:space="preserve">
+    <value>페이지 키: home, instances, content, settings 또는 assistant.</value>
+  </data>
+  <data name="AppCategory" xml:space="preserve">
+    <value>안정적인 설정 카테고리 키(옵션).</value>
+  </data>
+  <data name="AppWindowState" xml:space="preserve">
+    <value>창 상태: normal, maximized, minimized 또는 tray.</value>
+  </data>
+  <data name="AppWallpaperTheme" xml:space="preserve">
+    <value>배경화면 슬롯: light 또는 dark.</value>
+  </data>
+  <data name="AppWallpaperId" xml:space="preserve">
+    <value>배경화면 ID이 App 카탈로그에서 반환되었습니다.</value>
+  </data>
+  <data name="AppWallpaperSource" xml:space="preserve">
+    <value>App의 배경화면 스토어에 복사할 이미지입니다. 소스는 보존됩니다.</value>
+  </data>
+  <data name="AppWallpaperName" xml:space="preserve">
+    <value>선택한 슬롯의 커스텀 이미지 이름을 표시합니다.</value>
+  </data>
+  <data name="AppList" xml:space="preserve">
+    <value>선택한 데이터 루트를 사용하여 라이브 App 인스턴스를 나열합니다.</value>
+  </data>
+  <data name="AppShow" xml:space="preserve">
+    <value>실제 App 상태, 기본 설정 및 돌연변이 지문을 읽습니다.</value>
+  </data>
+  <data name="AppPreferences" xml:space="preserve">
+    <value>개인 저장소 파일을 편집하지 않고도 패키지 기본 설정을 관리할 수 있습니다.</value>
+  </data>
+  <data name="AppUpdatePreferences" xml:space="preserve">
+    <value>실제 App 컨트롤러를 통해 명시적인 기본 설정 필드를 적용합니다.</value>
+  </data>
+  <data name="AppNavigation" xml:space="preserve">
+    <value>게임 상태가 아닌 App의 현재 페이지와 선택 항목을 관리합니다.</value>
+  </data>
+  <data name="AppNavigate" xml:space="preserve">
+    <value>활성 초안이나 모달 작업을 삭제하지 않고 탐색합니다.</value>
+  </data>
+  <data name="AppWindow" xml:space="preserve">
+    <value>선택한 App 창을 관리합니다.</value>
+  </data>
+  <data name="AppSetWindow" xml:space="preserve">
+    <value>명시적인 기본 창 상태를 적용합니다. 작업과 게임은 소유권을 유지합니다.</value>
+  </data>
+  <data name="AppClose" xml:space="preserve">
+    <value>정확한 상태 확인 및 기존 소유 작업 경비원 후 App 퇴장을 요청합니다.</value>
+  </data>
+  <data name="AppWallpapers" xml:space="preserve">
+    <value>App의 실제 테마별 배경화면 슬롯을 관리합니다.</value>
+  </data>
+  <data name="AppWallpaperList" xml:space="preserve">
+    <value>실제 배경화면 카탈로그를 읽고 ID을 선택했습니다.</value>
+  </data>
+  <data name="AppWallpaperSelect" xml:space="preserve">
+    <value>기존 배경화면 ID을 선택하세요.</value>
+  </data>
+  <data name="AppWallpaperImport" xml:space="preserve">
+    <value>App의 일반 배경화면 파이프라인을 통해 이미지를 디코딩하고 가져옵니다.</value>
+  </data>
+  <data name="AppWallpaperRename" xml:space="preserve">
+    <value>슬롯의 맞춤 배경화면 이름을 변경하세요.</value>
+  </data>
+  <data name="AppWallpaperRemove" xml:space="preserve">
+    <value>확인 후 앱 소유의 맞춤 배경화면만 제거하세요.</value>
+  </data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve">
+    <value>App 컨트롤은 라이브 호스트를 대상으로 하며 재생 가능한 백그라운드 명령으로 대기열에 추가될 수 없습니다.</value>
+  </data>
+  <data name="AppImageCache" xml:space="preserve">
+    <value>런처 종속성이 아닌 App의 이미지 캐시만 검사하고 삭제합니다.</value>
+  </data>
+  <data name="AppImageCacheShow" xml:space="preserve">
+    <value>현재 App 이미지 캐시 바이트를 측정합니다.</value>
+  </data>
+  <data name="AppImageCacheClear" xml:space="preserve">
+    <value>확인 후 실제 로더를 통해 App 이미지 캐시를 삭제합니다.</value>
+  </data>
+  <data name="LocalContextLengthDescription" xml:space="preserve">
+    <value>토큰 단위의 로컬 작업자 컨텍스트 길이. 기록 및 출력 제한과 별개입니다. 구성되지 않은 모델은 런처의 64K 기본값을 사용합니다.</value>
+  </data>
+  <data name="SkinGroupDescription" xml:space="preserve">
+    <value>표준 Java 스킨 그리기, 검사, 내보내기 및 미리보기.</value>
+  </data>
+  <data name="SkinCreateDescription" xml:space="preserve">
+    <value>스킨 문서를 생성하고 선택적으로 PNG을 가져옵니다.</value>
+  </data>
+  <data name="SkinInspectDescription" xml:space="preserve">
+    <value>모델, 개정, 기록 상태 및 얼굴 매핑을 읽습니다.</value>
+  </data>
+  <data name="SkinReadDescription" xml:space="preserve">
+    <value>하나의 모델 얼굴에서 정확한 픽셀 색상을 읽어옵니다.</value>
+  </data>
+  <data name="SkinEditDescription" xml:space="preserve">
+    <value>기본 그리기 작업의 실행 취소 가능한 원자 배치를 적용합니다.</value>
+  </data>
+  <data name="SkinUndoDescription" xml:space="preserve">
+    <value>그리기 트랜잭션 하나를 취소합니다.</value>
+  </data>
+  <data name="SkinRedoDescription" xml:space="preserve">
+    <value>취소된 거래 하나를 다시 실행합니다.</value>
+  </data>
+  <data name="SkinExportDescription" xml:space="preserve">
+    <value>문서 텍스처 크기로 PNG 내보내기; 계정 스킨을 업로드하거나 변경하지 않습니다.</value>
+  </data>
+  <data name="SkinSaveAsDescription" xml:space="preserve">
+    <value>모든 레이어와 보관된 기록이 포함된 독립적인 편집 가능한 .rmcs 스냅샷을 저장하세요. 소스는 변함이 없습니다.</value>
+  </data>
+  <data name="SkinPreviewDescription" xml:space="preserve">
+    <value>3D PNG 스냅샷을 렌더링합니다.</value>
+  </data>
+  <data name="SkinModelDescription" xml:space="preserve">
+    <value>Classic(4픽셀 부분) 또는 Slim(3픽셀 부분).</value>
+  </data>
+  <data name="SkinInputDescription" xml:space="preserve">
+    <value>선택적으로 64x64, HD 128x128 또는 레거시 64x32 PNG를 가져올 수 있습니다.</value>
+  </data>
+  <data name="SkinOutputDescription" xml:space="preserve">
+    <value>대상 미리보기, PNG 또는 편집 가능한 프로젝트 파일.</value>
+  </data>
+  <data name="SkinColorDescription" xml:space="preserve">
+    <value>#RRGGBB 또는 #RRGGBBAA 형식의 불투명 기본 색상입니다.</value>
+  </data>
+  <data name="SkinRevisionDescription" xml:space="preserve">
+    <value>마지막으로 관찰된 개정판; 오래된 편집은 거부됩니다.</value>
+  </data>
+  <data name="SkinEditsDescription" xml:space="preserve">
+    <value>JSON typed 면-로컬 그리기 작업의 배열입니다.</value>
+  </data>
+  <data name="SkinEditsFileDescription" xml:space="preserve">
+    <value>JSON 그리기 작업 배열이 포함된 파일입니다.</value>
+  </data>
+  <data name="SkinPartDescription" xml:space="preserve">
+    <value>Head, Body, RightArm, LeftArm, RightLeg 또는 LeftLeg.</value>
+  </data>
+  <data name="SkinLayerDescription" xml:space="preserve">
+    <value>Base(불투명) 또는 Outer(투명 의류).</value>
+  </data>
+  <data name="SkinFaceDescription" xml:space="preserve">
+    <value>Front, Back, Right, Left, Top 또는 Bottom.</value>
+  </data>
+  <data name="SkinYawDescription" xml:space="preserve">
+    <value>PNG 카메라 요 각도(도); 기본값은 25입니다.</value>
+  </data>
+  <data name="SkinPitchDescription" xml:space="preserve">
+    <value>PNG 카메라 피치는 -89도에서 89도 사이입니다. 기본값 10.</value>
+  </data>
+  <data name="SkinToolProfileDescription" xml:space="preserve">
+    <value>MCP 도구 목록: launcher(기본), discovery(간소화) 또는 별도 skins.</value>
+  </data>
+  <data name="SkinEditsRequiredError" xml:space="preserve">
+    <value>--edits 및 --edits-file 중 하나만 제공하세요.</value>
+  </data>
+  <data name="SkinViewDescription" xml:space="preserve">
+    <value>입력된 JSON 미리보기 카메라, 치수, Minecraft 레이어 및 표시되는 신체 부위.</value>
+  </data>
+  <data name="SkinRequestDescription" xml:space="preserve">
+    <value>JSON 선택, 선택 또는 클립보드 캡처 요청을 입력했습니다.</value>
+  </data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve">
+    <value>페인트 레이어 ID 또는 background를 읽습니다. 보이는 합성물을 읽는 것을 생략합니다.</value>
+  </data>
+  <data name="SkinPickDescription" xml:space="preserve">
+    <value>모델 공간 광선을 사용하여 실제 모델 표면을 선택합니다.</value>
+  </data>
+  <data name="SkinSelectionDescription" xml:space="preserve">
+    <value>픽셀을 편집하지 않고 기하학적 또는 색상 기반 선택을 만듭니다.</value>
+  </data>
+  <data name="SkinCaptureDescription" xml:space="preserve">
+    <value>선택한 얼굴 영역을 편집 가능한 클립보드 픽셀로 캡처합니다.</value>
+  </data>
+  <data name="SkinViewConflictError" xml:space="preserve">
+    <value>--view 또는 간단한 --yaw/--pitch 옵션 중 하나를 사용하세요. 둘 다 사용할 수는 없습니다.</value>
+  </data>
+  <data name="SkinRequestRequiredError" xml:space="preserve">
+    <value>null이 아닌 typed 스킨 요청이 필요합니다.</value>
+  </data>
+  <data name="SkinRequestError" xml:space="preserve">
+    <value>잘못된 스킨 요청: {0}</value>
+  </data>
+  <data name="SkinSizeDescription" xml:space="preserve">
+    <value>텍스처 크기: 64 또는 128텍셀.</value>
+  </data>
+  <data name="SkinTemplateDescription" xml:space="preserve">
+    <value>원본 템플릿 ID; 스킨 템플릿이 포함된 목록입니다.</value>
+  </data>
+  <data name="SkinNameDescription" xml:space="preserve">
+    <value>프로젝트 표시 이름입니다.</value>
+  </data>
+  <data name="SkinIndexDescription" xml:space="preserve">
+    <value>관찰된 개정에서 유지된 기록 위치입니다.</value>
+  </data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve">
+    <value>템플릿이나 PNG 입력 중 하나를 선택하세요. 둘 다 선택할 수는 없습니다.</value>
+  </data>
+  <data name="SkinSizeError" xml:space="preserve">
+    <value>스킨 사이즈는 64 또는 128이어야 합니다.</value>
+  </data>
+  <data name="SkinListDescription" xml:space="preserve">
+    <value>편집 가능한 스킨 프로젝트를 나열합니다.</value>
+  </data>
+  <data name="SkinTemplatesDescription" xml:space="preserve">
+    <value>원본 basic-person 템플릿 및 모델 제안 목록을 나열하세요.</value>
+  </data>
+  <data name="SkinCloneDescription" xml:space="preserve">
+    <value>편집 가능한 콘텐츠를 새 프로젝트에 복제합니다.</value>
+  </data>
+  <data name="SkinRenameDescription" xml:space="preserve">
+    <value>스킨 프로젝트 이름을 변경합니다.</value>
+  </data>
+  <data name="SkinHistoryDescription" xml:space="preserve">
+    <value>보관된 거래 내역을 읽어보세요.</value>
+  </data>
+  <data name="SkinRestoreToDescription" xml:space="preserve">
+    <value>히스토리 위치를 원자적으로 복원합니다.</value>
+  </data>
+  <data name="SkinImportDescription" xml:space="preserve">
+    <value>PNG를 실행 취소할 수 있는 하나의 콘텐츠 교체로 가져옵니다.</value>
+  </data>
+  <data name="SkinInputRequiredError" xml:space="preserve">
+    <value>PNG 입력이 필요합니다.</value>
+  </data>
+  <data name="SkinFootprintDescription" xml:space="preserve">
+    <value>그리지 않고도 래스터 단위로 정확한 브러시 범위를 읽을 수 있습니다.</value>
+  </data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve">
+    <value>커밋되지 않은 제스처 미리보기를 렌더링합니다.</value>
+  </data>
+  <data name="SkinLabelDescription" xml:space="preserve">
+    <value>선택적 후보자 설명.</value>
+  </data>
+  <data name="SkinOperationDescription" xml:space="preserve">
+    <value>후보자 수락 작업 식별자입니다.</value>
+  </data>
+  <data name="SkinScopeDescription" xml:space="preserve">
+    <value>호스트 소유 스킨 편집 권한.</value>
+  </data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve">
+    <value>문서, 레이어 및 픽셀 편집 권한을 만듭니다.</value>
+  </data>
+  <data name="SkinScopeShowDescription" xml:space="preserve">
+    <value>스킨 편집 권한을 검사합니다.</value>
+  </data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve">
+    <value>스킨 편집 권한을 취소합니다.</value>
+  </data>
+  <data name="SkinProposalDescription" xml:space="preserve">
+    <value>동결 피부 후보를 준비하고 검토합니다.</value>
+  </data>
+  <data name="SkinProposeDescription" xml:space="preserve">
+    <value>호스트 보조금 내에서 후보자를 준비합니다.</value>
+  </data>
+  <data name="SkinProposalShowDescription" xml:space="preserve">
+    <value>후보자 검토 및 커밋 상태를 검사합니다.</value>
+  </data>
+  <data name="SkinAcceptDescription" xml:space="preserve">
+    <value>내구성 있는 영수증과 함께 검토된 후보자를 수락합니다.</value>
+  </data>
+  <data name="SkinRejectDescription" xml:space="preserve">
+    <value>채택되지 않은 후보자를 폐기합니다.</value>
+  </data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve">
+    <value>관리되는 미리보기 디렉터리에서 후보를 렌더링합니다.</value>
+  </data>
+  <data name="SkinReceiptDescription" xml:space="preserve">
+    <value>지속 후보자 합격 결과를 찾아보세요.</value>
+  </data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve">
+    <value>스킨 MCP을 호스트 부여에 바인딩합니다. 후보 생성만 가능하며 직접적인 편집이나 수락은 불가능합니다.</value>
+  </data>
+  <data name="SkinScopeProfileError" xml:space="preserve">
+    <value>스킨 범위에는 스킨 도구 프로필이 필요합니다.</value>
+  </data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve">
+    <value>Minecraft 출시 전에 적용할 언어(예: zh_cn, en_us 또는 ar_sa) 게임 설정을 유지하려면 생략하세요.
+이번 차례의</value>
+  </data>
+  <data name="AiReferenceImages" xml:space="preserve">
+    <value>PNG/JPEG/WebP 참조 파일입니다. 최대 3회까지 반복하세요. 소스 바이트는 제출 전에 고정됩니다.</value>
+  </data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve">
+    <value>한 번의 채팅 턴에 최대 3개의 참조 이미지를 첨부하세요.</value>
+  </data>
+  <data name="AiUserPromptRespond" xml:space="preserve">
+    <value>JSON AiUserResponse 파일을 사용하여 정확한 대기 질문을 제출하거나 건너뛰세요. 답변은 도구를 승인하지 않습니다.</value>
+  </data>
+  <data name="AiCancelQueued" xml:space="preserve">
+    <value>또한 선택한 차례를 중지하기 전에 이 대화의 대기 중인 메시지를 취소하세요.</value>
+  </data>
+  <data name="RepairApply" xml:space="preserve">
+    <value>동결 취소 가능 계획을 한 번만 적용해 보세요.</value>
+  </data>
+  <data name="RepairCreate" xml:space="preserve">
+    <value>기록된 하나의 실패한 실행 또는 준비 작업에 대한 수리를 승인합니다.</value>
+  </data>
+  <data name="RepairGroup" xml:space="preserve">
+    <value>기록된 인스턴스 오류를 되돌릴 수 있는 복구입니다.</value>
+  </data>
+  <data name="RepairJob" xml:space="preserve">
+    <value>원래 준비 작업 실패 ID.</value>
+  </data>
+  <data name="RepairKind" xml:space="preserve">
+    <value>수리 종류: disable_mod, java, memory 또는 dependencies.</value>
+  </data>
+  <data name="RepairMemory" xml:space="preserve">
+    <value>MiB 단위로 제안된 힙 제한.</value>
+  </data>
+  <data name="RepairPlan" xml:space="preserve">
+    <value>최소한의 증거로 뒷받침되는 수리 계획 하나를 동결합니다.</value>
+  </data>
+  <data name="RepairReason" xml:space="preserve">
+    <value>이 재판을 뒷받침하는 실제 증거를 설명하세요.</value>
+  </data>
+  <data name="RepairRestore" xml:space="preserve">
+    <value>변경되지 않은 평가판 소유 대상을 복원합니다.</value>
+  </data>
+  <data name="RepairSession" xml:space="preserve">
+    <value>원래 실패한 세션 ID.</value>
+  </data>
+  <data name="RepairShow" xml:space="preserve">
+    <value>원본 증거와 현재 수리 상태를 읽어보세요.</value>
+  </data>
+  <data name="RepairTarget" xml:space="preserve">
+    <value>설치된 모드 파일 이름 또는 기존 Java 실행 파일입니다.</value>
+  </data>
+  <data name="RepairVerify" xml:space="preserve">
+    <value>태그가 지정된 검증 실행을 실행하고 관찰합니다.</value>
+  </data>
+  <data name="ExternalGroup" xml:space="preserve">
+    <value>외부 Yggdrasil 계정 및 LittleSkin 인증.</value>
+  </data>
+  <data name="ExternalAddress" xml:space="preserve">
+    <value>웹사이트 또는 Yggdrasil API 주소; 다시 로그인할 때는 생략됩니다.</value>
+  </data>
+  <data name="ExternalAttempt" xml:space="preserve">
+    <value>외부 로그인 시도 대기 중 ID.</value>
+  </data>
+  <data name="ExternalProfile" xml:space="preserve">
+    <value>Player UUID 이 로그인 시도로 제공됩니다.</value>
+  </data>
+  <data name="ExternalUsername" xml:space="preserve">
+    <value>서비스에서 허용하는 이메일 주소 또는 사용자 이름입니다.</value>
+  </data>
+  <data name="ExternalPasswordStdin" xml:space="preserve">
+    <value>표준 입력에서 하나의 비밀번호 라인을 읽습니다. 명령 인수에 넣지 마십시오.</value>
+  </data>
+  <data name="ExternalComponentFile" xml:space="preserve">
+    <value>기존 authlib-injector JAR를 검증하고 실행기 저장소에 복사합니다.</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>비밀번호로 로그인하고 반환된 플레이어 역할을 유지하거나 선택하세요.</value>
+  </data>
+  <data name="ExternalDevice" xml:space="preserve">
+    <value>시작 LittleSkin 이 애플리케이션에 대한 기기 인증을 시작합니다.</value>
+  </data>
+  <data name="ExternalPoll" xml:space="preserve">
+    <value>설문 조사 LittleSkin 간격을 고려합니다. --wait 승인이 종료될 때까지 계속됩니다.</value>
+  </data>
+  <data name="ExternalShow" xml:space="preserve">
+    <value>토큰 없이 보류 중인 로그인의 공개 상태를 읽습니다.</value>
+  </data>
+  <data name="ExternalSelect" xml:space="preserve">
+    <value>현재 계정을 변경하지 않고 제안된 역할을 바인딩하고 등록합니다.</value>
+  </data>
+  <data name="ExternalCancel" xml:space="preserve">
+    <value>보류 중인 외부 승인 및 보호된 임시 상태를 삭제합니다.</value>
+  </data>
+  <data name="ExternalComponent" xml:space="preserve">
+    <value>런처 소유의 외부 로그인 구성요소를 관리합니다.</value>
+  </data>
+  <data name="ExternalComponentShow" xml:space="preserve">
+    <value>다운로드 없이 기존 구성요소를 검사하고 검증합니다.</value>
+  </data>
+  <data name="ExternalComponentPrepare" xml:space="preserve">
+    <value>검증된 구성 요소를 재사용하거나 공식 아티팩트를 다운로드하거나 --file을 가져옵니다.</value>
+  </data>
+  <data name="ExternalPasswordRequired" xml:space="preserve">
+    <value>--password-stdin를 사용하고 표준 입력을 통해 비밀번호를 입력하세요.</value>
+  </data>
+  <data name="ExternalCachedLaunch" xml:space="preserve">
+    <value>완전히 캐시된 자격 증명 및 구성 요소를 사용하여 동일한 외부 역할을 명시적으로 시도합니다. 멀티플레이어는 보장되지 않습니다.</value>
+  </data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve">
+    <value>비밀번호 입력은 직접 호출된 포그라운드 CLI에서만 가능합니다.</value>
+  </data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve">
+    <value>설치된 셰이더 팩 하나를 선택하세요. 셰이더를 비활성화하려면 --file를 생략하세요.</value>
+  </data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve">
+    <value>구성 소유자: iris, oculus 또는 optifine; 관찰된 발견 사용을 생략합니다.</value>
+  </data>
+  <data name="ShaderPackListDescription" xml:space="preserve">
+    <value>설치된 셰이더 팩과 렌더링 엔진 선택을 읽어보세요.</value>
+  </data>
+  <data name="ShaderPackFileDescription" xml:space="preserve">
+    <value>설치됨 shader-pack 파일명; 셰이더 비활성화는 생략하세요.</value>
+  </data>
+  <data name="GroupShaderpackDescription" xml:space="preserve">
+    <value>셰이더 팩을 검사하고 선택합니다.</value>
+  </data>
+  <data name="AiRunQueuedTurn" xml:space="preserve">
+    <value>활성 턴을 중지하고 다음으로 대기 중인 이 메시지를 실행하세요.</value>
+  </data>
+  <data name="BridgeGroup" xml:space="preserve">
+    <value>옵션인 게임 브릿지를 검사합니다.</value>
+  </data>
+  <data name="BridgeShow" xml:space="preserve">
+    <value>이 세션 브릿지 연결 상태를 읽어보세요.</value>
+  </data>
+  <data name="BridgeGameGroup" xml:space="preserve">
+    <value>실시간 게임 데이터를 관찰하고 소유한 로컬 월드를 편집하세요.</value>
+  </data>
+  <data name="BridgeSnapshot" xml:space="preserve">
+    <value>새로 동기화된 플레이어/월드 스냅샷을 읽어보세요.</value>
+  </data>
+  <data name="BridgeEdit" xml:space="preserve">
+    <value>직접 입력한 로컬 편집본을 제출하세요. 서버는 항상 읽기 전용으로 유지됩니다.</value>
+  </data>
+  <data name="BridgeEditRequest" xml:space="preserve">
+    <value>GameEditRequest JSON 및 operationId, 관찰된 세계 ID, 종류 및 해당 dayTime/health/control/click/button/command 페이로드.</value>
+  </data>
+  <data name="BridgeOperationGroup" xml:space="preserve">
+    <value>기존 게임 편집을 관찰하거나 취소합니다.</value>
+  </data>
+  <data name="BridgeOperationShow" xml:space="preserve">
+    <value>정확한 편집 영수증을 재생하지 않고 읽어보세요.</value>
+  </data>
+  <data name="BridgeOperationCancel" xml:space="preserve">
+    <value>실행이 시작되지 않은 편집만 취소하세요.</value>
+  </data>
+  <data name="BridgeLaunch" xml:space="preserve">
+    <value>이번 출시를 위해 옵션인 Java 게임 브리지를 활성화합니다.</value>
+  </data>
+  <data name="BridgeRegion" xml:space="preserve">
+    <value>청크를 로드하지 않고 제한된 표시 블록, 엔터티 및 인벤토리를 읽습니다.</value>
+  </data>
+  <data name="BridgeRegionRequest" xml:space="preserve">
+    <value>GameRegionRequest JSON gameIncarnation, worldEpoch, dimension, x/y/z 및 sizeX/Y/Z 포함 (1..16).</value>
+  </data>
+  <data name="BridgeInterval" xml:space="preserve">
+    <value>관찰 간격(밀리초)(200..10000).</value>
+  </data>
+  <data name="BridgeEvents" xml:space="preserve">
+    <value>취소할 때까지 --events를 통해 새로운 스냅샷을 스트리밍하세요.</value>
+  </data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve">
+    <value>--events를 사용하여 실시간 관측 스트림을 수신하세요.</value>
+  </data>
+  <data name="BridgeQuery" xml:space="preserve">
+    <value>시맨틱 게임 쿼리 또는 제한된 네이티브 NBT 선택을 읽습니다.</value>
+  </data>
+  <data name="BridgeQueryRequest" xml:space="preserve">
+    <value>GameQueryRequest JSON 관찰된 세계 ID, 종류 및 선택적 선택/페이징이 포함됩니다.</value>
+  </data>
+  <data name="BridgeAi" xml:space="preserve">
+    <value>게임 범위 런처 AI 요청을 보내거나 관찰합니다.</value>
+  </data>
+  <data name="BridgeAiRequest" xml:space="preserve">
+    <value>GameAiRequest JSON 동작, 안정적인 worldKey 및 새로운 스냅샷; 돌연변이에는 정확한 요청/전환/결정 정체성이 필요합니다.</value>
+  </data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve">
+    <value>구성된 데이터 디렉터리에서 실행기 작업이 수행됩니다. 구현된 CLI 작업을 노출합니다. 선택적 인증된 게임 브리지는 현재 게임을 관찰합니다. 돌연변이에는 자체 로컬 세계와 기존 권한이 필요합니다.</value>
+  </data>
+  <data name="ContentBundledDescription" xml:space="preserve">
+    <value>런처 소유 모드와 인스턴스 상태를 나열합니다.</value>
+  </data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve">
+    <value>선택한 내장 모드 ID 및 번들 종속성을 설치하지 않고 검토하세요.</value>
+  </data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>기본값 복원: 컨텍스트 길이.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: 컨텍스트 길이.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>필요할 때 저장된 이미지를 읽습니다. MCP는 base64 텍스트 대신 이미지를 반환합니다.</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>같은 크기의 PNG를 새 레이어로 추가하고 RGBA와 기존 내용을 유지합니다.</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>--name은 --as-layer에만 사용하며, --model은 전체 스킨 가져오기에만 사용합니다.</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>조합 선택</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>조합 선택 (ID)</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>단독 보기</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>--with ID 또는 --clear를 지정하세요.</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>JSON 형식의 형식화된 시드 요청</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>시드 요청이 포함된 UTF-8 파일</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>바이옴 이름에 사용할 설치된 게임 언어 코드</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>PNG 출력 경로</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>정확한 바닐라 생성으로 시드 탐색</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>설치된 버전과 시드 어댑터 지원 표시</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>바닐라 게임 종속성과 Java 준비</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>원본 바이옴, 구조물, 차원 레지스트리 읽기</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>원본 지도 타일 생성 또는 캐시 읽기</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>생성 정보가 포함된 원본 지도 PNG 내보내기</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>범위가 제한된 양성 확인 검색 관리</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>검색을 만들고 저장하여 실행</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>저장된 검색 목록</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>저장된 결과와 재시작 위치 읽기</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>확정된 위치부터 저장된 검색 계속</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>시드 및 장소 즐겨찾기 관리</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>두 종류의 즐겨찾기 목록</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>시드 또는 장소 즐겨찾기 저장 및 갱신</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>지정한 즐겨찾기 제거</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>--request와 --request-file 중 하나만 지정하세요.</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>시드 요청은 null일 수 없습니다.</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>시드 요청 JSON이 잘못되었습니다: {0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>한 시드의 좌표 주변에서 실제 조립된 구조물을 찾아 거리순으로 반환합니다.</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>지정 범위의 바닐라 블록 미리 보기, 보관함 전리품 및 재료 통계를 생성합니다.</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>바닐라 세계 생성 지점을 계산하거나 캐시에서 읽기</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>런처 활동 로그</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>게임 세션 없이 저장된 런처 로그를 내보냅니다.</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>공유 Core로 멀티플레이 방 하나를 관리합니다.</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>방을 호스트합니다. --background로 독립 작업을 실행합니다.</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>로컬 환경을 유지하며 기본 방 코드로 참가합니다.</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>현재 방과 게임 및 네트워크 상태를 읽습니다.</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>게임과 인스턴스를 유지하고 방을 종료합니다.</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>제한된 횟수로 연결을 다시 시도합니다.</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>방 진입 주소로 준비된 참가자 인스턴스를 실행합니다.</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>방장이 제공한 서버 주소를 사용합니다.</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>초대 코드와 플레이어 데이터를 제외한 연결 기록을 내보냅니다.</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>기본 방 코드이며 텍스트에 포함될 수 있습니다.</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>선택한 인스턴스의 기존 게임 세션입니다.</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>지원되는 경우 첫 로컬 월드를 자동으로 공개합니다.</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>공유 게임 버전 목록을 명시적으로 새로 고칩니다.</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>게임 인스턴스를 유지하며 참가자의 방 코드를 변경합니다.</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>인스턴스 TARGET의 누락 항목 ITEM에 파일 VALUE를 임시 저장하고 준비를 계속할 때 검증합니다.</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>공유 게임 콘텐츠와 설정만 내보내며 개인 설정과 다운로드 출처가 없는 로컬 파일은 제외합니다.</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>이 방의 게임도 정상 종료하도록 요청하며 강제 종료하지 않습니다.</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>네트워크 준비 후 참가자의 게임을 자동 실행합니다.</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>선택한 게임의 정상 종료와 재실행을 명시적으로 허용합니다.</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>저장된 지도를 PNG로 내보냅니다.</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>탐험하지 않은 지형을 격리된 원본 생성 미리보기로 채웁니다.</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>저장된 월드 지도와 플레이어 위치를 확인합니다.</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>월드가 확인된 실시간 또는 저장된 위치를 읽습니다.</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>저장된 플레이어 UUID 또는 로컬 기록 ID입니다.</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>저장된 전리품 테이블과 시드로 독립된 바닐라 환경에서 예측하며 저장된 내용은 변경하지 않습니다.</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>청크를 생성하지 않고 저장된 지도를 읽습니다.</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>청크나 전리품을 생성하지 않고 저장된 블록, 재료 및 보관함을 읽습니다.</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>JSON 형식의 월드 지도 요청입니다.</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>월드 지도 요청이 포함된 파일입니다.</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>저장된 블록의 모델, 텍스처 및 형상을 검사합니다.</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>월드 시드, 설정 및 저장된 플레이어를 읽습니다.</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>지정한 반경 안의 저장된 구조물 기록을 찾습니다.</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>로그인 자격 증명을 갱신하지 않고 스킨 정보만 업데이트합니다.</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>인스턴스 스크린샷을 보고 관리합니다.</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>스크린샷 파일 이름입니다.</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>스크린샷 파일 이름 목록입니다.</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>파일 이름입니다. 생략하면 스크린샷 폴더를 엽니다.</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>수정 시간이 최신인 순서로 스크린샷을 나열합니다.</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>스크린샷의 경로, 크기 및 수정 시간을 읽습니다.</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>기본 뷰어로 스크린샷을 열거나 폴더를 엽니다.</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>다른 파일을 덮어쓰지 않고 스크린샷 이름을 바꿉니다.</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>기존 파일을 덮어쓰지 않고 선택한 스크린샷을 폴더에 복사합니다.</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>선택한 스크린샷을 제거합니다(기본값: 휴지통으로 이동). --confirm이 필요합니다.</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>작업이 취소되었습니다. 완료된 파일 변경 사항은 유지됩니다.</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>일부 스크린샷을 처리하지 못했습니다. 파일별 결과를 확인하세요.</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>휴지통으로 보내지 않고 영구 삭제합니다. --confirm이 필요합니다.</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>로컬 파일의 출처를 FILE=PROJECT로 선택합니다. 여러 파일에 반복 지정할 수 있습니다.</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>--select-source FILE=PROJECT 형식을 사용하세요.</value></data>
+</root>

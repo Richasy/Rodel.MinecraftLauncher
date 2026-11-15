@@ -1,0 +1,93 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.18.2' apply false
+    id 'net.fabricmc.fabric-loom-remap' version '1.18.2' apply false
+}
+apply from: '../gradle/game-target.gradle'
+apply plugin: legacy_minecraft ? 'net.fabricmc.fabric-loom-remap' : 'net.fabricmc.fabric-loom'
+
+base { archivesName = 'bettertools' }
+loom { accessWidenerPath = target_access_widener }
+repositories { maven { url = 'https://maven.terraformersmc.com/releases/' } }
+
+dependencies {
+    add(legacy_minecraft ? 'modCompileOnly' : 'compileOnly', "com.terraformersmc:modmenu:${modmenu_version}")
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    if (legacy_minecraft) mappings loom.officialMojangMappings()
+    add(legacy_minecraft ? 'modImplementation' : 'implementation', 'net.fabricmc:fabric-loader:0.19.5')
+    add(legacy_minecraft ? 'modImplementation' : 'implementation', "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
+}
+// Legacy Loom exposes remapped artifacts on runtimeClasspath. Ship the original API jar, with its nested modules intact.
+configurations { bundledFabricApi { canBeConsumed = false; canBeResolved = true; transitive = false } }
+dependencies { bundledFabricApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}" }
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = 'bettertools_test'
+        enableGameTests = false
+        enableClientGameTests = true
+        clearRunDirectory = false
+    }
+}
+sourceSets.gametest.java.srcDir('src/gamecheck/java')
+def gameJavaVersion = Integer.parseInt(java_version)
+tasks.named('runClientGameTest') {
+    jvmArgs '-Dfabric.noGui=true'
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(gameJavaVersion) }
+}
+loom.runConfigs.named('clientGameTest') {
+    runDirectory = layout.buildDirectory.dir('run/clientGameTest').get().asFile
+}
+def tokens = [version: version.toString(), minecraft_version: minecraft_version, java_version: java_version,
+        mixin_compatibility: "JAVA_${bytecode_version}".toString()]
+def recipeVersion = minecraft_version.tokenize('.').collect { it.toInteger() }
+def cubeCopperIngredient = recipeVersion[0] == 1 && recipeVersion[1] < 17 ? 'minecraft:smooth_stone' : 'minecraft:copper_ingot'
+processResources {
+    inputs.properties(tokens)
+    inputs.property('cubeCopperIngredient', cubeCopperIngredient)
+    filesMatching('fabric.mod.json') { expand(tokens) }
+    filesMatching('bettertools.mixins.json') { expand(tokens) }
+    filesMatching('data/bettertools/recipe/tool_cube.json') {
+        filter { line -> line.replace('minecraft:copper_ingot', cubeCopperIngredient) }
+    }
+    if (legacy_minecraft) filesMatching('*.accesswidener') { filter { line -> line.replace('accessWidener v2 official', 'accessWidener v2 named') } }
+}
+tasks.withType(JavaCompile).configureEach {
+    options.release = Integer.parseInt(bytecode_version)
+    options.encoding = 'UTF-8'
+}
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(25) }
+    withSourcesJar()
+}
+jar { from('LICENSE') }
+tasks.register('bundleFabricApi', Copy) {
+    from configurations.bundledFabricApi
+    into layout.buildDirectory.dir('bundled-dependencies')
+    rename { 'fabric-api.jar' }
+}
+apply from: '../gradle/target-sources.gradle'
+apply from: 'gradle/legacy-target.gradle'
+if (minecraft_version == '26.3') {
+    sourceSets {
+        nativeTest {
+            java.srcDirs('src/nativetest/java', 'src/gamecheck/java', 'src/quiltTest/java')
+            compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+            runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+        }
+    }
+    def nativeTestMetadata = layout.buildDirectory.dir('generated/native-test')
+    def generateNativeTestMetadata = tasks.register('generateNativeTestMetadata') {
+        outputs.dir(nativeTestMetadata)
+        doLast {
+            def output = new File(nativeTestMetadata.get().asFile, 'fabric.mod.json')
+            output.parentFile.mkdirs()
+            output.setText('{"schemaVersion":1,"id":"bettertools_test","version":"1.0.0","environment":"client","entrypoints":{"client":["io.github.richasy.bettertools.checks.BetterToolsQuiltCheck"]}}', 'UTF-8')
+        }
+    }
+    tasks.register('nativeTestJar', Jar) {
+        dependsOn tasks.named('nativeTestClasses'), generateNativeTestMetadata
+        archiveFileName = 'bettertools-test.jar'
+        from sourceSets.nativeTest.output
+        from nativeTestMetadata
+    }
+}

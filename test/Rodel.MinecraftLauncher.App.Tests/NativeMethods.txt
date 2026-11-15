@@ -1,0 +1,9 @@
+uplrules_open
+uplrules_select
+uplrules_close
+CoInitializeEx
+CoUninitialize
+CoCreateInstance
+CLSID_WICImagingFactory
+IWICImagingFactory
+GUID_WICPixelFormat32bppRGBA

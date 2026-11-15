@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '6.0.54'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
+}
+def modProperties = new Properties()
+file('../../gradle.properties').withInputStream { modProperties.load(it) }
+version = modProperties.getProperty('mod_version')
+group = 'io.github.richasy.rodel'
+base { archivesName = 'rodel-ai' }
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+minecraft { mappings channel: 'official', version: '1.20.1' }
+repositories { maven { url = 'https://repo.spongepowered.org/repository/maven-public/' } }
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.28'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+def generatedSources = layout.buildDirectory.dir('generated/common')
+tasks.register('prepareCommonSources', Sync) {
+    from('../src/main/java') { include 'io/github/richasy/rodel/ai/AiController.java', 'io/github/richasy/rodel/ai/LauncherBridge.java', 'io/github/richasy/rodel/ai/ChatHistory.java', 'io/github/richasy/rodel/ai/AiClientConfig.java' }
+    into generatedSources
+    doLast {
+        def controller = new File(generatedSources.get().asFile, 'io/github/richasy/rodel/ai/AiController.java')
+        def text = controller.getText('UTF-8').replace('client.gui.screen()', 'client.screen')
+            .replace('client.gui.setScreen(', 'client.setScreen(')
+            .replace('client.gui.hud.getChat()', 'client.gui.getChat()')
+            .replace('.addClientSystemMessage(', '.addMessage(')
+            .replace('turns.getLast()', 'turns.get(turns.size() - 1)')
+            .replace('new ClickEvent.SuggestCommand(', 'new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, ')
+            .replace('new ClickEvent.RunCommand(', 'new ClickEvent(ClickEvent.Action.RUN_COMMAND, ')
+        controller.setText(text, 'UTF-8')
+        def config = new File(generatedSources.get().asFile, 'io/github/richasy/rodel/ai/AiClientConfig.java')
+        config.setText(config.getText('UTF-8').replace('GuiGraphicsExtractor', 'GuiGraphics')
+            .replace('extractRenderState', 'render').replace('graphics.text(', 'graphics.drawString(')
+            .replace('minecraft.gui.setScreen(', 'minecraft.setScreen('), 'UTF-8')
+    }
+}
+sourceSets.main.java.srcDir generatedSources
+compileJava.dependsOn tasks.named('prepareCommonSources')
+tasks.withType(JavaCompile).configureEach { options.release = 17; options.encoding = 'UTF-8' }
+sourceSets.main.resources.srcDir('../src/main/resources')
+processResources {
+    exclude 'fabric.mod.json', 'rodel-ai.mixins.json'
+    filesMatching('META-INF/mods.toml') { expand version: project.version }
+}
+mixin { add sourceSets.main, 'rodel-ai.refmap.json'; config 'rodel-ai-forge.mixins.json' }
+jar { manifest { attributes 'MixinConfigs': 'rodel-ai-forge.mixins.json' }; finalizedBy 'reobfJar' }

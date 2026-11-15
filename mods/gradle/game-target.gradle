@@ -1,0 +1,51 @@
+def sharedModProperties = new Properties()
+file('../gradle.properties').withInputStream { sharedModProperties.load(it) }
+version = sharedModProperties.getProperty('mod_version')
+
+def target = providers.gradleProperty('minecraft_target').getOrElse('26.3')
+if (!(target ==~ /\d+(\.\d+){1,2}/)) throw new GradleException('Invalid Minecraft target')
+def targetFile = file("../targets/${target}.properties")
+if (!targetFile.isFile()) throw new GradleException("Unknown Minecraft target: ${target}")
+def targetProperties = new Properties()
+targetFile.withInputStream { targetProperties.load(it) }
+targetProperties.each { key, value -> project.ext.set(key.toString(), value.toString()) }
+ext.minecraft_version = target
+def bundledLoader = providers.gradleProperty('bundled_loader').getOrElse('fabric')
+if (!(bundledLoader in ['fabric', 'forge'])) throw new GradleException('Unknown common source compiler target')
+if (bundledLoader == 'forge' && !(target in ['26.3', '26.2', '26.1.2', '1.21.11'])) throw new GradleException('No Forge common source target exists for this Minecraft version')
+// Forge ships upstream Mixin 0.8.7; NeoForge 1.21.11 reuses this same annotation-API compilation.
+// Its compatibility enum ends before JAVA_25. Modern Minecraft still runs on its declared Java 25 VM.
+ext.bytecode_version = bundledLoader == 'forge' ? '21' : java_version
+if (bundledLoader == 'forge') afterEvaluate {
+    repositories.maven {
+        url = 'https://maven.minecraftforge.net/'
+        content { includeModule('org.spongepowered', 'mixin') }
+    }
+    // Dependency selection follows the real game VM, even when the emitted class features are older.
+    configurations.configureEach {
+        if (name in ['compileClasspath', 'runtimeClasspath'] || name.endsWith('CompileClasspath') || name.endsWith('RuntimeClasspath')) {
+            attributes.attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, Integer.parseInt(java_version))
+            // Fabric's fork changes Redirect.at to an array. Forge's upstream Mixin expects a single annotation.
+            // Compile against the actual loader API rather than emitting incompatible annotation values.
+            exclude group: 'net.fabricmc', module: 'sponge-mixin'
+        }
+    }
+    dependencies.add('compileOnly', 'org.spongepowered:mixin:0.8.7')
+}
+ext.legacy_minecraft = target.startsWith('1.')
+ext.client_tests_supported = target in ['26.3', '26.2', '26.1.2', '1.21.11']
+if (bundledLoader == 'forge') layout.buildDirectory = file("build/targets/${target}-forge")
+else if (target != '26.3') layout.buildDirectory = file("build/targets/${target}")
+
+def wideners = fileTree('src/main/resources').matching { include '*.accesswidener' }.files
+if (!wideners.isEmpty()) {
+    if (wideners.size() != 1) throw new GradleException('Expected one module access widener')
+    def original = wideners.iterator().next()
+    ext.target_access_widener = original
+    if (legacy_minecraft) {
+        def generated = layout.buildDirectory.file("generated/access-widener/${original.name}").get().asFile
+        generated.parentFile.mkdirs()
+        generated.setText(original.getText('UTF-8').replace('accessWidener v2 official', 'accessWidener v2 named'), 'UTF-8')
+        ext.target_access_widener = generated
+    }
+}

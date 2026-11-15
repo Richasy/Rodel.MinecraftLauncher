@@ -1,0 +1,61 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.18.2'
+}
+
+group = 'io.github.richasy.rodel'
+version = '1'
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar') {
+    archiveFileName = 'rodel-seed-explorer-26.3.jar'
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+    manifest { attributes('Main-Class': 'io.github.richasy.rodel.seed.SeedWorker') }
+}
+
+// The fixture runs the production classifier with real JDK async wrappers; it never enters the game runtime.
+def failureClasses = layout.buildDirectory.dir('worker-failure-checks')
+tasks.register('compileWorkerFailureChecks', JavaCompile) {
+    dependsOn tasks.named('classes')
+    source fileTree('../../test/Fixtures/SeedWorker') { include '**/*.java' }
+    classpath = sourceSets.main.runtimeClasspath
+    destinationDirectory = failureClasses
+}
+tasks.register('workerFailureRegression', JavaExec) {
+    dependsOn tasks.named('compileWorkerFailureChecks')
+    classpath = files(failureClasses) + sourceSets.main.runtimeClasspath
+    mainClass = 'io.github.richasy.rodel.seed.SeedWorkerFailureChecks'
+}
+tasks.named('check') { dependsOn tasks.named('workerFailureRegression') }
+
+// Exercise the portable production matcher without opening Minecraft or player files.
+def searchClasses = layout.buildDirectory.dir('search-checks')
+tasks.register('compileSearchChecks', JavaCompile) {
+    source fileTree('portable') { include '**/*.java' }
+    source fileTree('../../test/Fixtures/SeedSearch') { include '**/*.java' }
+    source '../../java/game-bridge/src/io/github/richasy/rodel/bridge/Json.java'
+    source '../../java/game-bridge/legacy/io/github/richasy/rodel/bridge/LegacyClassFile.java'
+    classpath = files()
+    destinationDirectory = searchClasses
+    options.release = 8
+    options.compilerArgs += ['-Xlint:-options']
+}
+tasks.register('searchRegression', JavaExec) {
+    dependsOn tasks.named('compileSearchChecks')
+    classpath = files(searchClasses)
+    mainClass = 'io.github.richasy.rodel.bridge.NativeSeedSearchChecks'
+}
+tasks.named('check') { dependsOn tasks.named('searchRegression') }

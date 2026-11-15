@@ -1,0 +1,2178 @@
+{
+  "minecraft": "26.3",
+  "provider": "built-in image_gen",
+  "clientJarSha256": "4508d006323f24fa02876310c192d739af56516eb259000ac50f0909a68c9a2d",
+  "catalogFingerprint": "f14c0f3ba2f35a6c71ef5c133251a03c2b7771856e814508b6c8891e22c1a08c",
+  "biomes": 67,
+  "structures": 52,
+  "atlases": [
+    {
+      "file": "source-items-biomes-a.png",
+      "columns": 8,
+      "rows": 4,
+      "sha256": "1206c7891f7bdac90a3b432cc7f2ca4c8ddc339ada899c471538488128510c47"
+    },
+    {
+      "file": "source-items-biomes-b.png",
+      "columns": 6,
+      "rows": 6,
+      "sha256": "0143a164c73ae4631f57d82bcf18fea42047b9e9de059231d25028de25647a1e"
+    },
+    {
+      "file": "source-items-structures-a.png",
+      "columns": 8,
+      "rows": 4,
+      "sha256": "bb54ec1db9dd828c5032eb4d589b9654e347588242afc622eb6ae83e679fb8e3"
+    },
+    {
+      "file": "source-items-structures-b.png",
+      "columns": 5,
+      "rows": 4,
+      "sha256": "9362c68a9e8720e6e3b5ff90ad5f96f04d91b5867d6e67607306fe0949721b25"
+    }
+  ],
+  "icons": {
+    "biome:plains": {
+      "file": "biome-plains.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 0,
+      "crop": [
+        37,
+        68,
+        194,
+        208
+      ],
+      "trim": [
+        0,
+        0,
+        157,
+        140
+      ],
+      "sha256": "d4edcd669a460a5fb80a3ffdcaebe82e0699abdf45e288a5becde086789d3cb7"
+    },
+    "biome:forest": {
+      "file": "biome-forest.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 1,
+      "crop": [
+        248,
+        35,
+        421,
+        215
+      ],
+      "trim": [
+        0,
+        0,
+        173,
+        180
+      ],
+      "sha256": "9e924f903c4b3709d961b509f19bb1a08ddea7369e0c44e46cd05cd5206e110f"
+    },
+    "biome:birch_forest": {
+      "file": "biome-birch-forest.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 2,
+      "crop": [
+        478,
+        34,
+        639,
+        219
+      ],
+      "trim": [
+        0,
+        0,
+        161,
+        185
+      ],
+      "sha256": "4f1786ba8398e93917d1283c564bd02149c5f527d1cc8272d49d3be0c63c5c16"
+    },
+    "biome:taiga": {
+      "file": "biome-taiga.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 3,
+      "crop": [
+        714,
+        29,
+        844,
+        222
+      ],
+      "trim": [
+        0,
+        0,
+        130,
+        193
+      ],
+      "sha256": "1516a2b6f6d43b19b0a53fcc15eb030b3d8f9a2af0cbc9e07785ba5c98ca9e7a"
+    },
+    "biome:grove": {
+      "file": "biome-grove.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 4,
+      "crop": [
+        930,
+        34,
+        1063,
+        221
+      ],
+      "trim": [
+        0,
+        0,
+        133,
+        187
+      ],
+      "sha256": "1e385f3131cd9cc6d1e0995a7ead99f3bbc6234df9c93bb268fc8cee42ed9cde"
+    },
+    "biome:ice_spikes": {
+      "file": "biome-ice-spikes.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 5,
+      "crop": [
+        1161,
+        48,
+        1280,
+        221
+      ],
+      "trim": [
+        0,
+        0,
+        119,
+        173
+      ],
+      "sha256": "446b32b2ac78ecce3861964e26d77c3cb0e714fd84599481c78c312c555eb80a"
+    },
+    "biome:desert": {
+      "file": "biome-desert.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 6,
+      "crop": [
+        1391,
+        45,
+        1493,
+        216
+      ],
+      "trim": [
+        0,
+        0,
+        102,
+        171
+      ],
+      "sha256": "4c7a9afb63c8877a2165915eead9e846aa970948b8f1ae01ae127ef4105169ce"
+    },
+    "biome:savanna": {
+      "file": "biome-savanna.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 7,
+      "crop": [
+        1573,
+        64,
+        1752,
+        207
+      ],
+      "trim": [
+        0,
+        0,
+        179,
+        143
+      ],
+      "sha256": "4600a7097f746e1643db4c2d925dbfd6ac9db1a95bcb967752e8fddfc976c227"
+    },
+    "biome:badlands": {
+      "file": "biome-badlands.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 8,
+      "crop": [
+        37,
+        243,
+        191,
+        440
+      ],
+      "trim": [
+        0,
+        0,
+        154,
+        197
+      ],
+      "sha256": "aad2b68860cc79d3ae869e69bfa4628f261d19dac243e580290819952212291c"
+    },
+    "biome:jungle": {
+      "file": "biome-jungle.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 9,
+      "crop": [
+        260,
+        255,
+        413,
+        445
+      ],
+      "trim": [
+        0,
+        0,
+        153,
+        190
+      ],
+      "sha256": "5206031127ae2513d32a79c999e08d60d342cf398fff57122ae0a5a1a57f2ad9"
+    },
+    "biome:mushroom_fields": {
+      "file": "biome-mushroom-fields.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 10,
+      "crop": [
+        482,
+        285,
+        634,
+        428
+      ],
+      "trim": [
+        0,
+        0,
+        152,
+        143
+      ],
+      "sha256": "e45306cba400d8965679ea93ae24b50a70ede00617569cd26a7f25ebb0126b26"
+    },
+    "biome:cherry_grove": {
+      "file": "biome-cherry-grove.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 11,
+      "crop": [
+        692,
+        270,
+        862,
+        427
+      ],
+      "trim": [
+        0,
+        0,
+        170,
+        157
+      ],
+      "sha256": "571bd2348f74d2d7098dd1860b7f1d7b9844154b4e9241909ab6d343f9d27e74"
+    },
+    "biome:pale_garden": {
+      "file": "biome-pale-garden.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 12,
+      "crop": [
+        907,
+        258,
+        1085,
+        442
+      ],
+      "trim": [
+        0,
+        0,
+        178,
+        184
+      ],
+      "sha256": "f0bb65b254fcc20d68b65a314b390969538a9d0048116b56d2eea9457bc0d335"
+    },
+    "biome:river": {
+      "file": "biome-river.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 14,
+      "crop": [
+        1353,
+        257,
+        1532,
+        429
+      ],
+      "trim": [
+        0,
+        0,
+        179,
+        172
+      ],
+      "sha256": "d288785e1077fce2ebc29c400890890c87141bd3b3c7977e126c2f97de52c069"
+    },
+    "biome:ocean": {
+      "file": "biome-ocean.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 15,
+      "crop": [
+        1599,
+        241,
+        1726,
+        442
+      ],
+      "trim": [
+        0,
+        0,
+        127,
+        201
+      ],
+      "sha256": "8979026fae145171f9a1604b1ae0f46c6abdf175ac25096c456408e22cc4141c"
+    },
+    "biome:lush_caves": {
+      "file": "biome-lush-caves.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 16,
+      "crop": [
+        53,
+        473,
+        179,
+        655
+      ],
+      "trim": [
+        0,
+        0,
+        126,
+        182
+      ],
+      "sha256": "ca752861530351fa6284effabc323f451747688efd1dc3196377b8a12caa1470"
+    },
+    "biome:dripstone_caves": {
+      "file": "biome-dripstone-caves.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 17,
+      "crop": [
+        279,
+        473,
+        391,
+        661
+      ],
+      "trim": [
+        0,
+        0,
+        112,
+        188
+      ],
+      "sha256": "6f602b3711b3a3f16a4f15cee725ca5ba13ea50be7e9cbcc94aadc374d26dc1d"
+    },
+    "biome:deep_dark": {
+      "file": "biome-deep-dark.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 18,
+      "crop": [
+        471,
+        486,
+        640,
+        647
+      ],
+      "trim": [
+        0,
+        0,
+        169,
+        161
+      ],
+      "sha256": "c764bd23659337a382abe7e98671281a49f38dc426f83cb3d6d29f91cb9a69fb"
+    },
+    "biome:sulfur_caves": {
+      "file": "biome-sulfur-caves.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 19,
+      "crop": [
+        700,
+        489,
+        854,
+        647
+      ],
+      "trim": [
+        0,
+        0,
+        154,
+        158
+      ],
+      "sha256": "61dcc8323dd57e6dd97d6e45c46d929985a141f3c1d0ca41b0a70ab811eac8d2"
+    },
+    "biome:nether_wastes": {
+      "file": "biome-nether-wastes.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 20,
+      "crop": [
+        917,
+        487,
+        1078,
+        642
+      ],
+      "trim": [
+        0,
+        0,
+        161,
+        155
+      ],
+      "sha256": "d19009005623b9d08cb5fa70cef1c09eebd8ec5b8c8434b4332c314cc95fcc91"
+    },
+    "biome:crimson_forest": {
+      "file": "biome-crimson-forest.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 21,
+      "crop": [
+        1152,
+        463,
+        1302,
+        660
+      ],
+      "trim": [
+        0,
+        0,
+        150,
+        197
+      ],
+      "sha256": "2f115c4646631dec1b1cd49d48a2dd9e8b449dbd10eee6645277563ad537132a"
+    },
+    "biome:warped_forest": {
+      "file": "biome-warped-forest.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 22,
+      "crop": [
+        1371,
+        462,
+        1521,
+        657
+      ],
+      "trim": [
+        0,
+        0,
+        150,
+        195
+      ],
+      "sha256": "489f5d9ba0d408f61daa6e9e557bf40b4733db2fdec00dfeb11bd3b0c809d1b1"
+    },
+    "biome:soul_sand_valley": {
+      "file": "biome-soul-sand-valley.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 23,
+      "crop": [
+        1598,
+        473,
+        1723,
+        661
+      ],
+      "trim": [
+        0,
+        0,
+        125,
+        188
+      ],
+      "sha256": "52bd61e247cd8d1bf0a2a0720ffceb9b2a88b36994b3a0952905de471edee132"
+    },
+    "biome:basalt_deltas": {
+      "file": "biome-basalt-deltas.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 24,
+      "crop": [
+        48,
+        672,
+        179,
+        859
+      ],
+      "trim": [
+        0,
+        0,
+        131,
+        187
+      ],
+      "sha256": "b780c3b83fa854eba65eb4b7ec6b217e60bec8622987d70446e2c07e6f06e8f3"
+    },
+    "biome:the_end": {
+      "file": "biome-the-end.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 25,
+      "crop": [
+        287,
+        690,
+        368,
+        859
+      ],
+      "trim": [
+        0,
+        0,
+        81,
+        169
+      ],
+      "sha256": "60ea0ebb171bb08f82feeb6d634598ce9b8c01f37636a890bf66fc4238499dc5"
+    },
+    "biome:end_highlands": {
+      "file": "biome-end-highlands.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 26,
+      "crop": [
+        473,
+        673,
+        628,
+        873
+      ],
+      "trim": [
+        0,
+        0,
+        155,
+        200
+      ],
+      "sha256": "8f348bf7bc6032596a4eb6f6cd0785dd233731e571381f2ea70539f3b9da3185"
+    },
+    "biome:end_midlands": {
+      "file": "biome-end-midlands.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 27,
+      "crop": [
+        714,
+        700,
+        842,
+        848
+      ],
+      "trim": [
+        0,
+        0,
+        128,
+        148
+      ],
+      "sha256": "fedc5b9f3a269ef0a23647ea815be7cea46238a71f14d5aa0e01bd0fcf6cae9f"
+    },
+    "biome:end_barrens": {
+      "file": "biome-end-barrens.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 28,
+      "crop": [
+        936,
+        733,
+        1057,
+        833
+      ],
+      "trim": [
+        0,
+        0,
+        121,
+        100
+      ],
+      "sha256": "0dc3d49491a0b3b87862a719908d7d78c84829f1c54427ef903370c7e1e2ae56"
+    },
+    "biome:small_end_islands": {
+      "file": "biome-small-end-islands.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 29,
+      "crop": [
+        1143,
+        713,
+        1298,
+        839
+      ],
+      "trim": [
+        0,
+        0,
+        155,
+        126
+      ],
+      "sha256": "94315ab63d231c7ae4d670665a793665d3172709b50507d72fa0328a55a8dca2"
+    },
+    "biome:mangrove_swamp": {
+      "file": "biome-mangrove-swamp.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 30,
+      "crop": [
+        1351,
+        674,
+        1528,
+        867
+      ],
+      "trim": [
+        0,
+        0,
+        177,
+        193
+      ],
+      "sha256": "72e01e1e0e8cb22cec2413148c874d1dadbccfd4c8846ffb4a94f3d9d4d62e91"
+    },
+    "biome:swamp": {
+      "file": "biome-swamp.png",
+      "atlas": "source-items-biomes-a.png",
+      "cell": 31,
+      "crop": [
+        1582,
+        726,
+        1740,
+        839
+      ],
+      "trim": [
+        0,
+        0,
+        158,
+        113
+      ],
+      "sha256": "e6981d97b857fc9c46a62303b7f84e6e927402c225cbe0d66446b45c79490a96"
+    },
+    "biome:bamboo_jungle": {
+      "file": "biome-bamboo-jungle.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 0,
+      "crop": [
+        38,
+        36,
+        204,
+        214
+      ],
+      "trim": [
+        0,
+        0,
+        166,
+        178
+      ],
+      "sha256": "9b6f2f32f4f038d51eea478b9c9b02183d6a3b2d1887a2fbef7611aa6115b0db"
+    },
+    "biome:beach": {
+      "file": "biome-beach.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 1,
+      "crop": [
+        252,
+        84,
+        394,
+        197
+      ],
+      "trim": [
+        0,
+        0,
+        142,
+        113
+      ],
+      "sha256": "e4d9599290eedb71d6b606fc4149b99e330adc55073f2063f164a52a1664b9f3"
+    },
+    "biome:cold_ocean": {
+      "file": "biome-cold-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 2,
+      "crop": [
+        443,
+        48,
+        602,
+        210
+      ],
+      "trim": [
+        0,
+        0,
+        159,
+        162
+      ],
+      "sha256": "3ebd185130d410b2109cb3d50e56ff5f03b5aad33d1873d8759dccb6c623da69"
+    },
+    "biome:dark_forest": {
+      "file": "biome-dark-forest.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 3,
+      "crop": [
+        638,
+        41,
+        826,
+        216
+      ],
+      "trim": [
+        0,
+        0,
+        188,
+        175
+      ],
+      "sha256": "027666adcd798d18787b09f15861f10f43fcdd5657208e6335359cfd13fca575"
+    },
+    "biome:deep_cold_ocean": {
+      "file": "biome-deep-cold-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 4,
+      "crop": [
+        869,
+        60,
+        1022,
+        206
+      ],
+      "trim": [
+        0,
+        0,
+        153,
+        146
+      ],
+      "sha256": "6a011a83cea6a792c8fad1eb09fdb7bd6d394a0af0055ca4dbfe466e2c486065"
+    },
+    "biome:deep_frozen_ocean": {
+      "file": "biome-deep-frozen-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 5,
+      "crop": [
+        1072,
+        66,
+        1218,
+        208
+      ],
+      "trim": [
+        0,
+        0,
+        146,
+        142
+      ],
+      "sha256": "6715a13ddf6de3e28e3ad81426741674f9235f8a00b1fe7107d55ef1f9dc4ce7"
+    },
+    "biome:deep_lukewarm_ocean": {
+      "file": "biome-deep-lukewarm-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 6,
+      "crop": [
+        45,
+        268,
+        198,
+        418
+      ],
+      "trim": [
+        0,
+        0,
+        153,
+        150
+      ],
+      "sha256": "b50092fc2410b566f28f732fc497fd51ce9119fe80b48437f700a48b34814029"
+    },
+    "biome:deep_ocean": {
+      "file": "biome-deep-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 7,
+      "crop": [
+        253,
+        255,
+        399,
+        411
+      ],
+      "trim": [
+        0,
+        0,
+        146,
+        156
+      ],
+      "sha256": "84b92cc49b74fbe498f4bceb2f75335ea2665bbb00fa577573f8848e651c34a4"
+    },
+    "biome:eroded_badlands": {
+      "file": "biome-eroded-badlands.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 8,
+      "crop": [
+        453,
+        241,
+        595,
+        427
+      ],
+      "trim": [
+        0,
+        0,
+        142,
+        186
+      ],
+      "sha256": "cc539d906492f2cbbf94199a88752d0ec66e8fd36285fc784d899c07445b8b4a"
+    },
+    "biome:flower_forest": {
+      "file": "biome-flower-forest.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 9,
+      "crop": [
+        645,
+        263,
+        818,
+        400
+      ],
+      "trim": [
+        0,
+        0,
+        173,
+        137
+      ],
+      "sha256": "1c97eb7ae43a47d086ca57c9321c2cbcae9ad053f94cc31312e3b06b2d0a2637"
+    },
+    "biome:frozen_ocean": {
+      "file": "biome-frozen-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 10,
+      "crop": [
+        867,
+        254,
+        1022,
+        409
+      ],
+      "trim": [
+        0,
+        0,
+        155,
+        155
+      ],
+      "sha256": "f3104f3a48f10818d19256b194ad2cde4a577d8b443de2e5a3c4ba43f1237056"
+    },
+    "biome:frozen_peaks": {
+      "file": "biome-frozen-peaks.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 11,
+      "crop": [
+        1072,
+        249,
+        1220,
+        414
+      ],
+      "trim": [
+        0,
+        0,
+        148,
+        165
+      ],
+      "sha256": "859399068f3f5b65b77553dc37bb507219c9ec7b310384e0e200c23069676f74"
+    },
+    "biome:frozen_river": {
+      "file": "biome-frozen-river.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 12,
+      "crop": [
+        41,
+        466,
+        198,
+        628
+      ],
+      "trim": [
+        0,
+        0,
+        157,
+        162
+      ],
+      "sha256": "160cad0feb13e25e687d2f28031ceca20d9b285878b2e4d5a2944d041fdec1c1"
+    },
+    "biome:jagged_peaks": {
+      "file": "biome-jagged-peaks.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 13,
+      "crop": [
+        251,
+        451,
+        394,
+        627
+      ],
+      "trim": [
+        0,
+        0,
+        143,
+        176
+      ],
+      "sha256": "c5bd1d86c78a757d8d1c5be2fa8ee99d51a26f7729757a4d72bab7f1ba871e88"
+    },
+    "biome:lukewarm_ocean": {
+      "file": "biome-lukewarm-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 14,
+      "crop": [
+        453,
+        472,
+        601,
+        629
+      ],
+      "trim": [
+        0,
+        0,
+        148,
+        157
+      ],
+      "sha256": "1ba890318f72a28efca036fc2f4d7b12736dbc7c816aa0b500d0c0efa243f77c"
+    },
+    "biome:meadow": {
+      "file": "biome-meadow.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 15,
+      "crop": [
+        638,
+        485,
+        816,
+        626
+      ],
+      "trim": [
+        0,
+        0,
+        178,
+        141
+      ],
+      "sha256": "bb19571579dec6b2afe789d046fb16a822d1cd891200694080f1c7b47e830a4c"
+    },
+    "biome:old_growth_birch_forest": {
+      "file": "biome-old-growth-birch-forest.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 16,
+      "crop": [
+        851,
+        432,
+        1030,
+        650
+      ],
+      "trim": [
+        0,
+        0,
+        179,
+        218
+      ],
+      "sha256": "fc4385e6cc3fce6c42221ab490e8b9faa91acf52e025df44751c3f8e1a766ad0"
+    },
+    "biome:old_growth_pine_taiga": {
+      "file": "biome-old-growth-pine-taiga.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 17,
+      "crop": [
+        1089,
+        436,
+        1204,
+        643
+      ],
+      "trim": [
+        0,
+        0,
+        115,
+        207
+      ],
+      "sha256": "265475cba640e13810bf96ef00a6a01ec71dc9d4df48eb670fa8439b14c2cbd9"
+    },
+    "biome:old_growth_spruce_taiga": {
+      "file": "biome-old-growth-spruce-taiga.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 18,
+      "crop": [
+        29,
+        647,
+        215,
+        849
+      ],
+      "trim": [
+        0,
+        0,
+        186,
+        202
+      ],
+      "sha256": "ecbfeaa078e836b0e97e8de8a5f6b6962f9a7ed80940e2c22b8e486964a0214a"
+    },
+    "biome:savanna_plateau": {
+      "file": "biome-savanna-plateau.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 19,
+      "crop": [
+        232,
+        665,
+        412,
+        840
+      ],
+      "trim": [
+        0,
+        0,
+        180,
+        175
+      ],
+      "sha256": "826156cf55cf0e3f589210d633d46f2966414a9422e8d896a318bc6453e9c0a1"
+    },
+    "biome:snowy_beach": {
+      "file": "biome-snowy-beach.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 20,
+      "crop": [
+        446,
+        715,
+        600,
+        821
+      ],
+      "trim": [
+        0,
+        0,
+        154,
+        106
+      ],
+      "sha256": "77658fb51e075c384cc821cbc0b84035d94283530ec6496e6b4c1dcad1df0f35"
+    },
+    "biome:snowy_plains": {
+      "file": "biome-snowy-plains.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 21,
+      "crop": [
+        648,
+        686,
+        810,
+        834
+      ],
+      "trim": [
+        0,
+        0,
+        162,
+        148
+      ],
+      "sha256": "273d9eb0d9dd609ff45dc08708b8d864b80da2014827f3c6aeae147739fd188d"
+    },
+    "biome:snowy_slopes": {
+      "file": "biome-snowy-slopes.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 22,
+      "crop": [
+        851,
+        694,
+        1027,
+        840
+      ],
+      "trim": [
+        0,
+        0,
+        176,
+        146
+      ],
+      "sha256": "7911cf23fa3c83399377759daf950a4cc1a3438c05ad099dba425768e6a6bc8b"
+    },
+    "biome:snowy_taiga": {
+      "file": "biome-snowy-taiga.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 23,
+      "crop": [
+        1071,
+        663,
+        1226,
+        847
+      ],
+      "trim": [
+        0,
+        0,
+        155,
+        184
+      ],
+      "sha256": "63ccbd76356e3eb56a5dc6535e3c9bb63f8e9da0e0bbb48f00533d3a21c6866e"
+    },
+    "biome:sparse_jungle": {
+      "file": "biome-sparse-jungle.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 24,
+      "crop": [
+        45,
+        870,
+        185,
+        1036
+      ],
+      "trim": [
+        0,
+        0,
+        140,
+        166
+      ],
+      "sha256": "c894e28467b8180354864c57a8ce8aa2f924b89d257964e17c7c8970e30d3d55"
+    },
+    "biome:stony_peaks": {
+      "file": "biome-stony-peaks.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 25,
+      "crop": [
+        250,
+        870,
+        386,
+        1045
+      ],
+      "trim": [
+        0,
+        0,
+        136,
+        175
+      ],
+      "sha256": "d0d7f594eaa7aa3c608b1aa5e01ddd71c5f1e67f5e09dc3f68ac5f524eded155"
+    },
+    "biome:stony_shore": {
+      "file": "biome-stony-shore.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 26,
+      "crop": [
+        431,
+        886,
+        609,
+        1032
+      ],
+      "trim": [
+        0,
+        0,
+        178,
+        146
+      ],
+      "sha256": "79e0c72a7f4a7211c76cbadb1a00d97b558fe26231e1e20841cd8ccc36a1965d"
+    },
+    "biome:sunflower_plains": {
+      "file": "biome-sunflower-plains.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 27,
+      "crop": [
+        657,
+        872,
+        813,
+        1038
+      ],
+      "trim": [
+        0,
+        0,
+        156,
+        166
+      ],
+      "sha256": "a1d0a0c44d49c30d13e835667364d424459ba03f4d020c0c135df24d99560e9e"
+    },
+    "biome:the_void": {
+      "file": "biome-the-void.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 28,
+      "crop": [
+        865,
+        884,
+        1011,
+        1032
+      ],
+      "trim": [
+        0,
+        0,
+        146,
+        148
+      ],
+      "sha256": "e3c037dd65771affc249706ad11e4bb3fca1f1c1b17bb151e75f26f9b0df3ab6"
+    },
+    "biome:warm_ocean": {
+      "file": "biome-warm-ocean.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 29,
+      "crop": [
+        1061,
+        882,
+        1229,
+        1032
+      ],
+      "trim": [
+        0,
+        0,
+        168,
+        150
+      ],
+      "sha256": "83e6b9daa4744213d4899b7943857aaf0ed34aae09feebee795343d8245cd654"
+    },
+    "biome:windswept_forest": {
+      "file": "biome-windswept-forest.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 30,
+      "crop": [
+        29,
+        1053,
+        215,
+        1228
+      ],
+      "trim": [
+        0,
+        0,
+        186,
+        175
+      ],
+      "sha256": "0b494b7c98f49d1eeb971b2a69696838652be48f25760f892a6099df56fd9646"
+    },
+    "biome:windswept_gravelly_hills": {
+      "file": "biome-windswept-gravelly-hills.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 31,
+      "crop": [
+        243,
+        1063,
+        394,
+        1228
+      ],
+      "trim": [
+        0,
+        0,
+        151,
+        165
+      ],
+      "sha256": "6e62c622477568c4574bfbce728816eda55c76cda12440addb3bb216cfaea0e1"
+    },
+    "biome:windswept_hills": {
+      "file": "biome-windswept-hills.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 32,
+      "crop": [
+        417,
+        1070,
+        597,
+        1236
+      ],
+      "trim": [
+        0,
+        0,
+        180,
+        166
+      ],
+      "sha256": "6ccd1ba8d68973d47aa3066564b1891297322b9db8468b57e331185e8c34cc11"
+    },
+    "biome:windswept_savanna": {
+      "file": "biome-windswept-savanna.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 33,
+      "crop": [
+        644,
+        1060,
+        825,
+        1229
+      ],
+      "trim": [
+        0,
+        0,
+        181,
+        169
+      ],
+      "sha256": "724bd6b8a6dce27ed5d4f53eea0aaeea66a0da41fddc88a0e02a5bebd4f92244"
+    },
+    "biome:wooded_badlands": {
+      "file": "biome-wooded-badlands.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 34,
+      "crop": [
+        856,
+        1066,
+        1022,
+        1227
+      ],
+      "trim": [
+        0,
+        0,
+        166,
+        161
+      ],
+      "sha256": "5f8a160f069d20ad0ac31be91f8ba5a8021a9d070473bfa9992ee44d3ab0516d"
+    },
+    "biome:dappled_forest": {
+      "file": "biome-dappled-forest.png",
+      "atlas": "source-items-biomes-b.png",
+      "cell": 35,
+      "crop": [
+        1069,
+        1053,
+        1233,
+        1232
+      ],
+      "trim": [
+        0,
+        0,
+        164,
+        179
+      ],
+      "sha256": "5e3e9bb222d662f1c70643fcc59481313f8c438c9e0f4a63314908c619532551"
+    },
+    "structure:abandoned_camp_bamboo_jungle": {
+      "file": "structure-abandoned-camp-bamboo-jungle.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 0,
+      "crop": [
+        32,
+        37,
+        215,
+        225
+      ],
+      "trim": [
+        0,
+        0,
+        183,
+        188
+      ],
+      "sha256": "a212e3bb772089eb6915e35f3de57a0acc64884e5383d8ae344cccb21ae4aaac"
+    },
+    "structure:abandoned_camp_birch_forest": {
+      "file": "structure-abandoned-camp-birch-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 1,
+      "crop": [
+        264,
+        30,
+        442,
+        226
+      ],
+      "trim": [
+        0,
+        0,
+        178,
+        196
+      ],
+      "sha256": "3a55487ca89135ce9b618896e1cb5bafe1c90dee8a541a98ca79d45056b2d2f8"
+    },
+    "structure:abandoned_camp_cherry_grove": {
+      "file": "structure-abandoned-camp-cherry-grove.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 2,
+      "crop": [
+        492,
+        33,
+        667,
+        225
+      ],
+      "trim": [
+        0,
+        0,
+        175,
+        192
+      ],
+      "sha256": "c65dffcea75acb0c99ee812c6ce5e7a25a32c9ccfcaba14d84064b623d4dd96a"
+    },
+    "structure:abandoned_camp_dappled_forest": {
+      "file": "structure-abandoned-camp-dappled-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 3,
+      "crop": [
+        706,
+        39,
+        878,
+        227
+      ],
+      "trim": [
+        0,
+        0,
+        172,
+        188
+      ],
+      "sha256": "46410acb2aada26d364fcbcfa793e06c405ed9609504c4bf25b6598f1f471d39"
+    },
+    "structure:abandoned_camp_flower_forest": {
+      "file": "structure-abandoned-camp-flower-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 4,
+      "crop": [
+        926,
+        49,
+        1100,
+        225
+      ],
+      "trim": [
+        0,
+        0,
+        174,
+        176
+      ],
+      "sha256": "a8cc9b0c9d60d1014d68dbbd99d76a41802c2d51633ea000ff572a5bca64efcb"
+    },
+    "structure:abandoned_camp_forest": {
+      "file": "structure-abandoned-camp-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 5,
+      "crop": [
+        1140,
+        44,
+        1321,
+        229
+      ],
+      "trim": [
+        0,
+        0,
+        181,
+        185
+      ],
+      "sha256": "4ddeea44398b5e26ea23d2afb5b83070b0ac500f76aa5293018fcb5168b17710"
+    },
+    "structure:abandoned_camp_meadow": {
+      "file": "structure-abandoned-camp-meadow.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 6,
+      "crop": [
+        1375,
+        51,
+        1536,
+        227
+      ],
+      "trim": [
+        0,
+        0,
+        161,
+        176
+      ],
+      "sha256": "fdd9ab98f4a3b99cbfb96545e1e9f8a99eb216a3d10a9a1e121f245c81cc8ad2"
+    },
+    "structure:abandoned_camp_old_growth_birch_forest": {
+      "file": "structure-abandoned-camp-old-growth-birch-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 7,
+      "crop": [
+        1586,
+        31,
+        1752,
+        225
+      ],
+      "trim": [
+        0,
+        0,
+        166,
+        194
+      ],
+      "sha256": "402b55d132e2e9aba950853ffbaa564dc6adb341c130e8c40e62f4ec0cb34aa2"
+    },
+    "structure:abandoned_camp_old_growth_pine_taiga": {
+      "file": "structure-abandoned-camp-old-growth-pine-taiga.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 8,
+      "crop": [
+        20,
+        245,
+        205,
+        466
+      ],
+      "trim": [
+        0,
+        0,
+        185,
+        221
+      ],
+      "sha256": "2da4ba837c9f31e17571acea7449230f2a30ef18a19dcf98a79b6ae7ca0c6a02"
+    },
+    "structure:abandoned_camp_old_growth_spruce_taiga": {
+      "file": "structure-abandoned-camp-old-growth-spruce-taiga.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 9,
+      "crop": [
+        261,
+        264,
+        450,
+        464
+      ],
+      "trim": [
+        0,
+        0,
+        189,
+        200
+      ],
+      "sha256": "9cf5c134f5789adce1dced5be77c33c718f8be9bee29f7430f5a17822fc9d25d"
+    },
+    "structure:abandoned_camp_pale_garden": {
+      "file": "structure-abandoned-camp-pale-garden.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 10,
+      "crop": [
+        489,
+        276,
+        671,
+        465
+      ],
+      "trim": [
+        0,
+        0,
+        182,
+        189
+      ],
+      "sha256": "02f5f0abd693fdbf625b469ea103516c6a7822169bf43bbff8f1e8a28498a63d"
+    },
+    "structure:abandoned_camp_savanna": {
+      "file": "structure-abandoned-camp-savanna.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 11,
+      "crop": [
+        707,
+        271,
+        892,
+        462
+      ],
+      "trim": [
+        0,
+        0,
+        185,
+        191
+      ],
+      "sha256": "8cf9de1fd44df371b1868808b3e0f80f412fd990e8d10e8ceed19dfea7c82ba9"
+    },
+    "structure:abandoned_camp_snowy_taiga": {
+      "file": "structure-abandoned-camp-snowy-taiga.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 12,
+      "crop": [
+        917,
+        263,
+        1105,
+        467
+      ],
+      "trim": [
+        0,
+        0,
+        188,
+        204
+      ],
+      "sha256": "7b985884171568c9f799143b5c581a938e118e15e7e5e76476214e6adf5f1203"
+    },
+    "structure:abandoned_camp_sparse_jungle": {
+      "file": "structure-abandoned-camp-sparse-jungle.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 13,
+      "crop": [
+        1142,
+        289,
+        1315,
+        458
+      ],
+      "trim": [
+        0,
+        0,
+        173,
+        169
+      ],
+      "sha256": "9d7a0a69b94cc835d1ef68cf01cc387e58a12779375161034a4339459ea6886b"
+    },
+    "structure:abandoned_camp_swamp": {
+      "file": "structure-abandoned-camp-swamp.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 14,
+      "crop": [
+        1359,
+        282,
+        1545,
+        461
+      ],
+      "trim": [
+        0,
+        0,
+        186,
+        179
+      ],
+      "sha256": "e8769d30df77c41055ec6027a38c109756e799c209b79f05328f6637461064cd"
+    },
+    "structure:abandoned_camp_taiga": {
+      "file": "structure-abandoned-camp-taiga.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 15,
+      "crop": [
+        1582,
+        274,
+        1753,
+        464
+      ],
+      "trim": [
+        0,
+        0,
+        171,
+        190
+      ],
+      "sha256": "88cbc8d8192ebdd63a45a339d7a073b9eaf4ede0d33052e3dbb156571b32fa87"
+    },
+    "structure:abandoned_camp_windswept_forest": {
+      "file": "structure-abandoned-camp-windswept-forest.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 16,
+      "crop": [
+        29,
+        496,
+        225,
+        664
+      ],
+      "trim": [
+        0,
+        0,
+        196,
+        168
+      ],
+      "sha256": "61b1d8ac02bd821f253ccff463b5a19a71156995b23d76b522a9e9bfbafb53b2"
+    },
+    "structure:abandoned_camp_wooded_badlands": {
+      "file": "structure-abandoned-camp-wooded-badlands.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 17,
+      "crop": [
+        267,
+        490,
+        427,
+        664
+      ],
+      "trim": [
+        0,
+        0,
+        160,
+        174
+      ],
+      "sha256": "89214c40dde84a8696a8df05c6f55e5bbe77793e7e59683eb88c70bdbab3fa31"
+    },
+    "structure:ancient_city": {
+      "file": "structure-ancient-city.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 18,
+      "crop": [
+        461,
+        488,
+        652,
+        667
+      ],
+      "trim": [
+        0,
+        0,
+        191,
+        179
+      ],
+      "sha256": "2ea13033ea31098967800c2c2bbe3450a96c6d80ccd9565690b307c683d5b13f"
+    },
+    "structure:bastion_remnant": {
+      "file": "structure-bastion-remnant.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 19,
+      "crop": [
+        704,
+        487,
+        860,
+        673
+      ],
+      "trim": [
+        0,
+        0,
+        156,
+        186
+      ],
+      "sha256": "08af27790b252bca3aa8f0b2c1801bf33fe6b6c317d0a507c3307c4382c2b6cf"
+    },
+    "structure:buried_treasure": {
+      "file": "structure-buried-treasure.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 20,
+      "crop": [
+        907,
+        540,
+        1052,
+        669
+      ],
+      "trim": [
+        0,
+        0,
+        145,
+        129
+      ],
+      "sha256": "71c5f4049b8b6d2c848c3285543b15b0b17653aaabc14b89299e674edf8772a1"
+    },
+    "structure:desert_pyramid": {
+      "file": "structure-desert-pyramid.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 21,
+      "crop": [
+        1109,
+        497,
+        1316,
+        671
+      ],
+      "trim": [
+        0,
+        0,
+        207,
+        174
+      ],
+      "sha256": "167a32f9a87cad11604e76fa65c12208d832e44c558601c60ba6f4cdbb4bc72f"
+    },
+    "structure:end_city": {
+      "file": "structure-end-city.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 22,
+      "crop": [
+        1360,
+        470,
+        1481,
+        685
+      ],
+      "trim": [
+        0,
+        0,
+        121,
+        215
+      ],
+      "sha256": "1ae29c7bb538b64fd6bd4154924058b43717a65622bc260c9bd9f4e59694791f"
+    },
+    "structure:fortress": {
+      "file": "structure-fortress.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 23,
+      "crop": [
+        1553,
+        495,
+        1745,
+        666
+      ],
+      "trim": [
+        0,
+        0,
+        192,
+        171
+      ],
+      "sha256": "cc79d4392211ed25fd58d0a1f2e8237ff408ecc862a7e1ae70bd52b42bf2216f"
+    },
+    "structure:igloo": {
+      "file": "structure-igloo.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 24,
+      "crop": [
+        41,
+        703,
+        217,
+        859
+      ],
+      "trim": [
+        0,
+        0,
+        176,
+        156
+      ],
+      "sha256": "31609d70a3832ab795bfb3ceb902acb8115f73aa8afa8c22675b74464c36c9bb"
+    },
+    "structure:jungle_pyramid": {
+      "file": "structure-jungle-pyramid.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 25,
+      "crop": [
+        255,
+        680,
+        436,
+        862
+      ],
+      "trim": [
+        0,
+        0,
+        181,
+        182
+      ],
+      "sha256": "4dcf7554e6185fa24737076fe440467152b544026661cb082034df13c73f6c47"
+    },
+    "structure:mansion": {
+      "file": "structure-mansion.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 26,
+      "crop": [
+        471,
+        674,
+        669,
+        862
+      ],
+      "trim": [
+        0,
+        0,
+        198,
+        188
+      ],
+      "sha256": "0858de1cf15d61d7db7b4b02af83ed34fe49a4429ad8c30f1d5c31a680f4acf7"
+    },
+    "structure:mineshaft": {
+      "file": "structure-mineshaft.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 27,
+      "crop": [
+        716,
+        690,
+        873,
+        863
+      ],
+      "trim": [
+        0,
+        0,
+        157,
+        173
+      ],
+      "sha256": "71dd5cb0b21c6bad2832f8fc342d70b0fbaf52d744395f89c1fedc4ab7d8be01"
+    },
+    "structure:mineshaft_mesa": {
+      "file": "structure-mineshaft-mesa.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 28,
+      "crop": [
+        925,
+        690,
+        1085,
+        862
+      ],
+      "trim": [
+        0,
+        0,
+        160,
+        172
+      ],
+      "sha256": "bcd067561db6ad3c71d3e4a8e0f6aac0a06968df2151d40488805b6dffd2d5ac"
+    },
+    "structure:monument": {
+      "file": "structure-monument.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 29,
+      "crop": [
+        1120,
+        689,
+        1322,
+        863
+      ],
+      "trim": [
+        0,
+        0,
+        202,
+        174
+      ],
+      "sha256": "1fdc21f282425152e32f14c4109e81837a0a30d482b80bc4b79823ef188e4a97"
+    },
+    "structure:nether_fossil": {
+      "file": "structure-nether-fossil.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 30,
+      "crop": [
+        1360,
+        699,
+        1527,
+        863
+      ],
+      "trim": [
+        0,
+        0,
+        167,
+        164
+      ],
+      "sha256": "abf850d7b2664121cead644234216a57fa3466839624d165255eb9540ecd2e86"
+    },
+    "structure:ocean_ruin_cold": {
+      "file": "structure-ocean-ruin-cold.png",
+      "atlas": "source-items-structures-a.png",
+      "cell": 31,
+      "crop": [
+        1563,
+        690,
+        1736,
+        862
+      ],
+      "trim": [
+        0,
+        0,
+        173,
+        172
+      ],
+      "sha256": "d9d5bef4af4c10f01ec4fa1ee3099f2e2cc470c761e88bb6449140a3deb7d743"
+    },
+    "structure:ocean_ruin_warm": {
+      "file": "structure-ocean-ruin-warm.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 0,
+      "crop": [
+        39,
+        88,
+        270,
+        297
+      ],
+      "trim": [
+        0,
+        0,
+        231,
+        209
+      ],
+      "sha256": "7938e3652d7e460a39361bead8b67cdeacf9d2b71bd24997e08d6faa5e287e01"
+    },
+    "structure:pillager_outpost": {
+      "file": "structure-pillager-outpost.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 1,
+      "crop": [
+        316,
+        42,
+        498,
+        309
+      ],
+      "trim": [
+        0,
+        0,
+        182,
+        267
+      ],
+      "sha256": "ebd5224db58d0bb9745857aac4a2d1c0e650c3a5f9a0e6f45e54e0bf73c13646"
+    },
+    "structure:ruined_portal": {
+      "file": "structure-ruined-portal.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 2,
+      "crop": [
+        569,
+        87,
+        796,
+        299
+      ],
+      "trim": [
+        0,
+        0,
+        227,
+        212
+      ],
+      "sha256": "44891dc2007644d5866821ef7268a624e4e2132fe41341cd48cb1f4a853e78a0"
+    },
+    "structure:ruined_portal_desert": {
+      "file": "structure-ruined-portal-desert.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 3,
+      "crop": [
+        853,
+        84,
+        1073,
+        303
+      ],
+      "trim": [
+        0,
+        0,
+        220,
+        219
+      ],
+      "sha256": "82a76fb8d9a2ff90281e177aee63b7fb0cf4778fce893cbc639656efe46133df"
+    },
+    "structure:ruined_portal_jungle": {
+      "file": "structure-ruined-portal-jungle.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 4,
+      "crop": [
+        1139,
+        81,
+        1356,
+        305
+      ],
+      "trim": [
+        0,
+        0,
+        217,
+        224
+      ],
+      "sha256": "7510145c19613bf0c2e9324d16837894bb91be0ccb60a0cb131aea31a47fc3d7"
+    },
+    "structure:ruined_portal_mountain": {
+      "file": "structure-ruined-portal-mountain.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 5,
+      "crop": [
+        39,
+        346,
+        256,
+        566
+      ],
+      "trim": [
+        0,
+        0,
+        217,
+        220
+      ],
+      "sha256": "071430811639351dd5a1896e834bf865d263301032e875c4ae08b3a5b75d9f28"
+    },
+    "structure:ruined_portal_nether": {
+      "file": "structure-ruined-portal-nether.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 6,
+      "crop": [
+        313,
+        333,
+        526,
+        564
+      ],
+      "trim": [
+        0,
+        0,
+        213,
+        231
+      ],
+      "sha256": "b5afe48771ee7646fe62e6c40089f39e284a887574cd965eb70b07dbae0659a8"
+    },
+    "structure:ruined_portal_ocean": {
+      "file": "structure-ruined-portal-ocean.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 7,
+      "crop": [
+        593,
+        342,
+        808,
+        565
+      ],
+      "trim": [
+        0,
+        0,
+        215,
+        223
+      ],
+      "sha256": "395c99a468d9ddfdf4f7cfef4097b3f07b398a5aac196aff589b123847ba669e"
+    },
+    "structure:ruined_portal_swamp": {
+      "file": "structure-ruined-portal-swamp.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 8,
+      "crop": [
+        859,
+        339,
+        1074,
+        563
+      ],
+      "trim": [
+        0,
+        0,
+        215,
+        224
+      ],
+      "sha256": "476746f1634778b87fa2895c0f3a330fcb3d31ee1249aefd6f22ff7b6a139c84"
+    },
+    "structure:shipwreck": {
+      "file": "structure-shipwreck.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 9,
+      "crop": [
+        1147,
+        353,
+        1364,
+        564
+      ],
+      "trim": [
+        0,
+        0,
+        217,
+        211
+      ],
+      "sha256": "8a35dc3293d7e25401ffb8b8d68b5fc2dbba43c20a95ac9ad069a4d9e89d2377"
+    },
+    "structure:shipwreck_beached": {
+      "file": "structure-shipwreck-beached.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 10,
+      "crop": [
+        41,
+        599,
+        265,
+        810
+      ],
+      "trim": [
+        0,
+        0,
+        224,
+        211
+      ],
+      "sha256": "8c49ee763151a46e29d28dd1e55a9304bd66b88a200f8bc46ad3eb955e47c9de"
+    },
+    "structure:stronghold": {
+      "file": "structure-stronghold.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 11,
+      "crop": [
+        328,
+        597,
+        537,
+        809
+      ],
+      "trim": [
+        0,
+        0,
+        209,
+        212
+      ],
+      "sha256": "948e9ac5e253cd16d3a158a0be1342e6cf3ee37bbef9d86f71d3c37c52b405a3"
+    },
+    "structure:swamp_hut": {
+      "file": "structure-swamp-hut.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 12,
+      "crop": [
+        589,
+        601,
+        808,
+        825
+      ],
+      "trim": [
+        0,
+        0,
+        219,
+        224
+      ],
+      "sha256": "bd646244d54b28bb6b0c5bbffd44c3f54ff271942162bda074618ab35993a508"
+    },
+    "structure:trail_ruins": {
+      "file": "structure-trail-ruins.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 13,
+      "crop": [
+        854,
+        600,
+        1074,
+        816
+      ],
+      "trim": [
+        0,
+        0,
+        220,
+        216
+      ],
+      "sha256": "a271a3deca49459e3f701fbc80550e8281a16b013fc43cfb61d463e46e22264b"
+    },
+    "structure:trial_chambers": {
+      "file": "structure-trial-chambers.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 14,
+      "crop": [
+        1156,
+        597,
+        1361,
+        811
+      ],
+      "trim": [
+        0,
+        0,
+        205,
+        214
+      ],
+      "sha256": "a3606bca75758ba298ea2ae647cb2e901797022fb6faea819ecfa903e54b6105"
+    },
+    "structure:village_desert": {
+      "file": "structure-village-desert.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 15,
+      "crop": [
+        45,
+        836,
+        281,
+        1060
+      ],
+      "trim": [
+        0,
+        0,
+        236,
+        224
+      ],
+      "sha256": "a75ebcf6c98218173eaf40ee5cfd660a64f2f64978483b66d043e967534624d4"
+    },
+    "structure:village_plains": {
+      "file": "structure-village-plains.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 16,
+      "crop": [
+        305,
+        839,
+        545,
+        1063
+      ],
+      "trim": [
+        0,
+        0,
+        240,
+        224
+      ],
+      "sha256": "1dc80298623d1f3f2496b37056654af34d3c1d42db3c31f547b2c5f20cd3caad"
+    },
+    "structure:village_savanna": {
+      "file": "structure-village-savanna.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 17,
+      "crop": [
+        579,
+        863,
+        822,
+        1066
+      ],
+      "trim": [
+        0,
+        0,
+        243,
+        203
+      ],
+      "sha256": "caf9f1c1b2c617a7a96322992200cd22b2218229703b4ecc61bd68e384008083"
+    },
+    "structure:village_snowy": {
+      "file": "structure-village-snowy.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 18,
+      "crop": [
+        859,
+        837,
+        1092,
+        1069
+      ],
+      "trim": [
+        0,
+        0,
+        233,
+        232
+      ],
+      "sha256": "f08d1d64ba98a9ab1a182b6f1c7cd5aa105cfe4f199df7edeabae42ef745e0c3"
+    },
+    "structure:village_taiga": {
+      "file": "structure-village-taiga.png",
+      "atlas": "source-items-structures-b.png",
+      "cell": 19,
+      "crop": [
+        1139,
+        830,
+        1376,
+        1064
+      ],
+      "trim": [
+        0,
+        0,
+        237,
+        234
+      ],
+      "sha256": "d889a52b9907fbfd65b27b01d2d4f6acccc40384c60b2eecd93581d3453fd52d"
+    }
+  }
+}

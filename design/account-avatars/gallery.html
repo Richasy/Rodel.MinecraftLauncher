@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>28 个账户头像 · 素材评审</title>
+  <link rel="stylesheet" href="../prototype.css">
+  <link rel="stylesheet" href="../themes.css">
+  <style>
+    body { padding:32px;max-width:1120px;margin:auto; }
+    header { display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px; }
+    h1 { font-size:20px;font-weight:600;margin:0; }
+    a { color:var(--muted);font-size:13px; }
+    main { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:24px 16px; }
+    figure { margin:0;min-width:0; }
+    img { display:block;width:100%;aspect-ratio:1;image-rendering:pixelated; }
+    figcaption { margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:12px; }
+    small { color:var(--quiet);font-size:11px; }
+    @media(max-width:700px) { body { padding:20px; } main { grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 12px; } }
+  </style>
+</head>
+<body>
+  <header><h1>账户头像 · 28 个</h1><a href="index.html">返回交互原型 ↗</a></header>
+  <main aria-label="头像素材"></main>
+  <script src="avatars.js"></script>
+  <script>document.querySelector('main').innerHTML=rodelAvatarAssets.presets.map((p,i)=>`<figure><img src="${p.src}" alt="${p.name}"><figcaption><span>${p.name}</span><small>${i===0?'默认':String(i+1).padStart(2,'0')}</small></figcaption></figure>`).join('');</script>
+</body>
+</html>

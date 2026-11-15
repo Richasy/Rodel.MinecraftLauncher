@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>Core AI hizmetlerini, konuşmalarını ve yapılandırılmış sağlayıcıları kullanın.</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>Dahili arka plan Core AI çalışma zamanını çalıştırın.</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Çevrimdışı model hizmetlerini ve korunan kimlik bilgilerini yönetin.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Açık model bağlamalarını ve varsayılan modeli yönetin.</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Kalıcı konuşmaları ve gerçek yürütme adımlarını yönetin.</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>Paketlenmiş ve açıkça kaydedilmiş kullanıcı talimatlarını inceleyin. Komut dosyaları hiçbir zaman yürütülmez.</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>Açıkça etkinleştirilmiş stdio MCP işlemlerini yönetin ve gerçek kataloglarını inceleyin.</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>Bağımsız dosya ve ağ varsayılanlarını yönetin.</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Mevcut kayıtları listeleyin.</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Seçilen kaydı okuyun.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Açık alanları revizyon kontrolü ile kaydedin.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Gerekli incelemeden sonra seçilen sahip olunan kaydı kaldırın.</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Manuel bağlamaları değiştirmeden gerçek modelleri keşfedin.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Gerçek bir bağlantı veya üretim kontrolü çalıştırın.</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Yeni görüşmeler için varsayılanı seçin.</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Kalıcı bir konuşma oluşturun.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Bir dönüş gönderin. --wait gözlemler; --cancel-on-exit iptalin sahibidir.</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Bilinmeyen efektleri tekrar oynatmadan başarısız bir dönüşü yeniden deneyin.</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>Özel sağlayıcı devam durumu olmadan bir dönüş okuyun.</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Bir sıra imlecinden sonra sıralı dayanıklı adımları okuyun.</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Özel sağlayıcı durumu olmadan, konuşma ve arşiv tanımlayıcılarına göre orijinal sıkıştırılmış bağlamı okuyun.</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>Arşiv sayfası başına 256 ila 16000 karakter döndürür. Varsayılan: 12000.</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>Sıfır tabanlı arşiv dizinine göre bir orijinal mesajı okuyun.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Bağımsız bir oyun veya iş değil, bu dönüşü iptal edin.</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Konuşma içeriğini değiştirmeden yeniden adlandırın.</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Açık çalışma modunu değiştirin.</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Genel geçmişi açıkça seçilmiş bir JSON veya metin dosyasına aktarın.</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Gerçek yapılandırılmış talimatları ve dosya başına uyarıları inceleyin.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Açıkça seçilmiş bir yerel dizini kaydedin.</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Bu kayıtlı kaynağı gelecekteki dönüşler için etkinleştirin.</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Bu kayıtlı kaynağı gelecekteki dönüşler için devre dışı bırakın.</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Konuşma veya araçlar olmadan bir ön plan modeli isteğini çalıştırın.</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Gerçek asistan ana bilgisayarını ve çalışma zamanı modunu inceleyin.</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>Açık {0} değeri.</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>Bu komut için {0}'yi etkinleştirin.</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>Açık true veya {0} için false.</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>Kimlik bilgilerini asla komut argümanlarına koymayın. --credential-stdin, --credential-prompt veya --credential-env'yi kullanın.</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>Geçersiz asistan komutu veya yazılan seçenek. Kabul edilen sözdizimi için --help kullanın.</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>Mevcut konfigürasyonu okuyun ve ardından --expected-revision'yi sağlayın.</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>Tedarik --{0}.</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>Bu işlem için bir model seçin.</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>Giriş, sınırlı karakter bütçesini aşıyor.</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>Korumalı bir kimlik bilgisi giriş yöntemi seçin.</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>Yönlendirilmiş kimlik bilgisi girişi için --credential-stdin kullanın.</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>Kimlik Bilgisi: </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>Kısa bir selamlamayla yanıt verin.</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>Yapılandırılmış hizmet artık mevcut değil.</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI dönüşleri zaten yürütme ömürlerini yönetiyor. --background'yi atlayın; chat send ve isteğe bağlı olarak --wait kullanın.</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>Etkileşimli kimlik bilgisi girişi, MCP araçları veya arka plan işleri ile değil, yalnızca doğrudan CLI çağrılması yoluyla mümkündür.</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>Desteklenen mutasyonlara yalnızca gönderilen bu hedef ve onun açık kapsamı için yetki verin. Bu, ürün onaylarını atlamaz.</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>Mevcut Core durumunu, çağrıları tekrar oynatmadan, durdurulmuş bir dönüşün tamamlanmamış mutasyon amaçlarına göre kontrol edin.</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Açık true onaylamak için veya false tam işlem parmak izini reddetmek için.</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>Bekleyen işlem için kullanıcının kararını kaydedin. Model argümanları bu kararı sağlayamaz.</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>Bekleyen işlemin, argümanların ve dondurulmuş incelemenin sınırlı sayfalarını okuyun.</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>Bu kesin onay için --approve true veya --approve false'yi belirtin.</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>Açıkça yetkilendirilmiş yerel dizinleri ve bunların okuma/yazma modlarını yönetin.</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Ürüne ait Codex ve Claude Kod becerilerini ve MCP kaydını planlayın, yükleyin, inceleyin veya kaldırın.</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>Değişiklik yapmadan önce kesin hedefleri, mevcut sahipliği ve bağlayıcılığı inceleyin.</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Güncel kesin planı uygulayın ve her kurulum sonucunu rapor edin.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Kurulum sahipliğini, mevcut istemci yapılandırmasını ve data-root bağlamayı inceleyin.</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>Yalnızca yeni yetkili hedefler için, incelemeden sonra kalan tam olarak bilinmeyen etkiyi kabul edin. Bir sonucu kanıtlamaz veya eski kalenin tekrar oynanmasına izin vermez.</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>Ayrı olarak yüklenmiş bir hizmet olmadan, başlatıcıya ait yerleşik yerel model çıkarımını yönetin.</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>Model dosyalarını değiştirmeden boşta kalan gömülü motoru ve sahip olduğu yerel model çalışanlarını boşaltın.</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>Yönlendirilmiş standart girişten (yalnızca doğrudan CLI), 64000 karaktere kadar istemi okuyun.</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>--prompt, --prompt-file veya --prompt-stdin'den tam olarak birini seçin.</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>Stdin istemi yalnızca doğrudan CLI çağrısıyla kullanılabilir; MCP stdin protokol mesajlarını taşır.</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>Metni bu komuta yönlendirin veya --prompt veya --prompt-file kullanın.</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>--prompt, --prompt-file veya --prompt-stdin'yi sağlayın.</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>Mevcut bir dönüşü yeniden göndermeden gözlemleyin. --events stderr'e sıralı events yazar; --after imleci devam ettirir. Gözlemci zaman aşımı dönüşü iptal etmez.</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>Negatif olmayan bir --after imleci ve 1 ile 3600 arasında --timeout-seconds kullanın.</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>Gözlem zaman aşımına uğradı. Dönüş iptal edilmedi veya yeniden gönderilmedi; tanımlayıcılarını ve olay imlecini kullanarak devam edin.</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>Yapılandırma sırasında gerçek model referansları; bir konuşma modeli oluştururken veya seçerken kayıtlı bir model bağlama ID. Yalnızca bir hizmet oluştururken tekrarlayın.</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>Açık pozitif çıkış belirteci limiti. istek/sohbet yalnızca bu aramayı geçersiz kılar; model kaydetme işlemi devam ediyor. Atlandığında kaydedilen ayarı veya gözlemlenen model kapasitesini kullanın; bilinmeyen kapasite, sağlayıcının varsayılan değerini değiştirmeden bırakır.</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>Saniye cinsinden talep/dönüş süresi (1..3600); sohbet bekletme yalnızca gözlemciye yönelik bir son tarih kullanır ve oluşturmayı iptal etmez.</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>32 haneli GUID idempotency anahtarı. Aynı girdinin tekrarlanması aynı dönüşü döndürür; aynı tuşla değiştirilen giriş reddedilir.</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>Bağlam seçimi de dahil olmak üzere bu sırada maksimum model çağrıları (1..64). Bu, konuşma mesajlarında bir sınırlama değildir.</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>Mevcut konuşma sıralarını gözlemleyin ve kontrol edin.</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>Bekleyen işlem onaylarını tam olarak okuyun ve karar verin.</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>Durdurulan dönüş efektlerini tekrar oynatmadan inceleyin ve onaylayın.</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>Açık konuşma alanlarını revizyon kontrollü tek bir işlemle güncelleyin.</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>Bir başlık, örnek, model, mod, dosya erişimi veya ağ erişimi değişikliği belirtin.</value>
+  </data>
+</root>

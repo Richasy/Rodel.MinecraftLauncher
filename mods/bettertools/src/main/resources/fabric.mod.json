@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "bettertools",
+  "version": "${version}",
+  "name": "Better Tools",
+  "description": "A transforming tool cube that keeps your real tools, enchantments and independent durability.",
+  "icon": "assets/bettertools/icon.png",
+  "authors": [
+    "Richasy"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.richasy.bettertools.fabric.BetterToolsFabric"
+    ],
+    "client": [
+      "io.github.richasy.bettertools.fabric.BetterToolsFabricClient"
+    ],
+    "modmenu": [
+      "io.github.richasy.bettertools.client.compat.CubeModMenu"
+    ]
+  },
+  "mixins": [
+    "bettertools.mixins.json"
+  ],
+  "accessWidener": "bettertools.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}"
+  }
+}

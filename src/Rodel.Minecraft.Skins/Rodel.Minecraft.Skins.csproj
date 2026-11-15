@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="StbImageSharp" Version="2.30.15" />
+    <PackageReference Include="StbImageWriteSharp" Version="1.16.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates/*.png" LogicalName="Rodel.Minecraft.Skins.Templates.%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

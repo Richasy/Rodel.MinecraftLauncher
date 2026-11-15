@@ -1,0 +1,65 @@
+.palette-editor { min-width: 0; }
+.palette-toolbar { position: relative; display: flex; align-items: center; gap: 5px; margin-bottom: 10px; }
+.palette-toolbar .ui-select { flex: 1; min-width: 0; width: auto !important; }
+.palette-toolbar .combo-face { width: 100%; min-height: 28px; padding: 5px 8px; font-size: 11px; }
+.palette-toolbar .combo-face > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.palette-toolbar .combo-arrow { margin-left: 5px; flex: 0 0 12px; }
+.palette-toolbar .combo-arrow svg { width: 12px; }
+.palette-icon { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; padding: 0; color: var(--muted); background: transparent; border: 1px solid transparent; }
+.palette-icon:hover { background: var(--surface-hover); color: var(--ink); }
+.palette-icon svg { width: 16px; height: 16px; }
+.palette-swatches { display: grid; grid-template-columns: repeat(8,minmax(0,1fr)); gap: 5px; }
+.palette-swatch { position: relative; padding: 0; height: 22px; min-width: 0; border: 1px solid var(--line); forced-color-adjust: none; }
+.palette-swatch:hover { outline: 1px solid var(--ink); outline-offset: 1px; }
+.palette-swatch[aria-pressed="true"]::after { content: ""; position: absolute; inset: 3px; border: 1px solid white; box-shadow: 0 0 0 1px #0009; pointer-events: none; }
+.palette-empty,.palette-storage-note,.palette-help { color: var(--quiet); font-size: 11px; line-height: 1.7; margin: 10px 0 0; }
+.palette-storage-note { color: var(--warning); }
+.palette-dialog { padding: 0; width: 390px; max-width: calc(100vw - 32px); max-height: calc(100dvh - 64px); overflow: visible; color: var(--ink); background: var(--panel); border: 1px solid var(--edge-light); box-shadow: inset 0 1px var(--bevel-top),0 20px 70px #0004; backdrop-filter: blur(30px); }
+.palette-dialog::backdrop { background: #14212677; backdrop-filter: blur(5px); }
+.palette-dialog-heading { position: relative; display: flex; align-items: flex-start; gap: 3px; padding: 12px; border-bottom: 1px solid var(--line); }
+.palette-dialog-heading:has(.palette-title-meta[hidden]) { min-height: 56px; align-items: center; }
+.palette-title-area { flex: 1; min-width: 0; margin-right: 5px; }
+.palette-dialog h2 { font-size: 14px; font-weight: 500; margin: 0; overflow-wrap: anywhere; }
+.palette-title-meta { display: block; margin-top: 5px; font-size: 10px; color: var(--quiet); }
+.palette-dialog-body { padding: 12px; overflow-y: auto; max-height: calc(100dvh - 240px); }
+.palette-dialog-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; border-top: 1px solid var(--line); }
+.palette-dialog-footer[hidden],.palette-command-menu[hidden],.palette-dialog-heading [hidden] { display: none; }
+.palette-manager-grid { gap: 7px; }
+.palette-manager-grid :is(.palette-swatch,.palette-add-swatch) { height: 32px; }
+.palette-color-editor { margin-top: 18px; }
+.palette-color-editor[hidden] { display: none; }
+.palette-add-swatch { display: grid; place-items: center; height: 22px; padding: 0; min-width: 0; color: var(--muted); background: var(--inset); border: 1px dashed var(--line); }
+.palette-add-swatch:hover { color: var(--ink); background: var(--surface-hover); border-color: var(--muted); }
+.palette-add-swatch svg { width: 13px; height: 13px; }
+.palette-critical,.palette-critical:hover { color: var(--error); }
+.palette-name-input,.palette-inline-name { min-width: 0; color: var(--ink); background: var(--inset); border: 1px solid var(--line); box-shadow: inset 0 2px var(--shadow); padding: 8px 10px; font-size: 12px; border-radius: 0; }
+.palette-readonly-color { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.palette-readonly-color code { font: 12px Consolas,monospace; }
+.palette-readonly-color span { font-size: 10px; color: var(--quiet); }
+.palette-inline-name { display: block; width: 100%; padding: 5px 7px; font-size: 13px; }
+.palette-name-label { display: block; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.palette-name-input { width: 100%; }
+.palette-error { display: block; color: var(--error); font-size: 11px; font-weight: 400; line-height: 1.5; margin: 8px 0 0; }
+.palette-error[hidden] { display: none; }
+.palette-delete-copy { color: var(--muted); font-size: 12px; margin: 0; overflow-wrap: anywhere; }
+.palette-command-menu { position: absolute; top: calc(100% - 8px); right: 46px; z-index: 2; display: grid; min-width: 158px; padding: 5px; background: var(--panel); border: 1px solid var(--line); box-shadow: inset 0 1px var(--bevel-top),0 5px 18px var(--shadow); backdrop-filter: blur(24px); }
+.palette-command { min-height: 32px; padding: 0 10px; text-align: left; font-size: 12px; color: var(--ink); background: transparent; }
+.palette-command:hover,.palette-command:focus-visible { background: var(--surface-hover); }
+.palette-dialog :is(button,input):focus-visible,.palette-editor :is(.palette-swatch,.palette-add-swatch):focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.palette-dialog input[aria-invalid="true"] { border-color: var(--error); }
+.palette-create-menu { top: 100%; right: 28px; min-width: 190px; }
+.palette-create-menu .palette-command { display: flex; align-items: center; gap: 12px; }
+.palette-command-icon { display: grid; place-items: center; width: 20px; height: 20px; flex-shrink: 0; }
+.palette-command-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.palette-command-menu[hidden] { display: none; }
+.palette-reference-dialog { width: 584px; }
+.palette-reference { margin: 12px 0; }
+.palette-reference-tools { display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+.palette-reference-tools > span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: 12px; }
+.palette-reference-tools [aria-pressed="true"] { background: var(--inset); border-color: var(--line); }
+.palette-reference canvas { display: block; width: 100%; height: min(280px, 38vh); background: var(--inset); cursor: grab; }
+.palette-reference canvas.picking { cursor: crosshair; }
+.palette-reference-value { display: block; margin-top: 6px; font: 11px Consolas, monospace; direction: ltr; }
+.palette-reference-value[hidden] { display: none; }
+.palette-name-label { margin-top: 0; }
+.palette-dialog form { margin-bottom: 12px; }

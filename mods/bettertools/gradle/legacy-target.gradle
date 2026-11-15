@@ -1,0 +1,57 @@
+// Audited tooltip overload and legacy API names only. Inventory behavior remains in the common sources.
+if (minecraft_version in ['26.2', '26.1.2', '1.21.11']) {
+    def appearanceSource = new File(layout.buildDirectory.dir('generated/game-target/main').get().asFile,
+        'io/github/richasy/bettertools/mixin/CubeTooltipAppearanceMixin.java')
+    tasks.named('prepareMainTargetSources') {
+        doLast {
+            appearanceSource.setText(appearanceSource.getText('UTF-8')
+                .replace('Identifier;Z)V"', 'Identifier;)V"')
+                .replace('Identifier style, boolean itemTooltip)', 'Identifier style)'), 'UTF-8')
+        }
+    }
+}
+if (minecraft_version in ['26.2', '26.1.2', '1.21.11']) {
+    def combat = layout.buildDirectory.file('generated/game-target/gametest/io/github/richasy/bettertools/CombatGameTest.java').get().asFile
+    tasks.named('prepareGametestTargetSources') {
+        doLast {
+            combat.setText(combat.getText('UTF-8')
+                .replace('m.player.firstPersonHandsAndItems()', 'm.gameRenderer.itemInHandRenderer')
+                .replace('player.getMainHandItem().getAttackAnimation(), false', 'false'), 'UTF-8')
+        }
+    }
+    def mixinConfig = layout.buildDirectory.file('resources/main/bettertools.mixins.json').get().asFile
+    tasks.named('processResources') {
+        doLast {
+            def config = new groovy.json.JsonSlurper().parse(mixinConfig)
+            config.mixins.add('HoeUseAccess')
+            mixinConfig.setText(groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(config)), 'UTF-8')
+        }
+    }
+}
+if (minecraft_version == '1.21.11') {
+    ['main', 'gametest'].each { name ->
+        def output = layout.buildDirectory.dir("generated/game-target/${name}").get().asFile
+        tasks.named("prepare${name.capitalize()}TargetSources") {
+            doLast {
+                output.eachFileRecurse { source ->
+                    if (!source.name.endsWith('.java')) return
+                    def text = source.getText('UTF-8')
+                        .replace('ContainerInput', 'ClickType')
+                        .replace('handleClickType(', 'handleInventoryMouseClick(')
+                        .replace('net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents', 'net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents')
+                        .replace('CreativeModeTabEvents.modifyOutputEvent(', 'ItemGroupEvents.modifyEntriesEvent(')
+                        .replace('PayloadTypeRegistry.serverboundPlay()', 'PayloadTypeRegistry.playC2S()')
+                        .replace('extractLabels(', 'renderLabels(')
+                        .replace('extractTooltip(', 'renderTooltip(')
+                        .replace('"extractTooltipBackground"', '"renderTooltipBackground"')
+                        .replace('graphics.item(', 'graphics.renderItem(')
+                        .replace('graphics.itemDecorations(', 'graphics.renderItemDecorations(')
+                        .replace('extractImage(', 'renderImage(')
+                        .replace('method = "item(', 'method = "renderItem(')
+                        .replace('method = "itemDecorations(', 'method = "renderItemDecorations(')
+                    source.setText(text, 'UTF-8')
+                }
+            }
+        }
+    }
+}

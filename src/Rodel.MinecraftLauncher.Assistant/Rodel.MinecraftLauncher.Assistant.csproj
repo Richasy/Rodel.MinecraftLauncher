@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.275" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.8.3" />
+    <ProjectReference Include="..\..\external\Rodel.Inference\src\Rodel.Inference\Rodel.Inference.csproj" Condition="'$(EnableLocalInference)' == 'true'" />
+    <PackageReference Include="ModelContextProtocol.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.ML.Tokenizers" Version="2.0.1" />
+    <PackageReference Include="Microsoft.ML.Tokenizers.Data.O200kBase" Version="2.0.1" />
+    <EmbeddedResource Include="Assets\models.dev.json" LogicalName="Rodel.ModelsDev.json" />
+    <EmbeddedResource Include="Assets\models.dev.LICENSE" LogicalName="Rodel.ModelsDev.LICENSE" />
+    <TrimmerRootAssembly Include="Microsoft.ML.Tokenizers.Data.O200kBase" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableLocalInference)' != 'true'">
+    <Compile Remove="Inference\*.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableLocalInference)' == 'true'">
+    <Compile Remove="Providers\AiLocalInferenceUnavailable.cs" />
+  </ItemGroup>
+</Project>

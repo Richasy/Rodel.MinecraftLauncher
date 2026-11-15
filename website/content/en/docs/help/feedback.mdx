@@ -1,0 +1,80 @@
+---
+title: Feedback and logs
+description: Explain the steps, share enough evidence and keep private information out.
+---
+
+## Where to report
+
+Please report problems and suggestions through [GitHub Issues](https://github.com/Richasy/Rodel.MinecraftLauncher/issues) when possible. Search for an existing report first; adding your reproduction details to the same discussion makes progress easier to follow.
+
+GitHub issues are usually public. Attach only the information needed to investigate.
+
+## A useful report
+
+You can follow this outline:
+
+> Goal: import an existing instance.
+>
+> Steps: selected the folder and started copying.
+>
+> Actual result: the task failed while copying a particular file.
+>
+> Expected result: a completed copy and a new instance.
+>
+> Environment: Windows version, x64 or ARM64, launcher version, Minecraft version and loader.
+>
+> Frequency: what happened when tried again.
+>
+> Recent changes: mods, Java, proxy or folder changes.
+
+Include what you already tried. Mention if only one instance is affected.
+
+## Check the version and error first
+
+Open **Settings → About this app** to view and copy the launcher version. Preserve the complete error from the error dialog or task details when available. Screenshots help identify the interface, but the final error line alone is rarely enough.
+
+## Choose logs for the problem
+
+Open **Settings → Logs & diagnostics**. Launcher and game logs have separate export actions:
+
+| Where the problem occurs                           | Export        | What to select                                                      |
+| -------------------------------------------------- | ------------- | ------------------------------------------------------------------- |
+| Launcher UI, accounts, downloads, imports or tasks | Launcher logs | A destination ZIP; no game launch is required                       |
+| A particular game launch, running game or crash    | Game logs     | Instance, run at the relevant time, export type and destination ZIP |
+
+**Launcher logs** collect the last seven days of application activity and attempt to hide common credentials. Under **Game logs**, a diagnostic bundle combines available diagnostic information with best-effort redaction; raw logs retain original bytes when encoding or exact output matters. Inspect either export before sharing it.
+
+Choose the run matching the failure time, not an unrelated successful launch. Running game output uses a bounded in-memory window. A normal exit does not save an additional full console transcript; an abnormal exit may leave a crash snapshot. Minecraft's own logs, existing crash reports and launcher logs are separate sources.
+
+After exporting, check the result and any missing-source warnings. If no record exists or a source cannot be read, provide the original error, its time and any useful exported information. Do not reinstall or delete an instance just to obtain a complete bundle, and do not upload the entire data folder by default.
+
+If text is garbled, keep the original file and note the game version. Do not replace it with repeatedly converted text that has lost information.
+
+## Check screenshots before sharing
+
+Look for:
+
+- Account or AI API keys, tokens and device login codes.
+- Private server addresses, conversations or world information.
+- Your Windows username, personal paths and other windows.
+
+> [!WARNING]
+> Crop or redact private content before sharing. **Never send API keys, tokens, Microsoft passwords or device login codes.** Email attachments should contain only relevant excerpts, not the whole data folder.
+
+## Multiplayer and map reports
+
+For multiplayer, include host/guest role, the state that failed, and both game versions and mod setups. Use **Export connection log** on the room page for room-connection issues. If Minecraft kicks a player after connecting, include its disconnect message too. Leave invitation codes out of the report.
+
+For maps, specify seed input or saved-world mode, version, dimension, view and coordinates. For seed searches, include conditions, reference positions, sampling interval and budgets. A map or condition screenshot usually does not need the whole save attached.
+
+## Extra details for AI and skins
+
+For AI, include the service type, model identifier, permission mode and the failing stage, without the API key. Share only relevant conversation and tool details.
+
+For skins, specify character or cape, texture dimensions, active layer and steps. For outfit previews, identify which piece is being edited; for PNG import, include image dimensions. Before attaching a project or reference, make sure you want its content public. A PNG and editable project carry different information.
+
+For screenshot management, include the instance, filename and action: opening, renaming, exporting or deleting. Say whether you chose permanent deletion. Preserve changed-file or destination-conflict errors instead of repeatedly overwriting files. See [Screenshot management](/en/docs/play/screenshots).
+
+## Suggestions can be simple
+
+Describe the player situation and the obstacle, such as “During my first mod install, I could not tell which instance was selected.” An idea is welcome, but no technical solution is required.

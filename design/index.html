@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodel Minecraft Launcher · 方块世界的入口</title>
+  <link rel="stylesheet" href="prototype.css?settings=20261025c">
+  <link rel="stylesheet" href="themes.css?selection-review=7">
+  <link rel="stylesheet" href="wallpapers.css?settings=20261025c">
+  <link rel="stylesheet" href="content.css?review=20261017b">
+  <link rel="stylesheet" href="accounts.css?review=20261024-flow-review3">
+  <link rel="stylesheet" href="external-accounts.css?review=20261024-flow-review6">
+  <link rel="stylesheet" href="account-avatars/picker.css">
+  <link rel="stylesheet" href="servers.css">
+  <link rel="stylesheet" href="multiplayer.css?review=20261030">
+  <link rel="stylesheet" href="assistant/assistant.css?settings=20261025c">
+  <link rel="stylesheet" href="assistant/repair.css">
+  <link rel="stylesheet" href="settings.css?settings=20261025c">
+  <link rel="stylesheet" href="content-downloads.css">
+</head>
+<body>
+  <div class="review-bar">
+    <div><strong>06 / WALLPAPERS</strong><span>方块世界的入口</span></div>
+    <div class="review-themes" role="group" aria-label="主题评审">
+      <button data-theme-choice="light" aria-pressed="true">浅色</button>
+      <button data-theme-choice="dark" aria-pressed="false">深色</button>
+      <button data-theme-choice="system" aria-pressed="false">跟随系统</button>
+      <button data-theme-choice="contrast" aria-pressed="false">高对比度</button>
+    </div>
+    <div class="review-states" aria-label="评审状态">
+      <button data-state="ready" aria-pressed="true">首屏</button>
+      <button data-state="preparing">启动准备</button>
+      <button data-state="downloading">下载中</button>
+      <button data-state="failed">启动失败</button>
+      <button data-state="running">运行中</button>
+      <button id="press-preview" aria-pressed="false">按压预览</button>
+      <button data-page="settings" data-topic="general" data-wallpaper-settings>壁纸设置</button>
+    </div>
+    <div class="review-content-states" role="group" aria-label="内容页评审状态" hidden>
+      <button data-content-scenario="installed" aria-pressed="true">模组列表</button>
+      <button data-content-scenario="no-instances" aria-pressed="false">没有实例</button>
+      <button data-content-scenario="empty" aria-pressed="false">没有模组</button>
+      <button data-content-scenario="drag" aria-pressed="false">拖入状态</button>
+    </div>
+    <div class="review-assistant-states" aria-label="AI 设计评审" hidden>
+      <button data-assistant-action="demo">载入演示配置</button>
+      <button data-assistant-action="fault-scenario">异常恢复</button>
+      <button data-assistant-action="reset">重置AI演示</button>
+    </div>
+    <span class="review-note">交互原型 · 模拟数据</span>
+  </div>
+  <main class="launcher" aria-label="Rodel Minecraft Launcher 原型">
+    <div class="world" aria-hidden="true"></div>
+    <div class="world-shade" aria-hidden="true"></div>
+    <header class="titlebar" aria-label="窗口标题栏">
+      <div class="window-controls" aria-label="窗口操作"><button data-action="window-minimize" aria-label="最小化">─</button><button data-action="window-maximize" aria-label="最大化">□</button><button data-action="window-close" aria-label="关闭窗口">×</button></div>
+    </header>
+    <header class="app-header">
+      <button class="identity surface" data-panel="identity" aria-label="游戏身份：Steve，离线"><span class="avatar" data-icon="avatar"></span></button>
+    </header>
+    <nav class="rail surface" aria-label="主导航">
+      <button class="nav-button active" data-page="home" aria-current="page"><span data-icon="home"></span><small>游戏</small></button>
+      <button class="nav-button" data-page="instances"><span data-icon="instances"></span><small>实例</small></button>
+      <button class="nav-button" data-page="content"><span data-icon="content"></span><small>内容</small></button>
+      <button class="nav-button" data-page="multiplayer"><span data-icon="multiplayer"></span><small>联机</small></button>
+      <button class="nav-button" data-page="ai"><span data-icon="spark"></span><small>AI 助手</small></button>
+      <div class="rail-divider"></div>
+      <button class="nav-button" data-page="settings"><span data-icon="settings"></span><small>设置</small></button>
+    </nav>
+    <section class="hero" aria-labelledby="instance-title">
+      <div class="eyebrow"><span class="tiny-block"></span> 当前实例 <span class="pixel-label">/ JAVA EDITION</span></div>
+      <h1 id="instance-title">雾谷生存</h1>
+      <p class="hero-copy" id="instance-copy" hidden></p>
+      <div class="runtime" id="runtime"><span>1.21.1</span><b>·</b><span>Fabric</span><b>·</b><span>102 个模组</span></div>
+      <div class="launch-area" id="launch-area" aria-live="polite">
+        <div class="launch-actions"><button class="launch-button" id="launch"><span class="button-face"><span data-icon="play"></span><strong>启动游戏</strong><span class="key-hint">↵</span></span></button><button class="secondary-button surface" data-panel="instance" aria-label="当前实例设置"><span data-icon="sliders"></span></button></div>
+        <p class="launch-caption"><span class="status-square"></span> 已就绪 <span class="caption-separator">/</span> Java 21 <span class="caption-separator">/</span> 4 GB 内存</p>
+      </div>
+    </section>
+    <aside class="instances surface" aria-label="我的实例">
+      <div class="section-heading"><div><h2>我的实例</h2><span class="count">04</span></div><button class="text-button" data-panel="instances">管理 <span>↗</span></button></div>
+      <div id="instance-list" class="instance-list"></div>
+      <button class="add-instance" data-panel="add"><span data-icon="plus"></span> 添加实例</button>
+    </aside>
+    <section id="nav-page" class="nav-page" hidden aria-label="导航页面"></section>
+    <section class="drawer surface" id="drawer" hidden aria-labelledby="drawer-title">
+      <header><div><span class="pixel-label" id="drawer-kicker">INSTANCE</span><h2 id="drawer-title">实例</h2></div><button class="close-button" id="close-drawer" aria-label="关闭面板">×</button></header>
+      <div id="drawer-content"></div>
+    </section>
+    <div class="toast surface" id="toast" role="status" hidden></div>
+    <div id="assistant-modal-root"></div>
+  </main>
+  <div class="review-footer"><span>点击右侧切换实例；点击「启动游戏」演示准备 → 下载 → 运行。状态按钮可直达评审画面。</span><a href="DESIGN.md">设计规则与 Sprout 落地说明 ↗</a></div>
+  <script src="views.js?settings=20261025c"></script>
+  <script src="content.js?review=20261024-visual-selection"></script>
+  <script src="content-downloads.js"></script>
+  <script src="settings-data.js?settings=20261025c"></script>
+  <script src="settings-about.js"></script>
+  <script src="settings-catalog.js?settings=20261025c"></script>
+  <script src="controls.js?settings=20261025c"></script>
+  <script src="ai.js?mounted=20261018"></script>
+  <script src="assistant/repair.js"></script>
+  <script src="assistant/assistant.js?settings=20261025c&amp;queue=20261025"></script>
+  <script src="settings-interactions.js?settings=20261025c"></script>
+  <script src="instance-icons/icons.js"></script>
+  <script src="prototype.js?settings=20261025c"></script>
+  <script src="game-versions.js?review=20261030b"></script>
+  <script src="instance-management.js?content-review=20261017b"></script>
+  <link rel="stylesheet" href="game-bridge.css">
+  <script src="game-bridge.js"></script>
+  <script src="pack-maintenance.js"></script>
+  <script src="runtime-updates.js?alignment=20261024-visual-selection"></script>
+  <script src="wallpapers-data.js"></script>
+  <script src="wallpapers.js?settings=20261025c"></script>
+  <script src="themes.js?wallpapers-review=1"></script>
+  <script src="account-avatars/avatars.js"></script>
+  <script src="account-avatars/picker.js?review=20261024-flow-review5"></script>
+  <script src="accounts.js?review=20261024-flow-review5"></script>
+  <script src="external-accounts.js?review=20261024-flow-review6"></script>
+  <script src="servers.js"></script>
+  <script src="home-servers.js"></script>
+  <script src="connection-recovery.js"></script>
+  <script src="wallpaper-readability.js?v=20261016-diagonal-blur2"></script>
+  <script src="multiplayer.js?review=20261030"></script>
+  <script>Assistant.start();</script>
+</body>
+</html>

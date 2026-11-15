@@ -1,0 +1,129 @@
+/* Shared theme roles. Dark selection revision is an HTML-only review candidate. */
+/* Native Dark selection #142225, lifted equally in RGB to preserve its blue-gray hue. */
+:root[data-theme="dark"] {
+  --on-accent: #000;
+  --on-accent-secondary: rgba(0,0,0,.5);
+  --selected-face: #3c4a4d;
+  --selected-ink: #f4f2e9;
+  --selected-edge: #6e827f;
+  --pressed-face: #283639;
+  --pressed-ink: #e0e7d6;
+}
+:root[data-theme="dark"][data-selection="current"] { --selected-face: #142225; --pressed-face: #101c1f; }
+:root[data-theme="dark"][data-selection="lighter"] { --selected-face: #465457; --pressed-face: #324043; }
+.review-selections { display: flex; gap: 4px; }
+.review-selections button { background: transparent; border: 1px solid var(--edge-dark); color: var(--muted); padding: 7px 10px; font-size: 12px; }
+.review-selections button[aria-pressed="true"] { background: var(--selected-face, var(--surface-hover)); color: var(--selected-ink, var(--ink)); border-color: var(--selected-edge, var(--edge-light)); }
+:root[data-theme="dark"] :is(.nav-button.active,.instance-card[aria-pressed="true"],.page-tabs button[aria-pressed="true"],.settings-nav button[aria-pressed="true"],.combo-option[aria-selected="true"],.combo-face[aria-expanded="true"],.enable-button.is-on,.ai-history-list > button[aria-pressed="true"],.assistant-button[aria-pressed="true"],.drawer .mini-tabs button.active) {
+  background: var(--selected-face); color: var(--selected-ink); border-color: var(--selected-edge);
+  box-shadow: inset 0 3px #233134e6,inset 3px 0 #233134c3,inset 0 -1px #859a9755,0 1px var(--shadow);
+}
+:root[data-theme="dark"] :is(.nav-button.active,.instance-card[aria-pressed="true"],.combo-face[aria-expanded="true"],.ai-history-list > button[aria-pressed="true"],.assistant-button[aria-pressed="true"]) :is(small,span,.combo-arrow) { color: inherit; }
+:root[data-theme="dark"] :is(.secondary-button,.identity,.assistant-button,.small-button,.nav-button,.instance-card,.combo-face,.combo-option):active:not(:disabled) {
+  background: var(--pressed-face); color: var(--pressed-ink);
+  box-shadow: inset 0 4px #040f1399,inset 3px 0 #18262999,inset 0 -1px #bdccb437;
+  transform: none;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #382e20; --muted: #594b38; --quiet: #75644d;
+  --surface: rgba(255,253,244,.68); --surface-hover: #fff4d9;
+  --edge-light: rgba(255,255,250,.94); --edge-dark: rgba(122,91,43,.34);
+  --shadow: rgba(105,76,31,.2);
+  --bevel-top: rgba(255,255,249,.96); --bevel-left: rgba(255,255,249,.8);
+  --bevel-bottom: rgba(140,106,52,.3); --bevel-right: rgba(140,106,52,.2);
+  --material-face: linear-gradient(180deg,rgba(255,255,255,.28),transparent 50%,rgba(163,119,52,.035));
+  --accent: #5b8730; --accent-hover: #699739; --accent-dark: #3f6025;
+  --on-accent: #fff; --on-accent-secondary: rgba(255,255,255,.7); --warning: #855215; --error: #a13a27; --focus: #8b581d;
+  --tone-text: var(--ink); --tone-muted: var(--muted); --tone-quiet: var(--quiet);
+  --tone-control: rgba(255,252,239,.84); --tone-inset: rgba(254,247,227,.64);
+  --tone-wash: rgba(255,252,240,.38); --tone-line: rgba(155,114,47,.25);
+  --tone-highlight: rgba(255,255,247,.94); --tone-shadow: rgba(126,89,35,.23);
+  --tone-warning: var(--warning); --tone-error: var(--error);
+  --selected-face: #e7c991; --selected-ink: #463116;
+  --pressed-face: #c7a366; --pressed-ink: #34240f;
+  background: #ede8db;
+}
+.review-bar { flex-wrap: wrap; gap: 8px 18px; min-height: 88px; }
+.review-bar > div:first-child { gap: 12px; }
+.review-bar > div:first-child > span { display: none; }
+.review-themes { display: flex; gap: 4px; padding-right: 14px; border-right: 1px solid var(--edge-light); }
+.review-themes button { background: transparent; color: var(--muted); padding: 8px 10px; font-size: 12px; }
+.review-themes button[aria-pressed="true"] { background: var(--surface-hover); color: var(--ink); box-shadow: inset 0 2px var(--bevel-bottom), inset 0 -1px var(--bevel-top); }
+.review-states { flex-wrap: wrap; }
+.launcher { height: calc(100vh - 136px); }
+:root[data-theme="light"] .world { background-image: url('assets/desert-day.png'); background-color: #e4d4ac; background-position: center 54%; }
+:root[data-theme="light"] .world-shade { background: linear-gradient(90deg,rgba(255,248,228,.2392156863),transparent 62%),linear-gradient(0deg,rgba(255,247,225,.7019607843),rgba(255,245,221,.2588235294) 28%,transparent 65%); }
+:root[data-theme="dark"] .world-shade { background: linear-gradient(90deg,rgba(9,22,27,.4196078431),transparent 56%,rgba(7,18,21,.1490196078)),linear-gradient(0deg,rgba(6,18,22,.9607843137),rgba(8,22,26,.6470588235) 32%,rgba(9,22,27,.1176470588) 72%,rgba(11,23,28,.2745098039)); }
+:root[data-theme="light"] .launcher:not([data-page="home"]) .world { filter: blur(30px) saturate(1.06); }
+:root[data-theme="light"] .launcher:not([data-page="home"]) .world-shade { background: rgba(255,250,236,.69); }
+:root[data-theme="dark"] .launcher:not([data-page="home"]) .world-shade { background: var(--tone-inset,rgba(10,23,28,.66)); }
+/* Home readability is resolved locally by wallpaper-readability.js. */
+:root[data-theme="light"] :is(.hero-copy,.runtime,.launch-caption) {
+  color: #3b3021; font-weight: 500;
+
+}
+:root[data-theme="light"] .runtime b,:root[data-theme="light"] .caption-separator { color: #695337; }
+:root[data-theme="light"] .review-footer { background: #eee9dc; }
+:root[data-theme="light"] .review-bar { background: #f4f0e6; border-color: #d0c8b5; }
+/* Raised neutral faces: all button, row and input families share the same material. */
+:root[data-theme="light"] :is(.small-button,.close-button,.drawer .mini-tabs button,.window-controls button) { background-color: var(--tone-control); }
+:root[data-theme="light"] :is(.small-button,.secondary-button,.identity,.assistant-button):hover:not(:disabled) { box-shadow: inset 0 2px var(--bevel-top),inset 2px 0 var(--bevel-left),inset -1px 0 var(--bevel-right),0 3px var(--shadow); }
+:root[data-theme="light"] :is(.nav-button.active,.instance-card[aria-pressed="true"],.page-tabs button[aria-pressed="true"],.settings-nav button[aria-pressed="true"],.combo-option[aria-selected="true"],.combo-face[aria-expanded="true"],.enable-button.is-on,.ai-history-list > button[aria-pressed="true"],.assistant-button[aria-pressed="true"]) {
+  background: var(--selected-face); color: var(--selected-ink); border-color: #b58e4a;
+  box-shadow: inset 0 3px #a7804266,inset 3px 0 #b38c4e44,inset 0 -1px #fff5d8,0 1px var(--shadow);
+}
+:root[data-theme="light"] :is(.nav-button.active,.instance-card[aria-pressed="true"],.combo-face[aria-expanded="true"],.ai-history-list > button[aria-pressed="true"],.assistant-button[aria-pressed="true"]) :is(small,span,.combo-arrow) { color: inherit; }
+:root[data-theme="light"] :is(.secondary-button,.identity,.assistant-button,.small-button,.nav-button,.instance-card,.combo-face,.combo-option):active:not(:disabled) { background: var(--pressed-face); color: var(--pressed-ink); box-shadow: inset 0 4px #87602c66,inset 3px 0 #9e753d66,inset 0 -1px #ffedc6; transform: none; }
+:root[data-theme="light"] :is(.secondary-button,.assistant-button,.nav-button,.instance-card,.combo-face,.combo-option):active:not(:disabled) :is([data-icon],.combo-arrow,strong,small) { color: inherit; }
+:root:is([data-theme="light"],[data-theme="contrast"]) input[aria-invalid="true"] { border-color: var(--error); box-shadow: inset 0 0 0 1px var(--error); }
+:root[data-theme="light"] .stage-panel.warning { border-color: var(--error); }
+:root[data-theme="light"] .stage-panel.warning .stage-heading strong,:root[data-theme="light"] .task-error { color: var(--error); }
+:root[data-theme="light"] .status-square { background: var(--quiet); }
+:root[data-theme="light"] .button-face { border-color: #3b5924; box-shadow: inset 0 2px #a4c86b,inset 2px 0 #89ad56,inset -2px 0 #3d5c24,inset 0 -3px #334f21; }
+:root[data-theme="light"] .launch-button:is(:active,[data-pressed]):not(:disabled) .button-face { background: #29441c; color: #d0dfb6; border-color: #233717; box-shadow: inset 0 4px #172b10,inset 3px 0 #1d3313,inset 0 -1px #87a65f; }
+:root[data-theme="light"] .window-controls button:last-child:hover { background: #ae4432; color: white; }
+:root[data-theme="light"] :is(.setting-input,.setting-textarea,.content-search input,.drawer input,.drawer textarea) { box-shadow: inset 0 2px rgba(99,84,49,.12),inset 0 -1px #fffdf1; }
+:root[data-theme="light"] :is(input,textarea,button):disabled { opacity: .62; }
+:root[data-theme="light"] .combo-face:focus-visible,:root[data-theme="light"] .combo-option:focus-visible { outline-color: var(--focus); }
+/* High contrast preview removes the scene and translucent materials. Shapes and text carry state. */
+:root[data-theme="contrast"] {
+  color-scheme: dark;
+  --ink: #fff; --muted: #eee; --quiet: #c6c6c6; --surface: #000; --surface-hover: #202020;
+  --edge-light: #fff; --edge-dark: #fff; --shadow: transparent;
+  --bevel-top: transparent; --bevel-left: transparent; --bevel-bottom: transparent; --bevel-right: transparent;
+  --material-face: none; --focus: #ffed00; --accent: #ffed00; --accent-hover: #fff37a; --accent-dark: #ffed00; --on-accent: #000;
+  --warning: #ffed00; --error: #ffb8a5;
+  --tone-text: var(--ink); --tone-muted: var(--muted); --tone-quiet: var(--quiet);
+  --tone-control: #000; --tone-inset: #000; --tone-wash: #000; --tone-line: #fff;
+  --tone-highlight: transparent; --tone-shadow: transparent; --tone-warning: var(--warning); --tone-error: var(--error);
+  --selected-face: #ffed00; --selected-ink: #000;
+  background: #000;
+}
+:root[data-theme="contrast"] :is(.world,.world-shade,.tiny-block) { display: none; }
+:root[data-theme="contrast"] :is(.launcher,.review-bar,.review-footer) { background: #000; color: var(--ink); }
+:root[data-theme="contrast"] :is(.surface,.acrylic,.page-surface,.stage-panel,.instance-card,.combo-face,.combo-menu,.setting-input,.setting-textarea,.ai-composer,.small-button,.close-button,.enable-button,.window-controls button) { background: var(--surface); color: var(--ink); border: 1px solid var(--edge-light); box-shadow: none; backdrop-filter: none; }
+:root[data-theme="contrast"] :is(.surface,.button-face)::after { display: none; }
+:root[data-theme="contrast"] :is(.nav-button.active,[aria-selected="true"],[aria-expanded="true"],.instance-card[aria-pressed="true"],.settings-nav button[aria-pressed="true"],.page-tabs button[aria-pressed="true"],.ai-history-list > button[aria-pressed="true"],.review-themes button[aria-pressed="true"],.review-states button[aria-pressed="true"],.enable-button.is-on) { background: var(--selected-face); color: var(--selected-ink); box-shadow: none; border: 1px solid var(--edge-light); }
+:root[data-theme="contrast"] :is(.instance-card[aria-pressed="true"],.nav-button.active,.combo-face[aria-expanded="true"],.ai-history-list > button[aria-pressed="true"]) * { color: inherit; }
+:root[data-theme="contrast"] .button-face { background: var(--accent); color: var(--on-accent); border: 2px solid var(--edge-light); box-shadow: none; }
+:root[data-theme="contrast"] .launch-button:is(:active,[data-pressed]) .button-face { background: #000; color: var(--accent); border-color: var(--accent); box-shadow: none; }
+:root[data-theme="contrast"] :is(button,input,textarea):disabled { opacity: 1; color: var(--quiet); border-style: dashed; }
+:root[data-theme="contrast"] h1 { text-shadow: none; }
+:root[data-theme="contrast"] .assistant-button[aria-pressed="true"] { background: var(--selected-face); color: var(--selected-ink); }
+:root[data-theme="contrast"] .assistant-button[aria-pressed="true"] [data-icon] { color: inherit; }
+:root[data-theme="contrast"] input[aria-invalid="true"] { border: 1px dashed var(--error); outline: 1px dashed var(--error); outline-offset: -3px; }
+:root[data-theme="contrast"] *, :root[data-theme="contrast"] *::before, :root[data-theme="contrast"] *::after { transition: none; }
+:root:is([data-theme="light"],[data-theme="contrast"]) :is(button,input,textarea,.combo-face,.combo-option):focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+@media (forced-colors: active) {
+  :root[data-theme="contrast"] { --ink: CanvasText; --muted: CanvasText; --quiet: GrayText; --surface: Canvas; --surface-hover: Canvas; --edge-light: CanvasText; --tone-control: Canvas; --tone-inset: Canvas; --tone-wash: Canvas; --tone-line: CanvasText; --selected-face: Highlight; --selected-ink: HighlightText; --accent: Highlight; --on-accent: HighlightText; --focus: Highlight; --warning: CanvasText; --error: CanvasText; }
+  :root[data-theme="contrast"] :is(.launcher,.review-bar,.review-footer) { background: Canvas; }
+}
+@media(max-width:1100px) { .review-bar > div:first-child { display: none; } .review-bar { padding: 10px 16px; } .review-states button { padding: 7px 9px; } }
+@media(max-width:760px) { .launcher { height: auto; } .review-themes { border: 0; flex-wrap: wrap; } }
+
+/* Task dialogs follow the primary-left, cancel-right convention. */
+:root[data-theme] .instance-dialog button.dialog-primary { background:var(--accent);color:var(--on-accent);border-color:var(--accent-dark);box-shadow:inset 0 1px var(--accent-light),0 2px var(--accent-dark); }
+:root[data-theme] .instance-dialog button.dialog-primary:hover:not(:disabled) { background:var(--accent-hover); }
+:root[data-theme] .instance-dialog button.dialog-primary:active:not(:disabled) { background:var(--accent-dark);color:var(--on-accent);box-shadow:inset 0 2px var(--shadow);transform:none; }
+:root[data-theme="contrast"] .instance-dialog .dialog-primary { background:var(--accent);color:var(--on-accent);border-color:var(--edge-light);box-shadow:none; }

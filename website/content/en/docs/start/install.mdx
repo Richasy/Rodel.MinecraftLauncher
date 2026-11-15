@@ -1,0 +1,55 @@
+---
+title: Install and prepare
+description: Install RMCL from Microsoft Store or GitHub Releases, then choose a game data folder.
+---
+
+## Install RMCL
+
+RMCL is a free launcher for Minecraft: Java Edition, available from Microsoft Store or [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest).
+
+<StoreBadge locale="en" />
+
+1. Select the badge above to open RMCL in Microsoft Store.
+2. Check that the app is **Rodel Minecraft Launcher**, published by **云之幻**, then select Get or Install.
+3. The Store selects the appropriate architecture for your device. Open RMCL from Start after installation.
+
+The Store product ID is `9MW9ZMS2K47C`. If installation fails, keep the full Store message and include your Windows version and the steps in [Feedback and logs](/en/docs/help/feedback).
+
+## EXE installer
+
+Download `win-x64-setup.exe` and its SHA256 file from [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest). The x64 installer runs per-user without the Store, administrator privileges or manual MSIX certificate trust, and includes the .NET runtime. It is not Authenticode-signed; verify the checksum before installation. Its app preferences are separate from the Store edition, while game data uses the selected Core data root.
+
+## Update RMCL
+
+Open RMCL's Microsoft Store page and select Update when a new version is available. With automatic app updates enabled, the Store also installs new releases automatically. For the EXE edition, download and run the new installer from GitHub Releases. Game, mod and modpack updates remain in their respective launcher pages.
+
+## Computer requirements
+
+**Windows 10 version 2004, build 19041, or later**, on **x64 or ARM64**.
+
+These are launcher requirements. Minecraft, Java, mods and shaders have their own hardware and version requirements. Opening the launcher does not guarantee smooth performance in a large modpack.
+
+- Leave space for games, downloaded resources, worlds and backups. An import needs space for a complete copy.
+- Preparing a game for the first time normally needs a network connection. Existing local content can be used where supported.
+- Microsoft sign-in, third-party content and AI are separate optional features. AI setup is not required for game management.
+
+## Choose a game data folder
+
+The default is **.rmcl** inside your user folder. It stores managed instances and related data. Choose another disk in launcher settings if needed.
+
+> [!WARNING]
+> **Changing the folder takes effect after restarting and does not move existing data.** Use [Import an existing game](/en/docs/play/import) to copy it in, check the result, then decide what to do with the old copy. Avoid temporary folders that may be cleared automatically.
+
+## Do I need Java first?
+
+Minecraft needs Java, but you do not need to study launch arguments first. Choose a suitable runtime during instance preparation. Existing Java can be discovered, registered or managed in [Java and memory settings](/en/docs/create/settings#java-and-memory).
+
+Different game versions may need different Java versions. Follow the instance's preparation result rather than switching every older setup to one runtime.
+
+## Cost and source
+
+RMCL is free. Project-authored launcher code is open source under **[GNU AGPL v3 (AGPL-3.0-only)](https://github.com/Richasy/Rodel.MinecraftLauncher/blob/main/LICENSE)**. Independent modules and third-party components retain their original licenses. Minecraft and optional model services have their own costs.
+
+## Next step
+
+Continue with [Your first launch](/en/docs/start/first-launch). Use [Import an existing game](/en/docs/play/import) for an existing folder or [Import modpacks](/en/docs/play/modpacks) for a package file.

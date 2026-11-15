@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>Core AI サービス、会話、構成されたプロバイダーを使用します。</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>内部バックグラウンド Core AI ランタイムを実行します。</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>オフライン モデル サービスと保護された資格情報を管理します。</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>明示的なモデル バインディングとデフォルト モデルを管理します。</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>永続的な会話と実際の実行ステップを管理します。</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>パッケージ化され明示的に登録されたユーザー指示を検査します。スクリプトは決して実行されません。</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>明示的に有効化された stdio MCP プロセスを管理し、実際のカタログを検査します。</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>独立したファイルとネットワークのデフォルトを管理します。</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>現在のレコードをリストします。</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>選択したレコードを読み取ります。</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>リビジョンチェックを使用して明示的なフィールドを保存します。</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>必要な確認の後、選択した所有レコードを削除します。</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>手動バインディングを変更せずに実際のモデルを発見します。</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>実際の接続または世代チェックを実行します。</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>新しい会話のデフォルトを選択します。</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>持続的な会話を作成します。</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>ターンを送信します。 --wait は観察します。 --cancel-on-exit がキャンセルを所有します。</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>未知の効果を再プレイせずに、失敗したターンを再試行します。</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>プライベートプロバイダー継続状態なしでターンを読み取ります。</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>シーケンス カーソルの後に順序付けられた永続ステップを読み取ります。</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>プライベートプロバイダーの状態を使用せずに、会話およびアーカイブ識別子によって元の圧縮されたコンテキストを読み取ります。</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>アーカイブ ページごとに 256 ～ 16000 文字を返します。デフォルト: 12000。</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>0 から始まるアーカイブ インデックスを使用して、1 つの元のメッセージを読み取ります。</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>独立したゲームやジョブではなく、このターンをキャンセルします。</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>会話の内容を変更せずに名前を変更します。</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>明示的操作モードを変更します。</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>公開履歴を明示的に選択した JSON またはテキスト ファイルにエクスポートします。</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>実際に構成された命令とファイルごとの警告を検査します。</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>明示的に選択したローカル ディレクトリを登録します。</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>今後のターンのためにこの登録されたソースを有効にします。</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>今後のターンでは、この登録されたソースを無効にします。</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>会話やツールを使用せずに、前景モデル リクエストを 1 つ実行します。</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>実際のアシスタントホストとランタイムモードを検査します。</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>明示的な {0} 値。</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>このコマンドに対して {0} を有効にします。</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>{0} の明示的な true または false。</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>コマンド引数に認証情報を入れないでください。 --credential-stdin、--credential-prompt、または --credential-env を使用します。</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>アシスタント コマンドまたは入力されたオプションが無効です。受け入れられる構文には --help を使用します。</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>現在の構成を読み取り、--expected-revision を供給します。</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>供給 --{0}。</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>この操作にはモデルを 1 つ選択してください。</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>入力が制限された文字数の割り当てを超えています。</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>保護された資格情報の入力方法を 1 つ選択します。</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>リダイレクトされた資格情報入力には --credential-stdin を使用します。</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>資格情報: </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>短い挨拶で返信します。</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>設定されたサービスはもう存在しません。</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI ターンはすでに実行ライフタイムを管理しています。 --background を省略します。 chat send を使用し、オプションで --wait を使用します。</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>対話型資格情報入力は、MCP ツールやバックグラウンド ジョブではなく、CLI の直接呼び出しを通じてのみ利用できます。</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>この提出された目標とその明示的な範囲に対してのみ、サポートされるミューテーションを承認します。これによって製品の確認が回避されるわけではありません。</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>呼び出しをリプレイせずに、現在の Core 状態を、停止したターンの不完全な突然変異インテントと照らし合わせてチェックします。</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>正確な操作フィンガープリントを承認する場合は明示的に true、拒否する場合は false。</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>保留中の操作に対するユーザーの決定を正確に記録します。モデルの引数ではこの決定を行うことはできません。</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>保留中の操作、引数、および凍結されたレビューの正確な境界ページを読み取ります。</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>この正確な確認には、--approve true または --approve false を指定します。</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>明示的に許可されたローカル ディレクトリとその読み取り/書き込みモードを管理します。</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>製品が所有する Codex および Claude コード スキルと MCP 登録を計画、インストール、検査、または削除します。</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>変更を加える前に、正確なターゲット、現在の所有権、およびバインディングを検査します。</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>現在の正確な計画を適用し、それぞれの設置結果を報告します。</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>インストールの所有権、現在のクライアント構成、および data-root バインディングを検査します。</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>新たに承認された目標についてのみ、検査後に正確に残存する未知の影響を受け入れます。結果を証明したり、古い目標を再現したりすることはできません。</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>別途サービスをインストールせずに、ランチャーが所有する組み込みローカル モデル推論を管理します。</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>モデル ファイルを変更せずに、アイドル状態の組み込みエンジンとその所有するネイティブ モデル ワーカーをアンロードします。</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>リダイレクトされた標準入力 (直接 CLI のみ) から最大 64000 文字のプロンプトを読み取ります。</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>--prompt、--prompt-file、--prompt-stdin のいずれかを正確に選択してください。</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>プロンプト stdin は、直接 CLI 呼び出しを通じてのみ使用できます。 MCP stdin はプロトコル メッセージを伝送します。</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>テキストをこのコマンドにパイプするか、--prompt または --prompt-file を使用します。</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>--prompt、--prompt-file、または--prompt-stdin を供給します。</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>既存のターンを再提出せずに観察します。 --events は、順序付けられた events を標準エラー出力に書き込みます。 --after はカーソルを再開します。オブザーバーのタイムアウトによってターンはキャンセルされません。</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>1 ～ 3600 の非負の --after カーソルと --timeout-seconds を使用します。</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>観測がタイムアウトしました。ターンはキャンセルまたは再送信されませんでした。その識別子とイベント カーソルを使用して再開します。</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>設定時の実際のモデル参照。会話モデルの生成または選択時に保存されたモデル バインディング ID。サービスを作成する場合にのみ繰り返します。</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>明示的な正の出力トークン制限。リクエスト/チャットはこの呼び出しのみをオーバーライドします。モデルを保存するとそれが永続化されます。省略した場合は、保存された設定または観測されたモデル容量を使用します。容量が不明な場合は、プロバイダーのデフォルトは変更されません。</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>秒単位のリクエスト/ターン期限 (1..3600);チャット待機ではオブザーバーのみの期限が使用され、生成はキャンセルされません。</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>32 桁の GUID 冪等キー。同じ入力を繰り返すと同じターンが返されます。同じキーによる変更された入力は拒否されます。</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>このターンでのモデル呼び出しの最大数 (1..64) (コンテキスト選択を含む)。これは会話メッセージの制限ではありません。</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>既存の会話ターンを観察して制御します。</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>正確な保留中の操作確認を読み取って決定します。</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>リプレイなしで停止ターン効果を検査し、確認します。</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>1 回のリビジョンチェック操作で明示的な会話フィールドを更新します。</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>タイトル、インスタンス、モデル、モード、ファイルアクセスまたはネットワークアクセスの変更を指定します。</value>
+  </data>
+</root>

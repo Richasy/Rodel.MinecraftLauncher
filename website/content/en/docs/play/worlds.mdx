@@ -1,0 +1,72 @@
+---
+title: Worlds, backups and recovery
+description: Keep recoverable copies before moving a world or changing its environment.
+---
+
+## Where worlds belong
+
+Worlds belong to an instance. Open **Content**, select the instance and switch to **Worlds** to browse recognized saves, open folders and use management actions.
+
+Manage game images in the neighboring [Screenshots category](/en/docs/play/screenshots). They are grouped by instance and are separate from world backup and recovery records.
+
+Create worlds and change game rules, experiments and data packs from Minecraft's world screens. After importing or changing a save, open it in the game and check your buildings and progress.
+
+<figure>
+  <img
+    src="/assets/en-worlds.webp"
+    alt="The Content page's world list and world management actions"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Check the instance at the top before managing its saves.
+  </figcaption>
+</figure>
+
+## Open a world map
+
+The map action in a world's menu opens the [seed explorer](/en/docs/create/seed-explorer) with that instance, save, version and seed. Saved chunks show the actual world; surrounding areas can use a vanilla generation preview. The map identifies these sources separately.
+
+With a valid game-bridge position, you can locate or follow the player. Without a live connection, use the last saved position. Browsing does not modify the world. To invite friends to that save, select the instance and world in a [multiplayer room](/en/docs/play/multiplayer).
+
+## When to back up
+
+Before upgrading Minecraft, changing many mods, restoring old progress or moving a world, save and exit normally.
+
+- **Back up world:** protects one saved game.
+- **Back up all game content:** includes the instance's configuration and worlds, useful before changing the environment.
+- **Export world:** creates a ZIP you can store or share yourself.
+
+Keep another copy on a different disk for important progress. A backup on the same failed disk can be lost with the original.
+
+## Import a world
+
+1. Choose **Import world** from the world page.
+2. Select one world folder or ZIP.
+3. Check the target instance and save-folder name.
+4. If the destination name is occupied, use another name and keep the existing world.
+5. After import, launch a matching game version and check it.
+
+A world saved by a newer version may not work in an older one. A modded world may need its original content. Experiment with a copy instead of opening your only save in an older environment.
+
+## Create and restore a backup
+
+Open a world's management menu, choose **Back up world** and wait for completion.
+
+To restore, select the correct dated backup and check the target. The current world is preserved first, and other worlds are unchanged. Open the game and check the buildings, items and progress you care about.
+
+To return to the state before restoration, open **Recover world** and look for the preserved pre-restore copy.
+
+## Remove, compress and recover
+
+**Remove world** moves a save out of the game's save directory. It is retained after compression and validation and can be selected through **Recover world**.
+
+If a recovery destination already exists, change the folder name. The existing world is not silently overwritten. Use the provided compression action to reduce a retained copy's space, and wait for the result before judging usage.
+
+Recovery only works with records that are still retained. It cannot restore externally deleted files when no copy exists.
+
+## A world is running or locked
+
+> [!CAUTION]
+> Exit the game normally, then retry backup, restore or movement. Do not delete a lock file to bypass a world still running. Unknown files may belong to mods; keep them and use the error's exact path.

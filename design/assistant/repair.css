@@ -1,0 +1,52 @@
+.assistant-content .repair-context{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;border-bottom:1px solid var(--edge-light);flex:none}
+.assistant-content .repair-context>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;color:var(--ink)}
+.assistant-content .repair-context>button{flex:none}
+.assistant-content .repair-instance{display:flex;align-items:center;gap:6px;min-width:0;max-width:180px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.assistant-content .repair-kind,.assistant-content .repair-confidence{padding:3px 7px;background:var(--tone-wash);font-size:11px;color:var(--muted)}
+.assistant-content .repair-transcript{max-width:820px;margin:0 auto}
+.assistant-content .repair-transcript h2{font-size:20px;line-height:1.5;margin:12px 0 8px;font-weight:600}
+.assistant-content .repair-transcript h3{font-size:14px;margin:0;font-weight:600}
+.assistant-content .repair-transcript p{font-size:14px;line-height:1.8;margin:8px 0;white-space:pre-wrap}
+.assistant-content .repair-finding{margin-bottom:20px}
+.assistant-content .repair-plan,.assistant-content .repair-result{border:1px solid var(--edge-light);background:var(--tone-inset);padding:16px;margin-top:16px}
+.assistant-content .repair-plan>header,.assistant-content .repair-plan-footer{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.assistant-content .repair-plan>header{padding-bottom:14px;border-bottom:1px solid var(--edge-light)}
+.assistant-content .repair-plan>summary{font-size:13px;cursor:pointer;padding:2px 0;color:var(--ink)}
+.assistant-content .repair-plan>header span,.assistant-content .repair-plan-footer>span{font-size:11px;color:var(--muted)}
+.assistant-content .repair-changes{padding:4px 0}
+.assistant-content .repair-change{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:10px;align-items:start;padding:14px 0}
+.assistant-content .repair-change+.repair-change{border-top:1px solid var(--edge-light)}
+.assistant-content .repair-change strong{font-size:13px;font-weight:500;overflow-wrap:anywhere}
+.assistant-content .repair-change p{font-size:13px;margin:5px 0}
+.assistant-content .repair-change small{font-size:11px;line-height:1.7;color:var(--muted)}
+.assistant-content .repair-change-symbol{color:var(--warning);font-size:18px}
+.assistant-content .repair-change-tag{font-size:11px;color:var(--muted);background:var(--tone-wash);padding:3px 7px}
+.assistant-content .repair-plan-footer{border-top:1px solid var(--edge-light);padding-top:14px}
+.assistant-content .repair-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.assistant-content .repair-evidence,.assistant-content .repair-history{border-bottom:1px solid var(--edge-light);padding:0 0 12px;margin:0 20px 20px;font-size:12px}
+.assistant-content .repair-evidence summary,.assistant-content .repair-history summary{cursor:pointer;color:var(--muted);padding:8px 0}
+.assistant-content .repair-evidence pre{font-size:12px;line-height:1.8}
+.assistant-content .repair-evidence dl{display:grid;gap:8px;margin:12px 0}
+.assistant-content .repair-evidence dl>div{display:flex;gap:16px}
+.assistant-content .repair-evidence dt{color:var(--muted);min-width:64px}
+.assistant-content .repair-evidence dd{margin:0}
+.assistant-content .repair-timeline{list-style:none;padding:0;margin:16px 0;display:grid;gap:0}
+.assistant-content .repair-timeline li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;padding:10px 0;border-bottom:1px solid var(--edge-light);font-size:12px;line-height:1.7}
+.assistant-content .repair-timeline li strong{font-weight:500;color:var(--ink)}
+.assistant-content .repair-timeline li span{color:var(--muted)}
+.assistant-content .repair-timeline li.is-failed strong{color:var(--warning,var(--ink))}
+.assistant-content .repair-events>summary{cursor:pointer;padding:8px 0;font-size:12px;color:var(--muted)}
+.assistant-content .repair-checks{padding:12px;background:var(--tone-wash);margin-top:16px}
+.assistant-content .repair-checks p{font-size:13px;margin:4px 0}
+.assistant-content .repair-scope{font-size:11px!important;color:var(--muted)}
+.assistant-content .repair-active .composer{display:grid;grid-template-columns:minmax(0,max-content) minmax(0,max-content) minmax(0,1fr) 28px auto;align-items:center;gap:8px;padding:10px 12px}
+.assistant-content .repair-active .compose-context{display:contents}
+.assistant-content .repair-active .context-choice,.assistant-content .repair-active .mode-choice,.assistant-content .repair-active .composer-help{display:none}
+.assistant-content .repair-active .repair-instance{grid-column:1;grid-row:1;max-width:100%;justify-self:start}
+.assistant-content .repair-active .model-choice{grid-column:2;grid-row:1;min-width:0;max-width:100%;justify-self:start}
+.assistant-content .repair-active .compose-context>.icon-button{grid-column:4;grid-row:1}
+.assistant-content .repair-active .composer>textarea{grid-column:1/-1;grid-row:2;min-height:38px;height:38px;max-height:100px;margin:0}
+.assistant-content .repair-active .composer-bottom{grid-column:5;grid-row:1;padding:0;margin:0}
+.assistant-content .repair-active .composer>.chat-references{grid-column:1/-1;grid-row:3}
+@media(max-width:900px){.assistant-content .repair-active .composer{grid-template-columns:minmax(0,1fr) 28px auto}.assistant-content .repair-active .repair-instance{grid-column:1/-1;grid-row:1}.assistant-content .repair-active .model-choice{grid-column:1;grid-row:2}.assistant-content .repair-active .compose-context>.icon-button{grid-column:2;grid-row:2}.assistant-content .repair-active .composer-bottom{grid-column:3;grid-row:2}.assistant-content .repair-active .composer>textarea{grid-row:3}.assistant-content .repair-active .composer>.chat-references{grid-row:4}}
+@media(max-width:800px){.assistant-content .repair-plan-footer{align-items:flex-start;flex-direction:column}.assistant-content .repair-plan-footer>button{width:100%}.assistant-content .repair-change{grid-template-columns:18px minmax(0,1fr)}.assistant-content .repair-change-tag{grid-column:2;justify-self:start}}

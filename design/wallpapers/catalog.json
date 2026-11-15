@@ -1,0 +1,345 @@
+[
+  {
+    "id": "light-desert-temple",
+    "name": "沙漠神殿",
+    "theme": "Light",
+    "role": "default",
+    "biomes": [
+      "desert"
+    ],
+    "output": "design/assets/wallpapers/light-desert-temple-centered.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2223778,
+    "sha256": "f0bde29f1191a0f4edf6887e159dfc14b28ba200a39bc2fd312d9c2934a93bd7",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-cherry-meadow",
+    "name": "樱花草甸",
+    "theme": "Light",
+    "biomes": [
+      "cherry_grove",
+      "meadow",
+      "birch_forest"
+    ],
+    "output": "design/assets/wallpapers/light-cherry-meadow-inhabited.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2649040,
+    "sha256": "6ca0cce7c0fd324c4d9c3c952a67de083f8e5f92f22b7077228a32d8276ce496",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-dappled-autumn",
+    "name": "斑驳秋林",
+    "theme": "Light",
+    "biomes": [
+      "dappled_forest",
+      "old_growth_birch_forest",
+      "river"
+    ],
+    "output": "design/assets/wallpapers/light-dappled-autumn-inhabited.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2756336,
+    "sha256": "8e5fd51a4e3995795b3a38ea8893913d4a20a1b5c21113dce678d7be39f09cef",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-snow-peaks",
+    "name": "雪峰冰湖",
+    "theme": "Light",
+    "biomes": [
+      "frozen_peaks",
+      "grove",
+      "frozen_river"
+    ],
+    "output": "design/assets/wallpapers/light-snow-peaks-chalet.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2684842,
+    "sha256": "1b372c26f645f82eed48e764e040a9a43bad7c18f9492ec3cddb69b393ff4b15",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-tropical-bay",
+    "name": "热带海湾",
+    "theme": "Light",
+    "biomes": [
+      "warm_ocean",
+      "beach",
+      "sparse_jungle"
+    ],
+    "output": "design/assets/wallpapers/light-tropical-bay.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2572473,
+    "sha256": "4d6fcabfacd2727d8a2aa9fe172083e899f3409ef9deff1bcbff566b784d5208",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-redrock-savanna",
+    "name": "赤岩高原",
+    "theme": "Light",
+    "biomes": [
+      "wooded_badlands",
+      "eroded_badlands",
+      "savanna_plateau"
+    ],
+    "output": "design/assets/wallpapers/light-redrock-savanna.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2751674,
+    "sha256": "a5afcff560611e5db4815d68fafa7e8de41b81033b83b96ecce722b7aba54c34",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-river-valley",
+    "name": "河谷（已有）",
+    "theme": "Dark",
+    "role": "default",
+    "biomes": [
+      "river",
+      "taiga"
+    ],
+    "biomeNote": "Existing artistic mountain river scene, not a registry-accurate generated biome sample.",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/river-valley.jpg",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 516082,
+    "sha256": "269321674881bb30330fdbe415308fa44cb566b13b8a3599f470e7a780d3a477",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-lava-canyon",
+    "name": "熔火峡谷",
+    "theme": "Dark",
+    "biomes": [
+      "nether_wastes",
+      "basalt_deltas"
+    ],
+    "output": "design/assets/wallpapers/dark-lava-canyon.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2712168,
+    "sha256": "17cb1b64279ff2828f2270e54a276736bf65e3cb88fcbf9cac0fd671bf456795",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-luminous-cavern",
+    "name": "幽光洞庭",
+    "theme": "Dark",
+    "biomes": [
+      "lush_caves",
+      "dripstone_caves",
+      "deep_dark"
+    ],
+    "output": "design/assets/wallpapers/dark-luminous-cavern.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2483715,
+    "sha256": "9cbd902eb417102a098937fe467651138608a47ee04c5ae0f1fbda0b52be13bd",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-mangrove-water",
+    "name": "红树夜泊",
+    "theme": "Dark",
+    "biomes": [
+      "mangrove_swamp",
+      "swamp",
+      "jungle"
+    ],
+    "output": "design/assets/wallpapers/dark-mangrove-water.png",
+    "size": "1536x1024",
+    "inhabitedDetails": true,
+    "bytes": 2394597,
+    "sha256": "6f309ddcfa6754ae648e19f5bed8b9531ca54abd9164440bdb5d28b121d13f4d",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-warped-valley",
+    "name": "诡异幽谷",
+    "theme": "Dark",
+    "biomes": [
+      "warped_forest",
+      "soul_sand_valley",
+      "basalt_deltas"
+    ],
+    "output": "design/assets/wallpapers/dark-warped-valley.png",
+    "size": "1536x1024",
+    "inhabitedDetails": false,
+    "bytes": 2444888,
+    "sha256": "0544979f039a9a60a9398c53de0cde1198b655375c144cc655ba04e06da673ac",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-end-islands",
+    "name": "末地浮岛",
+    "theme": "Dark",
+    "biomes": [
+      "end_highlands",
+      "end_midlands",
+      "small_end_islands"
+    ],
+    "output": "design/assets/wallpapers/dark-end-islands-dragon.png",
+    "size": "1536x1024",
+    "inhabitedDetails": false,
+    "bytes": 1734766,
+    "sha256": "8d9d0f22745dd6f39ba79de09e8c6f6ad17c60c01ec58842faf22af78de5380b",
+    "entities": [
+      "enderman",
+      "ender_dragon"
+    ],
+    "cropAlignment": "top",
+    "entityCounts": {
+      "enderman": 3,
+      "ender_dragon": 1
+    }
+  },
+  {
+    "id": "light-technical-world-eater",
+    "name": "生电 · 世吞开机",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "technical",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-technical-world-eater.jpg",
+    "size": "1536x1024",
+    "bytes": 580711,
+    "sha256": "1cd4f576067a1a3292f2aff446dcd2fbfeabde740e1c4e547e14048f99ebc619",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-technical-iron-farm",
+    "name": "生电 · 夜班刷铁",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "technical",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-technical-iron-farm.jpg",
+    "size": "1536x1024",
+    "bytes": 569324,
+    "sha256": "0e2e2f37699c75f50eae16a4cabd23e18be91dbda018087e60354f2be1eaeec4",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-parkour-ruins",
+    "name": "跑酷 · 再远一格",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "parkour",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-parkour-ruins.jpg",
+    "size": "1536x1024",
+    "bytes": 659219,
+    "sha256": "d9344a71c9a0779174645d8e363145987e76594234ff383711e5911ac0e3e4e3",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-parkour-brittle-ice",
+    "name": "跑酷 · 别停下",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "parkour",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-parkour-brittle-ice.jpg",
+    "size": "1536x1024",
+    "bytes": 434576,
+    "sha256": "1dc118c7549e69c16cd62df73bd3e0820198dc480435393e6472f0260b2a9dcc",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-farming-harvest",
+    "name": "种田 · 丰收时刻",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "farming",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-farming-harvest.jpg",
+    "size": "1536x1024",
+    "bytes": 695961,
+    "sha256": "50bba03df7ef48a2d88907ea4033eb5c82974d6d7b25075ef04de88ba206b9ab",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-farming-night",
+    "name": "种田 · 午夜访客",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "farming",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-farming-night.jpg",
+    "size": "1536x1024",
+    "bytes": 488351,
+    "sha256": "f6d439d9c3679ef34f876c92a47dcb4fb1cf262208c01ef883e9f2f255b69198",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-pvp-bedwars",
+    "name": "竞技 · 窄桥攻防",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "pvp",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-pvp-bedwars.jpg",
+    "size": "1536x1024",
+    "bytes": 441486,
+    "sha256": "657b91b276c2faceaf659fafbee931cdd3e52c7be63e3480f5305cccd0d23d37",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-pvp-duel",
+    "name": "竞技 · 读懂下一招",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "pvp",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-pvp-duel.jpg",
+    "size": "1536x1024",
+    "bytes": 478545,
+    "sha256": "6dd229cf985c3a6783689fc190da7e29e80b72c7caf4bc628626b20c99b9195e",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-industry-aeronautics",
+    "name": "航空学 · 首次升空",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "industry",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-industry-aeronautics.jpg",
+    "size": "1536x1024",
+    "bytes": 585930,
+    "sha256": "9262c50a3ad8e1f9bb9e18472d8e776ae0788981513e7fbb6835c8c451dfbc06",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-industry-create",
+    "name": "机械动力 · 夜班开工",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "industry",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-industry-create.jpg",
+    "size": "1536x1024",
+    "bytes": 485682,
+    "sha256": "440627182438cf1deba8d4dc89eb87cf3f9a2317012f20e4189eee26375e58ae",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "light-adventure-discovery",
+    "name": "冒险 · 共同发现",
+    "theme": "Light",
+    "category": "players",
+    "playstyle": "adventure",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/light-adventure-discovery.jpg",
+    "size": "1536x1024",
+    "bytes": 732793,
+    "sha256": "9ef15fdaf48efc5404b2cbf10bbbc74eab227b06a31745cf318272b46b22bc09",
+    "cropAlignment": "center"
+  },
+  {
+    "id": "dark-adventure-cavern",
+    "name": "冒险 · 我来照路",
+    "theme": "Dark",
+    "category": "players",
+    "playstyle": "adventure",
+    "output": "src/Rodel.MinecraftLauncher.App/Assets/Backgrounds/dark-adventure-cavern.jpg",
+    "size": "1536x1024",
+    "bytes": 386487,
+    "sha256": "0156f8e3ccfa26531407592133b196a1d66e5829a6f5ef62b9f56955ab22b256",
+    "cropAlignment": "center"
+  }
+]

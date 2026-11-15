@@ -1,0 +1,74 @@
+---
+title: Import and update modpacks
+description: Identify the package, fill missing files and prepare a complete game setup.
+---
+
+## When a modpack helps
+
+A modpack groups mods and configuration. It saves choosing every item individually, but still needs a matching game version, loader and runtime.
+
+RMCL supports offline import of Modrinth **.mrpack** and CurseForge **ZIP** packages. An ordinary ZIP is not necessarily a modpack. For an already installed game folder, use [game import](/en/docs/play/import).
+
+## Import a package
+
+1. Open modpack import in Instances and select a package from a trusted source.
+2. Check its name, version, game version and format.
+3. Enter an instance name and confirm the destination.
+4. Review optional client content and decide what to include.
+5. Start and follow the continuous steps for content, loader and Java preparation.
+
+Optional items are listed according to the package declaration. Progress follows file import, loader and Java preparation. Completed work remains available if a download is interrupted.
+
+## Drop a package onto the launcher
+
+Drop an `.mrpack` or CurseForge ZIP onto Home or the instance list. RMCL opens an import form with the package name, version and required environment before you name the instance. Dropping a file does not immediately change an existing instance.
+
+## When a CurseForge package needs files
+
+There is currently no default CurseForge online search or API download service. Offline package import, manual file completion, export and source information remain supported.
+
+Obtain the exact files from the author or project, choose a local file for each missing item, then continue preparation. Selection stages a copy; continuing checks the declared size and hashes. A mistaken file remains unresolved and can be selected again without recreating the instance.
+
+| Task state                                  | Next step                                            |
+| ------------------------------------------- | ---------------------------------------------------- |
+| Waiting for manual files                    | Obtain and select the exact files, then continue     |
+| One download failed                         | Check that source and network connection, then retry |
+| Content finished, loader or Java unfinished | Continue runtime preparation for the instance        |
+| Preparation canceled                        | Keep the instance and explicitly continue when ready |
+
+## Content imported, runtime unfinished
+
+Keep the registered instance and choose **Continue runtime preparation**. For a failed download, inspect the source and network error, then retry the unfinished stage. You do not need another copy of the instance.
+
+Use a new world for an initial check before moving in important saves.
+
+## Update an existing pack
+
+Back up worlds and the current configuration, and read the author's upgrade notes. For packs supporting source checks, review the available update and file differences before applying it.
+
+Server distribution packs can contain managed files. If a check reports player modifications, extra files, missing items or conflicts, understand the scope first. Finding a release is not the same as overwriting every file.
+
+Apply the list you just reviewed. The updated setup still needs an actual launch check.
+
+## Roll back or stop following the source
+
+> [!CAUTION]
+> Where rollback records are available, inspect the recent transaction and recovery scope in pack history. Rolling back content does not undo changes already saved inside a world, so a world backup before upgrading is still necessary.
+
+Stopping source checks does not delete game files. Available interface actions depend on the pack format and state. Unsupported online sources report that limitation.
+
+## Export for a friend
+
+Choose **Export modpack** from the instance menu. Enter the package name, version, author and output file, then check the result. The Modrinth package records the game, loader and identifiable content sources, so the recipient can prepare an instance through the same import flow.
+
+Ordinary export and **Share modpack** on the [multiplayer page](/en/docs/play/multiplayer) serve different purposes:
+
+| Method                        | Useful for                          | Check before sharing                                        |
+| ----------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| Export from the instance menu | Share a setup and its configuration | Local files, configuration and exclusions                   |
+| Share from the room page      | Prepare a friend's matching client  | Enabled content references and shared configuration/scripts |
+| Export a world                | Share buildings and game progress   | The selected save, player data and privacy                  |
+
+Multiplayer sharing excludes personal game options, server favorites, saves and local binaries without a source. Check excluded or unfinished items and explain what friends need to add. Friends install built-in mods through their own RMCL.
+
+[Export worlds separately](/en/docs/play/worlds); the recipient prepares Java and shared game dependencies. Check custom configuration for private addresses and credentials before sharing.

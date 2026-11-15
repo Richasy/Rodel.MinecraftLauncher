@@ -1,0 +1,42 @@
+---
+title: Microsoft sign-in and application status
+description: What sign-in is for, service access and application access errors.
+---
+
+## What Microsoft sign-in does
+
+Players with applicable game entitlement can authenticate a Minecraft: Java Edition identity with a Microsoft account. RMCL uses the sign-in result and related services to obtain game profile information and prepare launch details for the chosen identity.
+
+The launcher does not sell or grant game entitlement. A local account is not an official online identity.
+
+## Sign-in and service access
+
+**The Store release already includes a Client ID; add a Microsoft account directly from the account menu.** A Client ID is a public application identifier, not your password or token. Ordinary users do not need to register an application, enter an ID or set environment variables.
+
+Whether a self-built development version includes that identifier depends on its build configuration. Developer setup is not an installation prerequisite for Store users.
+
+Sign-in still depends on actual Microsoft and Minecraft service responses, game entitlement and account permissions. Including the identifier does not guarantee every account can authenticate, or equate Store availability with third-party service approval or official endorsement.
+
+RMCL is an independent launcher. This page explains the sign-in flow and access errors; it does not imply certification, sponsorship or endorsement by Minecraft or Microsoft.
+
+## During sign-in
+
+Add a Microsoft account from the upper-left avatar menu and follow the Windows system account window. A browser alternative is offered only if the system sign-in component cannot initialize. Check the source and requested permissions. Do not send passwords, verification codes or device login codes to maintainers or public issues.
+
+For account help, use [Microsoft account support](https://support.microsoft.com/account). For purchasing, downloading and Minecraft account help, use the [Minecraft website](https://www.minecraft.net/).
+
+## Application not configured or service access fails
+
+First confirm that you are using the Microsoft Store release and check for Store updates. Keep the version from **Settings → About this app**, the original error and the failing step. Report application-configuration or service-access problems through [Feedback and logs](/en/docs/help/feedback); deleting worlds, changing Java or repeatedly signing in will not resolve them.
+
+If you previously set `RODEL_MICROSOFT_CLIENT_ID` for development, that environment variable still overrides the built-in value. An invalid or empty override is not silently ignored. Check whether you still need it before correcting or removing it; ordinary Store users do not need to add the variable.
+
+Do not borrow another launcher's Client ID or enter application secrets from an untrusted tutorial. Keep the account and retry a temporary network failure; follow the specific error for family permissions, entitlement or service denial. Remove tokens, codes and personal information from reports.
+
+## Child accounts and multiplayer
+
+Family controls, Xbox privacy settings and the server's own requirements can affect multiplayer. The account holder or family organizer may need to use the relevant official settings. RMCL cannot replace those decisions.
+
+## Without Microsoft sign-in
+
+You can still manage existing instances, configure runtimes manually, edit skins and use local identity where applicable. Servers or online services requiring an authenticated identity still require it.

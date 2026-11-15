@@ -1,0 +1,24 @@
+<Project Sdk="MSTest.Sdk/4.1.0">
+  <PropertyGroup>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+    <EnableMicrosoftTestingExtensionsTrxReport>true</EnableMicrosoftTestingExtensionsTrxReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Fixtures/GameBridge/BridgePeerFixture.cs" Link="Infrastructure/BridgePeerFixture.cs" />
+    <Compile Include="..\Common\ModelEndpoint.cs" Link="Infrastructure\ModelEndpoint.cs" />
+    <!-- Exercise UI-independent observation/projection without loading the packaged native window assembly. -->
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Transcript\AiTranscriptContent.cs" Link="Presentation\AiTranscriptContent.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Chat\AiHistoryItem.cs" Link="Presentation\AiHistoryItem.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Chat\AiTurnObservation.cs" Link="Presentation\AiTurnObservation.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Ai\Transcript\AiTranscriptFollow.cs" Link="Presentation\AiTranscriptFollow.cs" />
+    <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Ai\SkinAiActivity.cs" Link="Presentation\SkinAiActivity.cs" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\..\src\Rodel.MinecraftLauncher.Core\Rodel.MinecraftLauncher.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.AI.Evaluation.Reporting" Version="10.8.0" PrivateAssets="all" Publish="true" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableLocalInference)' != 'true'">
+    <Compile Remove="LocalInferenceMessageTests.cs;LocalInferenceLifetimeTests.cs;LocalInferenceDiagnosticTests.cs" />
+  </ItemGroup>
+</Project>

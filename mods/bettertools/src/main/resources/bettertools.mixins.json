@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "package": "io.github.richasy.bettertools.mixin",
+  "compatibilityLevel": "${mixin_compatibility}",
+  "mixins": [
+    "InventoryInteractionMixin",
+    "EquipmentUpdateAccess",
+    "CubeCombatMixin",
+    "CubeSwingMixin",
+    "CubeUseMixin",
+    "ToolBreakMixin",
+    "DroppedCubeMixin",
+    "DeathStorageMixin"
+  ],
+  "client": [
+    "CubeHeldItemMixin",
+    "CubeAttackInputMixin",
+    "CubeGuiItemMixin",
+    "CubeTooltipMixin",
+    "CubeTooltipAppearanceMixin",
+    "CubeTooltipFrameMixin",
+    "CubeInventoryScreenMixin",
+    "ToolOutlineTexturesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

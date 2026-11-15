@@ -1,0 +1,13 @@
+<Project>
+  <!-- Register only source-built combinations verified in isolated clients; a row may ship a subset of modules. -->
+  <ItemGroup>
+    <BundledModAsset Include="26.3/fabric/rodel-ai.jar;26.3/fabric/world-reroll.jar;26.3/fabric/bettertools.jar;26.3/fabric/fabric-api.jar" />
+    <BundledModAsset Include="26.2/fabric/rodel-ai.jar;26.2/fabric/world-reroll.jar;26.2/fabric/bettertools.jar;26.2/fabric/fabric-api.jar" />
+    <BundledModAsset Include="26.1.2/fabric/rodel-ai.jar;26.1.2/fabric/world-reroll.jar;26.1.2/fabric/bettertools.jar;26.1.2/fabric/fabric-api.jar" />
+    <BundledModAsset Include="26.3/quilt/rodel-ai.jar;26.3/quilt/world-reroll.jar;26.3/quilt/bettertools.jar;26.3/quilt/fabric-api.jar" />
+    <BundledModAsset Include="26.3/forge/rodel-ai.jar;26.3/forge/world-reroll.jar;26.3/forge/bettertools.jar" />
+    <BundledModAsset Include="26.3/neoforge/rodel-ai.jar;26.3/neoforge/world-reroll.jar;26.3/neoforge/bettertools.jar" />
+    <BundledModAsset Include="1.21.11/fabric/bettertools.jar;1.21.11/fabric/fabric-api.jar" />
+    <BundledModAsset Include="1.20.1/forge/rodel-ai.jar" />
+  </ItemGroup>
+</Project>

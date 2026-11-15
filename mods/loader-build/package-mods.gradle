@@ -1,0 +1,165 @@
+// Normal modules compile common Minecraft code once. Loader projects contain lifecycle bindings only.
+def shared = new Properties()
+file('../../gradle.properties').withInputStream { shared.load(it) }
+version = shared.getProperty('mod_version')
+group = 'io.github.richasy.rodel'
+def modules = [
+    'rodel-ui': [id: 'rodel_game_ui', name: 'Rodel UI', entry: 'io/github/richasy/rodel/ui/', mixin: 'rodel-game-ui.mixins.json'],
+    'rodel-ai': [id: 'rodel_ai', name: 'Rodel AI', entry: 'io/github/richasy/rodel/ai/', mixin: 'rodel-ai.mixins.json'],
+    'world-reroll': [id: 'worldreroll', name: 'World Reroll', entry: 'dev/richasy/worldreroll/', mixin: 'worldreroll.client.mixins.json'],
+    'bettertools': [id: 'bettertools', name: 'Better Tools', entry: 'io/github/richasy/bettertools/', mixin: 'bettertools.mixins.json']
+]
+// Additional native targets currently belong to Rodel UI alone; other modules retain their verified matrix.
+if (minecraft_version != '26.3') modules = modules.findAll { module, info -> module == 'rodel-ui' }
+// A bundled build compiles only the selected independent products; UI remains a separate development target.
+def selected = providers.gradleProperty('bundled_modules').orNull
+if (selected != null) {
+    def names = selected.tokenize(',')
+    if (names.isEmpty() || names.any { !modules.containsKey(it) || it == 'rodel-ui' })
+        throw new GradleException('Invalid bundled module selection')
+    modules = modules.findAll { module, info -> module in names }
+}
+
+def commons = modules.collectEntries { module, info ->
+    def archive = module == 'world-reroll' ? 'worldreroll' : module
+    // NeoForge 1.21.11 shares Forge's upstream Mixin 0.8.7 annotation API and Java 21 common compilation.
+    def upstreamMixin = rodelLoader == 'forge' || minecraft_version == '1.21.11'
+    def build = upstreamMixin ? "build/targets/${minecraft_version}-forge" : minecraft_version == '26.3' ? 'build' : "build/targets/${minecraft_version}"
+    def archivePath = minecraft_version == '1.21.11' ? "devlibs/${archive}-${version}-dev.jar" : "libs/${archive}-${version}.jar"
+    [(module): file("../../${module}/${build}/${archivePath}")]
+}
+dependencies { compileOnly files(commons.values()) }
+sourceSets.main.java.srcDir("../src/${rodelLoader}/java")
+sourceSets.main.java.include(modules.values().collect { it.entry + '**' })
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = rodelLoader == 'forge' ? 21 : game_java_version }
+if (rodelLoader == 'forge') configurations.compileClasspath.attributes.attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, game_java_version)
+def metadataDirectory = layout.buildDirectory.dir('generated/loader-metadata')
+def generateMetadata = tasks.register('generateLoaderMetadata') {
+    inputs.property('modVersion', version.toString())
+    inputs.property('loader', rodelLoader)
+    inputs.property('minecraft', minecraft_version)
+    inputs.property('loaderVersion', native_loader_version)
+    inputs.files(modules.keySet().collect { file("../../${it}/src/main/resources") })
+    outputs.dir(metadataDirectory)
+    doLast {
+        modules.each { module, info ->
+            def output = new File(metadataDirectory.get().asFile, module + '/META-INF')
+            output.mkdirs()
+            // Exact resource formats from each target's shipped version.json.
+            def packFormat = ['26.3': [97, 1], '26.2': [88, 0], '26.1.2': [84, 0], '1.21.11': [75, 0]][minecraft_version]
+            def pack = [description: "${info.name} resources", min_format: packFormat, max_format: packFormat]
+            // Formats before 82 also require the native integer range, even when min/max_format are present.
+            if (minecraft_version == '1.21.11') { pack.pack_format = 75; pack.supported_formats = [75, 75] }
+            new File(output.parentFile, 'pack.mcmeta').setText(groovy.json.JsonOutput.toJson([pack: pack]), 'UTF-8')
+            def dependencySide = module == 'bettertools' ? 'BOTH' : 'CLIENT'
+            def dependency = { id, range -> rodelLoader == 'forge' ? """
+[[dependencies.${info.id}]]
+modId="${id}"
+mandatory=true
+versionRange="${range}"
+ordering="NONE"
+side="${dependencySide}"
+""" : """
+[[dependencies.${info.id}]]
+modId="${id}"
+type="required"
+versionRange="${range}"
+ordering="NONE"
+side="${dependencySide}"
+""" }
+            def text = rodelLoader == 'forge' ? 'modLoader="javafml"\nloaderVersion="[' + native_loader_version.tokenize('.')[0] + ',)"\n' + (module == 'bettertools' ? '' : 'clientSideOnly=true\n') : ''
+            text += """license="${module in ['world-reroll', 'bettertools'] ? 'MIT' : 'All Rights Reserved'}"
+[[mods]]
+modId="${info.id}"
+version="${version}"
+displayName="${info.name}"
+description="Launcher-owned ${info.name}."
+"""
+            if (module == 'bettertools') text += rodelLoader == 'neoforge'
+                ? 'iconFile="assets/bettertools/icon.png"\n'
+                : 'logoFile="assets/bettertools/icon.png"\nlogoBlur=false\n'
+            if (rodelLoader == 'neoforge') text += "\n[[mixins]]\nconfig=\"${info.mixin}\"\n"
+            text += dependency(rodelLoader, rodelLoader == 'forge' && minecraft_version == '26.3' ? '[66,)' : "[${native_loader_version},)")
+            text += dependency('minecraft', "[${minecraft_version}]")
+            new File(output, rodelLoader == 'forge' ? 'mods.toml' : 'neoforge.mods.toml').setText(text, 'UTF-8')
+            if (rodelLoader == 'forge') {
+                // Use the processed target config: absent native pages have already been removed for older games.
+                def config = new groovy.json.JsonSlurper().parseText(zipTree(commons[module]).matching { include info.mixin }.singleFile.getText('UTF-8'))
+                config.compatibilityLevel = 'JAVA_21'
+                config.minVersion = '0.8.7'
+                if (module == 'rodel-ui') config.client = config.client.collect {
+                    it == 'MenuMouseMixin' ? 'ForgeMenuMouseMixin' : it == 'MenuKeyboardMixin' ? 'ForgeMenuKeyboardMixin' : it
+                }
+                new File(output.parentFile, info.mixin).setText(groovy.json.JsonOutput.toJson(config), 'UTF-8')
+            }
+            def wideners = fileTree("../../${module}/src/main/resources").matching { include '*.accesswidener' }.files
+            if (!wideners.isEmpty()) {
+                def transforms = []
+                wideners.each { widener -> widener.eachLine('UTF-8') { line ->
+                    def parts = line.trim().split(/\s+/)
+                    if (parts.length >= 3 && parts[0] == 'accessible') {
+                        def owner = parts[2].replace('/', '.')
+                        if (parts[1] == 'class') transforms.add("public ${owner}")
+                        else if (parts[1] == 'method') transforms.add("public ${owner} ${parts[3]}${parts[4]}")
+                        else if (parts[1] == 'field') transforms.add("public ${owner} ${parts[3]}")
+                        else throw new GradleException('Unknown common access widener declaration')
+                    }
+                } }
+                new File(output, 'accesstransformer.cfg').setText(transforms.join('\n') + '\n', 'UTF-8')
+            }
+        }
+    }
+}
+tasks.named('jar') { enabled = false }
+modules.each { module, info ->
+    def bundle = tasks.register(module + 'Jar', Jar) {
+        dependsOn tasks.named('classes'), generateMetadata
+        archiveFileName = "${module}-${version}.jar"
+        from({ zipTree(commons[module]) }) {
+            exclude 'META-INF/MANIFEST.MF', 'fabric.mod.json', '*.accesswidener'
+            exclude info.entry + 'RodelAiClient.class', info.entry + 'WorldRerollClient.class'
+            exclude '**/compat/*ModMenu.class'
+            if (module == 'bettertools') exclude info.entry + 'fabric/**'
+            // Native loaders register the shared configuration screen through their own mod list.
+            if (module == 'rodel-ui') {
+                exclude info.entry + 'compat/RodelModMenu.class'
+                exclude info.entry + 'workstation/**', 'rodel-workstation-poc.mixins.json'
+            }
+            if (rodelLoader == 'forge') exclude info.mixin
+        }
+        from(sourceSets.main.output) { include info.entry + '**' }
+        from(metadataDirectory.map { it.dir(module) }) {
+            include 'META-INF/**', 'pack.mcmeta', info.mixin
+        }
+        manifest { attributes 'MixinConfigs': info.mixin, 'FMLAT': 'accesstransformer.cfg' }
+    }
+    tasks.named('assemble') { dependsOn bundle }
+}
+
+// Real native-loader acceptance has its own source set and artifact. Normal assemble never packages or runs it.
+sourceSets {
+    bettertoolsTest {
+        java.srcDirs("../../bettertools/src/nativetest/java", "../../bettertools/src/gamecheck/java", "../src/${rodelLoader}Test/java")
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+def testMetadata = layout.buildDirectory.dir('generated/bettertools-test')
+def nativeTestLoader = rodelLoader
+def generateBetterToolsTestMetadata = tasks.register('generateBetterToolsTestMetadata') {
+    outputs.dir(testMetadata)
+    doLast {
+        def meta = new File(testMetadata.get().asFile, 'META-INF')
+        meta.mkdirs()
+        def text = nativeTestLoader == 'forge' ? 'modLoader="javafml"\nloaderVersion="[66,)"\nclientSideOnly=true\n' : ''
+        text += 'license="MIT"\n[[mods]]\nmodId="bettertools_test"\nversion="1.0.0"\ndisplayName="BetterTools isolated native checks"\n'
+        new File(meta, nativeTestLoader == 'forge' ? 'mods.toml' : 'neoforge.mods.toml').setText(text, 'UTF-8')
+        new File(meta.parentFile, 'pack.mcmeta').setText('{"pack":{"description":"BetterTools isolated checks","min_format":[97,1],"max_format":[97,1]}}', 'UTF-8')
+    }
+}
+tasks.register('bettertoolsTestJar', Jar) {
+    dependsOn tasks.named('bettertoolsTestClasses'), generateBetterToolsTestMetadata
+    archiveFileName = 'bettertools-test.jar'
+    from sourceSets.bettertoolsTest.output
+    from testMetadata
+}

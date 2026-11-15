@@ -1,0 +1,1556 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve">
+    <value>Créez une identité de joueur hors ligne sans connexion Microsoft.</value>
+  </data>
+  <data name="AccountListDescription" xml:space="preserve">
+    <value>Liste enregistrée hors ligne et Microsoft identités des joueurs sans informations d'identification.</value>
+  </data>
+  <data name="AccountRemoveDescription" xml:space="preserve">
+    <value>Supprimez tout compte enregistré hors ligne ou Microsoft.</value>
+  </data>
+  <data name="ArgumentAddressDescription" xml:space="preserve">
+    <value>Adresse du serveur ou favori ID.</value>
+  </data>
+  <data name="ArgumentChangesDescription" xml:space="preserve">
+    <value>JSON objet des clés de réglage du jeu réelles et des valeurs brutes.</value>
+  </data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve">
+    <value>Chemin de sortie, nom ou identifiant de sauvegarde.</value>
+  </data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve">
+    <value>Chemin de commande à décrire.</value>
+  </data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve">
+    <value>Instance enregistrée ID.</value>
+  </data>
+  <data name="ArgumentItemDescription" xml:space="preserve">
+    <value>Fichier de contenu, dossier mondial, version ou identifiant de récupération.</value>
+  </data>
+  <data name="ArgumentItemsDescription" xml:space="preserve">
+    <value>Fichiers ou sources sélectionnés.</value>
+  </data>
+  <data name="ArgumentKeyDescription" xml:space="preserve">
+    <value>Touche de réglage ; les clés inconnues restent prises en charge.</value>
+  </data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve">
+    <value>Session de jeu enregistrée ID.</value>
+  </data>
+  <data name="ArgumentNameDescription" xml:space="preserve">
+    <value>Nom d'affichage ; les espaces restent dans un argument.</value>
+  </data>
+  <data name="ArgumentNamesDescription" xml:space="preserve">
+    <value>Noms resource-pack ordonnés ; vide ne sélectionne aucun pack supplémentaire.</value>
+  </data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve">
+    <value>Touche de réglage optionnelle.</value>
+  </data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve">
+    <value>Chemin d'archive ou de destination facultatif.</value>
+  </data>
+  <data name="ArgumentTargetDescription" xml:space="preserve">
+    <value>Chemin source, projet, runtime ou identifiant d'opération.</value>
+  </data>
+  <data name="ArgumentValueDescription" xml:space="preserve">
+    <value>JSON valeur ou chaîne littérale.</value>
+  </data>
+  <data name="BackupCreateDescription" xml:space="preserve">
+    <value>Créez une sauvegarde d'instance complète ou étendue.</value>
+  </data>
+  <data name="BackupDeleteDescription" xml:space="preserve">
+    <value>Supprimez la sauvegarde sélectionnée.</value>
+  </data>
+  <data name="BackupInspectDescription" xml:space="preserve">
+    <value>Inspectez une sauvegarde et son contenu enregistré.</value>
+  </data>
+  <data name="BackupListDescription" xml:space="preserve">
+    <value>Liste des sauvegardes, éventuellement filtrées par instance.</value>
+  </data>
+  <data name="BackupRestoreDescription" xml:space="preserve">
+    <value>Restaurer une sauvegarde sur son instance d'origine ou explicitement sélectionnée.</value>
+  </data>
+  <data name="BackupRollbackDescription" xml:space="preserve">
+    <value>Annulez la restauration de sauvegarde enregistrée.</value>
+  </data>
+  <data name="ConfigurationGetDescription" xml:space="preserve">
+    <value>Lire une clé ou toutes les valeurs efficaces.</value>
+  </data>
+  <data name="ConfigurationSetDescription" xml:space="preserve">
+    <value>Stocker JSON lorsqu'il est valide ; sinon, stockez la chaîne littérale. Seule la clé demandée change.</value>
+  </data>
+  <data name="ContentAddDescription" xml:space="preserve">
+    <value>Ajout de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve">
+    <value>Analyse de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve">
+    <value>Appliquez la révision du contenu précédemment gelée uniquement après l'approbation finale de l'utilisateur.</value>
+  </data>
+  <data name="ContentDetachDescription" xml:space="preserve">
+    <value>Détachement du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentDisableDescription" xml:space="preserve">
+    <value>Désactivation du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentEnableDescription" xml:space="preserve">
+    <value>Activation du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentIdentifyDescription" xml:space="preserve">
+    <value>Identifier le contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentInstallDescription" xml:space="preserve">
+    <value>Installation du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentListDescription" xml:space="preserve">
+    <value>Liste de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentPinDescription" xml:space="preserve">
+    <value>Épingle de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentPolicyDescription" xml:space="preserve">
+    <value>Politique de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentProjectDescription" xml:space="preserve">
+    <value>Lire les métadonnées du projet distant.</value>
+  </data>
+  <data name="ContentRecoverDescription" xml:space="preserve">
+    <value>Récupération de contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentRemoveDescription" xml:space="preserve">
+    <value>Suppression du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentRepairDescription" xml:space="preserve">
+    <value>Planifiez une réparation complète des dépendances à partir d'une session, ou appliquez sa révision gelée avec confirmation explicite.</value>
+  </data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve">
+    <value>Examinez les fichiers locaux mixtes à l'aide des métadonnées réelles.</value>
+  </data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve">
+    <value>Consultez une liste exacte de projets et de dépendances sans installer.</value>
+  </data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve">
+    <value>Geler les mises à jour racine choisies et les dépendances requises, en préservant les politiques désactivées/épinglées ; inspecter avant apply-review.</value>
+  </data>
+  <data name="ContentSearchDescription" xml:space="preserve">
+    <value>Recherchez du contenu distant sans nécessiter d'instance.</value>
+  </data>
+  <data name="ContentUnpinDescription" xml:space="preserve">
+    <value>Désépinglage du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentUpdateDescription" xml:space="preserve">
+    <value>Mise à jour du contenu ; préserver les fichiers sans rapport et les choix explicites de l'utilisateur.</value>
+  </data>
+  <data name="ContentVersionsDescription" xml:space="preserve">
+    <value>Lire les versions du projet distant.</value>
+  </data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve">
+    <value>Une destination ZIP est requise sans --plan.</value>
+  </data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve">
+    <value>Cette opération nécessite --confirm après avoir examiné ses effets.</value>
+  </data>
+  <data name="ErrorContextLimit" xml:space="preserve">
+    <value>--limit doit être compris entre 1 et 100.</value>
+  </data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve">
+    <value>Spécifiez exactement une instance, --session ou --report.</value>
+  </data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve">
+    <value>--directory est requis.</value>
+  </data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve">
+    <value>Commande en double ou alias '{0}' sous '{1}'.</value>
+  </data>
+  <data name="ErrorDuplicateOption" xml:space="preserve">
+    <value>Option dupliquer ou alias '{0}' sur '{1}'.</value>
+  </data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve">
+    <value>Les modifications doivent être un objet de clés options.txt et de valeurs brutes ; null supprime une clé.</value>
+  </data>
+  <data name="ErrorHostStartFailed" xml:space="preserve">
+    <value>L'hôte d'arrière-plan n'a pas démarré.</value>
+  </data>
+  <data name="ErrorJobNotResumable" xml:space="preserve">
+    <value>Cette opération a peut-être déjà créé des fichiers ou une session de jeu. Inspectez cette tâche et ses effets, puis répétez explicitement la commande d'origine si nécessaire.</value>
+  </data>
+  <data name="ErrorLogStateConflict" xml:space="preserve">
+    <value>--state et --state-file s'excluent mutuellement.</value>
+  </data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve">
+    <value>--minecraft VERSION est requis.</value>
+  </data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve">
+    <value>La requête de commande CLI est manquante.</value>
+  </data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve">
+    <value>--{0} doit être non négatif.</value>
+  </data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve">
+    <value>L'option '{0}' n'est pas déclarée pour '{1}'.</value>
+  </data>
+  <data name="ErrorOptionRange" xml:space="preserve">
+    <value>--{0} doit être compris entre {1} et {2}.</value>
+  </data>
+  <data name="ErrorOptionRequired" xml:space="preserve">
+    <value>{0} est requis.</value>
+  </data>
+  <data name="ErrorOptionScalar" xml:space="preserve">
+    <value>L'option '{0}' nécessite des valeurs scalaires ; utilisez Values pour les jetons répétés.</value>
+  </data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve">
+    <value>L'application d'une révision de réparation de dépendance nécessite --confirm après l'approbation finale de l'utilisateur.</value>
+  </data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve">
+    <value>L'application d'un lot révisé ne peut pas être combinée avec les sélections --plan, --session ou de nouvelles versions.</value>
+  </data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve">
+    <value>--confirm nécessite un --review généré précédemment.</value>
+  </data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve">
+    <value>--session est requis pour planifier la réparation des dépendances.</value>
+  </data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve">
+    <value>Spécifiez --session pour planifier une réparation, ou --review avec --confirm pour appliquer son lot gelé.</value>
+  </data>
+  <data name="ErrorSessionRequired" xml:space="preserve">
+    <value>Une séance ID est obligatoire.</value>
+  </data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve">
+    <value>Cette commande est un point d'entrée de l'hôte du terminal, pas une opération de lancement.</value>
+  </data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve">
+    <value>--arguments et --arguments-file s'excluent mutuellement.</value>
+  </data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve">
+    <value>Sujet d’aide inconnu : {0}.</value>
+  </data>
+  <data name="ErrorUnknownOption" xml:space="preserve">
+    <value>Option inconnue : {0}. Mettez -- avant les valeurs de position commençant par --.</value>
+  </data>
+  <data name="ErrorUnknownTool" xml:space="preserve">
+    <value>Aucun outil nommé {0}</value>
+  </data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve">
+    <value>Opération de tâche CLI non prise en charge '{0}'.</value>
+  </data>
+  <data name="ErrorUpdateContext" xml:space="preserve">
+    <value>--update-context attend current ou source.</value>
+  </data>
+  <data name="ErrorVersionRequired" xml:space="preserve">
+    <value>--version est requis.</value>
+  </data>
+  <data name="ErrorVersionSelection" xml:space="preserve">
+    <value>--select-version attend PROJECT=VERSION.</value>
+  </data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve">
+    <value>Appliquer les modifications en attente après la sortie.</value>
+  </data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve">
+    <value>Annule les modifications en attente sans modifier options.txt.</value>
+  </data>
+  <data name="GameSettingsGetDescription" xml:space="preserve">
+    <value>Lisez les paramètres de jeu actuels.</value>
+  </data>
+  <data name="GameSettingsSetDescription" xml:space="preserve">
+    <value>Modifier les clés brutes demandées ; JSON null supprime une clé.</value>
+  </data>
+  <data name="GroupAccountDescription" xml:space="preserve">
+    <value>Gérez les comptes hors ligne et Microsoft. Les identités hors ligne fonctionnent sans connexion Microsoft ; La connexion au navigateur Microsoft nécessite un client ID configuré par l'utilisateur.</value>
+  </data>
+  <data name="GroupBackupDescription" xml:space="preserve">
+    <value>Créez, inspectez et restaurez des sauvegardes d'instance complètes ou étendues.</value>
+  </data>
+  <data name="GroupCacheDescription" xml:space="preserve">
+    <value>Conserve l'utilisation active du cache, les racines externes, les dépendances référencées et les fichiers inconnus.</value>
+  </data>
+  <data name="GroupConfigDescription" xml:space="preserve">
+    <value>Lire les paramètres efficaces et leurs sources. Les clés de réglage inconnues sont conservées.</value>
+  </data>
+  <data name="GroupContentDescription" xml:space="preserve">
+    <value>Gérez les fichiers locaux et le contenu Modrinth. Les fichiers locaux inconnus ne nécessitent aucune identification. CurseForge en ligne nécessite un prestataire injecté ; les packs hors ligne restent utilisables.</value>
+  </data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve">
+    <value>Modifiez les valeurs brutes réelles de options.txt, en préservant les lignes et l'encodage sans rapport. Les jeux actifs reportent les écritures ; appliquer après la sortie avec détection de conflit.</value>
+  </data>
+  <data name="GroupInstanceDescription" xml:space="preserve">
+    <value>Gérez le contenu du jeu indépendant et les dépendances d'exécution partagées. Les importations copient le contenu complet sans altérer la source.</value>
+  </data>
+  <data name="GroupJavaDescription" xml:space="preserve">
+    <value>Découvrez, gérez et sélectionnez les runtimes Java.</value>
+  </data>
+  <data name="GroupJobDescription" xml:space="preserve">
+    <value>Opérations persistantes. L'annulation est une demande ; inspecter le statut final. Reprenez uniquement les opérations dont les effets peuvent être répétés en toute sécurité.</value>
+  </data>
+  <data name="GroupLoaderDescription" xml:space="preserve">
+    <value>Préparer les installateurs de chargeurs connus ; les profils de lancement personnalisés installés manuellement restent pris en charge.
+Adaptateur</value>
+  </data>
+  <data name="GroupMcpDescription" xml:space="preserve">
+    <value>MCP sur le contrat de commande CLI.</value>
+  </data>
+  <data name="GroupPackDescription" xml:space="preserve">
+    <value>Importation mrpack/CurseForge ZIP hors ligne et packs Modrinth en ligne. Les fichiers manuels manquants restent récupérables.</value>
+  </data>
+  <data name="GroupProcessDescription" xml:space="preserve">
+    <value>Observer les sessions de jeu. L'arrêt d'un jeu est différent de l'annulation d'une tâche de lancement.</value>
+  </data>
+  <data name="GroupResourcepackDescription" xml:space="preserve">
+    <value>Les packs installés et l'ordre sélectionné sont distincts. Conserver les sélections intégrées/non suivies à moins de les remplacer ; les écritures du jeu actif sont différées.</value>
+  </data>
+  <data name="GroupResultDescription" xml:space="preserve">
+    <value>Lire la sortie d'un outil enregistré surdimensionné sans répéter une opération ; les résultats expirent après sept jours.</value>
+  </data>
+  <data name="GroupRuntimeDescription" xml:space="preserve">
+    <value>Préparez les fichiers avant de valider un enregistrement de paramètres d'exécution. Préserver le contenu du jeu ; les conseils de compatibilité ne sont pas une porte de lancement.</value>
+  </data>
+  <data name="GroupSelfDescription" xml:space="preserve">
+    <value>Version du lanceur et recherche de mise à jour facultative.</value>
+  </data>
+  <data name="GroupServerDescription" xml:space="preserve">
+    <value>Gérez les favoris, résolvez Windows DNS/SRV et interrogez l'état en direct.</value>
+  </data>
+  <data name="GroupToolsDescription" xml:space="preserve">
+    <value>Inspectez et invoquez les outils MCP depuis le terminal.</value>
+  </data>
+  <data name="GroupVersionsDescription" xml:space="preserve">
+    <value>Découvrez les versions Minecraft.</value>
+  </data>
+  <data name="GroupWorldDescription" xml:space="preserve">
+    <value>Préservez les sources mondiales originales et les fichiers inconnus. Les verrous natifs empêchent les écritures dangereuses ; les opérations destructrices conservent des sauvegardes récupérables.</value>
+  </data>
+  <data name="HelpDescription" xml:space="preserve">
+    <value>Décrire une commande en utilisant les mêmes déclarations qui l'analysent.</value>
+  </data>
+  <data name="HelpEntryPoints" xml:space="preserve">
+    <value>Utilisez help COMMAND SUBCOMMAND ou --help pour explorer une commande. Les entrées d'hôte de terminal ne peuvent pas être invoquées par execute. Le répertoire de données configuré est fixé par l'hôte, et non par les arguments execute.</value>
+  </data>
+  <data name="HelpTaskLifetimes" xml:space="preserve">
+    <value>--background survit à cet appel d'outil ; job_cancel annule un travail, process_stop arrête une partie. Ils ont des vies distinctes.</value>
+  </data>
+  <data name="HelpTokenBoundaries" xml:space="preserve">
+    <value>Chaque entrée execute.arguments est une token. Conservez les chemins et les noms avec des espaces dans une seule entrée. Utilisez --name=VALUE pour les valeurs option-like ; put -- après le chemin de commande et les options, avant les valeurs de position option-like.</value>
+  </data>
+  <data name="HostingCallDescription" xml:space="preserve">
+    <value>Invoque un outil nommé avec l'entrée tapée JSON.</value>
+  </data>
+  <data name="HostingJobHostDescription" xml:space="preserve">
+    <value>Exécuteur interne de travaux persistants.</value>
+  </data>
+  <data name="HostingListDescription" xml:space="preserve">
+    <value>Répertoriez les définitions d'outils MCP partagées.</value>
+  </data>
+  <data name="HostingServeDescription" xml:space="preserve">
+    <value>Servez MCP sur stdio. stdout est réservé au protocole.</value>
+  </data>
+  <data name="HostingSessionHostDescription" xml:space="preserve">
+    <value>Moniteur de session de jeu interne détaché.</value>
+  </data>
+  <data name="InformationResultReadDescription" xml:space="preserve">
+    <value>Lire un JSON Pointer, une page de propriétés d'objet ou un morceau de texte à partir d'un résultat conservé.</value>
+  </data>
+  <data name="InformationVersionsListDescription" xml:space="preserve">
+    <value>Liste les versions Minecraft mises en cache ou disponibles à distance.</value>
+  </data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve">
+    <value>Découvrez les outils et les mêmes définitions de commandes utilisées par execute.</value>
+  </data>
+  <data name="InformationRootContextDescription" xml:space="preserve">
+    <value>Lisez un aperçu limité, en conservant les erreurs par section sans masquer les autres sections.</value>
+  </data>
+  <data name="InformationRootVersionDescription" xml:space="preserve">
+    <value>Informations sur la version et l'exécution du lanceur.</value>
+  </data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve">
+    <value>Vérifiez les versions du lanceur sans les installer.</value>
+  </data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve">
+    <value>Informations sur la version et l'exécution du lanceur.</value>
+  </data>
+  <data name="InstanceContentContextDescription" xml:space="preserve">
+    <value>Lire le contexte réel de compatibilité du contenu.</value>
+  </data>
+  <data name="InstanceCopyDescription" xml:space="preserve">
+    <value>Créez une copie indépendante d'une instance enregistrée.</value>
+  </data>
+  <data name="InstanceCreateDescription" xml:space="preserve">
+    <value>Créez une instance vide pour une version Minecraft exacte.</value>
+  </data>
+  <data name="InstanceImportDescription" xml:space="preserve">
+    <value>Copiez une instance source complète, puis enregistrez-la une fois la migration réussie.</value>
+  </data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve">
+    <value>Lisez les profils sources sans enregistrer ni copier d'instance.</value>
+  </data>
+  <data name="InstanceListDescription" xml:space="preserve">
+    <value>Liste les instances enregistrées.</value>
+  </data>
+  <data name="InstanceMoveDescription" xml:space="preserve">
+    <value>Déplacez une instance enregistrée vers le répertoire demandé.</value>
+  </data>
+  <data name="InstancePrepareDescription" xml:space="preserve">
+    <value>Préparez les composants d'exécution migrés.</value>
+  </data>
+  <data name="InstanceRelinkDescription" xml:space="preserve">
+    <value>Mettre à jour la référence du répertoire de jeu d'une instance existante.</value>
+  </data>
+  <data name="InstanceRemoveDescription" xml:space="preserve">
+    <value>Supprimer une instance et ses sauvegardes de secours ; conserver les fichiers du jeu sauf demande explicite.</value>
+  </data>
+  <data name="InstanceRenameDescription" xml:space="preserve">
+    <value>Modifiez le nom d'affichage d'une instance sans déplacer ses fichiers.</value>
+  </data>
+  <data name="InstanceShowDescription" xml:space="preserve">
+    <value>Lire une instance enregistrée.</value>
+  </data>
+  <data name="JavaAvailableDescription" xml:space="preserve">
+    <value>Liste les versions d'exécution gérées Java disponibles.</value>
+  </data>
+  <data name="JavaImportDescription" xml:space="preserve">
+    <value>Importez un runtime Java existant dans la gestion du lanceur.</value>
+  </data>
+  <data name="JavaInstallDescription" xml:space="preserve">
+    <value>Téléchargez et installez un runtime Java géré.</value>
+  </data>
+  <data name="JavaListDescription" xml:space="preserve">
+    <value>Découvrez les runtimes Java, y compris un chemin explicitement fourni.</value>
+  </data>
+  <data name="JavaManagedDescription" xml:space="preserve">
+    <value>Liste les runtimes Java gérés par le lanceur.</value>
+  </data>
+  <data name="JavaRemoveDescription" xml:space="preserve">
+    <value>Supprimez définitivement un runtime Java géré non référencé, ou désenregistrez un Java externe sans supprimer ses fichiers.</value>
+  </data>
+  <data name="JavaSelectDescription" xml:space="preserve">
+    <value>Sélectionnez Java pour les paramètres globaux ou l'instance spécifiée.</value>
+  </data>
+  <data name="JobCancelDescription" xml:space="preserve">
+    <value>Demander une annulation de travail ; inspecter séparément son statut final.</value>
+  </data>
+  <data name="JobListDescription" xml:space="preserve">
+    <value>Répertoriez les tâches de lancement persistantes et leurs états enregistrés.</value>
+  </data>
+  <data name="JobResumeDescription" xml:space="preserve">
+    <value>Reprenez une tâche interrompue ou ayant échoué uniquement lorsque vous pouvez la répéter en toute sécurité.</value>
+  </data>
+  <data name="JobShowDescription" xml:space="preserve">
+    <value>Lire le statut, la progression et le résultat d'un travail persistant.</value>
+  </data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve">
+    <value>Préparer les fichiers Minecraft requis pour une instance ; ne lance pas le jeu.</value>
+  </data>
+  <data name="LaunchLaunchDescription" xml:space="preserve">
+    <value>Démarrer une partie ou renvoyer un plan en lecture seule. Démarrer un processus ne constitue pas une preuve de gameplay. La durée de vie du jeu est indépendante de la connexion du modèle.</value>
+  </data>
+  <data name="LoaderInstallDescription" xml:space="preserve">
+    <value>Installer un chargeur sans remplacer le contenu du jeu.</value>
+  </data>
+  <data name="LoaderListDescription" xml:space="preserve">
+    <value>Liste les versions du chargeur pour la version de base Minecraft.</value>
+  </data>
+  <data name="LogBundleDescription" xml:space="preserve">
+    <value>Exportez un ensemble de diagnostics ou inspectez les fichiers inclus avec --plan.</value>
+  </data>
+  <data name="LogEventsDescription" xml:space="preserve">
+    <value>Lire les événements du journal analysés. Pass a renvoyé parserState et diffuse les décalages vers la prochaine lecture contiguë.</value>
+  </data>
+  <data name="LogExportDescription" xml:space="preserve">
+    <value>Exportez la fenêtre de console disponible ou l'instantané de crash enregistré, y compris les détails de troncature.</value>
+  </data>
+  <data name="LogLogsDescription" xml:space="preserve">
+    <value>Lisez la fenêtre de la console en direct ou l'instantané de crash enregistré. Utilisez le nextOffset de chaque flux pour continuer ; les préfixes expulsés sont signalés.</value>
+  </data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve">
+    <value>Analyser une instance, une session enregistrée ou un rapport de crash ; les résultats sont des preuves et des suggestions, et non une preuve de la cause profonde.</value>
+  </data>
+  <data name="MaintenancePruneDescription" xml:space="preserve">
+    <value>Réévaluer les règles de réclamation lors de l'exécution ; --plan ne modifie pas les fichiers.</value>
+  </data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve">
+    <value>Lire l'utilisation du cache.</value>
+  </data>
+  <data name="OptionAccountDescription" xml:space="preserve">
+    <value>Enregistré hors ligne ou Microsoft identité ID ; omettre d'hériter de la sélection d'instance/globale.</value>
+  </data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve">
+    <value>Hachage d'identification du contenu.</value>
+  </data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve">
+    <value>Enregistrer l'acceptation explicite des packs de ressources incompatibles demandés.</value>
+  </data>
+  <data name="OptionArchitectureDescription" xml:space="preserve">
+    <value>Architecture d'exécution.</value>
+  </data>
+  <data name="OptionArgumentsDescription" xml:space="preserve">
+    <value>Entrée outil JSON ; la valeur par défaut est {}.</value>
+  </data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve">
+    <value>Fichier contenant l'entrée de l'outil JSON.</value>
+  </data>
+  <data name="OptionAttachDescription" xml:space="preserve">
+    <value>Joindre le suivi de plate-forme vérifié à un fichier local.</value>
+  </data>
+  <data name="OptionBackgroundDescription" xml:space="preserve">
+    <value>Met en file d'attente un job persistant ; inspectez job show pour son résultat final.</value>
+  </data>
+  <data name="OptionBytesDescription" xml:space="preserve">
+    <value>Budget d'octets du journal brut, 8 à 1048576.</value>
+  </data>
+  <data name="OptionChannelDescription" xml:space="preserve">
+    <value>Canal de mise à jour autorisé.</value>
+  </data>
+  <data name="OptionCharactersDescription" xml:space="preserve">
+    <value>Taille du morceau de texte JSON enregistrée, 256 à 8000.</value>
+  </data>
+  <data name="OptionConfirmDescription" xml:space="preserve">
+    <value>Confirmez l'opération examinée et ses effets.</value>
+  </data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve">
+    <value>Ignorer la préparation du runtime.</value>
+  </data>
+  <data name="OptionContentVersionDescription" xml:space="preserve">
+    <value>Version exacte du contenu de la plateforme ID.</value>
+  </data>
+  <data name="OptionCopyDescription" xml:space="preserve">
+    <value>Copier le contenu source complet ; ne supprimez jamais la source.</value>
+  </data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve">
+    <value>Répertoire de données du lanceur ; la valeur par défaut est le .rmcl de l'utilisateur.</value>
+  </data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve">
+    <value>Supprimez également les fichiers de jeu appartenant à l'instance.</value>
+  </data>
+  <data name="OptionDirectoryDescription" xml:space="preserve">
+    <value>Répertoire source.</value>
+  </data>
+  <data name="OptionEncodingDescription" xml:space="preserve">
+    <value>Nom d'encodage pour les fichiers hérités BOM-less.</value>
+  </data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve">
+    <value>NAME=VALUE remplace une variable ; NAME le supprime. Répétez l’opération pour plusieurs variables.</value>
+  </data>
+  <data name="OptionEventsDescription" xml:space="preserve">
+    <value>Écrivez les événements de progression dans stderr.</value>
+  </data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve">
+    <value>Chemin relatif facultatif à exclure ; répétez pour plusieurs fichiers.</value>
+  </data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve">
+    <value>Empreinte de fichier attendue à partir du résultat de lecture/planification.</value>
+  </data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve">
+    <value>Empreinte digitale de verrouillage de contenu attendue ; manquant indique l'absence de verrou.</value>
+  </data>
+  <data name="OptionForceDescription" xml:space="preserve">
+    <value>Terminez explicitement l'arborescence des processus enregistrée.</value>
+  </data>
+  <data name="OptionFormatDescription" xml:space="preserve">
+    <value>Format d'exportation du pack.</value>
+  </data>
+  <data name="OptionFullscreenDescription" xml:space="preserve">
+    <value>Remplacement du plein écran ; omettez d’hériter des paramètres.</value>
+  </data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve">
+    <value>Argument de jeu supplémentaire ; utilisez --game-arg=--TOKEN pour les valeurs option-like.</value>
+  </data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve">
+    <value>Répertoire de contenu explicite du jeu.</value>
+  </data>
+  <data name="OptionHeightDescription" xml:space="preserve">
+    <value>Hauteur de la fenêtre de jeu.</value>
+  </data>
+  <data name="OptionIdDescription" xml:space="preserve">
+    <value>Runtime géré explicite ou favori ID.</value>
+  </data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve">
+    <value>Inclut les fichiers qui peuvent normalement être téléchargés à nouveau.</value>
+  </data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve">
+    <value>Incluez les mods locaux non suivis dans l'exportation.</value>
+  </data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve">
+    <value>Chemin relatif facultatif à inclure ; répétez pour plusieurs fichiers.</value>
+  </data>
+  <data name="OptionIndexDescription" xml:space="preserve">
+    <value>Ordre de recherche.</value>
+  </data>
+  <data name="OptionInstanceDescription" xml:space="preserve">
+    <value>Instance ID ; omettre pour la portée globale.</value>
+  </data>
+  <data name="OptionJavaDescription" xml:space="preserve">
+    <value>Exécutable Java explicite ou home.</value>
+  </data>
+  <data name="OptionJsonDescription" xml:space="preserve">
+    <value>Écrivez le compact JSON.</value>
+  </data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve">
+    <value>Argument JVM supplémentaire ; répétez l'option pour chaque token.</value>
+  </data>
+  <data name="OptionKindDescription" xml:space="preserve">
+    <value>Type de répertoire de contenu ; par défaut les mods.</value>
+  </data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve">
+    <value>Configuration du lanceur de sources.</value>
+  </data>
+  <data name="OptionLevelDescription" xml:space="preserve">
+    <value>Filtre de niveau log-events en option.</value>
+  </data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve">
+    <value>Base de miroir de bibliothèque URL ; répétez l’opération pour plusieurs miroirs.</value>
+  </data>
+  <data name="OptionLimitDescription" xml:space="preserve">
+    <value>Taille de la page ou de la section, 1 à 100.</value>
+  </data>
+  <data name="OptionLoaderDescription" xml:space="preserve">
+    <value>Identifiant du chargeur ; les valeurs personnalisées restent autorisées. none sélectionne la vanille.</value>
+  </data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve">
+    <value>Version exacte du chargeur.</value>
+  </data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve">
+    <value>stdout/stderr encoding; ne change pas file.encoding.</value>
+  </data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve">
+    <value>Remplacement de compatibilité de journalisation héritée connue.</value>
+  </data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve">
+    <value>Répertoire contenant les fichiers du pack téléchargés manuellement.</value>
+  </data>
+  <data name="OptionMemoryDescription" xml:space="preserve">
+    <value>Tas Java maximum en MiB.</value>
+  </data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve">
+    <value>Politique de sélection de la mémoire.</value>
+  </data>
+  <data name="OptionMigrateDescription" xml:space="preserve">
+    <value>Traduire les métadonnées du lanceur source.</value>
+  </data>
+  <data name="OptionMinecraftDescription" xml:space="preserve">
+    <value>Version de compatibilité de base Minecraft, pas un profil de chargeur ID.</value>
+  </data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve">
+    <value>Répertoire d'exécution Minecraft partagé.</value>
+  </data>
+  <data name="OptionNameDescription" xml:space="preserve">
+    <value>Afficher le nom ou le dossier de destination.</value>
+  </data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve">
+    <value>Laissez la gestion des dépendances à l'utilisateur.</value>
+  </data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve">
+    <value>Exécuter sans invites interactives.</value>
+  </data>
+  <data name="OptionOfflineDescription" xml:space="preserve">
+    <value>Utilisez des fichiers locaux au lieu des téléchargements automatiques.</value>
+  </data>
+  <data name="OptionOffsetDescription" xml:space="preserve">
+    <value>Recherche à base zéro, tableau ou décalage de texte.</value>
+  </data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve">
+    <value>Âge minimum du cache en jours ; la valeur par défaut est 30.</value>
+  </data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve">
+    <value>Politique de fichier facultative explicite ; omettre pour préserver les choix.</value>
+  </data>
+  <data name="OptionOverwriteDescription" xml:space="preserve">
+    <value>Appliquer explicitement les valeurs de paramètres de jeu demandées malgré les conflits.</value>
+  </data>
+  <data name="OptionPackVersionDescription" xml:space="preserve">
+    <value>Version exacte du pack en ligne ID.</value>
+  </data>
+  <data name="OptionPlanDescription" xml:space="preserve">
+    <value>Plan en lecture seule ; n'appliquez pas les modifications.</value>
+  </data>
+  <data name="OptionPlatformDescription" xml:space="preserve">
+    <value>Plateforme de contenus ; la valeur par défaut est modrinth. L'assistance en ligne par défaut CurseForge n'est pas disponible.</value>
+  </data>
+  <data name="OptionPlayerDescription" xml:space="preserve">
+    <value>Nom du joueur hors ligne.</value>
+  </data>
+  <data name="OptionPointerDescription" xml:space="preserve">
+    <value>RFC 6901 JSON Pointer dans un résultat enregistré.</value>
+  </data>
+  <data name="OptionProfileDescription" xml:space="preserve">
+    <value>Profil de lanceur de source exact ID.</value>
+  </data>
+  <data name="OptionProjectDescription" xml:space="preserve">
+    <value>Projet pack en ligne ID.</value>
+  </data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve">
+    <value>Décalage de base zéro dans la liste property-name d'un objet.</value>
+  </data>
+  <data name="OptionRedactDescription" xml:space="preserve">
+    <value>Suppression au mieux des informations d'identification communes d'un ensemble de diagnostics ; par défaut true.</value>
+  </data>
+  <data name="OptionReplaceDescription" xml:space="preserve">
+    <value>Remplace la sélection complète resource-pack.</value>
+  </data>
+  <data name="OptionReportDescription" xml:space="preserve">
+    <value>Chemin du rapport de crash local Minecraft ou JVM.</value>
+  </data>
+  <data name="OptionReviewDescription" xml:space="preserve">
+    <value>Examen de la réparation des dépendances précédemment gelées ID.</value>
+  </data>
+  <data name="OptionScopeDescription" xml:space="preserve">
+    <value>Portée de la sauvegarde.</value>
+  </data>
+  <data name="OptionServerDescription" xml:space="preserve">
+    <value>Adresse multijoueur ou favori.</value>
+  </data>
+  <data name="OptionSessionDescription" xml:space="preserve">
+    <value>Session de jeu enregistrée ID.</value>
+  </data>
+  <data name="OptionStateDescription" xml:space="preserve">
+    <value>État de l'analyseur JSON de la lecture contiguë précédente log-events.</value>
+  </data>
+  <data name="OptionStateFileDescription" xml:space="preserve">
+    <value>Fichier contenant l'état de l'analyseur log-events.</value>
+  </data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve">
+    <value>Décalage absolu d'octet stderr conservé.</value>
+  </data>
+  <data name="OptionStdioDescription" xml:space="preserve">
+    <value>Servez MCP sur l'entrée/sortie standard.</value>
+  </data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve">
+    <value>Absolu conservé stdout décalage d'octet.</value>
+  </data>
+  <data name="OptionTailDescription" xml:space="preserve">
+    <value>Nombre maximum de lignes de queue de journal lorsqu'aucun curseur d'octet n'est fourni.</value>
+  </data>
+  <data name="OptionTimeoutDescription" xml:space="preserve">
+    <value>Délai d'expiration du réseau en millisecondes ; la valeur par défaut est 5 000.</value>
+  </data>
+  <data name="OptionToolDescription" xml:space="preserve">
+    <value>Nom exact de l'outil.
+Sujet d'aide de la commande</value>
+  </data>
+  <data name="OptionTopicDescription" xml:space="preserve">
+    <value>CLI.</value>
+  </data>
+  <data name="OptionTypeDescription" xml:space="preserve">
+    <value>Catégorie de recherche de contenu ; la valeur par défaut est all.</value>
+  </data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve">
+    <value>Contexte de compatibilité des candidats ; ne modifie pas le temps d'exécution de l'instance.</value>
+  </data>
+  <data name="OptionVerifyDescription" xml:space="preserve">
+    <value>Vérifiez les hachages des fichiers installés.
+Version</value>
+  </data>
+  <data name="OptionVersionDescription" xml:space="preserve">
+    <value>Minecraft ou profil de lancement local/personnalisé ID.</value>
+  </data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve">
+    <value>PROJECT=VERSION choix exact ; répétez pour les projets racine et de dépendance.</value>
+  </data>
+  <data name="OptionWaitDescription" xml:space="preserve">
+    <value>Attendez la fin du jeu ; l'annulation n'arrête pas le jeu.</value>
+  </data>
+  <data name="OptionWidthDescription" xml:space="preserve">
+    <value>Largeur de la fenêtre de jeu.</value>
+  </data>
+  <data name="OptionWorldDescription" xml:space="preserve">
+    <value>Dossier mondial ou cible de lecture rapide.</value>
+  </data>
+  <data name="PackApplyDescription" xml:space="preserve">
+    <value>Appliquer la révision exacte de la mise à jour du pack conservé.</value>
+  </data>
+  <data name="PackCompleteDescription" xml:space="preserve">
+    <value>Complétez les fichiers du pack manquants, y compris les fichiers téléchargés manuellement.</value>
+  </data>
+  <data name="PackExportDescription" xml:space="preserve">
+    <value>Exportez une instance sous mrpack ou CurseForge ZIP.</value>
+  </data>
+  <data name="PackImportDescription" xml:space="preserve">
+    <value>Importez un mrpack ou CurseForge ZIP avec les fichiers optionnels sélectionnés.</value>
+  </data>
+  <data name="PackInspectDescription" xml:space="preserve">
+    <value>Inspectez une archive de pack locale sans créer d'instance.</value>
+  </data>
+  <data name="PackInstallDescription" xml:space="preserve">
+    <value>Installer un pack Modrinth en ligne ; les fichiers facultatifs suivent la politique de sélection explicite.</value>
+  </data>
+  <data name="PackPrepareDescription" xml:space="preserve">
+    <value>Compléter un pack conservé et préparer automatiquement son runtime et Java ; Les modes contenu uniquement et hors ligne conservent leur portée explicite.</value>
+  </data>
+  <data name="PackReviewDescription" xml:space="preserve">
+    <value>Geler une révision de mise à jour d'archive ; apply utilise l’opération exacte retenue.</value>
+  </data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve">
+    <value>Geler une révision de mise à jour de pack en ligne, en préservant les choix facultatifs enregistrés à moins qu'ils ne soient explicitement modifiés.</value>
+  </data>
+  <data name="PackRollbackDescription" xml:space="preserve">
+    <value>Annuler une opération de pack enregistrée.</value>
+  </data>
+  <data name="PackUpdateDescription" xml:space="preserve">
+    <value>Mettre à jour un pack à partir d'une archive, en préservant les choix facultatifs enregistrés à moins qu'ils ne soient explicitement modifiés.</value>
+  </data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve">
+    <value>Mettez à jour un pack à partir de sa source en ligne, en préservant les choix facultatifs enregistrés à moins qu'ils ne soient explicitement modifiés.</value>
+  </data>
+  <data name="ResourcePackListDescription" xml:space="preserve">
+    <value>Liste des packs installés et sélectionnés.</value>
+  </data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve">
+    <value>Définir les noms des packs commandés ; une liste vide ne sélectionne aucun pack supplémentaire.</value>
+  </data>
+  <data name="OptionLanguageDescription" xml:space="preserve">
+    <value>Langue d’affichage du lanceur ; prioritaire sur RODEL_CLI_LANGUAGE et la langue du système.</value>
+  </data>
+  <data name="RootDescription" xml:space="preserve">
+    <value>Windows Minecraft Java. CLI → Core ; Les outils MCP réutilisent cet arbre de commandes.</value>
+  </data>
+  <data name="RuntimeChangeDescription" xml:space="preserve">
+    <value>Préparez les composants d'exécution demandés avant de valider les paramètres de l'instance.</value>
+  </data>
+  <data name="RuntimeOperationDescription" xml:space="preserve">
+    <value>Inspectez une opération d'exécution d'instance enregistrée.</value>
+  </data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve">
+    <value>Répertorie les modifications d'exécution enregistrées pour une instance.</value>
+  </data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve">
+    <value>Préparez un runtime Vanilla et supprimez la sélection du chargeur de l'instance.</value>
+  </data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve">
+    <value>Annuler une modification d'exécution d'instance enregistrée.</value>
+  </data>
+  <data name="RuntimeShowDescription" xml:space="preserve">
+    <value>Lire le Minecraft effectif d'une instance, le chargeur et le runtime Java.</value>
+  </data>
+  <data name="ServerAddDescription" xml:space="preserve">
+    <value>Ajoutez ou mettez à jour un favori de serveur nommé.</value>
+  </data>
+  <data name="ServerConnectDescription" xml:space="preserve">
+    <value>Connectez ADDRESS_OR_FAVORITE [--instance ID], en utilisant l'instance préférée ou uniquement associée en cas d'omission. INSTANCE ADDRESS reste pris en charge. Les tâches en arrière-plan gèlent la cible concrète et l'identité avant la mise en file d'attente.</value>
+  </data>
+  <data name="ServerListDescription" xml:space="preserve">
+    <value>Liste les favoris du serveur enregistrés.</value>
+  </data>
+  <data name="ServerRemoveDescription" xml:space="preserve">
+    <value>Supprimez un favori du serveur sans modifier les données du jeu.</value>
+  </data>
+  <data name="ServerResolveDescription" xml:space="preserve">
+    <value>Résolvez une adresse de serveur en utilisant les enregistrements Windows DNS et SRV.</value>
+  </data>
+  <data name="ServerStatusDescription" xml:space="preserve">
+    <value>Interroge l'état Minecraft actif d'un serveur.</value>
+  </data>
+  <data name="SessionListDescription" xml:space="preserve">
+    <value>Répertoriez les sessions de jeu enregistrées et leurs états observés.</value>
+  </data>
+  <data name="SessionShowDescription" xml:space="preserve">
+    <value>Lisez une session de jeu enregistrée et son état observé.</value>
+  </data>
+  <data name="SessionStopDescription" xml:space="preserve">
+    <value>Demander la fermeture du menu système ; --force termine l'arborescence des processus enregistrée. Lisez show pour observer la sortie.</value>
+  </data>
+  <data name="WorldBackupDescription" xml:space="preserve">
+    <value>Sauvegarde mondiale.</value>
+  </data>
+  <data name="WorldBackupsDescription" xml:space="preserve">
+    <value>Sauvegardes mondiales.</value>
+  </data>
+  <data name="WorldCompressDescription" xml:space="preserve">
+    <value>Compresse mondiale.</value>
+  </data>
+  <data name="WorldDirectoryDescription" xml:space="preserve">
+    <value>Annuaire mondial.</value>
+  </data>
+  <data name="WorldExportDescription" xml:space="preserve">
+    <value>Exportation mondiale.</value>
+  </data>
+  <data name="WorldImportDescription" xml:space="preserve">
+    <value>Importation mondiale.</value>
+  </data>
+  <data name="WorldListDescription" xml:space="preserve">
+    <value>Liste mondiale.</value>
+  </data>
+  <data name="WorldRecoverDescription" xml:space="preserve">
+    <value>Récupération du monde.</value>
+  </data>
+  <data name="WorldRecoveryDescription" xml:space="preserve">
+    <value>Reprise mondiale.</value>
+  </data>
+  <data name="WorldRemoveDescription" xml:space="preserve">
+    <value>Suppression du monde.</value>
+  </data>
+  <data name="WorldRestoreDescription" xml:space="preserve">
+    <value>Restauration du monde.</value>
+  </data>
+  <data name="OptionServerAddressDescription" xml:space="preserve">
+    <value>Utiliser une adresse multijoueur concrète sans interpréter les favoris ; a priorité sur --server.</value>
+  </data>
+  <data name="OptionPreferredDescription" xml:space="preserve">
+    <value>Faire de cette instance associée l'instance préférée du serveur favori.</value>
+  </data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve">
+    <value>Identifiant d'instance préféré parmi les associations fournies.</value>
+  </data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve">
+    <value>Méthode de connexion au premier plan Microsoft : browser (par défaut) ou device-code.</value>
+  </data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve">
+    <value>Adresse ou favori optionnel lorsque le premier argument est une instance explicite.</value>
+  </data>
+  <data name="AccountCurrentDescription" xml:space="preserve">
+    <value>Lire la sélection d'identité enregistrée actuelle.</value>
+  </data>
+  <data name="AccountSelectDescription" xml:space="preserve">
+    <value>Sélectionnez une identité enregistrée hors ligne ou Microsoft.</value>
+  </data>
+  <data name="AccountClearDescription" xml:space="preserve">
+    <value>Effacez la sélection d'identité actuelle enregistrée.</value>
+  </data>
+  <data name="AccountLoginDescription" xml:space="preserve">
+    <value>Connectez-vous à Microsoft au premier plan à l'aide d'un client local configuré ID ; aucun client ID n'est fourni.</value>
+  </data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve">
+    <value>Reprenez une connexion Microsoft inachevée à l'aide des informations d'identification locales protégées en attente.
+La connexion</value>
+  </data>
+  <data name="AccountRefreshDescription" xml:space="preserve">
+    <value>Actualiser une identité en ligne enregistrée au premier plan.</value>
+  </data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve">
+    <value>Microsoft nécessite une interaction de l'utilisateur.</value>
+  </data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve">
+    <value>Utilisez account login --method device-code --events pour afficher l'invite d'autorisation au premier plan.</value>
+  </data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve">
+    <value>Les opérations de compte s'exécutent au premier plan afin que les informations d'identification et les invites d'autorisation ne soient pas conservées en tant que tâches.</value>
+  </data>
+  <data name="ServerShowDescription" xml:space="preserve">
+    <value>Lire un favori de serveur enregistré et ses associations d'instances.</value>
+  </data>
+  <data name="ServerBindDescription" xml:space="preserve">
+    <value>Associez une instance existante à un favori du serveur enregistré.</value>
+  </data>
+  <data name="ServerUnbindDescription" xml:space="preserve">
+    <value>Supprimer une association d'instance d'un favori de serveur enregistré.</value>
+  </data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve">
+    <value>Remplacer les instances associées à un favori de serveur enregistré ; une liste vide efface toutes les associations.</value>
+  </data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve">
+    <value>Lire les preuves de connexion au serveur enregistrées pour une session de jeu.</value>
+  </data>
+  <data name="OptionNoServerDescription" xml:space="preserve">
+    <value>Lancer sans hériter du serveur propriétaire de l'instance ; les arguments explicites du serveur sont toujours prioritaires.</value>
+  </data>
+  <data name="OptionDedicatedDescription" xml:space="preserve">
+    <value>Faire de cette instance un client dédié appartenant au serveur sélectionné, sans copier ses fichiers.</value>
+  </data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve">
+    <value>Enregistrez un pack nouvellement importé en tant que client dédié de ce serveur favori.</value>
+  </data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve">
+    <value>Remettre un client dédié en gestion locale ordinaire sans déplacer ni supprimer de fichiers.</value>
+  </data>
+  <data name="PackCheckDescription" xml:space="preserve">
+    <value>Vérifiez la distribution HMCL stockée et effectuez une révision exacte ; apply séparément avec pack apply.</value>
+  </data>
+  <data name="PackHistoryDescription" xml:space="preserve">
+    <value>Liste les transactions de pack conservées et la cible de restauration actuelle.</value>
+  </data>
+  <data name="PackDetachDescription" xml:space="preserve">
+    <value>Détachez les mises à jour basées sur la source sans supprimer le client ou sa provenance.</value>
+  </data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve">
+    <value>Corrigez atomiquement les paramètres du lanceur sélectionnés ou supprimez les remplacements, en préservant les champs non liés.</value>
+  </data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve">
+    <value>JSON objet contenant uniquement les champs à modifier. null explicite est stocké ; utilisez --remove pour l'héritage.</value>
+  </data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve">
+    <value>Supprimer une clé de remplacement. Répétez cette option pour supprimer plusieurs clés.</value>
+  </data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve">
+    <value>Les modifications de configuration doivent être un objet JSON.</value>
+  </data>
+  <data name="ContentShowReviewDescription" xml:space="preserve">
+    <value>Lisez une révision exacte du contenu enregistré et indiquez si sa référence est obsolète.</value>
+  </data>
+  <data name="AppCommandsDescription" xml:space="preserve">
+    <value>Contrôle les propres préférences et l'état de premier plan d'un App en cours d'exécution sélectionné.</value>
+  </data>
+  <data name="AppExpectedFingerprint" xml:space="preserve">
+    <value>Empreinte digitale exacte renvoyée par app show ; les modifications sont rejetées si l'état App a changé.</value>
+  </data>
+  <data name="AppPreferenceFile" xml:space="preserve">
+    <value>JSON fichier contenant les modifications explicites des préférences de package.</value>
+  </data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve">
+    <value>Fournissez un objet App de préférence JSON.</value>
+  </data>
+  <data name="AppPage" xml:space="preserve">
+    <value>Touche de page : home, instances, content, settings ou assistant.</value>
+  </data>
+  <data name="AppCategory" xml:space="preserve">
+    <value>Clé de catégorie des paramètres stables en option.</value>
+  </data>
+  <data name="AppWindowState" xml:space="preserve">
+    <value>Etat de la fenêtre : normal, maximized, minimized ou tray.</value>
+  </data>
+  <data name="AppWallpaperTheme" xml:space="preserve">
+    <value>Emplacement pour fond d'écran : light ou dark.</value>
+  </data>
+  <data name="AppWallpaperId" xml:space="preserve">
+    <value>Fond d'écran ID renvoyé par le catalogue de ce App.</value>
+  </data>
+  <data name="AppWallpaperSource" xml:space="preserve">
+    <value>Image à copier dans le magasin de papiers peints de App ; la source est préservée.</value>
+  </data>
+  <data name="AppWallpaperName" xml:space="preserve">
+    <value>Nom d'affichage de l'image personnalisée de l'emplacement sélectionné.</value>
+  </data>
+  <data name="AppList" xml:space="preserve">
+    <value>Liste les instances App actives en utilisant la racine de données sélectionnée.</value>
+  </data>
+  <data name="AppShow" xml:space="preserve">
+    <value>Lire l'état actuel de App, les préférences et l'empreinte digitale de mutation.</value>
+  </data>
+  <data name="AppPreferences" xml:space="preserve">
+    <value>Gérez les préférences des packages sans modifier les fichiers de stockage privé.</value>
+  </data>
+  <data name="AppUpdatePreferences" xml:space="preserve">
+    <value>Appliquez des champs de préférences explicites via les vrais contrôleurs App.</value>
+  </data>
+  <data name="AppNavigation" xml:space="preserve">
+    <value>Gère la page et la sélection actuelles du App, pas l'état du jeu.</value>
+  </data>
+  <data name="AppNavigate" xml:space="preserve">
+    <value>Naviguez sans ignorer les brouillons actifs ou les opérations modales.</value>
+  </data>
+  <data name="AppWindow" xml:space="preserve">
+    <value>Gérer la fenêtre App sélectionnée.</value>
+  </data>
+  <data name="AppSetWindow" xml:space="preserve">
+    <value>Appliquer un état de fenêtre natif explicite ; les tâches et les jeux restent propriétaires.</value>
+  </data>
+  <data name="AppClose" xml:space="preserve">
+    <value>Demander la sortie App après confirmation exacte de l'état et des gardes de travail existants.</value>
+  </data>
+  <data name="AppWallpapers" xml:space="preserve">
+    <value>Gérez les véritables emplacements de papier peint spécifiques au thème du App.</value>
+  </data>
+  <data name="AppWallpaperList" xml:space="preserve">
+    <value>Lisez le véritable catalogue de papiers peints et sélectionnez ID.</value>
+  </data>
+  <data name="AppWallpaperSelect" xml:space="preserve">
+    <value>Sélectionnez un fond d'écran existant ID.</value>
+  </data>
+  <data name="AppWallpaperImport" xml:space="preserve">
+    <value>Décodez et importez une image via le pipeline de papier peint normal de App.
+Le contrôle</value>
+  </data>
+  <data name="AppWallpaperRename" xml:space="preserve">
+    <value>Renommez le fond d'écran personnalisé de la machine à sous.</value>
+  </data>
+  <data name="AppWallpaperRemove" xml:space="preserve">
+    <value>Supprimez uniquement le fond d'écran personnalisé appartenant à l'application après confirmation.</value>
+  </data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve">
+    <value>App cible un hôte en direct et ne peut pas être mis en file d'attente en tant que commande en arrière-plan rejouable.</value>
+  </data>
+  <data name="AppImageCache" xml:space="preserve">
+    <value>Inspectez et effacez uniquement le cache d'images de App, pas les dépendances du lanceur.</value>
+  </data>
+  <data name="AppImageCacheShow" xml:space="preserve">
+    <value>Mesure les octets actuels du cache d'image App.</value>
+  </data>
+  <data name="AppImageCacheClear" xml:space="preserve">
+    <value>Effacez le cache d'images App via son chargeur actuel après confirmation.</value>
+  </data>
+  <data name="LocalContextLengthDescription" xml:space="preserve">
+    <value>Longueur du contexte du modèle local en tokens, distincte de l’historique et de la limite de sortie. Les modèles non configurés utilisent la valeur par défaut de 64K du lanceur.</value>
+  </data>
+  <data name="SkinGroupDescription" xml:space="preserve">
+    <value>Dessinez, inspectez, exportez et prévisualisez les skins standard Java.</value>
+  </data>
+  <data name="SkinCreateDescription" xml:space="preserve">
+    <value>Créez un document skin, en important éventuellement un PNG.</value>
+  </data>
+  <data name="SkinInspectDescription" xml:space="preserve">
+    <value>Lisez le modèle, la révision, l'état de l'historique et le mappage du visage.</value>
+  </data>
+  <data name="SkinReadDescription" xml:space="preserve">
+    <value>Lisez les couleurs exactes des pixels d'un visage de modèle.</value>
+  </data>
+  <data name="SkinEditDescription" xml:space="preserve">
+    <value>Appliquez un lot atomique et annulable d'actions de dessin de base.</value>
+  </data>
+  <data name="SkinUndoDescription" xml:space="preserve">
+    <value>Annuler une transaction de tirage.</value>
+  </data>
+  <data name="SkinRedoDescription" xml:space="preserve">
+    <value>Refaire une transaction annulée.</value>
+  </data>
+  <data name="SkinExportDescription" xml:space="preserve">
+    <value>Exporter PNG à la taille de la texture du document ; ne télécharge ni ne modifie l'apparence d'un compte.</value>
+  </data>
+  <data name="SkinSaveAsDescription" xml:space="preserve">
+    <value>Enregistrez un instantané .rmcs modifiable indépendant avec toutes les couches et l'historique conservé ; source inchangée.</value>
+  </data>
+  <data name="SkinPreviewDescription" xml:space="preserve">
+    <value>Rendu un instantané 3D PNG.</value>
+  </data>
+  <data name="SkinModelDescription" xml:space="preserve">
+    <value>Classic (bras à quatre pixels) ou Slim (bras à trois pixels).</value>
+  </data>
+  <data name="SkinInputDescription" xml:space="preserve">
+    <value>Facultatif 64x64, HD 128x128 ou ancien 64x32 PNG à importer.</value>
+  </data>
+  <data name="SkinOutputDescription" xml:space="preserve">
+    <value>Aperçu de la destination, PNG ou fichier de projet modifiable.</value>
+  </data>
+  <data name="SkinColorDescription" xml:space="preserve">
+    <value>Couleur de base opaque au format #RRGGBB ou #RRGGBBAA.</value>
+  </data>
+  <data name="SkinRevisionDescription" xml:space="preserve">
+    <value>Dernière révision observée ; les modifications obsolètes sont rejetées.</value>
+  </data>
+  <data name="SkinEditsDescription" xml:space="preserve">
+    <value>JSON tableau d'actions de dessin typed face-local.</value>
+  </data>
+  <data name="SkinEditsFileDescription" xml:space="preserve">
+    <value>Fichier contenant le tableau d'actions de dessin JSON.</value>
+  </data>
+  <data name="SkinPartDescription" xml:space="preserve">
+    <value>Head, Body, RightArm, LeftArm, RightLeg ou LeftLeg.</value>
+  </data>
+  <data name="SkinLayerDescription" xml:space="preserve">
+    <value>Base (opaque) ou Outer (vêtements transparents).</value>
+  </data>
+  <data name="SkinFaceDescription" xml:space="preserve">
+    <value>Front, Back, Right, Left, Top ou Bottom.</value>
+  </data>
+  <data name="SkinYawDescription" xml:space="preserve">
+    <value>PNG lacet de la caméra en degrés ; par défaut 25.</value>
+  </data>
+  <data name="SkinPitchDescription" xml:space="preserve">
+    <value>PNG Pas de caméra de -89 à 89 degrés ; par défaut 10.</value>
+  </data>
+  <data name="SkinToolProfileDescription" xml:space="preserve">
+    <value>Catalogue MCP : launcher (par défaut), discovery (compact) ou skins isolés.</value>
+  </data>
+  <data name="SkinEditsRequiredError" xml:space="preserve">
+    <value>Fournissez exactement l'un des --edits et --edits-file.</value>
+  </data>
+  <data name="SkinViewDescription" xml:space="preserve">
+    <value>Caméra d'aperçu JSON tapée, dimensions, calques Minecraft et parties du corps visibles.</value>
+  </data>
+  <data name="SkinRequestDescription" xml:space="preserve">
+    <value>Demande tapée JSON de picking, de sélection ou de capture du presse-papiers.</value>
+  </data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve">
+    <value>Lire une couche de peinture ID ou background ; omettre de lire le composite visible.</value>
+  </data>
+  <data name="SkinPickDescription" xml:space="preserve">
+    <value>Choisissez une surface de modèle réelle avec un rayon de l'espace modèle.</value>
+  </data>
+  <data name="SkinSelectionDescription" xml:space="preserve">
+    <value>Créez une sélection géométrique ou basée sur la couleur sans modifier les pixels.</value>
+  </data>
+  <data name="SkinCaptureDescription" xml:space="preserve">
+    <value>Capturez une région de visage sélectionnée sous forme de pixels modifiables dans le presse-papiers.</value>
+  </data>
+  <data name="SkinViewConflictError" xml:space="preserve">
+    <value>Utilisez soit --view, soit les simples options --yaw/--pitch, pas les deux.</value>
+  </data>
+  <data name="SkinRequestRequiredError" xml:space="preserve">
+    <value>Une requête de skin typed non nulle est requise.</value>
+  </data>
+  <data name="SkinRequestError" xml:space="preserve">
+    <value>Demande de skin invalide : {0}</value>
+  </data>
+  <data name="SkinSizeDescription" xml:space="preserve">
+    <value>Dimension de texture : 64 ou 128 texels.</value>
+  </data>
+  <data name="SkinTemplateDescription" xml:space="preserve">
+    <value>Modèle original ID ; liste avec des modèles de skin.</value>
+  </data>
+  <data name="SkinNameDescription" xml:space="preserve">
+    <value>Nom d'affichage du projet.</value>
+  </data>
+  <data name="SkinIndexDescription" xml:space="preserve">
+    <value>Position conservée dans l'historique à la révision observée.</value>
+  </data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve">
+    <value>Choisissez un modèle ou une entrée PNG, pas les deux.</value>
+  </data>
+  <data name="SkinSizeError" xml:space="preserve">
+    <value>La taille de la peau doit être de 64 ou 128.</value>
+  </data>
+  <data name="SkinListDescription" xml:space="preserve">
+    <value>Liste les projets de skin modifiables.</value>
+  </data>
+  <data name="SkinTemplatesDescription" xml:space="preserve">
+    <value>Répertoriez les modèles basic-person originaux et les suggestions de modèles.</value>
+  </data>
+  <data name="SkinCloneDescription" xml:space="preserve">
+    <value>Clonez le contenu modifiable dans un nouveau projet.</value>
+  </data>
+  <data name="SkinRenameDescription" xml:space="preserve">
+    <value>Renommez un projet de skin.</value>
+  </data>
+  <data name="SkinHistoryDescription" xml:space="preserve">
+    <value>Lire l'historique des transactions conservées.</value>
+  </data>
+  <data name="SkinRestoreToDescription" xml:space="preserve">
+    <value>Restaurer une position historique de manière atomique.</value>
+  </data>
+  <data name="SkinImportDescription" xml:space="preserve">
+    <value>Importez PNG comme remplacement de contenu annulable.
+L'entrée</value>
+  </data>
+  <data name="SkinInputRequiredError" xml:space="preserve">
+    <value>PNG est requise.</value>
+  </data>
+  <data name="SkinFootprintDescription" xml:space="preserve">
+    <value>Lisez la couverture du pinceau avec une précision raster sans dessiner.</value>
+  </data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve">
+    <value>Afficher un aperçu des gestes non validés.</value>
+  </data>
+  <data name="SkinLabelDescription" xml:space="preserve">
+    <value>Description facultative du candidat.</value>
+  </data>
+  <data name="SkinOperationDescription" xml:space="preserve">
+    <value>Identifiant de l'opération d'acceptation du candidat.</value>
+  </data>
+  <data name="SkinScopeDescription" xml:space="preserve">
+    <value>Subventions d'édition de skin appartenant à l'hôte.</value>
+  </data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve">
+    <value>Créez une autorisation d'édition de document, de calque et de pixel.</value>
+  </data>
+  <data name="SkinScopeShowDescription" xml:space="preserve">
+    <value>Inspectez une subvention d'édition de skin.</value>
+  </data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve">
+    <value>Révoquer une subvention d'édition de skin.</value>
+  </data>
+  <data name="SkinProposalDescription" xml:space="preserve">
+    <value>Organisez et examinez les peaux candidates congelées.</value>
+  </data>
+  <data name="SkinProposeDescription" xml:space="preserve">
+    <value>Mettre en scène un candidat au sein d'une bourse d'accueil.</value>
+  </data>
+  <data name="SkinProposalShowDescription" xml:space="preserve">
+    <value>Inspecter l'examen des candidats et l'état de validation.</value>
+  </data>
+  <data name="SkinAcceptDescription" xml:space="preserve">
+    <value>Accepter un candidat évalué avec un récépissé durable.</value>
+  </data>
+  <data name="SkinRejectDescription" xml:space="preserve">
+    <value>Éliminer un candidat non accepté.</value>
+  </data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve">
+    <value>Afficher un candidat dans le répertoire de prévisualisation géré.</value>
+  </data>
+  <data name="SkinReceiptDescription" xml:space="preserve">
+    <value>Recherchez un résultat d'acceptation de candidat durable.</value>
+  </data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve">
+    <value>Lier les skins MCP à une subvention hôte ; génération de candidats uniquement, pas de modifications ni d'acceptation directes.</value>
+  </data>
+  <data name="SkinScopeProfileError" xml:space="preserve">
+    <value>Une portée d'habillage nécessite le profil d'outil skins.</value>
+  </data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve">
+    <value>Minecraft langue à appliquer avant le lancement, comme zh_cn, en_us ou ar_sa ; omettez-le pour préserver les paramètres du jeu.</value>
+  </data>
+  <data name="AiReferenceImages" xml:space="preserve">
+    <value>PNG/JPEG/WebP fichier de référence pour ce tour. Répétez jusqu'à trois fois ; les octets sources sont gelés avant la soumission.</value>
+  </data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve">
+    <value>Attachez au plus trois images de référence à un tour de discussion.</value>
+  </data>
+  <data name="AiUserPromptRespond" xml:space="preserve">
+    <value>Soumettez ou ignorez la question en attente exacte à l'aide d'un fichier JSON AiUserResponse ; les réponses n’autorisent pas les outils.</value>
+  </data>
+  <data name="AiCancelQueued" xml:space="preserve">
+    <value>Annulez également les messages en file d'attente de cette conversation avant d'arrêter le tour sélectionné.</value>
+  </data>
+  <data name="RepairApply" xml:space="preserve">
+    <value>Appliquer une seule fois un plan réversible gelé.</value>
+  </data>
+  <data name="RepairCreate" xml:space="preserve">
+    <value>Autoriser la réparation d'une tâche d'exécution ou de préparation ayant échoué enregistrée.</value>
+  </data>
+  <data name="RepairGroup" xml:space="preserve">
+    <value>Réparation réversible d'une panne d'instance enregistrée.</value>
+  </data>
+  <data name="RepairJob" xml:space="preserve">
+    <value>Échec de la tâche de préparation d'origine ID.</value>
+  </data>
+  <data name="RepairKind" xml:space="preserve">
+    <value>Type de réparation : disable_mod, java, memory ou dependencies.</value>
+  </data>
+  <data name="RepairMemory" xml:space="preserve">
+    <value>Limite de tas proposée en MiB.</value>
+  </data>
+  <data name="RepairPlan" xml:space="preserve">
+    <value>Geler un plan de réparation minimal fondé sur des preuves.</value>
+  </data>
+  <data name="RepairReason" xml:space="preserve">
+    <value>Expliquez les preuves réelles à l'appui de ce procès.</value>
+  </data>
+  <data name="RepairRestore" xml:space="preserve">
+    <value>Restaurer les cibles inchangées appartenant à l'essai.</value>
+  </data>
+  <data name="RepairSession" xml:space="preserve">
+    <value>Échec de la session d'origine ID.</value>
+  </data>
+  <data name="RepairShow" xml:space="preserve">
+    <value>Lire les preuves originales et l'état actuel de la réparation.</value>
+  </data>
+  <data name="RepairTarget" xml:space="preserve">
+    <value>Nom du fichier du mod installé ou exécutable Java existant.</value>
+  </data>
+  <data name="RepairVerify" xml:space="preserve">
+    <value>Lancez et observez une exécution de vérification balisée.</value>
+  </data>
+  <data name="ExternalGroup" xml:space="preserve">
+    <value>Comptes externes Yggdrasil et autorisation LittleSkin.</value>
+  </data>
+  <data name="ExternalAddress" xml:space="preserve">
+    <value>Site Internet ou adresse Yggdrasil API ; omis lors de la nouvelle connexion.</value>
+  </data>
+  <data name="ExternalAttempt" xml:space="preserve">
+    <value>Tentative de connexion externe en attente ID.</value>
+  </data>
+  <data name="ExternalProfile" xml:space="preserve">
+    <value>Joueur UUID proposé par cette tentative de connexion.</value>
+  </data>
+  <data name="ExternalUsername" xml:space="preserve">
+    <value>Adresse email ou nom d'utilisateur accepté par le service.</value>
+  </data>
+  <data name="ExternalPasswordStdin" xml:space="preserve">
+    <value>Lire une ligne de mot de passe à partir de l'entrée standard ; ne le mettez jamais dans les arguments de commande.</value>
+  </data>
+  <data name="ExternalComponentFile" xml:space="preserve">
+    <value>Existant authlib-injector JAR pour valider et copier dans le stockage du lanceur.</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Connectez-vous avec un mot de passe et conservez ou sélectionnez le rôle de joueur renvoyé.</value>
+  </data>
+  <data name="ExternalDevice" xml:space="preserve">
+    <value>Démarrez LittleSkin l'autorisation de l'appareil pour cette application.</value>
+  </data>
+  <data name="ExternalPoll" xml:space="preserve">
+    <value>Sondage LittleSkin respectant son intervalle ; --wait continue jusqu'à la fin de l'autorisation.</value>
+  </data>
+  <data name="ExternalShow" xml:space="preserve">
+    <value>Lire l'état public d'une connexion en attente, sans jetons.</value>
+  </data>
+  <data name="ExternalSelect" xml:space="preserve">
+    <value>Liez un rôle proposé et enregistrez-le sans modifier le compte courant.</value>
+  </data>
+  <data name="ExternalCancel" xml:space="preserve">
+    <value>Supprimer une autorisation externe en attente et son état temporaire protégé.</value>
+  </data>
+  <data name="ExternalComponent" xml:space="preserve">
+    <value>Gérez le composant de connexion externe appartenant au lanceur.</value>
+  </data>
+  <data name="ExternalComponentShow" xml:space="preserve">
+    <value>Inspectez et vérifiez le composant existant sans téléchargement.</value>
+  </data>
+  <data name="ExternalComponentPrepare" xml:space="preserve">
+    <value>Réutilisez un composant vérifié, téléchargez l'artefact officiel ou importez --file.</value>
+  </data>
+  <data name="ExternalPasswordRequired" xml:space="preserve">
+    <value>Utilisez --password-stdin et fournissez le mot de passe via l'entrée standard.</value>
+  </data>
+  <data name="ExternalCachedLaunch" xml:space="preserve">
+    <value>Essayez explicitement le même rôle externe avec les informations d'identification et le composant complets mis en cache ; le multijoueur n'est pas garanti.</value>
+  </data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve">
+    <value>La saisie du mot de passe est disponible uniquement dans un premier plan directement invoqué CLI.</value>
+  </data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve">
+    <value>Sélectionnez un pack de shaders installé ; omettez --file pour désactiver les shaders.</value>
+  </data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve">
+    <value>Propriétaire de la configuration : iris, oculus ou optifine ; omettre d’utiliser la découverte observée.</value>
+  </data>
+  <data name="ShaderPackListDescription" xml:space="preserve">
+    <value>Lisez les packs de shaders installés et la sélection du moteur de rendu.</value>
+  </data>
+  <data name="ShaderPackFileDescription" xml:space="preserve">
+    <value>Nom du fichier shader-pack installé ; omettez de désactiver les shaders.</value>
+  </data>
+  <data name="GroupShaderpackDescription" xml:space="preserve">
+    <value>Inspectez et sélectionnez les packs de shaders.</value>
+  </data>
+  <data name="AiRunQueuedTurn" xml:space="preserve">
+    <value>Arrêtez le tour actif et exécutez ensuite ce message en file d'attente.</value>
+  </data>
+  <data name="BridgeGroup" xml:space="preserve">
+    <value>Inspectez le pont de jeu en option.</value>
+  </data>
+  <data name="BridgeShow" xml:space="preserve">
+    <value>Lisez l'état de connexion du pont de session.</value>
+  </data>
+  <data name="BridgeGameGroup" xml:space="preserve">
+    <value>Observez les données du jeu en direct et modifiez les mondes locaux qui vous appartiennent.</value>
+  </data>
+  <data name="BridgeSnapshot" xml:space="preserve">
+    <value>Lisez un nouvel instantané synchronisé joueur/monde.</value>
+  </data>
+  <data name="BridgeEdit" xml:space="preserve">
+    <value>Soumettez une modification locale dactylographiée ; les serveurs restent toujours en lecture seule.</value>
+  </data>
+  <data name="BridgeEditRequest" xml:space="preserve">
+    <value>GameEditRequest JSON avec operationId, identité mondiale observée, type et sa charge utile dayTime/health/control/click/button/command.</value>
+  </data>
+  <data name="BridgeOperationGroup" xml:space="preserve">
+    <value>Observez ou annulez une modification de jeu existante.</value>
+  </data>
+  <data name="BridgeOperationShow" xml:space="preserve">
+    <value>Lisez le reçu de modification exact sans le relire.</value>
+  </data>
+  <data name="BridgeOperationCancel" xml:space="preserve">
+    <value>Annuler uniquement une édition dont l'exécution n'a pas commencé.</value>
+  </data>
+  <data name="BridgeLaunch" xml:space="preserve">
+    <value>Activez le pont de jeu facultatif Java pour ce lancement.</value>
+  </data>
+  <data name="BridgeRegion" xml:space="preserve">
+    <value>Lisez les blocs visibles délimités, les entités et l'inventaire sans charger de morceaux.</value>
+  </data>
+  <data name="BridgeRegionRequest" xml:space="preserve">
+    <value>GameRegionRequest JSON avec gameIncarnation, worldEpoch, dimension, x/y/z et sizeX/Y/Z (1..16).</value>
+  </data>
+  <data name="BridgeInterval" xml:space="preserve">
+    <value>Intervalle d'observation en millisecondes (200..10000).</value>
+  </data>
+  <data name="BridgeEvents" xml:space="preserve">
+    <value>Diffusez de nouveaux instantanés via --events jusqu'à annulation.</value>
+  </data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve">
+    <value>Utilisez --events pour recevoir le flux d'observation en direct.</value>
+  </data>
+  <data name="BridgeQuery" xml:space="preserve">
+    <value>Lire une requête de jeu sémantique ou une sélection NBT native bornée.</value>
+  </data>
+  <data name="BridgeQueryRequest" xml:space="preserve">
+    <value>GameQueryRequest JSON avec identité mondiale observée, type et sélection/pagination facultative.</value>
+  </data>
+  <data name="BridgeAi" xml:space="preserve">
+    <value>Envoyez ou observez une requête AI du lanceur à l'échelle du jeu.</value>
+  </data>
+  <data name="BridgeAiRequest" xml:space="preserve">
+    <value>GameAiRequest JSON avec action, stable worldKey et un nouvel instantané ; les mutations nécessitent leurs identités exactes de demande/tour/décision.</value>
+  </data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve">
+    <value>Opérations du lanceur dans le répertoire de données configuré. exécuter expose les opérations CLI implémentées. Le pont de jeu authentifié en option observe le jeu en cours ; les mutations nécessitent son monde local et les autorisations existantes.</value>
+  </data>
+  <data name="ContentBundledDescription" xml:space="preserve">
+    <value>Répertoriez les mods appartenant au lanceur et leur état dans une instance.</value>
+  </data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve">
+    <value>Examinez les mods intégrés sélectionnés ID et leurs dépendances groupées sans installer.</value>
+  </data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>Rétablir la valeur par défaut: Longueur du contexte.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: Longueur du contexte.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>Lire une image conservée à la demande ; MCP renvoie son contenu plutôt que du texte base64.</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>Ajouter un PNG de même taille comme nouveau calque en conservant RGBA et le contenu existant.</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>Utilisez --name uniquement avec --as-layer ; --model concerne les imports de skins complets.</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>Choisir une association</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>Choisir une association (ID)</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>Voir seul</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>Indiquez --with ID ou --clear.</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>Requête de graine typée en JSON</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>Fichier UTF-8 contenant la requête de graine</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>Code de langue du jeu installé pour les biomes</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>Chemin PNG de destination</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>Explorer les graines avec la génération originale exacte</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>Lister les versions installées et leur prise en charge</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>Préparer les dépendances du jeu original et Java</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>Lire les registres originaux des biomes, structures et dimensions</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>Générer une tuile originale ou lire son cache</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>Exporter une carte originale en PNG avec son contexte</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>Gérer les recherches limitées avec preuves positives</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>Créer et exécuter une recherche conservée</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>Lister les recherches conservées</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>Lire les résultats et le point de reprise</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>Reprendre depuis la position validée</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>Gérer les favoris de graines et de lieux</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>Lister les deux types de favoris</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>Enregistrer ou modifier un favori de graine ou de lieu</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>Supprimer le favori indiqué</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>Indiquez une seule option : --request ou --request-file.</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>La requête de graine ne peut pas être null.</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>JSON de requête de graine invalide : {0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>Rechercher les structures assemblées autour de coordonnées dans une graine, par distance.</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>Génère un aperçu limité des blocs vanilla, le butin des conteneurs et les quantités de matériaux.</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>Calculer ou lire le point d’apparition d’origine en cache</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>Journaux du lanceur</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>Exporter les journaux conservés sans session de jeu.</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>Gérer un salon multijoueur via le Core partagé.</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>Héberger un salon ; --background lance une tâche indépendante.</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>Rejoindre avec un code natif en conservant l&apos;environnement local.</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>Lire le salon et les états du jeu et du réseau.</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>Fermer le salon en conservant le jeu et l&apos;instance.</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>Réessayer avec un nombre limité de tentatives.</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>Lancer l&apos;instance invitée préparée avec l&apos;entrée du salon.</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>Utiliser une adresse de serveur fournie par l&apos;hôte.</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>Exporter les journaux limités sans invitations ni données des joueurs.</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>Code natif du salon, éventuellement dans un texte.</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>Session de jeu existante de l&apos;instance sélectionnée.</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>Ouvrir automatiquement le premier monde local si possible.</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>Actualiser explicitement le catalogue partagé des versions.</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>Remplacer le code de la salle en conservant l’instance du jeu.</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>Préparer le fichier VALUE pour l’élément manquant ITEM de l’instance TARGET ; la finalisation le vérifie.</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>Exporter le contenu et la configuration partagés, sans paramètres personnels ni fichiers locaux sans source.</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>Demander aussi la fermeture normale du jeu, sans arrêt forcé.</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>Lancer automatiquement le jeu après la connexion réseau.</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>Autoriser explicitement la fermeture normale et le redémarrage du jeu choisi.</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>Exporter la carte sauvegardée en PNG.</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>Compléter le terrain inexploré avec un aperçu isolé de la génération originale.</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>Consulter les cartes et positions des joueurs sauvegardées.</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>Lire les positions en direct ou sauvegardées après vérification du monde.</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>UUID du joueur sauvegardé ou identifiant local.</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>Prédire le butin à partir de la table et de la graine sauvegardées dans un environnement original isolé, sans modifier le contenu sauvegardé.</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>Lire la carte sauvegardée sans générer de chunks.</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>Lire les blocs, matériaux et inventaires sauvegardés sans générer de chunks ni de butin.</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>Requête de carte sauvegardée typée au format JSON.</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>Fichier contenant une requête de carte sauvegardée typée.</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>Inspecter les modèles, textures et géométries des blocs sauvegardés.</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>Lire la graine, les paramètres et les joueurs sauvegardés.</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>Rechercher les structures sauvegardées dans le rayon demandé.</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>Actualiser uniquement les données du skin sans renouveler les identifiants de connexion.</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>Parcourir et gérer les captures de l’instance.</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>Nom du fichier de capture.</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>Noms des fichiers de capture.</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>Nom du fichier ; omettre pour ouvrir le dossier des captures.</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>Lister les captures par date de modification décroissante.</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>Lire le chemin, la taille et la date de modification d’une capture.</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>Ouvrir une capture avec la visionneuse par défaut ou ouvrir son dossier.</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>Renommer une capture sans écraser d’autre fichier.</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>Copier les captures sélectionnées dans un dossier sans écraser de fichiers.</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>Supprimer les captures sélectionnées (Corbeille par défaut) ; nécessite --confirm.</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>Opération annulée ; les modifications déjà effectuées sont conservées.</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>Certaines captures n’ont pas pu être traitées. Consultez les résultats par fichier.</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Supprimer définitivement sans passer par la Corbeille. Nécessite --confirm.</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Choisir la source du fichier local : FILE=PROJECT ; répéter pour plusieurs fichiers.</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>Utilisez --select-source FILE=PROJECT.</value></data>
+</root>

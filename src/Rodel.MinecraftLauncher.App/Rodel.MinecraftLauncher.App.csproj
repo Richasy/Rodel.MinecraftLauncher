@@ -1,0 +1,146 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <!-- A -windows TFM turns on the WinRT projection of the OS, so this Sprout app can also call Windows platform APIs
+         (and the Windows App SDK below). Sprout itself is plain net10.0 and is consumed as a package, so it works
+         unchanged from here. 10.0.19041.0 is Sprout's minimum Windows version. -->
+        <TargetFramework>net11.0-windows10.0.19041.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>preview</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+        <!-- Per-app warning suppressions: append your own codes here (e.g. <NoWarn>$(NoWarn);CA1416</NoWarn>). Empty by
+         default; the $(NoWarn) preserves anything inherited from a Directory.Build.props. -->
+        <NoWarn>$(NoWarn)</NoWarn>
+
+        <!-- The app icon, embedded into the .exe as its Win32 icon resource (Explorer / taskbar). At runtime, a Sprout
+         window with no explicit WindowSpec.Icon defaults to this same embedded icon, so the window shows it too. -->
+        <ApplicationIcon>app.ico</ApplicationIcon>
+        <!-- Sprout requires Per-Monitor-V2 before the first window. Embedding the scaffolded manifest establishes it before
+         the NativeAOT apphost can lock the process into a different DPI-awareness mode. -->
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+
+        <!-- NativeAOT: `dotnet publish -r win-x64` produces one self-contained native .exe. -->
+        <PublishAot>true</PublishAot>
+        <SproutPackageFormat>Msix</SproutPackageFormat>
+        <SproutAppxIdentityName>60520B029E250.RodelMinecraftLauncher</SproutAppxIdentityName>
+        <SproutAppxPublisher>CN=9EFA2047-A580-400B-A5B2-0C7ABB0DB5C0</SproutAppxPublisher>
+        <SproutAppxVersion>0.2611.4.0</SproutAppxVersion>
+        <Version>$(SproutAppxVersion)</Version>
+        <SproutAppxDisplayName>RMCL</SproutAppxDisplayName>
+        <SproutAppxAssetsDir>$(MSBuildProjectDirectory)/Assets/AppIcons</SproutAppxAssetsDir>
+        <SproutDefaultLanguage>en</SproutDefaultLanguage>
+
+        <!-- Windows App SDK, self-contained: the WinAppSDK runtime is bundled with the app, so there is no runtime to
+         install and no bootstrapper, packaged or not. The MSIX (the packaging option / Sprout.Packaging) packs this
+         same output. -->
+        <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+        <!-- Self-contained needs a concrete architecture: default the inner-loop RID to the host's so `dotnet build`/`run`
+         work; `dotnet publish -r win-x64` (or win-arm64) overrides it. -->
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''"
+            >$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <Target Name="CompileSkinShaders" BeforeTargets="PrepareResources" Inputs="Features/Skins/Rendering/SkinViewport.hlsl;Features/Skins/Rendering/Build-Shaders.ps1" Outputs="$(IntermediateOutputPath)SkinShaders/VS.cso;$(IntermediateOutputPath)SkinShaders/PS.cso;$(IntermediateOutputPath)SkinShaders/Resolve.cso;$(IntermediateOutputPath)SkinShaders/Preview.cso">
+        <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/Features/Skins/Rendering/Build-Shaders.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)SkinShaders&quot;" />
+    </Target>
+    <Target Name="CompileSeedSceneShaders" BeforeTargets="PrepareResources" Inputs="Features/SeedExplorer/Rendering/SeedScene.hlsl;Features/SeedExplorer/Rendering/Build-Shaders.ps1" Outputs="$(IntermediateOutputPath)SeedScene/VS.cso;$(IntermediateOutputPath)SeedScene/PS.cso">
+        <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/Features/SeedExplorer/Rendering/Build-Shaders.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)SeedScene&quot;" />
+    </Target>
+    <ItemGroup>
+        <Content Include="../../LICENSE" Link="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Include="../../NOTICE" Link="NOTICE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <InternalsVisibleTo Include="Rodel.MinecraftLauncher.App.Tests" />
+        <!-- Keep desktop image churn from retaining fragmented LOH regions; normal GC chooses when to compact. -->
+        <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="5" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SeedScene/VS.cso" LogicalName="SeedScene.VS" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SeedScene/PS.cso" LogicalName="SeedScene.PS" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/VS.cso" LogicalName="SkinShaders.VS" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/PS.cso" LogicalName="SkinShaders.PS" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/Resolve.cso" LogicalName="SkinShaders.Resolve" />
+        <EmbeddedResource Include="$(IntermediateOutputPath)SkinShaders/Preview.cso" LogicalName="SkinShaders.Preview" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference
+            Include="Microsoft.Windows.CsWin32"
+            Version="0.3.275"
+            PrivateAssets="all"
+        />
+        <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" PrivateAssets="all" />
+        <ProjectReference
+            Include="../Rodel.MinecraftLauncher.SettingsGenerator/Rodel.MinecraftLauncher.SettingsGenerator.csproj"
+            OutputItemType="Analyzer"
+            ReferenceOutputAssembly="false"
+        />
+        <!-- The Windows App SDK FOUNDATION feature area only — the non-UI platform APIs (app lifecycle, resources,
+         environment, power, windowing/composition/input OS support). It deliberately does NOT reference
+         Microsoft.WindowsAppSDK.WinUI, so no WinUI XAML is pulled in: Sprout draws the UI itself. -->
+        <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="2.3.12" />
+
+        <PackageReference Include="Humanizer.Core" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.zh-CN" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.ar" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.zh-Hant" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.ja" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.ko" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.de" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.fr" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.es" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.pt-BR" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.ru" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.it" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.pl" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.tr" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core.id" Version="3.0.10" />
+        <PackageReference Include="Sprout" Version="$(SproutPackageVersion)" />
+        <PackageReference Include="Sprout.HttpImages" Version="$(SproutPackageVersion)" />
+        <PackageReference Include="Sprout.SwapChain" Version="$(SproutPackageVersion)" />
+        <PackageReference Include="Sprout.Markdown" Version="$(SproutPackageVersion)" />
+        <PackageReference Include="Sprout.Svg" Version="$(SproutPackageVersion)" />
+        <PackageReference Include="Sprout.SyntaxHighlighting" Version="$(SproutPackageVersion)" />
+        <PackageReference
+            Include="Sprout.Backend.D2D"
+            Version="$(SproutPackageVersion)"
+        />
+
+        <!-- The Sprout to WinRT interop glue (Foundation-only, no WinUI): window.GetWindowId() / window.CreateFileOpenPicker()
+         / picker.InitializeWithWindow(window), bridging a Sprout window to the Windows App SDK window handles. -->
+        <PackageReference
+            Include="Sprout.WindowsAppSDK"
+            Version="$(SproutPackageVersion)"
+        />
+        <PackageReference
+            Include="Sprout.Packaging"
+            Version="$(SproutPackageVersion)"
+            PrivateAssets="all"
+        />
+        <ProjectReference Include="../Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
+        <Content
+            Update="Assets/Backgrounds/*.jpg"
+            CopyToOutputDirectory="PreserveNewest"
+            CopyToPublishDirectory="PreserveNewest"
+        />
+        <Content Update="Assets/Icons/launcher*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Update="Assets/Icons/littleskin.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Update="Assets/BundledMods/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Update="Assets/SeedExplorer/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Update="Assets/AccountAvatars/*.png;Assets/InstanceIcons/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Update="Assets/SkinTemplates/*.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Include="Assets/AiClients/*.svg;Assets/AiClients/LICENSE" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <Content Include="Assets/Licenses/*.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+        <None
+            Update="Assets/Icons/launcher-hc-*.ico"
+            CopyToOutputDirectory="PreserveNewest"
+            CopyToPublishDirectory="PreserveNewest"
+        />
+    </ItemGroup>
+    <Target Name="CompileWallpaperShader" BeforeTargets="PrepareResources"
+            Inputs="$(MSBuildProjectDirectory)/Assets/Shaders/WallpaperScene.hlsl;$(MSBuildProjectDirectory)/../../scripts/compile-app-shaders.ps1"
+            Outputs="$(IntermediateOutputPath)WallpaperScene.cso">
+        <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../../scripts/compile-app-shaders.ps1&quot; -OutputPath &quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'WallpaperScene.cso'))&quot;" />
+    </Target>
+    <ItemGroup>
+        <EmbeddedResource Include="$(IntermediateOutputPath)WallpaperScene.cso" LogicalName="WallpaperScene.cso" />
+    </ItemGroup>
+</Project>

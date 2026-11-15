@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Sprout: Debug",
+      "type": "sprout",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}\\Rodel.MinecraftLauncher.App.csproj",
+      "configuration": "Debug"
+    }
+  ]
+}

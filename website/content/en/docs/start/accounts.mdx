@@ -1,0 +1,50 @@
+---
+title: Add and switch accounts
+description: Choose an identity for a launch, and keep it separate from ownership and saved worlds.
+---
+
+## How accounts relate to worlds
+
+An account tells the game who is entering. Switching accounts does not move a world or merge server inventories and permissions. The same instance can launch with different identities, but the game may treat them as different players.
+
+Open the avatar at the upper left to add, select or manage an identity.
+
+## Microsoft account
+
+**The Microsoft Store release includes the Client ID needed for Microsoft sign-in.** Ordinary users do not need to register an Azure application, supply an application ID or configure environment variables.
+
+Adding a Microsoft account opens the Windows system account sign-in window. Choose an account, sign in and complete verification; RMCL then checks your game profile and entitlement.
+
+A browser alternative appears only if the system sign-in component cannot initialize. For a network failure, keep the account and retry the current sign-in. Application configuration and service-access errors are covered below.
+
+The built-in Client ID does not replace game entitlement, family settings or service-side permissions. If a Store release reports missing application configuration or a service-access failure, check for a Store update and preserve the original error. Follow [Microsoft sign-in and application status](/en/docs/project/microsoft) rather than borrowing another launcher's application identity.
+
+Complete password and verification steps on a trusted Microsoft page. Child accounts may also be affected by family and Xbox privacy settings.
+
+## Local account
+
+1. Choose to add a local account.
+2. Enter a memorable player name, such as “Woodland Walker.”
+3. Select it from the account list after adding it.
+4. Check the current identity on Home before launching.
+
+A local identity is for supported local game scenarios. It does not verify a Microsoft account or grant game entitlement. Servers and other online services that require an authenticated identity still enforce their requirements.
+
+Back up before changing the identity used with an important world. A name or identity change can cause the game to treat you as another player.
+
+## External account
+
+If you already use LittleSkin or a compatible third-party authentication service, choose an external account and use the address and sign-in method supplied by that service. Otherwise, you can skip this option.
+
+> [!WARNING]
+> The provider handles that authentication. Check the address and use credentials specific to that service. Do not enter a Microsoft password into an external account's password field.
+
+## Switching and signing in again
+
+The first successfully added identity becomes selected. Adding another does not replace the current choice. On a first launch without accounts, RMCL asks for an offline player name; if accounts exist but none is selected, choose one before the launch continues.
+
+Check the current account before launching. Changing it in the launcher does not change the identity of a game already running.
+
+Follow the prompt to sign in again if credentials expire. A temporary network error does not require deleting all account records. Removing an account removes its local registration, not the Microsoft or third-party account, and does not delete worlds.
+
+Read [Privacy and data](/en/docs/project/privacy) for local credential storage.

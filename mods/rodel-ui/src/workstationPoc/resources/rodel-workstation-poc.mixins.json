@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "io.github.richasy.rodel.ui.workstation.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "WorkstationBackgroundMixin",
+    "WorkstationScreenMixin",
+    "WorkstationSlotAccess",
+    "WorkstationItemStateMixin",
+    "WorkstationItemSamplingMixin",
+    "WorkstationRecipeMixin",
+    "WorkstationBookButtonMixin",
+    "WorkstationRecipePanelMixin",
+    "WorkstationRecipeTileMixin",
+    "WorkstationRecipeTabMixin",
+    "WorkstationRecipeFilterMixin",
+    "WorkstationRecipePageMixin",
+    "WorkstationRecipeOverlayMixin",
+    "FurnaceProgressMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

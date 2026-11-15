@@ -1,0 +1,69 @@
+---
+title: Launch and connection problems
+description: Identify the stage, preserve evidence and recover one change at a time.
+---
+
+## Do these three things first
+
+1. Keep the complete error, instance name, game version and recent changes.
+2. Back up important worlds. Do not start by deleting the instance or data folder.
+3. Inspect the task and game window to distinguish preparation, a started game and an actual failure.
+
+| Stage              | Check first                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| Account validation | Account validity, application registration or service-access error |
+| File download      | Source, network, free space and the specific failed file           |
+| Java selection     | The instance requirement and the selected runtime                  |
+| Mod loading        | Versions, loader, dependencies and recent changes                  |
+| World loading      | World version, missing mods and files in use                       |
+| Joining a server   | Address, identity, matching client and server message              |
+
+## Interrupted downloads
+
+Inspect the exact source in the task. Retry after the network recovers. Existing files may be reused or downloads resumed where possible. A source without resume support or inconsistent data can require a fresh download.
+
+If one platform is unavailable, local content can still be managed. Do not delete the whole instance to retry one file.
+
+## Java or memory errors
+
+Check instance-specific Java before the global default. Old and new games can need different runtimes. Use instance preparation or [Java management](/en/docs/create/settings#java-and-memory).
+
+For allocation errors, close unnecessary programs and check manual limits against advanced arguments. Do not assign all physical memory to Minecraft.
+
+## Failure after adding mods
+
+Check the game version, loader and missing dependencies. First disable recently added content supported by the evidence, changing one clear group of factors at a time.
+
+Do not remove world-dependent mods and then save your only world. Use a copy while keeping the original environment. Read [Mod installation](/en/docs/play/content).
+
+## A window opened but the game is not ready
+
+Initial loading, mod initialization and resource reloads may continue. Watch the actual game and task. Do not launch again just because a process has been created.
+
+If it remains unresponsive, preserve the logs. Close normally if possible. Force-ending can interrupt saving, so use that action only after understanding the situation.
+
+## Locked or incompatible worlds
+
+Make sure another game is not using the same world. Do not delete lock files to bypass an active save.
+
+A newer world or one missing mods may not load in an old environment. Keep the original, return to a matching environment or restore a backup. Read [World management](/en/docs/play/worlds).
+
+## Server joining fails
+
+“Game started” does not mean a successful server join. Read the actual disconnect message and check account, address, version, allowlist or operator requirements. See [Servers](/en/docs/play/servers).
+
+## The room connects but Minecraft rejects entry
+
+Read Minecraft's disconnect message first. A ready room supplies a network entry; Minecraft still checks game version, loader, mods and identity. Ask the host for the environment when you only have a room code, or finish importing their shared package.
+
+If the room itself disconnects, keep the game open and retry from Multiplayer, then reconnect. When the host leaves or changes the world, the original room ends and you need a new invitation. See [Multiplayer](/en/docs/play/multiplayer).
+
+## Ask AI to analyze
+
+If error details offer **Analyze and repair with AI**, continue with a configured model. The flow uses this instance and failure record to gather evidence, prepare a limited repair and observe a new run.
+
+A passed initialization check still needs verification in the original scenario. Use Undo if the attempt is unsuitable. Read [AI repair](/en/docs/create/assistant#analyze-a-launch-failure).
+
+## Still unresolved
+
+Use [Feedback and logs](/en/docs/help/feedback) to provide steps, complete errors and relevant logs, hiding credentials and private addresses. Naming the failed stage helps more than “it will not open.”

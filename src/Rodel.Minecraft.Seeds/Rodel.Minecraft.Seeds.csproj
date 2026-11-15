@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><IsAotCompatible>true</IsAotCompatible></PropertyGroup>
+  <ItemGroup><PackageReference Include="StbImageSharp" Version="2.30.15" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="$(IntermediateOutputPath)SeedExplorer/rodel-seed-explorer-26.3.jar" LogicalName="Rodel.SeedExplorer.26.3" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="$(IntermediateOutputPath)SeedExplorer/rodel-seed-explorer-portable.jar" LogicalName="Rodel.SeedExplorer.Portable" /></ItemGroup>
+  <ItemGroup>
+    <SeedExplorerSource Include="../../java/seed-explorer/src/**/*.java;../../java/seed-explorer/portable/**/*.java;../../java/game-bridge/src/io/github/richasy/rodel/bridge/Json.java;../../java/game-bridge/legacy/io/github/richasy/rodel/bridge/LegacyClassFile.java;../../java/seed-explorer/*.gradle;../../scripts/build-seed-explorer.ps1;../../scripts/resolve-build-jdk.ps1" />
+  </ItemGroup>
+  <Target Name="BuildSeedExplorer" BeforeTargets="PrepareResources" Inputs="@(SeedExplorerSource)" Outputs="$(IntermediateOutputPath)SeedExplorer/rodel-seed-explorer-26.3.jar;$(IntermediateOutputPath)SeedExplorer/rodel-seed-explorer-portable.jar" Condition="'$(DesignTimeBuild)' != 'true'">
+    <PropertyGroup>
+      <SeedExplorerJavaHome Condition="'$(SeedExplorerJavaHome)' == ''">$(BundledModsJavaHome)</SeedExplorerJavaHome>
+      <SeedExplorerJavaArgument Condition="'$(SeedExplorerJavaHome)' != ''">-JavaHome &quot;$(SeedExplorerJavaHome)&quot;</SeedExplorerJavaArgument>
+    </PropertyGroup>
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../../scripts/build-seed-explorer.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)SeedExplorer&quot; $(SeedExplorerJavaArgument)" />
+  </Target>
+</Project>

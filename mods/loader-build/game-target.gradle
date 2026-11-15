@@ -1,0 +1,10 @@
+// Native-loader metadata and compilation use the same exact Minecraft target as the common UI.
+def target = providers.gradleProperty('minecraft_target').getOrElse('26.3')
+if (!(target in ['26.3', '26.2', '26.1.2', '1.21.11'])) throw new GradleException('Unknown native loader Minecraft target')
+def properties = new Properties()
+file("../../targets/${target}.properties").withInputStream { properties.load(it) }
+ext.minecraft_version = target
+ext.game_java_version = Integer.parseInt(properties.getProperty('java_version'))
+ext.native_loader_version = properties.getProperty(rodelLoader + '_version')
+if (native_loader_version == null) throw new GradleException('Missing native loader version')
+if (target != '26.3') layout.buildDirectory = file("build/targets/${target}")

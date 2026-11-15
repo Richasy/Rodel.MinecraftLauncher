@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>Gunakan layanan Core AI, percakapan, dan penyedia yang dikonfigurasi.</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>Jalankan runtime latar belakang internal Core AI.</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Kelola layanan model offline dan kredensial yang dilindungi.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>Kelola pengikatan model eksplisit dan model default.</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Kelola percakapan terus-menerus dan langkah-langkah eksekusi aktual.</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>Periksa instruksi pengguna yang dikemas dan didaftarkan secara eksplisit. Skrip tidak pernah dieksekusi.</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>Kelola proses stdio MCP yang diaktifkan secara eksplisit dan periksa katalog aslinya.</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>Kelola file independen dan default jaringan.</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Buat daftar catatan terkini.</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Baca rekaman yang dipilih.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Simpan bidang eksplisit dengan pemeriksaan revisi.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Hapus catatan milik yang dipilih setelah peninjauan yang diperlukan.</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>Temukan model sebenarnya tanpa mengubah pengikatan manual.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Jalankan pemeriksaan koneksi atau pembangkitan yang sebenarnya.</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Pilih default untuk percakapan baru.</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Ciptakan percakapan yang terus-menerus.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Kirim giliran. --wait mengamati; --cancel-on-exit memiliki pembatalan.</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Coba lagi putaran yang gagal tanpa mengulangi efek yang tidak diketahui.</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>Baca giliran tanpa status kelanjutan penyedia swasta.</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Baca langkah-langkah tahan lama yang dipesan setelah kursor berurutan.</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Baca konteks asli yang dipadatkan berdasarkan percakapan dan pengidentifikasi arsip, tanpa negara penyedia swasta.</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>Mengembalikan 256 hingga 16000 karakter per halaman arsip. Bawaan: 12000.</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>Baca satu pesan asli dengan indeks arsip berbasis nol.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Batalkan giliran ini, bukan permainan atau pekerjaan mandiri.</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Ganti nama tanpa mengubah isi percakapan.</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Ubah mode operasi eksplisit.</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Ekspor riwayat publik ke JSON atau file teks yang dipilih secara eksplisit.</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Periksa instruksi aktual yang dikonfigurasi dan peringatan per file.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Daftarkan direktori lokal yang dipilih secara eksplisit.</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Aktifkan sumber terdaftar ini untuk giliran berikutnya.</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Nonaktifkan sumber terdaftar ini untuk giliran berikutnya.</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Jalankan satu permintaan model latar depan tanpa percakapan atau alat.</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Periksa host asisten sebenarnya dan mode runtime.</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>Nilai {0} Eksplisit.</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>Aktifkan {0} untuk perintah ini.</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>Eksplisit true atau false untuk {0}.</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>Jangan pernah memasukkan kredensial dalam argumen perintah. Gunakan --credential-stdin, --credential-prompt atau --credential-env.</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>Perintah asisten atau opsi yang diketik tidak valid. Gunakan --help untuk sintaks yang diterima.</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>Baca konfigurasi saat ini, lalu berikan --expected-revision.</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>Pasokan --{0}.</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>Pilih satu model untuk operasi ini.</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>Masukan melebihi anggaran karakter yang dibatasi.</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>Pilih satu metode masukan kredensial yang dilindungi.</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>Gunakan --credential-stdin untuk masukan kredensial yang dialihkan.</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>Kredensial: </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>Balas dengan salam singkat.</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>Layanan yang dikonfigurasi sudah tidak ada lagi.</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI ternyata sudah mengatur masa eksekusinya. Hilangkan --background; gunakan chat send dan opsional --wait.</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>Masukan kredensial interaktif hanya tersedia melalui pemanggilan CLI langsung, bukan alat MCP atau pekerjaan latar belakang.</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>Otorisasi mutasi yang didukung hanya untuk tujuan yang dikirimkan ini dan cakupan eksplisitnya. Ini tidak mengabaikan konfirmasi produk.</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>Periksa status Core saat ini terhadap maksud mutasi yang tidak lengkap pada giliran yang dihentikan tanpa memutar ulang panggilan.</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Eksplisit true untuk menyetujui atau false untuk menolak sidik jari operasi yang sebenarnya.</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>Catat keputusan pengguna untuk operasi yang tertunda. Argumen model tidak dapat memberikan keputusan ini.</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>Baca halaman berbatas dari operasi yang tertunda, argumen, dan tinjauan yang dibekukan.</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>Tentukan --approve true atau --approve false untuk konfirmasi yang tepat ini.</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>Kelola direktori lokal yang diotorisasi secara eksplisit dan mode baca/tulisnya.</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>Merencanakan, memasang, memeriksa atau menghapus Codex dan Claude Keterampilan kode dan registrasi MCP milik produk.</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>Periksa target pasti, kepemilikan saat ini, dan pengikatan sebelum melakukan perubahan.</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Terapkan rencana pasti saat ini dan laporkan setiap hasil instalasi.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Periksa kepemilikan instalasi, konfigurasi klien saat ini dan pengikatan data-root.</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>Menerima sisa efek yang tidak diketahui setelah pemeriksaan, hanya untuk tujuan resmi baru. Tidak membuktikan hasil atau mengizinkan pengulangan tujuan lama.</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>Kelola inferensi model lokal tertanam milik peluncur tanpa layanan yang diinstal secara terpisah.</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>Bongkar mesin tertanam yang menganggur dan pekerja model asli miliknya tanpa mengubah file model.</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>Baca perintah dari input standar yang dialihkan (hanya CLI langsung), hingga 64000 karakter.</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>Pilih salah satu dari --prompt, --prompt-file atau --prompt-stdin.</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>Prompt stdin hanya tersedia melalui pemanggilan CLI langsung; MCP stdin membawa pesan protokol.</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>Masukkan teks ke dalam perintah ini atau gunakan --prompt atau --prompt-file.</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>Pasokan --prompt, --prompt-file atau --prompt-stdin.</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>Amati giliran yang ada tanpa harus mengirimkannya kembali. --events menulis memerintahkan events ke stderr; --after melanjutkan kursor. Batas waktu pengamat tidak membatalkan giliran.</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>Gunakan kursor --after non-negatif dan --timeout-seconds antara 1 dan 3600.</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>Waktu observasi habis. Gilirannya tidak dibatalkan atau diajukan kembali; melanjutkan menggunakan pengidentifikasi dan kursor acaranya.</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>Referensi model aktual saat mengonfigurasi; pengikatan model tersimpan ID saat membuat atau memilih model percakapan. Ulangi hanya saat membuat layanan.</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>Batas token keluaran positif yang eksplisit. permintaan/obrolan hanya mengesampingkan panggilan ini; penyimpanan model tetap mempertahankannya. Jika dihilangkan, gunakan pengaturan yang disimpan atau kapasitas model yang diamati; kapasitas yang tidak diketahui membuat default penyedia tidak berubah.</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>Batas waktu permintaan/perputaran dalam hitungan detik (1..3600); chat wait menggunakan tenggat waktu khusus pengamat dan tidak membatalkan pembuatan.</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>Kunci idempotensi 32 digit GUID. Mengulangi masukan yang identik akan menghasilkan giliran yang sama; input yang diubah dengan kunci yang sama ditolak.</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>Panggilan model maksimum pada giliran ini (1..64), termasuk pemilihan konteks. Ini bukan batasan pada pesan percakapan.</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>Amati dan kendalikan percakapan yang ada.</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>Baca dan putuskan konfirmasi operasi yang tertunda.</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>Periksa dan kenali efek putaran berhenti tanpa pemutaran ulang.</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>Perbarui bidang percakapan eksplisit dalam satu operasi yang diperiksa revisi.</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>Tentukan judul, instance, model, mode, akses file atau perubahan akses jaringan.</value>
+  </data>
+</root>

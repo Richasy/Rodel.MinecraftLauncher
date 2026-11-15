@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StoreAssociation xmlns="http://schemas.microsoft.com/appx/2010/storeassociation">
+  <Publisher>CN=9EFA2047-A580-400B-A5B2-0C7ABB0DB5C0</Publisher>
+  <PublisherDisplayName>&#x4E91;&#x4E4B;&#x5E7B;</PublisherDisplayName>
+  <ProductReservedInfo>
+    <MainPackageIdentityName>60520B029E250.RodelMinecraftLauncher</MainPackageIdentityName>
+    <StoreId>9MW9ZMS2K47C</StoreId>
+  </ProductReservedInfo>
+</StoreAssociation>

@@ -1,0 +1,13 @@
+plugins { id 'java'; id 'net.minecraftforge.gradle' version '7.0.17' }
+ext.rodelLoader = 'forge'
+apply from: '../game-target.gradle'
+java.toolchain.languageVersion = JavaLanguageVersion.of(game_java_version)
+if (minecraft_version == '1.21.11') minecraft { mappings channel: 'official', version: minecraft_version }
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+dependencies { implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${native_loader_version}") }
+apply from: '../package-mods.gradle'

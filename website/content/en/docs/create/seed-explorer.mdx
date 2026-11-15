@@ -1,0 +1,136 @@
+---
+title: Seed explorer and world maps
+description: Explore terrain, structures and containers, search for an opening and inspect saved worlds.
+---
+
+Open **Seed explorer** from the avatar menu at the upper left. It opens in its own window and does not require a selected account.
+
+## Generate a map
+
+1. Select **View map** and the **Enter seed** source.
+2. Choose an installed Minecraft version and enter a seed, or use Random for a candidate.
+3. Choose the Overworld, Nether or End and a surface or slice view.
+4. Choose Generate, or press Enter in the seed field.
+5. Drag to pan and use the wheel to zoom. Explore structures and locations as needed.
+
+<figure>
+  <img
+    src="/assets/en-seed-map.webp"
+    alt="Terrain map, structure markers and location tools in the seed explorer"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    The top row sets generation conditions; map tools control locations,
+    structures and layers.
+  </figcaption>
+</figure>
+
+The map uses the selected version's vanilla runtime. Uninstalled versions cannot generate a map yet: prepare an instance first. Generation needs Java and game dependencies. Initial setup can take longer than later browsing, and completed terrain remains visible while new regions load.
+
+### A version is installed, but Java is missing
+
+Game files and Java are prepared separately. For example, 26.3 needs Java 25. Check the instance's launch configuration for a suitable runtime. Use **Settings → Java → Java runtime management** to scan, import or download one if needed.
+
+Reopen the explorer after configuring it, then generate again. Keep the seed and version draft; an older temporary Java path does not replace the current instance's configuration.
+
+## Find your bearings
+
+| Tool                | Purpose                                          |
+| ------------------- | ------------------------------------------------ |
+| Spawn flag          | Return to the calculated vanilla Overworld spawn |
+| Origin compass      | Return to X=0, Z=0                               |
+| Coordinate location | Go to a specific position                        |
+| Structure filter    | Show the structure types you want                |
+| Layers              | Control biomes, structures and places            |
+| Favorites           | Save the seed and view                           |
+| Export              | Save an image of the completed visible map       |
+
+Spawn and origin can be far apart. Do not reuse Overworld spawn coordinates for other dimensions. Use distant views for terrain and biomes; zoom into an area for local structures and read the query status at the bottom.
+
+## Look inside a structure
+
+Select a structure marker to read its type and position, then open its preview. It displays generated blocks, models and textures. Rotate it, switch to a top view, or narrow the height range and section.
+
+<figure>
+  <img
+    src="/assets/en-seed-structure.webp"
+    alt="Generated block structure and container list in the structure preview"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Inspect the layout, then use floors and containers to focus on an area.
+  </figcaption>
+</figure>
+
+The container list can locate chests and show predictable contents. Region queries also locate containers and summarize an area. Results describe the selected vanilla generation conditions; modded structures, server changes and runtime rewards need the actual world context.
+
+## Search with conditions
+
+Switch to **Find seeds** and add structure or biome conditions. Choices follow the selected version. For the pictured 26.3 search, try:
+
+> A village within 512 blocks of spawn, with Dappled Forest and a river nearby.
+
+1. Select a structure or biome for each condition.
+2. Set its distance range, relative to spawn, origin or a previous condition.
+3. Set a minimum count for structures. Biome conditions have a sampling interval: smaller values inspect more closely and require more work.
+4. Set candidate, result and time budgets, then start.
+5. Open a result card to inspect its spawn, structures and terrain on the map.
+
+<figure>
+  <img
+    src="/assets/en-seed-search.webp"
+    alt="Search conditions, budgets and matching seeds"
+    width="1600"
+    height="1125"
+    loading="lazy"
+  />
+  <figcaption>
+    Start with a few broad conditions, then narrow distances and counts.
+  </figcaption>
+</figure>
+
+Referencing a previous condition means “near this village,” for example. Referencing spawn independently means that each place must be near spawn. Choose the relationship that matches your goal.
+
+Stopping keeps existing results. When a budget ends, Continue resumes that search's conditions and progress. No match means none of the checked candidates matched. Drafts and history can be restored; opening the window does not start generation or search.
+
+<figure>
+  <img
+    src="/assets/en-seed-results.webp"
+    alt="Two matching seeds in search history with map actions"
+    width="1600"
+    height="1125"
+    loading="lazy"
+  />
+  <figcaption>
+    Open a match on the map; history keeps the checked count, matches and
+    elapsed search time.
+  </figcaption>
+</figure>
+
+## Inspect a saved world
+
+Change the source to **Instance world** and select an instance and save. You can also open a map from a world's menu on the Content page. RMCL reads the version and seed from the save.
+
+<figure>
+  <img
+    src="/assets/en-seed-world.webp"
+    alt="Saved-world source, player position and map display controls"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Here the version and seed come from the saved world, with the view switched
+    to generated terrain and structures.
+  </figcaption>
+</figure>
+
+Saved chunks include construction and excavation. Surrounding previews describe terrain that has not been saved using the available vanilla generation conditions. On a modded world, that surrounding preview still represents vanilla generation.
+
+Player position can be **live**, **last saved** or **disconnected**. Follow is available with a valid live position; panning manually stops following. With only saved data, locate the last recorded position.
+
+Use [world backups](/en/docs/play/worlds) to protect progress. A favorite or exported map image does not contain the save files.

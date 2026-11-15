@@ -1,0 +1,30 @@
+<Project>
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT' And '$(PublishAot)' == 'true'">
+    <!-- Keep the debugger's symbol name without disclosing the build machine's directory. -->
+    <LinkerArg Include="/PDBALTPATH:$(AssemblyName).pdb" />
+  </ItemGroup>
+<Target Name="PrepareManagedAiMcpComponents"
+          BeforeTargets="ComputeFilesToPublish"
+          Condition="('$(MSBuildProjectName)' == 'Rodel.MinecraftLauncher.Cli' Or '$(MSBuildProjectName)' == 'Rodel.MinecraftLauncher.App') And ('$(RuntimeIdentifier)' == 'win-x64' Or '$(RuntimeIdentifier)' == 'win-arm64')">
+    <PropertyGroup>
+      <_AiMcpOutput Condition="$([System.IO.Path]::IsPathRooted('$(IntermediateOutputPath)'))">$(IntermediateOutputPath)ManagedMcp</_AiMcpOutput>
+      <_AiMcpOutput Condition="!$([System.IO.Path]::IsPathRooted('$(IntermediateOutputPath)'))">$(MSBuildProjectDirectory)\$(IntermediateOutputPath)ManagedMcp</_AiMcpOutput>
+    </PropertyGroup>
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)scripts\prepare-ai-mcp.ps1&quot; -Manifest &quot;$(MSBuildThisFileDirectory)src\Rodel.MinecraftLauncher.Core\Application\AI\ManagedMcp\components.$(RuntimeIdentifier).json&quot; -OutputRoot &quot;$(_AiMcpOutput)&quot;" />
+    <ItemGroup>
+      <_AiMcpFile Remove="@(_AiMcpFile)" />
+    </ItemGroup>
+    <ReadLinesFromFile File="$(_AiMcpOutput).files">
+      <Output TaskParameter="Lines" ItemName="_AiMcpFile" />
+    </ReadLinesFromFile>
+    <ItemGroup>
+      <_AiMcpFile Update="@(_AiMcpFile)">
+        <PackagePath>Assets\AiMcp\%(Identity)</PackagePath>
+      </_AiMcpFile>
+      <ResolvedFileToPublish Include="@(_AiMcpFile->'$(_AiMcpOutput)\%(Identity)')">
+        <RelativePath>%(_AiMcpFile.PackagePath)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

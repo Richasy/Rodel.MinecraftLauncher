@@ -1,0 +1,39 @@
+{
+  "name": "rodel-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "serve out",
+    "types:check": "next typegen && tsc --noEmit",
+    "format": "prettier --write app components content lib scripts *.json *.mjs *.md",
+    "format:check": "prettier --check app components content lib scripts *.json *.mjs *.md",
+    "check:static": "node scripts/check-static.mjs",
+    "postbuild": "node scripts/normalize-export-segments.mjs",
+    "package:static": "node scripts/package-static.mjs"
+  },
+  "dependencies": {
+    "fumadocs-core": "16.17.8",
+    "fumadocs-mdx": "15.4.10",
+    "lucide-react": "^1.61.0",
+    "next": "16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.31",
+    "prettier": "^3.9.10",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "compression": "1.8.2"
+  }
+}

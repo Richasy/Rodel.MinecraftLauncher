@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.mjs text eol=lf
+*.cs text eol=crlf
+# JAR manifests terminate their main section with a blank line.
+/java/game-bridge/agent.mf whitespace=-blank-at-eof
+/java/game-bridge/legacy-agent.mf whitespace=-blank-at-eof
+# Preserve upstream license text byte-for-byte, including line endings and whitespace.
+/src/Rodel.MinecraftLauncher.App/Assets/Licenses/*.txt -text -eol whitespace=-blank-at-eol,-blank-at-eof

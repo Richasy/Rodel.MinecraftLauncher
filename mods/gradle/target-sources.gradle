@@ -1,0 +1,365 @@
+// Only audited API differences belong here; business logic stays in the shared Java sources.
+def nativeUiModule = project.name == 'rodel-ui'
+if (minecraft_version in ['26.2', '26.1.2', '1.21.11']) {
+    def gameTarget = minecraft_version
+    sourceSets.each { sourceSet ->
+        def originalDirectories = sourceSet.java.srcDirs.toList()
+        def generatedDirectory = layout.buildDirectory.dir("generated/game-target/${sourceSet.name}").get().asFile
+        def overrides = file("src/targets/${minecraft_version}/${sourceSet.name}/java")
+        def sharedOverrides = file("src/targets/26.2/${sourceSet.name}/java")
+        def layoutOverrides = gameTarget == '1.21.11' ? file("src/targets/26.1.2/${sourceSet.name}/java") : overrides
+        def prepare = tasks.register("prepare${sourceSet.name.capitalize()}TargetSources", Sync) {
+            from(originalDirectories)
+            into(generatedDirectory)
+            inputs.property('minecraftTarget', minecraft_version)
+            inputs.files(fileTree(overrides))
+            inputs.files(fileTree(sharedOverrides))
+            inputs.files(fileTree(layoutOverrides))
+            doLast {
+                [sharedOverrides, layoutOverrides, overrides].each { directory ->
+                    if (directory.isDirectory()) directory.eachFileRecurse { input ->
+                        if (input.isFile()) {
+                            def target = new File(generatedDirectory, directory.toPath().relativize(input.toPath()).toString())
+                            target.parentFile.mkdirs()
+                            target.bytes = input.bytes
+                        }
+                    }
+                }
+                generatedDirectory.eachFileRecurse { source ->
+                    if (source.isFile() && source.name.endsWith('.java')) {
+                        def override = new File(overrides, generatedDirectory.toPath().relativize(source.toPath()).toString())
+                        if (!override.isFile()) override = new File(layoutOverrides, generatedDirectory.toPath().relativize(source.toPath()).toString())
+                        if (!override.isFile()) override = new File(sharedOverrides, generatedDirectory.toPath().relativize(source.toPath()).toString())
+                        def text = (override.isFile() ? override : source).getText('UTF-8')
+                        text = text.replace('com.mojang.renderpearl.api.', 'com.mojang.blaze3d.')
+                            .replace('com/mojang/renderpearl/api/', 'com/mojang/blaze3d/')
+                            .replace('net.minecraft.client.gui.screens.WorldOptionsScreen', 'net.minecraft.client.gui.screens.options.WorldOptionsScreen')
+                            .replace('GAME + "WorldOptionsScreen"', '"net.minecraft.client.gui.screens.options.WorldOptionsScreen"')
+                            .replace('InputConstants.isKeyDown(', 'InputConstants.isKeyDown(net.minecraft.client.Minecraft.getInstance().getWindow(), ')
+                            .replace('tab.getRootAdvancement()', 'tab.getRootNode().holder()')
+                        if (source.name == 'NativeTextBox.java') {
+                            text = text.replaceAll('(?m)^\\s*@Override\\r?\\n\\s*public boolean capturesInput\\(\\) \\{ return editor\\.capturesInput\\(\\); \\}\\r?\\n', '\n')
+                        }
+                        if (source.name == 'CreationGameTest.java') text = text.replace('startsForStructure(feet.getX() >> 4, feet.getZ() >> 4,',
+                            'startsForStructure(new net.minecraft.world.level.ChunkPos(feet.getX() >> 4, feet.getZ() >> 4),')
+                        if (source.name == 'NativeComposer.java') {
+                            text = text.replaceAll('(?m)^\\s*@Override public boolean capturesInput\\(\\) \\{ return active && editor\\.capturesInput\\(\\); \\}\\r?\\n', '\n')
+                        }
+                        if (source.name == 'OnlineBrowserLayoutMixin.java') text = text.replace('joinButton', 'selectButton')
+                        if (source.name == 'NativeMenus.java') text = text.replace('"WorldOptionsScreen"', '"options.WorldOptionsScreen"')
+                        if (source.name == 'MenuAdvancementsMixin.java') {
+                            text = text.replace('"onAdvancementsUpdated"', '"onAddAdvancementRoot", "onRemoveAdvancementRoot", "onAdvancementsCleared"')
+                        }
+                        if (source.name in ['OnlineFriendsTabLayoutMixin.java', 'OnlinePendingTabLayoutMixin.java']) {
+                            text = text.replace('@Shadow private FrameLayout contentFrame;', '')
+                                .replace('return contentFrame;', 'return null;')
+                        }
+                        if (source.name == 'OptionsHeaderSettingsMixin.java') text = text.replace('FocusableTextWidget', 'StringWidget')
+                        if (source.name == 'FolderOpenMixin.java') {
+                            text = text.replace('@Mixin(Blaze3D.class)', '@Mixin(Util.OS.class)')
+                                .replace('method = "openUri"', 'method = "openUri(Ljava/net/URI;)V"')
+                                .replace('private static void rodel$openDirectory', 'private void rodel$openDirectory')
+                        }
+                        if (source.name == 'WorldRuleCategoryMixin.java') {
+                            text = text.replace('@Shadow @Final private FocusableTextWidget widget;', '@Shadow @Final private Component label;')
+                                .replace('(Object) this, widget)', '(Object) this, label)')
+                                .replace('widget.getMessage().getString()', 'this.label.getString()')
+                        }
+                        // These multi-target groups also name screens/inner lists introduced after 26.2.
+                        // Keep every existing target and its normal injection checks; only absent optional targets are soft.
+                        if (source.name in ['RealmsMenuListMixin.java', 'RealmsMenuLayoutMixin.java']) {
+                            text = text.replace('@Mixin(', '@org.spongepowered.asm.mixin.Pseudo\n@Mixin(')
+                        }
+                        if (gameTarget in ['26.1.2', '1.21.11']) {
+                            if (source.name in ['ModBrowserAccess.java', 'ModBrowserAccessMixin.java']) {
+                                // Mod Menu 17 and 18 declare these fields as AbstractWidget.
+                                // Mixin accessors must match the declared field type exactly.
+                                text = text.replace('import net.minecraft.client.gui.components.SpriteIconButton;', '')
+                                    .replace('SpriteIconButton rodel$', 'AbstractWidget rodel$')
+                            }
+                            text = text.replace('net.minecraft.client.gui.Hud', 'net.minecraft.client.gui.Gui')
+                                .replace('@Mixin(Hud.class)', '@Mixin(Gui.class)')
+                                .replace('net.minecraft.client.gui.contextualbar.ContextualBar;', 'net.minecraft.client.gui.contextualbar.ContextualBarRenderer;')
+                                .replace('@Mixin(ContextualBar.class)', '@Mixin(ContextualBarRenderer.class)')
+                            if (source.name in ['FriendsWarningBackgroundMixin.java', 'MenuFriendCountMixin.java',
+                                'OnlineFriendsLayoutMixin.java', 'OnlineFriendsDynamicLayoutMixin.java',
+                                'OnlineFriendsTabLayoutMixin.java', 'OnlinePendingTabLayoutMixin.java', 'OnlineFriendRowMixin.java']) {
+                                source.delete()
+                                return
+                            }
+                            text = text.replace('MenuTabBar$MenuTabButton', 'TabButton')
+                                .replace('MenuTabBar', 'TabNavigationBar')
+                                .replace('net.minecraft.client.gui.components.tabs.TabButton', 'net.minecraft.client.gui.components.TabButton')
+                                .replace('class TabNavigationBarMixin', 'class MenuTabBarMixin')
+                                .replace('.gui.screen()', '.screen')
+                                .replace('.gui.setScreen(', '.setScreen(')
+                                .replace('.gui.overlay()', '.getOverlay()')
+                                .replace('.gui.toastManager()', '.getToastManager()')
+                                .replace('.gui.hud.getChat()', '.gui.getChat()')
+                                .replace('.gui.hud.getGuiTicks()', '.gui.getGuiTicks()')
+                                .replace('.gui.hud.extractDeferredSubtitles()', '.gui.extractDeferredSubtitles()')
+                                .replace('.gui.hud.isHidden()', '.options.hideGui')
+                                .replace('m.gui.hud.toggle()', 'm.options.hideGui = !m.options.hideGui')
+                                .replace('net.minecraft.server.MinecraftServer.MultiplayerScope.LAN, 0', 'null, false, 0')
+                                .replace(', ScrollableLayout.ReserveStrategy.RIGHT', '')
+                                .replace('OptionInstance.NO_ACTION', 'value -> {}')
+                            text = text.replaceAll('([A-Za-z][A-Za-z0-9]*)\\.removeChildren\\(\\)',
+                                'io.github.richasy.rodel.ui.menus.LayoutCompatibility.clear($1)')
+                                .replaceAll('([A-Za-z][A-Za-z0-9]*)\\.setScrollbarSpacing\\(',
+                                    '((io.github.richasy.rodel.ui.mixin.compat.LegacyLayoutAccess.Scroll) $1).rodel\\$spacing(')
+                                .replace('bar.setRectangle(', 'io.github.richasy.rodel.ui.menus.LayoutCompatibility.tabs(bar, ')
+                                .replace('tabs.setRectangle(', 'io.github.richasy.rodel.ui.menus.LayoutCompatibility.tabs(tabs, ')
+                                .replace('bar.getX()', 'bar.getRectangle().left()').replace('bar.getY()', 'bar.getRectangle().top()')
+                                .replace('tabs.getX()', 'tabs.getRectangle().left()').replace('tabs.getY()', 'tabs.getRectangle().top()')
+                                .replace('.rodel$tabs().getX()', '.rodel$tabs().getRectangle().left()')
+                                .replace('current.getLayout()', '((io.github.richasy.rodel.ui.mixin.compat.LegacyLayoutAccess.Tab) current).rodel$layout()')
+                                .replace('tab.getLayout()', '((io.github.richasy.rodel.ui.mixin.compat.LegacyLayoutAccess.Tab) tab).rodel$layout()')
+                                .replace('@Override public void removeChildren()', 'public void removeChildren()')
+                                .replace('@Override\n        public void removeChildren()', 'public void removeChildren()')
+                                .replace('@Override\r\n        public void removeChildren()', 'public void removeChildren()')
+                            if (source.name in ['MenuTabBarMixin.java', 'WorldTabBarMixin.java']) text = text.replace('"extractWidgetRenderState"', '"extractRenderState"')
+                            if (source.name == 'AdvancementsMenuPage.java') text = text.replace(
+                                'selected.extractTooltips(graphics, treeX() - 9, treeY() - 18)',
+                                'selected.extractTooltips(graphics, (int) coordinate(Minecraft.getInstance().mouseHandler.getScaledXPos(Minecraft.getInstance().getWindow())) - treeX(), (int) coordinate(Minecraft.getInstance().mouseHandler.getScaledYPos(Minecraft.getInstance().getWindow())) - treeY(), treeX() - 9, treeY() - 18)')
+                            if (source.name == 'WorldPage.java') text = text.replace('widgets.add(((WorldCreateAccess) screen).rodel$tabs());',
+                                '((WorldCreateAccess) screen).rodel$tabs().children().forEach(child -> widgets.add((AbstractWidget) child));')
+                            if (source.name in ['PauseMenuAccess.java', 'MenuPauseMixin.java']) {
+                                text = text.replace('import net.minecraft.client.gui.components.FriendsButton;', '')
+                                    .replace('FriendsButton rodel$friendsButton()', 'Button rodel$friendsButton()')
+                                    .replace('@Override @Accessor("friends") public abstract Button rodel$friendsButton();',
+                                        '@Override public Button rodel$friendsButton() { return null; }')
+                            }
+                            if (source.name == 'NetworkRowLayout.java') {
+                                text = text.replace('import net.minecraft.client.gui.components.PlayerFaceWidget;', '')
+                                    .replace('child instanceof PlayerFaceWidget', 'child.getClass().getName().equals("net.minecraft.client.gui.components.PlayerFaceWidget")')
+                            }
+                            if (source.name == 'NativeUiTransitionMixin.java') {
+                                text = text.replace('@Mixin(Gui.class)', '@Mixin(net.minecraft.client.Minecraft.class)')
+                                    .replace('@Shadow public abstract Screen screen();', '@Shadow public Screen screen;')
+                                    .replace('Screen previous = screen();', 'Screen previous = screen;')
+                            }
+                            if (source.name in ['MenuBackgroundMixin.java', 'MenuTabMixin.java', 'OnlineRowSurfaceMixin.java'])
+                                text = text.replace('@Mixin(', '@org.spongepowered.asm.mixin.Pseudo\n@Mixin(')
+                            if (source.name == 'ModBrowserScreenMixin.java') text = text.replace('@Mixin(Gui.class)', '@Mixin(net.minecraft.client.Minecraft.class)')
+                            if (source.name == 'MenuSpriteButtonMixin.java') text = text.replace('@Shadow private boolean loading;', '').replace('return loading;', 'return false;')
+                            if (source.name == 'WorldTabButtonMixin.java') {
+                                text = text.replace('extends TabButton', 'extends net.minecraft.client.gui.components.AbstractWidget')
+                                    .replace('protected WorldTabButtonMixin(TabManager manager, Tab tab, int width, int height) { super(manager, tab, width, height); }',
+                                        'protected WorldTabButtonMixin(int x, int y, int width, int height, net.minecraft.network.chat.Component title) { super(x, y, width, height, title); }\n    @org.spongepowered.asm.mixin.Shadow public abstract boolean isSelected();')
+                            }
+                            if (source.name != 'LayoutCompatibility.java') ['scroll', 'viewport', 'scrolling'].each { variable ->
+                                text = text.replace("${variable}.arrangeElements()", "io.github.richasy.rodel.ui.menus.LayoutCompatibility.arrange(${variable})")
+                            }
+                            if (source.name == 'WorldTabManagerMixin.java') text = text.replace('Tab;ZZ)V', 'Tab;Z)V').replace('boolean sound, boolean addWidgets,', 'boolean sound,')
+                            if (source.name == 'MenuAdvancementTabMixin.java') text = text.replace('"tick", ', '')
+                            if (source.name == 'MenuAdvancementsMixin.java') {
+                                text = text.replace('@Shadow private int leftPos;', '@org.spongepowered.asm.mixin.Unique private int leftPos;')
+                                    .replace('@Shadow private int topPos;', '@org.spongepowered.asm.mixin.Unique private int topPos;')
+                                    .replace('rodel$empty(GuiGraphicsExtractor graphics, CallbackInfo', 'rodel$empty(GuiGraphicsExtractor graphics, int x, int y, CallbackInfo')
+                                    .replace('rodel$noVanillaFrame(GuiGraphicsExtractor graphics, int x, int y, CallbackInfo', 'rodel$noVanillaFrame(GuiGraphicsExtractor graphics, int x, int y, int mouseX, int mouseY, CallbackInfo')
+                                    .replace('rodel$tooltips(GuiGraphicsExtractor graphics, int x, int y, CallbackInfo', 'rodel$tooltips(GuiGraphicsExtractor graphics, int x, int y, int mouseX, int mouseY, CallbackInfo')
+                                    .replaceAll('(?s)\\s*@WrapOperation\\(method = "tick".*?\\n    \\}', '')
+                            }
+                        }
+                        if (gameTarget == '1.21.11') {
+                            if (source.name in ['GuiPreeditAccessor.java', 'TextInputGeometryMixin.java',
+                                'OnlineWorldOptionsLayoutMixin.java', 'WorldBranchProgressMixin.java',
+                                'OnlineInWorldRulesLayoutMixin.java', 'WorldBranchProgressHost.java', 'WorldBranchProgressWidget.java']) {
+                                source.delete()
+                                return
+                            }
+                            text = text.replace('GuiGraphicsExtractor', 'GuiGraphics')
+                                .replace('Screens.getWidgets(', 'Screens.getButtons(')
+                                .replace('net.minecraft.client.renderer.state.gui.GuiTextRenderState', 'net.minecraft.client.gui.render.state.GuiTextRenderState')
+                                .replace('WorldCreationGameRulesScreen', 'EditGameRulesScreen')
+                                .replace('AbstractGameRulesScreen', 'EditGameRulesScreen')
+                                .replace('net.minecraft.client.gui.screens.options.InWorldGameRulesScreen', 'net.minecraft.client.gui.screens.worldselection.EditGameRulesScreen')
+                                .replace('InWorldGameRulesScreen', 'EditGameRulesScreen')
+                                .replace('PlayerFaceExtractor', 'PlayerFaceRenderer')
+                                .replace('getTotalProgress()', 'getProgress()')
+                                .replace('bar.updateWidth(width)', 'bar.setWidth(width)')
+                                .replace('ClientCommands', 'ClientCommandManager')
+                                .replace('net.minecraft.client.multiplayer.chat.GuiMessage;', 'net.minecraft.client.GuiMessage;')
+                                .replace('import net.minecraft.client.multiplayer.chat.GuiMessageSource;', '')
+                                .replace('message.source() == GuiMessageSource.SYSTEM_CLIENT && ', '')
+                                .replace('message.signature(), message.source(), message.tag()', 'message.signature(), message.tag()')
+                                .replace('addClientSystemMessage(', 'addMessage(')
+                                .replace('.getWorldGenSettings().options()', '.getWorldData().worldGenOptions()')
+                                .replace('client.player.sendSystemMessage(', 'client.gui.getChat().addMessage(')
+                                .replace('server.getGameRules()', 'server.getWorldData().getGameRules()')
+                                .replace('.resizeGui()', '.resizeDisplay()')
+                                .replace('.value().assemble(CraftingInput.of(1, 1, List.of(new ItemStack(Items.STICK))))',
+                                    '.value().assemble(CraftingInput.of(1, 1, List.of(new ItemStack(Items.STICK))), server.registryAccess())')
+                                .replace('extractRenderStateWithTooltipAndSubtitles', 'renderWithTooltipAndSubtitles')
+                                .replace('extractWidgetRenderState', 'renderWidget')
+                                .replace('extractRenderState', 'render')
+                            ['Background', 'BlurredBackground', 'Border', 'Content', 'Contents', 'DeferredElements',
+                                'DeferredSubtitles', 'Hover', 'Inside', 'ListBackground', 'ListSeparators', 'MenuBackground',
+                                'Panorama', 'PlayerFace', 'RealmStatus', 'Scrollbar', 'Selection', 'Text', 'Toast',
+                                'TooltipForNextRenderPass', 'Tooltips', 'TransparentBackground', 'Window',
+                                'AirBubbles', 'Armor', 'ButtonArrows', 'Buttons', 'DefaultSprite', 'ExperienceLevel',
+                                'Food', 'Hearts', 'ItemHotbar', 'Labels', 'Page', 'Scroller', 'Slot',
+                                'SlotHighlightBack', 'SlotHighlightFront', 'TabButton', 'TextLines', 'TooltipBackground',
+                                'VehicleHealth'].each { suffix ->
+                                text = text.replace("extract${suffix}", "render${suffix}")
+                            }
+                            text = text.replace('graphics.text(', 'graphics.drawString(')
+                                .replace('g.text(', 'g.drawString(')
+                                .replace('g.centeredText(', 'g.drawCenteredString(')
+                                .replace('g.outline(', 'g.renderOutline(')
+                                .replace('g.fakeItem(', 'g.renderFakeItem(')
+                                .replace('graphics.centeredText(', 'graphics.drawCenteredString(')
+                                .replace('graphics.outline(', 'graphics.renderOutline(')
+                                .replace('GuiGraphics;text(', 'GuiGraphics;drawString(')
+                                .replace('GuiGraphics;centeredText(', 'GuiGraphics;drawCenteredString(')
+                                .replace('GuiGraphics;outline(', 'GuiGraphics;renderOutline(')
+                                .replace('graphics.horizontalLine(', 'graphics.hLine(')
+                                .replace('renderTooltips(', 'drawTooltips(')
+                                .replace('"renderTooltips"', '"drawTooltips"')
+                                .replace('selected.renderContents(', 'selected.drawContents(')
+                                .replace('PlayerFaceRenderer.render(', 'PlayerFaceRenderer.draw(')
+                                .replace('super.scrollbarWidth()', 'net.minecraft.client.gui.components.AbstractScrollArea.SCROLLBAR_WIDTH')
+                                .replace('area.scrollbarWidth()', 'AbstractScrollArea.SCROLLBAR_WIDTH')
+                                .replace('packList.scrollbarWidth()', 'net.minecraft.client.gui.components.AbstractScrollArea.SCROLLBAR_WIDTH')
+                                .replace(', defaultSettings(18)', '')
+                                .replace('take(remaining, window, options.exclusiveFullscreen());', '')
+                                .replace('graphics.renderDeferredElements(x, y, partialTick)', 'graphics.renderDeferredElements()')
+                                .replace('renderDeferredElements(IIF)V', 'renderDeferredElements()V')
+                                .replace('graphics.setPreeditOverlay(null);', '')
+                                .replace('import net.minecraft.client.input.PreeditEvent;', '')
+                                .replace('import net.minecraft.client.gui.components.IMEPreeditOverlay;', '')
+                                .replace('@Shadow private IMEPreeditOverlay preeditOverlay;', '')
+                                .replace(' || preeditOverlay != null', '')
+                                .replaceAll('(?m)^\\s*@Override\\s+public boolean preeditUpdated\\(PreeditEvent event\\) \\{[^\\n]*\\}\\r?\\n', '\n')
+                                .replaceAll('(?m)^\\s*UiInputGeometry\\.flushPreedit\\([^\\n]+\\);\\r?\\n', '\n')
+                                .replaceAll('(?m)^\\s*if \\(widget instanceof WorldBranchProgressWidget\\) return widget\\.getHeight\\(\\) \\+ 12;\\r?\\n', '\n')
+                                .replaceAll('(?s)\\s*if \\(widget instanceof WorldBranchProgressWidget\\) \\{.*?\\n            \\}', '')
+                                .replaceAll('(?m)^\\s*if \\(screen instanceof WorldBranchProgressHost progress\\)\\r?\\n\\s*paragraphs\\.add\\([^\\n]+\\);\\r?\\n', '\n')
+                                .replaceAll('(?m)^\\s*(scroll|scrolling|viewport)\\.setMinHeight\\([^;]+\\);\\r?\\n', '\n')
+                                .replaceAll('@Override\\s+(public int scrollbarWidth\\(\\))', '$1')
+                                .replaceAll('(?m)^\\s*\\(\\(io\\.github\\.richasy\\.rodel\\.ui\\.mixin\\.compat\\.LegacyLayoutAccess\\.Scroll\\)[^\\n]+\\.rodel\\$spacing\\([^;]+\\);\\r?\\n', '\n')
+                            if (source.name == 'LegacyLayoutAccess.java') text = text.replaceAll('(?s)\\s*@Mixin\\(ScrollableLayout.class\\) public interface Scroll \\{.*?\\n    \\}', '')
+                            if (source.name == 'MenuAdvancementTabMixin.java') text = text.replace('"renderContents"', '"drawContents"')
+                            if (source.name == 'ItemQuantityMixin.java') text = text.replace('"itemCount"', '"renderItemCount"')
+                            if (source.name in ['ContainerBackgroundMixin.java', 'FurnaceProgressMixin.java',
+                                'MountPresentationMixin.java', 'CreativePresentationMixin.java', 'WorkstationControlsMixin.java']) {
+                                text = text.replace('"renderBackground"', '"renderBg"')
+                            }
+                            if (source.name == 'MountPresentationMixin.java') text = text.replace('"renderSlot"', '"drawSlot"')
+                            if (source.name == 'ToastMaterialMixin.java') text = text.replace(',"renderTextLines"', '')
+                            if (source.name == 'MenuAdvancementsMixin.java') text = text.replace('"drawTooltips"', '"renderTooltips"')
+                            if (source.name == 'MenuAdvancementTooltipMixin.java') text = text.replace('"renderHover"', '"drawHover"')
+                            if (source.name == 'RealmsRowMetadataMixin.java') text = text.replace('"renderRealmStatus"', '"drawRealmStatus"')
+                            if (source.name == 'SettingsFontMixin.java') text = text.replace('{"lambda$new$0", "getGlyph"}', '"getGlyph"')
+                            if (source.name == 'ModernScrollbarMixin.java') text = text.replace('@Shadow public abstract int scrollbarWidth();',
+                                'public int scrollbarWidth() { return AbstractScrollArea.SCROLLBAR_WIDTH; }')
+                            if (source.name == 'WorldWaitingMixin.java') text = text.replace('@Shadow @Final private boolean showLoadingDots;', '')
+                                .replace('List.of(messageText)', 'messageText == null ? List.of() : List.of(messageText)')
+                                .replace('showLoadingDots ?', 'messageText == null ?')
+                            if (source.name == 'WorldBranchScreensMixin.java') text = text.replace('@Mixin(', '@org.spongepowered.asm.mixin.Pseudo\n@Mixin(')
+                            if (source.name == 'RerollController.java') {
+                                // Before 26.1 rules are stored in LevelSettings/level.dat, returned by native recreateWorldData.
+                                text = text.replaceAll('(?s)\\s*var storedRules = LevelStorageSource\\.readExistingSavedData\\(.*?var gameRules = new GameRules\\([^;]+;', '')
+                                    .replace('new PrimaryLevelData(recreated.getFirst(), dimensions.specialWorldProperty(),', 'new PrimaryLevelData(recreated.getFirst(), options, dimensions.specialWorldProperty(),')
+                                    // LevelSettings does not carry the pre-26.1 difficulty lock. The source server has finished saving here.
+                                    .replace('registries.compositeAccess().allRegistriesLifecycle());', 'registries.compositeAccess().allRegistriesLifecycle());\n                data.setDifficultyLocked(pending.previousServer.getWorldData().isDifficultyLocked());')
+                                    .replaceAll('(?s)\\s*var settings = new LevelDataAndDimensions\\.WorldDataAndGenSettings\\(data,.*?new WorldGenSettings\\(options, context.selectedDimensions\\(\\)\\)\\);', '')
+                                    .replace('registries, settings, Optional.of(gameRules)', 'registries, data')
+                            }
+                            if (source.name == 'WorldRulesScreenMixin.java') text = text.replace('@Shadow protected EditBox searchBox;', '')
+                                .replace('return searchBox;', 'return null;')
+                                .replaceAll('(?s)\\s*@ModifyArg\\(method = "setInitialFocus".*?\\n    \\}', '')
+                            if (source.name == 'FirstPartyMenusGameTest.java') text = text.replace('import net.minecraft.client.gui.screens.options.WorldOptionsScreen;', '')
+                                .replaceAll('(?s)\\s*context.setScreen\\(\\(\\) -> new WorldOptionsScreen.*?context.waitForScreen\\(PauseScreen.class\\);', '')
+                                .replace('native world settings and launcher-styled options', 'launcher-styled options (native world settings absent in this version)')
+                            if (source.name == 'WorldTabMixin.java') text = text.replace('@Shadow @Final private CreateWorldScreen this$0;', '')
+                                .replace('worldreroll$addSpawnChoice(SwitchGrid.Builder builder)', 'worldreroll$addSpawnChoice(SwitchGrid.Builder builder, CreateWorldScreen owner)')
+                                .replace('this$0.getUiState()', 'owner.getUiState()')
+                            if (source.name == 'UiInputGeometry.java') text = text.replace('import io.github.richasy.rodel.ui.mixin.GuiPreeditAccessor;', '')
+                                .replaceAll('(?s)\\s*public static void flushPreedit\\(.*?\\n    \\}', '')
+                            if (source.name == 'SettingsChoiceList.java') text = text.replace('@Override\n    public int scrollbarWidth()', 'public int scrollbarWidth()')
+                                .replace('@Override\r\n    public int scrollbarWidth()', 'public int scrollbarWidth()')
+                            if (nativeUiModule) {
+                                // Production 1.21.11 uses intermediary names. Keep exact native ownership checks
+                                // expressed in the same canonical GUI names as the modern, unobfuscated targets.
+                                ['Name', 'SimpleName'].each { suffix ->
+                                    def method = suffix == 'Name' ? 'name' : 'simpleName'
+                                    text = text.replaceAll('([A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*\\(\\))?)\\.getClass\\(\\)\\.get' + suffix + '\\(\\)',
+                                        'io.github.richasy.rodel.ui.platform.LegacyUiNames.' + method + '($1.getClass())')
+                                        .replace('getClass().get' + suffix + '()',
+                                            'io.github.richasy.rodel.ui.platform.LegacyUiNames.' + method + '(getClass())')
+                                }
+                            }
+                        }
+                        source.setText(text, 'UTF-8')
+                    }
+                }
+            }
+        }
+        sourceSet.java.setSrcDirs([generatedDirectory])
+        tasks.named(sourceSet.compileJavaTaskName) { dependsOn(prepare) }
+        tasks.matching { it.name == 'sourcesJar' }.configureEach { dependsOn(prepare) }
+    }
+    if (minecraft_version in ['26.1.2', '1.21.11'] && project.name == 'rodel-ui') {
+        def unavailable = ['FriendsWarningBackgroundMixin', 'MenuFriendCountMixin', 'OnlineFriendsLayoutMixin',
+            'OnlineFriendsDynamicLayoutMixin', 'OnlineFriendsTabLayoutMixin', 'OnlinePendingTabLayoutMixin', 'OnlineFriendRowMixin']
+        if (gameTarget == '1.21.11') unavailable.addAll(['GuiPreeditAccessor', 'TextInputGeometryMixin', 'OnlineWorldOptionsLayoutMixin', 'OnlineInWorldRulesLayoutMixin', 'WorldBranchProgressMixin'])
+        tasks.named('processResources') {
+            inputs.property('unavailableNativeFriends', unavailable)
+            doLast {
+                def config = destinationDir.toPath().resolve('rodel-game-ui.mixins.json').toFile()
+                def data = new groovy.json.JsonSlurper().parse(config)
+                data.client.removeAll(unavailable)
+                data.client.addAll(['compat.LegacyLayoutAccess$Grid', 'compat.LegacyLayoutAccess$Linear',
+                    'compat.LegacyLayoutAccess$Frame', 'compat.LegacyLayoutAccess$Bar',
+                    'compat.LegacyLayoutAccess$Tab', 'compat.LegacyLayoutAccess$Scroll', 'compat.LegacyLayoutAccess$Container'])
+                if (gameTarget == '1.21.11') data.client.remove('compat.LegacyLayoutAccess$Scroll')
+                config.setText(groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(data)), 'UTF-8')
+            }
+        }
+    }
+}
+
+if (minecraft_version == '1.21.11' && project.name == 'rodel-ui') afterEvaluate {
+    // Derive this version's small GUI-name lookup from Loom's actual compilation mappings, never a runtime file.
+    def mappings = loom.mappingConfiguration.getMappingsServiceOptions(project).get().mappings.get().asFile
+    def output = layout.buildDirectory.file('generated/game-target/main/io/github/richasy/rodel/ui/platform/LegacyUiNames.java').get().asFile
+    tasks.named('prepareMainTargetSources') {
+        inputs.file(mappings)
+        doLast {
+            def entries = []
+            mappings.eachLine('UTF-8') { line ->
+                def columns = line.split('\t')
+                if (columns.length == 4 && columns[0] == 'c' &&
+                    (columns[3].startsWith('net/minecraft/client/gui/') || columns[3].startsWith('com/mojang/realmsclient/'))) {
+                    entries.add('        Map.<String,String>entry("' + columns[2].replace('/', '.') + '", "' + columns[3].replace('/', '.') + '")')
+                }
+            }
+            if (entries.isEmpty()) throw new GradleException('Missing legacy UI class mappings')
+            output.parentFile.mkdirs()
+            // Keep the large literal fully typed; cross-entry inference otherwise dominates legacy compilation.
+            output.setText('''package io.github.richasy.rodel.ui.platform;
+import java.util.Map;
+/** Canonical native GUI names for the obfuscated 1.21.11 runtime; unknown/mod classes remain unchanged. */
+public final class LegacyUiNames {
+    private static final Map<String,String> NAMES = Map.<String,String>ofEntries(
+''' + entries.join(',\n') + ''');
+    private LegacyUiNames() { }
+    /** Resolves only mapped native GUI classes, preserving exact third-party ownership boundaries. */
+    public static String name(Class<?> type) { return NAMES.getOrDefault(type.getName(),type.getName()); }
+    /** Retains the native simple-name classifications used by existing page layouts. */
+    public static String simpleName(Class<?> type) {
+        String name=NAMES.get(type.getName());
+        return name==null?type.getSimpleName():name.substring(Math.max(name.lastIndexOf('.'),name.lastIndexOf('$'))+1);
+    }
+}
+''', 'UTF-8')
+        }
+    }
+}
+
+def mixinJava = "JAVA_${java_version}".toString()
+tasks.named('processResources') {
+    inputs.property('mixinJava', mixinJava)
+    filesMatching('*mixins.json') { filter { line -> line.replace('JAVA_25', mixinJava) } }
+}

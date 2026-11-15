@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "rodel_game_ui",
+  "version": "${version}",
+  "name": "Rodel UI",
+  "description": "Launcher-inspired menus, settings and management screens for Minecraft ${minecraft_version}.",
+  "icon": "assets/rodel_game_ui/icon.png",
+  "authors": ["Richasy"],
+  "environment": "client",
+  "accessWidener": "rodel-ui.accesswidener",
+  "mixins": ["rodel-game-ui.mixins.json"],
+  "entrypoints": {
+    "modmenu": ["io.github.richasy.rodel.ui.compat.RodelModMenu"]
+  },
+  "suggests": {
+    "modmenu": ">=${modmenu_version}"
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": ">=${fabric_api_version}",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}"
+  }
+}

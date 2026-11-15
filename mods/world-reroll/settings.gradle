@@ -1,0 +1,18 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = 'worldreroll'
+includeBuild('../bettertools')
+includeBuild('../rodel-ai') {
+    dependencySubstitution {
+        substitute module('io.github.richasy.rodel:rodel-ai') using project(':')
+    }
+}

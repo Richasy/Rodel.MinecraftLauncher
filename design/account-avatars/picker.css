@@ -1,0 +1,65 @@
+/* Shared launcher materials, square geometry and a single scrolling body. */
+.account-avatar-image { display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated; }
+.account-avatar-image.custom { image-rendering:auto; }
+.identity .account-face { width:40px;height:40px;background:transparent; }
+.account-menu .account-face { width:28px;height:28px;background:transparent; }
+.account-menu .account-menu-type { margin-inline-start:auto; }
+.account-menu button .account-copy { margin-inline-end:8px; }
+.account-menu .account-status-critical,.account-row .account-state.account-status-critical { color:var(--error);font-size:12px; }
+.account-avatar-edit { display:block;padding:0;background:transparent;position:relative;flex-shrink:0; }
+.account-avatar-edit::after { content:'✎';position:absolute;right:-4px;bottom:-4px;display:grid;place-items:center;width:14px;height:14px;font-size:12px;background:var(--tone-control);color:var(--ink);border:1px solid var(--tone-line); }
+.account-avatar-edit:is(:hover,:focus-visible)::after { background:var(--surface-hover); }
+.account-popup.avatar-picker { width:min(440px,calc(100vw - 32px));max-height:calc(100dvh - 48px); }
+.avatar-picker .avatar-picker-body { overflow:auto;min-height:0;padding:16px;overscroll-behavior:contain; }
+.avatar-picker .avatar-summary { display:flex;align-items:center;gap:16px; }
+.avatar-picker .avatar-summary-image { width:64px;height:64px;flex-shrink:0; }
+.avatar-picker .avatar-summary-copy { flex:1;min-width:0; }
+.avatar-picker .avatar-summary-copy strong { display:block;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.avatar-picker .avatar-summary-copy span { display:block;margin-top:5px;color:var(--muted);font-size:12px; }
+.avatar-picker .avatar-reset { background:transparent;color:var(--muted);padding:6px 0;box-shadow:none;font-size:12px;text-decoration:underline;text-underline-offset:3px; }
+.avatar-picker .avatar-tabs { margin:20px 0 16px; }
+.avatar-picker .avatar-tabs button { min-width:0; }
+.avatar-picker .avatar-grid { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px; }
+.avatar-picker .avatar-option { position:relative;aspect-ratio:1;padding:4px;background:transparent;border:1px solid transparent; }
+.avatar-picker .avatar-option:hover { background:var(--surface-hover);border-color:var(--tone-line); }
+.avatar-picker .avatar-option[aria-checked="true"] { border-color:var(--selected-edge,var(--accent));background:var(--selected-face);box-shadow:inset 0 2px var(--bevel-bottom); }
+.avatar-picker .avatar-option[aria-checked="true"]::after { content:'✓';position:absolute;right:1px;bottom:1px;display:grid;place-items:center;width:15px;height:15px;background:var(--accent);color:var(--on-accent);font:700 11px 'Segoe UI',sans-serif; }
+.avatar-picker .avatar-scope { margin-top:16px;color:var(--quiet);font-size:12px;line-height:1.5; }
+.avatar-picker footer { display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px; }
+.avatar-picker footer button { min-width:0; }
+:root .avatar-picker footer .avatar-save:not(:disabled) { background:var(--accent);color:var(--on-accent);border-color:var(--accent-dark);box-shadow:inset 0 1px var(--bevel-top),inset 0 -2px var(--bevel-bottom); }
+:root .avatar-picker footer .avatar-save:hover:not(:disabled) { background:var(--accent-hover); }
+:root .avatar-picker footer .avatar-save:active:not(:disabled) { color:var(--on-accent-secondary);box-shadow:inset 0 2px var(--bevel-bottom); }
+.avatar-picker .avatar-upload { min-height:236px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;background:var(--tone-inset);border:1px dashed var(--tone-line); }
+.avatar-picker .avatar-upload:hover,.avatar-picker .avatar-upload.drag-over { background:var(--surface-hover);border-color:var(--accent); }
+.avatar-picker .avatar-upload svg { width:28px;height:28px;color:var(--muted); }
+.avatar-picker .avatar-upload strong { font-size:13px;font-weight:400; }
+.avatar-picker .avatar-upload small { font-size:12px;color:var(--muted); }
+.avatar-picker .avatar-crop-frame { width:236px;max-width:100%;aspect-ratio:1;margin:0 auto;position:relative;background:var(--tone-inset); }
+.avatar-picker canvas { display:block;width:100%;height:100%;touch-action:none;cursor:grab; }
+.avatar-picker canvas:active { cursor:grabbing; }
+.avatar-picker .avatar-crop-frame::after { content:'';position:absolute;inset:0;pointer-events:none;border:1px solid var(--tone-line);background:linear-gradient(90deg,transparent calc(100%/3),#ffffff35 calc(100%/3),#ffffff35 calc(100%/3 + 1px),transparent calc(100%/3 + 1px),transparent calc(200%/3),#ffffff35 calc(200%/3),#ffffff35 calc(200%/3 + 1px),transparent calc(200%/3 + 1px)),linear-gradient(transparent calc(100%/3),#ffffff35 calc(100%/3),#ffffff35 calc(100%/3 + 1px),transparent calc(100%/3 + 1px),transparent calc(200%/3),#ffffff35 calc(200%/3),#ffffff35 calc(200%/3 + 1px),transparent calc(200%/3 + 1px)); }
+.avatar-picker .avatar-crop-controls { display:flex;align-items:center;gap:12px;margin-top:14px; }
+.avatar-picker .avatar-crop-controls label { color:var(--muted);font-size:12px; }
+.avatar-picker .avatar-crop-controls input { min-width:0;flex:1;accent-color:var(--accent); }
+.avatar-picker .avatar-crop-controls button { background:transparent;padding:4px;color:var(--muted);font-size:12px;white-space:nowrap; }
+.avatar-picker .avatar-error { color:var(--error);font-size:12px;margin:12px 0 0; }
+.avatar-picker .avatar-processing { color:var(--muted);font-size:12px;margin-top:12px; }
+.avatar-review-note { display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px; }
+.avatar-review-note a { color:inherit; }
+@media(max-width:680px) {
+  body.avatar-review-mode .account-row { flex-wrap:nowrap; }
+  body.avatar-review-mode .account-row .account-actions { width:auto;padding-inline-start:0;gap:8px; }
+}
+@media(max-width:520px) {
+  .avatar-picker .avatar-grid { gap:4px; }
+  .avatar-picker .avatar-option { padding:3px; }
+  .avatar-picker .avatar-option[aria-checked="true"]::after { width:12px;height:12px;font-size:10px; }
+  body.account-review-mode .review-bar { padding:8px 12px;gap:8px; }
+}
+@media(forced-colors:active) {
+  .avatar-picker .avatar-option[aria-checked="true"] { border:2px solid Highlight; }
+  .avatar-picker .avatar-tabs button[aria-selected="true"] { outline:1px solid Highlight; }
+}
+
+.instance-icon-image { display:block;width:100%;height:100%;object-fit:contain; }

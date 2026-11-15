@@ -1,0 +1,74 @@
+---
+title: Privacy and data
+description: What stays locally, and which services receive requests for accounts, content and AI.
+---
+
+## Start with the capability you use
+
+Basic game management primarily uses local data. Microsoft sign-in, external authentication, online content and online AI connect to their respective services. You do not need to configure an optional capability you are not using.
+
+This describes the current implementation, not promises about other services' data practices.
+
+## Local data
+
+The default **.rmcl** folder inside your user profile stores instance records, game content, configuration, account registrations, backups, AI conversations and task records. Packaged app preferences also use the current Windows app package's data location.
+
+Skin projects retain editable content and history. Submitted AI reference images remain with related conversation records. Unsent text is a window draft, not a saved conversation.
+
+Launcher AI history persists. Rodel AI conversations are temporary for a game process, instance and world; they are cleaned up when that game exits and do not join launcher history. `/rai_new` clears only the current world's game conversation.
+
+The seed explorer stores editable drafts, searches, favorites and generation caches locally. Saved-world maps read the selected save; an exported map image does not contain the whole world. Skin/cape outfit selections are stored in local projects too.
+
+Minecraft and mods also write their own configuration, worlds and logs.
+
+## Credentials
+
+Secret account and AI service credentials are protected locally with Windows DPAPI. Normal authenticated model requests still send the appropriate API credential to the chosen provider. Local protection does not remove that authentication step.
+
+Do not assume the data folder, account configuration or complete logs are safe to publish. Reinstalling Windows, changing devices or deleting local data can affect credential availability.
+
+## Accounts and online content
+
+Microsoft sign-in communicates through Microsoft and relevant Minecraft service flows. External accounts connect to the authentication provider you choose.
+
+Online content search, version queries and downloads request Modrinth and actual file sources. Game and Java preparation also contact version and download sources. Proxies and mirrors can change the network path.
+
+There is currently no default CurseForge online service, and no CurseForge API key is read. Source information in offline packages is retained.
+
+## What an online model receives
+
+The chosen model provider receives the conversation, task instructions and the context actually included to complete the task. Depending on the request, this may include instance information, errors, tool results, authorized file excerpts and submitted images.
+
+The provider processes this under its own rules. Read its privacy and billing information. Do not include private material or someone else's secrets that you do not intend to send to that service.
+
+Granting a folder does not upload it all. Actual access still has folder, read/write and tool permission limits. Previously read information can also remain in later context. Narrowing access cannot retract data already sent.
+
+The current release temporarily does not offer a local-model entry point. Online model requests go to the selected provider as described above; disabling web tools does not make inference local.
+
+## Screenshots and sharing
+
+The gallery reads local screenshots for the selected instance and does not upload them automatically. Renaming, export and deletion act on files you select. An application receiving clipboard content handles it under its own rules. Inspect images and logs and remove private information before attaching them to a GitHub issue or email.
+
+## Search and website reading
+
+AI search may request the Mwmbl search service. Reading a page contacts the target site, and network handling can involve Cloudflare public DNS. Those recipients receive the query, address or network information involved in the actual request.
+
+Turning off AI web tools does not disconnect an online model. File and network access also have independent controls.
+
+## Information exchanged for multiplayer
+
+Terracotta components contact a discovery service and establish network connections with participants. Connection information and member display names support joining and displaying a room. Minecraft still uses its own authentication and client protocol; world files stay in the host's instance.
+
+A room code is a joining credential: send it privately. RMCL protects the locally saved code with Windows DPAPI, but someone who obtains an active code can still try to join. Remove invitation codes and private addresses from exported logs and screenshots.
+
+Sharing a modpack is a separate file export; creating a room does not automatically upload the save. Multiplayer sharing excludes worlds, personal options and server favorites. Check custom shared configuration yourself.
+
+## This documentation site
+
+The documentation site does not include analytics, advertising or a remote search service. It stores your theme choice in the browser and loads a static search index. Visiting the site does not read your local game folder or send launcher conversations to this website. Hosting services may process routine request information; the website does not use it to build player profiles.
+
+## Deleting and sharing
+
+Use the corresponding feature to manage accounts, conversations, instances and projects. Removing account registration, deleting game files, removing conversations and clearing backups have separate scopes.
+
+Exported files, extra copies, shared reports and requests received by third parties need handling at their respective locations. Before sharing, follow [Feedback and logs](/en/docs/help/feedback) to check for keys, private addresses and personal paths.

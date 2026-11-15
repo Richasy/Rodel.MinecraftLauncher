@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="Root" xml:space="preserve">
+    <value>استخدم خدمات Core AI والمحادثات وموفري الخدمة الذين تم تكوينهم.</value>
+  </data>
+  <data name="Serve" xml:space="preserve">
+    <value>تشغيل الخلفية الداخلية Core AI وقت التشغيل.</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>إدارة خدمات النماذج غير المتصلة بالإنترنت وبيانات الاعتماد المحمية.</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>إدارة ارتباطات النماذج الصريحة والنموذج الافتراضي.</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>إدارة المحادثات المستمرة وخطوات التنفيذ الفعلية.</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>فحص تعليمات المستخدم المعبأة والمسجلة بشكل صريح. لا يتم تنفيذ البرامج النصية أبدًا.</value>
+  </data>
+  <data name="Mcp" xml:space="preserve">
+    <value>إدارة عمليات stdio MCP الممكّنة بشكل صريح وفحص كتالوجاتها الحقيقية.</value>
+  </data>
+  <data name="Access" xml:space="preserve">
+    <value>إدارة الملفات المستقلة والإعدادات الافتراضية للشبكة.</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>قائمة السجلات الحالية.</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>اقرأ السجل المحدد.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>احفظ الحقول الصريحة مع فحص المراجعة.</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>قم بإزالة السجل المملوك المحدد بعد المراجعة المطلوبة.</value>
+  </data>
+  <data name="Models" xml:space="preserve">
+    <value>اكتشف النماذج الفعلية دون تغيير الارتباطات اليدوية.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>تشغيل اتصال حقيقي أو فحص الجيل.</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>حدد الإعداد الافتراضي للمحادثات الجديدة.</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>أنشئ محادثة مستمرة.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>إرسال دور. --wait يلاحظ؛ --cancel-on-exit يملك الإلغاء.</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>أعد محاولة المنعطف غير الناجح دون إعادة تشغيل التأثيرات غير المعروفة.</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>قراءة دور بدون حالة استمرار المزود الخاص.</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>قراءة الخطوات الدائمة المطلوبة بعد مؤشر التسلسل.</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>قراءة السياق المضغوط الأصلي من خلال معرفات المحادثة والأرشيف، بدون حالة المزود الخاص.</value>
+  </data>
+  <data name="ArchiveCharacters" xml:space="preserve">
+    <value>إرجاع 256 إلى 16000 حرف لكل صفحة أرشيف. الافتراضي: 12000.</value>
+  </data>
+  <data name="ArchiveMessageIndex" xml:space="preserve">
+    <value>قراءة رسالة أصلية واحدة من خلال فهرس الأرشيف الصفري.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>قم بإلغاء هذا الدور، وليس لعبة أو وظيفة مستقلة.</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>إعادة التسمية دون تغيير محتوى المحادثة.</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>تغيير وضع التشغيل الصريح.</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>تصدير السجل العام إلى ملف JSON أو ملف نصي محدد بشكل صريح.</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>افحص التعليمات التي تم تكوينها فعليًا والتحذيرات لكل ملف.</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>قم بتسجيل دليل محلي محدد بشكل صريح.</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>قم بتمكين هذا المصدر المسجل للمنعطفات المستقبلية.</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>قم بتعطيل هذا المصدر المسجل للمنعطفات المستقبلية.</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>تشغيل طلب نموذج أمامي واحد بدون محادثة أو أدوات.</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>فحص المضيف المساعد الفعلي ووضع وقت التشغيل.</value>
+  </data>
+  <data name="OptionValue" xml:space="preserve">
+    <value>قيمة {0} صريحة.</value>
+  </data>
+  <data name="OptionFlag" xml:space="preserve">
+    <value>قم بتفعيل {0} لهذا الأمر.</value>
+  </data>
+  <data name="OptionBoolean" xml:space="preserve">
+    <value>صريح true أو false لـ {0}.</value>
+  </data>
+  <data name="SecretArgumentsForbidden" xml:space="preserve">
+    <value>لا تضع بيانات الاعتماد أبدًا في وسيطات الأوامر. استخدم --credential-stdin أو --credential-prompt أو --credential-env.</value>
+  </data>
+  <data name="InvalidArguments" xml:space="preserve">
+    <value>أمر مساعد أو خيار مكتوب غير صالح. استخدم --help لبناء الجملة المقبول.</value>
+  </data>
+  <data name="RevisionRequired" xml:space="preserve">
+    <value>اقرأ التكوين الحالي، ثم قم بتزويد --expected-revision.</value>
+  </data>
+  <data name="ValueRequired" xml:space="preserve">
+    <value>التوريد --{0}.</value>
+  </data>
+  <data name="SingleModelRequired" xml:space="preserve">
+    <value>اختر موديل واحد لهذه العملية.</value>
+  </data>
+  <data name="InputTooLarge" xml:space="preserve">
+    <value>يتجاوز الإدخال ميزانية الأحرف المحددة له.</value>
+  </data>
+  <data name="SecretInputConflict" xml:space="preserve">
+    <value>اختر طريقة واحدة لإدخال بيانات الاعتماد المحمية.</value>
+  </data>
+  <data name="SecretInputRedirected" xml:space="preserve">
+    <value>استخدم --credential-stdin لإدخال بيانات الاعتماد المعاد توجيهها.</value>
+  </data>
+  <data name="SecretPrompt" xml:space="preserve">
+    <value>بيانات الاعتماد: </value>
+  </data>
+  <data name="DefaultGreeting" xml:space="preserve">
+    <value>الرد بتحية قصيرة.</value>
+  </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>الخدمة التي تم تكوينها لم تعد موجودة.</value>
+  </data>
+  <data name="BackgroundNotSupported" xml:space="preserve">
+    <value>Core AI تدير المنعطفات عمر التنفيذ بالفعل. حذف --background؛ استخدم chat send واختياريًا --wait.</value>
+  </data>
+  <data name="SecretInputDirectOnly" xml:space="preserve">
+    <value>إدخال بيانات الاعتماد التفاعلية متاح فقط من خلال استدعاء CLI المباشر، وليس أدوات MCP أو وظائف الخلفية.</value>
+  </data>
+  <data name="AllowOperations" xml:space="preserve">
+    <value>تفويض الطفرات المدعومة فقط لهذا الهدف المقدم ونطاقه الصريح. هذا لا يتجاوز تأكيدات المنتج.</value>
+  </data>
+  <data name="EffectsCheck" xml:space="preserve">
+    <value>تحقق من حالة Core الحالية مقابل نوايا الطفرة غير المكتملة للدورة المتوقفة دون إعادة تشغيل المكالمات.</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>صريح true للموافقة أو false لرفض بصمة التشغيل الدقيقة.</value>
+  </data>
+  <data name="ToolConfirm" xml:space="preserve">
+    <value>سجل قرار المستخدم للعملية المعلقة بالضبط. لا يمكن للوسائط النموذجية توفير هذا القرار.</value>
+  </data>
+  <data name="ToolConfirmationRead" xml:space="preserve">
+    <value>قراءة الصفحات المحدودة للعملية المعلقة والوسائط والمراجعة المجمدة.</value>
+  </data>
+  <data name="ApprovalRequired" xml:space="preserve">
+    <value>حدد --approve true أو --approve false لهذا التأكيد الدقيق.</value>
+  </data>
+  <data name="FileRoots" xml:space="preserve">
+    <value>إدارة الأدلة المحلية المعتمدة بشكل صريح وأوضاع القراءة/الكتابة الخاصة بها.</value>
+  </data>
+  <data name="Integration" xml:space="preserve">
+    <value>تخطيط أو تثبيت أو فحص أو إزالة مهارات البرمجة المملوكة للمنتج Codex وClaude وتسجيل MCP.</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>قم بفحص الأهداف الدقيقة والملكية الحالية والربط قبل إجراء التغييرات.</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>قم بتطبيق الخطة الدقيقة الحالية والإبلاغ عن كل نتيجة تثبيت.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>فحص ملكية التثبيت وتكوين العميل الحالي والربط data-root.</value>
+  </data>
+  <data name="EffectsAcknowledge" xml:space="preserve">
+    <value>قبول التأثير غير المعروف المتبقي بعد الفحص، للأهداف الجديدة المسموح بها فقط. لا يثبت نتيجة أو يسمح بإعادة الهدف القديم.</value>
+  </data>
+  <data name="LocalInference" xml:space="preserve">
+    <value>إدارة استدلال النموذج المحلي المضمن المملوك للمشغل دون خدمة مثبتة بشكل منفصل.</value>
+  </data>
+  <data name="UnloadLocalInference" xml:space="preserve">
+    <value>قم بتفريغ المحرك المضمن الخامل والعاملين النموذجيين الأصليين المملوكين له دون تغيير ملفات النموذج.</value>
+  </data>
+  <data name="PromptStdin" xml:space="preserve">
+    <value>اقرأ المطالبة من الإدخال القياسي المعاد توجيهه (مباشر CLI فقط)، حتى 64000 حرف.</value>
+  </data>
+  <data name="PromptSourceConflict" xml:space="preserve">
+    <value>اختر واحدًا بالضبط من --prompt أو --prompt-file أو --prompt-stdin.</value>
+  </data>
+  <data name="PromptStdinDirectOnly" xml:space="preserve">
+    <value>stdin الفوري متاح فقط من خلال الاستدعاء المباشر CLI؛ MCP stdin يحمل رسائل البروتوكول.</value>
+  </data>
+  <data name="PromptStdinRedirected" xml:space="preserve">
+    <value>أدخل النص في هذا الأمر أو استخدم --prompt أو --prompt-file.</value>
+  </data>
+  <data name="PromptRequired" xml:space="preserve">
+    <value>العرض --prompt أو --prompt-file أو --prompt-stdin.</value>
+  </data>
+  <data name="WaitForTurn" xml:space="preserve">
+    <value>لاحظ المنعطف الموجود دون إعادة إرساله. --events يكتب أمر events إلى stderr؛ --after يستأنف المؤشر. مهلة المراقب لا تلغي الدور.</value>
+  </data>
+  <data name="WaitOptionsInvalid" xml:space="preserve">
+    <value>استخدم مؤشر --after غير سلبي و--timeout-seconds بين 1 و3600.</value>
+  </data>
+  <data name="WaitTimeout" xml:space="preserve">
+    <value>انتهت مهلة المراقبة. لم يتم إلغاء الدور أو إعادة تقديمه؛ استئناف استخدام معرفاته ومؤشر الحدث.</value>
+  </data>
+  <data name="ModelSelection" xml:space="preserve">
+    <value>مراجع النموذج الفعلي عند التكوين؛ ربط النموذج المحفوظ ID عند إنشاء نموذج محادثة أو اختياره. كرر ذلك فقط عند إنشاء الخدمة.</value>
+  </data>
+  <data name="OutputTokens" xml:space="preserve">
+    <value>حد رمزي إيجابي صريح للإخراج. يتجاوز الطلب/الدردشة هذه المكالمة فقط؛ حفظ النموذج يستمر فيه. عند الحذف، استخدم الإعداد المحفوظ أو سعة النموذج التي تمت ملاحظتها؛ سعة غير معروفة تترك الموفر الافتراضي دون تغيير.</value>
+  </data>
+  <data name="TimeoutSeconds" xml:space="preserve">
+    <value>الموعد النهائي للطلب/التحويل خلال ثوانٍ (1..3600)؛ يستخدم انتظار الدردشة موعدًا نهائيًا للمراقب فقط ولا يلغي عملية الإنشاء.</value>
+  </data>
+  <data name="ClientKey" xml:space="preserve">
+    <value>32 رقمًا GUID مفتاح العجز. يؤدي تكرار الإدخال المتطابق إلى إرجاع نفس المنعطف؛ تم رفض الإدخال الذي تم تغييره بنفس المفتاح.</value>
+  </data>
+  <data name="ModelCalls" xml:space="preserve">
+    <value>الحد الأقصى لاستدعاءات النموذج في هذا المنعطف (1..64)، بما في ذلك اختيار السياق. هذا ليس حدًا لرسائل المحادثة.</value>
+  </data>
+  <data name="Turns" xml:space="preserve">
+    <value>مراقبة المنعطفات الموجودة في المحادثة والتحكم فيها.</value>
+  </data>
+  <data name="Confirmations" xml:space="preserve">
+    <value>اقرأ وحدد تأكيدات العملية المعلقة بالضبط.</value>
+  </data>
+  <data name="Effects" xml:space="preserve">
+    <value>فحص تأثيرات التوقف المنعطف والتعرف عليها دون إعادة التشغيل.</value>
+  </data>
+  <data name="UpdateConversation" xml:space="preserve">
+    <value>قم بتحديث حقول المحادثة الصريحة في عملية واحدة تم فحص المراجعة فيها.</value>
+  </data>
+  <data name="ConversationChangesRequired" xml:space="preserve">
+    <value>حدد العنوان أو المثيل أو النموذج أو الوضع أو الوصول إلى الملفات أو تغيير الوصول إلى الشبكة.</value>
+  </data>
+</root>

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>rodel-mc</AssemblyName>
+    <RootNamespace>Rodel.MinecraftLauncher.Cli</RootNamespace>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PublishAot>true</PublishAot>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="../../LICENSE" Link="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../../NOTICE" Link="NOTICE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <ProjectReference Include="../Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
+    <PackageReference Include="System.CommandLine" Version="2.0.13" />
+    <PackageReference Include="ModelContextProtocol" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\AssistantStrings.resx">
+      <StronglyTypedLanguage>C#</StronglyTypedLanguage>
+      <StronglyTypedClassName>AssistantStrings</StronglyTypedClassName>
+      <StronglyTypedNamespace>$(RootNamespace).Strings</StronglyTypedNamespace>
+      <StronglyTypedFileName>$(IntermediateOutputPath)AssistantStrings.g.cs</StronglyTypedFileName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings\CliStrings.resx">
+      <StronglyTypedLanguage>C#</StronglyTypedLanguage>
+      <StronglyTypedClassName>CliStrings</StronglyTypedClassName>
+      <StronglyTypedNamespace>$(RootNamespace).Strings</StronglyTypedNamespace>
+      <StronglyTypedFileName>$(IntermediateOutputPath)CliStrings.g.cs</StronglyTypedFileName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

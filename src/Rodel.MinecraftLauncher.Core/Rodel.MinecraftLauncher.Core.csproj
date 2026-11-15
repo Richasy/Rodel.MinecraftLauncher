@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../mods/bundled-targets.props" />
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- DNS_RECORDW requires a concrete CPU layout; RID builds retain the SDK's architecture inference. -->
+    <IsRidAgnostic>false</IsRidAgnostic>
+    <PlatformTarget Condition="'$(PlatformTarget)' == '' and '$(RuntimeIdentifier)' == ''">$([System.Text.RegularExpressions.Regex]::Replace('$(NETCoreSdkRuntimeIdentifier)', '^.*-', ''))</PlatformTarget>
+    <RodelMicrosoftClientId Condition="'$(RodelMicrosoftClientId)' == ''">$(RODEL_MICROSOFT_CLIENT_ID)</RodelMicrosoftClientId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.275" PrivateAssets="all" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)GameBridge/rodel-game-bridge.jar" LogicalName="Rodel.GameBridge.Agent" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)GameBridge/rodel-game-observation.jar" LogicalName="Rodel.GameBridge.Observation" />
+    <EmbeddedResource Include="$(IntermediateOutputPath)MicrosoftClientId.txt" LogicalName="Rodel.MicrosoftClientId" />
+    <ProjectReference Include="../Rodel.Minecraft.Seeds/Rodel.Minecraft.Seeds.csproj" />
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.84.2" />
+    <PackageReference Include="YamlDotNet" Version="18.1.0" />
+    <ProjectReference Include="../Rodel.MinecraftLauncher.Assistant/Rodel.MinecraftLauncher.Assistant.csproj" />
+    <EmbeddedResource Include="Application\AI\Skills\**\SKILL.md" />
+    <ProjectReference Include="..\Rodel.Minecraft.Skins\Rodel.Minecraft.Skins.csproj" />
+  </ItemGroup>
+  <Target Name="WriteMicrosoftClientId" BeforeTargets="PrepareResources">
+    <Error Condition="'$(RodelMicrosoftClientId)' != '' and (!$([System.Text.RegularExpressions.Regex]::IsMatch('$(RodelMicrosoftClientId)', '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')) or '$(RodelMicrosoftClientId)' == '00000000-0000-0000-0000-000000000000')"
+           Text="RodelMicrosoftClientId must be a nonempty application GUID, not a client secret." />
+    <WriteLinesToFile File="$(IntermediateOutputPath)MicrosoftClientId.txt" Lines="$(RodelMicrosoftClientId)" Overwrite="true" WriteOnlyWhenDifferent="true" Encoding="UTF-8" />
+  </Target>
+  <Target Name="BuildGameBridge" BeforeTargets="PrepareResources" Inputs="$(MSBuildProjectDirectory)/../../scripts/build-game-bridge.ps1;$(MSBuildProjectDirectory)/../../scripts/resolve-build-jdk.ps1;$(MSBuildProjectDirectory)/../../java/game-bridge/agent.mf;$(MSBuildProjectDirectory)/../../java/game-bridge/legacy-agent.mf;@(GameBridgeSource)" Outputs="$(IntermediateOutputPath)GameBridge/rodel-game-bridge.jar;$(IntermediateOutputPath)GameBridge/rodel-game-observation.jar" Condition="'$(DesignTimeBuild)' != 'true'">
+    <PropertyGroup>
+      <GameBridgeJavaArgument Condition="'$(GameBridgeJavaHome)' != ''">-JavaHome &quot;$(GameBridgeJavaHome)&quot;</GameBridgeJavaArgument>
+      <GameObservationJavaArgument Condition="'$(GameObservationJavaHome)' != ''">-ObservationJavaHome &quot;$(GameObservationJavaHome)&quot;</GameObservationJavaArgument>
+    </PropertyGroup>
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../../scripts/build-game-bridge.ps1&quot; -OutputDirectory &quot;$(IntermediateOutputPath)GameBridge&quot; $(GameBridgeJavaArgument) $(GameObservationJavaArgument)" />
+  </Target>
+  <ItemGroup>
+    <GameBridgeSource Include="../../java/game-bridge/src/**/*.java" />
+    <GameBridgeSource Include="../../java/game-bridge/bootstrap/**/*.java" />
+    <GameBridgeSource Include="../../java/game-bridge/legacy/**/*.java" />
+    <GameBridgeSource Include="../../java/game-bridge/legacy-bootstrap/**/*.java" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TerracottaArchitecture Condition="'$(TerracottaArchitecture)' == '' and '$(RuntimeIdentifier)' == '' and ('$(PlatformTarget)' == 'arm64' or $([System.String]::Copy('$(NETCoreSdkRuntimeIdentifier)').EndsWith('arm64')))">arm64</TerracottaArchitecture>
+    <TerracottaArchitecture Condition="'$(TerracottaArchitecture)' == ''">x64</TerracottaArchitecture>
+    <TerracottaArchitecture Condition="$([System.String]::Copy('$(RuntimeIdentifier)').EndsWith('arm64'))">arm64</TerracottaArchitecture>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/terracotta.exe;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/VCRUNTIME140.DLL;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/NOTICE.txt;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest">
+      <Link>Assets/Terracotta/%(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+  <Target Name="BuildTerracotta" BeforeTargets="PrepareResources" Inputs="../../scripts/build-terracotta.ps1;../../licenses/Terracotta.LICENSE" Outputs="$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/terracotta.exe;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/VCRUNTIME140.DLL;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/NOTICE.txt;$(IntermediateOutputPath)Terracotta/$(TerracottaArchitecture)/LICENSE.txt" Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../../scripts/build-terracotta.ps1&quot; -OutputDirectory &quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Terracotta', '$(TerracottaArchitecture)'))&quot; -Architecture $(TerracottaArchitecture)" />
+  </Target>
+  <ItemGroup>
+    <BundledModInput Include="../../mods/*/src/**/*;../../mods/*/*.gradle;../../mods/*/gradle.properties;../../mods/gradle.properties;../../mods/bundled-targets.props;../../mods/gradle/*.gradle;../../mods/*/gradle/*.gradle;../../mods/targets/*.properties;../../mods/*/gradle/wrapper/*;../../mods/loader-build/**/*.gradle;../../mods/loader-build/src/**/*.java;../../mods/rodel-ai/forge/src/**/*;../../mods/rodel-ai/forge/*.gradle;../../mods/rodel-ai/forge/*.properties;../../scripts/build-bundled-mods.ps1;../../scripts/resolve-build-jdk.ps1" Exclude="../../mods/rodel-ui/**/*;../../mods/loader-build/src/**/io/github/richasy/rodel/ui/**/*;../../mods/loader-build/**/build/**/*;../../mods/loader-build/**/.gradle/**/*" />
+    <BundledModAsset Include="catalog.json" />
+    <BundledModAsset Update="@(BundledModAsset)"><Link>Assets/BuiltInMods/%(Identity)</Link></BundledModAsset>
+    <Content Include="@(BundledModAsset->'$(IntermediateOutputPath)BuiltInMods/%(Identity)')"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <!-- Resolve the Seeds project first; concurrent Gradle setup can race on the shared Loom Minecraft cache. -->
+  <Target Name="BuildBundledMods" BeforeTargets="PrepareResources" Condition="'$(DesignTimeBuild)' != 'true'">
+    <CallTarget Targets="_BuildBundledModsIncrementally" Condition="'$(CleanBundledMods)' != 'true'" />
+    <CallTarget Targets="_BuildBundledMods" Condition="'$(CleanBundledMods)' == 'true'" />
+  </Target>
+  <Target Name="_BuildBundledModsIncrementally" Inputs="@(BundledModInput)" Outputs="@(BundledModAsset->'$(IntermediateOutputPath)BuiltInMods/%(Identity)')">
+    <CallTarget Targets="_BuildBundledMods" />
+  </Target>
+  <Target Name="_BuildBundledMods">
+    <PropertyGroup>
+      <BundledModsJavaArgument Condition="'$(BundledModsJavaHome)' != ''">-JavaHome &quot;$(BundledModsJavaHome)&quot;</BundledModsJavaArgument>
+      <BundledModsLegacyJavaArgument Condition="'$(BundledModsLegacyJavaHome)' != ''">-LegacyJavaHome &quot;$(BundledModsLegacyJavaHome)&quot;</BundledModsLegacyJavaArgument>
+      <BundledModsCleanArgument Condition="'$(CleanBundledMods)' == 'true'">-Clean</BundledModsCleanArgument>
+    </PropertyGroup>
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)/../../scripts/build-bundled-mods.ps1&quot; -OutputDirectory &quot;$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'BuiltInMods'))&quot; $(BundledModsJavaArgument) $(BundledModsLegacyJavaArgument) $(BundledModsCleanArgument)" />
+  </Target>
+</Project>

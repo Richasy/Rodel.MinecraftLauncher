@@ -1,0 +1,100 @@
+---
+title: Frequently asked questions
+description: Find a short answer, then follow the relevant guide.
+---
+
+## Is this a finished product?
+
+RMCL is a released, free experiment in Sprout UI and AI assistance. You can use it if the project interests you. Read [Install and prepare](/en/docs/start/install) to begin.
+
+## Which computers are supported?
+
+Windows 10 version 2004, build 19041, or later, on x64 or ARM64. Minecraft, Java and mods have separate requirements.
+
+## Do I buy RMCL to play?
+
+RMCL is free. Minecraft entitlement comes through the relevant official channels, and an optional model service may charge separately. Using the launcher does not include those purchases.
+
+## Where do I download and update RMCL?
+
+Get RMCL from Microsoft Store or [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest), and update it through the corresponding channel. See [Install and prepare](/en/docs/start/install).
+
+## Is the source public?
+
+Project-authored launcher code is open source under **[GNU AGPL v3 (AGPL-3.0-only)](https://github.com/Richasy/Rodel.MinecraftLauncher/blob/main/LICENSE)**. Independent modules and third-party components retain their original licenses. Building from source is not required to use RMCL.
+
+## Must I sign in with Microsoft or configure AI?
+
+No. Existing instances, supported local use and manual configuration have separate routes. Servers requiring an authenticated identity still enforce it. Manual game management and skin painting do not require a model.
+
+## Do I need my own Client ID for Microsoft sign-in?
+
+Not for the Store release: the identifier is included. Add a Microsoft account from the account menu. Game entitlement, family permissions and service requirements still apply. Read [Microsoft sign-in](/en/docs/project/microsoft) for errors rather than borrowing an ID from a developer tutorial.
+
+## Why use several instances?
+
+Separate versions, mods and settings are easier to manage and preserve. An instance is not a world: one instance can have several worlds. Read [Instance management](/en/docs/play/instances).
+
+## My games disappeared after changing the data folder
+
+Changing the folder does not migrate data. Check the current and previous locations, keep the files and use [Import](/en/docs/play/import) to copy them in. Do not delete the previous folder first.
+
+## A resource pack or shader has no visible effect
+
+Check selection under Resource packs or Shader packs on the Content page. Resource packs can stack and be reordered; shaders are single-select and need a compatible engine. Check the result on the next launch. Read [Content installation](/en/docs/play/content).
+
+## Why will CurseForge content not download online?
+
+No default CurseForge online service is provided currently. Offline ZIP import and manual file completion remain. Modrinth online content is available. Read [Modpacks](/en/docs/play/modpacks).
+
+## The server is online. Why can I not join?
+
+Status querying and joining are separate. Versions, mods, account, allowlists, capacity and networking can all matter. Keep the game's message and read [Servers](/en/docs/play/servers).
+
+## Why is Multiplayer missing from the sidebar?
+
+It starts disabled. Turn on **Settings → Launcher → Multiplayer** to show the entry. Follow [Multiplayer rooms](/en/docs/play/multiplayer) for hosting and joining.
+
+## Do I still need a modpack if I have a room code?
+
+A code does not carry the Minecraft version, mod list or package file. Ask the host which setup they use. Select a matching instance, or create/import one using their shared package.
+
+## Does ending a room close Minecraft?
+
+The main end action stops multiplayer and requests a normal game exit. To keep playing, open its arrow and stop multiplayer or leave the room only. Closing the mini window only dismisses that window.
+
+## Do built-in mods need Java development tools?
+
+No. Select them under **Content → Mods → Built-in mods**. The picker matches packages and dependencies to the instance. Minecraft itself still needs a suitable Java runtime. Read [Built-in mods](/en/docs/play/built-in-mods).
+
+## Why is Rodel UI missing from built-in mods?
+
+Rodel UI is no longer bundled. Rodel AI, World Reroll and Better Tools remain and do not require it. Existing Rodel UI installations are not removed automatically. Read [Built-in mods](/en/docs/play/built-in-mods#rodel-ui-is-no-longer-bundled).
+
+## Where can I manage game screenshots?
+
+Open **Content → select an instance → Screenshots** to browse, search, rename or export. Double-click uses Windows' default viewer; thumbnail cropping does not change originals. Deletion offers the Recycle Bin or an explicit permanent-delete choice. See [Screenshots](/en/docs/play/screenshots).
+
+## Where did my in-game AI conversation go?
+
+In-game history lasts for that game process, is cleared on exit and does not appear in launcher history. Chat and sidebar share the current world's conversation during the same game process. `/rai_new` clears the conversation, keeping the world. See [In-game AI](/en/docs/create/game-ai).
+
+## Where is the seed explorer?
+
+Open it from the avatar menu at the upper left. A world's menu can open its saved-world map directly too. Seed, version and generation settings determine the preview. Read [Seed explorer](/en/docs/create/seed-explorer).
+
+## AI said it finished. Where is the result?
+
+Check actual tools, tasks and game state. Queued does not mean completed, and a started process does not mean a ready world. An interrupted answer also does not mean every earlier change failed. Read [AI assistant](/en/docs/create/assistant).
+
+## Is an edited skin applied to my account automatically?
+
+No. Export a PNG and use the actual account or game environment's supported flow. Keep the project for editable layers and history; a PNG does not replace it. Read [Skin designer](/en/docs/create/skins).
+
+## Can it play or survive for me?
+
+Automatic gameplay and character management have not been delivered. AI focuses on explanations and assistance with clear tasks. A direction of development is not a current capability.
+
+## Something else?
+
+For launch failure, read [Launch problems](/en/docs/help/launch). To discuss a problem, gather relevant information using [Feedback and logs](/en/docs/help/feedback).

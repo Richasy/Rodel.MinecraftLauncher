@@ -1,0 +1,3 @@
+[submodule "Rodel.Inference"]
+	path = external/Rodel.Inference
+	url = https://github.com/Richasy/Rodel.Inference.git

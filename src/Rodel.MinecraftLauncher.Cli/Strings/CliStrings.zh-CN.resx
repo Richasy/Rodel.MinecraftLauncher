@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve"><value>创建无需微软登录的离线玩家身份。</value></data>
+  <data name="AccountListDescription" xml:space="preserve"><value>列出已保存的离线和微软玩家身份，不返回凭据。</value></data>
+  <data name="AccountRemoveDescription" xml:space="preserve"><value>移除已保存的离线或微软身份。</value></data>
+  <data name="ArgumentAddressDescription" xml:space="preserve"><value>服务器地址或收藏 ID。</value></data>
+  <data name="ArgumentChangesDescription" xml:space="preserve"><value>包含真实游戏设置键和原始值的 JSON 对象。</value></data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve"><value>输出路径、名称或备份标识符。</value></data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve"><value>要查看说明的命令路径。</value></data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve"><value>已登记实例的 ID。</value></data>
+  <data name="ArgumentItemDescription" xml:space="preserve"><value>内容文件、世界目录、版本或恢复标识符。</value></data>
+  <data name="ArgumentItemsDescription" xml:space="preserve"><value>选定的文件或来源。</value></data>
+  <data name="ArgumentKeyDescription" xml:space="preserve"><value>设置键；也支持未知键。</value></data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve"><value>已记录的游戏会话 ID。</value></data>
+  <data name="ArgumentNameDescription" xml:space="preserve"><value>显示名称；含空格时仍须作为单个参数传入。</value></data>
+  <data name="ArgumentNamesDescription" xml:space="preserve"><value>有序的资源包名称；留空表示不选择额外资源包。</value></data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve"><value>可选的设置键。</value></data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve"><value>可选的归档或目标路径。</value></data>
+  <data name="ArgumentTargetDescription" xml:space="preserve"><value>来源路径、项目、运行环境或操作标识符。</value></data>
+  <data name="ArgumentValueDescription" xml:space="preserve"><value>JSON 值或原样字符串。</value></data>
+  <data name="BackupCreateDescription" xml:space="preserve"><value>创建完整实例备份或指定范围的备份。</value></data>
+  <data name="BackupDeleteDescription" xml:space="preserve"><value>删除选定的备份。</value></data>
+  <data name="BackupInspectDescription" xml:space="preserve"><value>检查备份及其记录的内容。</value></data>
+  <data name="BackupListDescription" xml:space="preserve"><value>列出备份，可按实例筛选。</value></data>
+  <data name="BackupRestoreDescription" xml:space="preserve"><value>将备份恢复到原实例或明确指定的实例。</value></data>
+  <data name="BackupRollbackDescription" xml:space="preserve"><value>回退已记录的备份恢复操作。</value></data>
+  <data name="ConfigurationGetDescription" xml:space="preserve"><value>读取单个设置键或所有生效值。</value></data>
+  <data name="ConfigurationSetDescription" xml:space="preserve"><value>有效 JSON 按 JSON 保存，否则保存原样字符串；仅修改指定的键。</value></data>
+  <data name="ContentAddDescription" xml:space="preserve"><value>添加内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve"><value>分析内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve"><value>仅在用户最终批准后应用已冻结的内容审核。</value></data>
+  <data name="ContentDetachDescription" xml:space="preserve"><value>解除内容关联，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentDisableDescription" xml:space="preserve"><value>禁用内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentEnableDescription" xml:space="preserve"><value>启用内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentIdentifyDescription" xml:space="preserve"><value>识别内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentInstallDescription" xml:space="preserve"><value>安装内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentListDescription" xml:space="preserve"><value>列出内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentPinDescription" xml:space="preserve"><value>锁定内容版本，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentPolicyDescription" xml:space="preserve"><value>设置内容策略，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentProjectDescription" xml:space="preserve"><value>读取远端项目元数据。</value></data>
+  <data name="ContentRecoverDescription" xml:space="preserve"><value>恢复内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentRemoveDescription" xml:space="preserve"><value>移除内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentRepairDescription" xml:space="preserve"><value>根据会话规划完整的依赖修复，或经明确确认后应用已冻结的审核。</value></data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve"><value>使用真实元数据审核混合的本地文件。</value></data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve"><value>审核确切的项目和依赖列表，不执行安装。</value></data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve"><value>冻结选定的根项目更新及必需依赖，保留禁用和锁定策略；请在 apply-review 前检查。</value></data>
+  <data name="ContentSearchDescription" xml:space="preserve"><value>搜索远端内容，无需指定实例。</value></data>
+  <data name="ContentUnpinDescription" xml:space="preserve"><value>解除内容版本锁定，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentUpdateDescription" xml:space="preserve"><value>更新内容，保留无关文件和用户的明确选择。</value></data>
+  <data name="ContentVersionsDescription" xml:space="preserve"><value>读取远端项目版本。</value></data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve"><value>未使用 --plan 时必须提供目标 ZIP 路径。</value></data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve"><value>请先审核操作影响，再使用 --confirm 确认。</value></data>
+  <data name="ErrorContextLimit" xml:space="preserve"><value>--limit 必须介于 1 和 100 之间。</value></data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve"><value>请在实例、--session 和 --report 中指定且仅指定一项。</value></data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve"><value>必须提供 --directory。</value></data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve"><value>“{1}”下存在重复的命令或别名“{0}”。</value></data>
+  <data name="ErrorDuplicateOption" xml:space="preserve"><value>“{1}”中存在重复的选项或别名“{0}”。</value></data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve"><value>更改必须是包含 options.txt 键和原始值的对象；null 表示移除该键。</value></data>
+  <data name="ErrorHostStartFailed" xml:space="preserve"><value>后台宿主未能启动。</value></data>
+  <data name="ErrorJobNotResumable" xml:space="preserve"><value>此操作可能已创建文件或游戏会话。请检查任务及其影响，必要时明确重新执行原命令。</value></data>
+  <data name="ErrorLogStateConflict" xml:space="preserve"><value>--state 与 --state-file 不能同时使用。</value></data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve"><value>必须提供 --minecraft VERSION。</value></data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve"><value>缺少 CLI 命令请求。</value></data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve"><value>--{0} 不能为负数。</value></data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve"><value>“{1}”未声明选项“{0}”。</value></data>
+  <data name="ErrorOptionRange" xml:space="preserve"><value>--{0} 必须介于 {1} 和 {2} 之间。</value></data>
+  <data name="ErrorOptionRequired" xml:space="preserve"><value>必须提供 {0}。</value></data>
+  <data name="ErrorOptionScalar" xml:space="preserve"><value>选项“{0}”要求标量值；多个 token 请使用 Values。</value></data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve"><value>应用依赖修复审核前，须经用户最终批准并使用 --confirm。</value></data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve"><value>应用已审核批次时不能同时使用 --plan、--session 或新的版本选择。</value></data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve"><value>--confirm 需要先前生成的 --review。</value></data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve"><value>规划依赖修复时必须提供 --session。</value></data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve"><value>使用 --session 规划修复，或使用 --review 和 --confirm 应用已冻结的批次。</value></data>
+  <data name="ErrorSessionRequired" xml:space="preserve"><value>必须提供会话 ID。</value></data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve"><value>此命令是终端宿主入口，不是启动器操作。</value></data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve"><value>--arguments 与 --arguments-file 不能同时使用。</value></data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve"><value>未知的帮助主题：{0}。</value></data>
+  <data name="ErrorUnknownOption" xml:space="preserve"><value>未知选项：{0}。以 -- 开头的位置参数值之前须放置 --。</value></data>
+  <data name="ErrorUnknownTool" xml:space="preserve"><value>不存在名为 {0} 的工具</value></data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve"><value>不支持的 CLI 任务操作“{0}”。</value></data>
+  <data name="ErrorUpdateContext" xml:space="preserve"><value>--update-context 的值必须为 current 或 source。</value></data>
+  <data name="ErrorVersionRequired" xml:space="preserve"><value>必须提供 --version。</value></data>
+  <data name="ErrorVersionSelection" xml:space="preserve"><value>--select-version 要求 PROJECT=VERSION 格式。</value></data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve"><value>游戏退出后应用待处理更改。</value></data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve"><value>丢弃待处理更改，不修改 options.txt。</value></data>
+  <data name="GameSettingsGetDescription" xml:space="preserve"><value>读取真实游戏设置。</value></data>
+  <data name="GameSettingsSetDescription" xml:space="preserve"><value>修改指定键的原始值；JSON null 表示移除该键。</value></data>
+  <data name="GroupAccountDescription" xml:space="preserve"><value>管理离线和微软账户。离线身份无需微软登录；微软浏览器登录需要用户配置应用ID。</value></data>
+  <data name="GroupBackupDescription" xml:space="preserve"><value>创建、检查和恢复完整实例备份或指定范围的备份。</value></data>
+  <data name="GroupCacheDescription" xml:space="preserve"><value>保留正在使用的缓存、外部根目录、被引用的依赖和未知文件。</value></data>
+  <data name="GroupConfigDescription" xml:space="preserve"><value>读取生效设置及其来源。保留未知的设置键。</value></data>
+  <data name="GroupContentDescription" xml:space="preserve"><value>管理本地文件和 Modrinth 内容。未知本地文件无需识别。CurseForge 在线功能需要注入提供程序，离线包仍可使用。</value></data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve"><value>编辑真实 options.txt 原始值，保留无关行和编码。游戏运行时延迟写入，退出后应用并检测冲突。</value></data>
+  <data name="GroupInstanceDescription" xml:space="preserve"><value>管理独立游戏内容和共享运行依赖。导入时复制完整内容，不修改来源。</value></data>
+  <data name="GroupJavaDescription" xml:space="preserve"><value>发现、管理和选择 Java 运行时。</value></data>
+  <data name="GroupJobDescription" xml:space="preserve"><value>持久化操作。取消仅为请求，请检查最终状态；仅恢复可安全重复执行的操作。</value></data>
+  <data name="GroupLoaderDescription" xml:space="preserve"><value>准备已知加载器安装程序；仍支持手工安装的自定义启动配置。</value></data>
+  <data name="GroupMcpDescription" xml:space="preserve"><value>基于 CLI 命令契约的 MCP 适配器。</value></data>
+  <data name="GroupPackDescription" xml:space="preserve"><value>导入离线 mrpack/CurseForge ZIP，以及在线 Modrinth 整合包。缺失的手工文件仍可补齐。</value></data>
+  <data name="GroupProcessDescription" xml:space="preserve"><value>观察游戏会话。停止游戏与取消启动器任务相互独立。</value></data>
+  <data name="GroupResourcepackDescription" xml:space="preserve"><value>已安装资源包与选用顺序相互独立。除非明确替换，否则保留内置和未跟踪的选择；游戏运行时延迟写入。</value></data>
+  <data name="GroupResultDescription" xml:space="preserve"><value>读取已保存的超大工具输出，不重复执行操作；结果在七天后过期。</value></data>
+  <data name="GroupRuntimeDescription" xml:space="preserve"><value>准备文件后再提交一份运行环境设置记录。保留游戏内容，兼容建议不作为启动门禁。</value></data>
+  <data name="GroupSelfDescription" xml:space="preserve"><value>启动器版本与可选的更新查询。</value></data>
+  <data name="GroupServerDescription" xml:space="preserve"><value>管理收藏、通过 Windows DNS/SRV 解析地址并查询实时状态。</value></data>
+  <data name="GroupToolsDescription" xml:space="preserve"><value>在终端检查和调用 MCP 工具。</value></data>
+  <data name="GroupVersionsDescription" xml:space="preserve"><value>查找 Minecraft 版本。</value></data>
+  <data name="GroupWorldDescription" xml:space="preserve"><value>保留原世界来源和未知文件。原生锁阻止不安全写入；破坏性操作保留可恢复的备份。</value></data>
+  <data name="HelpDescription" xml:space="preserve"><value>使用与参数解析相同的命令声明查看帮助。</value></data>
+  <data name="HelpEntryPoints" xml:space="preserve"><value>使用 help COMMAND SUBCOMMAND 或 --help 查看命令详情。execute 不能调用终端宿主入口。数据目录由宿主配置固定，不受 execute 参数影响。</value></data>
+  <data name="HelpTaskLifetimes" xml:space="preserve"><value>--background 任务在本次工具调用结束后继续运行；job_cancel 取消任务，process_stop 停止游戏，两者生命周期独立。</value></data>
+  <data name="HelpTokenBoundaries" xml:space="preserve"><value>execute.arguments 的每项都是一个 token。含空格的路径和名称须保留在同一项中。类似选项的值使用 --name=VALUE；类似选项的位置参数值之前须放置 --，且位于命令路径和选项之后。</value></data>
+  <data name="HostingCallDescription" xml:space="preserve"><value>使用强类型 JSON 输入调用具名工具。</value></data>
+  <data name="HostingJobHostDescription" xml:space="preserve"><value>内部持久化任务执行器。</value></data>
+  <data name="HostingListDescription" xml:space="preserve"><value>列出共享 MCP 工具定义。</value></data>
+  <data name="HostingServeDescription" xml:space="preserve"><value>通过 stdio 提供 MCP 服务。stdout 仅用于协议。</value></data>
+  <data name="HostingSessionHostDescription" xml:space="preserve"><value>内部独立游戏会话监视器。</value></data>
+  <data name="InformationResultReadDescription" xml:space="preserve"><value>从保留的结果中读取 JSON Pointer、对象属性页或文本片段。</value></data>
+  <data name="InformationVersionsListDescription" xml:space="preserve"><value>列出缓存或远端可用的 Minecraft 版本。</value></data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve"><value>查找工具及 execute 使用的同一组命令定义。</value></data>
+  <data name="InformationRootContextDescription" xml:space="preserve"><value>读取有界概览，保留各部分的错误而不隐藏其他部分。</value></data>
+  <data name="InformationRootVersionDescription" xml:space="preserve"><value>启动器构建与运行时信息。</value></data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve"><value>检查启动器发布版本，不执行安装。</value></data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve"><value>启动器构建与运行时信息。</value></data>
+  <data name="InstanceContentContextDescription" xml:space="preserve"><value>读取真实的内容兼容上下文。</value></data>
+  <data name="InstanceCopyDescription" xml:space="preserve"><value>创建已登记实例的独立副本。</value></data>
+  <data name="InstanceCreateDescription" xml:space="preserve"><value>为确切的 Minecraft 版本创建空实例。</value></data>
+  <data name="InstanceImportDescription" xml:space="preserve"><value>复制完整来源实例，迁移成功后再登记。</value></data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve"><value>读取来源配置，不登记或复制实例。</value></data>
+  <data name="InstanceListDescription" xml:space="preserve"><value>列出已登记的实例。</value></data>
+  <data name="InstanceMoveDescription" xml:space="preserve"><value>将已登记实例移动到指定目录。</value></data>
+  <data name="InstancePrepareDescription" xml:space="preserve"><value>准备已迁入的运行组件。</value></data>
+  <data name="InstanceRelinkDescription" xml:space="preserve"><value>更新现有实例的游戏目录引用。</value></data>
+  <data name="InstanceRemoveDescription" xml:space="preserve"><value>删除实例登记及其备份；除非明确指定，否则保留游戏文件。</value></data>
+  <data name="InstanceRenameDescription" xml:space="preserve"><value>修改实例显示名称，不移动其文件。</value></data>
+  <data name="InstanceShowDescription" xml:space="preserve"><value>读取已登记实例。</value></data>
+  <data name="JavaAvailableDescription" xml:space="preserve"><value>列出可用的托管 Java 运行时版本。</value></data>
+  <data name="JavaImportDescription" xml:space="preserve"><value>将现有 Java 运行时导入启动器管理。</value></data>
+  <data name="JavaInstallDescription" xml:space="preserve"><value>下载并安装托管 Java 运行时。</value></data>
+  <data name="JavaListDescription" xml:space="preserve"><value>发现 Java 运行时，包括明确提供的路径。</value></data>
+  <data name="JavaManagedDescription" xml:space="preserve"><value>列出启动器管理的 Java 运行时。</value></data>
+  <data name="JavaRemoveDescription" xml:space="preserve"><value>永久删除未被引用的托管 Java；外部 Java 仅移除登记，原文件不变。</value></data>
+  <data name="JavaSelectDescription" xml:space="preserve"><value>为全局设置或指定实例选择 Java。</value></data>
+  <data name="JobCancelDescription" xml:space="preserve"><value>请求取消任务；请另行检查最终状态。</value></data>
+  <data name="JobListDescription" xml:space="preserve"><value>列出持久化的启动器任务及其记录状态。</value></data>
+  <data name="JobResumeDescription" xml:space="preserve"><value>仅在可安全重复时恢复中断或失败的任务。</value></data>
+  <data name="JobShowDescription" xml:space="preserve"><value>读取持久化任务的状态、进度和结果。</value></data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve"><value>为实例准备必需的 Minecraft 文件，不启动游戏。</value></data>
+  <data name="LaunchLaunchDescription" xml:space="preserve"><value>启动游戏或返回只读计划。进程启动不代表已进入游戏。游戏生命周期独立于模型连接。</value></data>
+  <data name="LoaderInstallDescription" xml:space="preserve"><value>安装加载器，不替换游戏内容。</value></data>
+  <data name="LoaderListDescription" xml:space="preserve"><value>列出基础 Minecraft 版本对应的加载器版本。</value></data>
+  <data name="LogBundleDescription" xml:space="preserve"><value>导出诊断包，或使用 --plan 检查包含的文件。</value></data>
+  <data name="LogEventsDescription" xml:space="preserve"><value>读取解析后的日志事件。下次连续读取时传入返回的 parserState 和流偏移。</value></data>
+  <data name="LogExportDescription" xml:space="preserve"><value>导出可用的控制台窗口或崩溃快照，并附带截断说明。</value></data>
+  <data name="LogLogsDescription" xml:space="preserve"><value>读取实时控制台窗口或崩溃快照。使用各流的 nextOffset 续读；被淘汰的前缀会明确报告。</value></data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve"><value>分析实例、已记录会话或崩溃报告；发现项是证据和建议，不是根因证明。</value></data>
+  <data name="MaintenancePruneDescription" xml:space="preserve"><value>执行时重新评估回收规则；--plan 不修改文件。</value></data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve"><value>读取缓存占用。</value></data>
+  <data name="OptionAccountDescription" xml:space="preserve"><value>离线身份 ID。</value></data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve"><value>内容识别哈希算法。</value></data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve"><value>记录对指定不兼容资源包的明确接受。</value></data>
+  <data name="OptionArchitectureDescription" xml:space="preserve"><value>运行时架构。</value></data>
+  <data name="OptionArgumentsDescription" xml:space="preserve"><value>工具输入 JSON；默认为 {}。</value></data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve"><value>包含工具输入 JSON 的文件。</value></data>
+  <data name="OptionAttachDescription" xml:space="preserve"><value>为本地文件关联已核实的平台跟踪信息。</value></data>
+  <data name="OptionBackgroundDescription" xml:space="preserve"><value>加入持久化任务队列；使用 job show 检查最终结果。</value></data>
+  <data name="OptionBytesDescription" xml:space="preserve"><value>原始日志字节预算，范围为 8 至 1048576。</value></data>
+  <data name="OptionChannelDescription" xml:space="preserve"><value>允许的更新渠道。</value></data>
+  <data name="OptionCharactersDescription" xml:space="preserve"><value>已保存 JSON 文本的片段大小，范围为 256 至 8000。</value></data>
+  <data name="OptionConfirmDescription" xml:space="preserve"><value>确认已审核的操作及其影响。</value></data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve"><value>跳过运行环境准备。</value></data>
+  <data name="OptionContentVersionDescription" xml:space="preserve"><value>确切的平台内容版本 ID。</value></data>
+  <data name="OptionCopyDescription" xml:space="preserve"><value>复制完整来源内容；绝不移除来源。</value></data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve"><value>启动器数据目录；默认为用户目录下的 .rmcl。</value></data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve"><value>同时移除实例自有的游戏文件。</value></data>
+  <data name="OptionDirectoryDescription" xml:space="preserve"><value>来源目录。</value></data>
+  <data name="OptionEncodingDescription" xml:space="preserve"><value>无 BOM 旧文件的编码名称。</value></data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve"><value>NAME=VALUE 覆盖环境变量，NAME 移除变量；多个变量可重复指定。</value></data>
+  <data name="OptionEventsDescription" xml:space="preserve"><value>将进度事件写入 stderr。</value></data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve"><value>要排除的可选文件相对路径；多个文件可重复指定。</value></data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve"><value>读取或计划结果中预期的文件指纹。</value></data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve"><value>预期的内容锁指纹；缺省表示不存在锁。</value></data>
+  <data name="OptionForceDescription" xml:space="preserve"><value>明确终止已记录的进程树。</value></data>
+  <data name="OptionFormatDescription" xml:space="preserve"><value>整合包导出格式。</value></data>
+  <data name="OptionFullscreenDescription" xml:space="preserve"><value>覆盖全屏设置；缺省时继承设置。</value></data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve"><value>额外游戏参数；类似选项的值使用 --game-arg=--TOKEN。</value></data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve"><value>明确指定的游戏内容目录。</value></data>
+  <data name="OptionHeightDescription" xml:space="preserve"><value>游戏窗口高度。</value></data>
+  <data name="OptionIdDescription" xml:space="preserve"><value>明确指定的托管运行时或收藏 ID。</value></data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve"><value>包含通常可重新下载的文件。</value></data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve"><value>导出时包含未跟踪的本地模组。</value></data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve"><value>要包含的可选文件相对路径；多个文件可重复指定。</value></data>
+  <data name="OptionIndexDescription" xml:space="preserve"><value>搜索排序方式。</value></data>
+  <data name="OptionInstanceDescription" xml:space="preserve"><value>实例 ID；缺省时使用全局范围。</value></data>
+  <data name="OptionJavaDescription" xml:space="preserve"><value>明确指定的 Java 可执行文件或主目录。</value></data>
+  <data name="OptionJsonDescription" xml:space="preserve"><value>输出紧凑 JSON。</value></data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve"><value>额外 JVM 参数；每个 token 重复指定一次选项。</value></data>
+  <data name="OptionKindDescription" xml:space="preserve"><value>内容目录类型；默认为 mods。</value></data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve"><value>来源启动器配置。</value></data>
+  <data name="OptionLevelDescription" xml:space="preserve"><value>可选的 log-events 级别筛选。</value></data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve"><value>库文件镜像基础 URL；多个镜像可重复指定。</value></data>
+  <data name="OptionLimitDescription" xml:space="preserve"><value>页面或部分的大小，范围为 1 至 100。</value></data>
+  <data name="OptionLoaderDescription" xml:space="preserve"><value>加载器标识符，允许自定义值；none 表示原版。</value></data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve"><value>确切的加载器版本。</value></data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve"><value>stdout/stderr 编码；不更改 file.encoding。</value></data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve"><value>已知旧版日志兼容性覆盖。</value></data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve"><value>包含手工下载整合包文件的目录。</value></data>
+  <data name="OptionMemoryDescription" xml:space="preserve"><value>最大 Java 堆内存，单位为 MiB。</value></data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve"><value>内存选择策略。</value></data>
+  <data name="OptionMigrateDescription" xml:space="preserve"><value>转换来源启动器元数据。</value></data>
+  <data name="OptionMinecraftDescription" xml:space="preserve"><value>基础 Minecraft 兼容版本，不是加载器启动配置 ID。</value></data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve"><value>共享 Minecraft 运行环境目录。</value></data>
+  <data name="OptionNameDescription" xml:space="preserve"><value>显示名称或目标文件夹。</value></data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve"><value>由用户自行管理依赖。</value></data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve"><value>不显示交互提示。</value></data>
+  <data name="OptionOfflineDescription" xml:space="preserve"><value>使用本地文件，不自动下载。</value></data>
+  <data name="OptionOffsetDescription" xml:space="preserve"><value>从零开始的搜索、数组或文本偏移量。</value></data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve"><value>缓存最小保留天数；默认为 30。</value></data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve"><value>明确指定的可选文件策略；缺省时保留原选择。</value></data>
+  <data name="OptionOverwriteDescription" xml:space="preserve"><value>即使存在冲突，也明确应用指定的游戏设置值。</value></data>
+  <data name="OptionPackVersionDescription" xml:space="preserve"><value>确切的在线整合包版本 ID。</value></data>
+  <data name="OptionPlanDescription" xml:space="preserve"><value>只读计划，不应用更改。</value></data>
+  <data name="OptionPlatformDescription" xml:space="preserve"><value>内容平台；默认为 modrinth。默认不提供 CurseForge 在线支持。</value></data>
+  <data name="OptionPlayerDescription" xml:space="preserve"><value>离线玩家名称。</value></data>
+  <data name="OptionPointerDescription" xml:space="preserve"><value>已保存结果中的 RFC 6901 JSON Pointer。</value></data>
+  <data name="OptionProfileDescription" xml:space="preserve"><value>确切的来源启动器配置 ID。</value></data>
+  <data name="OptionProjectDescription" xml:space="preserve"><value>在线整合包项目 ID。</value></data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve"><value>对象属性名称列表中从零开始的偏移量。</value></data>
+  <data name="OptionRedactDescription" xml:space="preserve"><value>尽力移除诊断包中的常见凭据；默认为 true。</value></data>
+  <data name="OptionReplaceDescription" xml:space="preserve"><value>替换完整的资源包选择。</value></data>
+  <data name="OptionReportDescription" xml:space="preserve"><value>本地 Minecraft 或 JVM 崩溃报告路径。</value></data>
+  <data name="OptionReviewDescription" xml:space="preserve"><value>先前冻结的依赖修复审核 ID。</value></data>
+  <data name="OptionScopeDescription" xml:space="preserve"><value>备份范围。</value></data>
+  <data name="OptionServerDescription" xml:space="preserve"><value>多人游戏地址或收藏。</value></data>
+  <data name="OptionSessionDescription" xml:space="preserve"><value>已记录的游戏会话 ID。</value></data>
+  <data name="OptionStateDescription" xml:space="preserve"><value>上一次连续 log-events 读取返回的解析器状态 JSON。</value></data>
+  <data name="OptionStateFileDescription" xml:space="preserve"><value>包含 log-events 解析器状态的文件。</value></data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve"><value>保留的 stderr 绝对字节偏移量。</value></data>
+  <data name="OptionStdioDescription" xml:space="preserve"><value>通过标准输入/输出提供 MCP 服务。</value></data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve"><value>保留的 stdout 绝对字节偏移量。</value></data>
+  <data name="OptionTailDescription" xml:space="preserve"><value>未提供字节游标时读取的最大日志尾行数。</value></data>
+  <data name="OptionTimeoutDescription" xml:space="preserve"><value>网络超时，单位为毫秒；默认为 5000。</value></data>
+  <data name="OptionToolDescription" xml:space="preserve"><value>确切的工具名称。</value></data>
+  <data name="OptionTopicDescription" xml:space="preserve"><value>CLI 命令帮助主题。</value></data>
+  <data name="OptionTypeDescription" xml:space="preserve"><value>内容搜索类别；默认为 all。</value></data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve"><value>候选兼容上下文；不修改实例运行环境。</value></data>
+  <data name="OptionVerifyDescription" xml:space="preserve"><value>校验已安装文件的哈希。</value></data>
+  <data name="OptionVersionDescription" xml:space="preserve"><value>Minecraft 版本或本地/自定义启动配置 ID。</value></data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve"><value>以 PROJECT=VERSION 精确选择版本；根项目和依赖项目可重复指定。</value></data>
+  <data name="OptionWaitDescription" xml:space="preserve"><value>等待游戏退出；取消等待不会停止游戏。</value></data>
+  <data name="OptionWidthDescription" xml:space="preserve"><value>游戏窗口宽度。</value></data>
+  <data name="OptionWorldDescription" xml:space="preserve"><value>世界目录或快速游玩目标。</value></data>
+  <data name="PackApplyDescription" xml:space="preserve"><value>应用保留的确切整合包更新审核。</value></data>
+  <data name="PackCompleteDescription" xml:space="preserve"><value>补齐缺失的整合包文件，包括手工下载的文件。</value></data>
+  <data name="PackExportDescription" xml:space="preserve"><value>将实例导出为 mrpack 或 CurseForge ZIP。</value></data>
+  <data name="PackImportDescription" xml:space="preserve"><value>导入 mrpack 或 CurseForge ZIP，并使用选定的可选文件。</value></data>
+  <data name="PackInspectDescription" xml:space="preserve"><value>检查本地整合包归档，不创建实例。</value></data>
+  <data name="PackInstallDescription" xml:space="preserve"><value>安装在线 Modrinth 整合包；可选文件遵循明确的选择策略。</value></data>
+  <data name="PackPrepareDescription" xml:space="preserve"><value>为已保留实例补件并自动准备游戏、加载器与Java；仅内容和离线模式保持明确的处理范围。</value></data>
+  <data name="PackReviewDescription" xml:space="preserve"><value>冻结归档更新审核；apply 使用保留的确切操作。</value></data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve"><value>冻结在线整合包更新审核；除非明确更改，否则保留已保存的可选文件选择。</value></data>
+  <data name="PackRollbackDescription" xml:space="preserve"><value>回退已记录的整合包操作。</value></data>
+  <data name="PackUpdateDescription" xml:space="preserve"><value>从归档更新整合包；除非明确更改，否则保留已保存的可选文件选择。</value></data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve"><value>从在线来源更新整合包；除非明确更改，否则保留已保存的可选文件选择。</value></data>
+  <data name="ResourcePackListDescription" xml:space="preserve"><value>列出已安装和已选用的资源包。</value></data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve"><value>设置有序的资源包名称；空列表表示不选择额外资源包。</value></data>
+  <data name="OptionLanguageDescription" xml:space="preserve"><value>启动器显示语言；优先于 RODEL_CLI_LANGUAGE 和系统界面语言。</value></data>
+  <data name="RootDescription" xml:space="preserve"><value>Windows Minecraft Java 启动器。CLI → Core；MCP 工具复用此命令树。</value></data>
+  <data name="RuntimeChangeDescription" xml:space="preserve"><value>先准备指定的运行组件，再提交实例设置。</value></data>
+  <data name="RuntimeOperationDescription" xml:space="preserve"><value>检查已记录的实例运行环境操作。</value></data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve"><value>列出实例已记录的运行环境更改。</value></data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve"><value>准备原版运行环境并移除实例的加载器选择。</value></data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve"><value>回退已记录的实例运行环境更改。</value></data>
+  <data name="RuntimeShowDescription" xml:space="preserve"><value>读取实例生效的 Minecraft、加载器和 Java 运行环境。</value></data>
+  <data name="ServerAddDescription" xml:space="preserve"><value>添加或更新具名服务器收藏。</value></data>
+  <data name="ServerConnectDescription" xml:space="preserve"><value>连接地址或收藏，可用 --instance 指定客户端，否则使用首选或唯一关联实例。仍支持 INSTANCE ADDRESS。后台入队前冻结实际地址与身份。</value></data>
+  <data name="ServerListDescription" xml:space="preserve"><value>列出已保存的服务器收藏。</value></data>
+  <data name="ServerRemoveDescription" xml:space="preserve"><value>移除服务器收藏，不修改游戏数据。</value></data>
+  <data name="ServerResolveDescription" xml:space="preserve"><value>使用 Windows DNS 和 SRV 记录解析服务器地址。</value></data>
+  <data name="ServerStatusDescription" xml:space="preserve"><value>查询服务器的实时 Minecraft 状态。</value></data>
+  <data name="SessionListDescription" xml:space="preserve"><value>列出已记录的游戏会话及其观察状态。</value></data>
+  <data name="SessionShowDescription" xml:space="preserve"><value>读取一个已记录的游戏会话及其观察状态。</value></data>
+  <data name="SessionStopDescription" xml:space="preserve"><value>请求通过系统菜单关闭；--force 终止已记录的进程树。使用 show 观察退出状态。</value></data>
+  <data name="WorldBackupDescription" xml:space="preserve"><value>备份世界。</value></data>
+  <data name="WorldBackupsDescription" xml:space="preserve"><value>列出世界备份。</value></data>
+  <data name="WorldCompressDescription" xml:space="preserve"><value>压缩世界。</value></data>
+  <data name="WorldDirectoryDescription" xml:space="preserve"><value>读取世界目录。</value></data>
+  <data name="WorldExportDescription" xml:space="preserve"><value>导出世界。</value></data>
+  <data name="WorldImportDescription" xml:space="preserve"><value>导入世界。</value></data>
+  <data name="WorldListDescription" xml:space="preserve"><value>列出世界。</value></data>
+  <data name="WorldRecoverDescription" xml:space="preserve"><value>执行世界恢复。</value></data>
+  <data name="WorldRecoveryDescription" xml:space="preserve"><value>查看世界恢复记录。</value></data>
+  <data name="WorldRemoveDescription" xml:space="preserve"><value>移除世界。</value></data>
+  <data name="WorldRestoreDescription" xml:space="preserve"><value>还原世界备份。</value></data>
+  <data name="OptionServerAddressDescription" xml:space="preserve"><value>使用明确的多人服务器地址，不解析收藏；优先于 --server。</value></data>
+  <data name="OptionPreferredDescription" xml:space="preserve"><value>将该关联实例设为此服务器收藏的首选客户端。</value></data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve"><value>从所提供的关联中指定首选实例标识。</value></data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve"><value>前台微软登录方式：browser（默认）或 device-code。</value></data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve"><value>首个参数为明确实例时，可提供地址或服务器收藏。</value></data>
+  <data name="AccountCurrentDescription" xml:space="preserve"><value>读取当前保存的身份选择。</value></data>
+  <data name="AccountSelectDescription" xml:space="preserve"><value>选择已保存的离线或微软身份。</value></data>
+  <data name="AccountClearDescription" xml:space="preserve"><value>清除当前保存的身份选择。</value></data>
+  <data name="AccountLoginDescription" xml:space="preserve"><value>使用本机配置的应用ID在前台登录微软；程序不内置应用ID。</value></data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve"><value>通过受保护的本地待完成凭据继续微软登录。</value></data>
+  <data name="AccountRefreshDescription" xml:space="preserve"><value>在前台刷新已保存的在线身份。</value></data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve"><value>微软登录需要用户交互。</value></data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve"><value>使用 account login --method device-code --events 显示前台授权提示。</value></data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve"><value>账户操作在前台运行，不将凭据或授权提示保存为后台任务。</value></data>
+  <data name="ServerShowDescription" xml:space="preserve"><value>读取服务器收藏及其关联实例。</value></data>
+  <data name="ServerBindDescription" xml:space="preserve"><value>将已有实例关联到服务器收藏。</value></data>
+  <data name="ServerUnbindDescription" xml:space="preserve"><value>移除服务器收藏中的实例关联。</value></data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve"><value>替换服务器收藏的关联实例；空列表清除全部关联。</value></data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve"><value>读取游戏会话中记录的服务器连接证据。</value></data>
+  <data name="OptionNoServerDescription" xml:space="preserve"><value>普通启动，不继承所属服务器；明确指定的服务器参数仍优先。</value></data>
+  <data name="OptionDedicatedDescription" xml:space="preserve"><value>将此实例归所选服务器专用管理，不复制文件。</value></data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve"><value>将新导入的整合包登记为此服务器收藏的专用客户端。</value></data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve"><value>将专用客户端转回普通本地实例，不移动或删除文件。</value></data>
+  <data name="PackCheckDescription" xml:space="preserve"><value>检查已保存的HMCL分发源并暂存精确审核；确认后另用 pack apply 应用。</value></data>
+  <data name="PackHistoryDescription" xml:space="preserve"><value>列出保留的包事务与当前可回退目标。</value></data>
+  <data name="PackDetachDescription" xml:space="preserve"><value>解除来源驱动的更新，不删除客户端或原始来源元数据。</value></data>
+  <data name="AppCommandsDescription" xml:space="preserve"><value>控制指定运行中 App 的偏好与界面状态。</value></data>
+  <data name="AppExpectedFingerprint" xml:space="preserve"><value>app show 返回的精确指纹；App 状态变化后拒绝旧操作。</value></data>
+  <data name="AppPreferenceFile" xml:space="preserve"><value>包含明确包偏好改动的 JSON 文件。</value></data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve"><value>请提供 App 偏好 JSON 对象。</value></data>
+  <data name="AppPage" xml:space="preserve"><value>页面键：home、instances、content、settings 或 assistant。</value></data>
+  <data name="AppCategory" xml:space="preserve"><value>可选的稳定设置分类键。</value></data>
+  <data name="AppWindowState" xml:space="preserve"><value>窗口状态：normal、maximized、minimized 或 tray。</value></data>
+  <data name="AppWallpaperTheme" xml:space="preserve"><value>壁纸槽：light 或 dark。</value></data>
+  <data name="AppWallpaperId" xml:space="preserve"><value>此 App 壁纸目录返回的 ID。</value></data>
+  <data name="AppWallpaperSource" xml:space="preserve"><value>复制到 App 壁纸库的图像；保留来源文件。</value></data>
+  <data name="AppWallpaperName" xml:space="preserve"><value>当前槽自定义图像的显示名称。</value></data>
+  <data name="AppList" xml:space="preserve"><value>列出使用所选数据根的活动 App 实例。</value></data>
+  <data name="AppShow" xml:space="preserve"><value>读取真实 App 状态、偏好与修改指纹。</value></data>
+  <data name="AppPreferences" xml:space="preserve"><value>管理包偏好，不直接编辑私有存储文件。</value></data>
+  <data name="AppUpdatePreferences" xml:space="preserve"><value>通过真实 App 控制器应用明确的偏好改动。</value></data>
+  <data name="AppNavigation" xml:space="preserve"><value>管理 App 当前页面与选择，不改变游戏状态。</value></data>
+  <data name="AppNavigate" xml:space="preserve"><value>导航时保留活动草稿和模态操作。</value></data>
+  <data name="AppWindow" xml:space="preserve"><value>管理所选 App 的窗口。</value></data>
+  <data name="AppSetWindow" xml:space="preserve"><value>设置原生窗口状态，任务与游戏归属不变。</value></data>
+  <data name="AppClose" xml:space="preserve"><value>精确确认当前状态，并按已有任务保护请求退出 App。</value></data>
+  <data name="AppWallpapers" xml:space="preserve"><value>管理 App 真实的分主题壁纸槽。</value></data>
+  <data name="AppWallpaperList" xml:space="preserve"><value>读取真实壁纸目录和已选 ID。</value></data>
+  <data name="AppWallpaperSelect" xml:space="preserve"><value>选择已有壁纸 ID。</value></data>
+  <data name="AppWallpaperImport" xml:space="preserve"><value>通过 App 正常壁纸管线解码并导入图像。</value></data>
+  <data name="AppWallpaperRename" xml:space="preserve"><value>重命名当前槽的自定义壁纸。</value></data>
+  <data name="AppWallpaperRemove" xml:space="preserve"><value>确认后只移除 App 拥有的自定义壁纸。</value></data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve"><value>App 控制针对活动宿主，不能作为可重放的后台命令排队。</value></data>
+  <data name="AppImageCache" xml:space="preserve"><value>查看和清理 App 图像缓存，不处理启动器依赖。</value></data>
+  <data name="AppImageCacheShow" xml:space="preserve"><value>测量 App 图像缓存的当前字节数。</value></data>
+  <data name="AppImageCacheClear" xml:space="preserve"><value>确认后通过真实图像加载器清理 App 图像缓存。</value></data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve"><value>原子修改所选配置或移除覆盖，保留无关字段。</value></data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve"><value>仅包含改动字段的 JSON 对象。显式 null 会保存；恢复继承请用 --remove。</value></data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve"><value>移除一个覆盖键；可重复此选项移除多个键。</value></data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve"><value>配置改动必须是 JSON 对象。</value></data>
+  <data name="ContentShowReviewDescription" xml:space="preserve"><value>读取精确保存的内容审核并报告其基线是否过期。</value></data>
+  <data name="LocalContextLengthDescription" xml:space="preserve"><value>本地模型加载的上下文长度（token），与历史及输出预算不同；未配置时使用启动器默认的64K。</value></data>
+  <data name="SkinGroupDescription" xml:space="preserve"><value>绘制、检查、导出和预览标准 Java 皮肤。</value></data>
+  <data name="SkinCreateDescription" xml:space="preserve"><value>创建皮肤文档，可选导入 PNG。</value></data>
+  <data name="SkinInspectDescription" xml:space="preserve"><value>读取模型、修订号、撤销状态及贴图面映射。</value></data>
+  <data name="SkinReadDescription" xml:space="preserve"><value>读取指定模型面上的精确像素颜色。</value></data>
+  <data name="SkinEditDescription" xml:space="preserve"><value>原子应用一批可撤销的基础绘图操作。</value></data>
+  <data name="SkinUndoDescription" xml:space="preserve"><value>撤销一笔绘图事务。</value></data>
+  <data name="SkinRedoDescription" xml:space="preserve"><value>重做一笔已撤销事务。</value></data>
+  <data name="SkinExportDescription" xml:space="preserve"><value>按工程纹理尺寸导出PNG，不上传或更改账号皮肤。</value></data>
+  <data name="SkinSaveAsDescription" xml:space="preserve"><value>另存独立的可编辑.rmcs快照，保留全部图层与现有历史，不改来源。</value></data>
+  <data name="SkinPreviewDescription" xml:space="preserve"><value>渲染 3D PNG 快照。</value></data>
+  <data name="SkinModelDescription" xml:space="preserve"><value>Classic 为四像素手臂，Slim 为三像素手臂; Cape (64×32 / 128×64).</value></data>
+  <data name="SkinInputDescription" xml:space="preserve"><value>可选导入64x64、HD 128x128或旧版64x32 PNG。</value></data>
+  <data name="SkinOutputDescription" xml:space="preserve"><value>目标预览、PNG 或可编辑工程文件。</value></data>
+  <data name="SkinColorDescription" xml:space="preserve"><value>#RRGGBB 或 #RRGGBBAA 格式的不透明底色。</value></data>
+  <data name="SkinRevisionDescription" xml:space="preserve"><value>最近读取的修订号，拒绝过期编辑。</value></data>
+  <data name="SkinEditsDescription" xml:space="preserve"><value>使用模型面局部坐标的 typed 绘图操作 JSON 数组。</value></data>
+  <data name="SkinEditsFileDescription" xml:space="preserve"><value>包含绘图操作 JSON 数组的文件。</value></data>
+  <data name="SkinPartDescription" xml:space="preserve"><value>Head、Body、RightArm、LeftArm、RightLeg 或 LeftLeg。</value></data>
+  <data name="SkinLayerDescription" xml:space="preserve"><value>Base 为不透明内层，Outer 为允许透明的衣物外层。</value></data>
+  <data name="SkinFaceDescription" xml:space="preserve"><value>Front、Back、Right、Left、Top 或 Bottom。</value></data>
+  <data name="SkinYawDescription" xml:space="preserve"><value>PNG 相机水平角度，默认 25 度。</value></data>
+  <data name="SkinPitchDescription" xml:space="preserve"><value>PNG 相机俯仰角，-89 至 89 度，默认 10 度。</value></data>
+  <data name="SkinToolProfileDescription" xml:space="preserve"><value>MCP 工具目录：launcher（默认）、discovery（按需发现）或独立 skins。</value></data>
+  <data name="SkinEditsRequiredError" xml:space="preserve"><value>必须且只能指定 --edits 或 --edits-file 其中之一。</value></data>
+  <data name="SkinViewDescription" xml:space="preserve"><value>预览相机、尺寸、内外层及可见身体部位的 typed JSON。</value></data>
+  <data name="SkinRequestDescription" xml:space="preserve"><value>拾取、选区或剪贴像素捕获的 typed JSON 请求。</value></data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve"><value>读取指定绘图图层 ID 或 background，省略时读取可见合成。</value></data>
+  <data name="SkinPickDescription" xml:space="preserve"><value>通过模型空间射线拾取真实模型表面。</value></data>
+  <data name="SkinSelectionDescription" xml:space="preserve"><value>生成几何或颜色选区，不修改像素。</value></data>
+  <data name="SkinCaptureDescription" xml:space="preserve"><value>将面内选区捕获为可继续编辑的剪贴像素。</value></data>
+  <data name="SkinViewConflictError" xml:space="preserve"><value>--view 与简易 --yaw/--pitch 选项不能同时使用。</value></data>
+  <data name="SkinRequestRequiredError" xml:space="preserve"><value>必须提供非 null 的 typed 皮肤请求。</value></data>
+  <data name="SkinRequestError" xml:space="preserve"><value>皮肤请求无效：{0}</value></data>
+  <data name="SkinSizeDescription" xml:space="preserve"><value>纹理尺寸：64或128像素。</value></data>
+  <data name="SkinTemplateDescription" xml:space="preserve"><value>原创模板ID；使用skin templates查看。</value></data>
+  <data name="SkinNameDescription" xml:space="preserve"><value>工程显示名称。</value></data>
+  <data name="SkinIndexDescription" xml:space="preserve"><value>当前观察修订下的保留历史位置。</value></data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve"><value>请选择模板或PNG输入，不可同时指定。</value></data>
+  <data name="SkinSizeError" xml:space="preserve"><value>皮肤尺寸必须为64或128。</value></data>
+  <data name="SkinListDescription" xml:space="preserve"><value>列出可编辑皮肤工程。</value></data>
+  <data name="SkinTemplatesDescription" xml:space="preserve"><value>列出原创基础人物模板和建议模型。</value></data>
+  <data name="SkinCloneDescription" xml:space="preserve"><value>将可编辑内容复制为新工程。</value></data>
+  <data name="SkinRenameDescription" xml:space="preserve"><value>重命名皮肤工程。</value></data>
+  <data name="SkinHistoryDescription" xml:space="preserve"><value>读取保留的事务历史。</value></data>
+  <data name="SkinRestoreToDescription" xml:space="preserve"><value>原子恢复至指定历史位置。</value></data>
+  <data name="SkinImportDescription" xml:space="preserve"><value>将PNG作为一次可撤销内容替换导入。</value></data>
+  <data name="SkinInputRequiredError" xml:space="preserve"><value>需要指定PNG输入。</value></data>
+  <data name="SkinFootprintDescription" xml:space="preserve"><value>读取准确笔刷覆盖范围，不执行绘制。</value></data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve"><value>渲染未提交笔划预览。</value></data>
+  <data name="SkinLabelDescription" xml:space="preserve"><value>可选候选描述。</value></data>
+  <data name="SkinOperationDescription" xml:space="preserve"><value>候选应用操作标识。</value></data>
+  <data name="SkinScopeDescription" xml:space="preserve"><value>宿主持有的皮肤编辑授权。</value></data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve"><value>创建文档、图层与像素编辑授权。</value></data>
+  <data name="SkinScopeShowDescription" xml:space="preserve"><value>查看皮肤编辑授权。</value></data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve"><value>撤销皮肤编辑授权。</value></data>
+  <data name="SkinProposalDescription" xml:space="preserve"><value>暂存与审核冻结皮肤候选。</value></data>
+  <data name="SkinProposeDescription" xml:space="preserve"><value>在宿主授权内暂存候选。</value></data>
+  <data name="SkinProposalShowDescription" xml:space="preserve"><value>查看候选审核与提交状态。</value></data>
+  <data name="SkinAcceptDescription" xml:space="preserve"><value>应用已审核候选并记录持久回执。</value></data>
+  <data name="SkinRejectDescription" xml:space="preserve"><value>放弃尚未应用的候选。</value></data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve"><value>在受管预览目录渲染候选。</value></data>
+  <data name="SkinReceiptDescription" xml:space="preserve"><value>查询候选应用的持久结果。</value></data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve"><value>将skins MCP绑定宿主授权；仅生成候选，不允许直接编辑或应用。</value></data>
+  <data name="SkinScopeProfileError" xml:space="preserve"><value>皮肤授权需要skins工具目录。</value></data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve"><value>启动前应用的 Minecraft 语言，如 zh_cn、en_us 或 ar_sa；省略则保留游戏设置。</value></data>
+  <data name="AiReferenceImages" xml:space="preserve"><value>本轮 PNG/JPG/WebP 参考图片文件。可重复使用，最多3张；发送前冻结原始图片。</value></data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve"><value>每轮对话最多附加3张参考图。</value></data>
+  <data name="AiUserPromptRespond" xml:space="preserve"><value>通过 JSON AiUserResponse 文件回答或跳过当前问题；回答不会授予工具权限。</value></data>
+  <data name="AiCancelQueued" xml:space="preserve"><value>停止所选回合前，同时取消此会话的排队消息。</value></data>
+  <data name="RepairApply" xml:space="preserve"><value>应用一次已冻结的可回退方案。</value></data>
+  <data name="RepairCreate" xml:space="preserve"><value>授权修复一次已记录的失败运行或准备任务。</value></data>
+  <data name="RepairGroup" xml:space="preserve"><value>修复实例的已记录故障（可回退）。</value></data>
+  <data name="RepairJob" xml:space="preserve"><value>原始准备失败任务 ID。</value></data>
+  <data name="RepairKind" xml:space="preserve"><value>修复类型：disable_mod、java、memory 或 dependencies。</value></data>
+  <data name="RepairMemory" xml:space="preserve"><value>建议的堆内存上限（MiB）。</value></data>
+  <data name="RepairPlan" xml:space="preserve"><value>冻结一个有证据支持的最小修复方案。</value></data>
+  <data name="RepairReason" xml:space="preserve"><value>说明支持本次试验的实际证据。</value></data>
+  <data name="RepairRestore" xml:space="preserve"><value>恢复本次试验修改且未被再次编辑的目标。</value></data>
+  <data name="RepairSession" xml:space="preserve"><value>原始失败运行 ID。</value></data>
+  <data name="RepairShow" xml:space="preserve"><value>读取原始证据与当前修复状态。</value></data>
+  <data name="RepairTarget" xml:space="preserve"><value>已安装模组文件名或现有 Java 可执行文件。</value></data>
+  <data name="RepairVerify" xml:space="preserve"><value>启动并观察一次专属验证运行。</value></data>
+  <data name="ExternalGroup" xml:space="preserve"><value>外置 Yggdrasil 账户与 LittleSkin 授权。</value></data>
+  <data name="ExternalAddress" xml:space="preserve"><value>网站或 Yggdrasil API 地址；重新登录时可省略。</value></data>
+  <data name="ExternalAttempt" xml:space="preserve"><value>待完成的外置登录请求 ID。</value></data>
+  <data name="ExternalProfile" xml:space="preserve"><value>本次登录提供的角色 UUID。</value></data>
+  <data name="ExternalUsername" xml:space="preserve"><value>认证服务接受的邮箱或用户名。</value></data>
+  <data name="ExternalPasswordStdin" xml:space="preserve"><value>从标准输入读取一行密码，不将密码放入命令参数。</value></data>
+  <data name="ExternalComponentFile" xml:space="preserve"><value>需要校验并复制到启动器目录的现有 authlib-injector JAR。</value></data>
+  <data name="ExternalLogin" xml:space="preserve"><value>使用密码登录并登记或选择返回的游戏角色。</value></data>
+  <data name="ExternalDevice" xml:space="preserve"><value>开始本应用的 LittleSkin 设备码授权。</value></data>
+  <data name="ExternalPoll" xml:space="preserve"><value>按服务间隔查询 LittleSkin；--wait 等待到授权结束。</value></data>
+  <data name="ExternalShow" xml:space="preserve"><value>读取待完成登录的公开状态，不返回令牌。</value></data>
+  <data name="ExternalSelect" xml:space="preserve"><value>绑定本次返回的角色并登记，不切换当前账户。</value></data>
+  <data name="ExternalCancel" xml:space="preserve"><value>取消待完成的外置授权并清理受保护的临时状态。</value></data>
+  <data name="ExternalComponent" xml:space="preserve"><value>管理启动器持有的外置登录组件。</value></data>
+  <data name="ExternalComponentShow" xml:space="preserve"><value>检查已有组件与校验值，不下载文件。</value></data>
+  <data name="ExternalComponentPrepare" xml:space="preserve"><value>复用已校验组件、下载官方构件，或使用 --file 导入。</value></data>
+  <data name="ExternalPasswordRequired" xml:space="preserve"><value>请使用 --password-stdin，通过标准输入提供密码。</value></data>
+  <data name="ExternalCachedLaunch" xml:space="preserve"><value>显式使用完整缓存凭据与组件尝试原外置角色，不保证联机成功。</value></data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve"><value>密码输入仅限直接运行的前台 CLI。</value></data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve"><value>选用一个已安装光影包；省略 --file 关闭光影。</value></data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve"><value>配置归属：iris、oculus 或 optifine；省略时按实际配置识别。</value></data>
+  <data name="ShaderPackListDescription" xml:space="preserve"><value>读取已安装光影及渲染引擎的实际选择。</value></data>
+  <data name="ShaderPackFileDescription" xml:space="preserve"><value>已安装光影包文件名；省略则关闭光影。</value></data>
+  <data name="GroupShaderpackDescription" xml:space="preserve"><value>查看和选用光影包。</value></data>
+  <data name="AiRunQueuedTurn" xml:space="preserve"><value>停止当前响应并优先执行这条排队消息。</value></data>
+  <data name="BridgeGroup" xml:space="preserve"><value>检查可选的游戏桥。</value></data>
+  <data name="BridgeShow" xml:space="preserve"><value>读取所选会话的游戏桥连接状态。</value></data>
+  <data name="BridgeGameGroup" xml:space="preserve"><value>观察实时游戏数据并修改自有本地世界。</value></data>
+  <data name="BridgeSnapshot" xml:space="preserve"><value>读取当前同步的玩家和世界快照。</value></data>
+  <data name="BridgeEdit" xml:space="preserve"><value>提交一项类型化本地修改；服务器始终只读。</value></data>
+  <data name="BridgeEditRequest" xml:space="preserve"><value>GameEditRequest JSON，包含operationId、已观察世界标识、kind及对应dayTime/health/control/click/button/command载荷。</value></data>
+  <data name="BridgeOperationGroup" xml:space="preserve"><value>观察或取消已有游戏修改。</value></data>
+  <data name="BridgeOperationShow" xml:space="preserve"><value>读取确切修改收据，不重放修改。</value></data>
+  <data name="BridgeOperationCancel" xml:space="preserve"><value>仅取消尚未开始执行的修改。</value></data>
+  <data name="BridgeLaunch" xml:space="preserve"><value>为本次启动启用可选 Java 游戏桥。</value></data>
+  <data name="BridgeRegion" xml:space="preserve"><value>读取有界的可见方块、实体和背包摘要，不加载区块。</value></data>
+  <data name="BridgeRegionRequest" xml:space="preserve"><value>GameRegionRequest JSON，包含 gameIncarnation、worldEpoch、dimension、x/y/z 和 sizeX/Y/Z（1..16）。</value></data>
+  <data name="BridgeInterval" xml:space="preserve"><value>观察间隔，单位毫秒（200..10000）。</value></data>
+  <data name="BridgeEvents" xml:space="preserve"><value>通过 --events 连续输出当前快照，直至取消。</value></data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve"><value>请使用 --events 接收实时观察流。</value></data>
+  <data name="BridgeQuery" xml:space="preserve"><value>读取游戏语义数据或有界原生NBT选择。</value></data>
+  <data name="BridgeQueryRequest" xml:space="preserve"><value>GameQueryRequest JSON，包含已观察的世界标识、kind及可选选择和分页。</value></data>
+  <data name="BridgeAi" xml:space="preserve"><value>发送或观察绑定当前游戏的启动器AI请求。</value></data>
+  <data name="BridgeAiRequest" xml:space="preserve"><value>GameAiRequest JSON，包含action、稳定worldKey与新鲜snapshot；修改须带准确请求、回合或决定身份。</value></data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve"><value>操作配置数据目录中的启动器资源。execute提供已实现的CLI操作。可选的认证游戏桥可观察当前游戏；修改须为自有本地世界并符合现有权限。</value></data>
+  <data name="ContentBundledDescription" xml:space="preserve"><value>列出启动器内置模组及其在实例中的状态。</value></data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve"><value>审核所选内置模组ID及随包依赖，不安装文件。</value></data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>恢复默认: 上下文长度.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: 上下文长度.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>按需读取一张已保存的图片；MCP返回图片内容，不返回base64文本。</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>将同尺寸 PNG 添加为新图层，保留 RGBA 和已有内容。</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>--name 仅用于 --as-layer；--model 仅用于整张皮肤导入。</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>设置皮肤与披风的独立作品搭配预览。</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>选择搭配作品（ID）</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>只预览当前作品。</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>请选择 --with ID 或 --clear。</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>JSON 格式的强类型种子请求</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>包含强类型种子请求的 UTF-8 文件</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>用于群系名称的本地游戏语言代码</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>导出 PNG 的目标路径</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>使用精确原版生成探索种子</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>列出已安装版本及种子适配状态</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>准备原版游戏依赖和 Java</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>读取原版群系、结构和维度注册表</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>生成或读取已缓存的原版地图切片</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>导出带生成上下文的原版地图 PNG</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>管理有界正向见证搜索</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>创建并运行持久搜索</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>列出持久搜索</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>读取已保留结果与继续游标</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>从已提交游标继续搜索</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>管理种子和地点收藏</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>列出两类收藏</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>保存或更新种子／地点收藏</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>移除指定收藏</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>请仅指定 --request 或 --request-file 中的一项。</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>种子请求不能为 null。</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>种子请求 JSON 无效：{0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>在一个种子中按结构类型和坐标半径查询真实拼装结果，按距离排序。</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>生成限定范围的原版方块预览、容器战利品和材料统计。</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>计算或读取缓存的原版世界出生点</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>启动器运行日志</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>导出启动器保留的日志，无需指定游戏会话。</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>通过共享Core管理一个联机房间。</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>创建并持有房间；使用--background作为独立任务运行。</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>使用原生房间码加入，保留本机游戏环境。</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>读取当前房间及独立观察的游戏、网络状态。</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>结束此房间，保留游戏和实例。</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>以有界恢复流程重试此房间。</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>使用房间入口启动已准备的加入者实例。</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>使用房主明确提供的备用服务器地址。</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>导出有界连接记录，不包含邀请码和玩家资料。</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>原生房间码，也可包含在文字中。</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>属于所选实例的已有游戏会话。</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>在支持时自动开放本次房间的首个本地世界。</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>显式刷新共享游戏版本目录。</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>更换加入者的房间码，保留游戏实例。</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>为实例 TARGET 的缺失项 ITEM 暂存本地文件 VALUE，继续准备时校验。</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>仅导出共享游戏内容及配置，排除个人设置与无下载来源的本地组件。</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>同时请求本房间游戏正常保存退出，不强制终止。</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>网络就绪后自动启动加入者的游戏。</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>明确允许正常关闭所选运行游戏后重新加入。</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>将存档地图采样导出为PNG。</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>用隔离的原版生成预览补齐存档中未探索的地形。</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>查看存档地图与玩家位置。</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>读取经过归属核验的实时或已保存玩家位置。</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>已保存玩家的UUID或本地记录标识。</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>在独立原版环境按存档记录的战利品表和种子预测物品，不修改箱子。</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>读取存档地图采样，不生成区块。</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>读取存档实际方块、材料和容器，不生成区块或战利品。</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>JSON格式的强类型存档地图请求。</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>包含强类型存档地图请求的文件。</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>检查存档方块的原版模型、贴图与网格。</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>读取世界种子、设置和已保存的玩家记录。</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>在指定半径内查找存档已有的结构记录。</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>仅更新皮肤资料，不续期登录凭据。</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>浏览和管理实例截图。</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>截图文件名。</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>截图文件名列表。</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>截图文件名；省略时打开截图文件夹。</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>按修改时间从新到旧列出截图。</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>读取一张截图的路径、大小和修改时间。</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>用默认查看器打开截图，或打开截图文件夹。</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>重命名截图，不覆盖其它文件。</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>将所选截图复制到指定目录，不覆盖已有文件。</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>移除所选截图（默认移入回收站）；需要 --confirm。</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>截图操作已取消；已完成的文件更改予以保留。</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>部分截图未能处理，请查看逐文件结果。</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>直接删除而不移入回收站，无法撤销；需要 --confirm。</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>选择本地文件的来源：FILE=PROJECT；多个文件可重复指定。</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>请使用 --select-source FILE=PROJECT。</value></data>
+</root>

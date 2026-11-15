@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>实例截图 · 交互示意</title>
+  <link rel="stylesheet" href="prototype.css">
+  <style>
+    body { display:block; min-height:100vh; padding:24px; overflow:auto; background:#ede8db; color:#382e20; }
+    .demo-note { max-width:1000px; margin:0 auto 16px; font-size:13px; color:#6b5c48; }
+    .gallery-page { max-width:1000px; margin:auto; padding:24px; }
+    .gallery-page h1 { margin:0 0 20px; font-size:28px; }
+    .gallery-shell { border:1px solid #b5a68a; background:#fffcefbb; }
+    .gallery-instance { padding:16px 20px; border-bottom:1px solid #b5a68a; }
+    .gallery-tabs { display:flex; gap:4px; padding:12px 20px; }
+    .gallery-tabs span { flex:1; padding:9px 6px; text-align:center; font-size:13px; }
+    .gallery-tabs [aria-current] { background:#e7c991; box-shadow:inset 1px 2px 3px #694c1f33; }
+    .gallery-tools { display:flex; gap:8px; padding:0 20px 12px; flex-wrap:wrap; align-items:center; }
+    .gallery-tools input { flex:1; min-width:120px; }
+    .gallery-tools input,.gallery-tools select,.rename-input { padding:8px 10px; border:1px solid #b5a68a; background:#fffcef; color:inherit; font:inherit; }
+    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); align-items:start; align-content:start; gap:12px; padding:12px 20px 24px; max-height:560px; min-height:220px; overflow:auto; }
+    .shot { min-width:0; border:1px solid #b5a68a; background:#fffcef; position:relative; }
+    .shot.selected::after { content:""; position:absolute; inset:-1px; border:3px solid #5b8730; pointer-events:none; }
+    .shot-open { display:block; border:0; width:100%; padding:0; background:transparent; color:inherit; font:inherit; text-align:left; cursor:pointer; }
+    .shot-open img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center; }
+    .shot-info { display:block; padding:8px 10px; }
+    .shot-name { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:13px; direction:ltr; }
+    .shot-meta { display:block; margin-top:4px; color:#6b5c48; font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .gallery-footer { border-top:1px solid #b5a68a; padding:10px 20px; display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-height:32px; font-size:12px; }
+    .gallery-count { margin-right:auto; }
+    .gallery-empty { grid-column:1/-1; display:grid; place-items:center; color:#6b5c48; }
+    #shot-menu { position:fixed; margin:0; padding:6px; background:#fffcef; border:1px solid #b5a68a; box-shadow:0 6px 24px #382e2026; min-width:170px; }
+    #shot-menu button { display:block; width:100%; border:0; padding:9px 12px; text-align:left; background:none; font:inherit; cursor:pointer; }
+    #shot-menu button:hover { background:#e7c991; }
+    dialog { border:1px solid #b5a68a; padding:0; width:min(480px,calc(100vw - 48px)); background:#fffcef; color:#382e20; }
+    dialog::backdrop { background:#10181c66; }
+    dialog h2 { margin:0; padding:20px 24px; font-size:19px; border-bottom:1px solid #b5a68a; }
+    .dialog-body { padding:20px 24px; max-height:50vh; overflow:auto; }
+    .dialog-body p { margin:0 0 12px; color:#6b5c48; }
+    .rename-input { width:100%; box-sizing:border-box; }
+    .dialog-files { white-space:pre-wrap; overflow-wrap:anywhere; direction:ltr; font-size:13px; }
+    dialog footer { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:16px 24px; border-top:1px solid #b5a68a; }
+    dialog.deleting { width:min(620px,calc(100vw - 48px)); }
+    dialog.deleting footer { grid-template-columns:repeat(3,1fr); }
+    button:focus-visible,input:focus-visible,select:focus-visible { outline:2px solid #8b581d; outline-offset:2px; }
+  </style>
+</head>
+<body>
+  <p class="demo-note"><a href="index.html?page=content">返回主原型</a> · 此页仅示意截图交互，使用现有壁纸作缩略图样本，不读取或修改玩家文件；相邻分类只展示位置。</p>
+  <main class="gallery-page">
+    <h1>内容</h1>
+    <section class="gallery-shell">
+      <header class="gallery-instance">当前实例 · 雾谷生存</header>
+      <div class="gallery-tabs" aria-label="内容分类位置">
+        <span>模组</span><span>资源包</span><span>光影</span><span>世界</span><span aria-current="page">截图</span>
+      </div>
+      <div class="gallery-tools">
+        <input id="search" type="search" aria-label="搜索截图" placeholder="搜索截图">
+        <select id="sort" aria-label="截图排序"><option value="newest">最新在前</option><option value="oldest">最早在前</option><option value="name">文件名</option></select>
+        <button class="small-button subtle" data-action="folder">打开文件夹</button>
+        <button class="small-button subtle" data-action="refresh">刷新</button>
+        <button class="small-button subtle" data-action="select">选择</button>
+      </div>
+      <div id="shots" class="gallery-grid" aria-label="截图"></div>
+      <footer id="footer" class="gallery-footer"></footer>
+    </section>
+  </main>
+  <p id="feedback" class="demo-note" role="status"></p>
+  <div id="shot-menu" popover="auto" aria-label="截图操作"></div>
+  <dialog id="action-dialog">
+    <h2 id="dialog-title"></h2>
+    <div class="dialog-body" id="dialog-body"></div>
+    <footer><button id="confirm" class="small-button">确认</button><button id="delete-permanently" class="small-button subtle" hidden>直接删除</button><button id="cancel" class="small-button subtle">取消</button></footer>
+  </dialog>
+  <script>
+    const images = [
+      {id:1,name:'2026-11-04_09.30.00.png',date:'2026-11-04T09:30:00',image:'assets/wallpapers/light-desert-temple-centered.png'},
+      {id:2,name:'樱花草甸.png',date:'2026-11-03T16:20:00',image:'assets/wallpapers/light-cherry-meadow-inhabited.png'},
+      {id:3,name:'秋林里的小屋.png',date:'2026-11-02T14:10:00',image:'assets/wallpapers/light-dappled-autumn-inhabited.png'},
+      {id:4,name:'雪峰与冰湖.png',date:'2026-11-01T10:40:00',image:'assets/wallpapers/light-snow-peaks-chalet.png'}
+    ];
+    const state = {selected:new Set(),selecting:false,query:'',sort:'newest',target:null,pending:null,anchor:null};
+    const byId = id => document.getElementById(id);
+    const escapeText = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const visible = () => images.filter(x => x.name.toLocaleLowerCase().includes(state.query.toLocaleLowerCase())).sort((a,b) => state.sort === 'name' ? a.name.localeCompare(b.name) : (state.sort === 'oldest' ? 1 : -1) * a.date.localeCompare(b.date));
+    const feedback = text => byId('feedback').textContent = text;
+    const updateTooltips = () => document.querySelectorAll('.shot-name').forEach(el => {
+      if(el.scrollWidth>el.clientWidth)el.title=el.textContent;else el.removeAttribute('title');
+    });
+    function render() {
+      const items = visible();
+      byId('shots').innerHTML = items.length ? items.map(x => `<article class="shot ${state.selected.has(x.id)?'selected':''}"><button class="shot-open" data-open="${x.id}" aria-label="选择 ${escapeText(x.name)}" aria-pressed="${state.selected.has(x.id)}"><img src="${x.image}" alt=""><span class="shot-info"><span class="shot-name">${escapeText(x.name)}</span><span class="shot-meta">${new Date(x.date).toLocaleString('zh-CN')}</span></span></button></article>`).join('') : `<p class="gallery-empty">${state.query?'没有匹配的截图':'还没有截图'}</p>`;
+      renderSelection();
+      requestAnimationFrame(updateTooltips);
+    }
+    function renderSelection() {
+      const items=visible();
+      document.querySelectorAll('.shot-open').forEach(button=>{
+        const id=Number(button.dataset.open), item=images.find(x=>x.id===id);
+        button.parentElement.classList.toggle('selected',state.selected.has(id));
+        button.setAttribute('aria-label',`选择 ${item.name}`);
+        button.setAttribute('aria-pressed',String(state.selected.has(id)));
+      });
+      const canSelectAll=state.selected.size<items.length;
+      byId('footer').innerHTML = state.selecting ? `<span class="gallery-count">已选择：${state.selected.size}</span>${state.selected.size?`<button class="small-button subtle" data-action="copy" ${state.selected.size===1?'':'disabled'}>复制文件</button><button class="small-button subtle" data-action="export">导出副本</button><button class="small-button subtle" data-action="delete">删除截图</button>`:''}<button class="small-button subtle" data-action="${canSelectAll?'all':'clear'}">${canSelectAll?'全选':'取消选择'}</button>` : `<span class="gallery-count">已显示：${items.length} / ${images.length}</span>`;
+      document.querySelector('[data-action="select"]').hidden=state.selecting;
+    }
+    function selectImage(id,event) {
+      state.selecting=true;
+      if(event.shiftKey){
+        const ids=visible().map(x=>x.id), end=ids.indexOf(id), anchor=ids.indexOf(state.anchor);
+        const start=anchor<0?end:anchor;
+        if(!event.ctrlKey)state.selected.clear();
+        for(let index=Math.min(start,end);index<=Math.max(start,end);index++)state.selected.add(ids[index]);
+        if(anchor<0)state.anchor=id;
+      }else{
+        if(event.ctrlKey)state.selected.has(id)?state.selected.delete(id):state.selected.add(id);
+        else{state.selected.clear();state.selected.add(id);}
+        state.anchor=id;
+      }
+      renderSelection();
+    }
+    function showMenu(id,x,y) {
+      state.target=id;
+      const menu=byId('shot-menu');
+      menu.innerHTML=[['open','打开图片'],['copy-image','复制图片'],['copy','复制文件'],['export','导出副本'],['rename','重命名截图'],['reveal','打开所在位置'],['delete','删除截图']].map(([id,label])=>`<button data-command="${id}">${label}</button>`).join('');
+      menu.style.left=Math.max(8,Math.min(innerWidth-190,x))+'px';
+      menu.style.top=Math.max(8,Math.min(innerHeight-330,y))+'px';
+      menu.showPopover();
+      menu.querySelector('button').focus();
+    }
+    function dialog(action, ids) {
+      state.pending={action,ids:[...ids]};
+      const rename=action==='rename', files=images.filter(x=>ids.includes(x.id));
+      byId('dialog-title').textContent=rename?'重命名截图':'删除截图';
+      byId('action-dialog').classList.toggle('deleting',!rename);
+      byId('delete-permanently').hidden=rename;
+      byId('dialog-body').innerHTML=rename?`<input id="new-name" class="rename-input" aria-label="文件名" value="${escapeText(files[0].name)}">`:`<p>移入回收站后可以恢复；直接删除不经过回收站，无法撤销。</p><div class="dialog-files">${files.map(x=>escapeText(x.name)).join('\n')}</div>`;
+      byId('confirm').textContent=rename?'确认':'移入回收站';
+      byId('confirm').className='small-button'+(rename?'':' subtle');
+      byId('cancel').className='small-button'+(rename?' subtle':'');
+      byId('action-dialog').showModal();
+      (rename?byId('new-name'):byId('cancel')).focus();
+    }
+    byId('search').addEventListener('input',e=>{state.query=e.target.value;state.selected.clear();state.anchor=null;render();});
+    byId('sort').addEventListener('change',e=>{state.sort=e.target.value;render();});
+    window.addEventListener('resize',updateTooltips);
+    byId('shots').addEventListener('load',updateTooltips,true);
+    byId('shots').addEventListener('contextmenu',e=>{
+      const card=e.target.closest('[data-open]');if(!card)return;
+      e.preventDefault();showMenu(Number(card.dataset.open),e.clientX,e.clientY);
+    });
+    byId('shots').addEventListener('keydown',e=>{
+      if(e.key==='Enter'&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.target.closest('[data-open]')){
+        e.preventDefault();
+        if(!e.repeat)feedback('原生应用会打开当前焦点图片，保留其余选择。');
+        return;
+      }
+      if(e.ctrlKey&&e.key.toLowerCase()==='a'){
+        e.preventDefault();const items=visible();state.selecting=true;
+        if(state.selected.size===items.length)state.selected.clear();else items.forEach(x=>state.selected.add(x.id));
+        renderSelection();return;
+      }
+      const card=e.target.closest('[data-open]');if(!card||!(e.key==='ContextMenu'||e.shiftKey&&e.key==='F10'))return;
+      e.preventDefault();const rect=card.getBoundingClientRect();showMenu(Number(card.dataset.open),rect.left+12,rect.top+12);
+    });
+    let holdTimer, holdStart, heldUntil=0;
+    function cancelHold(){clearTimeout(holdTimer);holdTimer=null;}
+    byId('shots').addEventListener('pointerdown',e=>{
+      cancelHold();if(e.pointerType==='mouse')return;
+      const card=e.target.closest('[data-open]');if(!card)return;
+      holdStart={x:e.clientX,y:e.clientY};
+      holdTimer=setTimeout(()=>{heldUntil=performance.now()+1000;showMenu(Number(card.dataset.open),e.clientX,e.clientY);},600);
+    });
+    byId('shots').addEventListener('pointermove',e=>{if(holdTimer&&Math.hypot(e.clientX-holdStart.x,e.clientY-holdStart.y)>8)cancelHold();});
+    byId('shots').addEventListener('pointerup',cancelHold);
+    byId('shots').addEventListener('pointercancel',cancelHold);
+    byId('shots').addEventListener('dblclick',e=>{
+      if(e.target.closest('[data-open]')&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&performance.now()>=heldUntil)
+        feedback('原生应用会调用系统默认图片查看器；此原型不提供内置看图器。');
+    });
+    document.addEventListener('click',e=>{
+      const button=e.target.closest('button');if(!button)return;
+      if(button.dataset.open){
+        if(performance.now()<heldUntil){e.preventDefault();return;}
+        const id=Number(button.dataset.open);
+        selectImage(id,e);
+        return;
+      }
+      const command=button.dataset.command, action=command||button.dataset.action;
+      if(!action)return;
+      const ids=command?[state.target]:[...state.selected];if(command)byId('shot-menu').hidePopover();
+      if(action==='copy'&&ids.length!==1)return;
+      if(action==='select'){state.selecting=true;renderSelection();}
+      else if(action==='all'){const items=visible();items.forEach(x=>state.selected.add(x.id));if(state.anchor===null)state.anchor=items[0]?.id??null;renderSelection();}
+      else if(action==='clear'){state.selecting=false;state.selected.clear();renderSelection();}
+      else if(action==='rename'||action==='delete'){if(ids.length)dialog(action,ids);}
+      else feedback({open:'原生应用调用系统默认图片查看器。',folder:'原生应用打开当前实例的截图文件夹。',reveal:'原生应用在文件管理器中选中该图片。',refresh:'已刷新示意列表。',copy:'复制文件交互示意；未改变剪贴板。','copy-image':'复制图片交互示意；未改变剪贴板。',export:'导出副本交互示意；原文件保持不变。'}[action]);
+    });
+    byId('cancel').addEventListener('click',()=>byId('action-dialog').close());
+    function submit(permanent=false){
+      const {action,ids}=state.pending;
+      if(action==='rename'){
+        const name=byId('new-name').value.trim();if(!name)return;
+        if(images.some(x=>x.id!==ids[0]&&x.name.toLocaleLowerCase()===name.toLocaleLowerCase())){feedback('已存在同名文件。');return;}
+        images.find(x=>x.id===ids[0]).name=name;
+      }else{
+        for(let i=images.length-1;i>=0;i--)if(ids.includes(images[i].id))images.splice(i,1);
+        ids.forEach(id=>state.selected.delete(id));
+      }
+      byId('action-dialog').close();render();
+      feedback(permanent?'直接删除交互示意；仅更新原型内存，未修改磁盘文件。':'仅更新原型内存中的示意数据，未修改磁盘文件。');
+    }
+    byId('confirm').addEventListener('click',()=>submit());
+    byId('delete-permanently').addEventListener('click',()=>submit(true));
+    render();
+  </script>
+</body>
+</html>

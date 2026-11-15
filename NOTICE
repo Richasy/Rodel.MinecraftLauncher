@@ -1,0 +1,24 @@
+Rodel.MinecraftLauncher
+Copyright (c) 2026 Richasy.
+
+Project-authored material in this repository is licensed under the GNU Affero
+General Public License, version 3 only (SPDX-License-Identifier: AGPL-3.0-only),
+unless a file or independent component expressly states another license.
+See LICENSE for the complete terms. The program is provided without warranty
+as stated in that license. Copyright notices identify ownership; the license
+above supplies the permissions for covered project material.
+
+Independent components retain their existing licenses and notices:
+- mods/bettertools: MIT; see mods/bettertools/LICENSE.
+- mods/world-reroll: MIT; see mods/world-reroll/LICENSE.
+- external/Rodel.Inference: an independently licensed MIT submodule.
+- Terracotta: AGPL-3.0-or-later and its accompanying integration permission;
+  see licenses/Terracotta.LICENSE and the upstream project.
+- models.dev data, AI client logos and other third-party assets: see the license
+  files adjacent to those assets.
+- Sprout, .NET, Windows App SDK, MSAL, MCP components, Fabric API and other
+  dependencies: their original licenses and distribution terms continue to apply.
+  Principal component notices are available in the application's About page.
+
+This license does not grant rights to Minecraft, Mojang, Microsoft or other
+third-party names, trademarks, game assets, player data, models or services.

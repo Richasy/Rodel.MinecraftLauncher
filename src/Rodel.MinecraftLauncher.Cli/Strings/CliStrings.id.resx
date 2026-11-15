@@ -1,0 +1,1555 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms</value>
+  </resheader>
+  <data name="AccountAddOfflineDescription" xml:space="preserve">
+    <value>Buat identitas pemain offline tanpa login Microsoft.</value>
+  </data>
+  <data name="AccountListDescription" xml:space="preserve">
+    <value>Daftar disimpan secara offline dan Microsoft identitas pemain tanpa kredensial.</value>
+  </data>
+  <data name="AccountRemoveDescription" xml:space="preserve">
+    <value>Hapus semua akun offline atau Microsoft yang disimpan.</value>
+  </data>
+  <data name="ArgumentAddressDescription" xml:space="preserve">
+    <value>Alamat server atau favorit ID.</value>
+  </data>
+  <data name="ArgumentChangesDescription" xml:space="preserve">
+    <value>JSON objek kunci pengaturan game aktual dan nilai mentah.</value>
+  </data>
+  <data name="ArgumentDestinationDescription" xml:space="preserve">
+    <value>Jalur keluaran, nama atau pengidentifikasi cadangan.</value>
+  </data>
+  <data name="ArgumentHelpPathDescription" xml:space="preserve">
+    <value>Jalur perintah untuk dijelaskan.</value>
+  </data>
+  <data name="ArgumentInstanceDescription" xml:space="preserve">
+    <value>Contoh terdaftar ID.</value>
+  </data>
+  <data name="ArgumentItemDescription" xml:space="preserve">
+    <value>File konten, folder dunia, versi atau pengidentifikasi pemulihan.</value>
+  </data>
+  <data name="ArgumentItemsDescription" xml:space="preserve">
+    <value>File atau sumber yang dipilih.</value>
+  </data>
+  <data name="ArgumentKeyDescription" xml:space="preserve">
+    <value>Kunci pengaturan; kunci yang tidak diketahui tetap didukung.</value>
+  </data>
+  <data name="ArgumentLogSessionDescription" xml:space="preserve">
+    <value>Sesi permainan yang direkam ID.</value>
+  </data>
+  <data name="ArgumentNameDescription" xml:space="preserve">
+    <value>Nama tampilan; spasi tetap berada dalam satu argumen.</value>
+  </data>
+  <data name="ArgumentNamesDescription" xml:space="preserve">
+    <value>Memesan resource-pack nama; kosong tidak memilih paket tambahan.</value>
+  </data>
+  <data name="ArgumentOptionalKeyDescription" xml:space="preserve">
+    <value>Tombol pengaturan opsional.</value>
+  </data>
+  <data name="ArgumentOptionalTargetDescription" xml:space="preserve">
+    <value>Arsip opsional atau jalur tujuan.</value>
+  </data>
+  <data name="ArgumentTargetDescription" xml:space="preserve">
+    <value>Jalur sumber, proyek, runtime, atau pengidentifikasi operasi.</value>
+  </data>
+  <data name="ArgumentValueDescription" xml:space="preserve">
+    <value>JSON atau string literal.</value>
+  </data>
+  <data name="BackupCreateDescription" xml:space="preserve">
+    <value>Membuat cadangan instance yang lengkap atau tercakup.</value>
+  </data>
+  <data name="BackupDeleteDescription" xml:space="preserve">
+    <value>Hapus cadangan yang dipilih.</value>
+  </data>
+  <data name="BackupInspectDescription" xml:space="preserve">
+    <value>Periksa cadangan dan konten rekamannya.</value>
+  </data>
+  <data name="BackupListDescription" xml:space="preserve">
+    <value>Daftar cadangan, secara opsional difilter berdasarkan contoh.</value>
+  </data>
+  <data name="BackupRestoreDescription" xml:space="preserve">
+    <value>Pulihkan cadangan ke aslinya atau contoh yang dipilih secara eksplisit.</value>
+  </data>
+  <data name="BackupRollbackDescription" xml:space="preserve">
+    <value>Memutar kembali restorasi cadangan yang direkam.</value>
+  </data>
+  <data name="ConfigurationGetDescription" xml:space="preserve">
+    <value>Membaca satu kunci atau semua nilai efektif.</value>
+  </data>
+  <data name="ConfigurationSetDescription" xml:space="preserve">
+    <value>Simpan JSON bila valid; jika tidak, simpan string literal. Hanya kunci yang diminta yang berubah.</value>
+  </data>
+  <data name="ContentAddDescription" xml:space="preserve">
+    <value>Penambahan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentAnalyzeDescription" xml:space="preserve">
+    <value>Analisis konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentApplyReviewDescription" xml:space="preserve">
+    <value>Terapkan tinjauan konten yang sebelumnya dibekukan hanya setelah persetujuan pengguna akhir.</value>
+  </data>
+  <data name="ContentDetachDescription" xml:space="preserve">
+    <value>Pelepasan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentDisableDescription" xml:space="preserve">
+    <value>Konten dinonaktifkan; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentEnableDescription" xml:space="preserve">
+    <value>Konten diaktifkan; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentIdentifyDescription" xml:space="preserve">
+    <value>Identifikasi konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentInstallDescription" xml:space="preserve">
+    <value>Pemasangan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentListDescription" xml:space="preserve">
+    <value>Daftar isi; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentPinDescription" xml:space="preserve">
+    <value>Pin konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentPolicyDescription" xml:space="preserve">
+    <value>Kebijakan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentProjectDescription" xml:space="preserve">
+    <value>Membaca metadata proyek jarak jauh.</value>
+  </data>
+  <data name="ContentRecoverDescription" xml:space="preserve">
+    <value>Pemulihan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentRemoveDescription" xml:space="preserve">
+    <value>Konten dihapus; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentRepairDescription" xml:space="preserve">
+    <value>Rencanakan perbaikan ketergantungan secara menyeluruh dari suatu sesi, atau terapkan tinjauan yang dibekukan dengan konfirmasi eksplisit.</value>
+  </data>
+  <data name="ContentReviewFilesDescription" xml:space="preserve">
+    <value>Tinjau file lokal campuran menggunakan metadata sebenarnya.</value>
+  </data>
+  <data name="ContentReviewInstallDescription" xml:space="preserve">
+    <value>Tinjau proyek yang sebenarnya dan daftar ketergantungan tanpa menginstal.</value>
+  </data>
+  <data name="ContentReviewUpdatesDescription" xml:space="preserve">
+    <value>Membekukan pembaruan root yang dipilih dan dependensi yang diperlukan, mempertahankan kebijakan yang dinonaktifkan/disematkan; periksa sebelum apply-review.</value>
+  </data>
+  <data name="ContentSearchDescription" xml:space="preserve">
+    <value>Cari konten jarak jauh tanpa memerlukan instance.</value>
+  </data>
+  <data name="ContentUnpinDescription" xml:space="preserve">
+    <value>Konten dilepas pinnya; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentUpdateDescription" xml:space="preserve">
+    <value>Pembaruan konten; pertahankan file yang tidak terkait dan pilihan pengguna yang eksplisit.</value>
+  </data>
+  <data name="ContentVersionsDescription" xml:space="preserve">
+    <value>Baca versi proyek jarak jauh.</value>
+  </data>
+  <data name="ErrorBundleDestinationRequired" xml:space="preserve">
+    <value>Tujuan ZIP diperlukan tanpa --plan.</value>
+  </data>
+  <data name="ErrorConfirmationRequired" xml:space="preserve">
+    <value>Operasi ini memerlukan --confirm setelah meninjau dampaknya.</value>
+  </data>
+  <data name="ErrorContextLimit" xml:space="preserve">
+    <value>--limit harus dari 1 hingga 100.</value>
+  </data>
+  <data name="ErrorDiagnosticTargetRequired" xml:space="preserve">
+    <value>Tentukan tepat satu contoh, --session atau --report.</value>
+  </data>
+  <data name="ErrorDirectoryRequired" xml:space="preserve">
+    <value>--directory diperlukan.</value>
+  </data>
+  <data name="ErrorDuplicateCommand" xml:space="preserve">
+    <value>Perintah duplikat atau alias '{0}' di bawah '{1}'.</value>
+  </data>
+  <data name="ErrorDuplicateOption" xml:space="preserve">
+    <value>Opsi duplikat atau alias '{0}' pada '{1}'.</value>
+  </data>
+  <data name="ErrorGameSettingsObject" xml:space="preserve">
+    <value>Perubahan harus berupa objek kunci options.txt dan nilai mentah; null menghapus kunci.</value>
+  </data>
+  <data name="ErrorHostStartFailed" xml:space="preserve">
+    <value>Host latar belakang tidak dimulai.</value>
+  </data>
+  <data name="ErrorJobNotResumable" xml:space="preserve">
+    <value>Operasi ini mungkin sudah membuat file atau sesi permainan. Periksa pekerjaan ini dan dampaknya, lalu ulangi perintah asli secara eksplisit jika diperlukan.</value>
+  </data>
+  <data name="ErrorLogStateConflict" xml:space="preserve">
+    <value>--state dan --state-file saling eksklusif.</value>
+  </data>
+  <data name="ErrorMinecraftVersionRequired" xml:space="preserve">
+    <value>--minecraft VERSION wajib diisi.</value>
+  </data>
+  <data name="ErrorMissingCommandRequest" xml:space="preserve">
+    <value>Permintaan perintah CLI tidak ada.</value>
+  </data>
+  <data name="ErrorOptionNonnegative" xml:space="preserve">
+    <value>--{0} harus non-negatif.</value>
+  </data>
+  <data name="ErrorOptionNotDeclared" xml:space="preserve">
+    <value>Opsi '{0}' tidak dideklarasikan untuk '{1}'.</value>
+  </data>
+  <data name="ErrorOptionRange" xml:space="preserve">
+    <value>--{0} harus dari {1} hingga {2}.</value>
+  </data>
+  <data name="ErrorOptionRequired" xml:space="preserve">
+    <value>{0} diperlukan.</value>
+  </data>
+  <data name="ErrorOptionScalar" xml:space="preserve">
+    <value>Opsi '{0}' memerlukan nilai skalar; gunakan Values untuk token berulang.</value>
+  </data>
+  <data name="ErrorRepairConfirmationRequired" xml:space="preserve">
+    <value>Menerapkan tinjauan perbaikan ketergantungan memerlukan --confirm setelah persetujuan pengguna akhir.</value>
+  </data>
+  <data name="ErrorRepairReviewConflict" xml:space="preserve">
+    <value>Penerapan kumpulan yang telah ditinjau tidak dapat digabungkan dengan --plan, --session atau pilihan versi baru.</value>
+  </data>
+  <data name="ErrorRepairReviewRequired" xml:space="preserve">
+    <value>--confirm memerlukan --review yang dibuat sebelumnya.</value>
+  </data>
+  <data name="ErrorRepairSessionRequired" xml:space="preserve">
+    <value>--session diperlukan untuk merencanakan perbaikan ketergantungan.</value>
+  </data>
+  <data name="ErrorRepairTargetRequired" xml:space="preserve">
+    <value>Tentukan --session untuk merencanakan perbaikan, atau --review dengan --confirm untuk menerapkan batch bekunya.</value>
+  </data>
+  <data name="ErrorSessionRequired" xml:space="preserve">
+    <value>Diperlukan sesi ID.</value>
+  </data>
+  <data name="ErrorTerminalHostCommand" xml:space="preserve">
+    <value>Perintah ini adalah titik masuk host terminal, bukan operasi peluncur.</value>
+  </data>
+  <data name="ErrorToolArgumentsConflict" xml:space="preserve">
+    <value>--arguments dan --arguments-file saling eksklusif.</value>
+  </data>
+  <data name="ErrorUnknownHelpTopic" xml:space="preserve">
+    <value>Topik bantuan tidak dikenal: {0}.</value>
+  </data>
+  <data name="ErrorUnknownOption" xml:space="preserve">
+    <value>Opsi tidak diketahui: {0}. Letakkan -- sebelum nilai posisi yang dimulai dengan --.</value>
+  </data>
+  <data name="ErrorUnknownTool" xml:space="preserve">
+    <value>Tidak ada alat bernama {0}</value>
+  </data>
+  <data name="ErrorUnsupportedJobOperation" xml:space="preserve">
+    <value>Operasi pekerjaan CLI '{0}' tidak didukung.</value>
+  </data>
+  <data name="ErrorUpdateContext" xml:space="preserve">
+    <value>--update-context mengharapkan current atau source.</value>
+  </data>
+  <data name="ErrorVersionRequired" xml:space="preserve">
+    <value>--version diperlukan.</value>
+  </data>
+  <data name="ErrorVersionSelection" xml:space="preserve">
+    <value>--select-version mengharapkan PROJECT=VERSION.</value>
+  </data>
+  <data name="GameSettingsApplyDescription" xml:space="preserve">
+    <value>Terapkan perubahan yang tertunda setelah keluar.</value>
+  </data>
+  <data name="GameSettingsDiscardPendingDescription" xml:space="preserve">
+    <value>Buang perubahan yang tertunda tanpa mengubah options.txt.</value>
+  </data>
+  <data name="GameSettingsGetDescription" xml:space="preserve">
+    <value>Baca pengaturan game sebenarnya.</value>
+  </data>
+  <data name="GameSettingsSetDescription" xml:space="preserve">
+    <value>Ubah kunci mentah yang diminta; JSON null menghapus kunci.</value>
+  </data>
+  <data name="GroupAccountDescription" xml:space="preserve">
+    <value>Kelola akun offline dan Microsoft. Identitas offline berfungsi tanpa login Microsoft; Microsoft proses masuk browser memerlukan Klien ID yang dikonfigurasi pengguna.</value>
+  </data>
+  <data name="GroupBackupDescription" xml:space="preserve">
+    <value>Membuat, memeriksa, dan memulihkan cadangan instance yang lengkap atau tercakup.</value>
+  </data>
+  <data name="GroupCacheDescription" xml:space="preserve">
+    <value>Pertahankan penggunaan cache aktif, root eksternal, dependensi yang direferensikan, dan file yang tidak dikenal.</value>
+  </data>
+  <data name="GroupConfigDescription" xml:space="preserve">
+    <value>Baca pengaturan efektif dan sumbernya. Kunci pengaturan yang tidak diketahui tetap dipertahankan.</value>
+  </data>
+  <data name="GroupContentDescription" xml:space="preserve">
+    <value>Kelola file lokal dan konten Modrinth. File lokal yang tidak dikenal tidak memerlukan identifikasi. CurseForge online memerlukan penyedia yang disuntikkan; paket offline tetap dapat digunakan.</value>
+  </data>
+  <data name="GroupGameSettingsDescription" xml:space="preserve">
+    <value>Edit nilai mentah options.txt aktual, pertahankan baris dan pengkodean yang tidak terkait. Permainan aktif menunda penulisan; terapkan setelah keluar dengan deteksi konflik.</value>
+  </data>
+  <data name="GroupInstanceDescription" xml:space="preserve">
+    <value>Kelola konten game independen dan dependensi waktu proses bersama. Impor menyalin konten lengkap tanpa mengubah sumbernya.</value>
+  </data>
+  <data name="GroupJavaDescription" xml:space="preserve">
+    <value>Temukan, kelola, dan pilih runtime Java.</value>
+  </data>
+  <data name="GroupJobDescription" xml:space="preserve">
+    <value>Operasi yang persisten. Batal adalah sebuah permintaan; memeriksa status akhir. Lanjutkan hanya operasi yang efeknya aman untuk diulang.</value>
+  </data>
+  <data name="GroupLoaderDescription" xml:space="preserve">
+    <value>Siapkan pemasang pemuat yang dikenal; profil peluncuran khusus yang dipasang secara manual tetap didukung.
+Adaptor</value>
+  </data>
+  <data name="GroupMcpDescription" xml:space="preserve">
+    <value>MCP melalui kontrak perintah CLI.</value>
+  </data>
+  <data name="GroupPackDescription" xml:space="preserve">
+    <value>Offline mrpack/CurseForge ZIP impor dan paket Modrinth online. File manual yang hilang tetap dapat dipulihkan.</value>
+  </data>
+  <data name="GroupProcessDescription" xml:space="preserve">
+    <value>Amati sesi permainan. Menghentikan permainan berbeda dengan membatalkan pekerjaan peluncur.</value>
+  </data>
+  <data name="GroupResourcepackDescription" xml:space="preserve">
+    <value>Paket yang diinstal dan pesanan yang dipilih berbeda. Pertahankan pilihan bawaan/tidak terlacak kecuali diganti; penulisan game aktif ditunda.</value>
+  </data>
+  <data name="GroupResultDescription" xml:space="preserve">
+    <value>Baca keluaran alat tersimpan berukuran besar tanpa mengulangi pengoperasian; hasilnya kedaluwarsa setelah tujuh hari.</value>
+  </data>
+  <data name="GroupRuntimeDescription" xml:space="preserve">
+    <value>Siapkan file sebelum melakukan satu catatan pengaturan runtime. Pertahankan konten game; saran kompatibilitas bukanlah gerbang peluncuran.</value>
+  </data>
+  <data name="GroupSelfDescription" xml:space="preserve">
+    <value>Versi peluncur dan pencarian pembaruan opsional.</value>
+  </data>
+  <data name="GroupServerDescription" xml:space="preserve">
+    <value>Kelola favorit, selesaikan Windows DNS/SRV dan tanyakan status langsung.</value>
+  </data>
+  <data name="GroupToolsDescription" xml:space="preserve">
+    <value>Periksa dan aktifkan alat MCP dari terminal.</value>
+  </data>
+  <data name="GroupVersionsDescription" xml:space="preserve">
+    <value>Temukan versi Minecraft.</value>
+  </data>
+  <data name="GroupWorldDescription" xml:space="preserve">
+    <value>Pertahankan sumber dunia asli dan file tidak dikenal. Kunci asli mencegah penulisan yang tidak aman; operasi destruktif mempertahankan cadangan yang dapat dipulihkan.</value>
+  </data>
+  <data name="HelpDescription" xml:space="preserve">
+    <value>Jelaskan perintah menggunakan deklarasi yang sama dengan yang menguraikannya.</value>
+  </data>
+  <data name="HelpEntryPoints" xml:space="preserve">
+    <value>Gunakan help COMMAND SUBCOMMAND atau --help untuk menelusuri perintah. Entri host terminal tidak dapat dipanggil oleh execute. Direktori data yang dikonfigurasi ditetapkan oleh host, bukan oleh argumen execute.</value>
+  </data>
+  <data name="HelpTaskLifetimes" xml:space="preserve">
+    <value>--background bertahan dari panggilan alat ini; job_cancel membatalkan pekerjaan, process_stop menghentikan permainan. Mereka mempunyai masa hidup yang berbeda.</value>
+  </data>
+  <data name="HelpTokenBoundaries" xml:space="preserve">
+    <value>Setiap entri execute.arguments adalah satu token. Simpan jalur dan nama dengan spasi dalam satu entri. Gunakan --name=VALUE untuk nilai option-like; put -- setelah jalur perintah dan opsi, sebelum nilai posisi option-like.</value>
+  </data>
+  <data name="HostingCallDescription" xml:space="preserve">
+    <value>Panggil alat bernama dengan masukan JSON yang diketik.</value>
+  </data>
+  <data name="HostingJobHostDescription" xml:space="preserve">
+    <value>Pelaksana pekerjaan persisten internal.</value>
+  </data>
+  <data name="HostingListDescription" xml:space="preserve">
+    <value>Buat daftar definisi alat MCP yang dibagikan.</value>
+  </data>
+  <data name="HostingServeDescription" xml:space="preserve">
+    <value>Sajikan MCP melalui stdio. stdout dicadangkan untuk protokol.</value>
+  </data>
+  <data name="HostingSessionHostDescription" xml:space="preserve">
+    <value>Monitor sesi permainan internal yang terpisah.</value>
+  </data>
+  <data name="InformationResultReadDescription" xml:space="preserve">
+    <value>Membaca JSON Pointer, halaman properti objek, atau potongan teks dari hasil yang disimpan.</value>
+  </data>
+  <data name="InformationVersionsListDescription" xml:space="preserve">
+    <value>Daftar versi Minecraft yang di-cache atau tersedia dari jarak jauh.</value>
+  </data>
+  <data name="InformationRootCapabilitiesDescription" xml:space="preserve">
+    <value>Temukan alat dan definisi perintah yang sama yang digunakan oleh execute.</value>
+  </data>
+  <data name="InformationRootContextDescription" xml:space="preserve">
+    <value>Membaca ikhtisar terbatas, mempertahankan kesalahan per bagian tanpa menyembunyikan bagian lainnya.</value>
+  </data>
+  <data name="InformationRootVersionDescription" xml:space="preserve">
+    <value>Informasi pembuatan dan runtime peluncur.</value>
+  </data>
+  <data name="InformationSelfCheckUpdateDescription" xml:space="preserve">
+    <value>Periksa rilis peluncur tanpa menginstalnya.</value>
+  </data>
+  <data name="InformationSelfVersionDescription" xml:space="preserve">
+    <value>Informasi pembuatan dan runtime peluncur.</value>
+  </data>
+  <data name="InstanceContentContextDescription" xml:space="preserve">
+    <value>Baca konteks kompatibilitas konten sebenarnya.</value>
+  </data>
+  <data name="InstanceCopyDescription" xml:space="preserve">
+    <value>Membuat salinan independen dari instance terdaftar.</value>
+  </data>
+  <data name="InstanceCreateDescription" xml:space="preserve">
+    <value>Buat instance kosong untuk versi Minecraft yang tepat.</value>
+  </data>
+  <data name="InstanceImportDescription" xml:space="preserve">
+    <value>Salin instance sumber lengkap, lalu daftarkan setelah migrasi berhasil.</value>
+  </data>
+  <data name="InstanceInspectImportDescription" xml:space="preserve">
+    <value>Baca profil sumber tanpa mendaftar atau menyalin sebuah instance.</value>
+  </data>
+  <data name="InstanceListDescription" xml:space="preserve">
+    <value>Daftar instance yang terdaftar.</value>
+  </data>
+  <data name="InstanceMoveDescription" xml:space="preserve">
+    <value>Pindahkan instance terdaftar ke direktori yang diminta.</value>
+  </data>
+  <data name="InstancePrepareDescription" xml:space="preserve">
+    <value>Siapkan komponen runtime yang dimigrasi.</value>
+  </data>
+  <data name="InstanceRelinkDescription" xml:space="preserve">
+    <value>Perbarui referensi direktori game instance yang ada.</value>
+  </data>
+  <data name="InstanceRemoveDescription" xml:space="preserve">
+    <value>Hapus instans dan cadangannya; berkas game dipertahankan kecuali diminta secara eksplisit.</value>
+  </data>
+  <data name="InstanceRenameDescription" xml:space="preserve">
+    <value>Mengubah nama tampilan instance tanpa memindahkan filenya.</value>
+  </data>
+  <data name="InstanceShowDescription" xml:space="preserve">
+    <value>Membaca instance terdaftar.</value>
+  </data>
+  <data name="JavaAvailableDescription" xml:space="preserve">
+    <value>Daftar rilis runtime Java terkelola yang tersedia.</value>
+  </data>
+  <data name="JavaImportDescription" xml:space="preserve">
+    <value>Impor runtime Java yang ada ke manajemen peluncur.</value>
+  </data>
+  <data name="JavaInstallDescription" xml:space="preserve">
+    <value>Unduh dan instal runtime Java yang dikelola.</value>
+  </data>
+  <data name="JavaListDescription" xml:space="preserve">
+    <value>Temukan runtime Java, termasuk jalur yang disediakan secara eksplisit.</value>
+  </data>
+  <data name="JavaManagedDescription" xml:space="preserve">
+    <value>Daftar Java runtime yang dikelola oleh peluncur.</value>
+  </data>
+  <data name="JavaRemoveDescription" xml:space="preserve">
+    <value>Hapus secara permanen runtime Java terkelola yang tidak direferensikan, atau batalkan pendaftaran Java eksternal tanpa menghapus filenya.</value>
+  </data>
+  <data name="JavaSelectDescription" xml:space="preserve">
+    <value>Pilih Java untuk pengaturan global atau instance yang ditentukan.</value>
+  </data>
+  <data name="JobCancelDescription" xml:space="preserve">
+    <value>Meminta pembatalan pekerjaan; periksa status akhirnya secara terpisah.</value>
+  </data>
+  <data name="JobListDescription" xml:space="preserve">
+    <value>Cantumkan pekerjaan peluncur yang ada dan status rekamannya.</value>
+  </data>
+  <data name="JobResumeDescription" xml:space="preserve">
+    <value>Melanjutkan pekerjaan yang terputus atau gagal hanya jika aman untuk diulang.</value>
+  </data>
+  <data name="JobShowDescription" xml:space="preserve">
+    <value>Membaca status, kemajuan, dan hasil pekerjaan yang bertahan.</value>
+  </data>
+  <data name="LaunchInstallRepairDescription" xml:space="preserve">
+    <value>Siapkan file Minecraft yang diperlukan untuk sebuah instance; tidak meluncurkan game.</value>
+  </data>
+  <data name="LaunchLaunchDescription" xml:space="preserve">
+    <value>Mulai permainan atau kembalikan paket hanya-baca. Memulai suatu proses bukanlah bukti gameplay. Masa pakai game tidak bergantung pada koneksi model.</value>
+  </data>
+  <data name="LoaderInstallDescription" xml:space="preserve">
+    <value>Instal loader tanpa mengganti konten game.</value>
+  </data>
+  <data name="LoaderListDescription" xml:space="preserve">
+    <value>Daftar rilis pemuat untuk versi dasar Minecraft.</value>
+  </data>
+  <data name="LogBundleDescription" xml:space="preserve">
+    <value>Ekspor bundel diagnostik, atau periksa file yang disertakan dengan --plan.</value>
+  </data>
+  <data name="LogEventsDescription" xml:space="preserve">
+    <value>Membaca peristiwa log yang diurai. Lulus mengembalikan parserState dan mengalirkan offset ke pembacaan berikutnya yang berdekatan.</value>
+  </data>
+  <data name="LogExportDescription" xml:space="preserve">
+    <value>Ekspor jendela konsol yang tersedia atau snapshot kerusakan yang disimpan, termasuk detail pemotongan.</value>
+  </data>
+  <data name="LogLogsDescription" xml:space="preserve">
+    <value>Baca jendela konsol langsung atau snapshot kerusakan yang disimpan. Gunakan nextOffset setiap aliran untuk melanjutkan; awalan yang diusir dilaporkan.</value>
+  </data>
+  <data name="MaintenanceDiagnoseDescription" xml:space="preserve">
+    <value>Menganalisis sebuah instance, sesi rekaman, atau laporan kerusakan; temuan adalah bukti dan saran, bukan bukti akar permasalahan.</value>
+  </data>
+  <data name="MaintenancePruneDescription" xml:space="preserve">
+    <value>Mengevaluasi kembali peraturan reklamasi pada saat pelaksanaan; --plan tidak mengubah file.</value>
+  </data>
+  <data name="MaintenanceStatusDescription" xml:space="preserve">
+    <value>Baca penggunaan cache.</value>
+  </data>
+  <data name="OptionAccountDescription" xml:space="preserve">
+    <value>Disimpan offline atau Microsoft identitas ID; hilangkan untuk mewarisi instance/seleksi global.</value>
+  </data>
+  <data name="OptionAlgorithmDescription" xml:space="preserve">
+    <value>Hash identifikasi konten.</value>
+  </data>
+  <data name="OptionAllowIncompatibleDescription" xml:space="preserve">
+    <value>Catat penerimaan eksplisit atas paket sumber daya yang tidak kompatibel yang diminta.</value>
+  </data>
+  <data name="OptionArchitectureDescription" xml:space="preserve">
+    <value>Arsitektur waktu proses.</value>
+  </data>
+  <data name="OptionArgumentsDescription" xml:space="preserve">
+    <value>Masukan alat JSON; defaultnya adalah {}.</value>
+  </data>
+  <data name="OptionArgumentsFileDescription" xml:space="preserve">
+    <value>File berisi masukan alat JSON.</value>
+  </data>
+  <data name="OptionAttachDescription" xml:space="preserve">
+    <value>Lampirkan pelacakan platform terverifikasi ke file lokal.</value>
+  </data>
+  <data name="OptionBackgroundDescription" xml:space="preserve">
+    <value>Antrian job yang persisten; periksa job show untuk mengetahui hasil akhirnya.</value>
+  </data>
+  <data name="OptionBytesDescription" xml:space="preserve">
+    <value>Anggaran byte log mentah, 8 hingga 1048576.</value>
+  </data>
+  <data name="OptionChannelDescription" xml:space="preserve">
+    <value>Saluran pembaruan yang diizinkan.</value>
+  </data>
+  <data name="OptionCharactersDescription" xml:space="preserve">
+    <value>Ukuran potongan teks JSON yang disimpan, 256 hingga 8000.</value>
+  </data>
+  <data name="OptionConfirmDescription" xml:space="preserve">
+    <value>Konfirmasikan operasi yang ditinjau dan dampaknya.</value>
+  </data>
+  <data name="OptionContentOnlyDescription" xml:space="preserve">
+    <value>Lewati persiapan runtime.</value>
+  </data>
+  <data name="OptionContentVersionDescription" xml:space="preserve">
+    <value>Versi konten platform yang tepat ID.</value>
+  </data>
+  <data name="OptionCopyDescription" xml:space="preserve">
+    <value>Salin konten sumber lengkap; jangan pernah menghapus sumbernya.</value>
+  </data>
+  <data name="OptionDataDirectoryDescription" xml:space="preserve">
+    <value>Direktori data peluncur; defaultnya adalah .rmcl pengguna.</value>
+  </data>
+  <data name="OptionDeleteFilesDescription" xml:space="preserve">
+    <value>Hapus juga file game milik instance.</value>
+  </data>
+  <data name="OptionDirectoryDescription" xml:space="preserve">
+    <value>Direktori sumber.</value>
+  </data>
+  <data name="OptionEncodingDescription" xml:space="preserve">
+    <value>Nama pengkodean untuk BOM-less file lama.</value>
+  </data>
+  <data name="OptionEnvironmentDescription" xml:space="preserve">
+    <value>NAME=VALUE menimpa variabel; NAME menghapusnya. Ulangi untuk beberapa variabel.</value>
+  </data>
+  <data name="OptionEventsDescription" xml:space="preserve">
+    <value>Tulis peristiwa kemajuan ke stderr.</value>
+  </data>
+  <data name="OptionExcludeOptionalDescription" xml:space="preserve">
+    <value>Jalur relatif opsional untuk dikecualikan; ulangi untuk banyak file.</value>
+  </data>
+  <data name="OptionExpectedFingerprintDescription" xml:space="preserve">
+    <value>Sidik jari file yang diharapkan dari hasil baca/rencana.</value>
+  </data>
+  <data name="OptionExpectedLockFingerprintDescription" xml:space="preserve">
+    <value>Sidik jari kunci konten yang diharapkan; hilang menunjukkan tidak ada kunci.</value>
+  </data>
+  <data name="OptionForceDescription" xml:space="preserve">
+    <value>Menghentikan pohon proses yang direkam secara eksplisit.</value>
+  </data>
+  <data name="OptionFormatDescription" xml:space="preserve">
+    <value>Format ekspor paket.</value>
+  </data>
+  <data name="OptionFullscreenDescription" xml:space="preserve">
+    <value>Penggantian layar penuh; hilangkan untuk mewarisi pengaturan.</value>
+  </data>
+  <data name="OptionGameArgumentsDescription" xml:space="preserve">
+    <value>Argumen permainan tambahan; gunakan --game-arg=--TOKEN untuk nilai option-like.</value>
+  </data>
+  <data name="OptionGameDirectoryDescription" xml:space="preserve">
+    <value>Direktori konten game eksplisit.</value>
+  </data>
+  <data name="OptionHeightDescription" xml:space="preserve">
+    <value>Tinggi jendela permainan.</value>
+  </data>
+  <data name="OptionIdDescription" xml:space="preserve">
+    <value>Runtime terkelola secara eksplisit atau ID favorit.</value>
+  </data>
+  <data name="OptionIncludeDownloadsDescription" xml:space="preserve">
+    <value>Sertakan file yang biasanya dapat diunduh lagi.</value>
+  </data>
+  <data name="OptionIncludeLocalModsDescription" xml:space="preserve">
+    <value>Sertakan mod lokal yang tidak terlacak dalam ekspor.</value>
+  </data>
+  <data name="OptionIncludeOptionalDescription" xml:space="preserve">
+    <value>Jalur relatif opsional untuk disertakan; ulangi untuk banyak file.</value>
+  </data>
+  <data name="OptionIndexDescription" xml:space="preserve">
+    <value>Pemesanan pencarian.</value>
+  </data>
+  <data name="OptionInstanceDescription" xml:space="preserve">
+    <value>Contoh ID; hilangkan untuk cakupan global.</value>
+  </data>
+  <data name="OptionJavaDescription" xml:space="preserve">
+    <value>Eksplisit Java dapat dieksekusi atau di rumah.</value>
+  </data>
+  <data name="OptionJsonDescription" xml:space="preserve">
+    <value>Tulis secara ringkas JSON.</value>
+  </data>
+  <data name="OptionJvmArgumentsDescription" xml:space="preserve">
+    <value>Argumen tambahan JVM; ulangi opsi untuk setiap token.</value>
+  </data>
+  <data name="OptionKindDescription" xml:space="preserve">
+    <value>Jenis direktori konten; defaultnya adalah mods.</value>
+  </data>
+  <data name="OptionLauncherConfigDescription" xml:space="preserve">
+    <value>Konfigurasi peluncur sumber.</value>
+  </data>
+  <data name="OptionLevelDescription" xml:space="preserve">
+    <value>Filter level log-events opsional.</value>
+  </data>
+  <data name="OptionLibraryMirrorsDescription" xml:space="preserve">
+    <value>Basis cermin perpustakaan URL; ulangi untuk beberapa cermin.</value>
+  </data>
+  <data name="OptionLimitDescription" xml:space="preserve">
+    <value>Ukuran halaman atau bagian, 1 hingga 100.</value>
+  </data>
+  <data name="OptionLoaderDescription" xml:space="preserve">
+    <value>Pengidentifikasi pemuat; nilai khusus tetap diperbolehkan. none memilih vanila.</value>
+  </data>
+  <data name="OptionLoaderVersionDescription" xml:space="preserve">
+    <value>Versi pemuat yang tepat.</value>
+  </data>
+  <data name="OptionLogEncodingDescription" xml:space="preserve">
+    <value>stdout/stderr encoding; tidak mengubah file.encoding.</value>
+  </data>
+  <data name="OptionLoggingCompatibilityDescription" xml:space="preserve">
+    <value>Penggantian kompatibilitas logging lama yang diketahui.</value>
+  </data>
+  <data name="OptionManualDirectoryDescription" xml:space="preserve">
+    <value>Direktori yang berisi file paket yang diunduh secara manual.</value>
+  </data>
+  <data name="OptionMemoryDescription" xml:space="preserve">
+    <value>Tumpukan maksimum Java di MiB.</value>
+  </data>
+  <data name="OptionMemoryModeDescription" xml:space="preserve">
+    <value>Kebijakan pemilihan memori.</value>
+  </data>
+  <data name="OptionMigrateDescription" xml:space="preserve">
+    <value>Terjemahkan metadata peluncur sumber.</value>
+  </data>
+  <data name="OptionMinecraftDescription" xml:space="preserve">
+    <value>Versi kompatibilitas dasar Minecraft, bukan profil pemuat ID.</value>
+  </data>
+  <data name="OptionMinecraftDirectoryDescription" xml:space="preserve">
+    <value>Direktori runtime Minecraft Bersama.</value>
+  </data>
+  <data name="OptionNameDescription" xml:space="preserve">
+    <value>Nama tampilan atau folder tujuan.</value>
+  </data>
+  <data name="OptionNoDependenciesDescription" xml:space="preserve">
+    <value>Serahkan pengelolaan ketergantungan kepada pengguna.</value>
+  </data>
+  <data name="OptionNonInteractiveDescription" xml:space="preserve">
+    <value>Jalankan tanpa perintah interaktif.</value>
+  </data>
+  <data name="OptionOfflineDescription" xml:space="preserve">
+    <value>Gunakan file lokal daripada download otomatis.</value>
+  </data>
+  <data name="OptionOffsetDescription" xml:space="preserve">
+    <value>Pencarian berbasis nol, array atau offset teks.</value>
+  </data>
+  <data name="OptionOlderThanDaysDescription" xml:space="preserve">
+    <value>Usia minimum cache dalam hari; defaultnya adalah 30.</value>
+  </data>
+  <data name="OptionOptionalPolicyDescription" xml:space="preserve">
+    <value>Kebijakan file opsional yang eksplisit; abaikan untuk mempertahankan pilihan.</value>
+  </data>
+  <data name="OptionOverwriteDescription" xml:space="preserve">
+    <value>Terapkan nilai pengaturan game yang diminta secara eksplisit meskipun ada konflik.</value>
+  </data>
+  <data name="OptionPackVersionDescription" xml:space="preserve">
+    <value>Versi paket online yang tepat ID.</value>
+  </data>
+  <data name="OptionPlanDescription" xml:space="preserve">
+    <value>Paket hanya baca; jangan terapkan perubahan.</value>
+  </data>
+  <data name="OptionPlatformDescription" xml:space="preserve">
+    <value>Platform konten; defaultnya adalah modrinth. Dukungan online CurseForge default tidak tersedia.</value>
+  </data>
+  <data name="OptionPlayerDescription" xml:space="preserve">
+    <value>Nama pemain offline.</value>
+  </data>
+  <data name="OptionPointerDescription" xml:space="preserve">
+    <value>RFC 6901 JSON Pointer dalam hasil yang disimpan.</value>
+  </data>
+  <data name="OptionProfileDescription" xml:space="preserve">
+    <value>Profil peluncur sumber yang tepat ID.</value>
+  </data>
+  <data name="OptionProjectDescription" xml:space="preserve">
+    <value>Proyek paket online ID.</value>
+  </data>
+  <data name="OptionPropertyOffsetDescription" xml:space="preserve">
+    <value>Offset berbasis nol dalam daftar property-name suatu objek.</value>
+  </data>
+  <data name="OptionRedactDescription" xml:space="preserve">
+    <value>Upaya terbaik untuk menghapus kredensial umum dari paket diagnostik; default true.</value>
+  </data>
+  <data name="OptionReplaceDescription" xml:space="preserve">
+    <value>Ganti pilihan resource-pack yang lengkap.</value>
+  </data>
+  <data name="OptionReportDescription" xml:space="preserve">
+    <value>Jalur laporan kerusakan lokal Minecraft atau JVM.</value>
+  </data>
+  <data name="OptionReviewDescription" xml:space="preserve">
+    <value>Tinjauan perbaikan ketergantungan yang sebelumnya terhenti ID.</value>
+  </data>
+  <data name="OptionScopeDescription" xml:space="preserve">
+    <value>Cakupan cadangan.</value>
+  </data>
+  <data name="OptionServerDescription" xml:space="preserve">
+    <value>Alamat multipemain atau favorit.</value>
+  </data>
+  <data name="OptionSessionDescription" xml:space="preserve">
+    <value>Sesi permainan yang direkam ID.</value>
+  </data>
+  <data name="OptionStateDescription" xml:space="preserve">
+    <value>Status parser JSON dari pembacaan log-events yang berdekatan sebelumnya.</value>
+  </data>
+  <data name="OptionStateFileDescription" xml:space="preserve">
+    <value>File berisi log-events status parser.</value>
+  </data>
+  <data name="OptionStderrOffsetDescription" xml:space="preserve">
+    <value>Offset byte stderr yang dipertahankan secara absolut.</value>
+  </data>
+  <data name="OptionStdioDescription" xml:space="preserve">
+    <value>Sajikan MCP pada input/output standar.</value>
+  </data>
+  <data name="OptionStdoutOffsetDescription" xml:space="preserve">
+    <value>Offset byte stdout yang dipertahankan secara absolut.</value>
+  </data>
+  <data name="OptionTailDescription" xml:space="preserve">
+    <value>Garis ekor log maksimum ketika tidak ada kursor byte yang disediakan.</value>
+  </data>
+  <data name="OptionTimeoutDescription" xml:space="preserve">
+    <value>Batas waktu jaringan dalam milidetik; defaultnya adalah 5000.</value>
+  </data>
+  <data name="OptionToolDescription" xml:space="preserve">
+    <value>Nama alat yang tepat.</value>
+  </data>
+  <data name="OptionTopicDescription" xml:space="preserve">
+    <value>CLI topik bantuan perintah.</value>
+  </data>
+  <data name="OptionTypeDescription" xml:space="preserve">
+    <value>Kategori pencarian konten; defaultnya adalah all.</value>
+  </data>
+  <data name="OptionUpdateContextDescription" xml:space="preserve">
+    <value>Konteks kecocokan kandidat; tidak mengubah waktu proses instans.</value>
+  </data>
+  <data name="OptionVerifyDescription" xml:space="preserve">
+    <value>Verifikasi hash file yang diinstal.
+Versi</value>
+  </data>
+  <data name="OptionVersionDescription" xml:space="preserve">
+    <value>Minecraft atau profil peluncuran lokal/kustom ID.</value>
+  </data>
+  <data name="OptionVersionSelectionsDescription" xml:space="preserve">
+    <value>PROJECT=VERSION pilihan tepat; ulangi untuk proyek root dan ketergantungan.</value>
+  </data>
+  <data name="OptionWaitDescription" xml:space="preserve">
+    <value>Tunggu hingga permainan keluar; pembatalan tidak menghentikan permainan.</value>
+  </data>
+  <data name="OptionWidthDescription" xml:space="preserve">
+    <value>Lebar jendela permainan.</value>
+  </data>
+  <data name="OptionWorldDescription" xml:space="preserve">
+    <value>Folder dunia atau target putar cepat.</value>
+  </data>
+  <data name="PackApplyDescription" xml:space="preserve">
+    <value>Terapkan tinjauan pembaruan paket yang disimpan dengan tepat.</value>
+  </data>
+  <data name="PackCompleteDescription" xml:space="preserve">
+    <value>Lengkapi file paket yang hilang, termasuk file yang diunduh secara manual.</value>
+  </data>
+  <data name="PackExportDescription" xml:space="preserve">
+    <value>Ekspor instance sebagai mrpack atau CurseForge ZIP.</value>
+  </data>
+  <data name="PackImportDescription" xml:space="preserve">
+    <value>Impor mrpack atau CurseForge ZIP dengan file opsional yang dipilih.</value>
+  </data>
+  <data name="PackInspectDescription" xml:space="preserve">
+    <value>Periksa arsip paket lokal tanpa membuat instance.</value>
+  </data>
+  <data name="PackInstallDescription" xml:space="preserve">
+    <value>Instal paket Modrinth online; file opsional mengikuti kebijakan pemilihan eksplisit.</value>
+  </data>
+  <data name="PackPrepareDescription" xml:space="preserve">
+    <value>Lengkapi paket yang disimpan dan secara otomatis menyiapkan runtime dan Java; mode hanya konten dan offline mempertahankan cakupan eksplisitnya.</value>
+  </data>
+  <data name="PackReviewDescription" xml:space="preserve">
+    <value>Membekukan tinjauan pembaruan arsip; apply menggunakan operasi persis yang dipertahankan.</value>
+  </data>
+  <data name="PackReviewOnlineDescription" xml:space="preserve">
+    <value>Membekukan tinjauan pembaruan paket online, mempertahankan pilihan opsional yang disimpan kecuali diubah secara eksplisit.</value>
+  </data>
+  <data name="PackRollbackDescription" xml:space="preserve">
+    <value>Memutar kembali operasi paket yang direkam.</value>
+  </data>
+  <data name="PackUpdateDescription" xml:space="preserve">
+    <value>Perbarui paket dari arsip, pertahankan pilihan opsional yang disimpan kecuali diubah secara eksplisit.</value>
+  </data>
+  <data name="PackUpdateOnlineDescription" xml:space="preserve">
+    <value>Perbarui paket dari sumber daringnya, pertahankan pilihan opsional yang disimpan kecuali diubah secara eksplisit.</value>
+  </data>
+  <data name="ResourcePackListDescription" xml:space="preserve">
+    <value>Daftar paket yang diinstal dan dipilih.</value>
+  </data>
+  <data name="ResourcePackSelectDescription" xml:space="preserve">
+    <value>Tetapkan nama paket yang dipesan; daftar kosong tidak memilih paket tambahan.</value>
+  </data>
+  <data name="OptionLanguageDescription" xml:space="preserve">
+    <value>Bahasa tampilan peluncur; mengesampingkan RODEL_CLI_LANGUAGE dan bahasa sistem.</value>
+  </data>
+  <data name="RootDescription" xml:space="preserve">
+    <value>Windows Minecraft Java. CLI → Core; Alat MCP menggunakan kembali pohon perintah ini.</value>
+  </data>
+  <data name="RuntimeChangeDescription" xml:space="preserve">
+    <value>Siapkan komponen runtime yang diminta sebelum melakukan pengaturan instance.</value>
+  </data>
+  <data name="RuntimeOperationDescription" xml:space="preserve">
+    <value>Periksa operasi runtime instance yang direkam.</value>
+  </data>
+  <data name="RuntimeOperationsDescription" xml:space="preserve">
+    <value>Daftar perubahan runtime yang direkam untuk sebuah instance.</value>
+  </data>
+  <data name="RuntimeRemoveLoaderDescription" xml:space="preserve">
+    <value>Siapkan runtime vanilla dan hapus pilihan loader instance.</value>
+  </data>
+  <data name="RuntimeRollbackDescription" xml:space="preserve">
+    <value>Mengembalikan perubahan runtime instance yang direkam.</value>
+  </data>
+  <data name="RuntimeShowDescription" xml:space="preserve">
+    <value>Membaca Minecraft, loader, dan runtime Java efektif sebuah instance.</value>
+  </data>
+  <data name="ServerAddDescription" xml:space="preserve">
+    <value>Tambahkan atau perbarui favorit server bernama.</value>
+  </data>
+  <data name="ServerConnectDescription" xml:space="preserve">
+    <value>Hubungkan ADDRESS_OR_FAVORITE [--instance ID], menggunakan instance yang disukai atau satu-satunya yang terkait jika dihilangkan. INSTANCE ADDRESS tetap didukung. Pekerjaan latar belakang membekukan target dan identitas konkret sebelum mengantri.</value>
+  </data>
+  <data name="ServerListDescription" xml:space="preserve">
+    <value>Daftar favorit server yang disimpan.</value>
+  </data>
+  <data name="ServerRemoveDescription" xml:space="preserve">
+    <value>Hapus server favorit tanpa mengubah data game.</value>
+  </data>
+  <data name="ServerResolveDescription" xml:space="preserve">
+    <value>Selesaikan alamat server menggunakan catatan Windows DNS dan SRV.</value>
+  </data>
+  <data name="ServerStatusDescription" xml:space="preserve">
+    <value>Menanyakan status Minecraft langsung pada server.</value>
+  </data>
+  <data name="SessionListDescription" xml:space="preserve">
+    <value>Daftar sesi permainan yang direkam dan status pengamatannya.</value>
+  </data>
+  <data name="SessionShowDescription" xml:space="preserve">
+    <value>Baca satu sesi permainan yang direkam dan status pengamatannya.</value>
+  </data>
+  <data name="SessionStopDescription" xml:space="preserve">
+    <value>Meminta penutupan menu sistem; --force mengakhiri pohon proses yang direkam. Baca show untuk mengamati jalan keluar.</value>
+  </data>
+  <data name="WorldBackupDescription" xml:space="preserve">
+    <value>Cadangan dunia.</value>
+  </data>
+  <data name="WorldBackupsDescription" xml:space="preserve">
+    <value>Pencadangan dunia.</value>
+  </data>
+  <data name="WorldCompressDescription" xml:space="preserve">
+    <value>Kompres dunia.</value>
+  </data>
+  <data name="WorldDirectoryDescription" xml:space="preserve">
+    <value>Direktori dunia.</value>
+  </data>
+  <data name="WorldExportDescription" xml:space="preserve">
+    <value>Ekspor dunia.</value>
+  </data>
+  <data name="WorldImportDescription" xml:space="preserve">
+    <value>Impor dunia.</value>
+  </data>
+  <data name="WorldListDescription" xml:space="preserve">
+    <value>Daftar dunia.</value>
+  </data>
+  <data name="WorldRecoverDescription" xml:space="preserve">
+    <value>Dunia pulih.</value>
+  </data>
+  <data name="WorldRecoveryDescription" xml:space="preserve">
+    <value>Pemulihan dunia.</value>
+  </data>
+  <data name="WorldRemoveDescription" xml:space="preserve">
+    <value>Dunia dihapus.</value>
+  </data>
+  <data name="WorldRestoreDescription" xml:space="preserve">
+    <value>Pemulihan dunia.</value>
+  </data>
+  <data name="OptionServerAddressDescription" xml:space="preserve">
+    <value>Gunakan alamat multipemain yang konkret tanpa menafsirkan favorit; diutamakan daripada --server.</value>
+  </data>
+  <data name="OptionPreferredDescription" xml:space="preserve">
+    <value>Jadikan instance terkait ini sebagai instance pilihan server favorit.</value>
+  </data>
+  <data name="OptionPreferredInstanceDescription" xml:space="preserve">
+    <value>Pengidentifikasi instance pilihan dari asosiasi yang disediakan.</value>
+  </data>
+  <data name="OptionLoginMethodDescription" xml:space="preserve">
+    <value>Latar depan Microsoft metode masuk: browser (default) atau device-code.</value>
+  </data>
+  <data name="ArgumentOptionalAddressDescription" xml:space="preserve">
+    <value>Alamat opsional atau favorit jika argumen pertama merupakan contoh eksplisit.</value>
+  </data>
+  <data name="AccountCurrentDescription" xml:space="preserve">
+    <value>Baca pilihan identitas yang disimpan saat ini.</value>
+  </data>
+  <data name="AccountSelectDescription" xml:space="preserve">
+    <value>Pilih identitas offline atau Microsoft yang disimpan.</value>
+  </data>
+  <data name="AccountClearDescription" xml:space="preserve">
+    <value>Hapus pilihan identitas yang disimpan saat ini.</value>
+  </data>
+  <data name="AccountLoginDescription" xml:space="preserve">
+    <value>Masuk ke Microsoft di latar depan menggunakan klien lokal yang dikonfigurasi ID; tidak ada klien ID yang dibundel.</value>
+  </data>
+  <data name="AccountRetryLoginDescription" xml:space="preserve">
+    <value>Lanjutkan proses masuk Microsoft yang belum selesai menggunakan kredensial lokal yang dilindungi.
+Proses masuk</value>
+  </data>
+  <data name="AccountRefreshDescription" xml:space="preserve">
+    <value>Perbarui identitas online yang tersimpan di latar depan.</value>
+  </data>
+  <data name="ErrorAccountInteractionRequired" xml:space="preserve">
+    <value>Microsoft memerlukan interaksi pengguna.</value>
+  </data>
+  <data name="ErrorAccountDeviceCodeEventsRequired" xml:space="preserve">
+    <value>Gunakan account login --method device-code --events untuk menampilkan perintah otorisasi latar depan.</value>
+  </data>
+  <data name="ErrorAccountForegroundRequired" xml:space="preserve">
+    <value>Operasi akun berjalan di latar depan sehingga permintaan kredensial dan otorisasi tidak dipertahankan sebagai tugas.</value>
+  </data>
+  <data name="ServerShowDescription" xml:space="preserve">
+    <value>Membaca favorit server tersimpan dan asosiasi instance-nya.</value>
+  </data>
+  <data name="ServerBindDescription" xml:space="preserve">
+    <value>Kaitkan instance yang ada dengan favorit server tersimpan.</value>
+  </data>
+  <data name="ServerUnbindDescription" xml:space="preserve">
+    <value>Hapus asosiasi instance dari favorit server yang disimpan.</value>
+  </data>
+  <data name="ServerSetInstancesDescription" xml:space="preserve">
+    <value>Ganti instance terkait favorit server tersimpan; daftar kosong menghapus semua asosiasi.</value>
+  </data>
+  <data name="ServerDiagnoseDescription" xml:space="preserve">
+    <value>Baca rekaman bukti koneksi server untuk sesi permainan.</value>
+  </data>
+  <data name="OptionNoServerDescription" xml:space="preserve">
+    <value>Peluncuran tanpa mewarisi server pemilik instance; argumen server eksplisit masih diutamakan.</value>
+  </data>
+  <data name="OptionDedicatedDescription" xml:space="preserve">
+    <value>Jadikan instance ini sebagai klien khusus yang dimiliki oleh server yang dipilih, tanpa menyalin file-nya.</value>
+  </data>
+  <data name="OptionServerOwnerDescription" xml:space="preserve">
+    <value>Daftarkan paket yang baru diimpor sebagai klien khusus dari server favorit ini.</value>
+  </data>
+  <data name="ServerReleaseClientDescription" xml:space="preserve">
+    <value>Kembalikan klien khusus ke manajemen lokal biasa tanpa memindahkan atau menghapus file.</value>
+  </data>
+  <data name="PackCheckDescription" xml:space="preserve">
+    <value>Periksa distribusi HMCL yang tersimpan dan lakukan peninjauan yang tepat; apply secara terpisah dengan pack apply.
+Objek</value>
+  </data>
+  <data name="PackHistoryDescription" xml:space="preserve">
+    <value>Daftar transaksi paket yang disimpan dan target rollback saat ini.</value>
+  </data>
+  <data name="PackDetachDescription" xml:space="preserve">
+    <value>Lepaskan pembaruan berdasarkan sumber tanpa menghapus klien atau asalnya.</value>
+  </data>
+  <data name="ConfigurationPatchDescription" xml:space="preserve">
+    <value>Secara atomik menambal pengaturan peluncur yang dipilih atau menghapus penggantian, mempertahankan bidang yang tidak terkait.
+Objek</value>
+  </data>
+  <data name="ConfigurationPatchChanges" xml:space="preserve">
+    <value>JSON hanya berisi bidang yang akan diubah. Eksplisit null disimpan; gunakan --remove untuk warisan.</value>
+  </data>
+  <data name="ConfigurationPatchRemove" xml:space="preserve">
+    <value>Hapus kunci override. Ulangi opsi ini untuk menghapus beberapa kunci.</value>
+  </data>
+  <data name="ConfigurationPatchObjectRequired" xml:space="preserve">
+    <value>Perubahan konfigurasi harus berupa objek JSON.</value>
+  </data>
+  <data name="ContentShowReviewDescription" xml:space="preserve">
+    <value>Baca ulasan konten tersimpan dengan tepat dan laporkan apakah garis dasarnya sudah basi.</value>
+  </data>
+  <data name="AppCommandsDescription" xml:space="preserve">
+    <value>Mengontrol preferensi dan status latar depan App yang sedang berjalan.</value>
+  </data>
+  <data name="AppExpectedFingerprint" xml:space="preserve">
+    <value>Sidik jari persis dikembalikan oleh app show; perubahan ditolak jika status App berubah.</value>
+  </data>
+  <data name="AppPreferenceFile" xml:space="preserve">
+    <value>JSON berisi perubahan preferensi paket secara eksplisit.</value>
+  </data>
+  <data name="AppPreferenceFileInvalid" xml:space="preserve">
+    <value>Menyediakan objek App preferensi JSON.</value>
+  </data>
+  <data name="AppPage" xml:space="preserve">
+    <value>Kunci halaman: home, instances, content, settings atau assistant.</value>
+  </data>
+  <data name="AppCategory" xml:space="preserve">
+    <value>Kunci kategori pengaturan stabil opsional.</value>
+  </data>
+  <data name="AppWindowState" xml:space="preserve">
+    <value>Status jendela: normal, maximized, minimized atau tray.</value>
+  </data>
+  <data name="AppWallpaperTheme" xml:space="preserve">
+    <value>Slot kertas dinding: light atau dark.</value>
+  </data>
+  <data name="AppWallpaperId" xml:space="preserve">
+    <value>Wallpaper ID dikembalikan oleh katalog App ini.</value>
+  </data>
+  <data name="AppWallpaperSource" xml:space="preserve">
+    <value>Gambar untuk disalin ke toko wallpaper App; sumbernya dipertahankan.</value>
+  </data>
+  <data name="AppWallpaperName" xml:space="preserve">
+    <value>Nama tampilan untuk gambar kustom slot yang dipilih.</value>
+  </data>
+  <data name="AppList" xml:space="preserve">
+    <value>Buat daftar instance App langsung menggunakan akar data yang dipilih.</value>
+  </data>
+  <data name="AppShow" xml:space="preserve">
+    <value>Baca status App aktual, preferensi, dan sidik jari mutasi.</value>
+  </data>
+  <data name="AppPreferences" xml:space="preserve">
+    <value>Kelola preferensi paket tanpa mengedit file penyimpanan pribadi.</value>
+  </data>
+  <data name="AppUpdatePreferences" xml:space="preserve">
+    <value>Terapkan bidang preferensi eksplisit melalui pengontrol App yang sebenarnya.</value>
+  </data>
+  <data name="AppNavigation" xml:space="preserve">
+    <value>Kelola halaman dan pilihan App saat ini, bukan status permainan.</value>
+  </data>
+  <data name="AppNavigate" xml:space="preserve">
+    <value>Menavigasi tanpa membuang draf aktif atau operasi modal.</value>
+  </data>
+  <data name="AppWindow" xml:space="preserve">
+    <value>Kelola jendela App yang dipilih.</value>
+  </data>
+  <data name="AppSetWindow" xml:space="preserve">
+    <value>Menerapkan status jendela asli yang eksplisit; tugas dan permainan mempertahankan kepemilikannya.</value>
+  </data>
+  <data name="AppClose" xml:space="preserve">
+    <value>Permintaan App keluar setelah konfirmasi negara bagian yang tepat dan penjaga pekerjaan milik yang ada.</value>
+  </data>
+  <data name="AppWallpapers" xml:space="preserve">
+    <value>Kelola slot wallpaper khusus tema asli App.</value>
+  </data>
+  <data name="AppWallpaperList" xml:space="preserve">
+    <value>Baca katalog wallpaper asli dan pilih ID.</value>
+  </data>
+  <data name="AppWallpaperSelect" xml:space="preserve">
+    <value>Pilih wallpaper yang ada ID.</value>
+  </data>
+  <data name="AppWallpaperImport" xml:space="preserve">
+    <value>Dekode dan impor gambar melalui saluran wallpaper normal App.</value>
+  </data>
+  <data name="AppWallpaperRename" xml:space="preserve">
+    <value>Ganti nama wallpaper khusus slot.</value>
+  </data>
+  <data name="AppWallpaperRemove" xml:space="preserve">
+    <value>Hapus hanya wallpaper khusus milik Aplikasi setelah konfirmasi.</value>
+  </data>
+  <data name="AppBackgroundUnsupported" xml:space="preserve">
+    <value>App menargetkan host langsung dan tidak dapat dimasukkan dalam antrean sebagai perintah latar belakang yang dapat diputar ulang.</value>
+  </data>
+  <data name="AppImageCache" xml:space="preserve">
+    <value>Periksa dan hapus hanya cache gambar App, bukan dependensi peluncur.</value>
+  </data>
+  <data name="AppImageCacheShow" xml:space="preserve">
+    <value>Mengukur byte cache gambar App saat ini.</value>
+  </data>
+  <data name="AppImageCacheClear" xml:space="preserve">
+    <value>Hapus cache gambar App melalui pemuat sebenarnya setelah konfirmasi.</value>
+  </data>
+  <data name="LocalContextLengthDescription" xml:space="preserve">
+    <value>Panjang konteks pekerja lokal dalam bentuk token; terpisah dari riwayat dan batas keluaran. Model yang tidak dikonfigurasi menggunakan 64K default peluncur.</value>
+  </data>
+  <data name="SkinGroupDescription" xml:space="preserve">
+    <value>Gambar, periksa, ekspor, dan pratinjau skin standar Java.</value>
+  </data>
+  <data name="SkinCreateDescription" xml:space="preserve">
+    <value>Buat dokumen skin, secara opsional mengimpor PNG.</value>
+  </data>
+  <data name="SkinInspectDescription" xml:space="preserve">
+    <value>Membaca model, revisi, status riwayat, dan pemetaan wajah.</value>
+  </data>
+  <data name="SkinReadDescription" xml:space="preserve">
+    <value>Membaca warna piksel yang tepat dari satu wajah model.</value>
+  </data>
+  <data name="SkinEditDescription" xml:space="preserve">
+    <value>Menerapkan kumpulan tindakan menggambar dasar yang bersifat atomik dan tidak dapat dibatalkan.</value>
+  </data>
+  <data name="SkinUndoDescription" xml:space="preserve">
+    <value>Membatalkan satu transaksi penarikan.</value>
+  </data>
+  <data name="SkinRedoDescription" xml:space="preserve">
+    <value>Ulangi satu transaksi yang belum selesai.</value>
+  </data>
+  <data name="SkinExportDescription" xml:space="preserve">
+    <value>Ekspor PNG pada ukuran tekstur dokumen; tidak mengunggah atau mengubah skin akun.</value>
+  </data>
+  <data name="SkinSaveAsDescription" xml:space="preserve">
+    <value>Simpan snapshot .rmcs yang dapat diedit secara independen dengan semua lapisan dan riwayat yang disimpan; sumber tidak berubah.</value>
+  </data>
+  <data name="SkinPreviewDescription" xml:space="preserve">
+    <value>Render cuplikan 3D PNG.</value>
+  </data>
+  <data name="SkinModelDescription" xml:space="preserve">
+    <value>Classic (lengan empat piksel) atau Slim (lengan tiga piksel).</value>
+  </data>
+  <data name="SkinInputDescription" xml:space="preserve">
+    <value>Opsional 64x64, HD 128x128 atau versi lama 64x32 PNG untuk diimpor.</value>
+  </data>
+  <data name="SkinOutputDescription" xml:space="preserve">
+    <value>Pratinjau tujuan, PNG atau file proyek yang dapat diedit.</value>
+  </data>
+  <data name="SkinColorDescription" xml:space="preserve">
+    <value>Warna dasar buram dalam format #RRGGBB atau #RRGGBBAA.</value>
+  </data>
+  <data name="SkinRevisionDescription" xml:space="preserve">
+    <value>Revisi terakhir yang diamati; suntingan basi ditolak.</value>
+  </data>
+  <data name="SkinEditsDescription" xml:space="preserve">
+    <value>JSON rangkaian tindakan menggambar wajah-lokal typed.</value>
+  </data>
+  <data name="SkinEditsFileDescription" xml:space="preserve">
+    <value>File yang berisi rangkaian tindakan menggambar JSON.</value>
+  </data>
+  <data name="SkinPartDescription" xml:space="preserve">
+    <value>Head, Body, RightArm, LeftArm, RightLeg atau LeftLeg.</value>
+  </data>
+  <data name="SkinLayerDescription" xml:space="preserve">
+    <value>Base (buram) atau Outer (pakaian transparan).</value>
+  </data>
+  <data name="SkinFaceDescription" xml:space="preserve">
+    <value>Front, Back, Right, Left, Top atau Bottom.</value>
+  </data>
+  <data name="SkinYawDescription" xml:space="preserve">
+    <value>PNG kamera menguap dalam derajat; bawaan 25.</value>
+  </data>
+  <data name="SkinPitchDescription" xml:space="preserve">
+    <value>PNG jarak kamera dari -89 hingga 89 derajat; bawaan 10.</value>
+  </data>
+  <data name="SkinToolProfileDescription" xml:space="preserve">
+    <value>Katalog MCP: launcher (bawaan), discovery (ringkas), atau skins terpisah.</value>
+  </data>
+  <data name="SkinEditsRequiredError" xml:space="preserve">
+    <value>Berikan tepat satu dari --edits dan --edits-file.</value>
+  </data>
+  <data name="SkinViewDescription" xml:space="preserve">
+    <value>Ketik JSON kamera pratinjau, dimensi, lapisan Minecraft dan bagian tubuh yang terlihat.</value>
+  </data>
+  <data name="SkinRequestDescription" xml:space="preserve">
+    <value>Ketik JSON permintaan pengambilan, pemilihan, atau pengambilan clipboard.</value>
+  </data>
+  <data name="SkinPaintLayerDescription" xml:space="preserve">
+    <value>Membaca lapisan cat ID atau background; abaikan untuk membaca komposit yang terlihat.</value>
+  </data>
+  <data name="SkinPickDescription" xml:space="preserve">
+    <value>Pilih permukaan model aktual dengan sinar model-ruang.</value>
+  </data>
+  <data name="SkinSelectionDescription" xml:space="preserve">
+    <value>Membuat seleksi berbasis geometris atau warna tanpa mengedit piksel.</value>
+  </data>
+  <data name="SkinCaptureDescription" xml:space="preserve">
+    <value>Tangkap wilayah wajah yang dipilih sebagai piksel papan klip yang dapat diedit.</value>
+  </data>
+  <data name="SkinViewConflictError" xml:space="preserve">
+    <value>Gunakan opsi --view atau --yaw/--pitch, jangan keduanya.</value>
+  </data>
+  <data name="SkinRequestRequiredError" xml:space="preserve">
+    <value>Permintaan skin typed non-null diperlukan.</value>
+  </data>
+  <data name="SkinRequestError" xml:space="preserve">
+    <value>Permintaan kulit tidak valid: {0}</value>
+  </data>
+  <data name="SkinSizeDescription" xml:space="preserve">
+    <value>Dimensi tekstur: 64 atau 128 texel.</value>
+  </data>
+  <data name="SkinTemplateDescription" xml:space="preserve">
+    <value>Templat asli ID; daftar dengan templat kulit.</value>
+  </data>
+  <data name="SkinNameDescription" xml:space="preserve">
+    <value>Nama tampilan proyek.</value>
+  </data>
+  <data name="SkinIndexDescription" xml:space="preserve">
+    <value>Mempertahankan posisi sejarah pada revisi yang diamati.</value>
+  </data>
+  <data name="SkinTemplateInputConflict" xml:space="preserve">
+    <value>Pilih template atau masukan PNG, jangan keduanya.</value>
+  </data>
+  <data name="SkinSizeError" xml:space="preserve">
+    <value>Ukuran kulit harus 64 atau 128.</value>
+  </data>
+  <data name="SkinListDescription" xml:space="preserve">
+    <value>Buat daftar proyek kulit yang dapat diedit.</value>
+  </data>
+  <data name="SkinTemplatesDescription" xml:space="preserve">
+    <value>Cantumkan templat basic-person asli dan saran model.</value>
+  </data>
+  <data name="SkinCloneDescription" xml:space="preserve">
+    <value>Mengkloning konten yang dapat diedit ke dalam proyek baru.</value>
+  </data>
+  <data name="SkinRenameDescription" xml:space="preserve">
+    <value>Ganti nama proyek kulit.</value>
+  </data>
+  <data name="SkinHistoryDescription" xml:space="preserve">
+    <value>Baca riwayat transaksi yang disimpan.</value>
+  </data>
+  <data name="SkinRestoreToDescription" xml:space="preserve">
+    <value>Kembalikan posisi riwayat secara atom.</value>
+  </data>
+  <data name="SkinImportDescription" xml:space="preserve">
+    <value>Impor PNG sebagai salah satu pengganti konten yang tidak dapat dibatalkan.</value>
+  </data>
+  <data name="SkinInputRequiredError" xml:space="preserve">
+    <value>PNG diperlukan masukan.</value>
+  </data>
+  <data name="SkinFootprintDescription" xml:space="preserve">
+    <value>Baca cakupan kuas yang akurat raster tanpa menggambar.</value>
+  </data>
+  <data name="SkinPreviewEditsDescription" xml:space="preserve">
+    <value>Render pratinjau gerakan yang tidak dikomit.</value>
+  </data>
+  <data name="SkinLabelDescription" xml:space="preserve">
+    <value>Deskripsi kandidat opsional.</value>
+  </data>
+  <data name="SkinOperationDescription" xml:space="preserve">
+    <value>Pengidentifikasi operasi penerimaan kandidat.</value>
+  </data>
+  <data name="SkinScopeDescription" xml:space="preserve">
+    <value>Hibah pengeditan kulit milik tuan rumah.</value>
+  </data>
+  <data name="SkinScopeCreateDescription" xml:space="preserve">
+    <value>Membuat izin edit dokumen, lapisan, dan piksel.</value>
+  </data>
+  <data name="SkinScopeShowDescription" xml:space="preserve">
+    <value>Periksa hibah pengeditan kulit.</value>
+  </data>
+  <data name="SkinScopeRevokeDescription" xml:space="preserve">
+    <value>Mencabut hibah pengeditan kulit.</value>
+  </data>
+  <data name="SkinProposalDescription" xml:space="preserve">
+    <value>Panggung dan ulas kandidat kulit beku.</value>
+  </data>
+  <data name="SkinProposeDescription" xml:space="preserve">
+    <value>Memasukkan kandidat dalam hibah tuan rumah.</value>
+  </data>
+  <data name="SkinProposalShowDescription" xml:space="preserve">
+    <value>Periksa tinjauan kandidat dan lakukan status.</value>
+  </data>
+  <data name="SkinAcceptDescription" xml:space="preserve">
+    <value>Terima kandidat yang telah ditinjau dengan tanda terima yang tahan lama.</value>
+  </data>
+  <data name="SkinRejectDescription" xml:space="preserve">
+    <value>Buang kandidat yang tidak diterima.</value>
+  </data>
+  <data name="SkinProposalPreviewDescription" xml:space="preserve">
+    <value>Render kandidat di direktori pratinjau terkelola.</value>
+  </data>
+  <data name="SkinReceiptDescription" xml:space="preserve">
+    <value>Carilah hasil penerimaan kandidat yang tahan lama.</value>
+  </data>
+  <data name="SkinScopeBindingDescription" xml:space="preserve">
+    <value>Ikat kulit MCP ke hibah host; generasi kandidat saja, tidak ada pengeditan atau penerimaan langsung.</value>
+  </data>
+  <data name="SkinScopeProfileError" xml:space="preserve">
+    <value>Lingkup kulit memerlukan profil alat kulit.</value>
+  </data>
+  <data name="OptionGameLanguageDescription" xml:space="preserve">
+    <value>Minecraft bahasa yang akan diterapkan sebelum peluncuran, seperti zh_cn, en_us atau ar_sa; hilangkan untuk mempertahankan pengaturan game.</value>
+  </data>
+  <data name="AiReferenceImages" xml:space="preserve">
+    <value>PNG/JPEG/File referensi WebP untuk giliran ini. Ulangi hingga tiga kali; byte sumber dibekukan sebelum dikirimkan.</value>
+  </data>
+  <data name="AiReferenceImagesTooMany" xml:space="preserve">
+    <value>Lampirkan paling banyak tiga gambar referensi ke satu giliran obrolan.</value>
+  </data>
+  <data name="AiUserPromptRespond" xml:space="preserve">
+    <value>Kirim atau lewati pertanyaan tunggu menggunakan file JSON AiUserResponse; jawaban tidak mengizinkan alat.</value>
+  </data>
+  <data name="AiCancelQueued" xml:space="preserve">
+    <value>Batalkan juga pesan antrian percakapan ini sebelum menghentikan giliran yang dipilih.</value>
+  </data>
+  <data name="RepairApply" xml:space="preserve">
+    <value>Terapkan satu rencana beku yang dapat dibalik satu kali.</value>
+  </data>
+  <data name="RepairCreate" xml:space="preserve">
+    <value>Otorisasi perbaikan pada satu tugas persiapan atau proses gagal yang tercatat.</value>
+  </data>
+  <data name="RepairGroup" xml:space="preserve">
+    <value>Perbaikan yang dapat dibalik atas kegagalan instans yang tercatat.</value>
+  </data>
+  <data name="RepairJob" xml:space="preserve">
+    <value>Pekerjaan persiapan awal yang gagal ID.</value>
+  </data>
+  <data name="RepairKind" xml:space="preserve">
+    <value>Jenis perbaikan: disable_mod, java, memory atau dependencies.</value>
+  </data>
+  <data name="RepairMemory" xml:space="preserve">
+    <value>Usulan batas tumpukan di MiB.</value>
+  </data>
+  <data name="RepairPlan" xml:space="preserve">
+    <value>Bekukan satu rencana perbaikan minimal yang didukung bukti.</value>
+  </data>
+  <data name="RepairReason" xml:space="preserve">
+    <value>Jelaskan bukti nyata yang mendukung persidangan ini.</value>
+  </data>
+  <data name="RepairRestore" xml:space="preserve">
+    <value>Mengembalikan target milik percobaan yang tidak berubah.</value>
+  </data>
+  <data name="RepairSession" xml:space="preserve">
+    <value>Sesi awal yang gagal ID.</value>
+  </data>
+  <data name="RepairShow" xml:space="preserve">
+    <value>Baca bukti asli dan kondisi perbaikan terkini.</value>
+  </data>
+  <data name="RepairTarget" xml:space="preserve">
+    <value>Nama file mod yang diinstal atau Java yang dapat dieksekusi.</value>
+  </data>
+  <data name="RepairVerify" xml:space="preserve">
+    <value>Luncurkan dan amati satu proses verifikasi yang diberi tag.</value>
+  </data>
+  <data name="ExternalGroup" xml:space="preserve">
+    <value>Akun Yggdrasil eksternal dan otorisasi LittleSkin.</value>
+  </data>
+  <data name="ExternalAddress" xml:space="preserve">
+    <value>Situs web atau alamat Yggdrasil API; dihilangkan saat masuk lagi.</value>
+  </data>
+  <data name="ExternalAttempt" xml:space="preserve">
+    <value>Upaya login eksternal tertunda ID.</value>
+  </data>
+  <data name="ExternalProfile" xml:space="preserve">
+    <value>Pemain UUID ditawarkan oleh upaya login ini.</value>
+  </data>
+  <data name="ExternalUsername" xml:space="preserve">
+    <value>Alamat email atau nama pengguna diterima oleh layanan.</value>
+  </data>
+  <data name="ExternalPasswordStdin" xml:space="preserve">
+    <value>Baca satu baris kata sandi dari input standar; jangan pernah memasukkannya ke dalam argumen perintah.</value>
+  </data>
+  <data name="ExternalComponentFile" xml:space="preserve">
+    <value>Ada authlib-injector JAR untuk memvalidasi dan menyalin ke penyimpanan peluncur.</value>
+  </data>
+  <data name="ExternalLogin" xml:space="preserve">
+    <value>Masuk dengan kata sandi dan pertahankan atau pilih peran pemain yang dikembalikan.</value>
+  </data>
+  <data name="ExternalDevice" xml:space="preserve">
+    <value>Mulai LittleSkin otorisasi perangkat untuk aplikasi ini.</value>
+  </data>
+  <data name="ExternalPoll" xml:space="preserve">
+    <value>Jajak pendapat LittleSkin dengan memperhatikan intervalnya; --wait berlanjut hingga otorisasi berakhir.</value>
+  </data>
+  <data name="ExternalShow" xml:space="preserve">
+    <value>Baca status publik dari proses masuk yang tertunda, tanpa token.</value>
+  </data>
+  <data name="ExternalSelect" xml:space="preserve">
+    <value>Ikat peran yang ditawarkan dan daftarkan tanpa mengubah akun saat ini.</value>
+  </data>
+  <data name="ExternalCancel" xml:space="preserve">
+    <value>Hapus otorisasi eksternal yang tertunda dan status sementara yang dilindungi.</value>
+  </data>
+  <data name="ExternalComponent" xml:space="preserve">
+    <value>Kelola komponen login eksternal milik peluncur.</value>
+  </data>
+  <data name="ExternalComponentShow" xml:space="preserve">
+    <value>Periksa dan verifikasi komponen yang ada tanpa mengunduh.</value>
+  </data>
+  <data name="ExternalComponentPrepare" xml:space="preserve">
+    <value>Gunakan kembali komponen terverifikasi, unduh artefak resmi, atau impor --file.</value>
+  </data>
+  <data name="ExternalPasswordRequired" xml:space="preserve">
+    <value>Gunakan --password-stdin dan berikan kata sandi melalui input standar.</value>
+  </data>
+  <data name="ExternalCachedLaunch" xml:space="preserve">
+    <value>Secara eksplisit mencoba peran eksternal yang sama dengan kredensial dan komponen cache yang lengkap; multipemain tidak dijamin.</value>
+  </data>
+  <data name="ExternalPasswordDirectOnly" xml:space="preserve">
+    <value>Input kata sandi hanya tersedia di latar depan yang dipanggil langsung CLI.</value>
+  </data>
+  <data name="ShaderPackSelectDescription" xml:space="preserve">
+    <value>Pilih satu paket shader yang terpasang; hilangkan --file untuk menonaktifkan shader.</value>
+  </data>
+  <data name="ShaderPackEngineDescription" xml:space="preserve">
+    <value>Pemilik konfigurasi: iris, oculus atau optifine; tidak menggunakan penemuan yang diamati.</value>
+  </data>
+  <data name="ShaderPackListDescription" xml:space="preserve">
+    <value>Baca paket shader yang terpasang dan pemilihan mesin rendering.</value>
+  </data>
+  <data name="ShaderPackFileDescription" xml:space="preserve">
+    <value>Nama file shader-pack terinstal; hilangkan untuk menonaktifkan shader.</value>
+  </data>
+  <data name="GroupShaderpackDescription" xml:space="preserve">
+    <value>Periksa dan pilih paket shader.</value>
+  </data>
+  <data name="AiRunQueuedTurn" xml:space="preserve">
+    <value>Hentikan giliran aktif dan jalankan pesan antrian ini selanjutnya.</value>
+  </data>
+  <data name="BridgeGroup" xml:space="preserve">
+    <value>Periksa jembatan permainan opsional.</value>
+  </data>
+  <data name="BridgeShow" xml:space="preserve">
+    <value>Baca status koneksi jembatan sesi ini.</value>
+  </data>
+  <data name="BridgeGameGroup" xml:space="preserve">
+    <value>Amati data game langsung dan edit dunia lokal yang dimiliki.</value>
+  </data>
+  <data name="BridgeSnapshot" xml:space="preserve">
+    <value>Baca cuplikan pemain/dunia baru yang disinkronkan.</value>
+  </data>
+  <data name="BridgeEdit" xml:space="preserve">
+    <value>Kirimkan satu suntingan lokal yang diketik; server selalu tetap hanya-baca.</value>
+  </data>
+  <data name="BridgeEditRequest" xml:space="preserve">
+    <value>GameEditRequest JSON dengan operationId, mengamati identitas dunia, jenis dan muatan dayTime/health/control/click/button/perintahnya.</value>
+  </data>
+  <data name="BridgeOperationGroup" xml:space="preserve">
+    <value>Amati atau batalkan pengeditan game yang ada.</value>
+  </data>
+  <data name="BridgeOperationShow" xml:space="preserve">
+    <value>Baca tanda terima edit yang tepat tanpa memutar ulang.</value>
+  </data>
+  <data name="BridgeOperationCancel" xml:space="preserve">
+    <value>Membatalkan hanya pengeditan yang eksekusinya belum dimulai.</value>
+  </data>
+  <data name="BridgeLaunch" xml:space="preserve">
+    <value>Aktifkan jembatan permainan Java opsional untuk peluncuran ini.</value>
+  </data>
+  <data name="BridgeRegion" xml:space="preserve">
+    <value>Baca blok, entitas, dan inventaris yang terlihat berbatas tanpa memuat potongan.</value>
+  </data>
+  <data name="BridgeRegionRequest" xml:space="preserve">
+    <value>GameRegionRequest JSON dengan gameIncarnation, worldEpoch, dimension, x/y/z dan sizeX/Y/Z (1..16).</value>
+  </data>
+  <data name="BridgeInterval" xml:space="preserve">
+    <value>Interval pengamatan dalam milidetik (200..10000).</value>
+  </data>
+  <data name="BridgeEvents" xml:space="preserve">
+    <value>Streaming snapshot baru melalui --events hingga dibatalkan.</value>
+  </data>
+  <data name="BridgeEventsRequireEvents" xml:space="preserve">
+    <value>Gunakan --events untuk menerima aliran observasi langsung.</value>
+  </data>
+  <data name="BridgeQuery" xml:space="preserve">
+    <value>Membaca kueri permainan semantik atau pilihan NBT asli yang dibatasi.</value>
+  </data>
+  <data name="BridgeQueryRequest" xml:space="preserve">
+    <value>GameQueryRequest JSON dengan identitas dunia yang diamati, jenis dan pilihan/paging opsional.</value>
+  </data>
+  <data name="BridgeAi" xml:space="preserve">
+    <value>Kirim atau amati permintaan AI peluncur cakupan game.</value>
+  </data>
+  <data name="BridgeAiRequest" xml:space="preserve">
+    <value>GameAiRequest JSON dengan aksi, worldKey stabil, dan cuplikan baru; mutasi memerlukan identitas permintaan/putaran/keputusan yang tepat.</value>
+  </data>
+  <data name="InformationCapabilitiesScope" xml:space="preserve">
+    <value>Operasi peluncur di direktori data yang dikonfigurasi. mengeksekusi mengekspos operasi CLI yang diimplementasikan. Jembatan permainan opsional yang diautentikasi mengamati permainan saat ini; mutasi memerlukan dunia lokal yang dimilikinya dan izin yang ada.</value>
+  </data>
+  <data name="ContentBundledDescription" xml:space="preserve">
+    <value>Cantumkan mod yang dimiliki peluncur dan statusnya dalam sebuah contoh.</value>
+  </data>
+  <data name="ContentReviewBundledDescription" xml:space="preserve">
+    <value>Tinjau mod bawaan ID yang dipilih dan dependensi yang dibundelnya tanpa menginstal.</value>
+  </data>
+  <data name="ClearLocalContextDescription" xml:space="preserve"><value>Pulihkan default: Panjang konteks.</value></data>
+  <data name="InspectLocalModelDescription" xml:space="preserve"><value>GGUF: Panjang konteks.</value></data>
+  <data name="InformationResultImageDescription" xml:space="preserve"><value>Baca gambar tersimpan sesuai kebutuhan; MCP mengembalikan gambar, bukan teks base64.</value></data>
+  <data name="SkinImportAsLayerDescription" xml:space="preserve"><value>Tambahkan PNG berukuran sama sebagai lapisan baru, mempertahankan RGBA dan konten yang ada.</value></data>
+  <data name="SkinImportLayerOptionsError" xml:space="preserve"><value>Gunakan --name hanya bersama --as-layer; --model hanya untuk impor skin utuh.</value></data>
+  <data name="SkinOutfitDescription" xml:space="preserve"><value>Pilih pasangan</value></data>
+  <data name="SkinCompanionDescription" xml:space="preserve"><value>Pilih pasangan (ID)</value></data>
+  <data name="SkinSoloDescription" xml:space="preserve"><value>Lihat sendiri</value></data>
+  <data name="SkinOutfitRequired" xml:space="preserve"><value>Tentukan --with ID atau --clear.</value></data>
+  <data name="SeedRequestDescription" xml:space="preserve"><value>Permintaan seed bertipe dalam JSON</value></data>
+  <data name="SeedRequestFileDescription" xml:space="preserve"><value>File UTF-8 berisi permintaan seed</value></data>
+  <data name="SeedGameLanguageDescription" xml:space="preserve"><value>Kode bahasa game terpasang untuk nama bioma</value></data>
+  <data name="SeedOutputDescription" xml:space="preserve"><value>Jalur PNG tujuan</value></data>
+  <data name="SeedGroupDescription" xml:space="preserve"><value>Jelajahi seed dengan generasi asli yang tepat</value></data>
+  <data name="SeedVersionsDescription" xml:space="preserve"><value>Daftar versi terpasang dan dukungan seed</value></data>
+  <data name="SeedPrepareDescription" xml:space="preserve"><value>Siapkan dependensi game asli dan Java</value></data>
+  <data name="SeedCatalogDescription" xml:space="preserve"><value>Baca registri asli bioma, struktur, dan dimensi</value></data>
+  <data name="SeedMapDescription" xml:space="preserve"><value>Buat petak peta asli atau baca cache</value></data>
+  <data name="SeedExportDescription" xml:space="preserve"><value>Ekspor peta asli ke PNG beserta konteks</value></data>
+  <data name="SeedSearchDescription" xml:space="preserve"><value>Kelola pencarian terbatas dengan bukti positif</value></data>
+  <data name="SeedSearchStartDescription" xml:space="preserve"><value>Buat dan jalankan pencarian tersimpan</value></data>
+  <data name="SeedSearchListDescription" xml:space="preserve"><value>Daftar pencarian tersimpan</value></data>
+  <data name="SeedSearchShowDescription" xml:space="preserve"><value>Baca hasil dan posisi lanjut</value></data>
+  <data name="SeedSearchResumeDescription" xml:space="preserve"><value>Lanjutkan dari posisi yang sudah dikonfirmasi</value></data>
+  <data name="SeedBookmarkDescription" xml:space="preserve"><value>Kelola markah seed dan tempat</value></data>
+  <data name="SeedBookmarkListDescription" xml:space="preserve"><value>Daftar kedua jenis markah</value></data>
+  <data name="SeedBookmarkSaveDescription" xml:space="preserve"><value>Simpan atau perbarui markah seed atau tempat</value></data>
+  <data name="SeedBookmarkRemoveDescription" xml:space="preserve"><value>Hapus markah yang dipilih</value></data>
+  <data name="SeedRequestChoiceError" xml:space="preserve"><value>Tentukan hanya --request atau --request-file.</value></data>
+  <data name="SeedRequestEmptyError" xml:space="preserve"><value>Permintaan seed tidak boleh null.</value></data>
+  <data name="SeedRequestInvalidError" xml:space="preserve"><value>JSON permintaan seed tidak valid: {0}</value></data>
+  <data name="SeedStructuresDescription" xml:space="preserve"><value>Cari struktur yang telah dirakit di sekitar koordinat pada satu seed, menurut jarak.</value></data>
+  <data name="SeedRegionDescription" xml:space="preserve"><value>Membuat pratinjau blok asli, jarahan wadah, dan jumlah material dalam area terbatas.</value></data>
+  <data name="SeedSpawnDescription" xml:space="preserve"><value>Hitung atau baca titik muncul dunia asli dari cache</value></data>
+  <data name="LogLauncherDescription" xml:space="preserve"><value>Log aktivitas peluncur</value></data>
+  <data name="LogLauncherExportDescription" xml:space="preserve"><value>Ekspor log peluncur tersimpan tanpa sesi permainan.</value></data>
+  <data name="MultiplayerGroup" xml:space="preserve"><value>Kelola satu ruang multipemain melalui Core bersama.</value></data>
+  <data name="MultiplayerHost" xml:space="preserve"><value>Host ruang; --background menjalankan tugas terpisah.</value></data>
+  <data name="MultiplayerJoin" xml:space="preserve"><value>Bergabung memakai kode asli sambil mempertahankan lingkungan lokal.</value></data>
+  <data name="MultiplayerShow" xml:space="preserve"><value>Baca ruang serta status game dan jaringan.</value></data>
+  <data name="MultiplayerStop" xml:space="preserve"><value>Tutup ruang dengan tetap mempertahankan game dan instans.</value></data>
+  <data name="MultiplayerRetry" xml:space="preserve"><value>Coba kembali dengan jumlah percobaan terbatas.</value></data>
+  <data name="MultiplayerLaunch" xml:space="preserve"><value>Jalankan instans tamu yang disiapkan melalui pintu masuk ruang.</value></data>
+  <data name="MultiplayerFallback" xml:space="preserve"><value>Gunakan alamat server yang diberikan host.</value></data>
+  <data name="MultiplayerExportLog" xml:space="preserve"><value>Ekspor catatan terbatas tanpa undangan atau data pemain.</value></data>
+  <data name="MultiplayerCodeOption" xml:space="preserve"><value>Kode ruang asli, termasuk yang berada dalam teks.</value></data>
+  <data name="MultiplayerSessionOption" xml:space="preserve"><value>Sesi game yang sudah ada milik instans terpilih.</value></data>
+  <data name="MultiplayerAutoOpenOption" xml:space="preserve"><value>Buka dunia lokal pertama secara otomatis jika didukung.</value></data>
+  <data name="VersionCatalogRefresh" xml:space="preserve"><value>Segarkan katalog versi bersama secara eksplisit.</value></data>
+  <data name="MultiplayerChangeCode" xml:space="preserve"><value>Ganti kode ruang tamu dengan mempertahankan instans permainan.</value></data>
+  <data name="PackStageFile" xml:space="preserve"><value>Siapkan berkas VALUE untuk ITEM yang hilang pada instans TARGET; verifikasi saat melanjutkan.</value></data>
+  <data name="PackMultiplayerExport" xml:space="preserve"><value>Ekspor konten dan konfigurasi bersama tanpa pengaturan pribadi atau berkas lokal tanpa sumber unduhan.</value></data>
+  <data name="MultiplayerExitGameOption" xml:space="preserve"><value>Minta juga game ditutup secara normal, tanpa penghentian paksa.</value></data>
+  <data name="MultiplayerStartGameOption" xml:space="preserve"><value>Jalankan game otomatis saat jaringan siap.</value></data>
+  <data name="MultiplayerRestartGameOption" xml:space="preserve"><value>Izinkan penutupan normal dan peluncuran ulang game yang dipilih.</value></data>
+  <data name="WorldMapExportDescription" xml:space="preserve"><value>Ekspor peta tersimpan sebagai PNG.</value></data>
+  <data name="WorldMapFillUnexploredDescription" xml:space="preserve"><value>Lengkapi medan yang belum dijelajahi dengan pratinjau generasi asli terisolasi.</value></data>
+  <data name="WorldMapGroupDescription" xml:space="preserve"><value>Periksa peta tersimpan dan posisi pemain.</value></data>
+  <data name="WorldMapPlayerDescription" xml:space="preserve"><value>Baca posisi langsung atau tersimpan setelah memeriksa dunia.</value></data>
+  <data name="WorldMapPlayerIdDescription" xml:space="preserve"><value>UUID pemain tersimpan atau ID catatan lokal.</value></data>
+  <data name="WorldMapPredictLootDescription" xml:space="preserve"><value>Prediksi jarahan dari tabel dan seed tersimpan di runtime asli terisolasi tanpa mengubah isi tersimpan.</value></data>
+  <data name="WorldMapReadDescription" xml:space="preserve"><value>Baca peta tersimpan tanpa membuat chunk.</value></data>
+  <data name="WorldMapRegionDescription" xml:space="preserve"><value>Baca blok, bahan, dan inventaris tersimpan tanpa membuat chunk atau jarahan.</value></data>
+  <data name="WorldMapRequestDescription" xml:space="preserve"><value>Permintaan peta tersimpan bertipe dalam JSON.</value></data>
+  <data name="WorldMapRequestFileDescription" xml:space="preserve"><value>Berkas berisi permintaan peta tersimpan bertipe.</value></data>
+  <data name="WorldMapSceneDescription" xml:space="preserve"><value>Periksa model, tekstur, dan geometri blok tersimpan.</value></data>
+  <data name="WorldMapShowDescription" xml:space="preserve"><value>Baca seed, pengaturan, dan pemain tersimpan.</value></data>
+  <data name="WorldMapStructuresDescription" xml:space="preserve"><value>Cari catatan struktur tersimpan dalam radius yang diminta.</value></data>
+  <data name="AccountSkinOnlyDescription" xml:space="preserve">
+    <value>Perbarui hanya informasi skin tanpa memperbarui kredensial login.</value>
+  </data>
+  <data name="ScreenshotGroupDescription" xml:space="preserve"><value>Jelajahi dan kelola tangkapan layar instans.</value></data>
+  <data name="ScreenshotFileDescription" xml:space="preserve"><value>Nama file tangkapan layar.</value></data>
+  <data name="ScreenshotFilesDescription" xml:space="preserve"><value>Nama file tangkapan layar.</value></data>
+  <data name="ScreenshotOptionalFileDescription" xml:space="preserve"><value>Nama file; kosongkan untuk membuka folder tangkapan layar.</value></data>
+  <data name="ScreenshotListDescription" xml:space="preserve"><value>Daftar tangkapan layar berdasarkan waktu perubahan, terbaru dahulu.</value></data>
+  <data name="ScreenshotShowDescription" xml:space="preserve"><value>Baca jalur, ukuran, dan waktu perubahan satu tangkapan layar.</value></data>
+  <data name="ScreenshotOpenDescription" xml:space="preserve"><value>Buka tangkapan layar dengan penampil bawaan atau buka foldernya.</value></data>
+  <data name="ScreenshotRenameDescription" xml:space="preserve"><value>Ganti nama tangkapan layar tanpa menimpa file lain.</value></data>
+  <data name="ScreenshotExportDescription" xml:space="preserve"><value>Salin tangkapan layar terpilih ke folder tanpa menimpa file.</value></data>
+  <data name="ScreenshotRemoveDescription" xml:space="preserve"><value>Hapus tangkapan layar yang dipilih (ke Keranjang Sampah secara default); memerlukan --confirm.</value></data>
+  <data name="ScreenshotCanceled" xml:space="preserve"><value>Operasi dibatalkan; perubahan file yang selesai tetap disimpan.</value></data>
+  <data name="ScreenshotPartialFailure" xml:space="preserve"><value>Sebagian tangkapan layar gagal diproses. Periksa hasil per file.</value></data>
+  <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Hapus permanen tanpa menggunakan Keranjang Sampah. Memerlukan --confirm.</value></data>
+  <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Pilih sumber berkas lokal: FILE=PROJECT; ulangi untuk beberapa berkas.</value></data>
+  <data name="ErrorSourceSelection" xml:space="preserve"><value>Gunakan --select-source FILE=PROJECT.</value></data>
+</root>

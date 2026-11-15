@@ -1,0 +1,6 @@
+{
+  "required": true,
+  "package": "dev.richasy.worldreroll.fixtures.mixin",
+  "client": ["WorldOptionsFixtureMixin", "ChatHistoryAccess"],
+  "injectors": {"defaultRequire": 1}
+}

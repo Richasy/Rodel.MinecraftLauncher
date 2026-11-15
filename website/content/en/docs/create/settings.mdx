@@ -1,0 +1,104 @@
+---
+title: Settings, Java and appearance
+description: Start with defaults, then adjust language, runtimes, networking and AI as needed.
+---
+
+## Begin with search
+
+Open **Settings** and search for language, Java, memory or proxy to locate an actual option. Search does not perform actions for you or search private values.
+
+Valid global and instance-configuration edits save automatically; there is no separate Save button. Instance overrides take priority over global defaults, and most launch settings affect the next launch. Correct invalid fields rather than assuming that closing the panel saved them.
+
+<figure>
+  <img
+    src="/assets/en-settings.webp"
+    alt="Settings navigation and the selected configuration section"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Read the description beside an unfamiliar option first.
+  </figcaption>
+</figure>
+
+## Language, theme and wallpaper
+
+In launcher settings, choose the display language, follow the system theme or use light or dark, and select wallpapers for each theme. You can also choose the launcher window's behavior after a game starts.
+
+The app offers 15 languages, with Simplified and Traditional Chinese as separate choices. Interface text refreshes after a language change; instance names and your own text remain as entered.
+
+After launch, the window can stay open, minimize or move to the tray. Restore it from the tray to return to the launcher without starting another game.
+
+## Multiplayer and the mini window
+
+Enable **Multiplayer** in launcher settings to show its sidebar entry. **Multiplayer mini window** controls the host's room display while the main window is minimized. Closing the mini window does not end the room.
+
+Disabling multiplayer during an active room asks for confirmation. Confirming stops multiplayer and keeps the game running; canceling keeps the setting. See [Play with friends](/en/docs/play/multiplayer).
+
+> [!IMPORTANT]
+> Changing the data folder requires a restart and does not move games. Read [Import an existing game](/en/docs/play/import) to migrate data.
+
+## Java and memory
+
+Open the **Java** category for runtimes and memory. Different Minecraft versions may need different Java versions. Start with automatic discovery and the instance's preparation result. In **Java runtime management**, discover local installations, import an existing runtime, download one or choose a default.
+
+An instance's explicit Java choice takes priority. Before removing managed Java, check whether another instance uses it. Unregistering external Java and deleting launcher-owned files have different scopes.
+
+Memory can be allocated automatically from available memory or set manually. More is not always better: Windows, other programs and native resources also need space. Start with a large modpack's guidance and adjust based on actual behavior.
+
+In automatic mode, Home shows the current recommended limit. Launch calculates it again from available memory at that time. Switching back to manual retains the previously saved manual value.
+
+A maximum-memory argument entered under advanced settings may override the ordinary controls. Avoid conflicting values in several places.
+
+## Game window and quick entry
+
+Under **Launch**, choose fullscreen or window size. Supported versions can use a save-folder name to enter a single-player world directly. Unsupported versions launch normally to the menu.
+
+Quick entry selects a target; it does not skip loading or saving. Multiplayer targets and custom game arguments can also affect the outcome.
+
+**Game data bridge** is enabled by default and can be disabled. An explicit previous global or instance choice to disable it is preserved. Changes take effect on the next launch. It reads supported game state and allows limited actions in your own local world; servers stay read-only. Read [AI assistant](/en/docs/create/assistant#optional-game-data-bridge) for scope.
+
+## Downloads and networking
+
+Under **Network**, choose the system proxy, a direct connection or a manual proxy. Adjust download concurrency and timeouts only when needed. Mirror rules are for cases where you know the source and replacement; defaults are a good starting point.
+
+Failure of an optional online service does not make a local instance unusable. After changing a proxy or mirror, retry the affected task rather than deleting game data.
+
+## Content, cache and logs
+
+Open **Cache** to inspect usage and review estimated cleanup candidates under the selected rules; execution rechecks what must be kept. **Logs** has separate launcher and game-log exports. Follow [Feedback and logs](/en/docs/help/feedback) for the steps.
+
+Older-game logging compatibility and output encoding are for collection problems; automatic selection is the default. If text is garbled, keep the original log and confirm its encoding before changing settings. Changes affect subsequent launches.
+
+## AI and external tools
+
+Model services, file and network scopes, built-in capabilities and external integrations are in AI settings. Ordinary new conversations default to **Safe**. Change this under **Conversation defaults**; existing conversations keep their current mode. New users can start with one model and keep the default **Safe** mode; read [AI assistant](/en/docs/create/assistant).
+
+The current release offers online model services only; the local GGUF entry point is temporarily unavailable. Saved local-model configuration is not deleted or automatically switched to an online service.
+
+Built-in tools and skills are supplied with the app. Custom third-party MCP or skill registration is not currently offered. Optional Codex / Claude Code integration is a separate flow with an installation preview.
+
+## Advanced arguments and defaults
+
+Extra JVM arguments, game arguments and environment variables are for explicit needs. Leave them empty if unsure. Copying someone else's entire argument list can override existing choices.
+
+Before restoring defaults, check the current category. Instance overrides take priority, so open the instance's configuration separately if its value still differs.
+
+## About this app
+
+**About this app** at the end of settings shows and copies the installed package version. It links to the repository, GitHub feedback, this guide and the developer's other Store apps. Projects and their licenses appear together in the credits on the same page.
+
+<figure>
+  <img
+    src="/assets/en-about.webp"
+    alt="About this app with the RMCL version, project links and credits"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    Copy the exact version before reporting a problem. Updates still come
+    through Microsoft Store.
+  </figcaption>
+</figure>

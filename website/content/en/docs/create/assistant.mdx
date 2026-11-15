@@ -1,0 +1,178 @@
+---
+title: AI assistant
+description: Ask for an explanation first, then allow help within a clear scope.
+---
+
+## What can it help with?
+
+AI is one of RMCL's main areas of exploration. It can explain versions, loaders, dependencies and launch messages. Within permitted scope, it can read instance information, find content, work with tasks or help design a skin.
+
+You can use basic launcher features without configuring AI. This is not gameplay automation, and it cannot promise to fix every problem.
+
+<figure>
+  <img
+    src="/assets/en-assistant.webp"
+    alt="AI assistant showing a conversation, model choice and instance context"
+    width="1600"
+    height="1000"
+    loading="lazy"
+  />
+  <figcaption>
+    A specific instance and goal usually help more than “fix everything.”
+  </figcaption>
+</figure>
+
+## 1. Add a model service
+
+Open the model services area in **Settings → AI** and choose **Add service**.
+
+1. Choose an OpenAI-compatible, Anthropic-compatible or Gemini service.
+2. For an online service, enter the address and API key supplied by its provider. This is not your Microsoft password.
+3. Load the model list and select models to keep. If the service returns no list, enter an actual model identifier.
+4. Save, return to AI Assistant and choose the model.
+
+A model service may bill separately. Check its terms before use. Whether a web chat subscription includes API usage depends on the provider; access to its chat website alone is not proof.
+
+The current release offers online services only. Adding and using local GGUF models is temporarily unavailable. Existing local configuration is retained and is not automatically replaced by an online model.
+
+Set a working online model as the default if you plan to use it mainly in Minecraft. See [In-game AI](/en/docs/create/game-ai).
+
+## 2. Start with a small question
+
+Choose **New chat** and check the model and instance context. The instance selection determines the setup used in the next turn.
+
+Try a request like:
+
+> This is my first time installing mods. Check the game version and loader for “Woodland Survival,” explain what I still need, and do not change any files yet.
+
+> This instance failed to start. Use the current logs to explain likely causes, distinguishing confirmed evidence from things that need checking.
+
+> I would like an inventory organization mod for this instance. Find compatible candidates and explain their versions and dependencies before I decide.
+
+You can also describe a survival question directly. Answers come from your chosen model. For important actions, still check actual sources, game messages and operation results.
+
+## 3. Understand operation permissions
+
+A conversation can explain a problem. Actual tools are controlled by permissions and access scope.
+
+> [!TIP]
+> Ordinary new conversations default to **Safe**, which requests approval before write operations. Change this under **Settings → AI → Conversation defaults** if needed. Existing conversations keep their mode, so check the current selection above the input.
+
+<figure className="detail-figure">
+  <img
+    src="/assets/en-ai-default-mode.webp"
+    alt="The setting changes the initial mode for new ordinary conversations."
+    width="1280"
+    height="137"
+    loading="lazy"
+  />
+  <figcaption>
+    The setting changes the initial mode for new ordinary conversations.
+  </figcaption>
+</figure>
+
+In **Safe** mode, an operation request appears above the input. Approve it once or decline it. The approval menu can also allow later calls to the same named tool in this conversation. Approving one tool does not allow every other tool; switching permission modes revokes existing tool grants.
+
+For file or content changes, expand details to inspect the target, parameters and changes. Instance, folder, network and stale-review checks still apply.
+
+<figure className="detail-figure">
+  <img
+    src="/assets/en-ai-permission.webp"
+    alt="Operation approval appears above the input. Check it before approving or declining."
+    width="1280"
+    height="381"
+    loading="lazy"
+  />
+  <figcaption>
+    Operation approval appears above the input. Check it before approving or
+    declining.
+  </figcaption>
+</figure>
+
+**Allow all** runs operations that already have the required scope directly. Keep the default **Safe** mode while learning what each action does, then decide whether to switch.
+
+## File and network access
+
+File tools operate within authorized locations. The current data directory and app package data have fixed scopes. Add any other folder explicitly in settings and choose read-only or read-write access.
+
+> [!WARNING]
+> Choosing a folder does not upload all its contents, but relevant content read for a task may be sent to your selected online model. Grant only the folder needed for this task; avoid opening an entire drive to inspect one log.
+
+Network tools search or read websites. Disabling them does not disable the online model connection. A failed service, empty search or blocked page should remain a stated limitation rather than being replaced with guesses.
+
+## When it needs your answer
+
+The assistant may ask a question, offer choices or wait for folder access. Respond to that request to continue the same goal rather than submitting a duplicate operation.
+
+The free-text answer field is a single line. Press **Enter** or choose Submit. When using an input method, finish choosing the character before submitting.
+
+<figure className="detail-figure">
+  <img
+    src="/assets/en-ai-question.webp"
+    alt="Choose an option or enter your own answer, then submit. You can also skip."
+    width="1600"
+    height="540"
+    loading="lazy"
+  />
+  <figcaption>
+    Choose an option or enter your own answer, then submit. You can also skip.
+  </figcaption>
+</figure>
+
+## Add a message during a response
+
+Send a correction such as “Fabric versions only; do not install yet.” It queues and enters in order after the current tool batch returns, before the next model request. You do not need to wait for the entire long task to finish.
+
+| Action               | Use it to                                             |
+| -------------------- | ----------------------------------------------------- |
+| Send and queue       | Add a requirement while started tools finish          |
+| Cancel a queued item | Remove that addition and keep the current response    |
+| Send now             | Stop the current response and prioritize this message |
+| Stop                 | End the current response                              |
+
+Handle a pending question or approval first; a queued message does not answer it for you. Each item retains the instance, model, images and permissions selected at submission.
+
+History distinguishes responding, needs input, queued and unread. Reading upward pauses following; sending a message or choosing Send now restores it. Return to history to read completed replies.
+
+Moving to another page does not stop the conversation. Use **Stop** to end the current response. An independently dispatched download may continue; inspect or cancel that task separately if needed.
+
+## Long conversations and context
+
+Near a model's context budget, RMCL can organize older content, retain a local original archive and select relevant source excerpts for the model. This does not delete the original chat or repeat completed operations.
+
+Wait for the context stage to finish before continuing. Check model capacity and device resources before increasing context. For a long modpack investigation, you can also start another conversation with the current goal and confirmed findings.
+
+## Analyze a launch failure
+
+Choose **Analyze and repair with AI** from error details to use the same AI capabilities with the related instance and failure record fixed as the target. If no model is available, choose one first.
+
+Based on evidence, it can prepare limited, reversible changes, such as selecting a justified Java or memory setting, disabling one clearly related mod, or adding a dependency that can be identified accurately. It asks when evidence is missing. A general “allow everything” request does not expand this repair scope.
+
+Inspect the plan, actual changes and observation of the new run. **A passed startup initialization check does not verify every in-game symptom.** Return to the original scenario and check it yourself. Use the repair's undo action if the attempt is unsuitable.
+
+## Interrupted answers or uncertain results
+
+> [!CAUTION]
+> A failed response does not prove that no operation ran. Inspect tasks, files and instance state before retrying. Submitted changes may remain; another install, write or deletion may make a second change.
+
+The launcher checks operation results automatically. If a warning says an effect still cannot be confirmed, inspect the instance, files or task state before deciding what to do. The warning does not prove no change occurred; do not repeat the same edit blindly.
+
+Submitted messages and conversations remain in history. When reporting a problem, provide the service type, error and relevant process, removing keys and private context.
+
+## Optional game data bridge
+
+**Game data bridge is enabled by default**, letting the assistant refer to supported game state rather than only launch logs. An explicit earlier global or instance choice to disable it is preserved. Re-enable it in launch settings or the instance's bridge action if needed, or turn it off. Changes apply on the next launch, not to an already-running game.
+
+In a supported world, the bridge can provide position, health and limited world or inventory information. Local single-player worlds also offer a limited set of native actions. Connections to other servers are always read-only, including an independent server on the same computer. Allowing operations does not change this boundary.
+
+Install Rodel AI to continue from Minecraft's pause menu or `/rai message`. Supported environments can supply actual recipes, FTB quests/team progress and Patchouli handbooks. Follow [In-game AI](/en/docs/create/game-ai).
+
+Waiting for a world at the title screen means no world context is available yet. In-game conversations last for that game process and are cleared when it exits; launcher conversations here are stored separately and persist.
+
+## Skin design and external tools
+
+The skin designer shares model services but limits editing to the current skin. Read [Skin designer](/en/docs/create/skins).
+
+If you already use Codex or Claude Code, you can preview and install launcher integration from External AI tools in settings. Check the target and plan first. This is optional and unnecessary for a first game.
+
+Read [Privacy and data](/en/docs/project/privacy) for where conversations, files and model requests go.

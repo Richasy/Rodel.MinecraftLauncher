@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "platform": "win-arm64",
+  "components": [
+    {
+      "id": "rodel_files",
+      "version": "0.4.5",
+      "repository": "rust-mcp-stack/rust-mcp-filesystem",
+      "revision": "ef4797360ea03eec5375e03a6f10d092dfc6a5e0",
+      "license": "MIT",
+      "archiveFormat": "cargo-source",
+      "archiveUrl": "https://github.com/rust-mcp-stack/rust-mcp-filesystem/releases/download/v0.4.5/source.tar.gz",
+      "archiveSha256": "7aa0624f4834087cba87553226cba48dc3957d80714539483b05e8ab09ef1225",
+      "rustToolchain": "1.89.0",
+      "executable": "rust-mcp-filesystem.exe"
+    },
+    {
+      "id": "rodel_web",
+      "version": "0.1.9",
+      "repository": "Role1776/mcp-retrieval",
+      "revision": "98eadccee4f374d7c178e9bcab82b3a906b84efe",
+      "license": "MIT",
+      "archiveUrl": "https://github.com/Role1776/mcp-retrieval/releases/download/v0.1.9/mcp-retrieval_0.1.9_windows_arm64.zip",
+      "archiveSha256": "c19166505006db063d69eacb22ba9836675265812a8f7a42432314328c268706",
+      "executable": "mcp-retrieval.exe"
+    },
+    {
+      "id": "rodel_search",
+      "version": "0.1.0",
+      "repository": "99apps-id/doh-mcp",
+      "revision": "cb8e483dc06435bf7f5cddb2caac68f4cbae3d80",
+      "license": "Apache-2.0",
+      "archiveFormat": "executable",
+      "archiveUrl": "https://github.com/99apps-id/doh-mcp/releases/download/v0.1.0/doh-mcp_0.1.0_windows_arm64.exe",
+      "archiveSha256": "4faf5b9c311a3d310c068ff8bc2d9ec1cdfd67ce2f06b44080da261f39d7c7f9",
+      "executable": "doh-mcp.exe"
+    }
+  ]
+}

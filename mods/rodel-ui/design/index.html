@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minecraft 主菜单 · 独立设计评审</title>
+  <link rel="stylesheet" href="settings.css">
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: dark; font-family: "Microsoft YaHei UI", "Segoe UI", sans-serif; }
+    body { margin: 0; background: #101719; color: #dce3dc; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    .review { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+    .toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; padding: 18px 24px; border-bottom: 1px solid #354244; }
+    .toolbar h1 { font-size: 14px; margin: 0; font-weight: 600; letter-spacing: .04em; }
+    .toolbar small { color: #a7b6b7; }
+    .group { display: flex; gap: 4px; }
+    .toolbar button { border: 1px solid #435255; color: #dce3dc; background: transparent; padding: 7px 12px; }
+    .toolbar button[aria-pressed="true"] { background: #3c4a4d; border-color: #859a97; }
+    .toolbar button:hover { background: #2a3639; }
+    .stage { min-width: 0; min-height: 0; padding: 24px; display: grid; align-items: center; justify-items: center; overflow: hidden; }
+    .frame { position: relative; box-shadow: 0 16px 50px #0005; }
+    .viewport { width: 1280px; height: 720px; position: absolute; inset: 0 auto auto 0; transform-origin: top left; container-type: size; overflow: hidden; background: #233034; }
+    #panorama { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .screen {
+      --ink: #f0f1e6; --muted: #c0ccc3; --surface: #182225e8; --edge: #6e827fa0;
+      --raised-light: #e2e6cf6e; --raised-dark: #020c0fc0;
+      --accent: #76ac47; --accent-hover: #86bc55; --accent-ink: #fffde9; --focus: #f4de9b;
+      --outer: 72px; --button-edge: #d6e8e33d; --surface-hover: #344346;
+      --bevel-top: #e2e6cf3b; --bevel-left: #e2e6cf1f;
+      --bevel-bottom: #020c0fb8; --bevel-right: #020c0f66; --shadow: #040c0f6b;
+      --material-face: linear-gradient(180deg, #d5e1d30b, transparent 45%, #020c1113);
+      --pressed-face: #283639; --pressed-ink: #e0e7d6;
+      position: absolute; inset: 0; color: var(--ink);
+    }
+    .screen[data-theme="light"] {
+      --ink: #30291e; --muted: #574a34; --surface: #fffcefee; --edge: #9b722fa0;
+      --raised-light: #fffff9e6; --raised-dark: #8c6a349a;
+      --accent: #5b8730; --accent-hover: #699739; --accent-ink: #fffff0; --focus: #8b581d;
+      --button-edge: #fffffaf0; --surface-hover: #fff4d9;
+      --bevel-top: #fffff9f5; --bevel-left: #fffff9cc;
+      --bevel-bottom: #8c6a344d; --bevel-right: #8c6a3433; --shadow: #694c1f33;
+      --material-face: linear-gradient(180deg, #ffffff47, transparent 50%, #a3773409);
+      --pressed-face: #c7a366; --pressed-ink: #34240f;
+    }
+    .shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #09161b6b, transparent 65%), linear-gradient(0deg, #061216b0, #09161b05 80%); }
+    [data-theme="light"] .shade { background: linear-gradient(90deg, #fff8e43d, transparent 65%), linear-gradient(0deg, #fff7e1ab, #fff8e408 85%); }
+    .hero { position: absolute; left: var(--outer); bottom: var(--outer); width: 510px; }
+    .edition { font-size: 12px; font-weight: 600; letter-spacing: .22em; color: var(--muted); }
+    .hero h2 { font-family: "Segoe UI", sans-serif; font-size: 68px; line-height: 1.1; letter-spacing: -.045em; margin: 16px 0 18px; font-weight: 650; }
+    .tagline { margin: 0; font-size: 17px; line-height: 1.6; }
+    .version { font-size: 12px; color: var(--muted); margin: 12px 0 24px; letter-spacing: .06em; }
+    .version span + span::before { content: " / "; opacity: .6; padding: 0 10px; }
+    .actions { display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; }
+    .control {
+      position: relative; border: 1px solid var(--button-edge); border-radius: 0; color: var(--ink);
+      background: var(--material-face), var(--surface); min-width: 0; min-height: 48px; padding: 12px 18px;
+      box-shadow: inset 0 2px var(--bevel-top), inset 2px 0 var(--bevel-left), inset 0 -2px var(--bevel-bottom), inset -2px 0 var(--bevel-right), 0 3px 0 var(--shadow), 0 6px 10px #0000001f;
+      display: inline-flex; gap: 12px; align-items: center; justify-content: center;
+      font-size: 15px; line-height: 1.3; text-decoration: none;
+    }
+    .control::after {
+      content: ""; position: absolute; inset: 3px; pointer-events: none;
+      background: linear-gradient(var(--bevel-top),var(--bevel-top)) top left / 4px 1px no-repeat,
+        linear-gradient(var(--bevel-left),var(--bevel-left)) top left / 1px 4px no-repeat,
+        linear-gradient(var(--bevel-bottom),var(--bevel-bottom)) bottom right / 4px 1px no-repeat;
+    }
+    .control:hover { background-color: var(--surface-hover); }
+    .control:active {
+      transform: none; background: var(--pressed-face); color: var(--pressed-ink);
+      box-shadow: inset 0 4px #040f1399, inset 3px 0 #18262999, inset 0 -1px #bdccb437;
+    }
+    [data-theme="light"] .control:active { box-shadow: inset 0 4px #87602c66, inset 3px 0 #9e753d66, inset 0 -1px #ffedc6; }
+    .control:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+    .primary, .primary:hover {
+      padding: 0; border: 0; background: transparent; color: var(--accent-ink);
+      box-shadow: 0 2px #091a14, 0 8px 12px #08171355;
+    }
+    .primary::after { display: none; }
+    .button-face {
+      position: relative; display: flex; align-self: stretch; align-items: center; justify-content: center;
+      width: 100%; min-height: inherit; padding: 0 18px; gap: 12px; border: 2px solid #476a31;
+      background: var(--material-face), var(--accent);
+      box-shadow: inset 0 2px #bcdb8e, inset 2px 0 #a3c776, inset -2px 0 #44672e, inset 0 -6px #355c24;
+    }
+    .button-face::after {
+      content: ""; position: absolute; inset: 4px; pointer-events: none;
+      background: linear-gradient(#d2e7a9,#d2e7a9) top left / 5px 1px no-repeat,
+        linear-gradient(#d2e7a9,#d2e7a9) top left / 1px 5px no-repeat;
+    }
+    .primary:hover .button-face { background-color: var(--accent-hover); }
+    .primary:active { background: transparent; box-shadow: 0 1px #091a14, 0 2px 3px #08171355; }
+    .primary:active .button-face {
+      background: #304d25; color: #b8c9a0; border-color: #182d1c;
+      box-shadow: inset 0 5px #142718, inset 4px 0 #1b301c, inset -2px 0 #51743a, inset 0 -1px #789951;
+    }
+    .primary:active .button-face::after { opacity: 0; }
+    [data-theme="light"] .button-face { border-color: #3b5924; box-shadow: inset 0 2px #a4c86b, inset 2px 0 #89ad56, inset -2px 0 #3d5c24, inset 0 -3px #334f21; }
+    [data-theme="light"] .primary:active { box-shadow: 0 1px #091a14, 0 2px 3px #08171355; }
+    [data-theme="light"] .primary:active .button-face { background: #29441c; color: #d0dfb6; border-color: #233717; box-shadow: inset 0 4px #172b10, inset 3px 0 #1d3313, inset 0 -1px #87a65f; }
+    .actions .control { min-height: 62px; font-size: 18px; font-weight: 600; }
+    svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; flex: none; }
+    .primary svg { fill: currentColor; stroke-width: 0; width: 18px; height: 18px; }
+    .panel {
+      position: absolute; top: 50%; right: var(--outer); transform: translateY(-50%); width: 320px; padding: 24px;
+      border: 1px solid var(--edge); background: var(--surface);
+      box-shadow: inset 1px 1px var(--raised-light), inset -1px -1px var(--raised-dark), 1px 3px 0 #040c0f22;
+    }
+    .panel h3 { margin: 0 0 20px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--muted); }
+    .panel-actions { display: grid; gap: 14px; }
+    .panel .control { justify-content: flex-start; min-height: 52px; }
+    .panel .control span { flex: 1; text-align: left; }
+    .panel .control .arrow { width: 14px; height: 14px; opacity: .6; }
+    .footer { position: absolute; right: var(--outer); bottom: var(--outer); display: flex; gap: 12px; }
+    .footer .icon { width: 52px; height: 52px; padding: 12px; }
+    .footer .icon svg { width: 22px; height: 22px; }
+    .footer .icon::before {
+      content: attr(aria-label); position: absolute; right: -2px; bottom: calc(100% + 14px);
+      border: 1px solid var(--edge); background: var(--surface); color: var(--ink);
+      padding: 7px 10px; font-size: 12px; font-weight: 400; white-space: nowrap;
+      pointer-events: none; display: none;
+    }
+    .footer .icon:hover::before, .footer .icon:focus-visible::before { display: block; }
+    .guides { position: absolute; inset: var(--outer); pointer-events: none; border: 1px dashed #ffc875; display: none; }
+    .guides::before { content: "外边距 72 · 主操作左下 / 工具右下"; position: absolute; bottom: -25px; left: 0; color: #ffda9b; font: 12px monospace; }
+    .show-guides .guides { display: block; }
+    .show-guides .panel { outline: 1px dashed #ffc875; outline-offset: -25px; }
+    .show-guides .panel::before { content: "四边 padding 24"; position: absolute; right: 0; top: -25px; color: #ffda9b; font: 12px monospace; }
+    .status { position: absolute; inset: 0; display: grid; place-items: center; padding: 40px; color: white; background: #142225; z-index: 5; }
+    .status[hidden], dialog:not([open]) { display: none; }
+    dialog { width: min(520px, calc(100% - 64px)); padding: 28px; color: var(--ink); border: 1px solid var(--edge); border-radius: 0; background: var(--surface); box-shadow: 0 12px 40px #0005; }
+    dialog::backdrop { background: #0005; }
+    dialog h3 { margin: 0 0 12px; font-size: 22px; }
+    dialog p { line-height: 1.8; color: var(--muted); font-size: 14px; }
+    dialog .dialog-links { display: grid; gap: 10px; margin: 20px 0; }
+    dialog .close { width: 100%; margin-top: 12px; }
+    .notes { padding: 0 24px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: #a7b6b7; }
+    @container (max-width: 900px) {
+      .screen { --outer: 32px; }
+      .hero { right: var(--outer); width: auto; }
+      .hero h2 { font-size: 50px; margin: 10px 0 10px; }
+      .edition { font-size: 11px; }
+      .tagline { font-size: 15px; }
+      .version { margin: 10px 0 18px; font-size: 11px; }
+      .actions { width: calc(100% - 204px); grid-template-columns: 1fr 1fr; gap: 12px; }
+      .actions .control { min-height: 52px; font-size: 16px; }
+      .panel { left: var(--outer); top: var(--outer); transform: none; width: auto; padding: 20px; }
+      .panel h3 { margin-bottom: 14px; font-size: 12px; line-height: 16px; }
+      .panel-actions { grid-template-columns: 1fr 1fr; gap: 14px 10px; }
+      .panel .control { min-height: 42px; font-size: 13px; padding: 10px 14px; }
+      .guides::before { content: "外边距 32 · 主操作左下 / 工具右下"; }
+      .show-guides .panel { outline-offset: -21px; }
+      .show-guides .panel::before { content: "四边 padding 20"; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <svg hidden aria-hidden="true">
+    <symbol id="play" viewBox="0 0 24 24"><path d="M7 4 20 12 7 20Z"/></symbol>
+    <symbol id="server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6"/><rect x="4" y="14" width="16" height="6"/><path d="M7 7h.1M7 17h.1M16 7h2M16 17h2"/></symbol>
+    <symbol id="world" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><ellipse cx="12" cy="12" rx="4" ry="8"/><path d="M4 12h16"/></symbol>
+    <symbol id="people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></symbol>
+    <symbol id="exit" viewBox="0 0 24 24"><path d="M10 4H4v16h6M9 12h12M17 8l4 4-4 4"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="icon-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="accessibility" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M4 9h16M12 7v7M12 14l-5 7M12 14l5 7"/></symbol>
+    <symbol id="display" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="sound" viewBox="0 0 24 24"><path d="m11 4-5 4H3v8h3l5 4ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14"/><path d="M6 9h1M11 9h1M16 9h2M6 13h1M11 13h1M16 13h2M7 16h10"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M3 4h18v13H9l-6 4ZM7 9h10M7 13h7"/></symbol>
+    <symbol id="layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8ZM2 12l10 5 10-5M2 16l10 5 10-5"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><path d="m12 2 8 3v7c0 5-8 10-8 10S4 17 4 12V5ZM8 12l3 3 5-6"/></symbol>
+    <symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol>
+  </svg>
+  <main class="review">
+    <header class="toolbar">
+      <h1>游戏主菜单 <small> / 独立设计稿</small></h1>
+      <div class="group" aria-label="预览尺寸">
+        <button data-size="wide" aria-pressed="true">宽屏 · 2K</button>
+        <button data-size="narrow" aria-pressed="false">窄屏 · 800 × 560</button>
+        <button data-size="compact" aria-pressed="false">窄屏 · 640 × 560</button>
+        <button id="review-settings">设置页</button>
+      </div>
+      <div class="group" aria-label="设计工具">
+        <button id="theme" aria-pressed="false">浅色材质</button>
+        <button id="guides" aria-pressed="false">边距标尺</button>
+        <button id="motion" aria-pressed="false">暂停全景</button>
+      </div>
+    </header>
+    <section class="stage" aria-label="菜单预览">
+      <div class="frame">
+        <div class="viewport">
+          <canvas id="panorama" aria-hidden="true"></canvas>
+          <div class="screen" data-theme="dark">
+            <div class="shade"></div>
+            <section class="hero">
+              <div class="edition">JAVA EDITION</div>
+              <h2>Minecraft</h2>
+              <p class="tagline">拾起方块，继续你的世界。</p>
+              <p class="version"><span>26.3</span><span>Fabric</span></p>
+              <div class="actions">
+                <button class="control primary" data-action="单人游戏"><span class="button-face"><svg><use href="#play"/></svg>单人游戏</span></button>
+                <button class="control" data-action="多人游戏"><svg><use href="#server"/></svg>多人游戏</button>
+              </div>
+            </section>
+            <section class="panel" aria-label="探索与设置">
+              <h3>探索与设置</h3>
+              <div class="panel-actions">
+                <button class="control" data-action="Minecraft Realms"><svg><use href="#world"/></svg><span>Minecraft Realms</span><svg class="arrow"><use href="#arrow"/></svg></button>
+                <button class="control" data-action="好友"><svg><use href="#people"/></svg><span>好友</span><svg class="arrow"><use href="#arrow"/></svg></button>
+                <button class="control" id="settings"><svg><use href="#icon-settings"/></svg><span>设置</span><svg class="arrow"><use href="#arrow"/></svg></button>
+                <button class="control" data-action="退出游戏"><svg><use href="#exit"/></svg><span>退出游戏</span><svg class="arrow"><use href="#arrow"/></svg></button>
+              </div>
+            </section>
+            <footer class="footer">
+              <button class="control icon" data-action="语言" aria-label="语言"><svg aria-hidden="true"><use href="#world"/></svg></button>
+              <button class="control icon" data-action="辅助功能" aria-label="辅助功能"><svg aria-hidden="true"><use href="#accessibility"/></svg></button>
+              <button class="control icon" id="menu-theme" aria-label="切换明暗材质"><svg><use href="#icon-theme"/></svg></button>
+            </footer>
+            <div class="guides"></div>
+            <dialog id="dialog" aria-labelledby="dialog-title">
+              <h3 id="dialog-title">设置</h3>
+              <div id="dialog-body"></div>
+              <button class="control close" id="close">返回</button>
+            </dialog>
+          </div>
+          <div class="status" id="resource-status">正在加载本地原版全景资源…</div>
+        </div>
+      </div>
+    </section>
+    <footer class="notes">
+      <span id="size-note">2560 × 1440 的等比预览 · 字体为浏览器排版参照</span>
+      <span>使用本机原版全景贴图预览旋转，不替代游戏实机；按钮仅演示导航，不读写游戏。</span>
+    </footer>
+  </main>
+  <script type="module">
+    import * as THREE from '../../../.local/design-tools/node_modules/three/build/three.module.js';
+    import { mountSettings } from './settings.js';
+    const viewport = document.querySelector('.viewport');
+    const frame = document.querySelector('.frame');
+    const stage = document.querySelector('.stage');
+    const screen = document.querySelector('.screen');
+    const status = document.querySelector('#resource-status');
+    const dialog = document.querySelector('#dialog');
+    let size = [1280, 720];
+    let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function fit() {
+      const factor = Math.min((stage.clientWidth - 48) / size[0], (stage.clientHeight - 48) / size[1], 1.5);
+      frame.style.width = `${size[0] * factor}px`;
+      frame.style.height = `${size[1] * factor}px`;
+      viewport.style.width = `${size[0]}px`;
+      viewport.style.height = `${size[1]}px`;
+      viewport.style.transform = `scale(${factor})`;
+    }
+    document.querySelectorAll('[data-size]').forEach(button => button.onclick = () => {
+      document.querySelectorAll('[data-size]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      size = button.dataset.size === 'wide' ? [1280, 720] : button.dataset.size === 'narrow' ? [800, 560] : [640, 560];
+      document.querySelector('#size-note').textContent = button.dataset.size === 'wide'
+        ? '2560 × 1440 的等比预览 · 字体为浏览器排版参照'
+        : `${size[0]} × ${size[1]} · 窄屏独立重排，保持控件可读`;
+      fit();
+    });
+    function setTheme(theme) {
+      const light = theme === 'light';
+      screen.dataset.theme = theme;
+      document.querySelector('#theme').setAttribute('aria-pressed', String(light));
+      screen.dispatchEvent(new CustomEvent('rodel-theme-change'));
+    }
+    function toggleTheme() { setTheme(screen.dataset.theme === 'light' ? 'dark' : 'light'); }
+    const initialTheme = new URL(location.href).searchParams.get('theme');
+    if (initialTheme === 'light' || initialTheme === 'dark') setTheme(initialTheme);
+    document.querySelector('#theme').onclick = toggleTheme;
+    document.querySelector('#menu-theme').onclick = toggleTheme;
+    document.querySelector('#guides').onclick = event => {
+      const enabled = screen.classList.toggle('show-guides');
+      event.currentTarget.setAttribute('aria-pressed', String(enabled));
+    };
+    function updateMotion() {
+      document.querySelector('#motion').textContent = paused ? '继续全景' : '暂停全景';
+      document.querySelector('#motion').setAttribute('aria-pressed', String(paused));
+    }
+    document.querySelector('#motion').onclick = () => { paused = !paused; updateMotion(); };
+    updateMotion();
+    function show(title, body) {
+      document.querySelector('#dialog-title').textContent = title;
+      document.querySelector('#dialog-body').replaceChildren(body);
+      dialog.showModal();
+    }
+    const settings = mountSettings({ screen, viewport, setTheme, showDialog: show });
+    window.rodelSettingsPreview = settings;
+    document.querySelector('#settings').onclick = () => settings.open();
+    document.querySelector('#review-settings').onclick = () => settings.open();
+    document.querySelectorAll('[data-action]').forEach(button => button.onclick = () => {
+      if (button.dataset.action === '单人游戏') {
+        location.href = `worlds.html?page=select&theme=${screen.dataset.theme}`;
+        return;
+      }
+      if (button.dataset.action === '语言' || button.dataset.action === '辅助功能') {
+        settings.open(button.dataset.action === '语言' ? 'language' : 'accessibility');
+        return;
+      }
+      const text = document.createElement('p');
+      text.textContent = `实际游戏中进入原版“${button.dataset.action}”流程。本页只评审菜单视觉，不执行游戏操作。`;
+      show(button.dataset.action, text);
+    });
+    document.querySelector('#close').onclick = () => dialog.close();
+    new ResizeObserver(fit).observe(stage);
+    fit();
+    try {
+      const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#panorama'), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(80, size[0] / size[1], .1, 10);
+      const paths = [1, 3, 4, 5, 0, 2].map(index => `../../../.local/game-ui-design/panorama_${index}.png`);
+      scene.background = await new THREE.CubeTextureLoader().loadAsync(paths);
+      scene.background.colorSpace = THREE.SRGBColorSpace;
+      status.hidden = true;
+      window.gameMenuPreview = { ready: true };
+      let angle = .55;
+      let last = performance.now();
+      function render(now) {
+        const delta = Math.min((now - last) / 1000, .1);
+        last = now;
+        if (!paused) angle += delta * .018;
+        renderer.setSize(size[0], size[1], false);
+        camera.aspect = size[0] / size[1];
+        camera.updateProjectionMatrix();
+        camera.rotation.set(-.12, angle, 0, 'YXZ');
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
+    } catch (error) {
+      status.textContent = `全景预览不可用：${error.message}。需要本机游戏资源和 WebGL；未改用静态图冒充动态背景。`;
+      console.error(error);
+    }
+  </script>
+</body>
+</html>

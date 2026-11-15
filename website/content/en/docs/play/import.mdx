@@ -1,0 +1,44 @@
+---
+title: Import an existing game
+description: Copy a familiar setup and worlds into RMCL while keeping the source.
+---
+
+## What import does
+
+Game-folder import is a **migration by copying**. RMCL copies the selected game content, required version chain, shared resources and readable Java installations. It registers the instance after the copy completes. The source is not deleted or modified.
+
+> [!IMPORTANT]
+> You then have independent copies. New progress made in an old launcher does not automatically appear in RMCL, or the other way around.
+
+## 1. Save and exit first
+
+Exit Minecraft normally so its files stop changing. Keep a separate backup of important worlds. The target disk needs room for a complete copy, not just the version files.
+
+## 2. Find the source
+
+Use an action such as Open game folder in the old launcher. The folder containing a desktop shortcut may not be the game folder.
+
+Some launchers keep versions, shared resources and Java in separate locations. Note them and supply them if the import screen asks. For a .mrpack or modpack ZIP, use [modpack import](/en/docs/play/modpacks).
+
+## 3. Select and check the folders
+
+Open game-folder import from **Instances**. The menu beside the creation button on Home also offers import choices.
+
+Select the source and supply any additional locations requested by the detected setup. Check the version, instance name and destination. If something is not recognized, read the message and preserve unknown files rather than deleting or renaming them to force a result.
+
+## 4. Wait for the copy
+
+The task shows actual byte progress. Many small files or a large pack can take time; check the current file and task state. If canceled or failed, keep the source and resolve space, access or missing-file issues first.
+
+Copying cannot invent files missing from the source. Follow the task's instructions to complete the source or continue runtime preparation. Do not clear shared resources.
+
+## 5. Verify before arranging the old copy
+
+1. Find the imported instance and check its version and runtime configuration.
+2. Launch it and check worlds, mods and settings.
+3. Decide which copy you will use so world progress does not diverge.
+4. Only then decide what to do with the old folder.
+
+## Does changing the data folder import my games?
+
+No. The change takes effect after a restart and does not move existing data. Use the explicit migration flow and keep the old copy until verification is finished.

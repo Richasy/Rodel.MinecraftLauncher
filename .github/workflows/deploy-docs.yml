@@ -1,0 +1,71 @@
+name: Deploy documentation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
+    timeout-minutes: 20
+    environment:
+      name: website-production
+      url: https://rmcl.richasy.net
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: website
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Check out selected commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check types and formatting
+        run: |
+          npm run types:check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm run format:check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npx prettier --check source.config.ts deploy/README.md ../.github/workflows/deploy-docs.yml
+      - name: Build and check static documentation
+        run: |
+          npm run build
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm run check:static
+      - name: Publish and verify production
+        env:
+          WEBSITE_SSH_HOST: ${{ vars.WEBSITE_SSH_HOST }}
+          WEBSITE_SSH_USER: ${{ vars.WEBSITE_SSH_USER }}
+          WEBSITE_SSH_PORT: ${{ vars.WEBSITE_SSH_PORT }}
+          WEBSITE_DEPLOY_ROOT: ${{ vars.WEBSITE_DEPLOY_ROOT }}
+          WEBSITE_URL: ${{ vars.WEBSITE_URL }}
+          WEBSITE_SSH_KEY: ${{ secrets.WEBSITE_SSH_KEY }}
+          WEBSITE_SSH_KNOWN_HOSTS: ${{ secrets.WEBSITE_SSH_KNOWN_HOSTS }}
+        run: node scripts/deploy.mjs
+      - name: Remove temporary SSH files
+        if: always() && env.RMCL_DEPLOY_TEMP != ''
+        run: |
+          $temporary = [IO.Path]::GetFullPath($env:RMCL_DEPLOY_TEMP)
+          $boundary = [IO.Path]::GetFullPath($env:RUNNER_TEMP).TrimEnd('\') + '\'
+          if (!$temporary.StartsWith($boundary, [StringComparison]::OrdinalIgnoreCase)) {
+            throw 'SSH temporary directory is outside RUNNER_TEMP'
+          }
+          if (Test-Path -LiteralPath $temporary) {
+            Remove-Item -LiteralPath $temporary -Recurse -Force
+          }

@@ -1,0 +1,10 @@
+accessWidener v2 official
+accessible class net/minecraft/client/OptionInstance$SliderableValueSet
+accessible class net/minecraft/client/gui/screens/packs/TransferableSelectionList$Entry
+accessible class net/minecraft/client/gui/components/AbstractSelectionList$Entry
+accessible class net/minecraft/client/gui/screens/options/LanguageSelectScreen$LanguageSelectionList
+accessible method net/minecraft/client/gui/components/OptionsList$HeaderEntry <init> (Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/network/chat/Component;I)V
+accessible class net/minecraft/client/gui/components/OptionsList$AbstractEntry
+accessible class net/minecraft/client/gui/components/OptionsList$Entry
+accessible class net/minecraft/client/gui/components/OptionsList$HeaderEntry
+accessible method net/minecraft/client/gui/components/OptionsList$Entry <init> (Ljava/util/List;Lnet/minecraft/client/gui/screens/Screen;)V

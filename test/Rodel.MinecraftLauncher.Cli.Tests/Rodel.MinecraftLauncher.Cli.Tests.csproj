@@ -1,0 +1,63 @@
+<Project Sdk="MSTest.Sdk/4.1.0">
+  <PropertyGroup>
+    <TestingExtensionsProfile>None</TestingExtensionsProfile>
+    <EnableMicrosoftTestingExtensionsTrxReport>true</EnableMicrosoftTestingExtensionsTrxReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Fixtures/GameBridge/BridgePeerFixture.cs" Link="Infrastructure/BridgePeerFixture.cs" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Include="..\Common\ModelEndpoint.cs" Link="Infrastructure\ModelEndpoint.cs" />
+    <PackageReference Include="ModelContextProtocol.Core" Version="2.2.0" />
+    <ProjectReference Include="../../src/Rodel.MinecraftLauncher.Cli/Rodel.MinecraftLauncher.Cli.csproj" ReferenceOutputAssembly="false" TestSubject="true" />
+    <ProjectReference Include="../../src/Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
+    <ProjectReference Include="../Fixtures/ClaudeMcp/ClaudeMcpFixture.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../Fixtures/JavaProbe/JavaProbe.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableLocalInference)' != 'true'">
+    <!-- SDK-owned live cases are compiled only when the optional inference dependency is enabled. -->
+    <Compile Remove="Live/LocalModelWorkflowTests.cs" />
+  </ItemGroup>
+  <Target Name="CopyCliUnderTest" AfterTargets="Build">
+    <MSBuild Projects="@(ProjectReference->WithMetadataValue('TestSubject', 'true'))" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
+      <Output TaskParameter="TargetOutputs" ItemName="CliTargetAssembly" />
+    </MSBuild>
+    <PropertyGroup>
+      <CliTargetDirectory>@(CliTargetAssembly->'%(RootDir)%(Directory)')</CliTargetDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <CliUnderTest Include="$(CliTargetDirectory)*" Exclude="$(CliTargetDirectory)*.pdb" />
+      <CliUnderTest Include="$(CliTargetDirectory)*/*.resources.dll;$(CliTargetDirectory)runtimes/**/*" />
+      <CliUnderTest Update="@(CliUnderTest)">
+        <DeploymentPath>$([MSBuild]::MakeRelative('$(CliTargetDirectory)', '%(CliUnderTest.FullPath)'))</DeploymentPath>
+      </CliUnderTest>
+    </ItemGroup>
+    <Error Condition="!Exists('$(CliTargetDirectory)rodel-mc.dll')" Text="The CLI project did not produce a runnable test target." />
+    <RemoveDir Directories="$(OutDir)cli" />
+    <Copy SourceFiles="@(CliUnderTest)" DestinationFiles="@(CliUnderTest->'$(OutDir)cli/%(DeploymentPath)')" />
+  </Target>
+  <Target Name="CopyClaudeMcpFixture" AfterTargets="Build">
+    <MSBuild Projects="../Fixtures/ClaudeMcp/ClaudeMcpFixture.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
+      <Output TaskParameter="TargetOutputs" ItemName="ClaudeMcpFixtureAssembly" />
+    </MSBuild>
+    <PropertyGroup>
+      <ClaudeMcpFixtureDirectory>@(ClaudeMcpFixtureAssembly->'%(RootDir)%(Directory)')</ClaudeMcpFixtureDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <ClaudeMcpFixtureFiles Include="$(ClaudeMcpFixtureDirectory)claude-mcp-fixture.*" Exclude="$(ClaudeMcpFixtureDirectory)claude-mcp-fixture.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ClaudeMcpFixtureFiles)" DestinationFolder="$(OutDir)claude-mcp-fixture" />
+  </Target>
+  <Target Name="CopyJavaProbeFixture" AfterTargets="Build">
+    <MSBuild Projects="../Fixtures/JavaProbe/JavaProbe.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
+      <Output TaskParameter="TargetOutputs" ItemName="JavaProbeAssembly" />
+    </MSBuild>
+    <PropertyGroup>
+      <JavaProbeDirectory>@(JavaProbeAssembly->'%(RootDir)%(Directory)')</JavaProbeDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <JavaProbeFiles Include="$(JavaProbeDirectory)java.*" Exclude="$(JavaProbeDirectory)java.pdb" />
+    </ItemGroup>
+    <RemoveDir Directories="$(OutDir)java-probe" />
+    <Copy SourceFiles="@(JavaProbeFiles)" DestinationFolder="$(OutDir)java-probe" />
+  </Target>
+</Project>
