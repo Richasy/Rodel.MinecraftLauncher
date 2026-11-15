@@ -126,6 +126,7 @@ public sealed partial class LauncherClient
             GameBridgeOffline = options.Offline,
             GameBridgeMinecraftDirectory = instance.MinecraftDirectory,
             UseCachedExternalSession = options.UseCachedExternalSession,
+            Fullscreen = bool.TryParse(options.Fullscreen?.ToString() ?? settings["fullscreen"]?.ToString(), out var windowMode) ? windowMode : null,
             GameLanguage = options.GameLanguage is { } language
                 ? GameSettingsService.ResolveLaunchLanguage(instance.MinecraftDirectory, loggingMetadata, language) : null,
             Arguments = [.. arguments],

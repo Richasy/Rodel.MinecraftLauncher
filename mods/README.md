@@ -13,7 +13,7 @@
 
 三个内置模组使用自己的 `config/*-client.properties` 保存明暗主题，默认浅色，完成时保存，取消不改动。Fabric／Quilt 的模组配置入口由可选 Mod Menu 提供，Forge／NeoForge 使用原生模组列表。
 
-版本统一由 `mods/gradle.properties` 维护，当前为 `0.0.1`。精确分发组合唯一登记于 `bundled-targets.props`，实际验收见[兼容性矩阵](COMPATIBILITY.md)。不由一个模组通过推定其他模组或加载器兼容。
+版本统一由 `mods/gradle.properties` 维护，当前为 `0.0.2`。正式开源后每次模组发布变更递增版本，无大改时优先递增末位补丁号。精确分发组合唯一登记于 `bundled-targets.props`，实际验收见[兼容性矩阵](COMPATIBILITY.md)。不由一个模组通过推定其他模组或加载器兼容。
 
 构建需要 JDK 25，Forge 1.20.1 另需 JDK 21～24；分别通过 `BundledModsJavaHome`／`BundledModsLegacyJavaHome` 指定。Core 调用 `scripts/build-bundled-mods.ps1` 从源码生成 `Assets/BuiltInMods/<Minecraft>/<loader>` 和 `catalog.json`。原生加载器打包只编译登记的模组，不隐式构建 UI。安装、更新同 ID 与恢复沿用 Core 内容审核及事务。
 

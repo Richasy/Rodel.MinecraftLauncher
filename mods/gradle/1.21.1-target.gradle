@@ -1,0 +1,236 @@
+// Compile the shared behavior against 1.21.1's actual GUI, input and resource APIs.
+// Exact overrides below the module's src/targets tree are copied last and remain version-owned.
+sourceSets.each { sourceSet ->
+    def toolsModule = project.name == 'bettertools'
+    def originals = sourceSet.java.srcDirs.toList()
+    def generated = layout.buildDirectory.dir("generated/game-target/${sourceSet.name}").get().asFile
+    def overrides = file("src/targets/1.21.1/${sourceSet.name}/java")
+    def sharedOverrides = file("src/targets/26.2/${sourceSet.name}/java")
+    def legacyConsole = file("src/targets/1.21.11/${sourceSet.name}/java/io/github/richasy/rodel/ai/mixin/ConsoleChatMixin.java")
+    def prepare = tasks.register("prepare${sourceSet.name.capitalize()}TargetSources", Sync) {
+        from(originals)
+        into(generated)
+        inputs.files(fileTree(overrides))
+        inputs.files(fileTree(sharedOverrides))
+        if (legacyConsole.isFile()) inputs.file(legacyConsole)
+        doLast {
+            if (legacyConsole.isFile()) new File(generated, 'io/github/richasy/rodel/ai/mixin/ConsoleChatMixin.java').bytes = legacyConsole.bytes
+            if (toolsModule && sharedOverrides.isDirectory()) {
+                ['NativeHoeUse.java', 'mixin/HoeUseAccess.java'].each { name ->
+                    def relative = "io/github/richasy/bettertools/$name"
+                    new File(generated, relative).bytes = new File(sharedOverrides, relative).bytes
+                }
+            }
+            generated.eachFileRecurse { source ->
+                if (!source.name.endsWith('.java')) return
+                def text = source.getText('UTF-8').replace('\r\n', '\n')
+                    .replace('com.mojang.renderpearl.api.', 'com.mojang.blaze3d.')
+                    .replace('net.minecraft.util.Util', 'net.minecraft.Util')
+                    .replace('.getWorldGenSettings().options()', '.getWorldData().worldGenOptions()')
+                    .replace('client.disconnectFromWorld(net.minecraft.client.multiplayer.ClientLevel.DEFAULT_QUIT_MESSAGE)', 'LegacyWorldExit.disconnect(client)')
+                    .replace('client.setScreenAndShow(', 'client.forceSetScreen(')
+                    .replace('GuiGraphicsExtractor', 'GuiGraphics')
+                    .replace('Identifier', 'ResourceLocation')
+                    .replace('ContainerInput', 'ClickType')
+                    .replace('net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents', 'net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents')
+                    .replace('CreativeModeTabEvents.modifyOutputEvent(', 'ItemGroupEvents.modifyEntriesEvent(')
+                    .replace('PayloadTypeRegistry.serverboundPlay()', 'PayloadTypeRegistry.playC2S()')
+                    .replace('new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id("tool_cube")))', 'new Item.Properties()')
+                    .replace('getSelectedSlot()', 'selected')
+                    .replace('player.getInventory().createInventoryUpdatePacket(player.getInventory().selected)', 'new net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket(-2, 0, player.getInventory().selected, player.getMainHandItem())')
+                    .replace('inventory.createInventoryUpdatePacket(inventory.selected)', 'new net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket(-2, 0, inventory.selected, player.getMainHandItem())')
+                    .replace('!items.get(slot).isBroken()', '(!items.get(slot).isDamageableItem() || items.get(slot).getDamageValue() < items.get(slot).getMaxDamage())')
+                    .replace('SoundEvents.BUNDLE_INSERT_FAIL', 'SoundEvents.BUNDLE_INSERT')
+                    .replace('Screens.getWidgets(', 'Screens.getButtons(')
+                    .replace('.gui.screen()', '.screen')
+                    .replace('.gui.setScreen(', '.setScreen(')
+                    .replace('.gui.hud', '.gui')
+                    .replace('addClientSystemMessage(', 'addMessage(')
+                    .replace('net.minecraft.client.multiplayer.chat.GuiMessage;', 'net.minecraft.client.GuiMessage;')
+                    .replace('import net.minecraft.client.multiplayer.chat.GuiMessageSource;', '')
+                    .replace('message.source() == GuiMessageSource.SYSTEM_CLIENT && ', '')
+                    .replace('message.signature(), message.source(), message.tag()', 'message.signature(), message.tag()')
+                    .replace('new ClickEvent.SuggestCommand(', 'new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, ')
+                    .replace('new ClickEvent.RunCommand(', 'new ClickEvent(ClickEvent.Action.RUN_COMMAND, ')
+                    .replace('extractRenderState', 'render')
+                    .replace('extractWidgetRenderState', 'renderWidget')
+                    .replace('extractContents', 'renderWidget')
+                    .replace('graphics.text(', 'graphics.drawString(')
+                    .replace('graphics.itemDecorations(', 'graphics.renderItemDecorations(')
+                    .replace('graphics.item(', 'graphics.renderItem(')
+                    .replace('method = "item(', 'method = "renderItem(')
+                    .replace('method = "itemDecorations(', 'method = "renderItemDecorations(')
+                    .replace('style.withShadowColor(0)', 'style')
+                    .replace('graphics.outline(', 'graphics.renderOutline(')
+                    .replace('graphics.centeredText(', 'graphics.drawCenteredString(')
+                    .replace('graphics.pose().pushMatrix()', 'graphics.pose().pushPose()')
+                    .replace('graphics.pose().popMatrix()', 'graphics.pose().popPose()')
+                    .replace('graphics.pose().translate(x, y)', 'graphics.pose().translate(x, y, 0)')
+                    .replace('graphics.pose().scale(text.height() / text.font().lineHeight)', 'graphics.pose().scale(text.height() / text.font().lineHeight, text.height() / text.font().lineHeight, 1)')
+                    .replace('graphics.pose().translate(x + line.x(), lineY)', 'graphics.pose().translate(x + line.x(), lineY, 0)')
+                    .replace('graphics.pose().translate(x - 1, y - 1)', 'graphics.pose().translate(x - 1, y - 1, 0)')
+                    .replace('graphics.pose().scale(.5f)', 'graphics.pose().scale(.5f, .5f, 1)')
+                    .replace('graphics.pose().scale(size / (float) font.lineHeight)', 'graphics.pose().scale(size / (float) font.lineHeight, size / (float) font.lineHeight, 1)')
+                    .replace('graphics.pose().translate(getX() + getWidth() / 2f, getY() + (getHeight() - body) / 2f)', 'graphics.pose().translate(getX() + getWidth() / 2f, getY() + (getHeight() - body) / 2f, 0)')
+                    .replace('graphics.pose().scale(scale)', 'graphics.pose().scale(scale, scale, 1)')
+                    .replace('graphics.pose().scale(line.height() / (float) font.lineHeight)', 'graphics.pose().scale(line.height() / (float) font.lineHeight, line.height() / (float) font.lineHeight, 1)')
+                    .replace('graphics.setTooltipForNextFrame(getMessage(), mouseX, mouseY)', 'graphics.renderTooltip(font, getMessage(), mouseX, mouseY)')
+                    .replace('graphics.setTooltipForNextFrame(text, renderMouseX, renderMouseY)', 'graphics.renderTooltip(font, text, renderMouseX, renderMouseY)')
+                    .replace('InputConstants.isKeyDown(', 'InputConstants.isKeyDown(net.minecraft.client.Minecraft.getInstance().getWindow().getWindow(), ')
+                    .replace('keyPressed(KeyEvent event)', 'keyPressed(int key, int scanCode, int modifiers)')
+                    .replace('super.keyPressed(event)', 'super.keyPressed(key, scanCode, modifiers)')
+                    .replace('editor.keyPressed(event)', 'editor.keyPressed(key, scanCode, modifiers)')
+                    .replace('keyReleased(KeyEvent event)', 'keyReleased(int key, int scanCode, int modifiers)')
+                    .replace('editor.keyReleased(event)', 'editor.keyReleased(key, scanCode, modifiers)')
+                    .replace('charTyped(CharacterEvent event)', 'charTyped(char character, int modifiers)')
+                    .replace('editor.charTyped(event)', 'editor.charTyped(character, modifiers)')
+                    .replace('event.key()', 'key')
+                    .replace('event.hasShiftDown()', 'Screen.hasShiftDown()')
+                    .replace('mouseClicked(MouseButtonEvent event, boolean doubleClick)', 'mouseClicked(double mouseX, double mouseY, int button)')
+                    .replace('super.mouseClicked(event, doubleClick)', 'super.mouseClicked(mouseX, mouseY, button)')
+                    .replace('editor.mouseClicked(event, doubleClick)', 'editor.mouseClicked(mouseX, mouseY, button)')
+                    .replace('mouseDragged(MouseButtonEvent event, double x, double y)', 'mouseDragged(double mouseX, double mouseY, int button, double x, double y)')
+                    .replace('super.mouseDragged(event, x, y)', 'super.mouseDragged(mouseX, mouseY, button, x, y)')
+                    .replace('editor.mouseDragged(event, x, y)', 'editor.mouseDragged(mouseX, mouseY, button, x, y)')
+                    .replace('mouseReleased(MouseButtonEvent event)', 'mouseReleased(double mouseX, double mouseY, int button)')
+                    .replace('super.mouseReleased(event)', 'super.mouseReleased(mouseX, mouseY, button)')
+                    .replace('editor.mouseReleased(event)', 'editor.mouseReleased(mouseX, mouseY, button)')
+                    .replace('event.x()', 'mouseX').replace('event.y()', 'mouseY').replace('event.button()', 'button')
+                    .replaceAll('(?m)^import net\\.minecraft\\.client\\.input\\.[^;]+;\\r?\\n', '')
+                    .replaceAll('(?m)^\\s*@Override public boolean preeditUpdated\\([^\\n]+\\r?\\n', '\n')
+                    .replaceAll('(?m)^\\s*@Override public boolean (?:capturesInput|isInGameUi)\\([^\\n]+\\r?\\n', '\n')
+                    .replace('import net.minecraft.client.gui.components.AbstractScrollArea;', '')
+                    .replace('AbstractScrollArea.SCROLLBAR_WIDTH', '6')
+                    .replace('editor.refreshScrollAmount();', '')
+                if (source.name == 'AiChatScreen.java') {
+                    text = text.replaceAll('(?s)editor = MultiLineEditBox.builder\\(\\).*?\\.build\\(font,.*?Component.translatable\\("rai.input"\\)\\);',
+                        '''editor = new MultiLineEditBox(font, 0, 0, Math.max(1, right - x - 16), 50, Component.empty(), Component.translatable("rai.input")) {
+                @Override protected void renderBackground(GuiGraphics graphics) { }
+                @Override protected void renderDecorations(GuiGraphics graphics) { }
+            };''')
+                }
+                if (source.name == 'CubeMouseActions.java') {
+                    text = text.replace('import net.minecraft.client.ScrollWheelHandler;', '')
+                        .replace('import net.minecraft.client.gui.ItemSlotMouseAction;', '')
+                        .replace(' implements ItemSlotMouseAction', '').replace('@Override ', '')
+                        .replace('private final ScrollWheelHandler wheel = new ScrollWheelHandler();', 'private double accumulatedScroll;')
+                        .replace('var delta = wheel.onMouseScroll(scrollX, scrollY);\n        int amount = delta.y == 0 ? -delta.x : delta.y;',
+                            '''double delta = scrollY == 0 ? -scrollX : scrollY;
+        if (Math.signum(delta) != Math.signum(accumulatedScroll)) accumulatedScroll = 0;
+        accumulatedScroll += delta;
+        int amount = (int) accumulatedScroll;
+        accumulatedScroll -= amount;''')
+                        .replace('ScrollWheelHandler.getNextScrollWheelSelection(amount,\n                occupied.indexOf(state.picked()), occupied.size())',
+                            'Math.floorMod(occupied.indexOf(state.picked()) - amount, occupied.size())')
+                }
+                if (source.name == 'CubeUseMixin.java') {
+                    // This version returns an enum, never the post-use held-item replacement introduced later.
+                    text = text.replaceAll('(?s)\\s*@Inject\\(method = "useOn", at = @At\\("RETURN"\\).*?\\n    \\}\\r?\\n', '\n')
+                }
+                if (source.name == 'CubeSwingMixin.java') {
+                    text = text.replace('import net.minecraft.world.item.component.SwingAnimation;', '')
+                        .replace('@Inject(method = "swing",', '@Inject(method = "swing(Lnet/minecraft/world/InteractionHand;Z)V",')
+                        .replace('SwingAnimation animation, boolean send, CallbackInfoReturnable<Boolean>', 'boolean send, org.spongepowered.asm.mixin.injection.callback.CallbackInfo')
+                }
+                if (source.name == 'DeathStorageMixin.java') text = text.replace('bettertools$stowBeforeDeath(ServerLevel level, CallbackInfo', 'bettertools$stowBeforeDeath(CallbackInfo')
+                if (source.name == 'VillagePlayerMixin.java') text = text.replace('protectPreparation(ServerLevel level, DamageSource', 'protectPreparation(DamageSource')
+                if (source.name == 'ToolBreakMixin.java') {
+                    text = text.replace('Consumer<ItemStack>', 'Consumer<net.minecraft.world.item.Item>')
+                        .replaceAll('(?s)\\s*// NeoForge.*\\n\\}', '\n}')
+                }
+                if (source.name == 'ClientCubeTooltip.java') {
+                    text = text.replace('import net.minecraft.client.renderer.RenderPipelines;', '')
+                        .replace('getHeight(Font font)', 'getHeight()').replace('detailHeight(font); }', 'detailHeight(net.minecraft.client.Minecraft.getInstance().font); }')
+                        .replace('@Override public boolean showTooltipWithItemInHand() { return true; }', '')
+                        .replace('extractImage(Font font, int x, int y, int width, int height, GuiGraphics graphics)', 'renderImage(Font font, int x, int y, GuiGraphics graphics)')
+                        .replace('graphics.blit(RenderPipelines.GUI_TEXTURED, ToolOutlineTexture.id(ToolKind.values()[col]),\n                        sx + 4, rowY + 4, 0, 0, 16, 16, 64, 64, 64, 64, look.muted())',
+                            'ToolOutlineTexture.draw(graphics, ToolKind.values()[col], sx + 4, rowY + 4, look.muted())')
+                }
+                if (source.name == 'ToolOutlineTexture.java') {
+                    text = text.replace('import net.minecraft.client.renderer.texture.ReloadableTexture;', 'import net.minecraft.client.renderer.texture.SimpleTexture;')
+                        .replace('import net.minecraft.client.renderer.texture.TextureContents;', '')
+                        .replace('extends ReloadableTexture', 'extends SimpleTexture')
+                        .replace('public TextureContents loadContents(ResourceManager resources) throws IOException', 'protected SimpleTexture.TextureImage getTextureImage(ResourceManager resources)')
+                        .replace('result.setPixel(', 'result.setPixelRGBA(').replace('image.getPixel(', 'image.getPixelRGBA(')
+                        .replace('return new TextureContents(result, null);', 'return new SimpleTexture.TextureImage(null, result);')
+                        .replace('''            return new SimpleTexture.TextureImage(null, result);
+        }''', '''            return new SimpleTexture.TextureImage(null, result);
+        } catch (IOException error) { return new SimpleTexture.TextureImage(error); }''')
+                    text = text.substring(0, text.lastIndexOf('}')) + '''
+    /** Uses the native 1.21.1 blitter and restores its shared tint after the derived outline. */
+    public static void draw(net.minecraft.client.gui.GuiGraphics graphics, ToolKind kind, int x, int y, int color) {
+        graphics.flush();
+        com.mojang.blaze3d.systems.RenderSystem.setShaderColor((color >> 16 & 255) / 255f, (color >> 8 & 255) / 255f, (color & 255) / 255f, (color >>> 24) / 255f);
+        try { graphics.blit(id(kind), x, y, 16, 16, 0, 0, 64, 64, 64, 64); graphics.flush(); }
+        finally { com.mojang.blaze3d.systems.RenderSystem.setShaderColor(1, 1, 1, 1); }
+    }
+}
+
+'''
+                }
+                if (source.name == 'VillageSpawn.java') {
+                    text = text.replace('import net.minecraft.world.level.TicketStorage;', 'import net.minecraft.server.level.DistanceManager;')
+                        .replace('final TicketStorage tickets;', 'final DistanceManager tickets;')
+                        .replace('Map<TicketKey, Ticket>', 'Map<TicketKey, Integer>')
+                        .replace('level.getDataStorage().computeIfAbsent(TicketStorage.TYPE)', 'level.getChunkSource().chunkMap.getDistanceManager()')
+                        .replace('Ticket ticket = new Ticket(VillageTickets.PREPARATION, ChunkLevel.byStatus(status));', 'int ticket = ChunkLevel.byStatus(status);')
+                        .replace('tickets.addTicket(ticket, position)', 'tickets.addTicket(VillageTickets.PREPARATION, position, ticket, position)')
+                        .replace('tickets.removeTicket(entry.getValue(), entry.getKey().position())', 'tickets.removeTicket(VillageTickets.PREPARATION, entry.getKey().position(), entry.getValue(), entry.getKey().position())')
+                        .replace('tickets.removeTicket(ticket, key.position())', 'tickets.removeTicket(VillageTickets.PREPARATION, key.position(), ticket, key.position())')
+                        .replace('ChunkPos.containing(', 'new ChunkPos(')
+                        .replace('center.x()', 'center.x').replace('center.z()', 'center.z')
+                        .replace('position.x()', 'position.x').replace('position.z()', 'position.z')
+                        .replace('.getWorldGenSettings().options()', '.getWorldData().worldGenOptions()')
+                        .replace('level.getRespawnData().globalPos().pos()', 'level.getSharedSpawnPos()')
+                        .replace('level.setRespawnData(LevelData.RespawnData.of(level.dimension(), spawn, 0, 0))', 'level.setDefaultSpawnPos(spawn, 0)')
+                        .replace('Set.of(), player.getYRot(), 0, true)', 'Set.of(), player.getYRot(), 0)')
+                        .replace('level.getMinY()', 'level.getMinBuildHeight()').replace('level.getMaxY()', 'level.getMaxBuildHeight()')
+                }
+                if (source.name == 'RerollController.java') {
+                    // Before separate saved-data game rules, vanilla's recreated LevelSettings already carries their copy.
+                    text = text.replace('import net.minecraft.world.level.gamerules.GameRuleMap;', '')
+                        .replace('import net.minecraft.world.level.gamerules.GameRules;', '')
+                        .replaceAll('(?s)                var storedRules =.*?                var data =', '                var data =')
+                        .replace('new PrimaryLevelData(recreated.getFirst(), dimensions.specialWorldProperty(),', 'new PrimaryLevelData(recreated.getFirst(), options, dimensions.specialWorldProperty(),')
+                        .replaceAll('(?s)                var settings = new LevelDataAndDimensions.WorldDataAndGenSettings\\(data,.*?;\\n', '')
+                        .replace('registries, settings, Optional.of(gameRules)', 'registries, data')
+                }
+                if (source.name == 'WorldTabMixin.java') {
+                    text = text.replace('Builder;build()L', 'Builder;build(Ljava/util/function/Consumer;)L')
+                        .replace('this$0', 'field_42182')
+                        .replace('worldreroll$addSpawnChoice(SwitchGrid.Builder builder)', 'worldreroll$addSpawnChoice(SwitchGrid.Builder builder, java.util.function.Consumer<net.minecraft.client.gui.layouts.LayoutElement> add)')
+                        .replace('return builder.build();', 'return builder.build(add);')
+                }
+                if (source.name == 'CreateWorldScreenMixin.java') text = text.replace('"createWorldAndCleanup"', '"onCreate"')
+                source.setText(text, 'UTF-8')
+            }
+            if (overrides.isDirectory()) overrides.eachFileRecurse { input ->
+                if (input.isFile()) {
+                    def output = new File(generated, overrides.toPath().relativize(input.toPath()).toString())
+                    output.parentFile.mkdirs()
+                    output.bytes = input.bytes
+                }
+            }
+        }
+    }
+    sourceSet.java.setSrcDirs([generated])
+    tasks.named(sourceSet.compileJavaTaskName) { dependsOn(prepare) }
+    tasks.matching { it.name == 'sourcesJar' }.configureEach { dependsOn(prepare) }
+}
+
+def toolsTarget = project.name == 'bettertools'
+tasks.named('processResources') {
+    inputs.property('mixinJava', 'JAVA_21')
+    inputs.property('legacyHoe', toolsTarget)
+    filesMatching('*mixins.json') { filter { line -> line.replace('JAVA_25', 'JAVA_21') } }
+    if (toolsTarget) doLast {
+        def config = destinationDir.toPath().resolve('bettertools.mixins.json').toFile()
+        def data = new groovy.json.JsonSlurper().parse(config)
+        data.mixins.add('HoeUseAccess')
+        config.setText(groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(data)), 'UTF-8')
+        def recipe = destinationDir.toPath().resolve('data/bettertools/recipe/tool_cube.json').toFile()
+        def crafting = new groovy.json.JsonSlurper().parse(recipe)
+        crafting.key = crafting.key.collectEntries { key, item -> [(key): [item: item]] }
+        recipe.setText(groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(crafting)), 'UTF-8')
+    }
+}

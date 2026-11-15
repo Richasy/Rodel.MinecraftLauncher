@@ -1,0 +1,24 @@
+// 1.21.1 predates Fabric Client GameTest. This separate remapped test mod runs with normal production JARs.
+sourceSets {
+    nativeTest {
+        java.setSrcDirs(['src/nativetest/java'])
+        resources.setSrcDirs(['src/nativetest/resources'])
+        compileClasspath += sourceSets.main.output + sourceSets.client.output + sourceSets.client.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.client.output + sourceSets.client.runtimeClasspath
+    }
+}
+dependencies {
+    nativeTestImplementation files("../bettertools/build/targets/1.21.1/devlibs/bettertools-${version}-dev.jar")
+    nativeTestImplementation files("../rodel-ai/build/targets/1.21.1/devlibs/rodel-ai-${version}-dev.jar")
+}
+tasks.register('nativeTestJar', Jar) {
+    dependsOn tasks.named('nativeTestClasses')
+    archiveClassifier = 'native-test-dev'
+    from sourceSets.nativeTest.output
+}
+tasks.register('remapNativeTestJar', tasks.named('remapJar').get().class.superclass) {
+    dependsOn tasks.named('nativeTestJar')
+    inputFile = tasks.named('nativeTestJar', Jar).flatMap { it.archiveFile }
+    archiveFileName = 'worldreroll-native-test.jar'
+    addNestedDependencies = false
+}

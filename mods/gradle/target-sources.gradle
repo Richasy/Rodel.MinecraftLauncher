@@ -1,4 +1,8 @@
 // Only audited API differences belong here; business logic stays in the shared Java sources.
+if (minecraft_version == '1.21.1') {
+    apply from: '../gradle/1.21.1-target.gradle'
+    return
+}
 def nativeUiModule = project.name == 'rodel-ui'
 if (minecraft_version in ['26.2', '26.1.2', '1.21.11']) {
     def gameTarget = minecraft_version

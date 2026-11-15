@@ -225,6 +225,7 @@ public sealed partial class SessionService(LauncherPaths paths)
             ["status"] = "queued",
             ["versionId"] = plan.VersionId,
             ["gameLanguage"] = plan.GameLanguage,
+            ["fullscreen"] = plan.Fullscreen,
             ["createdAt"] = DateTimeOffset.UtcNow.ToString("O"),
             ["javaPath"] = plan.JavaPath,
             ["arguments"] = arguments,
@@ -398,6 +399,20 @@ public sealed partial class SessionService(LauncherPaths paths)
                 {
                     state["gameLanguageWarning"] = error.Message;
                     state["warnings"]!.AsArray().Add((JsonNode?)JsonValue.Create("Game language could not be synchronized; existing options were retained: " + error.Message));
+                }
+            }
+
+            if (state["fullscreen"]?.GetValue<bool>() is { } fullscreen)
+            {
+                startup.Mark("window_mode_sync");
+                try
+                {
+                    await GameSettingsService.ApplyLaunchWindowModeAsync(gameDirectory, fullscreen, preparationCancellation).ConfigureAwait(false);
+                }
+                catch (Exception error) when (error is IOException or UnauthorizedAccessException or DecoderFallbackException or EncoderFallbackException)
+                {
+                    state["windowModeWarning"] = error.Message;
+                    state["warnings"]!.AsArray().Add((JsonNode?)JsonValue.Create("Game window mode could not be synchronized; existing options were retained: " + error.Message));
                 }
             }
 

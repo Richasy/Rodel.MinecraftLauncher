@@ -19,7 +19,7 @@ dependencies {
 // Legacy Loom exposes remapped artifacts on runtimeClasspath. Ship the original API jar, with its nested modules intact.
 configurations { bundledFabricApi { canBeConsumed = false; canBeResolved = true; transitive = false } }
 dependencies { bundledFabricApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}" }
-fabricApi {
+if (client_tests_supported) fabricApi {
     configureTests {
         createSourceSet = true
         modId = 'bettertools_test'
@@ -28,13 +28,13 @@ fabricApi {
         clearRunDirectory = false
     }
 }
-sourceSets.gametest.java.srcDir('src/gamecheck/java')
+if (client_tests_supported) sourceSets.gametest.java.srcDir('src/gamecheck/java')
 def gameJavaVersion = Integer.parseInt(java_version)
-tasks.named('runClientGameTest') {
+if (client_tests_supported) tasks.named('runClientGameTest') {
     jvmArgs '-Dfabric.noGui=true'
     javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(gameJavaVersion) }
 }
-loom.runConfigs.named('clientGameTest') {
+if (client_tests_supported) loom.runConfigs.named('clientGameTest') {
     runDirectory = layout.buildDirectory.dir('run/clientGameTest').get().asFile
 }
 def tokens = [version: version.toString(), minecraft_version: minecraft_version, java_version: java_version,

@@ -40,6 +40,12 @@ public sealed record SessionStatus : ILaunchResult
     /// <summary>Gets an options-read/write failure that prevented language synchronization without preventing game startup.</summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? GameLanguageWarning { get; init; }
+    /// <summary>Gets the launcher window mode selected for this session, if one was specified.</summary>
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public bool? Fullscreen { get; init; }
+    /// <summary>Gets an options-read/write failure that prevented window-mode synchronization without preventing game startup.</summary>
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? WindowModeWarning { get; init; }
     /// <summary>Gets the frozen authenticated account identifier, when this launch used one.</summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? AccountId { get; init; }
@@ -165,6 +171,8 @@ public sealed record SessionStatus : ILaunchResult
             VersionId = StoredReportFields.Text(fields, "versionId"),
             GameLanguage = StoredReportFields.Text(fields, "gameLanguage"),
             GameLanguageWarning = StoredReportFields.Text(fields, "gameLanguageWarning"),
+            Fullscreen = StoredReportFields.Value<bool>(fields, "fullscreen"),
+            WindowModeWarning = StoredReportFields.Text(fields, "windowModeWarning"),
             AccountId = StoredReportFields.Text(fields, "accountId"),
             Server = StoredReportFields.Text(fields, "server"),
             ServerConnectionMode = StoredReportFields.Text(fields, "serverConnectionMode"),

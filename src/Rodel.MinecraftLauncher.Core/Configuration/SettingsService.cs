@@ -16,6 +16,7 @@ public sealed class SettingsService(LauncherPaths paths)
             ["minMemoryMb"] = 512,
             ["maxMemoryMb"] = 2048,
             ["memoryMode"] = "auto",
+            ["fullscreen"] = false,
             ["gameBridgeEnabled"] = true
         };
         var sources = new JsonObject
@@ -23,6 +24,7 @@ public sealed class SettingsService(LauncherPaths paths)
             ["minMemoryMb"] = "default",
             ["maxMemoryMb"] = "default",
             ["memoryMode"] = "default",
+            ["fullscreen"] = "default",
             ["gameBridgeEnabled"] = "default"
         };
         var warnings = new JsonArray();

@@ -44,6 +44,8 @@ public sealed class BundledModTests
     /// This uses actual packaged JARs, without substituting an HTTP provider or claiming Minecraft gameplay validation.
     /// Warm browsing must not reopen immutable launcher JARs, but installation state must follow real disable/enable receipts.
     /// An exclusive fixture handle distinguishes cached browsing from review, which must still read the actual source.
+    /// The centralized release input is the version oracle: stale incremental Forge metadata must not pass merely because
+    /// the installed file and catalog agree with each other on an old version.
     /// </summary>
     [TestMethod]
     [DataRow("26.3", "fabric", "rodel_ai,fabric-api", "rodel_ai")]
@@ -53,6 +55,9 @@ public sealed class BundledModTests
     [DataRow("26.3", "forge", "rodel_ai", "rodel_ai")]
     [DataRow("26.3", "neoforge", "rodel_ai", "rodel_ai")]
     [DataRow("1.20.1", "forge", "rodel_ai", "rodel_ai")]
+    [DataRow("1.21.1", "fabric", "rodel_ai,fabric-api", "rodel_ai")]
+    [DataRow("1.21.1", "fabric", "worldreroll,fabric-api", "worldreroll")]
+    [DataRow("1.21.1", "fabric", "bettertools,fabric-api", "bettertools")]
     [DataRow("26.3", "fabric", "bettertools,fabric-api", "bettertools")]
     [DataRow("26.2", "fabric", "bettertools,fabric-api", "bettertools")]
     [DataRow("26.1.2", "fabric", "bettertools,fabric-api", "bettertools")]
@@ -84,15 +89,18 @@ public sealed class BundledModTests
             await Assert.ThrowsAsync<ArgumentException>(() => client.ReviewBundledModsAsync(instance.Id, ["rodel_game_ui"], ct));
             Assert.IsTrue(catalog.Mods.Single(mod => mod.Id == selectedId).Installed);
             Assert.DoesNotContain(mod => mod.Id == "rodel_game_ui", catalog.Mods, "The withdrawn UI must not be offered or pulled in by another mod.");
-            Assert.IsTrue(catalog.Mods.All(mod => mod.MinecraftVersion == minecraftVersion && mod.Loader == loader && mod.Version == "0.0.1"));
-            Assert.DoesNotContain(mod => mod.Id == "worldreroll" && mod.Installed, catalog.Mods);
+            Assert.IsTrue(catalog.Mods.All(mod => mod.MinecraftVersion == minecraftVersion && mod.Loader == loader));
+            var releaseVersion = ReadReleaseVersion();
+            Assert.IsTrue(catalog.Mods.All(mod => mod.Version == releaseVersion), "Every shipped mod must declare the centralized release version, including incremental builds.");
+            Assert.AreEqual(expected.Contains("worldreroll"), catalog.Mods.Any(mod => mod.Id == "worldreroll" && mod.Installed));
             var selected = result.Installed.Single(entry => (entry.Metadata?["id"] ?? entry.Metadata?["modId"])?.ToString() == selectedId);
             var disabled = (ContentEntry)await client.SetContentEnabledAsync(instance.Id, [selected.FileName], false, cancellationToken: ct);
-            using (var sourceLock = new FileStream(Path.Combine(AppContext.BaseDirectory, "Assets", "BuiltInMods", minecraftVersion, loader, selectedId == "rodel_ai" ? "rodel-ai.jar" : "bettertools.jar"), FileMode.Open, FileAccess.Read, FileShare.None))
+            var archive = selectedId switch { "rodel_ai" => "rodel-ai.jar", "worldreroll" => "world-reroll.jar", _ => "bettertools.jar" };
+            using (var sourceLock = new FileStream(Path.Combine(AppContext.BaseDirectory, "Assets", "BuiltInMods", minecraftVersion, loader, archive), FileMode.Open, FileAccess.Read, FileShare.None))
             {
                 var warm = await new LauncherClient(paths).GetBundledModsAsync(instance.Id, ct);
                 Assert.IsFalse(warm.Mods.Single(mod => mod.Id == selectedId).Installed, "A cached catalog must not retain stale enabled state.");
-                Assert.AreEqual("0.0.1", warm.Mods.Single(mod => mod.Id == selectedId).InstalledVersion);
+                Assert.AreEqual(catalog.Mods.Single(mod => mod.Id == selectedId).Version, warm.Mods.Single(mod => mod.Id == selectedId).InstalledVersion);
                 await Assert.ThrowsAsync<IOException>(() => client.ReviewBundledModsAsync(instance.Id, [selectedId], ct));
             }
 
@@ -111,9 +119,9 @@ public sealed class BundledModTests
     /// </summary>
     [TestMethod]
     [DataRow("fabric", "0.0.0")]
-    [DataRow("forge", "0.0.1")]
-    [DataRow("neoforge", "0.0.1")]
-    public Task Install_ReplacesRenamedDisabledMod_AndPreservesFilenameCollision(string loader, string oldVersion)
+    [DataRow("forge", null)]
+    [DataRow("neoforge", null)]
+    public Task Install_ReplacesRenamedDisabledMod_AndPreservesFilenameCollision(string loader, string? oldVersion)
         => ReportStorage.RunAsync(async paths =>
         {
             var ct = TestContext.CancellationToken;
@@ -124,7 +132,7 @@ public sealed class BundledModTests
             var mods = Path.Combine(instance.GameDirectory, "mods");
             Directory.CreateDirectory(mods);
             var old = Path.Combine(mods, "renamed-old.jar.disabled");
-            WriteMod(old, "worldreroll", oldVersion, loader: loader);
+            WriteMod(old, "worldreroll", oldVersion ?? ReadReleaseVersion(), loader: loader);
             var collision = Path.Combine(mods, review.Plan!.Nodes.Single(node => node.ProjectId == "worldreroll").FileName);
             WriteMod(collision, "unrelated", "1.0", loader: loader);
             var original = await File.ReadAllBytesAsync(collision, ct);
@@ -174,6 +182,12 @@ public sealed class BundledModTests
             Assert.AreEqual("CONTENT_REVIEW_STALE", changed.Code);
             Assert.IsFalse(Directory.Exists(Path.Combine(switched.GameDirectory, "mods")) && Directory.EnumerateFiles(Path.Combine(switched.GameDirectory, "mods")).Any());
         });
+
+    private static string ReadReleaseVersion()
+    {
+        using var reader = new StreamReader(typeof(BundledModTests).Assembly.GetManifestResourceStream("BundledModVersion.properties")!);
+        return reader.ReadToEnd().Split('\n').Single(line => line.StartsWith("mod_version=", StringComparison.Ordinal))["mod_version=".Length..].Trim();
+    }
 
     private static void WriteMod(string path, string id, string version, string? minecraft = null, string loader = "fabric")
     {
@@ -241,5 +255,4 @@ public sealed class BundledModTests
 
     /// <summary>Gets or sets cooperative cancellation supplied by the test runner.</summary>
     public TestContext TestContext { get; set; }
-
 }

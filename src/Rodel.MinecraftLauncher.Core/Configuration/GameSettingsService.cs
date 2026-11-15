@@ -46,6 +46,16 @@ public sealed class GameSettingsService(LauncherPaths paths)
             await WriteAsync(document, document.Edit(new JsonObject { ["lang"] = language }), ct).ConfigureAwait(false);
     }
 
+    // Minecraft combines --fullscreen with its saved option; omitting the flag cannot force windowed mode.
+    internal static async Task ApplyLaunchWindowModeAsync(string game, bool fullscreen, CancellationToken ct)
+    {
+        using var lease = await ResourceLease.AcquireAsync(resource: Path.Combine(game, "options.txt"), cancellationToken: ct).ConfigureAwait(false);
+        var document = await ReadAsync(game, null, ct).ConfigureAwait(false);
+        var value = fullscreen ? "true" : "false";
+        if (document.Values()["fullscreen"]?.ToString() != value)
+            await WriteAsync(document, document.Edit(new JsonObject { ["fullscreen"] = value }), ct).ConfigureAwait(false);
+    }
+
     private sealed record Document(string Path, byte[] Bytes, Encoding Encoding, byte[] Bom, string[] Lines, string[] Endings)
     {
         public string Fingerprint => Convert.ToHexStringLower(SHA256.HashData(Bytes));
