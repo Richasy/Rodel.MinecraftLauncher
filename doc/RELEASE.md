@@ -126,7 +126,7 @@ CSV 必须基于当前产品从后台导出的模板，完整保留行列数、�
 
 ## 独立 EXE 安装包
 
-在 Actions 中手动运行 **Package EXE installer**，选择 `main`：`version` 留空时使用 App 工程的版本，也可输入末段为 `0` 的规范四段 UInt16 版本；`architecture` 默认为 `x64`，也可选择 `arm64`，每次运行只构建所选架构。它复用 `scripts/package-exe.ps1` 生成当前用户安装的自包含 NativeAOT 安装包，不读取 Store 或 AI 凭据。
+在 Actions 中手动运行 **Package EXE installer**，选择 `main`：`version` 留空时使用 App 工程的版本，也可输入末段为 `0` 的规范四段 UInt16 版本；`x64` 和 `arm64` 是两个独立勾选项，默认均勾选，可单选或一次构建两种架构，至少选择一项。所选架构在同次运行中串行构建，每种架构分别上传 artifact。它复用 `scripts/package-exe.ps1` 生成当前用户安装的自包含 NativeAOT 安装包，不读取 Store 或 AI 凭据。
 
 成功后从运行页面的 `rmcl-<version>-win-<architecture>-exe` artifact 下载安装包及同名 `.sha256`，保留 14 天。上传路径仅包含这两个准确文件，不上传 `payload-*`、编译器、调试符号、凭据或测试执行物。工作流不创建 GitHub Release；需要正式发行时，再按下述要求发布已核验的安装包。
 
