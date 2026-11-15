@@ -8,11 +8,17 @@ namespace Rodel.MinecraftLauncher.Core.Tests;
 [TestClass]
 public sealed class GameBridgeJavaTests
 {
-    /// <summary>Review: actual native-executor dispatch must open LAN without cheats and reuse its port; a world-switch barrier must prevent publishing a replacement world.</summary>
+    /// <summary>Review: native-executor dispatch must preserve legacy cheats and independently configured scoped guest permissions while reusing LAN; a world-switch barrier must prevent publishing a replacement world.</summary>
     [TestMethod]
     [DataRow("lan_publish")]
     [DataRow("lan_stale")]
+    [DataRow("lan_scoped")]
+    [DataRow("lan_scoped_stale")]
     public async Task JavaLan_PublicationPreservesPermissionsAndWorldAuthority(string scenario) => await RunScenarioAsync(scenario);
+
+    /// <summary>Review: missing publication APIs must reject before mutation; treating a known binding failure as unknown would block recovery despite no listener being opened.</summary>
+    [TestMethod]
+    public async Task JavaLan_UnsupportedBinding_RejectsBeforeNativeEffect() => await RunScenarioAsync("lan_unsupported");
 
     /// <summary>Review: loaded-recipe replacement and native ingredient alternatives are distinct from existing ownership/input tests; a removed recipe or invented optional-mod progress would mislead modpack guidance.</summary>
     [TestMethod]

@@ -33,9 +33,11 @@ flowchart LR
 | 主菜单、加载或退出世界 | `ready=false`及明确原因，不返回旧世界快照 | 拒绝 |
 | 本地单人内置服务器 | 客户端同步位置、生命值、维度、时间；有界方块/实体/背包摘要 | 有界时间/生命、原生输入/容器/复活；命令另需原生允许作弊和玩家原权限 |
 | 加入服务器、别人的LAN、同机独立服务端、Realms | 仅客户端已收到的数据，不加载额外区块 | 全部拒绝；localhost、OP4、AI允许操作不改变规则 |
-| 本地单人开放LAN的宿主 | 设计按仍持有该内置服务器及memory connection判定 | 同本地规则；真实LAN尚未完整验证 |
+| 本地单人开放LAN的宿主 | 按仍持有该内置服务器及memory connection判定 | 同本地规则；26.3原版已验证开放、重试与开放后查询，跨机器入服另行验证 |
 
 Core先重新采样并检查本地归属，Java在入队及临执行前检查真实内置服务器、`isLocalServer`、memory connection、世界/玩家/连接身份及维度。写入必须带`gameIncarnation/worldEpoch/dimension/operationId`；重连、切世界或对象更换使旧授权失效。AI回合还冻结第一次成功观察的世界，后续快照不能把原许可悄悄转给新世界。同一localWorldEpoch内的维度切换/复活可用新快照更新当前epoch；换内置服务器不能沿用原回合授权，无根标识的旧快照保留严格冻结。
+
+`world.publish` 在客户端原生执行器调用 IntegratedServer。存在 MultiplayerScope 的命名客户端从实际 JAR 识别该类型，采用 `publishServer(LAN, port)` 保留游戏模式、世界作弊与独立访客命令权限；旧客户端保留原 GameType／作弊参数接口。固定方法与 LAN 枚举先解析，再进入 applying；已知绑定缺失返回 rejected，真正进入原生调用后无法确认的效果仍为 unknown，不能重放。
 
 位置/生命/时间快照与区域查询明确标为`client_synchronized`，不冒充服务端全知状态；applied收据中的修改后值由服务器API回读。客户端自然回血、时间推进等仍继续，applied不保证值永久不变，也不等于已经落盘。
 

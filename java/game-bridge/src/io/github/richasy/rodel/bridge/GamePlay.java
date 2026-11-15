@@ -97,7 +97,14 @@ final class GamePlay {
             return;
         }
         if (kind.equals("world.publish")) {
-            if (!b.has("serverPublish") || !b.has("serverPublished") || !b.has("serverPort")) throw new IllegalArgumentException("GAME_LAN_UNSUPPORTED");
+            if (!b.has("serverPublished") || !b.has("serverPort")) throw new IllegalArgumentException("GAME_LAN_UNSUPPORTED");
+            b.requireMethod("serverPort");
+            if (!(Boolean)b.call(world.server(), "serverPublished")) {
+                if (!b.has("serverPublish")) throw new IllegalArgumentException("GAME_LAN_UNSUPPORTED");
+                b.requireMethod("serverPublish");
+                if (b.has("lanScope")) b.field(null, "lanScope");
+                else b.call(b.call(world.server(), "serverWorldData"), "worldAllowCommands");
+            }
             return;
         }
         if (kind.equals("player.release") || kind.equals("screen.close")) return;
@@ -165,11 +172,18 @@ final class GamePlay {
         if (!existing) {
             int port;
             try (java.net.ServerSocket reservation = new java.net.ServerSocket(0)) { port = reservation.getLocalPort(); }
-            Object data = b.call(world.server(), "serverWorldData");
-            boolean allowCommands = (Boolean)b.call(data, "worldAllowCommands");
-            // Native LAN screens invoke this on the client executor. Null retains the world's
-            // native default mode; retain the current cheats setting rather than enabling it.
-            if (!(Boolean)b.call(world.server(), "serverPublish", null, allowCommands, port)) throw new IllegalArgumentException("GAME_LAN_OPEN_FAILED");
+            boolean opened;
+            if (b.has("lanScope")) {
+                // The two-argument scoped API preserves both game mode and guest command access.
+                opened = (Boolean)b.call(world.server(), "serverPublish", b.field(null, "lanScope"), port);
+            } else {
+                Object data = b.call(world.server(), "serverWorldData");
+                boolean allowCommands = (Boolean)b.call(data, "worldAllowCommands");
+                // Native LAN screens invoke this on the client executor. Null retains the world's
+                // native default mode; retain the current cheats setting rather than enabling it.
+                opened = (Boolean)b.call(world.server(), "serverPublish", null, allowCommands, port);
+            }
+            if (!opened) throw new IllegalArgumentException("GAME_LAN_OPEN_FAILED");
         }
         int port = ((Number)b.call(world.server(), "serverPort")).intValue();
         if (port < 1 || port > 65535 || !(Boolean)b.call(world.server(), "serverPublished")) throw new IllegalArgumentException("GAME_LAN_OPEN_FAILED");

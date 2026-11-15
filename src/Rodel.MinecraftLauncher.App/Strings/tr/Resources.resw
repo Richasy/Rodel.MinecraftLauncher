@@ -6220,4 +6220,6 @@ Ayrıntılar: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Paket dosyaları ayıklanıyor</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Paket dosyaları doğrulanıyor</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Oyun örnekleri yükleniyor…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>LAN duyurusu bekleniyor</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Oyun bağlantı noktası hazır ancak Terracotta LAN duyurusunu algılayamadı. Dünyayı açık tutun, ağ bağdaştırıcısını ve çok oyunculu bileşenin güvenlik duvarı izinlerini kontrol edip yeniden deneyin.</value></data>
 </root>

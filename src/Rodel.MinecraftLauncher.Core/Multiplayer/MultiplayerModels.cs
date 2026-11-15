@@ -57,7 +57,7 @@ public sealed record MultiplayerRoom
     public required string Name { get; init; }
     /// <summary>Gets the selected registered instance.</summary>
     public required string InstanceId { get; init; }
-    /// <summary>Gets preparing, waiting-world, opening, manual, connecting, starting-game, connected, disconnected, retrying, ending, exit-pending, closed, stopped, failed, or interrupted.</summary>
+    /// <summary>Gets preparing, waiting-world, opening, manual, discovering, connecting, starting-game, connected, disconnected, retrying, ending, exit-pending, closed, stopped, failed, or interrupted.</summary>
     public string State { get; init; } = "preparing";
     /// <summary>Gets whether a live task still owns this room's control loop.</summary>
     public bool Active { get; init; }
@@ -94,6 +94,8 @@ public sealed record MultiplayerRoom
     public string OwnerStartedAt { get; init; } = string.Empty;
     /// <summary>Gets the private component HTTP port for Core ownership checks.</summary>
     public int? ComponentPort { get; init; }
+    /// <summary>Gets the last observed native component phase, independently of the game's LAN publication receipt.</summary>
+    public string? ComponentState { get; init; }
     /// <summary>Gets the verified isolated component worker, independently of its short-lived bootstrap.</summary>
     public int? ComponentProcessId { get; init; }
     /// <summary>Gets that component worker's UTC start identity.</summary>
@@ -123,7 +125,10 @@ public enum MultiplayerEndMode
 /// <param name="At">The observed UTC instant.</param>
 /// <param name="State">The local room state.</param>
 /// <param name="Code">A stable error code without raw network data.</param>
-internal sealed record RoomEvent(DateTimeOffset At, string State, string? Code);
+/// <param name="ComponentState">The last observed native phase without invitation or address fields.</param>
+/// <param name="GamePortObserved">Whether a game listener was verified, without exporting its port number.</param>
+/// <param name="WorldState">The current publication observation, independently of network readiness.</param>
+internal sealed record RoomEvent(DateTimeOffset At, string State, string? Code, string? ComponentState = null, bool GamePortObserved = false, string? WorldState = null);
 
 /// <summary>Provides reflection-free room request and snapshot metadata to product hosts.</summary>
 [JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]

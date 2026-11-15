@@ -7,8 +7,6 @@ using Rodel.MinecraftLauncher.Core.Storage;
 using Rodel.MinecraftLauncher.Core.Tests.Infrastructure;
 using Rodel.MinecraftLauncher.Tests;
 using System.Diagnostics;
-using System.Net;
-using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -65,7 +63,7 @@ public sealed class MultiplayerRoomTests
                 ["monitorId"] = process.Id,
                 ["monitorStartUtc"] = process.StartTime.ToUniversalTime().ToString("O")
             }, ct);
-            await using var game = new StatusListener();
+            await using var game = new MinecraftStatusFixture();
             var request = new MultiplayerRequest { RoomId = Guid.NewGuid().ToString("N"), Role = "host", InstanceId = instance.Id, SessionId = sessionId, AutoOpen = false, Name = "Protocol fixture" };
             var run = client.Multiplayer.RunAsync(request, ct);
             try
@@ -165,7 +163,7 @@ public sealed class MultiplayerRoomTests
             var client = new LauncherClient(paths);
             var instance = await client.Instances.CreateAsync("Existing LAN", "1.21.1", ct);
             await using var bridge = await BridgeFixture.CreateAsync(ct, paths.Root, instance.Id);
-            await using var game = new StatusListener();
+            await using var game = new MinecraftStatusFixture();
             var edits = 0;
             var reads = 0;
             string? operationId = null;
@@ -229,70 +227,6 @@ public sealed class MultiplayerRoomTests
                 try { await run; } catch (OperationCanceledException) { }
             }
         });
-    }
-
-    internal sealed class StatusListener : IAsyncDisposable
-    {
-        private readonly TcpListener _listener = new(IPAddress.Loopback, 0);
-        private readonly CancellationTokenSource _stop = new();
-        private readonly Task _loop;
-        private readonly Task _broadcast;
-        private readonly string? _legacy;
-        internal StatusListener(int port = 0, string? legacy = null) { _legacy = legacy; _listener = new(IPAddress.Loopback, port); _listener.Start(); Port = ((IPEndPoint)_listener.LocalEndpoint).Port; _loop = ServeAsync(); _broadcast = BroadcastAsync(); }
-        internal int Port { get; }
-        private async Task BroadcastAsync()
-        {
-            using var udp = new UdpClient(AddressFamily.InterNetwork) { MulticastLoopback = true };
-            var target = new IPEndPoint(IPAddress.Parse("224.0.2.60"), 4445);
-            var message = Encoding.UTF8.GetBytes($"[MOTD]Protocol fixture[/MOTD][AD]{Port}[/AD]");
-            try
-            {
-                while (!_stop.IsCancellationRequested)
-                {
-                    await udp.SendAsync(message, target, _stop.Token);
-                    await Task.Delay(500, _stop.Token);
-                }
-            }
-            catch (OperationCanceledException) when (_stop.IsCancellationRequested) { }
-        }
-        private async Task ServeAsync()
-        {
-            try
-            {
-                while (!_stop.IsCancellationRequested)
-                {
-                    using var connection = await _listener.AcceptTcpClientAsync(_stop.Token);
-                    try
-                    {
-                        var stream = connection.GetStream();
-                        var input = new byte[2048];
-                        if (await stream.ReadAsync(input, _stop.Token) == 0) continue;
-                        if (_legacy is not null)
-                        {
-                            if (input[0] != 0xfe) continue;
-                            var text = Encoding.BigEndianUnicode.GetBytes(_legacy);
-                            await stream.WriteAsync(new byte[] { 0xff, (byte)(_legacy.Length >> 8), (byte)_legacy.Length }.Concat(text).ToArray(), _stop.Token);
-                            continue;
-                        }
-
-                        var json = Encoding.UTF8.GetBytes("{\"version\":{\"name\":\"1.21.1\",\"protocol\":767},\"players\":{\"max\":8,\"online\":0},\"description\":{\"text\":\"Protocol fixture\"}}");
-                        var length = Encode(json.Length);
-                        byte[] response = [.. Encode(1 + length.Length + json.Length), 0, .. length, .. json];
-                        await stream.WriteAsync(response, _stop.Token);
-                    }
-                    catch (IOException) { }
-                }
-            }
-            catch (OperationCanceledException) when (_stop.IsCancellationRequested) { }
-        }
-        private static byte[] Encode(int number)
-        {
-            var bytes = new List<byte>();
-            do { var value = (byte)(number & 127); number >>= 7; bytes.Add((byte)(value | (number > 0 ? 128 : 0))); } while (number > 0);
-            return [.. bytes];
-        }
-        /// <summary>Stops only the fixture listener and waits for its owned loop.</summary>
-        public async ValueTask DisposeAsync() { _stop.Cancel(); _listener.Stop(); await Task.WhenAll(_loop, _broadcast); _listener.Dispose(); _stop.Dispose(); }
     }
 
     private static void AssertStableComponent(LauncherPaths paths, MultiplayerRoom room)

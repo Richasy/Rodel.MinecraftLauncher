@@ -50,6 +50,7 @@ public sealed class MultiplayerPresentationTests
         };
         Assert.IsFalse(MultiplayerPresentation.Ready(room));
         Assert.IsNull(MultiplayerPresentation.OnlineCount(room));
+        Assert.IsFalse(MultiplayerPresentation.Ready(room with { State = "discovering", GamePort = 25565 }), "A verified game listener alone does not establish native room readiness.");
         room = room with { State = "connected", GamePort = 25565 };
         Assert.IsFalse(MultiplayerPresentation.Ready(room));
         room = room with { Invitation = "U/4K3M-9V6A-2R8D-5XQ4" };

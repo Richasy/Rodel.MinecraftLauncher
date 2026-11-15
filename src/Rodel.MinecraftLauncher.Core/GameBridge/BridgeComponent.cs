@@ -62,7 +62,13 @@ internal static class BridgeComponent
         var clientId = metadata["_clientJarVersion"]?.GetValue<string>() ?? version;
         var clientJar = SharedRuntimeLayout.Resolve(minecraft, "versions/" + clientId + "/" + clientId + ".jar");
         bool named;
-        using (var client = ZipFile.OpenRead(clientJar)) named = client.GetEntry("net/minecraft/client/Minecraft.class") is not null;
+        bool scopedLan;
+        using (var client = ZipFile.OpenRead(clientJar))
+        {
+            named = client.GetEntry("net/minecraft/client/Minecraft.class") is not null;
+            scopedLan = client.GetEntry("net/minecraft/server/MinecraftServer$MultiplayerScope.class") is not null;
+        }
+
         var observation = javaMajor < 17 || (metadata["downloads"]?["client_mappings"] is null && !named);
         var directory = Path.Combine(paths.DependenciesDirectory, "game-bridge");
         Directory.CreateDirectory(directory);
@@ -127,7 +133,7 @@ internal static class BridgeComponent
 
         var srgMappings = mappingText is not null && RuntimeProfile.Loader(metadata).Kind is "forge" or "neoforge"
             ? await BridgeSrgMappings.ReadAsync(minecraft, metadata, ct).ConfigureAwait(false) : null;
-        var properties = observation ? CreateObservationBindings(mappingText, clientJar, gameDirectory ?? minecraft) : CreateBindings(mappingText, srgMappings);
+        var properties = observation ? CreateObservationBindings(mappingText, clientJar, gameDirectory ?? minecraft) : CreateBindings(mappingText, srgMappings, scopedLan);
         var bindingBytes = Encoding.UTF8.GetBytes(properties);
         var bindings = Path.Combine(directory, Convert.ToHexStringLower(SHA256.HashData(bindingBytes)) + ".properties");
         using (await ResourceLease.AcquireAsync(bindings, ct).ConfigureAwait(false))
@@ -139,9 +145,13 @@ internal static class BridgeComponent
         return (jar, bindings, hookJar);
     }
 
-    internal static string CreateBindings(string? mapping, string? srgMapping = null)
+    internal static string CreateBindings(string? mapping, string? srgMapping = null, bool namedScopedLan = false)
     {
         var (classes, members) = ReadSymbols(mapping);
+        const string scopedPublish = "publishServer(net.minecraft.server.MinecraftServer$MultiplayerScope,int)";
+        var scopedLan = mapping is null ? namedScopedLan
+            : members.ContainsKey(("net.minecraft.client.server.IntegratedServer", scopedPublish))
+                && members.ContainsKey(("net.minecraft.server.MinecraftServer$MultiplayerScope", "LAN"));
 
         string Descriptor(string value) => value.EndsWith("[]", StringComparison.Ordinal) ? "[" + Descriptor(value[..^2]) : value switch
         {
@@ -167,7 +177,10 @@ internal static class BridgeComponent
         result.AppendLine("blockPosClass=" + RuntimeType("net.minecraft.core.BlockPos"));
         foreach (var typeName in GamePlayBindings.Types)
             result.AppendLine("type." + typeName + "=" + (mapping is null && typeName == "net.minecraft.world.inventory.ClickType" ? "net.minecraft.world.inventory.ContainerInput" : RuntimeType(typeName)));
-        var gameplay = GamePlayBindings.Members.Select(value => value.Key == "worldAllowCommands" && mapping is not null && !members.ContainsKey((value.Owner, value.Signature))
+        var gameplay = GamePlayBindings.Members.Select(value => value.Key == "serverPublish" && scopedLan
+            ? (value.Key, value.Owner, Signature: scopedPublish) : value)
+            .Where(value => value.Key != "lanScope" || scopedLan)
+            .Select(value => value.Key == "worldAllowCommands" && mapping is not null && !members.ContainsKey((value.Owner, value.Signature))
             ? (value.Key, value.Owner, Signature: "getAllowCommands()") : value)
             .Where(value => mapping is null || members.ContainsKey((value.Owner, value.Signature)));
         foreach (var (key, declaredOwner, declaredSignature) in Members.Concat(region ? RegionMembers : []).Concat(gameplay))

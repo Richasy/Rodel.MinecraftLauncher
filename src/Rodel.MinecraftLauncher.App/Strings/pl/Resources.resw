@@ -6253,4 +6253,6 @@ Szczegóły: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Rozpakowywanie plików paczki</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Weryfikowanie plików paczki</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Wczytywanie instancji…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Oczekiwanie na ogłoszenie LAN</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Port gry jest gotowy, ale Terracotta nie wykryła ogłoszenia LAN. Pozostaw świat otwarty, sprawdź kartę sieciową i uprawnienia zapory dla składnika gry wieloosobowej, a następnie spróbuj ponownie.</value></data>
 </root>

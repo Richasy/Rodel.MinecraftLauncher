@@ -42,6 +42,7 @@ internal static class GamePlayBindings
         ("worldHardcore", "net.minecraft.world.level.storage.WorldData", "isHardcore()"),
         ("worldName", "net.minecraft.world.level.storage.WorldData", "getLevelName()"),
         ("serverPublish", "net.minecraft.client.server.IntegratedServer", "publishServer(net.minecraft.world.level.GameType,boolean,int)"),
+        ("lanScope", "net.minecraft.server.MinecraftServer$MultiplayerScope", "LAN"),
         ("serverPublished", "net.minecraft.server.MinecraftServer", "isPublished()"),
         ("serverPort", "net.minecraft.server.MinecraftServer", "getPort()"),
         ("serverWorldDirectory", "net.minecraft.server.MinecraftServer", "getWorldPath(net.minecraft.world.level.storage.LevelResource)"),

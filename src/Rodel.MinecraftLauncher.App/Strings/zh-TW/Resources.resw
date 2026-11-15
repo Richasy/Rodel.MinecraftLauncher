@@ -6220,4 +6220,6 @@ Minecraft {2} · {3}</value>
   <data name="PackExtracting" xml:space="preserve"><value>正在解壓整合包檔案</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>正在驗證整合包檔案</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>正在載入執行個體…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>等待區域網路廣播</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>遊戲連接埠已就緒，但陶瓦未能發現區域網路廣播。請確認世界仍在開放，並檢查網路介面卡及連線元件的防火牆授權後重試。</value></data>
 </root>

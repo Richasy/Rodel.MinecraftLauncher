@@ -2773,4 +2773,6 @@ Details: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Extracting pack files</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Verifying pack files</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Loading instances…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Waiting for LAN broadcast</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>The game port is ready, but Terracotta could not detect the LAN broadcast. Keep the world open and check the network adapter and firewall permissions for the multiplayer component, then retry.</value></data>
 </root>

@@ -35,6 +35,7 @@ internal static class MultiplayerPresentation
         "starting-game" => Resources.LaunchPreparing,
         "waiting-world" => Resources.MultiplayerWaiting,
         "manual" => Resources.MultiplayerManual,
+        "discovering" => Resources.MultiplayerLanDiscovering,
         "opening" or "connecting" or "preparing" => Resources.MultiplayerOpening,
         "retrying" => Resources.MultiplayerRetrying,
         "disconnected" or "failed" or "interrupted" => Resources.MultiplayerDisconnected,
@@ -53,6 +54,7 @@ internal static class MultiplayerPresentation
             && (left.Active == right.Active)
             && (left.State == right.State)
             && (left.ErrorCode == right.ErrorCode)
+            && (left.ComponentState == right.ComponentState)
             && (left.RetryCount == right.RetryCount)
             && (left.Invitation == right.Invitation)
             && (left.Address == right.Address)
