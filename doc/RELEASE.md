@@ -53,6 +53,8 @@
 
 Gradle 通过进程级 `org.gradle.java.installations.fromEnv` 显式发现 `setup-java` 安装的 8／17／21／25 工具链，不修改 runner 全局 Gradle 配置，也不把已有映射缓存当作缺失 JDK 的替代。
 
+正式构建显式禁用本地推理，checkout 不拉取私有的 `external/Rodel.Inference` 子模块；发布无需该私有仓库的跨仓库读取权限。仅开发本地推理时才按固定提交初始化子模块。
+
 两个构建入口都要求仓库 Actions secret `SPROUT_AZURE_READ_PAT` 具有私有 Sprout Azure Artifacts feed 的 Packaging Read 权限。仅构建步骤将其映射到 `sprout` NuGet 源的进程环境凭据，不写入源码、包或上传物，也不依赖 runner 的交互式登录。不要将令牌写入 workflow、共享文档或聊天。
 
 普通提交／PR 不自动打包。成功构建及包审计不等于安装／启动、真实 ARM64 运行、Minecraft、WACK 或商店认证通过；实际 runner 执行与包验收按对应运行结果判断。
