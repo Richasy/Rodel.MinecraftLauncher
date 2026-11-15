@@ -1,0 +1,152 @@
+name: Package EXE installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Four-part version ending in .0; blank uses the App project version
+        required: false
+        default: ''
+        type: string
+      architecture:
+        description: Native installer architecture
+        required: true
+        default: x64
+        type: choice
+        options:
+          - x64
+          - arm64
+
+permissions:
+  contents: read
+
+concurrency:
+  group: launcher-packaging
+  cancel-in-progress: false
+
+jobs:
+  package:
+    if: github.ref == 'refs/heads/main'
+    name: Build ${{ inputs.architecture }} EXE
+    runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
+    timeout-minutes: 180
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_ARCHITECTURE: ${{ inputs.architecture }}
+      RODEL_MICROSOFT_CLIENT_ID: ${{ secrets.RODEL_MICROSOFT_CLIENT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
+      - name: Resolve the installer version and require Microsoft login configuration
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = $env:INPUT_VERSION
+          if ([string]::IsNullOrWhiteSpace($version)) {
+            [xml]$project = Get-Content -LiteralPath 'src/Rodel.MinecraftLauncher.App/Rodel.MinecraftLauncher.App.csproj' -Raw
+            $version = $project.SelectSingleNode('/Project/PropertyGroup/SproutAppxVersion').InnerText
+          }
+          if ($version -cnotmatch '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.0$' -or
+              @($version.Split('.') | Where-Object { [long]$_ -gt 65535 }).Count) {
+            throw 'Supply a canonical four-part UInt16 version ending in .0.'
+          }
+          $clientId = [guid]::Empty
+          if (-not [guid]::TryParse($env:RODEL_MICROSOFT_CLIENT_ID, [ref]$clientId) -or $clientId -eq [guid]::Empty) {
+            throw 'Configure the RODEL_MICROSOFT_CLIENT_ID Actions secret before packaging.'
+          }
+          "RELEASE_VERSION=$version" >> $env:GITHUB_ENV
+          "version=$version" >> $env:GITHUB_OUTPUT
+      - uses: actions/setup-dotnet@v5
+        env:
+          DOTNET_INSTALL_DIR: ${{ runner.temp }}\dotnet
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '8'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Prepare isolated pinned Rust for the ARM64 filesystem MCP
+        if: inputs.architecture == 'arm64'
+        run: |
+          $env:CARGO_HOME = Join-Path $env:RUNNER_TOOL_CACHE 'rodel-cargo'
+          $env:RUSTUP_HOME = Join-Path $env:RUNNER_TOOL_CACHE 'rodel-rustup'
+          $rustup = Join-Path $env:CARGO_HOME 'bin\rustup.exe'
+          if (-not (Test-Path -LiteralPath $rustup)) {
+            $installer = Join-Path $env:RUNNER_TEMP 'rustup-init.exe'
+            Invoke-WebRequest 'https://static.rust-lang.org/rustup/archive/1.28.2/x86_64-pc-windows-msvc/rustup-init.exe' -OutFile $installer
+            & $installer -y --no-modify-path --default-toolchain none --profile minimal
+            if ($LASTEXITCODE -ne 0) { throw 'Isolated rustup installation failed.' }
+          }
+          & $rustup toolchain install 1.89.0 --profile minimal --target aarch64-pc-windows-msvc --no-self-update
+          if ($LASTEXITCODE -ne 0) { throw 'Pinned ARM64 Rust installation failed.' }
+          "CARGO_HOME=$env:CARGO_HOME" >> $env:GITHUB_ENV
+          "RUSTUP_HOME=$env:RUSTUP_HOME" >> $env:GITHUB_ENV
+          (Join-Path $env:CARGO_HOME 'bin') >> $env:GITHUB_PATH
+      - name: Prepare pinned Inno Setup compiler
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $directory = Join-Path $env:RUNNER_TOOL_CACHE 'rmcl-inno-setup\7.1.1'
+          $compiler = Join-Path $directory 'ISCC.exe'
+          $installed = Join-Path $env:LOCALAPPDATA 'Programs\Inno Setup 7\ISCC.exe'
+          if (-not (Test-Path -LiteralPath $compiler) -and (Test-Path -LiteralPath $installed)) {
+            $installedVersion = & $installed --version
+            if ($LASTEXITCODE -eq 0 -and ([string]$installedVersion).Trim() -ceq '7.1.1') {
+              $compiler = $installed
+            }
+          }
+          if (-not (Test-Path -LiteralPath $compiler)) {
+            $installer = Join-Path $env:RUNNER_TEMP ('innosetup-' + [guid]::NewGuid().ToString('N') + '.exe')
+            Invoke-WebRequest 'https://github.com/jrsoftware/issrc/releases/download/is-7_1_1/innosetup-7.1.1-x64.exe' -OutFile $installer
+            $expected = '8a5a6711c3766a6e5fb74f280ba0e3551e719ce94538d901fdbd1f8f9920b3f0'
+            if ((Get-FileHash -LiteralPath $installer -Algorithm SHA256).Hash.ToLowerInvariant() -cne $expected) {
+              throw 'Inno Setup installer SHA256 mismatch.'
+            }
+            $process = Start-Process -FilePath $installer -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-', '/CURRENTUSER', '/NOICONS', "/DIR=`"$directory`"") -WindowStyle Hidden -Wait -PassThru
+            if ($process.ExitCode -ne 0) { throw "Inno Setup installation failed ($($process.ExitCode))." }
+          }
+          $version = & $compiler --version
+          if ($LASTEXITCODE -ne 0 -or ([string]$version).Trim() -cne '7.1.1') {
+            throw 'Expected the pinned Inno Setup 7.1.1 compiler.'
+          }
+          "INNO_SETUP_COMPILER=$compiler" >> $env:GITHUB_ENV
+      - name: Build the independent NativeAOT installer
+        env:
+          SPROUT_AZURE_READ_PAT: ${{ secrets.SPROUT_AZURE_READ_PAT }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ([string]::IsNullOrWhiteSpace($env:SPROUT_AZURE_READ_PAT)) {
+            throw 'Configure the SPROUT_AZURE_READ_PAT Actions secret with Packaging Read access.'
+          }
+          $env:NuGetPackageSourceCredentials_sprout = "Username=build;Password=$env:SPROUT_AZURE_READ_PAT;ValidAuthenticationTypes=Basic"
+          [Environment]::SetEnvironmentVariable('ORG_GRADLE_PROJECT_org.gradle.java.installations.fromEnv', 'JAVA_HOME_8_X64,JAVA_HOME_17_X64,JAVA_HOME_21_X64,JAVA_HOME_25_X64')
+          .\scripts\package-exe.ps1 -Version $env:RELEASE_VERSION -Architecture $env:RELEASE_ARCHITECTURE `
+            -Compiler $env:INNO_SETUP_COMPILER -JavaHome $env:JAVA_HOME_25_X64 `
+            -LegacyJavaHome $env:JAVA_HOME_21_X64 -ObservationJavaHome $env:JAVA_HOME_8_X64
+      - name: Upload the installer and SHA256 checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: rmcl-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-exe
+          path: |
+            artifacts/release/${{ steps.version.outputs.version }}/win-${{ inputs.architecture }}/exe/RMCL-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-setup.exe
+            artifacts/release/${{ steps.version.outputs.version }}/win-${{ inputs.architecture }}/exe/RMCL-${{ steps.version.outputs.version }}-win-${{ inputs.architecture }}-setup.exe.sha256
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
