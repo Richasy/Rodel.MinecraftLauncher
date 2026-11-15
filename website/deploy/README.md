@@ -15,26 +15,26 @@
 
 ## 发布内容
 
-日常更新使用仓库 Actions 中的 **Deploy documentation → Run workflow**，选择 `main`。工作流只有手动入口，使用标签 `self-hosted / Windows / X64 / rodel-minecraftlauncher-build` 的自托管 runner；GitHub Environment `website-production` 也只允许 `main` 发布。
+仓库不再提供网站部署 workflow；当前 Actions 仅保留 Store 发布和独立 EXE 打包。网站源码、静态构建检查和部署脚本保留，线上站点及 `website-production` 环境配置继续保留。
 
-工作流使用 Node.js 24，依次执行锁定依赖安装、类型与格式检查、静态构建和 `check:static`。检查覆盖中英文文章配对、内部页面和锚点、图片原文件及内容指纹。随后打包纯静态产物，通过固定主机密钥的 SSH 上传，服务器核对归档 SHA256 后原子切换。每个版本包含公开的 `deployment.json`，记录提交、run、attempt 和发布时间。上线检查遍历 sitemap 的全部页面，并逐字节核对正文与首页引用的所有图片，同时确认不存在的页面、环境文件及 source map 返回 404；检查失败会切回上一版。
+独立部署环境使用 Node.js 24，依次执行锁定依赖安装、类型与格式检查、静态构建和 `check:static`，再运行 `node scripts/deploy.mjs`。该脚本要求真实的 `GITHUB_REF=refs/heads/main`、`GITHUB_SHA`、`GITHUB_RUN_ID` 和 `GITHUB_RUN_ATTEMPT`，不能直接在缺少执行元数据的本地终端运行。检查覆盖中英文文章配对、内部页面和锚点、图片原文件及内容指纹。随后打包纯静态产物，通过固定主机密钥的 SSH 上传，服务器核对归档 SHA256 后原子切换。每个版本包含公开的 `deployment.json`，记录提交、run、attempt 和发布时间。上线检查遍历 sitemap 的全部页面，并逐字节核对正文与首页引用的所有图片，同时确认不存在的页面、环境文件及 source map 返回 404；检查失败会切回上一版。
 
-Environment 配置由仓库管理员维护：
+以下为部署脚本的环境契约，由仓库管理员维护；当前两个打包 workflow 不读取这些配置：
 
-| 类型     | 名称                                    | 用途                                   |
-| -------- | --------------------------------------- | -------------------------------------- |
-| Secret   | `WEBSITE_SSH_KEY`                       | 专用 `rmcl-deploy` 账号的 Ed25519 私钥 |
-| Secret   | `WEBSITE_SSH_KNOWN_HOSTS`               | 从服务器核实的 OpenSSH 主机公钥记录    |
-| Variable | `WEBSITE_SSH_HOST` / `WEBSITE_SSH_PORT` | SSH 目标地址与端口                     |
-| Variable | `WEBSITE_SSH_USER`                      | 专用部署账号                           |
-| Variable | `WEBSITE_DEPLOY_ROOT`                   | `/home/www/rmcl`                       |
-| Variable | `WEBSITE_URL`                           | `https://rmcl.richasy.net`             |
+| 类型     | 名称                                    | 用途                                |
+| -------- | --------------------------------------- | ----------------------------------- |
+| Secret   | `WEBSITE_SSH_KEY`                       | 专用 `rmcl-deploy` 账号的 SSH 私钥  |
+| Secret   | `WEBSITE_SSH_KNOWN_HOSTS`               | 从服务器核实的 OpenSSH 主机公钥记录 |
+| Variable | `WEBSITE_SSH_HOST` / `WEBSITE_SSH_PORT` | SSH 目标地址与端口                  |
+| Variable | `WEBSITE_SSH_USER`                      | 专用部署账号                        |
+| Variable | `WEBSITE_DEPLOY_ROOT`                   | `/home/www/rmcl`                    |
+| Variable | `WEBSITE_URL`                           | `https://rmcl.richasy.net`          |
 
-账号没有 sudo 权限；发布不改 Nginx、证书、微软域验证文件或其他网站。临时上传位于 `incoming/`，通过线上检查后清理；旧 release 保留。日志与 Actions 摘要记录当前及上一个 release。SSH 私钥只存入 Environment，运行时写入 runner 临时目录并在结束时删除；不要将账号私钥或服务器证书加入 Git。
+账号没有 sudo 权限；发布不改 Nginx、证书、微软域验证文件或其他网站。临时上传位于 `incoming/`，通过线上检查后清理；旧 release 保留。发布日志记录当前及上一个 release；执行环境提供 `GITHUB_STEP_SUMMARY` 时也写入摘要。SSH 私钥只存入受控部署环境，运行时写入临时目录并在结束时删除；不要将账号私钥或服务器证书加入 Git。
 
 部署后的 HTTPS 检查使用 Windows 自带的 `curl.exe` 访问正式域名并保留完整证书校验，runner 同时需要 OpenSSH 的 `ssh`／`scp` 和 `tar` 命令。
 
-需要回滚时，将 `current` 原子切回 Actions 摘要记录的上一版；也可以在 `main` 回退网站源码后重新手动触发工作流。并发发布会排队，运行中的发布不会被下一次触发取消。
+需要回滚时，将 `current` 原子切回发布日志记录的上一版。独立部署环境须串行执行发布，不能同时修改 `current`；仓库当前没有可重新触发的网站部署工作流。
 
 在 `website/` 执行：
 

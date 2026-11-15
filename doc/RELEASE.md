@@ -44,27 +44,31 @@
 
 ## CI
 
-`.github\workflows\package-release.yml` 仅支持手动触发，构建使用标签 `self-hosted, Windows, X64, rodel-minecraftlauncher-build`。只为所选分发和架构创建任务；自动准备 .NET/JDK，SDK 安装到 runner 临时目录，不要求写入 Program Files。ARM64 Rust 安装隔离在 runner 工具缓存，不切换主机用户的默认工具链。使用相同构建与审计脚本，不包含商店发布步骤、商店凭据或提交权限。只有通过审计的包才可作为交付物。
+仓库仅保留两个工作流，均只在 `main` 手动触发：
 
-侧载构建另以 `-IncludeValidationAssets` 生成独立的 NativeAOT CLI 和正式测试执行物，不把 CLI、测试或报告放进 App。`verify-runtime` 分别在 Windows x64 与 `windows-11-arm` 的真实 Windows ARM64 hosted VM 验证 CLI/Core、从准确 MSIX 提取的三个 MCP 的真实初始化／目录及文件读取，以及同一签名 MSIX 的 Sprout.DevTools UIA 设置入口和完整清理；测试产物和证据与玩家包分开上传。编译成功、PE 通过或 x64 模拟均不能代替 ARM64 运行通过；这些检查也不代表 Minecraft、WACK 或商店认证已通过。
+- `.github/workflows/release-store.yml`：Store 双架构构建与发布，以及既有提交的只读检查和 GitHub Release 恢复。
+- `.github/workflows/package-exe.yml`：独立 EXE 安装包，成功后将安装包与 SHA256 文件上传到本次运行的 Actions Artifacts，保留 14 天。
 
-仅修复运行门禁时，可传 `validation_run_id` 复用本仓库既有运行的侧载包和测试资产，跳过源码重建；版本、架构须与该运行的 artifact 一致。此模式使用独立并发组，不阻塞正常打包；它验证原运行的准确包，不将原包记为新 workflow 提交构建。
+两个入口共用 `launcher-packaging` 并发组，不取消已有任务；构建使用标签 `self-hosted, Windows, X64, rodel-minecraftlauncher-build`。自动准备 .NET/JDK，SDK 安装到 runner 临时目录。ARM64 Rust 安装隔离在 runner 工具缓存，不切换主机用户的默认工具链。EXE 工作流还会校验官方安装程序 SHA256，以当前用户安装固定的 Inno Setup 7.1.1，并保留编译器缓存供后续运行复用。构建主机仍须具备前述 PowerShell、Visual Studio C++ 和 Windows SDK。
 
 Gradle 通过进程级 `org.gradle.java.installations.fromEnv` 显式发现 `setup-java` 安装的 8／17／21／25 工具链，不修改 runner 全局 Gradle 配置，也不把已有映射缓存当作缺失 JDK 的替代。
 
-仓库 Actions secret `SPROUT_AZURE_READ_PAT` 须具有私有 Sprout Azure Artifacts feed 的 Packaging Read 权限。仅构建步骤将其映射到 `sprout` NuGet 源的进程环境凭据，不写入源码、包或上传物，也不依赖 runner 的交互式登录。不要将令牌写入 workflow、共享文档或聊天。
+两个构建入口都要求仓库 Actions secret `SPROUT_AZURE_READ_PAT` 具有私有 Sprout Azure Artifacts feed 的 Packaging Read 权限。仅构建步骤将其映射到 `sprout` NuGet 源的进程环境凭据，不写入源码、包或上传物，也不依赖 runner 的交互式登录。不要将令牌写入 workflow、共享文档或聊天。
 
-普通提交／PR 不自动打包。实际 runner 执行与包验收以对应工作流结果为准。
+普通提交／PR 不自动打包。成功构建及包审计不等于安装／启动、真实 ARM64 运行、Minecraft、WACK 或商店认证通过；实际 runner 执行与包验收按对应运行结果判断。
 
 ## 正式商店更新
 
-`.github\workflows\release-store.yml` 仅在 main 手动执行，与普通打包共用 `launcher-packaging` 并发组，不取消已有任务。单个既有自托管构建 job 串行构建并审计 x64／ARM64，直接上传商店，不经 Actions artifact 或 GitHub Release 附件中转。GitHub Release 使用 `v<四段版本>` 标签，绑定准确源码，不冒充已通过认证／上架。
+`.github\workflows\release-store.yml` 仅在 main 手动执行，与 EXE 打包共用 `launcher-packaging` 并发组，不取消已有任务。单个既有自托管构建 job 串行构建并审计 x64／ARM64，直接上传商店，不经 Actions artifact 或 GitHub Release 附件中转。GitHub Release 使用 `v<四段版本>` 标签，绑定准确源码，不冒充已通过认证／上架。
 
 | 输入 | 默认及行为 |
 | --- | --- |
-| `version` | 留空时递增已发布 patch；也可指定合法的更高四段版本 |
+| `mode` | 默认 `release`；`inspect` 只读检查既有商店提交，`receipt` 读取原 runner 的回执 |
+| `version` | `release` 模式使用；留空时递增已发布 patch，也可指定合法的更高四段版本 |
 | `publish_store` | 默认 `false`，只构建和验证，不创建草稿；设为 `true` 才上传并 commit，认证通过后自动发布 |
 | `generate_release_notes` | **可选，默认 `false`**；不调用AI、不更新或清空商店原有说明，只替换包。勾选时才生成并写入全部15语言说明 |
+| `submission_id` | `inspect` 模式必填，使用回执中的准确商店提交 ID |
+| `release_run` | 原始 `runId-attempt`；`receipt` 模式必填，`inspect` 模式可选，用于商店接受后仅恢复 GitHub Release |
 
 Store凭据使用 `STORE_TENANT_ID`、`STORE_CLIENT_ID`、`STORE_CLIENT_SECRET` Actions secrets；微软登录及私有feed使用上述独立secrets，不能把商店服务主体ID当作Minecraft OAuth ID。AI使用variables `RELEASE_AI_ENABLED`、`RELEASE_AI_ENDPOINT`、`RELEASE_AI_MODEL`和secret `RELEASE_AI_API_KEY`。初始禁用／未配置，用户填入HTTPS OpenAI兼容基础地址、模型及key后，将enabled设为 `true`；未勾选日志无需配置AI。勾选但配置不完整时在商店写入前失败，不伪造更新说明。AI只收到公开commit标题，不发送源码或凭据。
 
@@ -78,9 +82,9 @@ Store凭据使用 `STORE_TENANT_ID`、`STORE_CLIENT_ID`、`STORE_CLIENT_SECRET` 
 
 原生HTTP传输对API请求显式使用JSON类型，包括不带正文的创建／commit POST，避免PowerShell默认标成表单；OAuth令牌表单及Azure ZIP上传分别保留自己的类型。失败只保留有长度上限且已去掉已知凭据、令牌及URL的服务诊断，不输出原始错误响应或签名地址。收到HTTP拒绝仍须先只读确认实际草稿状态，不能直接重跑写入。
 
-回执、计划、说明和准确包保留在checkout之外的 `RUNNER_WORKSPACE\launcher-store-releases\<runId>-<attempt>`，步骤摘要给出位置和状态。未知commit结果不得重跑正式写入。用 `.github\workflows\inspect-store.yml` 的 `submission_id` 只读检查；如需补建GitHub Release，再提供原始 `release_run=runId-attempt`。恢复会核对原workflow、main、SHA、准确draft和回执，只完成GitHub交付，不重新上传或commit商店。相同标签／正文幂等复用，不覆盖不同源码或说明的Release。
+回执、计划、说明和准确包保留在checkout之外的 `RUNNER_WORKSPACE\launcher-store-releases\<runId>-<attempt>`，步骤摘要给出位置和状态。未知commit结果不得重跑正式写入。在同一 Store 工作流选择 `mode=inspect` 并填写 `submission_id` 只读检查；如需补建GitHub Release，再提供原始 `release_run=runId-attempt`。恢复会核对原workflow、main、SHA、准确draft和回执，只完成GitHub交付，不重新上传或commit商店。相同标签／正文幂等复用，不覆盖不同源码或说明的Release。
 
-失败日志没有草稿ID时，可在同一检查工作流传 `receipt_only=true` 与原 `release_run`，仅从原runner读取已完成运行的准确回执，输出阶段、草稿ID与commit意图，不读取上传凭据或执行Store／GitHub写入；此模式不需要 `submission_id`。不能把产品摘要缺少pending字段当作某个已知草稿不存在的证据。
+失败日志没有草稿ID时，可在同一 Store 工作流选择 `mode=receipt` 并填写原 `release_run`，仅从原runner读取已完成运行的准确回执，输出阶段、草稿ID与commit意图，不读取上传凭据或执行Store／GitHub写入；此模式不需要 `submission_id`。不能把产品摘要缺少pending字段当作某个已知草稿不存在的证据。
 
 参考为 `Richasy/Rodel.Player@c02f4ea76cf02cf9a733f45d7f765e5001de1893` 的发行配置；本仓库状态、基线和包由自己的真实读取与审计决定，不能由脚本回归通过推定真实发布成功。
 
@@ -120,7 +124,13 @@ CSV 必须基于当前产品从后台导出的模板，完整保留行列数、�
 
 手工资料草稿与正式更新工作流分开操作；网页编辑进行中不混用API。用户明确选择正式workflow的 `publish_store` 才授权本次上传与commit；仅保存文案、登记图片或向SAS上传ZIP不自动授权发布。程序包须来自已审计的同一冻结源码，不混入符号、工具或验证报告；`PendingUpload` 不等于商店已解包或校验。
 
-## GitHub EXE 发行版
+## 独立 EXE 安装包
+
+在 Actions 中手动运行 **Package EXE installer**，选择 `main`：`version` 留空时使用 App 工程的版本，也可输入末段为 `0` 的规范四段 UInt16 版本；`architecture` 默认为 `x64`，也可选择 `arm64`，每次运行只构建所选架构。它复用 `scripts/package-exe.ps1` 生成当前用户安装的自包含 NativeAOT 安装包，不读取 Store 或 AI 凭据。
+
+成功后从运行页面的 `rmcl-<version>-win-<architecture>-exe` artifact 下载安装包及同名 `.sha256`，保留 14 天。上传路径仅包含这两个准确文件，不上传 `payload-*`、编译器、调试符号、凭据或测试执行物。工作流不创建 GitHub Release；需要正式发行时，再按下述要求发布已核验的安装包。
+
+### GitHub EXE 发行版
 
 GitHub Release 附带当前用户安装的 `win-x64-setup.exe`、同名 SHA256 校验文件及 `LICENSE.txt` / `NOTICE.txt`。发布前核对安装包版本、字节摘要与标签对应源码；不上传临时 `payload-*`、符号、签名私钥或机器数据。独立 EXE 安装方式见[App说明](../src/Rodel.MinecraftLauncher.App/README.md)。
 
