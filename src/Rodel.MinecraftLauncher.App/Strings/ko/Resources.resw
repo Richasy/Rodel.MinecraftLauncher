@@ -6220,4 +6220,6 @@ Minecraft {2} · {3}</value>
   <data name="PackExtracting" xml:space="preserve"><value>팩 파일 압축 해제 중</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>팩 파일 검증 중</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>인스턴스 불러오는 중…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>LAN 알림을 기다리는 중</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>게임 포트는 준비되었지만 Terracotta가 LAN 알림을 감지하지 못했습니다. 월드를 계속 공개한 상태에서 네트워크 어댑터와 멀티플레이 구성 요소의 방화벽 권한을 확인한 후 다시 시도하세요.</value></data>
 </root>

@@ -29,12 +29,13 @@ public sealed class MultiplayerRecoveryTests
         await ReportStorage.RunAsync(async paths =>
         {
             using var stop = CancellationTokenSource.CreateLinkedTokenSource(TestContext.CancellationToken);
-            stop.CancelAfter(TimeSpan.FromSeconds(60));
+            // The outer lifetime includes the component's own 60-second discovery and bounded teardown.
+            stop.CancelAfter(TimeSpan.FromSeconds(150));
             var ct = stop.Token;
             var client = new LauncherClient(paths);
             var instance = await client.Instances.CreateAsync("Legacy LAN", "1.6.4", ct);
             await using var bridge = await BridgeFixture.CreateAsync(ct, paths.Root, instance.Id);
-            await using var game = new MultiplayerRoomTests.StatusListener(legacy: legacy);
+            await using var game = new MinecraftStatusFixture(legacy: legacy);
             var run = client.Multiplayer.RunAsync(new() { RoomId = Guid.NewGuid().ToString("N"), Role = "host", InstanceId = instance.Id, SessionId = bridge.Session, AutoOpen = false }, ct);
             try
             {
@@ -66,7 +67,7 @@ public sealed class MultiplayerRecoveryTests
             await using var bridge = await BridgeFixture.CreateAsync(ct, paths.Root, instance.Id);
             var operations = new List<string>();
             var resolve = false;
-            MultiplayerRoomTests.StatusListener? game = null;
+            MinecraftStatusFixture? game = null;
             string? operationId = null;
             await using var peer = await bridge.ConnectAsync(request =>
             {
@@ -154,7 +155,7 @@ public sealed class MultiplayerRecoveryTests
             var port = ((IPEndPoint)reservation.LocalEndpoint).Port;
             reservation.Stop();
             var run = client.Multiplayer.RunAsync(new() { RoomId = Guid.NewGuid().ToString("N"), Role = "guest", InstanceId = instance.Id, Invitation = RoomCode.Create(), StartGame = false }, ct);
-            MultiplayerRoomTests.StatusListener? game = null;
+            MinecraftStatusFixture? game = null;
             try
             {
                 var initial = await WaitAsync(client, run, room => room.ComponentPort is not null, ct);
@@ -305,12 +306,20 @@ public sealed class MultiplayerRecoveryTests
         }
     }
 
-    private static async Task<MultiplayerRoom> WaitAsync(LauncherClient client, Task<MultiplayerRoom> run, Func<MultiplayerRoom, bool> predicate, CancellationToken ct)
+    private async Task<MultiplayerRoom> WaitAsync(LauncherClient client, Task<MultiplayerRoom> run, Func<MultiplayerRoom, bool> predicate, CancellationToken ct)
     {
+        string? previous = null;
         while (true)
         {
             if (run.IsCompleted) await run;
-            if (client.Multiplayer.Get() is { } room && predicate(room)) return room;
+            if (client.Multiplayer.Get() is { } room)
+            {
+                var phase = $"{room.State}/{room.ErrorCode}/component={room.ComponentState}/gamePortObserved={room.GamePort is not null}";
+                if (phase != previous) { TestContext.WriteLine(phase); previous = phase; }
+
+                if (predicate(room)) return room;
+            }
+
             await Task.Delay(100, ct);
         }
     }

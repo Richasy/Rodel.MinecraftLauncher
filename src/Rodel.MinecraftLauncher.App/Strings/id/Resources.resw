@@ -6229,4 +6229,6 @@ Detail: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Mengekstrak berkas paket</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Memverifikasi berkas paket</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Memuat instans…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Menunggu siaran LAN</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Port game sudah siap, tetapi Terracotta tidak mendeteksi siaran LAN. Biarkan dunia terbuka dan periksa adaptor jaringan serta izin firewall komponen multipemain, lalu coba lagi.</value></data>
 </root>

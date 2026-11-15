@@ -49,9 +49,11 @@
 
 `TerracottaRuntimeTests` 使用实际 Windows Filtering Platform 应用标识验证两个临时目录入口具有相同身份，检查缓存损坏恢复和删除联接后共享映像保留；不监听网络、不写防火墙规则。真实组件生命周期还在正常连接及 worker 替换后核对固定程序路径和解包联接。
 
-`VersionCatalogCacheTests` 验证跨服务并发共享、过期/强刷、损坏与离线恢复；`RoomGameEntryTests` 通过真实双向 TCP 验证固定入口、切换目标和旧流终止。`MultiplayerAdmissionTests` 运行实际 CLI，检查原生码验证、单房间租约、邀请保护与非重放任务。`PackWorkflowTests` 另核对联机导出不携带个人数据或无来源组件；`PackCompletionTests` 的既有恢复流程覆盖单文件暂存的错误/正确字节。Java桥场景 `lan_publish/lan_stale` 保护原生发布、幂等和旧世界拒绝。
+`VersionCatalogCacheTests` 验证跨服务并发共享、过期/强刷、损坏与离线恢复；`RoomGameEntryTests` 通过真实双向 TCP 验证固定入口、切换目标和旧流终止。`MultiplayerAdmissionTests` 运行实际 CLI，检查原生码验证、单房间租约、邀请保护与非重放任务。`PackWorkflowTests` 另核对联机导出不携带个人数据或无来源组件；`PackCompletionTests` 的既有恢复流程覆盖单文件暂存的错误/正确字节。Java桥 LAN 场景保护旧式／MultiplayerScope 原生发布、独立访客权限、幂等、旧世界拒绝和绑定缺失时效果前拒绝；它们使用受控 Java API／线程，不等同于真实 Minecraft 运行。
 
 `MultiplayerRoomTests` 的 Live 用例需 `RODEL_MULTIPLAYER_LIVE=1`，启动随包陶瓦和公开发现服务，使用合成 Minecraft 状态端口/LAN 广播；验证真实组件端口/所有权、杀死已记录 worker 后有限恢复、同码和保留游戏。另一 Live 用例将已经存在的游戏监听与延迟发布收据交错，要求继续读取终态、世界从开放中变为已开放且仅提交一次。它不等于双机/跨网络/游戏入服，也不代替实际隔离 Minecraft 与原生 UIA/WGC 验收。
+
+`MultiplayerPublicationTests` 保持原开放回执未知，交错手动 LAN／延迟世界观察、已连接后的多次回执刷新和网络重试，要求邀请码持续可用且不重放世界操作，随后观察原回执完成。另一用例只停发 UDP，保留真实 TCP 监听，跨实际发现超时后启用广播并恢复同一房间，检查独立组件阶段与脱敏导出。`MultiplayerPublicationWorkflowTests` 经实际 CLI 的后台房间拥有者、show/retry/export-log/stop 验证相同边界及源生成字段，可用 `RODEL_TEST_CLI_EXECUTABLE` 指向正常 NativeAOT CLI；三个类均以 `RODEL_MULTIPLAYER_LIVE=1` 选择真实随包组件／公开服务，替代的是游戏端口和桥回执，不证明跨网络入服。
 `SavedRegionReadTests`通过独立NBT夹具验证实际保存的方块朝向、未知覆盖、Items／组件精确整数、未开启LootTable不求值，以及原版模型和物品图像读取；夹具运行时故意不可生成且没有种子。另一个行为保护收藏的实例／存档身份及跨修订JSON恢复。`WorldMapReadTests`在同一保存结构夹具中核对完整子件边界和附近结构过滤。它们补充真实只读存档及packaged App核验，不代替真实游戏定位或所有历史版本验收。
 
 Automated tests for Core behavior, non-UI Assistant workflows, the command-line interface and the independent Minecraft skin editing library, using MSTest and Microsoft.Testing.Platform.

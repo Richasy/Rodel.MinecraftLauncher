@@ -132,15 +132,22 @@ public final class GameBridgeChecks {
         public boolean isAlive() { return health > 0; }
         public void setHealth(float value) { if (!Thread.currentThread().getName().equals("fixture-server")) throw new AssertionError("wrong authority thread"); health = value; writes++; applied = true; }
     }
+    public enum PublicationScope { OFF, LAN }
     public static final class Server {
         public final WorldData data = new WorldData();
         int publishedPort, publications;
+        boolean guestCommands = true;
         public WorldData getWorldData() { return data; }
         public boolean isPublished() { return publishedPort != 0; }
         public int getPort() { return publishedPort; }
         public boolean publishServer(Object mode, boolean cheats, int port) {
             check(Thread.currentThread().getName().equals("fixture-client"), "LAN publish must use the native client executor");
             check(mode == null && !cheats && !data.isAllowCommands(), "hosting must preserve mode and disabled cheats");
+            publishedPort = port; publications++; return true;
+        }
+        public boolean publishServer(PublicationScope scope, int port) {
+            check(Thread.currentThread().getName().equals("fixture-client"), "LAN publish must use the native client executor");
+            check(scope == PublicationScope.LAN && guestCommands && !data.isAllowCommands(), "scoped publication must preserve independent guest and world permissions");
             publishedPort = port; publications++; return true;
         }
         public final Recipes recipes = new Recipes();
@@ -163,6 +170,9 @@ public final class GameBridgeChecks {
             case "cancel" -> cancel(root);
             case "lan_publish" -> lanPublish(root, false);
             case "lan_stale" -> lanPublish(root, true);
+            case "lan_scoped" -> lanPublish(root, false, true);
+            case "lan_scoped_stale" -> lanPublish(root, true, true);
+            case "lan_unsupported" -> lanUnsupported(root);
             case "stale" -> stale(root);
             case "remote" -> remote(root);
             case "connection_switch" -> connectionSwitch(root);
@@ -192,6 +202,9 @@ public final class GameBridgeChecks {
         return create(root, System::nanoTime);
     }
     private static GameAccess create(Path root, LongSupplier regionClock) throws Exception {
+        return create(root, regionClock, false, false);
+    }
+    private static GameAccess create(Path root, LongSupplier regionClock, boolean scopedLan, boolean unsupportedLan) throws Exception {
         Client.instance = new Client();
         String owner = GameBridgeChecks.class.getName() + "$";
         String[][] members = {
@@ -229,6 +242,11 @@ public final class GameBridgeChecks {
             for (var method : Class.forName(owner + member[1]).getDeclaredMethods()) if (method.getName().equals(member[2]))
                 bindings.setProperty(member[0] + ".parameters", String.join(",", Arrays.stream(method.getParameterTypes()).map(Class::getName).toList()));
         }
+        bindings.setProperty("serverPublish.parameters", scopedLan ? owner + "PublicationScope,int" : "java.lang.Object,boolean,int");
+        if (scopedLan) {
+            bindings.setProperty("lanScope", "LAN"); bindings.setProperty("lanScope.owner", owner + "PublicationScope");
+        }
+        if (unsupportedLan) bindings.setProperty("serverPublish", "missingPublishServer");
         Path file = root.resolve("bindings.properties");
         try (var output = Files.newOutputStream(file)) { bindings.store(output, "synthetic exact API bindings"); }
         Instrumentation instrumentation = (Instrumentation)Proxy.newProxyInstance(GameBridgeChecks.class.getClassLoader(), new Class<?>[]{Instrumentation.class},
@@ -251,7 +269,10 @@ public final class GameBridgeChecks {
     /** Review: LAN is a separate game effect, not a cheat command. Real executor barriers distinguish
      * preserving an existing publication from opening a replacement world with a stale capability. */
     private static void lanPublish(Path root, boolean stale) throws Exception {
-        GameAccess game = create(root);
+        lanPublish(root, stale, false);
+    }
+    private static void lanPublish(Path root, boolean stale, boolean scopedLan) throws Exception {
+        GameAccess game = create(root, System::nanoTime, scopedLan, false);
         var request = edit(game); request.remove("health"); request.put("kind", "world.publish");
         CountDownLatch release = stale ? blockServer() : null;
         try {
@@ -271,6 +292,17 @@ public final class GameBridgeChecks {
             game.edit(second); clientBarrier(); Client.instance.server.executor.submit(() -> { }).get(5, TimeUnit.SECONDS); clientBarrier();
             check(Client.instance.server.publishedPort == port && Client.instance.server.publications == 1, "existing native LAN must be reused without changing permissions");
         } finally { if (release != null) release.countDown(); }
+    }
+
+    /** Review: a missing fixed API is knowable before native publication. Reject it before applying,
+     * preserving zero effects rather than leaving an unknown operation that blocks recovery. */
+    private static void lanUnsupported(Path root) throws Exception {
+        GameAccess game = create(root, System::nanoTime, true, true);
+        var request = edit(game); request.remove("health"); request.put("kind", "world.publish");
+        game.edit(request); clientBarrier(); Client.instance.server.executor.submit(() -> { }).get(5, TimeUnit.SECONDS); clientBarrier();
+        var operation = game.operation(Json.object("operationId", request.get("operationId")), false);
+        check("rejected".equals(operation.get("state")) && "GAME_BINDING_UNSUPPORTED".equals(operation.get("errorCode")), "unsupported publication must reject before effects");
+        check(Client.instance.server.publications == 0 && Client.instance.server.publishedPort == 0, "unsupported publication must not open a listener");
     }
 
     /** Review: real dispatcher queries must reflect replaced loaded recipes, preserve ingredient alternatives and output counts,

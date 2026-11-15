@@ -112,19 +112,27 @@ final class Bindings {
             throw absent;
         }
     }
-    Object call(Object target, String key, Object... arguments) throws Exception {
+    private Method boundMethod(String key) throws Exception {
         try {
-        Method method = methods.get(key);
-        if (method == null) {
-            // Argument types are selected by the fixed bridge implementation, never by the peer.
-            String[] names = this.names.getProperty(key + ".parameters", "").split(",");
-            Class<?>[] parameters = names.length == 1 && names[0].isEmpty() ? new Class<?>[0] : new Class<?>[names.length];
-            for (int index = 0; index < parameters.length; index++) parameters[index] = parameterType(names[index]);
-            method = method(key, parameters);
-            method.setAccessible(true); methods.put(key, method);
-        }
-        return method.invoke(target, arguments);
+            Method method = methods.get(key);
+            if (method == null) {
+                // Argument types are selected by the fixed bridge implementation, never by the peer.
+                String[] names = this.names.getProperty(key + ".parameters", "").split(",");
+                Class<?>[] parameters = names.length == 1 && names[0].isEmpty() ? new Class<?>[0] : new Class<?>[names.length];
+                for (int index = 0; index < parameters.length; index++) parameters[index] = parameterType(names[index]);
+                method = method(key, parameters);
+                method.setAccessible(true); methods.put(key, method);
+            }
+            return method;
         } catch (Exception error) {
+            if (reported.add(key)) System.err.println("[rodel-bridge] Unsupported binding " + key + " (" + error.getClass().getSimpleName() + ")");
+            throw error;
+        }
+    }
+    void requireMethod(String key) throws Exception { boundMethod(key); }
+    Object call(Object target, String key, Object... arguments) throws Exception {
+        try { return boundMethod(key).invoke(target, arguments); }
+        catch (Exception error) {
             if (reported.add(key)) System.err.println("[rodel-bridge] Unsupported binding " + key + " (" + error.getClass().getSimpleName() + ")");
             throw error;
         }

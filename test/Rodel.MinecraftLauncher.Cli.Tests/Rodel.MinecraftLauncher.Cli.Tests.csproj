@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="../Fixtures/GameBridge/BridgePeerFixture.cs" Link="Infrastructure/BridgePeerFixture.cs" />
+    <Compile Include="../Fixtures/Multiplayer/*.cs" Link="Infrastructure/%(Filename)%(Extension)" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <Compile Include="..\Common\ModelEndpoint.cs" Link="Infrastructure\ModelEndpoint.cs" />
     <PackageReference Include="ModelContextProtocol.Core" Version="2.2.0" />
@@ -27,6 +28,7 @@
     <ItemGroup>
       <CliUnderTest Include="$(CliTargetDirectory)*" Exclude="$(CliTargetDirectory)*.pdb" />
       <CliUnderTest Include="$(CliTargetDirectory)*/*.resources.dll;$(CliTargetDirectory)runtimes/**/*" />
+      <CliUnderTest Include="$(CliTargetDirectory)Assets/Terracotta/**/*" />
       <CliUnderTest Update="@(CliUnderTest)">
         <DeploymentPath>$([MSBuild]::MakeRelative('$(CliTargetDirectory)', '%(CliUnderTest.FullPath)'))</DeploymentPath>
       </CliUnderTest>

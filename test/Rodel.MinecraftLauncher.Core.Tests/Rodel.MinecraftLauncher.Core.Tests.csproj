@@ -12,6 +12,7 @@
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/SeedExplorer/SeedWorldMapLoading.cs" Link="Presentation/SeedWorldMapLoading.cs" />
     <Compile Include="../Fixtures/SeedScene/SceneFixture.cs" Link="Infrastructure/SceneFixture.cs" />
     <Compile Include="../Fixtures/GameBridge/BridgePeerFixture.cs" Link="Infrastructure/BridgePeerFixture.cs" />
+    <Compile Include="../Fixtures/Multiplayer/*.cs" Link="Infrastructure/%(Filename)%(Extension)" />
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Accounts/Avatars/AccountAvatarStore.cs" Link="AppPreferences/AccountAvatarStore.cs" />
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Images/ImageCrop.cs" Link="AppPreferences/ImageCrop.cs" />
     <!-- Palette ownership and commit ordering are UI-independent; actual LocalSettings and controls are verified in the packaged app. -->

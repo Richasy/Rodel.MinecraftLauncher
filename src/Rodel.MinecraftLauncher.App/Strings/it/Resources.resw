@@ -6235,4 +6235,6 @@ Dettagli: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Estrazione dei file del pacchetto</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Verifica dei file del pacchetto</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Caricamento delle istanze…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>In attesa dell’annuncio LAN</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>La porta del gioco è pronta, ma Terracotta non ha rilevato l’annuncio LAN. Mantieni aperto il mondo, controlla la scheda di rete e i permessi del firewall per il componente multigiocatore, quindi riprova.</value></data>
 </root>

@@ -2772,4 +2772,6 @@ Minecraft {2} · {3}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>正在解压整合包文件</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>正在校验整合包文件</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>正在加载实例…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>等待局域网广播</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>游戏端口已就绪，但陶瓦未能发现局域网广播。请确认世界仍在开放，并检查网卡及联机组件的防火墙授权后重试。</value></data>
 </root>

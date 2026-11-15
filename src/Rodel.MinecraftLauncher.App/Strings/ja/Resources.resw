@@ -6221,4 +6221,6 @@ Minecraft {2} · {3}</value>
   <data name="PackExtracting" xml:space="preserve"><value>パックのファイルを展開中</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>パックのファイルを検証中</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>インスタンスを読み込み中…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>LAN の公開通知を待機中</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>ゲームのポートは準備できていますが、Terracotta が LAN の公開通知を検出できませんでした。ワールドを公開したまま、ネットワークアダプターとマルチプレイ用コンポーネントのファイアウォール許可を確認し、再試行してください。</value></data>
 </root>

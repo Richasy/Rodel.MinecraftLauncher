@@ -6221,4 +6221,6 @@ Details: {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Modpack-Dateien werden entpackt</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Modpack-Dateien werden überprüft</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Instanzen werden geladen…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Warte auf LAN-Ankündigung</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Der Spielport ist bereit, aber Terracotta konnte die LAN-Ankündigung nicht erkennen. Lass die Welt geöffnet, prüfe den Netzwerkadapter und die Firewall-Berechtigungen der Mehrspielerkomponente und versuche es erneut.</value></data>
 </root>

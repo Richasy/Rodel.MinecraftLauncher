@@ -142,13 +142,14 @@ public sealed class MultiplayerService(LauncherClient client)
         return room;
     }
 
-    /// <summary>Exports only this room's bounded state/error history, excluding invitations, addresses and player data.</summary>
+    /// <summary>Exports bounded room, component and world phases plus whether a game listener was observed, excluding invitations, addresses and player data.</summary>
     public async Task ExportLogAsync(string roomId, string destination, CancellationToken ct = default)
     {
         ValidateId(roomId);
         var file = EventsFile(roomId);
         var events = File.Exists(file) ? JsonSerializer.Deserialize(await File.ReadAllTextAsync(file, ct).ConfigureAwait(false), TerracottaJsonContext.Default.RoomEventArray) ?? [] : [];
-        var contents = "陶瓦联机连接记录\n" + string.Join('\n', events.Select(entry => $"{entry.At:O}\t{entry.State}\t{entry.Code}"));
+        var contents = "陶瓦联机连接记录\ntime\troomState\terrorCode\tcomponentState\tgamePortObserved\tworldState\n"
+            + string.Join('\n', events.Select(entry => $"{entry.At:O}\t{entry.State}\t{entry.Code}\t{entry.ComponentState}\t{(entry.GamePortObserved ? "true" : "false")}\t{entry.WorldState}"));
         var bytes = Encoding.UTF8.GetBytes(contents);
         using var stream = new MemoryStream(bytes);
         var full = Path.GetFullPath(destination);

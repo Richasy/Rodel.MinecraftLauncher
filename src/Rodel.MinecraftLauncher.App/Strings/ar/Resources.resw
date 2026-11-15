@@ -3238,4 +3238,6 @@ Minecraft {2} · {3}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>جارٍ استخراج ملفات الحزمة</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>جارٍ التحقق من ملفات الحزمة</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>جارٍ تحميل المثيلات…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>بانتظار بث الشبكة المحلية</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>منفذ اللعبة جاهز، لكن Terracotta لم يكتشف بث الشبكة المحلية. أبقِ العالم مفتوحًا وتحقق من محول الشبكة وأذونات جدار الحماية لمكوّن اللعب الجماعي، ثم أعد المحاولة.</value></data>
 </root>

@@ -259,6 +259,7 @@ internal sealed class MultiplayerRoomSession
         _room = _room with { ComponentPort = _component.Port, ComponentProcessId = _component.WorkerId, ComponentStartedAt = _component.WorkerStartedAt };
         _index = -1;
         var initial = await _component.StateAsync(ct).ConfigureAwait(false);
+        _room = _room with { ComponentState = initial.State };
         if (initial.State != "waiting")
         {
             if (_previous?.ComponentPort != _component.Port || _previous.Active)
@@ -432,7 +433,7 @@ internal sealed class MultiplayerRoomSession
                 var query = new GameQueryRequest { GameIncarnation = snapshot.GameIncarnation, WorldEpoch = snapshot.WorldEpoch!, Dimension = snapshot.Dimension!, Kind = "world" };
                 var observed = await _client.GameBridge.QueryAsync(sessionId, query, ct).ConfigureAwait(false);
                 var name = observed.Data.TryGetProperty("name", out var title) && title.ValueKind == JsonValueKind.String ? title.GetString()! : string.Empty;
-                _room = _room with { State = "opening", World = new(name, world, "opening") };
+                _room = _room with { State = _room.GamePort is null && _room.Path == "terracotta" ? "opening" : _room.State, World = new(name, world, "opening") };
                 _publication = new() { OperationId = Guid.NewGuid().ToString("N"), GameIncarnation = snapshot.GameIncarnation, WorldEpoch = snapshot.WorldEpoch!, Dimension = snapshot.Dimension!, Kind = "world.publish" };
                 _ = await _client.GameBridge.EditAsync(sessionId, _publication, ct).ConfigureAwait(false);
             }
@@ -470,7 +471,14 @@ internal sealed class MultiplayerRoomSession
         }
     }
 
-    private void Manual(string? code) => _room = _room with { State = "manual", ErrorCode = code ?? "MULTIPLAYER_AUTOMATION_UNAVAILABLE" };
+    private void Manual(string? code)
+    {
+        // A manually opened, verified listener is independent evidence. Keep observing the original
+        // publication receipt without letting its uncertainty overwrite network progress or failures.
+        _room = _room with { World = _room.World is { } world ? world with { State = "unknown" } : null };
+        if (_room.GamePort is null && _room.Path == "terracotta")
+            _room = _room with { State = "manual", ErrorCode = code ?? "MULTIPLAYER_AUTOMATION_UNAVAILABLE" };
+    }
 
     private async Task ObserveFallbackAsync(CancellationToken ct)
     {
@@ -572,7 +580,7 @@ internal sealed class MultiplayerRoomSession
                 // A timed-out write may already have started the native room. Observe its result
                 // within the discovery deadline instead of replaying the state-changing request.
                 _begun = true; _connectDeadline = DateTimeOffset.UtcNow.AddSeconds(60);
-                _room = _room with { State = _attempts > 0 ? "retrying" : "connecting" };
+                _room = _room with { State = _attempts > 0 ? "retrying" : "connecting", ErrorCode = null };
                 await _component!.BeginAsync(_room.Role, _invitation, _request.PlayerName, ct).ConfigureAwait(false);
             }
 
@@ -580,12 +588,15 @@ internal sealed class MultiplayerRoomSession
             deadline.CancelAfter(TimeSpan.FromSeconds(5));
             var network = await _component!.StateAsync(deadline.Token).ConfigureAwait(false);
             _pollFailures = 0;
-            if (network.Index > _index)
+            _room = _room with { ComponentState = network.State };
+            var readyState = _room.Role == "host" ? "host-ok" : "guest-ok";
+            // A successful read can recover an unchanged native revision after a transient polling failure.
+            if (network.Index > _index || (network.State == readyState && _room.State != "connected"))
             {
                 _index = network.Index;
                 if (network.Room is { } code && code != _invitation)
                     throw new LauncherOperationException("MULTIPLAYER_COMPONENT_OWNERSHIP", "The component changed to a different room.");
-                if (network.State == (_room.Role == "host" ? "host-ok" : "guest-ok"))
+                if (network.State == readyState)
                 {
                     if (_room.Role == "host" && await _component.HostPortAsync(deadline.Token).ConfigureAwait(false) != _room.GamePort)
                     {
@@ -605,10 +616,17 @@ internal sealed class MultiplayerRoomSession
                     if (network.Type == 4) await CloseWorldAsync("MULTIPLAYER_CONNECTION_4", ct).ConfigureAwait(false);
                     else Disconnected("MULTIPLAYER_CONNECTION_" + network.Type);
                 }
+                else if (_room.Role == "host" && network.State is "host-scanning" or "host-starting")
+                {
+                    _room = _room with { State = network.State == "host-scanning" ? "discovering" : "connecting", ErrorCode = null };
+                }
             }
 
             if (DateTimeOffset.UtcNow >= _connectDeadline)
-            { _connectDeadline = DateTimeOffset.MaxValue; Disconnected("MULTIPLAYER_DISCOVERY_TIMEOUT"); }
+            {
+                _connectDeadline = DateTimeOffset.MaxValue;
+                Disconnected(_room.Role == "host" && network.State == "host-scanning" ? "MULTIPLAYER_LAN_DISCOVERY_TIMEOUT" : "MULTIPLAYER_DISCOVERY_TIMEOUT");
+            }
         }
         catch (Exception error) when (Recoverable(error) && !ct.IsCancellationRequested)
         {
@@ -641,9 +659,10 @@ internal sealed class MultiplayerRoomSession
         var json = JsonSerializer.Serialize(_room with { Invitation = null, UpdatedAt = default }, MultiplayerJsonContext.Default.MultiplayerRoom);
         if (json == _saved) return;
         var last = _events.LastOrDefault();
-        if (last?.State != _room.State || last.Code != _room.ErrorCode)
+        if (last?.State != _room.State || last.Code != _room.ErrorCode || last.ComponentState != _room.ComponentState
+            || last.GamePortObserved != (_room.GamePort is not null) || last.WorldState != _room.World?.State)
         {
-            _events.Add(new(DateTimeOffset.UtcNow, _room.State, _room.ErrorCode));
+            _events.Add(new(DateTimeOffset.UtcNow, _room.State, _room.ErrorCode, _room.ComponentState, _room.GamePort is not null, _room.World?.State));
             if (_events.Count > 200) _events.RemoveAt(0);
             try { await JsonFiles.WriteAsync(Path.Combine(_directory, _room.Id + ".events.json"), JsonSerializer.SerializeToNode([.. _events], TerracottaJsonContext.Default.RoomEventArray)!, CancellationToken.None).ConfigureAwait(false); }
             catch (Exception error) when (error is IOException or UnauthorizedAccessException) { /* Optional diagnostic history cannot terminate a live room. */ }

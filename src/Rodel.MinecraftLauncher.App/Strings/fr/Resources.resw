@@ -6245,4 +6245,6 @@ Détails : {1}</value></data>
   <data name="PackExtracting" xml:space="preserve"><value>Extraction des fichiers du pack</value></data>
   <data name="PackVerifying" xml:space="preserve"><value>Vérification des fichiers du pack</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Chargement des instances…</value></data>
+  <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>En attente de l’annonce LAN</value></data>
+  <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Le port du jeu est prêt, mais Terracotta n’a pas détecté l’annonce LAN. Gardez le monde ouvert, vérifiez la carte réseau et les autorisations du pare-feu du composant multijoueur, puis réessayez.</value></data>
 </root>
