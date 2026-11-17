@@ -23,11 +23,22 @@ App preferences remain separate from the old Store edition; game data uses the s
 
 ## Update RMCL
 
-RMCL silently checks GitHub for a newer stable release at startup. Check failures never interrupt normal use. When an update is available, an icon appears next to Minimize. Open it to read localized notes and choose Update, Later or Skip this version. Skipping applies only to that release.
+RMCL silently checks GitHub for a newer stable release at startup. Check failures never interrupt normal use. When an update is available, an icon appears next to Minimize. Open it to read localized notes. The buttons are Update, Skip this version and Cancel, from left to right. Cancel does not mark a release as skipped; skipping applies only to that release.
 
-Updating downloads and verifies the installer for your PC's architecture and shows download progress. RMCL then exits and opens an interactive installation wizard; the downloaded installer is deleted after the wizard exits. Finish active operations and save editor changes before retrying. You can also download and run a newer installer directly from GitHub Releases.
+Updating downloads and verifies the installer for the current app's architecture and shows download progress. RMCL then exits and opens an interactive installation wizard; the downloaded installer is deleted after the wizard exits. Finish active operations and save editor changes before retrying. You can also download and run a newer installer directly from GitHub Releases.
 
 Game, mod and modpack updates remain in their respective launcher pages.
+
+## Uninstall RMCL
+
+Find RMCL in the apps list in Windows Settings, choose Uninstall, then confirm the uninstall prompt.
+
+> [!WARNING]
+> **Confirming uninstall forcibly closes every running RMCL instance from this installation folder, including those in the system tray. Unsaved changes will be lost.** Active tasks and editor drafts do not block uninstall, so finish your work and save changes first.
+
+Cancelling the initial confirmation leaves RMCL running. Uninstall removes the program and its installation registration. It does not close RMCL instances in other folders or delete games, worlds or app preferences already saved to disk.
+
+This forced-exit behavior is provided by the updated uninstaller. Older installations must first be updated by running the new installer over the existing installation.
 
 ## Computer requirements
 
