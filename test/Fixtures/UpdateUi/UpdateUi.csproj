@@ -6,6 +6,7 @@
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <SproutPackageFormat>None</SproutPackageFormat>
     <PublishAot>true</PublishAot>
+    <Optimize>true</Optimize>
     <LangVersion>preview</LangVersion>
     <ApplicationManifest>../../../src/Rodel.MinecraftLauncher.App/app.manifest</ApplicationManifest>
     <ApplicationIcon>../../../src/Rodel.MinecraftLauncher.App/app.ico</ApplicationIcon>

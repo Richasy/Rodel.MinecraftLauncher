@@ -23,7 +23,10 @@ internal static class UpdateInstaller
             "-ParentStarted", parent.StartTime.ToUniversalTime().Ticks.ToString(System.Globalization.CultureInfo.InvariantCulture),
             "-Installer", path, "-Sha256", sha256, "-Gate", gate,
         })
+        {
             start.ArgumentList.Add(argument);
+        }
+
         var worker = Process.Start(start) ?? throw new IOException("Windows could not start the installer handoff.");
         try
         {
@@ -60,8 +63,12 @@ internal static class UpdateInstaller
                 var name = Path.GetFileName(file).Split('-');
                 if (name.Length != 5 || name[0] != "RMCL" || name[2] != "win"
                     || name[3] is not ("x64" or "arm64") || name[4] != "setup.exe"
-                    || !GitHubUpdateClient.TryVersion(name[1], out var version) || version > current)
+                    || !GitHubUpdateClient.TryVersion(name[1], out var version) || version > current
+                    || File.GetLastWriteTimeUtc(file) > DateTime.UtcNow.AddDays(-1))
+                {
                     continue;
+                }
+
                 try { File.Delete(file); }
                 catch (IOException) { }
                 catch (UnauthorizedAccessException) { }

@@ -100,9 +100,9 @@ public sealed class UpdateHandoffTests
         }
     }
 
-    /// <summary>Review: recovery after an interrupted helper must delete only installed versions inside owned cache entries, never future offers or unrelated files.</summary>
+    /// <summary>Review: interrupted-helper recovery may remove aged installed versions, but must preserve a fresh download awaiting another instance's handoff, future offers and unrelated files.</summary>
     [TestMethod]
-    public void StartupCleanup_PreservesNewerAndUnownedFiles()
+    public void StartupCleanup_PreservesFreshDownloadsNewerVersionsAndUnownedFiles()
     {
         var root = Path.Combine(Path.GetTempPath(), "rmcl-cleanup-" + Guid.NewGuid().ToString("N"));
         var owned = Path.Combine(root, Guid.NewGuid().ToString("N"));
@@ -111,14 +111,18 @@ public sealed class UpdateHandoffTests
         Directory.CreateDirectory(unrelated);
         var old = Path.Combine(owned, "RMCL-0.2611.4.0-win-x64-setup.exe");
         var future = Path.Combine(owned, "RMCL-0.2611.6.0-win-arm64-setup.exe");
+        var fresh = Path.Combine(owned, "RMCL-0.2611.5.0-win-x64-setup.exe");
         var other = Path.Combine(unrelated, "RMCL-0.2611.4.0-win-x64-setup.exe");
-        foreach (var path in new[] { old, future, other })
+        foreach (var path in new[] { old, future, fresh, other })
             File.WriteAllText(path, "retained bytes");
+        File.SetLastWriteTimeUtc(old, DateTime.UtcNow.AddDays(-2));
+        File.SetLastWriteTimeUtc(future, DateTime.UtcNow.AddDays(-2));
         try
         {
             UpdateInstaller.CleanupInstalled(root, new(0, 2611, 5, 0));
             Assert.IsFalse(File.Exists(old));
             Assert.AreEqual("retained bytes", File.ReadAllText(future));
+            Assert.AreEqual("retained bytes", File.ReadAllText(fresh));
             Assert.AreEqual("retained bytes", File.ReadAllText(other));
         }
         finally { Directory.Delete(root, true); }

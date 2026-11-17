@@ -1,8 +1,8 @@
 // Copyright (c) Richasy. All rights reserved.
 
+using Rodel.MinecraftLauncher.Core.Tests.Infrastructure;
 using System.Diagnostics;
 using System.Text.Json.Nodes;
-using Rodel.MinecraftLauncher.Core.Tests.Infrastructure;
 
 namespace Rodel.MinecraftLauncher.Core.Tests;
 

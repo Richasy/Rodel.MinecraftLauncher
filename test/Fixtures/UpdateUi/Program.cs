@@ -17,11 +17,14 @@ using Sprout.Svg;
 using System.Net;
 using System.Text;
 using System.Text.Json;
+using ThemeRequest = Sprout.Theming.ThemeRequest;
 
+FixtureFiles.Stage("entry");
 return SproutApp.CreateBuilder(args)
     .UseApp(static () => new UpdateFixtureApplication())
     .UseRenderBackend(new D2DBackend())
     .UseSvg()
+    .UseTheme(ThemeRequest.FollowSystem)
     .UseHttpImages(new AppImageCache(Path.Combine(FixtureFiles.Root, "images")).Loader)
     .ConfigureStyles(static styles =>
     {
@@ -40,6 +43,7 @@ internal sealed class UpdateFixtureApplication : Application
     /// <inheritdoc/>
     protected override void OnLaunched(LaunchEventArgs e)
     {
+        FixtureFiles.Stage("launched");
         LauncherTheme.Configure(Theme);
         var languagePath = Path.Combine(FixtureFiles.Root, "language");
         var settings = new AppSettings(new Dictionary<string, object>())
@@ -56,6 +60,7 @@ internal sealed class UpdateFixtureApplication : Application
                 File.WriteAllText(skipped, settings.SkippedUpdateVersion);
         };
         LanguageSection.Apply(settings.Language);
+        FixtureFiles.Stage("language");
         var window = OpenWindow(new WindowSpec
         {
             Title = "RMCL",
@@ -67,21 +72,27 @@ internal sealed class UpdateFixtureApplication : Application
             Colors = new TitleBarColors(Active: new ChromeColors(Background: Colors.Transparent), Inactive: new ChromeColors(Background: Colors.Transparent)),
         });
         LanguageSection.Apply(settings.Language, window);
+        FixtureFiles.Stage("window");
         var client = new LauncherClient(new LauncherPaths(Path.Combine(FixtureFiles.Root, "games"),
             cacheDirectory: Path.Combine(FixtureFiles.Root, "cache"), applicationDataDirectory: Path.Combine(FixtureFiles.Root, "app-data")));
         var shell = new LauncherShell(client, window, settings, this, new AppImageCache(Path.Combine(FixtureFiles.Root, "images")),
             static () => { }, static () => { }, static _ => { });
+        FixtureFiles.Stage("shell");
         window.SetContent(shell);
+        FixtureFiles.Stage("content");
         var state = new UpdateState(settings, new HttpClient(new ReleaseFixtureHandler()) { Timeout = Timeout.InfiniteTimeSpan },
             Path.Combine(FixtureFiles.Root, "updates"), new Version(0, 2611, 4, 0));
         window.SetTitleBarContent(new UpdateTitleBar(window, state, shell.InstallUpdateAsync));
+        FixtureFiles.Stage("titlebar");
         window.Show();
+        FixtureFiles.Stage("shown");
     }
 }
 
 internal static class FixtureFiles
 {
     internal static string Root => @"C:\sprout\data";
+    internal static void Stage(string name) => File.AppendAllText(Path.Combine(Root, "startup-stages"), name + Environment.NewLine);
 }
 
 /// <summary>Serves real release notes and installer bytes through the production client's unchanged GitHub contract.</summary>

@@ -17,30 +17,32 @@ internal sealed partial class UpdateDialog(
     Action close,
     Func<string, string, Task<bool>> install) : Control
 {
-    private Ui Body => Grid(
-        [GridLength.Star()],
-        [GridLength.Auto, GridLength.Star(), GridLength.Auto],
-        [
+    private string VersionLabel => string.Format(Resources.AppUpdateVersion, state.Available?.Manifest.Version);
+    private string ProgressLabel => string.Format(Resources.AppUpdateDownloadProgress, state.Received / 1048576d, (state.Available?.Installer.Size ?? 0) / 1048576d);
+    private string ErrorLabel => state.Blocked ? Resources.AppUpdateBusy : Resources.AppUpdateFailed;
+
+    private Ui Body => Column([
             Column([
                 Text(Resources.AppUpdateAvailable).FontSize(20f).FontWeight(600).Foreground(LauncherTheme.Ink).Wrap(),
-                Text(string.Format(Resources.AppUpdateVersion, state.Available?.Manifest.Version))
+                Text(VersionLabel)
                     .FontSize(13f).Foreground(LauncherTheme.Muted)
-                    .Automation(new() { AutomationId = "app.update.version" }),
-            ]).Spacing(8f).Padding(24f).Cell(0, 0),
+                    .Automation(new() { Name = VersionLabel, AutomationId = "app.update.version" }),
+            ]).Spacing(8f).Padding(24f),
             ScrollView(new UpdateNotesView(LauncherAppearance.Capture(), state.Available?.Notes(Localizer.CurrentLanguage) ?? string.Empty))
-                .Padding(new Thickness(24f, 0f, 24f, 16f)).Cell(0, 1),
+                .MaxHeight(Math.Min(280f, window.ClientSize.Height - 280f))
+                .Padding(new Thickness(24f, 0f, 24f, 16f)).Shrink(1f).MinContentHeight(0f),
             Column([
                 Text(Resources.AppUpdateInstallHint).FontSize(12f).Foreground(LauncherTheme.Muted).Wrap(),
                 ProgressBar().Indeterminate(false)
                     .Value(state.Available is { } update ? state.Received * 100d / update.Installer.Size : 0d)
                     .Thickness(4f).Visible(state.Downloading)
                     .Automation(new() { Name = Resources.AppUpdateDownloading, AutomationId = "app.update.progress" }),
-                Text(string.Format(Resources.AppUpdateDownloadProgress, state.Received / 1048576d, (state.Available?.Installer.Size ?? 0) / 1048576d))
+                Text(ProgressLabel)
                     .FontSize(12f).Foreground(LauncherTheme.Muted).Visible(state.Downloading)
-                    .Automation(new() { AutomationId = "app.update.bytes" }),
-                Text(state.Blocked ? Resources.AppUpdateBusy : Resources.AppUpdateFailed)
+                    .Automation(new() { Name = ProgressLabel, AutomationId = "app.update.bytes" }),
+                Text(ErrorLabel)
                     .FontSize(13f).Foreground(LauncherTheme.Error).Wrap().Visible(state.Failed || state.Blocked)
-                    .Automation(new() { AutomationId = "app.update.error" }),
+                    .Automation(new() { Name = ErrorLabel, AutomationId = "app.update.error" }),
                 Grid([GridLength.Star(), GridLength.Star(), GridLength.Star()], [GridLength.Auto], [
                     LauncherControls.OutlineCommand(Resources.AppUpdateSkip, () => SkipVersion())
                         .Style(LauncherButtons.DialogSecondary).Enabled(!state.Downloading && !state.Installing)
@@ -52,10 +54,10 @@ internal sealed partial class UpdateDialog(
                         .Style(LauncherButtons.DialogPrimary).AsPrimary().Enabled(!state.Downloading && !state.Installing)
                         .Automation(new() { Name = Resources.AppUpdateNow, AutomationId = "app.update.install" }).Cell(2, 0),
                 ]).ColumnSpacing(8f),
-            ]).Spacing(12f).Padding(24f).Cell(0, 2),
+            ]).Spacing(12f).Padding(24f),
         ])
         .Width(Math.Min(580f, window.ClientSize.Width - 48f))
-        .Height(Math.Min(520f, window.ClientSize.Height - 48f));
+        .MaxHeight(Math.Min(520f, window.ClientSize.Height - 48f));
 
     private void SkipVersion()
     {
@@ -78,6 +80,6 @@ internal readonly partial record struct UpdateNotesView(LauncherAppearance Theme
     /// <summary>Shows localized plain-text release notes inside the dialog's independently scrolling body.</summary>
     public Ui Body => Column([
         Text(Notes).FontSize(14f).Foreground(Theme.Ink).Wrap()
-            .Automation(new() { AutomationId = "app.update.notes" }),
+            .Automation(new() { Name = Notes, AutomationId = "app.update.notes" }),
     ]);
 }

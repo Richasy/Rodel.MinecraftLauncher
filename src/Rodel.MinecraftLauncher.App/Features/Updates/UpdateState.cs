@@ -85,6 +85,7 @@ internal sealed partial class UpdateState
                 DiscardDownload();
                 return null;
             }
+
             _downloadAuthorized = true;
             return DownloadedPath;
         }
@@ -175,6 +176,7 @@ internal sealed partial class UpdateState
         try { File.Delete(path); }
         catch (IOException) { }
         catch (UnauthorizedAccessException) { }
+
         DownloadedPath = null;
     }
 }

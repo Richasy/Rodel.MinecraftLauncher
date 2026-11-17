@@ -24,7 +24,10 @@ internal sealed partial class GitHubUpdateClient(HttpClient http)
             var release = await ReadJsonAsync(Latest, ReleaseJsonContext.Default.GitHubRelease, timeout.Token).ConfigureAwait(false);
             if (release.Draft || release.Prerelease || !release.TagName.StartsWith('v')
                 || !TryVersion(release.TagName[1..], out var version) || version <= current || version.ToString(4) == skipped)
+            {
                 return null;
+            }
+
             var prefix = $"{Repository}/releases/download/{release.TagName}/";
             var notesAsset = release.Assets.Single(a => a.Name == "release-note.json");
             RequireAsset(notesAsset, prefix, 1024 * 1024);
@@ -35,7 +38,10 @@ internal sealed partial class GitHubUpdateClient(HttpClient http)
                 || !manifest.Installers.TryGetValue(architecture, out var installer)
                 || installer.FileName != $"RMCL-{manifest.Version}-win-{architecture}-setup.exe"
                 || !HashPattern().IsMatch(installer.Sha256) || installer.Size is <= 0 or > MaximumInstallerSize)
+            {
                 return null;
+            }
+
             var asset = release.Assets.Single(a => a.Name == installer.FileName);
             RequireAsset(asset, prefix, MaximumInstallerSize);
             return asset.Size != installer.Size ? null : new(manifest, installer, new(asset.DownloadUrl));

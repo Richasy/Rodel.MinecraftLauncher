@@ -8,7 +8,6 @@ using Sprout.Controls;
 using Sprout.Graphics;
 using Sprout.Input;
 using Sprout.Layout;
-using Sprout.Localization;
 using static Sprout.Markup;
 
 namespace Rodel.MinecraftLauncher.App.Features.Updates;
@@ -19,14 +18,19 @@ internal sealed partial class UpdateTitleBar(Window window, UpdateState state, F
     private bool _dialogOpen;
     private bool _disposed;
 
-    private Ui Body => Row([
+    private Ui Body => Grid(
+        [GridLength.Star(), GridLength.Auto],
+        [GridLength.Star()],
+        [
         Button(Row([LauncherIcons.Line("download", 18f)]), Show)
             .Style(LauncherButtons.IconButton)
             .Width(40f).Height(32f)
             .ToolTip(Resources.AppUpdateAvailable)
             .Automation(new() { Name = Resources.AppUpdateAvailable, AutomationId = "app.update.open" })
-            .Visible(state.Available is not null),
-    ]).HAlign(Localizer.CurrentLanguage == "ar" ? HorizontalAlignment.Left : HorizontalAlignment.Right).VAlign(VerticalAlignment.Center);
+            .Visible(state.Available is not null)
+            .VAlign(VerticalAlignment.Center)
+            .Cell(1, 0),
+        ]);
 
     private async void Show()
     {
@@ -39,7 +43,7 @@ internal sealed partial class UpdateTitleBar(Window window, UpdateState state, F
         {
             ContentComponent = () => body,
             InitialFocus = () => body.Interaction is { } root ? FocusTraversal.Next(root, current: null, forward: false) : null,
-        }.Style(LauncherMenus.Confirmation.ContentPadding(0f).MinWidth(320f))
+        }.Style(LauncherMenus.Confirmation.ContentPadding(0f).MinWidth(320f).MaxWidth(580f))
             .Automation(new() { Name = Resources.AppUpdateAvailable, AutomationId = "app.update.dialog", IsDialog = true });
         dialog.Closing += args =>
         {
