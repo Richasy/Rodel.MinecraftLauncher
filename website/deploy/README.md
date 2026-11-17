@@ -15,11 +15,11 @@
 
 ## 发布内容
 
-仓库不再提供网站部署 workflow；当前 Actions 仅提供 GitHub Release EXE 发布。网站源码、静态构建检查和部署脚本保留，线上站点及 `website-production` 环境配置继续保留。
+在 Actions 手动运行 **Deploy documentation**（`.github/workflows/deploy-website.yml`），仅允许 `main`，使用现有自托管 Windows runner 和 `website-production` 环境。网站发布使用独立并发组串行执行，不跟随安装包构建自动部署；正式发行时先确认 GitHub Release 可下载，再部署网站。
 
 独立部署环境使用 Node.js 24，依次执行锁定依赖安装、类型与格式检查、静态构建和 `check:static`，再运行 `node scripts/deploy.mjs`。该脚本要求真实的 `GITHUB_REF=refs/heads/main`、`GITHUB_SHA`、`GITHUB_RUN_ID` 和 `GITHUB_RUN_ATTEMPT`，不能直接在缺少执行元数据的本地终端运行。检查覆盖中英文文章配对、内部页面和锚点、图片原文件及内容指纹。随后打包纯静态产物，通过固定主机密钥的 SSH 上传，服务器核对归档 SHA256 后原子切换。每个版本包含公开的 `deployment.json`，记录提交、run、attempt 和发布时间。上线检查遍历 sitemap 的全部页面，并逐字节核对正文与首页引用的所有图片，同时确认不存在的页面、环境文件及 source map 返回 404；检查失败会切回上一版。
 
-以下为部署脚本的环境契约，由仓库管理员维护；当前两个打包 workflow 不读取这些配置：
+以下为部署脚本的环境契约，由仓库管理员在 `website-production` 环境维护；安装包 workflow 不读取这些配置：
 
 | 类型     | 名称                                    | 用途                                |
 | -------- | --------------------------------------- | ----------------------------------- |
@@ -34,7 +34,7 @@
 
 部署后的 HTTPS 检查使用 Windows 自带的 `curl.exe` 访问正式域名并保留完整证书校验，runner 同时需要 OpenSSH 的 `ssh`／`scp` 和 `tar` 命令。
 
-需要回滚时，将 `current` 原子切回发布日志记录的上一版。独立部署环境须串行执行发布，不能同时修改 `current`；仓库当前没有可重新触发的网站部署工作流。
+需要回滚时，将 `current` 原子切回发布日志记录的上一版。发布必须串行执行，不能同时修改 `current`；需要重新部署当前主线时可重新运行网站 workflow。
 
 在 `website/` 执行：
 
