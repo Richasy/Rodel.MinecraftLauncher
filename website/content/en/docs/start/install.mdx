@@ -1,27 +1,44 @@
 ---
 title: Install and prepare
-description: Install RMCL from Microsoft Store or GitHub Releases, then choose a game data folder.
+description: Install or update RMCL through GitHub Releases, then choose a game data folder.
 ---
 
 ## Install RMCL
 
-RMCL is a free launcher for Minecraft: Java Edition, available from Microsoft Store or [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest).
+RMCL is a free launcher for Minecraft: Java Edition, distributed through [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest). Microsoft Store no longer provides future updates.
 
-<StoreBadge locale="en" />
+<ReleaseDownload locale="en" />
 
-1. Select the badge above to open RMCL in Microsoft Store.
-2. Check that the app is **Rodel Minecraft Launcher**, published by **云之幻**, then select Get or Install.
-3. The Store selects the appropriate architecture for your device. Open RMCL from Start after installation.
+1. Open the download link above and select the latest stable release.
+2. Check System type in Windows Settings → System → About. Download `RMCL-<version>-win-x64-setup.exe` or `win-arm64-setup.exe` to match.
+3. Run the installation wizard, then open RMCL from Start.
 
-The Store product ID is `9MW9ZMS2K47C`. If installation fails, keep the full Store message and include your Windows version and the steps in [Feedback and logs](/en/docs/help/feedback).
+If installation fails, keep the complete message and include your Windows version, installer filename and steps in [Feedback and logs](/en/docs/help/feedback).
 
 ## EXE installer
 
-Download `win-x64-setup.exe` and its SHA256 file from [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest). The x64 installer runs per-user without the Store, administrator privileges or manual MSIX certificate trust, and includes the .NET runtime. It is not Authenticode-signed; verify the checksum before installation. Its app preferences are separate from the Store edition, while game data uses the selected Core data root.
+The x64 and ARM64 installers run per-user without the Store, administrator privileges, a separate .NET runtime or manual MSIX certificate trust. They are not Authenticode-signed; compare PowerShell `Get-FileHash` output with the matching `.sha256` attachment.
+
+App preferences remain separate from the old Store edition; game data uses the selected Core data root. Before switching, record any custom game folder, select it in the EXE edition and restart. Do not uninstall the old edition first or assume app preferences migrate automatically.
 
 ## Update RMCL
 
-Open RMCL's Microsoft Store page and select Update when a new version is available. With automatic app updates enabled, the Store also installs new releases automatically. For the EXE edition, download and run the new installer from GitHub Releases. Game, mod and modpack updates remain in their respective launcher pages.
+RMCL silently checks GitHub for a newer stable release at startup. Check failures never interrupt normal use. When an update is available, an icon appears next to Minimize. Open it to read localized notes. The buttons are Update, Skip this version and Cancel, from left to right. Cancel does not mark a release as skipped; skipping applies only to that release.
+
+Updating downloads and verifies the installer for the current app's architecture and shows download progress. RMCL then exits and opens an interactive installation wizard; the downloaded installer is deleted after the wizard exits. Finish active operations and save editor changes before retrying. You can also download and run a newer installer directly from GitHub Releases.
+
+Game, mod and modpack updates remain in their respective launcher pages.
+
+## Uninstall RMCL
+
+Find RMCL in the apps list in Windows Settings, choose Uninstall, then confirm the uninstall prompt.
+
+> [!WARNING]
+> **Confirming uninstall forcibly closes every running RMCL instance from this installation folder, including those in the system tray. Unsaved changes will be lost.** Active tasks and editor drafts do not block uninstall, so finish your work and save changes first.
+
+Cancelling the initial confirmation leaves RMCL running. Uninstall removes the program and its installation registration. It does not close RMCL instances in other folders or delete games, worlds or app preferences already saved to disk.
+
+This forced-exit behavior is provided by the updated uninstaller. Older installations must first be updated by running the new installer over the existing installation.
 
 ## Computer requirements
 

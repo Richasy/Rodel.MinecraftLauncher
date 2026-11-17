@@ -18,16 +18,14 @@
     <a href="https://rmcl.richasy.net/en/docs/">Player handbook</a> ·
     <a href="https://github.com/Richasy/Rodel.MinecraftLauncher/issues">Feedback</a>
   </p>
-  <a href="https://apps.microsoft.com/detail/9MW9ZMS2K47C">
-    <img src="website/public/assets/microsoft-store-en.svg" width="200" alt="Get RMCL from Microsoft Store" />
-  </a>
+  <a href="https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest">Download RMCL for Windows · x64 / ARM64</a>
 </div>
 
 > [!IMPORTANT]
 > **This project cannot currently be built from source.**
 > Its native UI framework, **Sprout**, is still under closed development, and the required framework dependencies are not publicly available. This README therefore does not offer a public source-build procedure.
 >
-> **To use RMCL, install the released app from [Microsoft Store](https://apps.microsoft.com/detail/9MW9ZMS2K47C).** The source-build limitation does not prevent installing the Store release.
+> **To use RMCL, download the installer from [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest).** Microsoft Store is no longer an update channel.
 
 **RMCL — Rodel Minecraft Launcher** is a free Windows launcher written in C# and .NET, with a self-developed launch core and a native interface built on Sprout. It connects everyday game management with creative tools: prepare an instance, organize its content, keep a world backup, design a skin, or explore your next seed.
 
@@ -55,25 +53,25 @@ The project is also a practical exploration of native desktop UI and **AI assist
 <a id="get-started"></a>
 ## 🚀 Get started
 
-**RMCL is available from Microsoft Store and as a [GitHub Release EXE installer](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest).** Use the Store to update the Store edition, or download EXE updates from Releases. Game, mod and modpack updates remain inside the launcher.
+**Get RMCL from [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest).** Choose the x64 or ARM64 EXE installer. RMCL checks for updates silently at startup; its title-bar update icon lets you read localized notes, download an update or skip that version. Game, mod and modpack updates remain inside the launcher.
 
 | Requirement | What you need |
 | --- | --- |
 | Operating system | Windows 10 version 2004, build **19041**, or later, including Windows 11 |
-| Architecture | **x64** or **ARM64**; the Store selects the appropriate package |
+| Architecture | **x64** or **ARM64**; choose the matching installer |
 | Launcher runtime | NativeAOT releases do **not** require a separate .NET installation |
 | Minecraft runtime | A suitable **Java** runtime for your game version; discover, import or prepare it through the launcher |
 | Storage and network | Space for games, resources and backups; initial preparation normally needs downloads |
 
 ### Your first game, step by step
 
-1. **Install and open RMCL** from Microsoft Store or GitHub Releases.
+1. **Install and open RMCL** from GitHub Releases.
 2. **Choose an identity.** Add a Microsoft account, use an offline identity for supported local scenarios, or select a compatible external authentication service.
 3. **Create or import an instance.** Start with vanilla Minecraft, copy in an existing game folder, or import an MRPack or CurseForge ZIP.
 4. **Let preparation finish.** Check the overall task result for game files, the loader and Java, rather than treating one download's 100% as completion.
 5. **Select the instance and play.** Wait for Minecraft itself to finish loading before entering a world or server.
 
-The Store release includes the public Client ID needed to initiate Microsoft sign-in. Players do not need to register an Azure application or configure a Client ID themselves. Actual account entitlement and service access still apply; an offline identity does not bypass game ownership or server authentication.
+The release includes the public Client ID needed to initiate Microsoft sign-in. Players do not need to register an Azure application or configure a Client ID themselves. Actual account entitlement and service access still apply; an offline identity does not bypass game ownership or server authentication.
 
 > [!TIP]
 > **Already have a setup you like?** The app imports an existing game by making a complete managed copy, not by linking back to the old folder. The source is left untouched.
@@ -224,7 +222,7 @@ Availability depends on the exact **Minecraft version and loader**. Check the [c
 
 The separate **`rodel-mc.exe`** entry point exposes launcher operations for scripts, diagnosis and external AI clients. Its MCP server wraps the same Core tool contracts instead of implementing a second launcher.
 
-> These examples describe the interface for an environment with an existing, separately supplied CLI. **The Microsoft Store app does not include the CLI**, and this section is not a CLI download or source-build procedure.
+> These examples describe the interface for an environment with an existing, separately supplied CLI. **The App installer does not include the CLI**, and this section is not a CLI download or source-build procedure.
 
 ```powershell
 rodel-mc --language en --help
@@ -273,7 +271,7 @@ flowchart LR
 
 | Location | Responsibility |
 | --- | --- |
-| [Native app](src/Rodel.MinecraftLauncher.App/README.md) | Sprout UI, packaged MSIX lifecycle and presentation |
+| [Native app](src/Rodel.MinecraftLauncher.App/README.md) | Sprout UI, per-user EXE lifecycle and presentation |
 | [Core](src/Rodel.MinecraftLauncher.Core/) | Shared launcher services, state, tasks and controlled tools |
 | [CLI](src/Rodel.MinecraftLauncher.Cli/) | Command tree and external MCP server |
 | [Internal AI module](src/Rodel.MinecraftLauncher.Assistant/) | Model protocol implementations and MCP client transport |
@@ -316,7 +314,7 @@ Repository technical documentation is currently primarily in Chinese.
 - **Tests:** [Test entry points](test/README.md) · [Test design guidelines](test/GUIDELINES.md) · [AI test boundaries](test/ASSISTANT.md)
 - **Release & collaboration:** [Release workflow](doc/RELEASE.md) · [Collaboration guide](AGENTS.md)
 
-Prototypes and documentation captures are not runtime dependencies or gameplay acceptance evidence. Regression tests, NativeAOT packages, native UI checks, actual Minecraft runs and Store certification have separate validation scopes; consult the current state rather than inferring one from another.
+Prototypes and documentation captures are not runtime dependencies or gameplay acceptance evidence. Regression tests, NativeAOT packages, native UI checks, actual Minecraft runs and installer upgrades have separate validation scopes; consult the current state rather than inferring one from another.
 
 </details>
 

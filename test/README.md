@@ -1,5 +1,7 @@
 # Tests
 
+`UninstallProcessTests`使用实际发货的卸载脚本和就绪后阻塞等待的真实子进程，验证同一目录下的多个实例均被强制终止，而同名、路径前缀相似的另一目录进程保持运行；进程不通过关闭窗口或标准输入正常退出。用 Core 测试入口加 `--filter FullyQualifiedName~UninstallProcessTests`，只操作测试创建的进程，不读取或卸载本机已安装 App。真实 Inno 确认／取消、托盘卸载及玩家数据保留另在隔离 VM 验证。
+
 `NativeKeyboardNavigationTests`使用真实App投影、回调、DirectWrite和Sprout输入路由，保护设置分类／皮肤页签的一次Tab出入、方向键只移动而不提前执行、末项滚动可见，以及图片裁切只处理一次方向键且不连带滚动父层。用App测试入口加`--filter FullyQualifiedName~NativeKeyboardNavigationTests`并在VM运行；不打开玩家工程，也不代替正常签名MSIX的键鼠、弹层和Narrator实测。交互契约见[键盘导航与焦点](../doc/KEYBOARD.md)。
 
 `SkinLimbCopyTests`用非对称六面标记、半透明可见层、隐藏层和目标哨兵像素，保护Classic/Slim及64/128的对侧映射、仅当前层替换和隐藏外层保留。`SkinMirrorInputTests`沿用实际App输入及Core会话，检查单侧肢体的画笔/橡皮仅写自身对面，显示同类对侧后才互相镜像；六面字面坐标同时核对预览与落笔，避免正面或顶面被误做同面左右翻转。一笔跨头、躯干、单侧胳膊及双腿仍逐部位配对，不写隐藏肢体或把头顶映到躯干底部；只替代packaged窗口/Controller对等方。`SkinHoverRenderingTests`用真实D3D读回核对正面单画笔与镜像输出相同，因为另一画笔应位于被长方体遮住的背面；无轮廓基线须确实不同。`SkinBrushAndSurfaceTests`另核对可见部位内填充和预览一致；`SkinTransferSessionTests`以实际文件重开和单次撤销/重做核对底层与外层一次持久提交。分别用下方Skins、App、Rendering、CLI入口按类名筛选，不代替原生确认框、免提示偏好和真实填充手势验收。
@@ -11,7 +13,7 @@
 
 `SkinSelectionInputTests`直接编译原生App共用输入／选区／响应式状态，向真实输入入口发送Down／Move／Up，配合隔离的Core编辑会话核对RGBA、草稿、修订与历史。覆盖画笔／橡皮／填充在3D／贴图入口的选区外首次按下只取消、同次拖动不补画、下一次按下恢复正常，以及选区内起笔的边界保护、取色／Alt／右键不误取消。仅替代packaged窗口和Controller对等方；填充只核对是否派发，实际填充已有独立Core用例。使用App入口加`--filter FullyQualifiedName~SkinSelectionInputTests`，不声称覆盖真实拾取、指针捕获或悬停动画。
 
-`StoreReleaseWorkflowTests`调用真实PowerShell发行模块、ZIP与持久回执，服务端交付用例仅替代HTTP。覆盖双架构精确包、可写素材／未知字段保留、可选说明不改原notes、失效前置条件、未知commit不重放，以及GitHub交付的源码／摘要绑定与幂等。真实共享删除读句柄保护回执原子替换：旧读者保留旧快照，新路径读到新阶段，不把文件重试扩成HTTP重放。提交JSON省略包已支持语言的派生title，短名／语音／排序名使用已审计名称；处理前旧名称回显不等于已解析新包。认证阶段独立回读两包版本／架构／语言覆盖；包派生title允许缺席，缺失listing、显式空／错误title或包语言缺失仍阻止GitHub交付，处理延迟继续观察。只读恢复包含缺省title形态，重复完成GitHub交付不能再创建、上传、更新或commit商店。微型合成ZIP／PE配真实两架构组件定义，覆盖严格父作用域下的可选archiveFormat、ARM64配方篡改及错误实际DisplayName拒绝；不冒充可运行程序或有效媒体。原生HTTP用例通过自有loopback peer捕获请求，保护空体JSON、OAuth表单／更新JSON／ZIP类型与载荷以及服务诊断脱敏。`MicrosoftClientConfigurationTests`保护真实Core内嵌资源及显式／进程／当前用户配置覆盖，不修改机器环境或打开账户。使用Core测试入口加`--filter "FullyQualifiedName~StoreReleaseWorkflowTests|FullyQualifiedName~MicrosoftClientConfigurationTests"`；这些回归不证明真实Store处理、认证、AI文案质量或真人登录通过。
+`ReleasePackageAuditTests`保留独立包审计的微型ZIP／PE回归：真实两架构组件定义、严格父作用域下的可选archiveFormat、ARM64配方篡改及错误实际DisplayName拒绝，不冒充可运行程序或有效媒体。`MicrosoftClientConfigurationTests`保护真实Core内嵌资源及显式／进程／当前用户配置覆盖，不修改机器环境或打开账户。使用Core测试入口加`--filter "FullyQualifiedName~ReleasePackageAuditTests|FullyQualifiedName~MicrosoftClientConfigurationTests"`；不代替实际原生运行、签名或真人登录。
 
 `LaunchMemoryPreferenceTests`除内存继承外，使用真实Core文件与共享实例Controller验证自动保存：在已捕获快照后的saving通知中插入新编辑并改变首页选择，核对最终值／归属／未知字段；未提交及非法文本不落中间值、不阻断独立有效项；真实文件替换拒绝后保留草稿且可恢复重试；初次读取失败没有待写草稿时允许退出且不改坏文件。使用App入口加 `--filter FullyQualifiedName~LaunchMemoryPreferenceTests`。`HomeObservationTests`原窗口就绪用例另核对窗口前非100%、真实就绪状态后仍显示100%及后续错误保留。以上是状态与持久化证据，不代替轻触关闭手势、原生颜色或实际Minecraft窗口验收。
 
@@ -95,6 +97,19 @@ Preset removal also survives later creation, deleting the final palette and inde
 `SkinPaletteReferenceTests` in the App project crosses the real Windows decoder and WIC palette API with a small independently encoded HD PNG and synthetic color bands. It protects full-resolution straight RGBA sampling, exclusion of hidden transparent RGB, a non-padded palette capped at sixteen actual source colors, periodic opaque/transparent stripes larger than the sampling budget, and known pixel coordinates after fit, cursor-anchored zoom, pan and reset. Unequal source populations additionally protect merging close grays without inventing averaged colors or losing skin tints; reordered neutral/warm/green/blue bands protect stable color-family and lightness ordering instead of WIC output order. Run the App command with `--filter FullyQualifiedName~SkinPaletteReferenceTests`; the cases do not inject desktop input or claim native picker, magnifier rendering or gesture acceptance.
 
 ## Run Tests
+
+GitHub发行更新：Core入口加 `--filter "FullyQualifiedName~GitHubUpdateTests|FullyQualifiedName~UpdateHandoffTests|FullyQualifiedName~ReleaseManifestTests"`，覆盖架构／语言／跳过版本、静默远程失败、实际文件流／摘要与取消、CI清单，以及真实Windows进程退出后才运行安装探针、安装探针退出后才删除。探针替代交互安装器，不冒充实际Inno Setup安装或GitHub公开发行通过；标题栏与弹窗另外使用Sprout.DevTools在隔离VM驱动。测试不读写玩家数据。
+
+App入口加 `--filter FullyQualifiedName~UpdatePreferenceTests`，验证实际设置／更新Store重开后保留跳过选择，以及下载完成后取消仍撤销安装资格、关闭被拒后不能重放旧安装意图。后者独立于HTTP取消，防止晚到的Dialog continuation继续退出并安装。
+完成快照回归还会挂住真实`Progress<long>`投递，允许下载完成后再逐条释放旧字节通知，确保已验证的总字节立即可读且不会倒退。进度准确性同时验证框架的真实填充绘制，不以UIA RangeValue正确替代像素比例正确。
+
+`Fixtures/UpdateUi`是仅供VM的原生E2E入口，引用实际App的Shell、标题栏、Dialog和安装交接；不进入产品包。准备正常CI的release artifact（`release-note.json`与对应x64安装器），在该目录加一个UTF-8 `language`文件，写入`zh-CN`或`en`。发布该工程后，以`sprout-devtools drive-shell <publish> --exe UpdateUi.exe --devtools <DevTools发布目录> --data <release输入目录> --collect-data`运行；数据只落在VM的`C:\sprout\data`。夹具将当前版本设为`0.2611.4.0`，仅以本地CI文件替代GitHub HTTP，其余更新代码与真实Inno Setup安装器不替代；不把这项模拟称为公开稳定频道发布或真实GitHub下载吞吐验证。NativeAOT夹具显式启用发布优化，避免完整Shell在未优化原生调试构建中的栈开销。
+`Fixtures/UpdateUi`是原生E2E入口，引用实际App的Shell、标题栏、Dialog和安装交接；不进入产品包。准备正常CI的release artifact（`release-note.json`与对应x64安装器），在该目录加一个UTF-8 `language`文件，写入`zh-CN`或`en`。发布该工程后，以`sprout-devtools drive-shell <publish> --exe UpdateUi.exe --devtools <DevTools发布目录> --data <release输入目录> --collect-data`运行；数据只落在VM的`C:\sprout\data`。夹具将当前版本设为`0.2611.4.0`，仅以本地CI文件替代GitHub HTTP，其余更新代码与真实Inno Setup安装器不替代；不把这项模拟称为公开稳定频道发布或真实GitHub下载吞吐验证。NativeAOT夹具显式启用发布优化，避免完整Shell在未优化原生调试构建中的栈开销。
+
+可通过`app.update.open`、`app.update.notes`、`app.update.install`、`app.update.progress`、`app.update.later`与`app.update.skip`定位真实控件。跳过选择保存在测试输入的独立副本中，收集后可用作下一次VM输入；启动阶段、请求文件名及实际下载／清理结果同样可从收集目录观察。完整交互安装验收仍在租用的VM中完成，不在开发者桌面自动执行安装。用户明确要求本地界面演示时，可仅为演示进程设置`RODEL_UPDATE_FIXTURE_DATA`，指向独立的绝对数据目录；不自动点击更新或安装，实际安装仍由用户在向导中决定。
+在测试输入目录添加空文件`progress-checkpoints`，可让真实安装包在25%／50%／75%／100%字节边界短暂停留，便于通过DevTools分别采集视觉填充与数值；该夹具开关不影响JSON元数据或产品下载器。
+
+可通过`app.update.open`、`app.update.notes`、`app.update.install`、`app.update.progress`、`app.update.later`与`app.update.skip`定位真实控件。跳过选择保存在测试输入的独立副本中，收集后可用作下一次VM输入；启动阶段、请求文件名及实际下载／清理结果同样可从收集目录观察。完整交互安装验收仍在租用的VM中完成，不在开发者桌面自动执行安装。用户明确要求本地界面演示时，可仅为演示进程设置`RODEL_UPDATE_FIXTURE_DATA`，指向独立的绝对数据目录；不自动点击更新或安装，实际安装仍由用户在向导中决定。
 
 `AccountSkinRefreshTests` exercises the real registry and protected credential files with substituted profile HTTP. It protects Microsoft bearer/public-profile selection, external-source binding, changed/reset skins, failure preservation and late responses after login/removal. `AccountSkinSchedulingTests` runs the App scheduler on its owned test context with controlled response barriers and time, protecting coalescing, provider isolation, cooldown, failure backoff and disposal/new-login precedence. `AccountAvatarRetentionTests` protects the shared last-good image across failed replacements and late completions after provider changes/removal; image decoding is outside that boundary. The existing `ExternalAccountWorkflowTests` also crosses the real CLI/Core loopback path for `account refresh --skin-only`, checking the new URL and unchanged credentials/default selection. These cases do not establish a personal account's remote propagation delay or packaged avatar rendering.
 

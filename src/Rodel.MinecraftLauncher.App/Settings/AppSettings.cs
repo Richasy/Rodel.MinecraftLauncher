@@ -21,6 +21,9 @@ internal sealed partial class AppSettings : SettingsBase, IDisposable
     internal static AppSettings Open(string container = "Preferences") => PackageIdentity.IsPackaged
         ? new(ApplicationData.GetDefault(), container)
         : new(AppStorage.OpenSettings(container));
+    /// <summary>Gets or commits the exact release version dismissed by the user; later versions remain discoverable.</summary>
+    [SettingProperty("")]
+    public partial string SkippedUpdateVersion { get; set; }
     /// <summary>Sprout's versioned normal bounds, physical position, DPI and maximized restore target.</summary>
     [SettingProperty("")]
     public partial string WindowPlacement { get; set; }

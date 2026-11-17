@@ -6222,4 +6222,14 @@ Ayrıntılar: {1}</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Oyun örnekleri yükleniyor…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>LAN duyurusu bekleniyor</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Oyun bağlantı noktası hazır ancak Terracotta LAN duyurusunu algılayamadı. Dünyayı açık tutun, ağ bağdaştırıcısını ve çok oyunculu bileşenin güvenlik duvarı izinlerini kontrol edip yeniden deneyin.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>RMCL güncellemesi mevcut</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>Sürüm {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>İndirme tamamlanınca RMCL kapanır. Güncellemeyi yükleyicide tamamlayın.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>Güncelleme indiriliyor</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>İşlemleri tamamlayıp düzenleyicideki değişiklikleri kaydedin ve tekrar deneyin.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>Güncelleme tamamlanamadı. Bağlantıyı ve boş disk alanını kontrol edip tekrar deneyin.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>Bu sürümü atla</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>Daha sonra</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>Güncelle</value></data>
 </root>

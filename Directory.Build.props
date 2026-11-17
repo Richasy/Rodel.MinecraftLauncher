@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>14</LangVersion>
-    <SproutPackageVersion Condition="'$(SproutPackageVersion)' == ''">0.1.0-rodel.122.1.g41856b1f6736</SproutPackageVersion>
+    <SproutPackageVersion Condition="'$(SproutPackageVersion)' == ''">0.1.0-rodel.130.1.g19a9b2b72042</SproutPackageVersion>
     <Deterministic>true</Deterministic>
     <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
     <EnableLocalInference Condition="'$(EnableLocalInference)' == ''">false</EnableLocalInference>

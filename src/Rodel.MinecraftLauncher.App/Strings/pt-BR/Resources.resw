@@ -6237,4 +6237,14 @@ Detalhes: {1}</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Carregando instâncias…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Aguardando anúncio de LAN</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>A porta do jogo está pronta, mas o Terracotta não detectou o anúncio de LAN. Mantenha o mundo aberto e verifique o adaptador de rede e as permissões do firewall para o componente multijogador, depois tente novamente.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>Atualização do RMCL disponível</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>Versão {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>O RMCL será fechado após o download. Siga o instalador para concluir a atualização.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>Baixando atualização</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>Conclua as operações e salve as alterações do editor antes de tentar novamente.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>Não foi possível atualizar. Verifique a conexão e o espaço em disco e tente novamente.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>Ignorar esta versão</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>Mais tarde</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>Atualizar</value></data>
 </root>

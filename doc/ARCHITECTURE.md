@@ -77,7 +77,7 @@ Core SeedExplorerService ──→ Rodel.Minecraft.Seeds ── 自有适配器 
 - **Assistant** 是Core的内部辅助类库，不是公共服务。仅含提供商请求上下文、协议/SSE/SDK适配与通用MCP传输；没有Core项目引用，内部实现只向Core开放。业务路径、凭据存储和Core配置不灌入底层协议类型。CLI通过Core而不是直接引用该库。
 - **同EXE后台模式** 只服务CLI的跨命令host_owned场景：Core内部管道客户端按需启动`rodel-mc.exe ai serve`，实际仍运行同一Core内核。没有Assistant.Host项目或rodel-assistant发布物。跨进程执行租约、PID/启动时间、取消信号和会话操作租约避免App与CLI同时生成、误恢复活回合或覆盖修订。MCP工具与终端AI操作复用CLI实际命令符号、结果和退出码；不从MCP读取交互凭据stdin。
 - **App** 是packaged Sprout原生宿主，业务只引用Core，功能目录负责首页、实例、新建、迁入、本地包、运行环境、内容/世界及设置；资源、窗口偏好和生命周期归App管理。AI对话界面尚未接入。
-- **SettingsGenerator** 在编译期为App的`SettingProperty`生成偏好属性，并以`RMLUI001`保护手写只读IView的主题依赖、以`RMLUI002`保护应用默认样式；生成View交由Sprout的`SPROUT074`。App由`AppStorage`按真实包身份选择包LocalSettings或无包EXE的当前用户注册表偏好，文件与缓存分别归各自LocalState/LocalCache；它不承接Core业务。独立EXE由`scripts/package-exe.ps1`发布自包含NativeAOT及Inno Setup当前用户安装包，MSIX仍为默认构建路径。
+- **SettingsGenerator** 在编译期为App的`SettingProperty`生成偏好属性，并以`RMLUI001`保护手写只读IView的主题依赖、以`RMLUI002`保护应用默认样式；生成View交由Sprout的`SPROUT074`。App由`AppStorage`按真实包身份选择包LocalSettings或无包EXE的当前用户注册表偏好，文件与缓存分别归各自LocalState/LocalCache；它不承接Core业务。独立EXE由`scripts/package-exe.ps1`发布自包含NativeAOT及Inno Setup当前用户安装包，无包EXE是默认构建与GitHub Releases分发路径，MSIX仅保留显式验证。
 - **Rodel.Minecraft.Skins** 是遵循Minecraft贴图规则的独立图像编辑类库，负责文档、绘图、UV、PNG及3D预览，不引用启动器、CLI、MCP、Sprout或AI。Core引用它进行启动器存储适配，不能反向依赖Core。
 - **Rodel.Minecraft.Seeds** 是独立种子契约/地图输出类库，与Skins同级，不引用Core。正常构建嵌入自有Java适配器，实际生成只调用精确版本原版代码；Core的`Worlds/Seeds`持有依赖准备、JVM生命周期、完整文件指纹、缓存、可恢复搜索和收藏/导出事务。Seeds另承接冻结区域/容器契约、原版模型与纹理解析、可切层几何和共享投影相机；Core承接原版FULL区域生成、校验与原子缓存及原资源读取。App的`Features/SeedExplorer`持有独立窗口、视野、渐进瓦片调度、图例/图钉/Popup、D3D预览工作器及Core调用，Shell只组合入口。GPU工作器按需绘制、复用输入，相机帧与图钉使用同一投影，关闭时等待原生资源释放；不将游戏生成或战利品逻辑搬入UI。详细边界见[Core API](CORE_API.md#原版种子探索器)。
 

@@ -6222,4 +6222,14 @@ Minecraft {2} · {3}</value>
   <data name="InstancesLoading" xml:space="preserve"><value>인스턴스 불러오는 중…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>LAN 알림을 기다리는 중</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>게임 포트는 준비되었지만 Terracotta가 LAN 알림을 감지하지 못했습니다. 월드를 계속 공개한 상태에서 네트워크 어댑터와 멀티플레이 구성 요소의 방화벽 권한을 확인한 후 다시 시도하세요.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>RMCL 업데이트 사용 가능</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>버전 {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>다운로드 후 RMCL이 종료됩니다. 설치 안내에 따라 업데이트하세요.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>업데이트 다운로드 중</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>진행 중인 작업을 완료하고 편집기 변경 사항을 저장한 후 다시 시도하세요.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>업데이트하지 못했습니다. 연결과 디스크 여유 공간을 확인한 후 다시 시도하세요.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>이 버전 건너뛰기</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>나중에</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>업데이트</value></data>
 </root>

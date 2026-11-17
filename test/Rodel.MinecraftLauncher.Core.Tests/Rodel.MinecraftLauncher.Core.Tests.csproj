@@ -5,6 +5,11 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Updates/GitHubUpdateClient.cs" Link="Updates/GitHubUpdateClient.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Updates/ReleaseManifest.cs" Link="Updates/ReleaseManifest.cs" />
+    <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Updates/UpdateInstaller.cs" Link="Updates/UpdateInstaller.cs" />
+    <None Include="../../src/Rodel.MinecraftLauncher.App/Assets/Updates/install-update.ps1" Link="update-handoff.ps1" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../scripts/installer/stop-installed-app.ps1" Link="stop-installed-app.ps1" CopyToOutputDirectory="PreserveNewest" />
     <EmbeddedResource Include="../../mods/gradle.properties" LogicalName="BundledModVersion.properties" />
     <None Include="../Fixtures/WorldMaps/*.fixture" Link="world-map-fixtures/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Settings/SettingsBase.cs" Link="AppPreferences/SettingsBase.cs" />
@@ -20,7 +25,20 @@
     <Compile Include="..\..\src\Rodel.MinecraftLauncher.App\Features\Skins\Palettes\SkinPaletteStore.cs" Link="Presentation\SkinPaletteStore.cs" />
     <ProjectReference Include="../../src/Rodel.MinecraftLauncher.Core/Rodel.MinecraftLauncher.Core.csproj" />
     <ProjectReference Include="../Fixtures/JavaProbe/JavaProbe.csproj" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../Fixtures/UpdateProbe/UpdateProbe.csproj" ReferenceOutputAssembly="false" />
   </ItemGroup>
+  <Target Name="CopyUpdateProbe" AfterTargets="Build">
+    <MSBuild Projects="../Fixtures/UpdateProbe/UpdateProbe.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
+      <Output TaskParameter="TargetOutputs" ItemName="UpdateProbeAssembly" />
+    </MSBuild>
+    <PropertyGroup>
+      <UpdateProbeDirectory>@(UpdateProbeAssembly->'%(RootDir)%(Directory)')</UpdateProbeDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <UpdateProbeFiles Include="$(UpdateProbeDirectory)update-probe.*" Exclude="$(UpdateProbeDirectory)update-probe.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(UpdateProbeFiles)" DestinationFolder="$(OutDir)update-probe" />
+  </Target>
   <Target Name="CopyJavaProbeFixture" AfterTargets="Build">
     <MSBuild Projects="../Fixtures/JavaProbe/JavaProbe.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration);TargetFramework=$(TargetFramework);RuntimeIdentifier=$(RuntimeIdentifier)">
       <Output TaskParameter="TargetOutputs" ItemName="JavaProbeAssembly" />

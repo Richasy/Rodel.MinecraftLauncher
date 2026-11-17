@@ -1,0 +1,46 @@
+name: Deploy documentation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
+    timeout-minutes: 30
+    environment: website-production
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+      - run: npm run types:check
+      - run: npm run format:check
+      - run: npm run build
+      - run: npm run check:static
+      - name: Deploy and verify the production site
+        env:
+          WEBSITE_SSH_KEY: ${{ secrets.WEBSITE_SSH_KEY }}
+          WEBSITE_SSH_KNOWN_HOSTS: ${{ secrets.WEBSITE_SSH_KNOWN_HOSTS }}
+          WEBSITE_SSH_HOST: ${{ vars.WEBSITE_SSH_HOST }}
+          WEBSITE_SSH_PORT: ${{ vars.WEBSITE_SSH_PORT }}
+          WEBSITE_SSH_USER: ${{ vars.WEBSITE_SSH_USER }}
+          WEBSITE_DEPLOY_ROOT: ${{ vars.WEBSITE_DEPLOY_ROOT }}
+          WEBSITE_URL: ${{ vars.WEBSITE_URL }}
+        run: node scripts/deploy.mjs

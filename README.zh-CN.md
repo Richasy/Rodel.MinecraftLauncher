@@ -18,16 +18,14 @@
     <a href="https://rmcl.richasy.net/docs/">玩家手册</a> ·
     <a href="https://github.com/Richasy/Rodel.MinecraftLauncher/issues">问题反馈</a>
   </p>
-  <a href="https://apps.microsoft.com/detail/9MW9ZMS2K47C">
-    <img src="website/public/assets/microsoft-store-zh.svg" width="200" alt="从 Microsoft Store 获取 RMCL" />
-  </a>
+  <a href="https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest">下载 Windows 版 RMCL · x64 / ARM64</a>
 </div>
 
 > [!IMPORTANT]
 > **现阶段无法从源码构建本项目。**
 > 原生 UI 框架 **Sprout** 仍处于封闭开发阶段，所需框架依赖尚未公开提供。因此，本 README 不提供当前不可用的公开源码构建步骤。
 >
-> **如需使用 RMCL，请通过 [Microsoft Store](https://apps.microsoft.com/detail/9MW9ZMS2K47C) 安装发行版。** 无法自行构建源码不影响安装商店版本。
+> **如需使用 RMCL，请从 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载安装包。** Microsoft Store 不再提供后续更新。
 
 **RMCL — Rodel Minecraft Launcher** 是一款免费 Windows 启动器，使用 C# / .NET 自研启动内核，并以 Sprout 构建原生界面。它将日常游戏管理与创作工具放在一起：准备实例、整理内容、备份世界、绘制皮肤，或寻找下一次冒险的种子。
 
@@ -55,25 +53,25 @@
 <a id="get-started"></a>
 ## 🚀 快速开始
 
-**RMCL 提供 Microsoft Store 发行版和 [GitHub Release EXE 安装包](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest)。** 商店负责商店版更新；EXE 版从 Release 下载更新。游戏、模组和整合包更新仍在启动器内管理。
+**RMCL 通过 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 分发。** 选择 x64 或 ARM64 的 EXE 安装包。启动后会静默检查更新，标题栏更新图标可查看本地化说明、下载更新或跳过当前版本。游戏、模组和整合包更新仍在启动器内管理。
 
 | 项目 | 要求与说明 |
 | --- | --- |
 | 操作系统 | Windows 10 2004、内部版本 **19041** 及以上，包括 Windows 11 |
-| 处理器架构 | **x64** 或 **ARM64**；商店自动选择对应安装包 |
+| 处理器架构 | **x64** 或 **ARM64**；选择对应架构的安装包 |
 | 启动器运行环境 | NativeAOT 发行版**不需要额外安装 .NET** |
 | Minecraft 运行环境 | 适合所选游戏版本的 **Java**；可通过启动器发现、导入或准备 |
 | 存储与网络 | 为游戏、资源和备份预留空间；首次准备通常需要下载文件 |
 
 ### 第一次启动，只需几步
 
-1. **安装并打开 RMCL**：通过 Microsoft Store 或 GitHub Release 获取应用。
+1. **安装并打开 RMCL**：通过 GitHub Releases 获取应用。
 2. **选择身份**：添加微软账户，在支持的本地场景使用离线身份，或选择兼容的外置认证服务。
 3. **创建或导入实例**：从原版 Minecraft 开始，也可以复制迁入已有游戏目录，或导入 MRPack／CurseForge ZIP。
 4. **等待完整准备结果**：核对游戏文件、加载器和 Java 的整体任务状态，不把单个下载的 100% 当作全部完成。
 5. **选择实例并启动**：等待 Minecraft 本身完成加载，再进入世界或服务器。
 
-商店发行版已内置发起微软登录所需的公开 Client ID，普通玩家不必自行注册 Azure 应用或配置 Client ID。账户的游戏权益和服务访问仍按实际条件验证；离线身份不绕过游戏所有权或服务器认证。
+发行版已内置发起微软登录所需的公开 Client ID，普通玩家不必自行注册 Azure 应用或配置 Client ID。账户的游戏权益和服务访问仍按实际条件验证；离线身份不绕过游戏所有权或服务器认证。
 
 > [!TIP]
 > **已经有一套顺手的配置？** App 导入已有游戏时，会完整复制为托管实例，而不是关联旧目录；来源始终不删改。
@@ -224,7 +222,7 @@ App 与 CLI 共用这组语言。CLI 可通过 `--language CODE` 选择语言，
 
 独立入口 **`rodel-mc.exe`** 为脚本、诊断和外部 AI 客户端提供启动器操作。它的 MCP 服务包装同一套 Core 工具契约，不另写第二套启动器业务。
 
-> 以下示例用于说明**已具备单独提供的 CLI** 时的接口用法。**Microsoft Store App 不包含 CLI**；本节不是 CLI 下载方式，也不是当前可用的源码构建步骤。
+> 以下示例用于说明**已具备单独提供的 CLI** 时的接口用法。**App 安装包不包含 CLI**；本节不是 CLI 下载方式，也不是当前可用的源码构建步骤。
 
 ```powershell
 rodel-mc --language zh-CN --help
@@ -273,7 +271,7 @@ flowchart LR
 
 | 入口 | 职责 |
 | --- | --- |
-| [原生 App](src/Rodel.MinecraftLauncher.App/README.md) | Sprout 界面、packaged MSIX 生命周期与展示 |
+| [原生 App](src/Rodel.MinecraftLauncher.App/README.md) | Sprout 界面、当前用户 EXE 生命周期与展示 |
 | [Core](src/Rodel.MinecraftLauncher.Core/) | 共享启动器服务、状态、任务与受控工具 |
 | [CLI](src/Rodel.MinecraftLauncher.Cli/) | 命令树与对外 MCP 服务 |
 | [内部 AI 子模块](src/Rodel.MinecraftLauncher.Assistant/) | 模型协议实现与 MCP 客户端传输 |
@@ -316,7 +314,7 @@ flowchart LR
 - **正式测试：**[测试入口](test/README.md) · [测试设计指南](test/GUIDELINES.md) · [AI 测试边界](test/ASSISTANT.md)
 - **发布与协作：**[发布流程](doc/RELEASE.md) · [协作入口](AGENTS.md)
 
-原型与文档配图不是运行依赖，也不是游戏验收证据。正式回归、NativeAOT 包、原生界面、实际 Minecraft 运行和商店认证分别验证，请按当前状态判断，不由某一项通过推定其他项完成。
+原型与文档配图不是运行依赖，也不是游戏验收证据。正式回归、NativeAOT 包、原生界面、实际 Minecraft 运行和安装器升级分别验证，请按当前状态判断，不由某一项通过推定其他项完成。
 
 </details>
 

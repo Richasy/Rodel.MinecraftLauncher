@@ -29,14 +29,18 @@ if (-not [guid]::TryParse($env:RODEL_MICROSOFT_CLIENT_ID, [ref]$clientId) -or $c
 if (-not $Compiler) {
     $candidates = @((Get-Command ISCC.exe -ErrorAction SilentlyContinue).Source,
         (Join-Path $env:LOCALAPPDATA 'Programs\Inno Setup 7\ISCC.exe'),
-        (Join-Path $env:ProgramFiles 'Inno Setup 7\ISCC.exe'),
-        (Join-Path ${env:ProgramFiles(x86)} 'Inno Setup 6\ISCC.exe'))
+        (Join-Path $env:ProgramFiles 'Inno Setup 7\ISCC.exe'))
     $Compiler = $candidates | Where-Object { $_ -and [IO.File]::Exists($_) } | Select-Object -First 1
 }
 if (-not $Compiler -or -not [IO.File]::Exists($Compiler)) {
-    throw 'Install Inno Setup 6.7 or 7 and pass -Compiler <path to ISCC.exe> if it is not discovered.'
+    throw 'Install Inno Setup 7.1.1 or later and pass -Compiler <path to ISCC.exe> if it is not discovered.'
 }
 $Compiler = [IO.Path]::GetFullPath($Compiler)
+$reportedCompilerVersion = & $Compiler --version
+$compilerVersion = $null
+if ($LASTEXITCODE -ne 0 -or -not [version]::TryParse(([string]$reportedCompilerVersion).Trim(), [ref]$compilerVersion) -or $compilerVersion -lt [version]'7.1.1') {
+    throw 'Inno Setup 7.1.1 or later is required for native-system-directory uninstall workers.'
+}
 $output = Join-Path ($ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputDirectory)) "$Version\win-$Architecture\exe"
 # A unique payload cannot pick up stale DLLs, packages or development files from an earlier publish.
 $payload = Join-Path $output ('payload-' + [guid]::NewGuid().ToString('N'))
@@ -58,7 +62,7 @@ $metadataArgument = if ($WindowsSdkVersion) { " -p:CsWinRTWindowsMetadata=$Windo
 $command = "call `"$vcvars`" $vcArchitecture >nul && dotnet publish `"$project`" -c Release -r win-$Architecture -o `"$payload`" -p:Platform=AnyCPU -p:SproutPackageFormat=None -p:WindowsPackageType=None -p:SproutAppxVersion=$Version -p:EnableLocalInference=false -p:CopyOutputSymbolsToPublishDirectory=false$metadataArgument"
 & $env:ComSpec /d /c $command
 if ($LASTEXITCODE -ne 0) { throw "Unpackaged NativeAOT publish failed ($LASTEXITCODE)." }
-foreach ($required in @('Rodel.MinecraftLauncher.App.exe', 'Assets\Backgrounds', 'Assets\BuiltInMods', 'Assets\AiMcp', 'Microsoft.WindowsAppRuntime.dll')) {
+foreach ($required in @('Rodel.MinecraftLauncher.App.exe', 'Assets\Backgrounds', 'Assets\BuiltInMods', 'Assets\AiMcp', 'Assets\Updates\install-update.ps1', 'Microsoft.WindowsAppRuntime.dll')) {
     if (-not (Test-Path -LiteralPath (Join-Path $payload $required))) { throw "Missing installer payload: $required" }
 }
 # Referenced projects can still copy their symbols even when the entry point's symbols are excluded.

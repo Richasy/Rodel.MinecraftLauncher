@@ -11,6 +11,7 @@ using Sprout.Input;
 using Sprout.Svg;
 using Sprout.Theming;
 
+using var installation = InstallationLifetime.Open();
 var imageCache = new AppImageCache(Path.Combine(AppStorage.CachePath, "Images"));
 return SproutApp.CreateBuilder(args)
     .UseApp(static () => new LauncherApplication())

@@ -1,10 +1,10 @@
 # RMCL website
 
-这个目录是 RMCL 的文档站，定位为验证 Sprout 原生 UI 框架、探索 AI 辅助新手的 PoC。界面和文案以低调的项目说明、操作指导为主。RMCL 免费使用，启动器自有代码按 AGPL-3.0-only 开源，独立组件保留原许可。网站位于 <https://rmcl.richasy.net/>；商店发行版内置微软登录公开Client ID，不要求玩家注册应用，也不把配置或商店发布等同于第三方服务审批。
+这个目录是 RMCL 的文档站，定位为验证 Sprout 原生 UI 框架、探索 AI 辅助新手的 PoC。界面和文案以低调的项目说明、操作指导为主。RMCL 免费使用，启动器自有代码按 AGPL-3.0-only 开源，独立组件保留原许可。网站位于 <https://rmcl.richasy.net/>；正式发行版内置微软登录公开Client ID，不要求玩家注册应用，也不把配置或商店发布等同于第三方服务审批。
 
 ## 本地运行
 
-产品提供 [Microsoft Store](https://apps.microsoft.com/detail/9MW9ZMS2K47C) 发行版与 [GitHub Release EXE](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest)。Store ID 为 `9MW9ZMS2K47C`；商店版由商店更新，EXE 版从 Release 下载更新。
+产品通过 [GitHub Release EXE](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 分发x64／ARM64安装包，不再通过Microsoft Store更新。App启动后静默检查，可从标题栏更新图标查看本地化说明、下载或跳过版本。
 
 本地开发使用 Node.js 与 npm；部署版本以工作流为准。依赖锁定在 `package-lock.json`。
 
