@@ -6242,4 +6242,6 @@ Detalles: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Vincular versiones seleccionadas</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Seleccionar todas las versiones</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>No hay versiones locales. Selecciona la carpeta .minecraft que contiene versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Elige una carpeta de juego existente</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Usa el botón de carpeta de arriba o pega la ruta de la carpeta .minecraft.</value></data>
 </root>

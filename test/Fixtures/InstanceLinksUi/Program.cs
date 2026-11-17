@@ -39,7 +39,12 @@ internal sealed class InstanceLinksApplication : Application
     protected override void OnLaunched(LaunchEventArgs e)
     {
         LauncherTheme.Configure(Theme);
-        var settings = new AppSettings(new Dictionary<string, object>()) { Language = "zh-CN", CloseBehavior = "Exit" };
+        var languageFile = System.IO.Path.Combine(FixtureRoot.Path, "language");
+        var settings = new AppSettings(new Dictionary<string, object>())
+        {
+            Language = File.Exists(languageFile) ? File.ReadAllText(languageFile).Trim() : "zh-CN",
+            CloseBehavior = "Exit",
+        };
         var themeFile = System.IO.Path.Combine(FixtureRoot.Path, "theme");
         if (File.Exists(themeFile))
             Theme.SetRequestedMode(File.ReadAllText(themeFile).Trim() == "light" ? ThemeRequest.Light : ThemeRequest.Dark);

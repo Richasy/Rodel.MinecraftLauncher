@@ -6241,4 +6241,6 @@ Minecraft {2} · {3}</value>
   <data name="LinkConfirm" xml:space="preserve"><value>Связать выбранные версии</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Выбрать все версии</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Локальные версии не найдены. Выберите папку .minecraft с versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Выберите существующую папку игры</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Нажмите кнопку папки выше или вставьте путь к папке .minecraft.</value></data>
 </root>

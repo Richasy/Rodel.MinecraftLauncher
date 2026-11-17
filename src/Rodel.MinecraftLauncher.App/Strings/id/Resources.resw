@@ -6246,4 +6246,6 @@ Detail: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Tautkan versi terpilih</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Pilih semua versi</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Tidak ada versi lokal. Pilih folder .minecraft yang berisi versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Pilih folder game yang sudah ada</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Gunakan tombol folder di atas atau tempel jalur folder .minecraft.</value></data>
 </root>

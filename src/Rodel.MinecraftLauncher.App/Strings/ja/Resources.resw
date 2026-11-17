@@ -6238,4 +6238,6 @@ Minecraft {2} · {3}</value>
   <data name="LinkConfirm" xml:space="preserve"><value>選択したバージョンをリンク</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>全バージョンを選択</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>ローカルバージョンがありません。versions を含む .minecraft を選んでください。</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>既存のゲームフォルダーを選択</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>上のフォルダーボタンを使うか、.minecraft フォルダーのパスを貼り付けてください。</value></data>
 </root>

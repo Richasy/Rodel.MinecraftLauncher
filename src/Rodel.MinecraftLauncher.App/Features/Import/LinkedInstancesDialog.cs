@@ -73,8 +73,8 @@ internal sealed partial class LinkedInstancesDialog : Control
         [
             Border(Text(Resources.LinkExisting).FontSize(19f).FontWeight(600)
                 .Foreground(LauncherTheme.Ink).Wrap()).Padding(24f).Cell(0, 0),
-            ScrollView(new LinkedInstancesBody(LauncherAppearance.Capture(), Source, Entries, Busy, Scanning, HasNoVersions, Error,
-                ChangeSource, Browse, ToggleAll, UpdateEntry))
+            new LinkedInstancesBody(LauncherAppearance.Capture(), Source, Entries, Busy, Scanning, HasNoVersions, Error,
+                ChangeSource, Browse, ToggleAll, UpdateEntry)
                 .Cell(0, 1),
             Border(Grid([GridLength.Star(), GridLength.Star()], [GridLength.Auto], [
                 LauncherControls.Command(Resources.LinkConfirm, () => _ = ConfirmAsync())

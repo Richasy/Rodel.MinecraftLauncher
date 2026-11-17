@@ -6262,4 +6262,6 @@ Détails : {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Lier les versions sélectionnées</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Sélectionner toutes les versions</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Aucune version locale. Sélectionnez le dossier .minecraft contenant versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Choisir un dossier de jeu existant</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Utilisez le bouton de dossier ci-dessus ou collez le chemin du dossier .minecraft.</value></data>
 </root>

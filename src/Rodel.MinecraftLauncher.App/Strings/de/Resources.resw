@@ -6238,4 +6238,6 @@ Details: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Ausgewählte Versionen verknüpfen</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Alle Versionen auswählen</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Keine lokalen Versionen gefunden. Den .minecraft-Ordner mit versions auswählen.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Vorhandenen Spielordner auswählen</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Die Ordnerschaltfläche oben verwenden oder den Pfad zum .minecraft-Ordner einfügen.</value></data>
 </root>

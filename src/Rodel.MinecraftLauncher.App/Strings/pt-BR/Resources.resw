@@ -6252,4 +6252,6 @@ Detalhes: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Vincular versões selecionadas</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Selecionar todas as versões</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Nenhuma versão local. Selecione a pasta .minecraft que contém versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Escolha uma pasta de jogo existente</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Use o botão de pasta acima ou cole o caminho da pasta .minecraft.</value></data>
 </root>

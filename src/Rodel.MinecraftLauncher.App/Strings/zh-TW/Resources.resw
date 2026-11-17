@@ -6237,4 +6237,6 @@ Minecraft {2} · {3}</value>
   <data name="LinkConfirm" xml:space="preserve"><value>連結所選版本</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>全選版本</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>找不到本機版本，請選擇包含 versions 的 .minecraft 目錄。</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>選擇既有遊戲目錄</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>使用上方的資料夾按鈕，或貼上 .minecraft 目錄路徑。</value></data>
 </root>
