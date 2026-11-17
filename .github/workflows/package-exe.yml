@@ -69,6 +69,7 @@ jobs:
         id: version
         env:
           INPUT_VERSION: ${{ inputs.version }}
+          PUBLISH: ${{ inputs.publish }}
           GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference = 'Stop'
@@ -94,7 +95,7 @@ jobs:
           if (@($tags | Where-Object { $_.ref -ceq "refs/tags/v$version" }).Count) { throw 'The target tag already exists; never reuse an unbound source tag.' }
           $latest = $releases | Where-Object { -not $_.draft -and -not $_.prerelease -and $_.tag_name -cmatch '^v\d+\.\d+\.\d+\.0$' } |
             Sort-Object { [version]$_.tag_name.Substring(1) } -Descending | Select-Object -First 1
-          if ($latest -and [version]$version -le [version]$latest.tag_name.Substring(1)) { throw 'The version must be newer than the published stable release.' }
+          if ($env:PUBLISH -ceq 'true' -and $latest -and [version]$version -le [version]$latest.tag_name.Substring(1)) { throw 'The version must be newer than the published stable release.' }
 
   package:
     needs: plan

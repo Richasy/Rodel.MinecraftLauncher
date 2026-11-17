@@ -8,7 +8,7 @@ RMCL 不再通过 Microsoft Store 分发更新。正式渠道是 [GitHub Release
 
 - `version`：留空取 App 工程的 `SproutAppxVersion`，或指定更高的规范四段 UInt16 版本，末段为 `0`。版本同时用于 EXE、安装器、标签和更新清单。
 - `x64`／`arm64`：默认均选。`publish=true` 必须从 `main` 构建全部两种架构。
-- `publish`：默认开启。关闭后允许在功能分支构建验证，只上传 Actions Artifacts，不发布或改变稳定更新频道。
+- `publish`：默认开启。关闭后允许在功能分支构建验证，也允许验证数值低于旧测试版的安装包；只上传 Actions Artifacts，不发布或改变稳定更新频道。正式发布仍要求版本高于当前稳定Release；两种模式都拒绝复用同名Release或tag。
 
 提交前维护 `.github/release-notes.json` 的全部15语言说明。CI 校验语言与非空说明，从两个实际安装包计算长度、SHA256及当前源码SHA，生成 `release-note.json`。日志采用简短纯文本，不能将内部构建通过描述为Minecraft实际运行通过。未完整生成全部安装包与清单时不发布。单架构验证仅生成该架构artifact，不生成可被玩家发现的不完整更新清单。
 
@@ -57,6 +57,8 @@ release-note.json
 强制终止挂在 Inno 的 `usAppMutexCheck`，位于确认之后、运行中检查及文件删除之前，调用随安装包携带的 `Assets/Setup/stop-installed-app.ps1`（系统 Windows PowerShell，无需额外运行时）；`CloseApplications=yes` 本身不是卸载退出机制。时序依据[当前固定版本的官方卸载源码](https://github.com/jrsoftware/issrc/blob/2527da77ff7983514f535d19391a748c5d898336/Projects/Src/Setup.Uninstall.pas)。旧安装的卸载器不会被在线修改，需先用新安装包覆盖安装。
 
 ## App 更新契约
+
+正式版本沿用`0.0.x.0`序列，当前为`0.0.5.0`。旧`0.2611.x.0`测试安装在数值上更高，需从GitHub手动下载EXE覆盖一次；不为此改变数值比较或自动推荐降级。后续版本按正常递增检查更新。
 
 启动后异步读取固定仓库的GitHub latest稳定发行版，20秒内完成元数据检查；404、限流、离线、损坏JSON、旧版／跳过版本、缺少精确附件均安静忽略，不阻止窗口或普通业务。仅下载小型说明清单，不预下载安装包。`release-note.json`的版本必须与tag一致，schema为1，含源码SHA、`notes`语言映射、`installers`按x64／arm64映射的`fileName`、`size`与`sha256`。缺少当前语言时使用英文，简繁中文沿用LauncherLanguages。
 
