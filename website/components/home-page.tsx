@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, Monitor } from "lucide-react";
 import { localized, type Locale } from "@/lib/navigation";
 import { versionedAssetUrl } from "@/lib/image-assets.mjs";
-import { StoreBadge } from "@/components/store-badge";
+import { ReleaseDownload } from "@/components/release-download";
 const topics = [
   {
     icon: "ai",
@@ -139,7 +139,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               )}
             </p>
             <div className="hero-buttons">
-              <StoreBadge locale={locale} />
+              <ReleaseDownload locale={locale} />
               <Link className="button" href={url("/docs")}>
                 <BookOpen size={17} />
                 {t("阅读使用手册", "Read the guide")}
@@ -187,8 +187,8 @@ export function HomePage({ locale }: { locale: Locale }) {
         <div className="hero-foot">
           <span>
             {t(
-              "免费使用，仅通过 Microsoft Store 获取；源码计划后续公开。",
-              "Free, exclusively on Microsoft Store. Source release is planned.",
+              "免费使用，通过 GitHub Releases 获取，支持 x64 与 ARM64。",
+              "Free, available on GitHub Releases for x64 and ARM64.",
             )}
           </span>
           <a href="#topics" className="scroll-hint">

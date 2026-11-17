@@ -30,5 +30,7 @@
   <Folder Name="/test/Fixtures/">
     <Project Path="test/Fixtures/ClaudeMcp/ClaudeMcpFixture.csproj" />
     <Project Path="test/Fixtures/JavaProbe/JavaProbe.csproj" />
+    <Project Path="test/Fixtures/UpdateProbe/UpdateProbe.csproj" />
+    <Project Path="test/Fixtures/UpdateUi/UpdateUi.csproj" />
   </Folder>
 </Solution>

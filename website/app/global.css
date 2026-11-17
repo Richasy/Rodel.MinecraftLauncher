@@ -413,20 +413,6 @@ kbd {
   align-items: center;
   margin-top: 32px;
 }
-.store-badge {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  line-height: 0;
-}
-.store-badge img {
-  display: block;
-  width: auto;
-  height: 48px;
-}
-.prose .store-badge {
-  margin-block: 8px 16px;
-}
 .hero-notes {
   display: flex;
   gap: 20px;

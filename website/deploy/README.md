@@ -15,7 +15,7 @@
 
 ## 发布内容
 
-仓库不再提供网站部署 workflow；当前 Actions 仅保留 Store 发布和独立 EXE 打包。网站源码、静态构建检查和部署脚本保留，线上站点及 `website-production` 环境配置继续保留。
+仓库不再提供网站部署 workflow；当前 Actions 仅提供 GitHub Release EXE 发布。网站源码、静态构建检查和部署脚本保留，线上站点及 `website-production` 环境配置继续保留。
 
 独立部署环境使用 Node.js 24，依次执行锁定依赖安装、类型与格式检查、静态构建和 `check:static`，再运行 `node scripts/deploy.mjs`。该脚本要求真实的 `GITHUB_REF=refs/heads/main`、`GITHUB_SHA`、`GITHUB_RUN_ID` 和 `GITHUB_RUN_ATTEMPT`，不能直接在缺少执行元数据的本地终端运行。检查覆盖中英文文章配对、内部页面和锚点、图片原文件及内容指纹。随后打包纯静态产物，通过固定主机密钥的 SSH 上传，服务器核对归档 SHA256 后原子切换。每个版本包含公开的 `deployment.json`，记录提交、run、attempt 和发布时间。上线检查遍历 sitemap 的全部页面，并逐字节核对正文与首页引用的所有图片，同时确认不存在的页面、环境文件及 source map 返回 404；检查失败会切回上一版。
 

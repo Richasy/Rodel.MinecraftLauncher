@@ -6222,4 +6222,14 @@ Minecraft {2} · {3}</value>
   <data name="InstancesLoading" xml:space="preserve"><value>正在載入執行個體…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>等待區域網路廣播</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>遊戲連接埠已就緒，但陶瓦未能發現區域網路廣播。請確認世界仍在開放，並檢查網路介面卡及連線元件的防火牆授權後重試。</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>RMCL 有可用更新</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>版本 {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>下載完成後將關閉 RMCL，請依照安裝精靈完成更新。</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>正在下載更新</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>請先完成進行中的操作並儲存編輯器變更，然後重試。</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>無法完成更新，請檢查網路連線與剩餘磁碟空間後重試。</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>略過此版本</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>稍後</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>更新</value></data>
 </root>

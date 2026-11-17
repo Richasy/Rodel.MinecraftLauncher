@@ -19,9 +19,9 @@ dotnet publish src/Rodel.MinecraftLauncher.App -c Release -r win-x64
 
 若自动发现不到JDK25，可将`JAVA_HOME`指向有效的安装目录。CsWinRT默认读取`10.0.19041.0`的Windows SDK元数据；若只安装其他版本，可给上述命令增加`-p:CsWinRTWindowsMetadata=<已安装的SDK版本>`，不改变工程的最低Windows版本。首次切换到`win-x64`发布时保留正常还原，不使用缺少该RID目标的旧assets配合`--no-restore`。
 
-默认调试和Store发布使用`SproutPackageFormat=Msix`与`Package.appxmanifest`。run/watch通过Developer Mode注册并以包身份启动；默认publish生成NativeAOT程序及开发签名MSIX。正式Store身份单独配置。
+默认调试及发布使用`SproutPackageFormat=None`，不注册MSIX或依赖Store。需要验证已有包身份时可显式设置`SproutPackageFormat=Msix`；这不是正式分发渠道。
 
-网吧或不能使用Store的电脑可使用单文件EXE安装包。构建机另需Inno Setup 6.7或7及发行使用的公开`RODEL_MICROSOFT_CLIENT_ID`，执行：
+正式分发使用GitHub Releases中的EXE安装包。构建机另需Inno Setup 6.7或7及发行使用的公开`RODEL_MICROSOFT_CLIENT_ID`，执行：
 
 ```powershell
 ./scripts/package-exe.ps1 -Architecture x64
@@ -30,6 +30,8 @@ dotnet publish src/Rodel.MinecraftLauncher.App -c Release -r win-x64
 ```
 
 输出为`artifacts/release/<version>/win-x64/exe/RMCL-<version>-win-x64-setup.exe`及SHA256文件。安装包携带完整unpackaged NativeAOT、Windows App SDK运行库、资源和内置模组，不携带CLI，不要求玩家安装.NET、JDK、MSIX证书或Store。默认安装至`%LOCALAPPDATA%\Programs\RMCL-x64`，不请求管理员权限，创建开始菜单快捷方式，可选桌面快捷方式；卸载保留游戏、存档与偏好。只需把安装EXE放上云盘，到目标电脑下载运行即可。网吧若禁止运行外来EXE，仍受其实际策略限制。
+
+启动后在后台静默读取GitHub最新稳定Release和`release-note.json`；发现更新才在最小化按钮旁显示更新图标。弹窗展示当前语言说明，英文兜底，提供稍后、跳过该版本及下载更新。下载按Windows原生架构选择x64／ARM64，显示实际字节进度并核验长度与SHA256；网络／格式错误不影响普通启动。确认退出前提交偏好、保留编辑器与任务的关闭守卫，只有主窗口真正关闭且当前进程退出后才打开安装向导。独立Windows PowerShell交接等待向导结束后删除下载的安装包；不静默安装、不请求管理员权限。正式发布契约见[发布说明](../../doc/RELEASE.md)。
 
 ## 数据与偏好
 

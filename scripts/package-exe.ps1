@@ -58,7 +58,7 @@ $metadataArgument = if ($WindowsSdkVersion) { " -p:CsWinRTWindowsMetadata=$Windo
 $command = "call `"$vcvars`" $vcArchitecture >nul && dotnet publish `"$project`" -c Release -r win-$Architecture -o `"$payload`" -p:Platform=AnyCPU -p:SproutPackageFormat=None -p:WindowsPackageType=None -p:SproutAppxVersion=$Version -p:EnableLocalInference=false -p:CopyOutputSymbolsToPublishDirectory=false$metadataArgument"
 & $env:ComSpec /d /c $command
 if ($LASTEXITCODE -ne 0) { throw "Unpackaged NativeAOT publish failed ($LASTEXITCODE)." }
-foreach ($required in @('Rodel.MinecraftLauncher.App.exe', 'Assets\Backgrounds', 'Assets\BuiltInMods', 'Assets\AiMcp', 'Microsoft.WindowsAppRuntime.dll')) {
+foreach ($required in @('Rodel.MinecraftLauncher.App.exe', 'Assets\Backgrounds', 'Assets\BuiltInMods', 'Assets\AiMcp', 'Assets\Updates\install-update.ps1', 'Microsoft.WindowsAppRuntime.dll')) {
     if (-not (Test-Path -LiteralPath (Join-Path $payload $required))) { throw "Missing installer payload: $required" }
 }
 # Referenced projects can still copy their symbols even when the entry point's symbols are excluded.

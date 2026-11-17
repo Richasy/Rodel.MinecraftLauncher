@@ -364,9 +364,45 @@ LauncherAppearance.Capture(),            Page,
     private bool _flushingPreferences;
     private bool _preferencesFlushed;
     private bool _preferencesExitRequested;
+    private bool _updateExitRequested;
+
+    internal async Task<bool> InstallUpdateAsync(string installer, string sha256)
+    {
+        if (_homePage.HasOwnedWork || _accounts.HasActiveWork || _multiplayerPage.HasOwnedWork || _contentPage.HasActiveDownloads)
+            return false;
+        if (!await _instanceActions.FlushConfigurationAsync() || !await _settingsPage.FlushAsync())
+            return false;
+        var gate = installer + ".install";
+        File.Delete(gate);
+        using var worker = await Features.Updates.UpdateInstaller.StartAsync(installer, sha256, gate);
+        var closed = false;
+        void Authorize(object? sender, EventArgs args)
+        {
+            File.WriteAllText(gate, string.Empty);
+            closed = true;
+        }
+
+        _window.Closed += Authorize;
+        _updateExitRequested = true;
+        try
+        {
+            _window.Close();
+        }
+        finally
+        {
+            _updateExitRequested = false;
+            _window.Closed -= Authorize;
+            if (!closed && !worker.HasExited)
+                worker.Kill();
+        }
+
+        return closed;
+    }
 
     private async void OnClosing(object? sender, WindowClosingEventArgs e)
     {
+        if (_updateExitRequested)
+            return;
         if (!_downloadExitConfirmed && _contentPage.HasActiveDownloads)
         {
             e.Cancel = true;

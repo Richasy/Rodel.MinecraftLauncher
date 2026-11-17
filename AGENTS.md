@@ -101,7 +101,7 @@
 
 - 纯值`[View]`的主题依赖遵循[设计规范](design/DESIGN.md#原生主题资源与框架外观职责)：响应式owner捕获不可变外观并显式传递，不在View内经包装或工厂重读live Theme。Sprout的`SPROUT074`负责生成View的同源码传递读取；App的`RMLUI001`补充手写只读IView计算属性，`RMLUI002`阻止应用默认样式冻结实时取色。保留弹层与独立窗口的外观生命周期仍须实际热切核验。
 
-- 原生App默认调试、运行和Store发布使用Sprout packaged路径（`SproutPackageFormat=Msix`），包偏好使用当前包的WinAppSDK LocalSettings。增加网吧场景的独立EXE安装包：`scripts/package-exe.ps1`以`SproutPackageFormat=None`生成自包含NativeAOT程序并由Inno Setup按当前用户安装，不要求Store、证书信任或管理员权限。无包身份时App自有偏好使用HKCU，图片及缓存使用LocalAppData，游戏数据继续沿用Core数据根；包身份与无包身份由AppStorage集中区分，不以安装包外壳注册MSIX。一次性验证不进入产品编译或发布输入。
+- 原生App默认调试、运行和正式发布使用无包EXE路径（`SproutPackageFormat=None`），由GitHub Releases分发，不再通过Microsoft Store更新。`scripts/package-exe.ps1`生成自包含NativeAOT程序并由Inno Setup按当前用户安装，不要求Store、证书信任或管理员权限；MSIX仅保留显式包身份验证。无包身份时App自有偏好使用HKCU，图片及缓存使用LocalAppData，游戏数据继续沿用Core数据根；包身份与无包身份由AppStorage集中区分，不以安装包外壳注册MSIX。一次性验证不进入产品编译或发布输入。
 - 短事件回调可以使用lambda，多步骤启动等回调放入独立具名处理器，明确局部状态和资源生命周期。App全局共享依赖复用Sprout自带DI，窗口级对象保留明确所有者，按需创建的编辑器不在启动时提前实例化。
 - 启动器自有C#源码与测试的空字符串统一使用`string.Empty`，由根EditorConfig的Roslynator RCS1078规则和`dotnet format`修复/校验；属性参数、默认参数、常量与常量模式等必须使用编译期常量的位置保留合法字面量。外部子模块保持自身规则。
 

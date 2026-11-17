@@ -1,10 +1,6 @@
 # 网站图像来源
 
-软件图像来自原生 App 与 Minecraft；插画、应用图标与商店徽章另列来源。
-
-## Microsoft Store 徽章
-
-商店徽章另使用 Microsoft 官方的[中文 SVG](https://get.microsoft.com/images/zh-cn%20dark.svg) 与[英文 SVG](https://get.microsoft.com/images/en-us%20dark.svg)，保存为 `public/assets/microsoft-store-zh.svg`／`microsoft-store-en.svg`，按原比例显示，链接到 Store ID `9MW9ZMS2K47C`。资源路径与[官方徽章组件](https://get.microsoft.com/badge/ms-store-badge.bundled.js)一致，详见[商店链接与产品标识](https://learn.microsoft.com/en-us/windows/apps/publish/view-app-identity-details)。未引入商店第三方运行时脚本，徽章不计入软件截图数量。
+软件图像来自原生 App 与 Minecraft；插画和应用图标另列来源。下载入口使用链接到GitHub Releases的普通按钮，不再使用商店徽章。
 
 ## 原生软件截图
 

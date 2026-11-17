@@ -3240,4 +3240,14 @@ Minecraft {2} · {3}</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>جارٍ تحميل المثيلات…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>بانتظار بث الشبكة المحلية</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>منفذ اللعبة جاهز، لكن Terracotta لم يكتشف بث الشبكة المحلية. أبقِ العالم مفتوحًا وتحقق من محول الشبكة وأذونات جدار الحماية لمكوّن اللعب الجماعي، ثم أعد المحاولة.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>يتوفر تحديث لـ RMCL</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>الإصدار {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>سيُغلق RMCL بعد التنزيل. اتبع برنامج التثبيت لإكمال التحديث.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>جارٍ تنزيل التحديث</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>أكمل العمليات واحفظ تغييرات المحرر، ثم حاول مجددًا.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>تعذر إكمال التحديث. تحقق من الاتصال والمساحة المتاحة على القرص ثم حاول مجددًا.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>تخطي هذا الإصدار</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>لاحقًا</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>تحديث</value></data>
 </root>

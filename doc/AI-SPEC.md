@@ -327,7 +327,7 @@ Enter发送，Shift+Enter换行；IME composition期间Enter只提交预编辑�
 
 诊断默认只含版本、阶段、耗时、错误码、实际 usage 和经处理的调用信息，不默认导出全文聊天、私密参数或 provider opaque 状态。聊天导出是玩家独立操作，不冒充云端数据删除；产品不承诺提供商零留存。关键秘密跨文本增量分片也应遮蔽，不能只逐片正则处理。
 
-正常App仍为packaged MSIX/NativeAOT，用户入口仅App与CLI；AI内部类库随Core编入调用端，不另发布AI Host。CLI主入口是rodel-mc.exe，固定组件/许可证随Assets/AiMcp发布，不要求玩家安装外部运行时。MCP工具服务无需配置模型；Core普通模型对话无需产品CLI在场，只有实际工具/显式后台场景需要CLI。AI服务失败不能阻断普通启动功能。产品不依赖本地验证工程，协议/源生成与裁剪兼容必须实际执行验证。
+正常App为GitHub Releases分发的无包EXE/NativeAOT，用户入口仅App与CLI；AI内部类库随Core编入调用端，不另发布AI Host。CLI主入口是rodel-mc.exe，固定组件/许可证随Assets/AiMcp发布，不要求玩家安装外部运行时。MCP工具服务无需配置模型；Core普通模型对话无需产品CLI在场，只有实际工具/显式后台场景需要CLI。AI服务失败不能阻断普通启动功能。产品不依赖本地验证工程，协议/源生成与裁剪兼容必须实际执行验证。
 
 ## 13. 参考与规格维护
 

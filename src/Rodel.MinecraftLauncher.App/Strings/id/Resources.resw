@@ -6231,4 +6231,14 @@ Detail: {1}</value></data>
   <data name="InstancesLoading" xml:space="preserve"><value>Memuat instans…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Menunggu siaran LAN</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Port game sudah siap, tetapi Terracotta tidak mendeteksi siaran LAN. Biarkan dunia terbuka dan periksa adaptor jaringan serta izin firewall komponen multipemain, lalu coba lagi.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>Pembaruan RMCL tersedia</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>Versi {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>RMCL akan ditutup setelah pengunduhan. Ikuti penginstal untuk menyelesaikan pembaruan.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>Mengunduh pembaruan</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>Selesaikan operasi dan simpan perubahan editor, lalu coba lagi.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>Pembaruan gagal. Periksa koneksi dan ruang disk yang tersedia, lalu coba lagi.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>Lewati versi ini</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>Nanti</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>Perbarui</value></data>
 </root>

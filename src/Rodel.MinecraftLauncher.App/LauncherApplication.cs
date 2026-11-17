@@ -66,7 +66,7 @@ internal sealed class LauncherApplication : Application
             _ = window.UsePackageIcon();
         WindowPreferences.Attach(window, settings);
         window.Closed += OnWindowClosed;
-        window.SetTitleBarContent(Sprout.Markup.Text(string.Empty));
+        window.SetTitleBarContent(new Features.Updates.UpdateTitleBar(window, new(settings), shell.InstallUpdateAsync));
         window.Show();
     }
 

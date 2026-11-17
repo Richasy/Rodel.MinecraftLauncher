@@ -1,27 +1,33 @@
 ---
 title: 安装与准备
-description: 从 Microsoft Store 或 GitHub Release 安装 RMCL，再选择游戏数据位置。
+description: 从 GitHub Releases 安装或更新 RMCL，再选择游戏数据位置。
 ---
 
 ## 安装 RMCL
 
-RMCL 是免费使用的 Minecraft Java 版启动器，可从 Microsoft Store 或 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载。
+RMCL 是免费使用的 Minecraft Java 版启动器，通过 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 分发。Microsoft Store 不再提供后续更新。
 
-<StoreBadge />
+<ReleaseDownload />
 
-1. 点击上方徽章，打开 RMCL 的 Microsoft Store 页面。
-2. 核对应用为 **Rodel Minecraft Launcher**，发布者为 **云之幻**，选择获取或安装。
-3. 商店会为设备选择适用架构；安装完成后，从开始菜单打开 RMCL。
+1. 打开上方下载链接，选择最新稳定版本。
+2. 在 Windows“设置 → 系统 → 系统信息”确认系统类型，下载对应的 `RMCL-<版本>-win-x64-setup.exe` 或 `win-arm64-setup.exe`。
+3. 运行安装向导，安装完成后从开始菜单打开 RMCL。
 
-商店产品 ID 为 `9MW9ZMS2K47C`。安装遇到问题时，保留商店显示的完整提示，按[反馈与日志](/docs/help/feedback)提供系统版本和发生步骤。
+安装遇到问题时，保留完整提示，按[反馈与日志](/docs/help/feedback)提供系统版本、安装包文件名和发生步骤。
 
 ## EXE 安装包
 
-从 [GitHub Releases](https://github.com/Richasy/Rodel.MinecraftLauncher/releases/latest) 下载 `win-x64-setup.exe` 和对应 SHA256 文件。EXE 版适用于 x64，以当前用户身份安装，不需要商店、管理员权限或手动信任 MSIX 证书，且已包含 .NET 运行时。安装包未进行 Authenticode 签名，可先核对下载摘要。它与商店版分别保存应用偏好，游戏数据沿用所选 Core 数据根。
+安装包支持 x64 与 ARM64，以当前用户身份安装，不需要商店、管理员权限、额外的 .NET 或手动信任 MSIX 证书。安装包未进行 Authenticode 签名，可使用同页 `.sha256` 文件与 PowerShell `Get-FileHash` 核对下载摘要。
+
+已有商店版与 EXE 版分别保存应用偏好，游戏数据沿用所选 Core 数据根。切换前记下自定义游戏目录，在 EXE 版设置中选择同一目录并重启；不要先卸载旧版或假定偏好会自动迁移。
 
 ## 更新 RMCL
 
-打开 Microsoft Store 中的 RMCL 页面，有新版本时选择更新。启用商店的应用自动更新后，新版也会由商店安装。EXE 版从 GitHub Release 下载新版并运行安装程序更新。游戏、模组和整合包的更新仍在启动器相应页面处理。
+RMCL 启动后会静默检查 GitHub 的最新稳定版本，检查失败不影响使用。有更新时，最小化按钮旁显示更新图标；点击可阅读当前语言的说明，选择“更新”“稍后”或“跳过此版本”。跳过只影响这一个版本。
+
+更新会下载适合当前电脑架构的安装包并显示进度。下载并校验完成后，RMCL 退出，再打开安装向导供你手动完成更新；向导结束后删除下载的安装包。有未完成任务或编辑器更改时，先完成或保存再重试。也可以直接从 GitHub Releases 下载新版安装包覆盖安装。
+
+游戏、模组和整合包的更新仍在启动器相应页面处理。
 
 ## 电脑要求
 

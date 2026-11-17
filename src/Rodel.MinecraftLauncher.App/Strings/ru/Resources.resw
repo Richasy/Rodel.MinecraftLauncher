@@ -6226,4 +6226,14 @@ Minecraft {2} · {3}</value>
   <data name="InstancesLoading" xml:space="preserve"><value>Загрузка сборок…</value></data>
   <data name="MultiplayerLanDiscovering" xml:space="preserve"><value>Ожидание объявления LAN</value></data>
   <data name="MultiplayerLanDiscoveryRecovery" xml:space="preserve"><value>Порт игры готов, но Terracotta не обнаружила объявление LAN. Оставьте мир открытым, проверьте сетевой адаптер и разрешения брандмауэра для компонента сетевой игры, затем повторите попытку.</value></data>
+  <data name="AppUpdateAvailable" xml:space="preserve"><value>Доступно обновление RMCL</value></data>
+  <data name="AppUpdateVersion" xml:space="preserve"><value>Версия {0}</value></data>
+  <data name="AppUpdateInstallHint" xml:space="preserve"><value>После загрузки RMCL закроется. Завершите обновление в программе установки.</value></data>
+  <data name="AppUpdateDownloading" xml:space="preserve"><value>Загрузка обновления</value></data>
+  <data name="AppUpdateDownloadProgress" xml:space="preserve"><value>{0:F1} / {1:F1} MB</value></data>
+  <data name="AppUpdateBusy" xml:space="preserve"><value>Завершите операции и сохраните изменения в редакторе, затем повторите попытку.</value></data>
+  <data name="AppUpdateFailed" xml:space="preserve"><value>Не удалось обновить приложение. Проверьте подключение и свободное место и повторите попытку.</value></data>
+  <data name="AppUpdateSkip" xml:space="preserve"><value>Пропустить версию</value></data>
+  <data name="AppUpdateLater" xml:space="preserve"><value>Позже</value></data>
+  <data name="AppUpdateNow" xml:space="preserve"><value>Обновить</value></data>
 </root>

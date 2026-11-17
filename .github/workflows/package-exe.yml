@@ -1,4 +1,4 @@
-name: Package EXE installer
+name: Release EXE installers
 
 on:
   workflow_dispatch:
@@ -8,6 +8,11 @@ on:
         required: false
         default: ''
         type: string
+      publish:
+        description: Publish a stable GitHub Release (main and both architectures required)
+        required: true
+        default: true
+        type: boolean
       x64:
         description: Build the x64 installer
         required: true
@@ -28,7 +33,6 @@ concurrency:
 
 jobs:
   plan:
-    if: github.ref == 'refs/heads/main'
     name: Select installer targets
     runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
     timeout-minutes: 10
@@ -46,12 +50,16 @@ jobs:
         env:
           BUILD_X64: ${{ inputs.x64 }}
           BUILD_ARM64: ${{ inputs.arm64 }}
+          PUBLISH: ${{ inputs.publish }}
         run: |
           $ErrorActionPreference = 'Stop'
           $architectures = @()
           if ($env:BUILD_X64 -ceq 'true') { $architectures += 'x64' }
           if ($env:BUILD_ARM64 -ceq 'true') { $architectures += 'arm64' }
           if ($architectures.Count -eq 0) { throw 'Select at least one installer architecture.' }
+          if ($env:PUBLISH -ceq 'true' -and ($env:GITHUB_REF -cne 'refs/heads/main' -or $architectures.Count -ne 2)) {
+            throw 'Stable releases require main and both x64/ARM64 installers. Disable publish for branch validation.'
+          }
           $matrix = ConvertTo-Json -InputObject $architectures -Compress
           "architectures=$matrix" >> $env:GITHUB_OUTPUT
       - uses: actions/checkout@v4
@@ -61,6 +69,7 @@ jobs:
         id: version
         env:
           INPUT_VERSION: ${{ inputs.version }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           $ErrorActionPreference = 'Stop'
           $version = $env:INPUT_VERSION
@@ -77,6 +86,15 @@ jobs:
             throw 'Configure the RODEL_MICROSOFT_CLIENT_ID Actions secret before packaging.'
           }
           "version=$version" >> $env:GITHUB_OUTPUT
+          $releases = & gh api "repos/$env:GITHUB_REPOSITORY/releases?per_page=100" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect existing release versions.' }
+          if (@($releases | Where-Object { $_.tag_name -ceq "v$version" }).Count) { throw 'This release tag already exists; never overwrite a release or partial draft.' }
+          $tags = & gh api "repos/$env:GITHUB_REPOSITORY/git/matching-refs/tags/v$version" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect existing source tags.' }
+          if (@($tags | Where-Object { $_.ref -ceq "refs/tags/v$version" }).Count) { throw 'The target tag already exists; never reuse an unbound source tag.' }
+          $latest = $releases | Where-Object { -not $_.draft -and -not $_.prerelease -and $_.tag_name -cmatch '^v\d+\.\d+\.\d+\.0$' } |
+            Sort-Object { [version]$_.tag_name.Substring(1) } -Descending | Select-Object -First 1
+          if ($latest -and [version]$version -le [version]$latest.tag_name.Substring(1)) { throw 'The version must be newer than the published stable release.' }
 
   package:
     needs: plan
@@ -85,7 +103,6 @@ jobs:
       max-parallel: 1
       matrix:
         architecture: ${{ fromJSON(needs.plan.outputs.architectures) }}
-    if: github.ref == 'refs/heads/main'
     name: Build ${{ matrix.architecture }} EXE
     runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
     timeout-minutes: 180
@@ -188,3 +205,74 @@ jobs:
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
+
+  release:
+    name: Generate localized manifest and publish
+    needs: [plan, package]
+    if: inputs.x64 && inputs.arm64
+    runs-on: [self-hosted, Windows, X64, rodel-minecraftlauncher-build]
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_VERSION: ${{ needs.plan.outputs.version }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: rmcl-${{ needs.plan.outputs.version }}-win-*-exe
+          path: artifacts/github-release
+          merge-multiple: true
+      - name: Generate the source-bound fifteen-language release manifest
+        run: |
+          $root = Join-Path $env:GITHUB_WORKSPACE 'artifacts\github-release'
+          .\scripts\generate-release-manifest.ps1 -Version $env:RELEASE_VERSION -AssetDirectory $root `
+            -NotesPath (Join-Path $env:GITHUB_WORKSPACE '.github\release-notes.json') -OutputPath (Join-Path $root 'release-note.json')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rmcl-${{ needs.plan.outputs.version }}-release
+          path: artifacts/github-release/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+      - name: Publish complete release only after every asset is attached
+        if: inputs.publish
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $root = Join-Path $env:GITHUB_WORKSPACE 'artifacts\github-release'
+          $manifest = Get-Content -LiteralPath (Join-Path $root 'release-note.json') -Raw | ConvertFrom-Json
+          if ($manifest.sourceCommit -cne $env:GITHUB_SHA) { throw 'Release source mismatch.' }
+          $notes = Join-Path $env:RUNNER_TEMP ("rmcl-notes-" + $env:GITHUB_RUN_ID + '.txt')
+          [IO.File]::WriteAllText($notes, $manifest.notes.en + "`n`n" + $manifest.notes.'zh-CN')
+          try {
+            $assets = @((Join-Path $root 'release-note.json'))
+            foreach ($architecture in @('x64', 'arm64')) {
+              $installer = Join-Path $root "RMCL-$env:RELEASE_VERSION-win-$architecture-setup.exe"
+              $assets += $installer
+              $assets += "$installer.sha256"
+            }
+            & gh release create "v$env:RELEASE_VERSION" @assets --draft --target $env:GITHUB_SHA `
+              --title "RMCL $env:RELEASE_VERSION" --notes-file $notes
+            if ($LASTEXITCODE -ne 0) { throw 'Draft creation/upload failed. Inspect the exact draft; do not overwrite or automatically replay publication.' }
+            $tag = & gh api "repos/$env:GITHUB_REPOSITORY/git/ref/tags/v$env:RELEASE_VERSION" | ConvertFrom-Json
+            if ($LASTEXITCODE -ne 0 -or $tag.object.sha -cne $env:GITHUB_SHA) { throw 'The release tag does not point to the exact build source.' }
+            $draft = & gh api "repos/$env:GITHUB_REPOSITORY/releases/tags/v$env:RELEASE_VERSION" | ConvertFrom-Json
+            if ($LASTEXITCODE -ne 0 -or -not $draft.draft -or $draft.assets.Count -ne $assets.Count) { throw 'The draft does not contain the complete release.' }
+            foreach ($path in $assets) {
+              $file = Get-Item -LiteralPath $path
+              $attached = @($draft.assets | Where-Object name -CEQ $file.Name)
+              if ($attached.Count -ne 1 -or $attached[0].size -ne $file.Length) { throw "Release asset mismatch: $($file.Name)" }
+              if ($attached[0].digest -and $attached[0].digest -cne ('sha256:' + (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant())) {
+                throw "Release asset digest mismatch: $($file.Name)"
+              }
+            }
+            & gh release edit "v$env:RELEASE_VERSION" --draft=false --latest
+            if ($LASTEXITCODE -ne 0) { throw 'Release publication result is unknown; inspect the exact tag before retrying.' }
+          }
+          finally { [IO.File]::Delete($notes) }

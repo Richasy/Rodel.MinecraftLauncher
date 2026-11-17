@@ -2,7 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { versionedAssetUrl } from "@/lib/image-assets.mjs";
-import { StoreBadge } from "@/components/store-badge";
+import { ReleaseDownload } from "@/components/release-download";
 import {
   CircleAlert,
   Info,
@@ -76,7 +76,7 @@ export function getMDXComponents(components?: MDXComponents) {
     Callout,
     GuideCard,
     Screenshot,
-    StoreBadge,
+    ReleaseDownload,
     img: Screenshot,
     ...components,
   } satisfies MDXComponents;

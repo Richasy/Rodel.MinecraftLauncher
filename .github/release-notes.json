@@ -1,0 +1,17 @@
+{
+  "en": "- RMCL is now distributed through GitHub Releases instead of Microsoft Store.\n- Receive optional update notifications, read localized release notes and download the installer for your PC directly in RMCL.",
+  "zh-CN": "- RMCL 改为通过 GitHub Releases 分发，不再通过 Microsoft Store 更新。\n- 启动后静默检查更新，可阅读本地化更新说明、跳过版本或直接下载适合当前电脑的安装包。",
+  "zh-TW": "- RMCL 改為透過 GitHub Releases 發佈，不再透過 Microsoft Store 更新。\n- 啟動後靜默檢查更新，可閱讀在地化更新說明、略過版本或直接下載適合目前電腦的安裝程式。",
+  "ja": "- RMCL は Microsoft Store に代わり GitHub Releases で配布されます。\n- 起動時に更新を静かに確認し、翻訳された更新内容の表示、バージョンのスキップ、PC に合ったインストーラーのダウンロードができます。",
+  "ko": "- RMCL은 Microsoft Store 대신 GitHub Releases를 통해 배포됩니다.\n- 시작 시 조용히 업데이트를 확인하고, 번역된 변경 사항을 읽거나 버전을 건너뛰고 PC에 맞는 설치 파일을 다운로드할 수 있습니다.",
+  "de": "- RMCL wird jetzt über GitHub Releases statt über den Microsoft Store verteilt.\n- Optionale Update-Hinweise, übersetzte Versionshinweise und der passende Installer sind direkt in RMCL verfügbar. Einzelne Versionen lassen sich überspringen.",
+  "fr": "- RMCL est désormais distribué via GitHub Releases au lieu du Microsoft Store.\n- Consultez les notes traduites, ignorez une version ou téléchargez le programme d’installation adapté après une vérification discrète au démarrage.",
+  "es": "- RMCL ahora se distribuye mediante GitHub Releases en lugar de Microsoft Store.\n- La comprobación discreta al iniciar permite leer las novedades traducidas, omitir versiones y descargar el instalador adecuado.",
+  "pt-BR": "- O RMCL agora é distribuído pelo GitHub Releases em vez da Microsoft Store.\n- A verificação discreta ao iniciar permite ler notas traduzidas, ignorar versões e baixar o instalador adequado ao seu PC.",
+  "ru": "- RMCL теперь распространяется через GitHub Releases вместо Microsoft Store.\n- Тихая проверка при запуске позволяет прочитать переведённые примечания, пропустить версию или загрузить установщик для вашего компьютера.",
+  "it": "- RMCL viene ora distribuito tramite GitHub Releases anziché Microsoft Store.\n- Il controllo discreto all’avvio consente di leggere le novità tradotte, saltare versioni e scaricare il programma di installazione adatto.",
+  "pl": "- RMCL jest teraz dystrybuowany przez GitHub Releases zamiast Microsoft Store.\n- Dyskretne sprawdzanie przy uruchomieniu pozwala przeczytać przetłumaczone zmiany, pominąć wersję i pobrać odpowiedni instalator.",
+  "tr": "- RMCL artık Microsoft Store yerine GitHub Releases üzerinden dağıtılıyor.\n- Başlangıçtaki sessiz denetimle çevrilmiş sürüm notlarını okuyabilir, bir sürümü atlayabilir veya bilgisayarınıza uygun yükleyiciyi indirebilirsiniz.",
+  "id": "- RMCL kini didistribusikan melalui GitHub Releases, bukan Microsoft Store.\n- Pemeriksaan senyap saat mulai memungkinkan Anda membaca catatan terjemahan, melewati versi, atau mengunduh penginstal yang sesuai.",
+  "ar": "- يُوزَّع RMCL الآن عبر GitHub Releases بدلاً من Microsoft Store.\n- يتيح الفحص الصامت عند البدء قراءة ملاحظات الإصدار المترجمة أو تخطي إصدار أو تنزيل برنامج التثبيت المناسب لجهازك."
+}
