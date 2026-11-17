@@ -573,4 +573,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>直接删除而不移入回收站，无法撤销；需要 --confirm。</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>选择本地文件的来源：FILE=PROJECT；多个文件可重复指定。</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>请使用 --select-source FILE=PROJECT。</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>只读检查可链接的本地版本，不复制文件。</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>将既有版本链接为非托管实例，不复制文件；可用 --version 选择单个版本。</value></data>
 </root>

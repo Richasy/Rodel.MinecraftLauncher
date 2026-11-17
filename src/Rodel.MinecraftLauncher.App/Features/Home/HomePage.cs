@@ -59,6 +59,9 @@ internal sealed partial class HomePage : Control
                     Name = Resources.PackImportDirectory,
                     AutomationId = "instances.import"
                 },
+            }, new MenuFlyoutItem(Resources.LinkExisting, ShowLinkedInstances)
+            {
+                Automation = new() { Name = Resources.LinkExisting, AutomationId = "instances.link" },
             }, new MenuFlyoutItem(Resources.PackImport, () => _importPack(null))
             {
                 Automation = new()
@@ -104,6 +107,7 @@ internal sealed partial class HomePage : Control
         _instanceFocus = new(window);
         _errors = new(window, controller.DiagnoseAsync, findDependency);
         _imports = new(window, controller.Import);
+        _linkInstances = () => LinkedInstancesDialog.Show(client, controller, window);
         _creates = new(window, controller.Create, id => _ = LaunchCreatedAsync(id));
         _instanceList = new(window, controller.Select, id => _instanceActions.ContextMenu(id, RestoreInstanceFocus));
         _serverList = new(window);
@@ -325,6 +329,8 @@ LauncherAppearance.Capture(),                                    PackDropping,
 
     internal void ShowCreate() => _creates.Show();
 
+    private readonly Action _linkInstances;
+    private void ShowLinkedInstances() => _linkInstances();
     internal void ShowImport() => _imports.Show();
 
     internal void ShowServerCreate(string serverId) => _creates.ShowFor(null, serverId);

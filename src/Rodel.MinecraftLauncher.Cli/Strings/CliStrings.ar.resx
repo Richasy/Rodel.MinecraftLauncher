@@ -573,4 +573,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>الحذف النهائي دون استخدام سلة المحذوفات. يتطلب --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>اختر مصدر الملف المحلي: FILE=PROJECT؛ كرر الخيار لعدة ملفات.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>استخدم --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>فحص الإصدارات المحلية للربط دون نسخ.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>ربط الإصدارات كنسخ غير مُدارة دون نسخ؛ يحدد --version إصداراً واحداً.</value></data>
 </root>

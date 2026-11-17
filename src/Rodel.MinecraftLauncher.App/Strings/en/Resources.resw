@@ -2785,4 +2785,9 @@ Details: {1}</value></data>
   <data name="AppUpdateSkip" xml:space="preserve"><value>Skip this version</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>Later</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>Update</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>Link existing instances</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>Select a .minecraft folder and link its versions without copying. Changes made in RMCL or another launcher affect the same game files.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>Link selected versions</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>Select all versions</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>No local versions found. Select the .minecraft folder containing versions.</value></data>
 </root>

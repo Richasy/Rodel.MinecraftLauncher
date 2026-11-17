@@ -54,6 +54,7 @@
         <Content Include="Assets/Updates/install-update.ps1" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
         <InternalsVisibleTo Include="Rodel.MinecraftLauncher.App.Tests" />
         <InternalsVisibleTo Include="UpdateUi" />
+        <InternalsVisibleTo Include="InstanceLinksUi" />
         <!-- Keep desktop image churn from retaining fragmented LOH regions; normal GC chooses when to compact. -->
         <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="5" />
         <EmbeddedResource Include="$(IntermediateOutputPath)SeedScene/VS.cso" LogicalName="SeedScene.VS" />

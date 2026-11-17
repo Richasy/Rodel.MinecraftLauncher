@@ -1553,4 +1553,6 @@ L'entrée</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Supprimer définitivement sans passer par la Corbeille. Nécessite --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Choisir la source du fichier local : FILE=PROJECT ; répéter pour plusieurs fichiers.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Utilisez --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Examiner les versions locales à lier sans copie.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Lier les versions comme instances non gérées sans copie ; --version en sélectionne une.</value></data>
 </root>

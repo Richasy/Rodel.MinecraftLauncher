@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net11.0-windows10.0.19041.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <SproutPackageFormat>None</SproutPackageFormat>
+    <PublishAot>true</PublishAot>
+    <Optimize>true</Optimize>
+    <LangVersion>preview</LangVersion>
+    <ApplicationManifest>../../../src/Rodel.MinecraftLauncher.App/app.manifest</ApplicationManifest>
+    <ApplicationIcon>../../../src/Rodel.MinecraftLauncher.App/app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../src/Rodel.MinecraftLauncher.App/Rodel.MinecraftLauncher.App.csproj" Aliases="NativeApp" />
+    <PackageReference Include="Sprout.Backend.D2D" Version="$(SproutPackageVersion)" />
+  </ItemGroup>
+</Project>

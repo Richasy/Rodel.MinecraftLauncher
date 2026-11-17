@@ -349,7 +349,14 @@ diagnose ID [--verify]
 diagnose --session SESSION
 ```
 
-CLI的`instance import`未带`--copy`时关联原目录；`--migrate`沿用可读的来源设置，`--copy`则完整复制迁入托管实例。App目录导入始终提交`Migrate=true, Copy=true`，不能把CLI的关联默认当作App行为。多版本目录可在导入时明确`--version`，启动也可作一次性覆盖。`--minecraft-directory`允许实例配置与共享游戏依赖分开。`--plan`只读，不安装、不解压。普通启动按需补齐依赖；`--offline`使用本地文件直接尝试，推荐Java的提示不构成硬性拒绝。显式`--java`始终优先；未选择Java时可按官方组件安装推荐运行时。
+CLI的`instance import`未带`--copy`时关联原目录；`--migrate`沿用可读的来源设置，`--copy`则完整复制迁入托管实例。App“导入游戏目录”提交`Migrate=true, Copy=true`；独立的“链接既有实例”使用下方批量链接契约，不复制文件。多版本目录可在导入时明确`--version`，启动也可作一次性覆盖。`--minecraft-directory`允许实例配置与共享游戏依赖分开。`--plan`只读，不安装、不解压。普通启动按需补齐依赖；`--offline`使用本地文件直接尝试，推荐Java的提示不构成硬性拒绝。显式`--java`始终优先；未选择Java时可按官方组件安装推荐运行时。
+
+```text
+instance inspect-links MINECRAFT_DIRECTORY
+instance link MINECRAFT_DIRECTORY [--version VERSION] [--profile PROFILE_ID] [--game-directory GAME]
+```
+
+`inspect-links`只读发现真实本地版本，复用来源适配器保留HMCL/PCL的明确隔离策略及官方profile的游戏目录。`link`默认关联全部发现项；`--version`选择单项，`--profile`和`--game-directory`需同时指定`--version`。无法明确隔离目录时整批拒绝，先检查预览并逐项指定，不先登记半批。链接登记为非托管，重复的版本／游戏目录／依赖根复用原登记，不覆盖RMCL本地设置；不复制文件、不写来源启动器配置，不转换存档。移除只解除登记，不能自动删除外部游戏文件。游戏启动和内容管理仍使用同一份外部数据，不能同时在多个启动器中运行同一个游戏目录。
 
 启动返回的 `running` / `readiness=process_started` 表示进程已启动。Windows会话观察在核对PID与启动时间后，以`readiness=window_visible`表示已找到该进程或确证子进程的可见主窗口；`windowObservationWarning`保留观察失败。两者都不能当作主菜单、世界或服务器已就绪。默认 CLI 退出后游戏继续运行；`--wait` 等到退出，非零游戏退出码作为失败返回并保留会话和日志。普通停止请求关闭窗口；`--force` 明确终止所记录的游戏进程树。
 

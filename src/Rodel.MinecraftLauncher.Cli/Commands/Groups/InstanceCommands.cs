@@ -39,6 +39,17 @@ internal sealed class InstanceCommands
             (await app.Instances.CreateAsync(result.GetRequiredValue(A.Name), result.GetValue(O.Version) ?? throw new ArgumentException(S.ErrorVersionRequired), ct).ConfigureAwait(false)).ToJson(), [A.Name], [O.Version]);
         Required(Create, O.Version);
         Option[] importOptions = [O.Version, O.GameDirectory, O.MinecraftDirectory, O.Profile, O.LauncherConfig];
+        Add(instance, "inspect-links", S.InstanceInspectLinksDescription, (app, result, ct) =>
+            Task.FromResult(JsonSerializer.SerializeToNode(app.Instances.PreviewLinks(result.GetRequiredValue(A.Target)), InstanceJsonContext.Default.IReadOnlyListInstanceImportPreview)), [A.Target]);
+        Add(instance, "link", S.InstanceLinkDescription, async (app, result, ct) =>
+        {
+            var version = result.GetValue(O.Version);
+            if (version is null && (result.GetValue(O.GameDirectory) is not null || result.GetValue(O.Profile) is not null))
+                throw new ArgumentException(S.ErrorVersionRequired);
+            return JsonSerializer.SerializeToNode(await app.Instances.LinkExistingAsync(result.GetRequiredValue(A.Target),
+                version is not null ? [new(version, result.GetValue(O.GameDirectory), result.GetValue(O.Profile))] : null, ct).ConfigureAwait(false),
+                InstanceJsonContext.Default.IReadOnlyListInstanceSummary);
+        }, [A.Target], [O.Version, O.GameDirectory, O.Profile]);
         Add(instance, "inspect-import", S.InstanceInspectImportDescription, (app, result, ct) => Task.FromResult(JsonSerializer.SerializeToNode(app.Instances.PreviewImport(result.GetRequiredValue(A.Target), result.GetValue(O.Profile), result.GetValue(O.MinecraftDirectory), result.GetValue(O.LauncherConfig), result.GetValue(O.Version), result.GetValue(O.GameDirectory)), InstanceJsonContext.Default.InstanceImportPreview)), [A.Target], importOptions);
         Required(Add(instance, "import", S.InstanceImportDescription, async (app, result, ct) => await app.Client.ImportInstanceAsync(result.GetRequiredValue(A.Name), result.GetValue(O.Directory) ?? throw new ArgumentException(S.ErrorDirectoryRequired), new InstanceImportOptions
         {

@@ -1547,4 +1547,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>直接刪除而不移至資源回收筒，無法復原；需要 --confirm。</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>選擇本機檔案的來源：FILE=PROJECT；多個檔案可重複指定。</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>請使用 --select-source FILE=PROJECT。</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>唯讀檢查可連結的本機版本，不複製檔案。</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>將既有版本連結為非託管實例，不複製檔案；可用 --version 選擇單一版本。</value></data>
 </root>

@@ -178,13 +178,15 @@ LauncherAppearance.Capture(),                    d == State.MinecraftDirectory ?
                 .FontSize(12f).Foreground(LauncherTheme.Muted)
                 .Wrap()
                 .Visible(State.NeedsProfile),
-            ItemsRepeater(State.Profiles, p => p.Id, p => new ImportChoice(
+            Border(ItemsRepeater(State.Profiles, p => p.Id, p => new ImportChoice(
 LauncherAppearance.Capture(),                    string.Format(Resources.ImportProfileChoice, p.Name, p.Version.Length > 0 ? p.Version : Resources.ValueNotAvailable),
                     "import.profile." + p.Id,
                     p.Id == State.Profile,
                     Editable,
                     () => _ = _controller.PreviewAsync(p.Id)))
-                .KeyboardNavigation()
+                .KeyboardNavigation())
+                .Background(LauncherTheme.ControlBackground)
+                .BorderBrush(LauncherTheme.Edge).BorderThickness(1f)
                 .Visible(State.Profiles.Count > 1),
             Text(Resources.ImportName)
                 .FontSize(13f).FontWeight(600).Foreground(LauncherTheme.Ink),
@@ -213,13 +215,15 @@ LauncherAppearance.Capture(),                    string.Format(Resources.ImportP
             Text(Resources.ImportLocalVersions)
                 .FontSize(12f).Foreground(LauncherTheme.Ink)
                 .Visible(State.Versions.Count > 1),
-            ItemsRepeater(State.Versions, v => v, v => new ImportChoice(
+            Border(ItemsRepeater(State.Versions, v => v, v => new ImportChoice(
 LauncherAppearance.Capture(),                    v,
                     "import.version." + v,
                     v == State.Version,
                     Editable && !State.NeedsProfile,
                     () => _ = _controller.SelectVersionAsync(v)))
-                .KeyboardNavigation()
+                .KeyboardNavigation())
+                .Background(LauncherTheme.ControlBackground)
+                .BorderBrush(LauncherTheme.Edge).BorderThickness(1f)
                 .Visible(State.Versions.Count > 1),
             new PathSummaryView(Resources.ImportJavaLabel, State.JavaPath, "import.java-path", Appearance: PathSummaryAppearance.Capture()).Visible(State.JavaPath.Length > 0),
             Text(Resources.ImportDefaultJava)

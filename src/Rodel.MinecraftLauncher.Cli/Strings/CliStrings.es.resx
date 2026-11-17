@@ -1554,4 +1554,6 @@ Se requiere la entrada</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Eliminar permanentemente sin usar la Papelera. Requiere --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Elegir la fuente del archivo local: FILE=PROJECT; repetir para varios archivos.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Usa --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Inspeccionar versiones locales para vincular sin copiar.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Vincular versiones como instancias no administradas sin copiar; --version selecciona una.</value></data>
 </root>

@@ -32,5 +32,6 @@
     <Project Path="test/Fixtures/JavaProbe/JavaProbe.csproj" />
     <Project Path="test/Fixtures/UpdateProbe/UpdateProbe.csproj" />
     <Project Path="test/Fixtures/UpdateUi/UpdateUi.csproj" />
+    <Project Path="test/Fixtures/InstanceLinksUi/InstanceLinksUi.csproj" />
   </Folder>
 </Solution>

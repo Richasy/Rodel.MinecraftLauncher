@@ -6232,4 +6232,9 @@ Ayrıntılar: {1}</value></data>
   <data name="AppUpdateSkip" xml:space="preserve"><value>Bu sürümü atla</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>Daha sonra</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>Güncelle</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>Mevcut örnekleri bağla</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>Sürümleri kopyalamadan bağlamak için .minecraft klasörünü seçin. Herhangi bir başlatıcıdaki değişiklikler aynı oyun dosyalarını etkiler.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>Seçili sürümleri bağla</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>Tüm sürümleri seç</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>Yerel sürüm bulunamadı. versions içeren .minecraft klasörünü seçin.</value></data>
 </root>

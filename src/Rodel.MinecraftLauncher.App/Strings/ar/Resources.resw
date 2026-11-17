@@ -3250,4 +3250,9 @@ Minecraft {2} · {3}</value></data>
   <data name="AppUpdateSkip" xml:space="preserve"><value>تخطي هذا الإصدار</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>لاحقًا</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>تحديث</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>ربط النسخ الموجودة</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>اختر مجلد .minecraft لربط إصداراته دون نسخ. التغييرات من أي مشغّل تؤثر على ملفات اللعبة نفسها.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>ربط الإصدارات المحددة</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>تحديد جميع الإصدارات</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>لم توجد إصدارات محلية. اختر مجلد .minecraft الذي يحتوي على versions.</value></data>
 </root>

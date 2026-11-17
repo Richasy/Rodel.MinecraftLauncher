@@ -1549,4 +1549,6 @@ Die</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Endgültig löschen, statt den Papierkorb zu verwenden. Erfordert --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Quelle einer lokalen Datei wählen: FILE=PROJECT; für mehrere Dateien wiederholen.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Verwenden Sie --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Lokale Versionen zum Verknüpfen ohne Kopieren prüfen.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Versionen ohne Kopieren als nicht verwaltete Instanzen verknüpfen; --version wählt eine aus.</value></data>
 </root>

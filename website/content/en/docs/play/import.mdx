@@ -1,11 +1,27 @@
 ---
 title: Import an existing game
-description: Copy a familiar setup and worlds into RMCL while keeping the source.
+description: Copy an independent setup or link existing games and worlds in place.
 ---
 
 ## What import does
 
-Game-folder import is a **migration by copying**. RMCL copies the selected game content, required version chain, shared resources and readable Java installations. It registers the instance after the copy completes. The source is not deleted or modified.
+The import menu offers two paths: **Import game directory** copies an independent setup; **Link existing instances** uses the original folders without copying large worlds. Neither deletes the source.
+
+## Link existing instances
+
+1. Choose **Link existing instances** from the import menu on Home or Instances.
+2. Select the `.minecraft` folder containing `versions`. Check the discovered versions and their actual game folders. All are selected initially; deselect any you do not need.
+3. If the source has no explicit isolation policy, choose the shared or version-specific game folder for that version. The dependency root is not necessarily the worlds folder.
+4. Choose **Link selected versions** to register unmanaged instances. Repeated links reuse matching registrations instead of copying files or adding duplicates.
+
+RMCL keeps personalized launch overrides in its own metadata and does not write them back into HMCL, PCL or official launcher profiles. Existing worlds are not converted. Removing an unmanaged instance only removes its registration, not the original game files.
+
+> [!IMPORTANT]
+> Linked launchers use the same game data. In-game settings, mods and world changes are shared. Do not run the same game directory simultaneously, and keep backups of important worlds.
+
+## Copy an independent setup
+
+**Import game directory** copies the selected game content, required version chain, shared resources and readable Java installations, then registers the completed copy without modifying the source. The steps below describe this copy workflow.
 
 > [!IMPORTANT]
 > You then have independent copies. New progress made in an old launcher does not automatically appear in RMCL, or the other way around.

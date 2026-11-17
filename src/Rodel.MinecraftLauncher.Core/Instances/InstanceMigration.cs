@@ -26,6 +26,7 @@ public static partial class InstanceMigration
         var format = "minecraft-directory";
         string? version = null;
         string? name = null;
+        string? profileGameDirectory = null;
         void Field(string key, JsonNode? value, string origin)
         {
             if (value is null)
@@ -138,7 +139,8 @@ public static partial class InstanceMigration
                 var document = JsonFiles.ReadObject(profilesFile);
                 var profiles = document["profiles"] as JsonObject ?? [];
                 var candidates = new JsonArray(profiles.Select(pair => (JsonNode)new JsonObject { ["id"] = pair.Key, ["name"] = pair.Value?["name"]?.DeepClone(), ["versionId"] = pair.Value?["lastVersionId"]?.DeepClone() }).ToArray());
-                if (profileId is null && profiles.Count == 1)
+                if (profileId is null && profiles.Count == 1
+                    && (versionId is null || profiles.First().Value?["lastVersionId"]?.ToString() == versionId))
                     profileId = profiles.First().Key;
                 if (profileId is not null)
                 {
@@ -146,7 +148,7 @@ public static partial class InstanceMigration
                     name = profile["name"]?.GetValue<string>();
                     version = profile["lastVersionId"]?.GetValue<string>();
                     if (profile["gameDir"]?.GetValue<string>() is { Length: > 0 } selectedGame)
-                        game = Resolve(selectedGame, Path.GetDirectoryName(profilesFile)!);
+                        game = profileGameDirectory = Resolve(selectedGame, Path.GetDirectoryName(profilesFile)!);
                     if (minecraftDirectory is null)
                         shared = Path.GetDirectoryName(profilesFile)!;
                     Field("versionId", JsonValue.Create(version), "launcher_profiles.json:profiles." + profileId + ".lastVersionId");
@@ -180,7 +182,7 @@ public static partial class InstanceMigration
 
                     unknown["profile"] = profile.DeepClone();
                 }
-                else
+                else if (profiles.Count > 1)
                 {
                     Warn("Multiple Minecraft profiles exist. Select --profile explicitly; no profile settings or game directory were guessed.");
                 }
@@ -234,6 +236,12 @@ public static partial class InstanceMigration
             directoryCandidates.Add(shared);
             directoryCandidates.Add(adapterSource);
             Warn("The selected version contains game data but has no readable isolation policy. Select its game directory explicitly.");
+        }
+
+        if (gameDirectory is null && profileGameDirectory is not null)
+        {
+            game = profileGameDirectory;
+            fields["gameDirectoryPolicy"] = JsonValue.Create("launcher_profiles.json:profile.gameDir");
         }
 
         if (!string.IsNullOrWhiteSpace(gameDirectory))

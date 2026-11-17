@@ -1556,4 +1556,6 @@ Site</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Excluir permanentemente sem usar a Lixeira. Requer --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Escolha a fonte do arquivo local: FILE=PROJECT; repita para vários arquivos.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Use --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Inspecionar versões locais para vincular sem copiar.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Vincular versões como instâncias não gerenciadas sem copiar; --version seleciona uma.</value></data>
 </root>

@@ -1203,4 +1203,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Delete permanently instead of using the Recycle Bin. Requires --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Select a source for a local file: FILE=PROJECT; repeat for multiple files.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Use --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Inspect existing local versions for linking without copying files.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Link existing versions as unmanaged instances without copying; use --version to select one.</value></data>
 </root>

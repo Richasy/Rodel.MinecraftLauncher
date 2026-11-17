@@ -1549,4 +1549,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>ごみ箱を使わず完全に削除します。--confirm が必要です。</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>ローカルファイルの配布元を FILE=PROJECT で指定します。複数回指定できます。</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>--select-source FILE=PROJECT を使用してください。</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>コピーせずリンクできるローカルバージョンを調べます。</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>既存バージョンを非管理インスタンスとしてリンクします。--version で個別選択できます。</value></data>
 </root>
