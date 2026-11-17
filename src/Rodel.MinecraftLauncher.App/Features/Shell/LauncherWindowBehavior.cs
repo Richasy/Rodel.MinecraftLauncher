@@ -80,7 +80,7 @@ internal sealed class LauncherWindowBehavior(
         },
     }).Style(LauncherMenus.CommandMenu);
 
-    internal void RequestExit()
+    private void RequestExit()
     {
         if (!canExit())
             return;

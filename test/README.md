@@ -1,6 +1,6 @@
 # Tests
 
-`InstallationLifetimeTests`使用进程内多个所有者及真实 Windows 命名对象，保护卸载请求只广播到对应安装、最后一个运行标记所有者释放前持续阻止卸载，以及请求已排入 UI 队列后释放所有者不会再调用旧 UI。仅替代 UI 调度，不读取实际安装登记、不卸载本机软件；用 App 测试入口加 `--filter FullyQualifiedName~InstallationLifetimeTests`。它不代替隔离 VM 中实际 Inno 确认／取消、前台／托盘退出、运行中阻止删除及玩家数据保留验证。
+`UninstallProcessTests`使用实际发货的卸载脚本和就绪后阻塞等待的真实子进程，验证同一目录下的多个实例均被强制终止，而同名、路径前缀相似的另一目录进程保持运行；进程不通过关闭窗口或标准输入正常退出。用 Core 测试入口加 `--filter FullyQualifiedName~UninstallProcessTests`，只操作测试创建的进程，不读取或卸载本机已安装 App。真实 Inno 确认／取消、托盘卸载及玩家数据保留另在隔离 VM 验证。
 
 `NativeKeyboardNavigationTests`使用真实App投影、回调、DirectWrite和Sprout输入路由，保护设置分类／皮肤页签的一次Tab出入、方向键只移动而不提前执行、末项滚动可见，以及图片裁切只处理一次方向键且不连带滚动父层。用App测试入口加`--filter FullyQualifiedName~NativeKeyboardNavigationTests`并在VM运行；不打开玩家工程，也不代替正常签名MSIX的键鼠、弹层和Narrator实测。交互契约见[键盘导航与焦点](../doc/KEYBOARD.md)。
 

@@ -14,7 +14,7 @@ using Sprout.Theming;
 using var installation = InstallationLifetime.Open();
 var imageCache = new AppImageCache(Path.Combine(AppStorage.CachePath, "Images"));
 return SproutApp.CreateBuilder(args)
-    .UseApp(() => new LauncherApplication(installation))
+    .UseApp(static () => new LauncherApplication())
     .ConfigureServices(services => LauncherApplication.ConfigureServices(services, imageCache))
     .UseRenderBackend(new D2DBackend
     {

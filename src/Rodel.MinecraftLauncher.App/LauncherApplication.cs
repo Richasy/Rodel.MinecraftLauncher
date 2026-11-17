@@ -16,7 +16,7 @@ using Sprout.WindowsAppSDK;
 namespace Rodel.MinecraftLauncher.App;
 
 /// <summary>Owns application startup, shared service registration and the main window's lifecycle.</summary>
-internal sealed class LauncherApplication(InstallationLifetime? installation) : Application
+internal sealed class LauncherApplication : Application
 {
     private LauncherShell? _shell;
     private SkinEditorWindow? _skinEditor;
@@ -67,7 +67,6 @@ internal sealed class LauncherApplication(InstallationLifetime? installation) : 
         WindowPreferences.Attach(window, settings);
         window.Closed += OnWindowClosed;
         window.SetTitleBarContent(new Features.Updates.UpdateTitleBar(window, new(settings), shell.InstallUpdateAsync));
-        installation?.Attach(action => DispatcherQueue.TryEnqueue(action), shell.RequestExit);
         window.Show();
     }
 

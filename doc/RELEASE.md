@@ -46,15 +46,15 @@ release-note.json
 .\scripts\package-exe.ps1 -Architecture arm64
 ```
 
-构建环境须设置公开的 `RODEL_MICROSOFT_CLIENT_ID`；必要时通过 `Compiler`、`WindowsSdkVersion`、`JavaHome`、`LegacyJavaHome`、`ObservationJavaHome` 指定已安装工具。默认NuGet使用v2及Sprout Azure feed。输出在 `artifacts\release\<version>\win-<architecture>\exe`。
+构建环境须设置公开的 `RODEL_MICROSOFT_CLIENT_ID` 并安装 Inno Setup 7.1.1 或更新版本；必要时通过 `Compiler`、`WindowsSdkVersion`、`JavaHome`、`LegacyJavaHome`、`ObservationJavaHome` 指定已安装工具。默认NuGet使用v2及Sprout Azure feed。输出在 `artifacts\release\<version>\win-<architecture>\exe`。
 
 安装包自包含NativeAOT、Windows App SDK、背景、三个固定MCP与许可、陶瓦、矩阵中登记的内置模组及Fabric API；不携带CLI、Rodel UI、本地推理、JDK或开发目录。`Assets/AiMcp`依实际目标架构准备，不将x64文件当作ARM64。安装器不做Authenticode签名；同源SHA256用于下载完整性校验，不冒充独立出版者签名。
 
 默认安装到 `%LOCALAPPDATA%\Programs\RMCL-<architecture>`，不需要Store、管理员权限、.NET或信任MSIX证书。卸载不删除游戏、存档或App偏好。已有Store与EXE版的App偏好隔离；游戏数据仍按所选Core数据根使用，切换前记录自定义路径，不先卸载旧版或假定会自动迁移偏好。
 
-从 Windows 设置或安装目录卸载时，先使用 Inno 的原生确认框；确认后请求当前安装的全部 App 进程正常退出（包括托盘），复用设置保存、活动任务和皮肤草稿保护，不强杀。进程仍运行时由 `AppMutex` 阻止删除并允许取消／关闭后重试；取消最初的确认不会关闭 App。运行标记保持到 App 消息循环结束，按当前用户、架构及实际登记的安装目录隔离，不关闭开发目录或其他安装的实例。安装器只清理自身的安装协调登记，不清理 App 偏好及玩家数据。
+从 Windows 设置或安装目录卸载时，先使用 Inno 的原生确认框并说明未保存更改会丢失；确认后由卸载器按完整可执行文件路径核验并强制结束此安装的全部 App 进程（包括托盘），不等待任务、草稿或窗口关闭回调。核验时持有进程句柄防止 PID 复用，确认进程已退出后才删除程序；不能核验或终止时中止卸载，`AppMutex` 继续提供运行中保护。取消最初的确认不会关闭 App。不按进程名批杀，不结束游戏进程，也不关闭开发目录或其他安装的实例；只清理自身安装协调登记，保留已经落盘的 App 偏好、游戏及存档，不能保证正在编辑或保存中的内容不丢失。
 
-卸载请求挂在 Inno 7.1.1 的 `usAppMutexCheck`，位于确认之后、运行中检查及文件删除之前；`CloseApplications=yes` 本身不是卸载退出机制。时序依据[当前固定版本的官方卸载源码](https://github.com/jrsoftware/issrc/blob/2527da77ff7983514f535d19391a748c5d898336/Projects/Src/Setup.Uninstall.pas)。旧安装的卸载器不会被在线修改，需先用新安装包覆盖安装。
+强制终止挂在 Inno 的 `usAppMutexCheck`，位于确认之后、运行中检查及文件删除之前，调用随安装包携带的 `Assets/Setup/stop-installed-app.ps1`（系统 Windows PowerShell，无需额外运行时）；`CloseApplications=yes` 本身不是卸载退出机制。时序依据[当前固定版本的官方卸载源码](https://github.com/jrsoftware/issrc/blob/2527da77ff7983514f535d19391a748c5d898336/Projects/Src/Setup.Uninstall.pas)。旧安装的卸载器不会被在线修改，需先用新安装包覆盖安装。
 
 ## App 更新契约
 

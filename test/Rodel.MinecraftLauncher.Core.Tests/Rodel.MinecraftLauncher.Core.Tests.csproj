@@ -9,6 +9,7 @@
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Updates/ReleaseManifest.cs" Link="Updates/ReleaseManifest.cs" />
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Features/Updates/UpdateInstaller.cs" Link="Updates/UpdateInstaller.cs" />
     <None Include="../../src/Rodel.MinecraftLauncher.App/Assets/Updates/install-update.ps1" Link="update-handoff.ps1" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../scripts/installer/stop-installed-app.ps1" Link="stop-installed-app.ps1" CopyToOutputDirectory="PreserveNewest" />
     <EmbeddedResource Include="../../mods/gradle.properties" LogicalName="BundledModVersion.properties" />
     <None Include="../Fixtures/WorldMaps/*.fixture" Link="world-map-fixtures/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../../src/Rodel.MinecraftLauncher.App/Settings/SettingsBase.cs" Link="AppPreferences/SettingsBase.cs" />

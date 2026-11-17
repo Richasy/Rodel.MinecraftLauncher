@@ -354,12 +354,6 @@ LauncherAppearance.Capture(),            Page,
 
     internal void RestoreWindow() => _windowBehavior.RestoreWindow();
 
-    internal void RequestExit()
-    {
-        _windowBehavior.RestoreWindow();
-        _windowBehavior.RequestExit();
-    }
-
     private void OnSizeChanged(object? sender, WindowSizeChangedEventArgs e)
     {
         ViewportWidth = e.Size.Width;
