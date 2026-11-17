@@ -1,5 +1,7 @@
 # Tests
 
+`InstallationLifetimeTests`使用进程内多个所有者及真实 Windows 命名对象，保护卸载请求只广播到对应安装、最后一个运行标记所有者释放前持续阻止卸载，以及请求已排入 UI 队列后释放所有者不会再调用旧 UI。仅替代 UI 调度，不读取实际安装登记、不卸载本机软件；用 App 测试入口加 `--filter FullyQualifiedName~InstallationLifetimeTests`。它不代替隔离 VM 中实际 Inno 确认／取消、前台／托盘退出、运行中阻止删除及玩家数据保留验证。
+
 `NativeKeyboardNavigationTests`使用真实App投影、回调、DirectWrite和Sprout输入路由，保护设置分类／皮肤页签的一次Tab出入、方向键只移动而不提前执行、末项滚动可见，以及图片裁切只处理一次方向键且不连带滚动父层。用App测试入口加`--filter FullyQualifiedName~NativeKeyboardNavigationTests`并在VM运行；不打开玩家工程，也不代替正常签名MSIX的键鼠、弹层和Narrator实测。交互契约见[键盘导航与焦点](../doc/KEYBOARD.md)。
 
 `SkinLimbCopyTests`用非对称六面标记、半透明可见层、隐藏层和目标哨兵像素，保护Classic/Slim及64/128的对侧映射、仅当前层替换和隐藏外层保留。`SkinMirrorInputTests`沿用实际App输入及Core会话，检查单侧肢体的画笔/橡皮仅写自身对面，显示同类对侧后才互相镜像；六面字面坐标同时核对预览与落笔，避免正面或顶面被误做同面左右翻转。一笔跨头、躯干、单侧胳膊及双腿仍逐部位配对，不写隐藏肢体或把头顶映到躯干底部；只替代packaged窗口/Controller对等方。`SkinHoverRenderingTests`用真实D3D读回核对正面单画笔与镜像输出相同，因为另一画笔应位于被长方体遮住的背面；无轮廓基线须确实不同。`SkinBrushAndSurfaceTests`另核对可见部位内填充和预览一致；`SkinTransferSessionTests`以实际文件重开和单次撤销/重做核对底层与外层一次持久提交。分别用下方Skins、App、Rendering、CLI入口按类名筛选，不代替原生确认框、免提示偏好和真实填充手势验收。

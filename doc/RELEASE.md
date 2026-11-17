@@ -52,6 +52,10 @@ release-note.json
 
 默认安装到 `%LOCALAPPDATA%\Programs\RMCL-<architecture>`，不需要Store、管理员权限、.NET或信任MSIX证书。卸载不删除游戏、存档或App偏好。已有Store与EXE版的App偏好隔离；游戏数据仍按所选Core数据根使用，切换前记录自定义路径，不先卸载旧版或假定会自动迁移偏好。
 
+从 Windows 设置或安装目录卸载时，先使用 Inno 的原生确认框；确认后请求当前安装的全部 App 进程正常退出（包括托盘），复用设置保存、活动任务和皮肤草稿保护，不强杀。进程仍运行时由 `AppMutex` 阻止删除并允许取消／关闭后重试；取消最初的确认不会关闭 App。运行标记保持到 App 消息循环结束，按当前用户、架构及实际登记的安装目录隔离，不关闭开发目录或其他安装的实例。安装器只清理自身的安装协调登记，不清理 App 偏好及玩家数据。
+
+卸载请求挂在 Inno 7.1.1 的 `usAppMutexCheck`，位于确认之后、运行中检查及文件删除之前；`CloseApplications=yes` 本身不是卸载退出机制。时序依据[当前固定版本的官方卸载源码](https://github.com/jrsoftware/issrc/blob/2527da77ff7983514f535d19391a748c5d898336/Projects/Src/Setup.Uninstall.pas)。旧安装的卸载器不会被在线修改，需先用新安装包覆盖安装。
+
 ## App 更新契约
 
 启动后异步读取固定仓库的GitHub latest稳定发行版，20秒内完成元数据检查；404、限流、离线、损坏JSON、旧版／跳过版本、缺少精确附件均安静忽略，不阻止窗口或普通业务。仅下载小型说明清单，不预下载安装包。`release-note.json`的版本必须与tag一致，schema为1，含源码SHA、`notes`语言映射、`installers`按x64／arm64映射的`fileName`、`size`与`sha256`。缺少当前语言时使用英文，简繁中文沿用LauncherLanguages。

@@ -11,6 +11,7 @@
 
 [Setup]
 AppId=Richasy.RMCL.Desktop.{#AppArchitecture}
+AppMutex={code:GetInstallationMutex}
 AppName=RMCL
 AppVersion={#AppVersion}
 AppPublisher=Richasy
@@ -53,5 +54,55 @@ Source: "{#PayloadDirectory}\*"; DestDir: "{app}"; Flags: ignoreversion recurses
 Name: "{userprograms}\RMCL"; Filename: "{app}\Rodel.MinecraftLauncher.App.exe"; Check: not WizardNoIcons
 Name: "{userdesktop}\RMCL"; Filename: "{app}\Rodel.MinecraftLauncher.App.exe"; Tasks: desktopicon
 
+[Registry]
+Root: HKCU64; Subkey: "Software\Richasy\RMCL\Installations\{#AppArchitecture}"; ValueType: string; ValueName: "Path"; ValueData: "{app}"; Flags: uninsdeletekey
+Root: HKCU64; Subkey: "Software\Richasy\RMCL\Installations\{#AppArchitecture}"; ValueType: string; ValueName: "Mutex"; ValueData: "{code:GetInstallationMutex}"
+
 [Run]
 Filename: "{app}\Rodel.MinecraftLauncher.App.exe"; Description: "{cm:LaunchProgram,RMCL}"; Flags: nowait postinstall skipifsilent
+
+[Code]
+var
+  InstallationMutex: String;
+
+function OpenEvent(DesiredAccess: LongWord; InheritHandle: Boolean; Name: String): THandle;
+  external 'OpenEventW@kernel32.dll stdcall';
+function SetEvent(Event: THandle): Boolean;
+  external 'SetEvent@kernel32.dll stdcall';
+function ResetEvent(Event: THandle): Boolean;
+  external 'ResetEvent@kernel32.dll stdcall';
+function CloseHandle(Handle: THandle): Boolean;
+  external 'CloseHandle@kernel32.dll stdcall';
+
+function GetInstallationMutex(Param: String): String;
+begin
+  if InstallationMutex = '' then
+    if not RegQueryStringValue(HKCU64, 'Software\Richasy\RMCL\Installations\{#AppArchitecture}', 'Mutex', InstallationMutex) then
+      InstallationMutex := 'Local\Richasy.RMCL.' + GetSHA256OfUnicodeString(ExpandConstant('{tmp}'));
+  Result := InstallationMutex;
+end;
+
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+var
+  Event: THandle;
+  Attempts: Integer;
+begin
+  { This step is after confirmation, but before Inno's blocking AppMutex check or any removal. }
+  if CurUninstallStep <> usAppMutexCheck then
+    Exit;
+  Event := OpenEvent($0002, False, GetInstallationMutex('') + '.Close');
+  if Event = 0 then
+    Exit;
+  try
+    SetEvent(Event);
+    Sleep(500);
+    ResetEvent(Event);
+    Attempts := 0;
+    while CheckForMutexes(GetInstallationMutex('')) and (Attempts < 100) do begin
+      Sleep(100);
+      Attempts := Attempts + 1;
+    end;
+  finally
+    CloseHandle(Event);
+  end;
+end;
