@@ -91,7 +91,8 @@ internal sealed class UpdateFixtureApplication : Application
 
 internal static class FixtureFiles
 {
-    internal static string Root => @"C:\sprout\data";
+    internal static string Root => Environment.GetEnvironmentVariable("RODEL_UPDATE_FIXTURE_DATA") is { Length: > 0 } directory
+        ? Path.GetFullPath(directory) : @"C:\sprout\data";
     internal static void Stage(string name) => File.AppendAllText(Path.Combine(Root, "startup-stages"), name + Environment.NewLine);
 }
 
@@ -130,10 +131,23 @@ internal sealed class ReleaseFixtureHandler : HttpMessageHandler
 
 internal sealed class ThrottledFileStream(string path) : FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read)
 {
+    private readonly bool _checkpoints = path.EndsWith("-setup.exe", StringComparison.OrdinalIgnoreCase)
+        && File.Exists(Path.Combine(FixtureFiles.Root, "progress-checkpoints"));
+    private int _quarter = 1;
+
     /// <inheritdoc/>
     public override async ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
     {
+        if (_checkpoints && _quarter <= 4 && Position >= Length * _quarter / 4)
+        {
+            _quarter++;
+            await Task.Delay(_quarter == 5 ? 4000 : 1500, cancellationToken);
+        }
+
         await Task.Delay(10, cancellationToken);
-        return await base.ReadAsync(buffer[..Math.Min(buffer.Length, 65536)], cancellationToken);
+        var count = Math.Min(buffer.Length, 65536);
+        if (_checkpoints && _quarter <= 4)
+            count = (int)Math.Min(count, (Length * _quarter / 4) - Position);
+        return await base.ReadAsync(buffer[..count], cancellationToken);
     }
 }

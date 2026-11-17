@@ -86,6 +86,7 @@ internal sealed partial class UpdateState
                 return null;
             }
 
+            Received = update.Installer.Size;
             _downloadAuthorized = true;
             return DownloadedPath;
         }

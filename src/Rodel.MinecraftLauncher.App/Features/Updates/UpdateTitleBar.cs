@@ -42,7 +42,7 @@ internal sealed partial class UpdateTitleBar(Window window, UpdateState state, F
         dialog = new ContentDialog
         {
             ContentComponent = () => body,
-            InitialFocus = () => body.Interaction is { } root ? FocusTraversal.Next(root, current: null, forward: false) : null,
+            InitialFocus = () => body.Interaction is { } root ? FocusTraversal.Next(root, current: null, forward: true) : null,
         }.Style(LauncherMenus.Confirmation.ContentPadding(0f).MinWidth(320f).MaxWidth(580f))
             .Automation(new() { Name = Resources.AppUpdateAvailable, AutomationId = "app.update.dialog", IsDialog = true });
         dialog.Closing += args =>

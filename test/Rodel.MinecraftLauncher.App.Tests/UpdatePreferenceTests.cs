@@ -78,15 +78,62 @@ public sealed class UpdatePreferenceTests
         Assert.AreEqual(1, calls, "A stale continuation cannot repeat a consumed installation intent.");
     });
 
-    private static NativeUpdates.UpdateState CreateState(NativeSettings.AppSettings settings, string root) =>
-        new(settings, new HttpClient(new ReleaseHandler()), root, new(0, 2611, 4, 0));
+    /// <summary>
+    /// Review: file/download tests cannot detect UI progress messages left in the dispatcher queue at completion.
+    /// Hold only Progress&lt;long&gt; deliveries while allowing awaits to complete, then verify the completed snapshot
+    /// before releasing each older report. This reaches the actual late-message boundary without sleeps.
+    /// </summary>
+    [TestMethod]
+    public void DownloadCompletion_WithPendingProgress_PublishesExactBytesAndRejectsLatePartialCounts() => StateTestScope.Run(async () =>
+    {
+        using var scope = new StateTestScope();
+        using var settings = new NativeSettings.AppSettings(new Dictionary<string, object>());
+        var bytes = new byte[256 * 1024];
+        using var state = CreateState(settings, scope.Root, bytes);
+        await state.CheckAsync();
+        var owner = SynchronizationContext.Current!;
+        var pending = new HeldProgressContext(owner);
+        Task<string?> download;
+        SynchronizationContext.SetSynchronizationContext(pending);
+        try { download = state.DownloadAsync(); }
+        finally { SynchronizationContext.SetSynchronizationContext(owner); }
 
-    private sealed class ReleaseHandler : HttpMessageHandler
+        var path = await download;
+        Assert.IsNotNull(path);
+        Assert.IsTrue(pending.Reports.Count > 1, "The test must hold both partial and terminal byte notifications.");
+        Assert.AreEqual(bytes.LongLength, state.Received, "Completion must publish actual verified bytes without waiting for queued progress.");
+        foreach (var (callback, value) in pending.Reports)
+        {
+            callback(value);
+            Assert.AreEqual(bytes.LongLength, state.Received, "An older queued partial count cannot roll a completed transfer backwards.");
+        }
+
+        state.Cancel();
+    });
+
+    private static NativeUpdates.UpdateState CreateState(NativeSettings.AppSettings settings, string root, byte[]? payload = null) =>
+        new(settings, new HttpClient(new ReleaseHandler(payload)), root, new(0, 2611, 4, 0));
+
+    private sealed class HeldProgressContext(SynchronizationContext owner) : SynchronizationContext
+    {
+        internal List<(SendOrPostCallback Callback, object? Value)> Reports { get; } = [];
+
+        /// <inheritdoc/>
+        public override void Post(SendOrPostCallback callback, object? state)
+        {
+            if (state is long)
+                Reports.Add((callback, state));
+            else
+                owner.Post(callback, state);
+        }
+    }
+
+    private sealed class ReleaseHandler(byte[]? payload = null) : HttpMessageHandler
     {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             const string name = "RMCL-0.2611.5.0-win-x64-setup.exe";
-            var bytes = "installer bytes"u8.ToArray();
+            var bytes = payload ?? "installer bytes"u8.ToArray();
             var manifest = new NativeUpdates.ReleaseManifest
             {
                 SchemaVersion = 1,

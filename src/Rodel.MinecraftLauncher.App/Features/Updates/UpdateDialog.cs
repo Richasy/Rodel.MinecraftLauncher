@@ -33,26 +33,26 @@ internal sealed partial class UpdateDialog(
                 .Padding(new Thickness(24f, 0f, 24f, 16f)).Shrink(1f).MinContentHeight(0f),
             Column([
                 Text(Resources.AppUpdateInstallHint).FontSize(12f).Foreground(LauncherTheme.Muted).Wrap(),
-                ProgressBar().Indeterminate(false)
+                ProgressBar().Indeterminate(false).AnimateValue(false)
                     .Value(state.Available is { } update ? state.Received * 100d / update.Installer.Size : 0d)
-                    .Thickness(4f).Visible(state.Downloading)
+                    .Thickness(4f).Visible(state.Downloading || state.Installing)
                     .Automation(new() { Name = Resources.AppUpdateDownloading, AutomationId = "app.update.progress" }),
                 Text(ProgressLabel)
-                    .FontSize(12f).Foreground(LauncherTheme.Muted).Visible(state.Downloading)
+                    .FontSize(12f).Foreground(LauncherTheme.Muted).Visible(state.Downloading || state.Installing)
                     .Automation(new() { Name = ProgressLabel, AutomationId = "app.update.bytes" }),
                 Text(ErrorLabel)
                     .FontSize(13f).Foreground(LauncherTheme.Error).Wrap().Visible(state.Failed || state.Blocked)
                     .Automation(new() { Name = ErrorLabel, AutomationId = "app.update.error" }),
                 Grid([GridLength.Star(), GridLength.Star(), GridLength.Star()], [GridLength.Auto], [
-                    LauncherControls.OutlineCommand(Resources.AppUpdateSkip, () => SkipVersion())
-                        .Style(LauncherButtons.DialogSecondary).Enabled(!state.Downloading && !state.Installing)
-                        .Automation(new() { Name = Resources.AppUpdateSkip, AutomationId = "app.update.skip" }).Cell(0, 0),
-                    LauncherControls.OutlineCommand(state.Downloading ? Resources.DialogCancel : Resources.AppUpdateLater, close)
-                        .Style(LauncherButtons.DialogSecondary).Enabled(!state.Installing)
-                        .Automation(new() { Name = state.Downloading ? Resources.DialogCancel : Resources.AppUpdateLater, AutomationId = "app.update.later" }).Cell(1, 0),
                     LauncherControls.Command(Resources.AppUpdateNow, () => StartUpdate())
                         .Style(LauncherButtons.DialogPrimary).AsPrimary().Enabled(!state.Downloading && !state.Installing)
-                        .Automation(new() { Name = Resources.AppUpdateNow, AutomationId = "app.update.install" }).Cell(2, 0),
+                        .Automation(new() { Name = Resources.AppUpdateNow, AutomationId = "app.update.install" }).Cell(0, 0),
+                    LauncherControls.OutlineCommand(Resources.AppUpdateSkip, () => SkipVersion())
+                        .Style(LauncherButtons.DialogSecondary).Enabled(!state.Downloading && !state.Installing)
+                        .Automation(new() { Name = Resources.AppUpdateSkip, AutomationId = "app.update.skip" }).Cell(1, 0),
+                    LauncherControls.OutlineCommand(Resources.DialogCancel, close)
+                        .Style(LauncherButtons.DialogSecondary).Enabled(!state.Installing)
+                        .Automation(new() { Name = Resources.DialogCancel, AutomationId = "app.update.later" }).Cell(2, 0),
                 ]).ColumnSpacing(8f),
             ]).Spacing(12f).Padding(24f),
         ])
