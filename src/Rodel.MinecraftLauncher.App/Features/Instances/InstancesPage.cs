@@ -352,6 +352,10 @@ internal sealed partial class InstancesPage : Control
                 Name = Resources.PackImportDirectory,
                 AutomationId = "instances.import.directory"
             }
+        }, new MenuFlyoutItem(Resources.LinkExisting, () => Features.Import.LinkedInstancesDialog.Show(_client, _home, _window))
+        {
+            IsEnabled = ServerOwner is null,
+            Automation = new() { Name = Resources.LinkExisting, AutomationId = "instances.link" },
         }, new MenuFlyoutItem(Resources.PackImport, () => ShowPackDialog())
         {
             Automation = new()

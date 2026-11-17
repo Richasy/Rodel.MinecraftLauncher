@@ -279,12 +279,26 @@ document.addEventListener('keydown',event=>{
 function openImportEntryMenu(trigger) {
   closeInstanceMenu();instanceMenuTrigger=trigger;trigger.setAttribute('aria-expanded','true');
   const menu=document.createElement('div');menu.className='instance-command-menu';menu.setAttribute('role','menu');
-  menu.innerHTML='<button role="menuitem" data-import-directory>导入游戏目录</button><button role="menuitem" data-import-pack>导入整合包</button>';
+  menu.innerHTML='<button role="menuitem" data-import-directory>导入游戏目录</button><button role="menuitem" data-import-link>链接既有实例</button><button role="menuitem" data-import-pack>导入整合包</button>';
   document.querySelector('.launcher').append(menu);
   const base=menu.parentElement.getBoundingClientRect(),r=trigger.getBoundingClientRect();
   menu.style.left=`${Math.max(16,Math.min(r.right-base.left-menu.offsetWidth,base.width-menu.offsetWidth-16))}px`;
   menu.style.top=`${Math.max(40,Math.min(r.bottom-base.top+6,base.height-menu.offsetHeight-16))}px`;
   menu.querySelector('button').focus();
+}
+function openLinkedInstancesDesign() {
+  closeInstanceMenu();
+  const dialog=document.createElement('dialog');
+  dialog.className='instance-dialog instance-link-dialog';
+  dialog.innerHTML=`<header><h2>链接既有实例</h2></header><div class="instance-dialog-body"><p>选择 .minecraft 目录，直接链接其中的版本，不复制游戏文件。在不同启动器中的修改会影响同一份游戏数据。</p><label>游戏目录<input value="C:\\Games\\.minecraft" aria-label="游戏目录"></label><label><input type="checkbox" data-link-all checked> 全选版本</label><div class="instance-link-list">${['26.3','Fabric 26.3','NeoForge 26.3'].map(version=>`<label><input type="checkbox" data-link-version checked> ${version}<small>设计示例目录 · 不读取本机文件</small></label>`).join('')}</div></div><footer><button class="small-button" data-link-confirm>链接所选版本</button><button class="small-button subtle" data-link-cancel>取消</button></footer>`;
+  const choices=[...dialog.querySelectorAll('[data-link-version]')],all=dialog.querySelector('[data-link-all]'),confirm=dialog.querySelector('[data-link-confirm]');
+  function update(){all.checked=choices.every(item=>item.checked);confirm.disabled=!choices.some(item=>item.checked);}
+  all.onchange=()=>{choices.forEach(item=>item.checked=all.checked);update();};
+  choices.forEach(item=>item.onchange=update);
+  dialog.querySelector('[data-link-cancel]').onclick=()=>dialog.close();
+  confirm.onclick=()=>{dialog.close();showToast('设计演示：未读取目录或创建真实实例。');};
+  dialog.addEventListener('close',()=>dialog.remove(),{once:true});
+  document.body.append(dialog);dialog.showModal();
 }
 function openPackImportReview(fileName = '') {
   const trigger=instanceMenuTrigger;closeInstanceMenu();
@@ -357,6 +371,7 @@ function packReviewNotice(title,detail) {
 }
 document.addEventListener('click',event=>{
   if(event.target.closest('[data-import-directory]'))openInstanceTask('import');
+  if(event.target.closest('[data-import-link]'))openLinkedInstancesDesign();
   if(event.target.closest('[data-import-pack]'))openPackImportReview();
 });
 

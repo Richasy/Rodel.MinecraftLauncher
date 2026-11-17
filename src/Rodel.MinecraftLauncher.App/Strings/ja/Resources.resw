@@ -6233,4 +6233,9 @@ Minecraft {2} · {3}</value>
   <data name="AppUpdateSkip" xml:space="preserve"><value>このバージョンをスキップ</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>後で</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>更新</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>既存のインスタンスをリンク</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>.minecraft フォルダーを選び、ファイルをコピーせずに各バージョンをリンクします。どのランチャーから変更しても同じゲームデータに反映されます。</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>選択したバージョンをリンク</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>全バージョンを選択</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>ローカルバージョンがありません。versions を含む .minecraft を選んでください。</value></data>
 </root>

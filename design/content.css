@@ -109,6 +109,11 @@
 .content-search-empty-line { padding: 16px 24px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .instance-dialog:is([data-kind="create"], [data-kind="import"]) .instance-dialog-body { display: flex; flex-direction: column; gap: 16px; }
 .instance-dialog:is([data-kind="create"], [data-kind="import"]) .instance-dialog-body > p { margin: 0; }
+.instance-link-list { background:var(--tone-inset,var(--surface)); border:1px solid var(--tone-line,var(--edge-light)); }
+.instance-link-list > label { display:block; padding:12px; margin:0; border-bottom:1px solid var(--tone-line,var(--edge-light)); }
+.instance-link-list > label:last-child { border-bottom:0; }
+.instance-link-list small { display:block; margin-top:6px; color:var(--muted); font-weight:400; }
+.instance-link-dialog footer { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
 :root[data-theme="dark"] .mod-art:not(.mod-art-fallback) { background: color-mix(in srgb, var(--surface-hover) 82%, #759b72); color: #d7dcc6; }
 :root[data-theme="contrast"] :is(.mod-art, .empty-plus, .mod-switch, .mod-switch-thumb) { color: var(--ink); background: var(--surface); border-color: var(--ink); box-shadow: none; }

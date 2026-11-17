@@ -6232,4 +6232,9 @@ Minecraft {2} · {3}</value>
   <data name="AppUpdateSkip" xml:space="preserve"><value>略過此版本</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>稍後</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>更新</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>連結既有實例</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>選擇 .minecraft 目錄，直接連結其中的版本，不複製遊戲檔案。在 RMCL 或其他啟動器中的修改會影響同一份遊戲資料。</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>連結所選版本</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>全選版本</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>找不到本機版本，請選擇包含 versions 的 .minecraft 目錄。</value></data>
 </root>

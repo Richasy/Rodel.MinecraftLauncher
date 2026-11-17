@@ -1548,4 +1548,6 @@ Kaydedilmiş bir sonuçta</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Geri Dönüşüm Kutusu'nu kullanmadan kalıcı olarak siler. --confirm gerektirir.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Yerel dosyanın kaynağını seçin: FILE=PROJECT; birden fazla dosya için tekrarlayın.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>--select-source FILE=PROJECT biçimini kullanın.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Kopyalamadan bağlanacak yerel sürümleri inceleyin.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Sürümleri kopyalamadan yönetilmeyen örnek olarak bağlayın; --version birini seçer.</value></data>
 </root>

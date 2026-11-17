@@ -1552,4 +1552,6 @@ Objek</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Hapus permanen tanpa menggunakan Keranjang Sampah. Memerlukan --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Pilih sumber berkas lokal: FILE=PROJECT; ulangi untuk beberapa berkas.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Gunakan --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Periksa versi lokal untuk ditautkan tanpa menyalin.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Tautkan versi sebagai instans tak terkelola tanpa menyalin; --version memilih satu.</value></data>
 </root>

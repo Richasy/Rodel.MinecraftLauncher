@@ -54,5 +54,6 @@ public sealed class InstanceSummary : IInstanceImportResult
 [JsonSerializable(typeof(InstanceSummary))]
 [JsonSerializable(typeof(IReadOnlyList<InstanceSummary>))]
 [JsonSerializable(typeof(InstanceImportPreview))]
+[JsonSerializable(typeof(IReadOnlyList<InstanceImportPreview>))]
 [JsonSerializable(typeof(IInstanceImportResult))]
 public partial class InstanceJsonContext : JsonSerializerContext;

@@ -154,6 +154,8 @@ MEAI即使关闭正文采集也会把异常Message写入span（见同版本[Open
 | `Core/Skins` | 将独立皮肤库适配到启动器数据根、文件租约和安全发布 | `SkinService`；像素业务不在Core中重写 |
 | `Downloads` / `Storage` | 网络策略、文件校验、原子写入、资源租约 | `DownloadService`、`JsonFiles`、`ResourceLease` |
 
+`InstanceStore.PreviewLinks/LinkExistingAsync`复用迁移适配器和原有非托管登记，将所选外部`.minecraft`版本/profile链接到RMCL元数据，不进行迁移复制或获取文件所有权。共享依赖根与真实游戏目录分开保留，官方同版本不同profile保留各自参数与实际游戏目录；单个默认profile不覆盖其它版本的名称和参数。链接前整批验证目录选择，重复项按物理游戏目录／依赖根、版本及profile标识复用，失败只回滚本次新登记。RMCL运行参数覆盖写入自身instance.json，来源HMCL/PCL/profile配置不回写；options.txt、模组配置和存档仍是游戏自身文件，正常启动和显式内容操作可修改它们。
+
 `LauncherClient`是直接应用门面，提供单功能服务和跨功能工作流。启动、内容更新上下文/批量操作、资源包选择、包准备/回退、实例与加载器安装均在Core；`LauncherTaskService`保存并执行typed任务请求。CLI的功能命令组负责命令参数到这些公开方法的适配，Mcp目录将工具输入转换为同一命令入口的token，Core不接收CLI解析对象。
 
 ### CLI模块职责

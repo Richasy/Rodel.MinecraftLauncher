@@ -6241,4 +6241,9 @@ Detail: {1}</value></data>
   <data name="AppUpdateSkip" xml:space="preserve"><value>Lewati versi ini</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>Nanti</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>Perbarui</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>Tautkan instans yang ada</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>Pilih folder .minecraft untuk menautkan versi tanpa menyalin. Perubahan dari peluncur mana pun memengaruhi berkas game yang sama.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>Tautkan versi terpilih</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>Pilih semua versi</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>Tidak ada versi lokal. Pilih folder .minecraft yang berisi versions.</value></data>
 </root>

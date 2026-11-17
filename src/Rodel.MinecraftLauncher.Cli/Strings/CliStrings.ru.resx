@@ -1551,4 +1551,6 @@
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Удалить навсегда, минуя корзину. Требуется --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Выберите источник локального файла: FILE=PROJECT; повторите для нескольких файлов.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Используйте --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Проверить локальные версии для привязки без копирования.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Связать версии как неуправляемые экземпляры без копирования; --version выбирает одну.</value></data>
 </root>

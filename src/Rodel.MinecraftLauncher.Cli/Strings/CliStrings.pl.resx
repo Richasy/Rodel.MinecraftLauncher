@@ -1558,4 +1558,6 @@ Konta</value>
   <data name="ScreenshotPermanentDescription" xml:space="preserve"><value>Usuń trwale z pominięciem Kosza. Wymaga --confirm.</value></data>
   <data name="OptionSourceSelectionsDescription" xml:space="preserve"><value>Wybierz źródło pliku lokalnego: FILE=PROJECT; powtórz dla wielu plików.</value></data>
   <data name="ErrorSourceSelection" xml:space="preserve"><value>Użyj --select-source FILE=PROJECT.</value></data>
+  <data name="InstanceInspectLinksDescription" xml:space="preserve"><value>Sprawdź lokalne wersje do połączenia bez kopiowania.</value></data>
+  <data name="InstanceLinkDescription" xml:space="preserve"><value>Połącz wersje jako niezarządzane instancje bez kopiowania; --version wybiera jedną.</value></data>
 </root>

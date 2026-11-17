@@ -1,5 +1,9 @@
 # Tests
 
+`LinkedInstanceTests`使用真实小型文件布局验证HMCL/PCL的共享／版本隔离、继承元数据、官方同版本多profile，以及单个默认profile不会污染其它版本。链接、重开、修改RMCL设置、重复链接及解除登记后，用来源树内容摘要核对没有写入或复制原游戏；含目录歧义的整批确认必须在任何登记前拒绝。用Core入口加`--filter FullyQualifiedName~LinkedInstanceTests`；这些用例不代表真实HMCL存档或原生菜单／弹层E2E通过。
+
+原生E2E入口`test/Fixtures/InstanceLinksUi`使用真实App Shell、导入/链接弹窗与Core，不替换扫描、登记或存档读取。默认隔离数据为VM的`C:\sprout\data`，授权本机读取时用进程环境`RODEL_LINK_FIXTURE_DATA`指向专用临时目录；它只替代App偏好和数据根，不连接玩家已有RMCL配置。可在该目录放`theme`（`light`或`dark`），或放`import-source`（实际来源路径）直接观察旧复制导入的只读预览。通过DevTools原生UIA菜单/Value/Toggle/Invoke验证链接，独立检查instance.json、来源摘要、取消和重复链接；实际游戏运行必须另用隔离游戏/存档副本，不在原玩家存档上做破坏性验证。夹具及临时数据不得进入产品安装包。
+
 `UninstallProcessTests`使用实际发货的卸载脚本和就绪后阻塞等待的真实子进程，验证同一目录下的多个实例均被强制终止，而同名、路径前缀相似的另一目录进程保持运行；进程不通过关闭窗口或标准输入正常退出。用 Core 测试入口加 `--filter FullyQualifiedName~UninstallProcessTests`，只操作测试创建的进程，不读取或卸载本机已安装 App。真实 Inno 确认／取消、托盘卸载及玩家数据保留另在隔离 VM 验证。
 
 `NativeKeyboardNavigationTests`使用真实App投影、回调、DirectWrite和Sprout输入路由，保护设置分类／皮肤页签的一次Tab出入、方向键只移动而不提前执行、末项滚动可见，以及图片裁切只处理一次方向键且不连带滚动父层。用App测试入口加`--filter FullyQualifiedName~NativeKeyboardNavigationTests`并在VM运行；不打开玩家工程，也不代替正常签名MSIX的键鼠、弹层和Narrator实测。交互契约见[键盘导航与焦点](../doc/KEYBOARD.md)。

@@ -6236,4 +6236,9 @@ Minecraft {2} · {3}</value>
   <data name="AppUpdateSkip" xml:space="preserve"><value>Пропустить версию</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>Позже</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>Обновить</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>Связать существующие экземпляры</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>Выберите папку .minecraft для привязки версий без копирования. Изменения в любом лаунчере затрагивают те же файлы игры.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>Связать выбранные версии</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>Выбрать все версии</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>Локальные версии не найдены. Выберите папку .minecraft с versions.</value></data>
 </root>

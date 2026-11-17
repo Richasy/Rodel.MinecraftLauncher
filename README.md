@@ -74,7 +74,7 @@ The project is also a practical exploration of native desktop UI and **AI assist
 The release includes the public Client ID needed to initiate Microsoft sign-in. Players do not need to register an Azure application or configure a Client ID themselves. Actual account entitlement and service access still apply; an offline identity does not bypass game ownership or server authentication.
 
 > [!TIP]
-> **Already have a setup you like?** The app imports an existing game by making a complete managed copy, not by linking back to the old folder. The source is left untouched.
+> **Already have a setup you like?** Import game directory makes a complete independent copy. Choose Link existing instances to register multiple versions in place without copying large worlds. Linked instances share game data, while RMCL launch overrides stay local; removing a link does not delete the original files.
 >
 > Game data defaults to **`%USERPROFILE%\.rmcl`**. Changing the data folder in Settings takes effect after restarting and **does not move existing data**.
 

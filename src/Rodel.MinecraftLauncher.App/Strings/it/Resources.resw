@@ -6247,4 +6247,9 @@ Dettagli: {1}</value></data>
   <data name="AppUpdateSkip" xml:space="preserve"><value>Salta questa versione</value></data>
   <data name="AppUpdateLater" xml:space="preserve"><value>Più tardi</value></data>
   <data name="AppUpdateNow" xml:space="preserve"><value>Aggiorna</value></data>
+  <data name="LinkExisting" xml:space="preserve"><value>Collega istanze esistenti</value></data>
+  <data name="LinkExistingHelp" xml:space="preserve"><value>Seleziona una cartella .minecraft per collegare le versioni senza copiarle. Le modifiche in ogni launcher interessano gli stessi file di gioco.</value></data>
+  <data name="LinkConfirm" xml:space="preserve"><value>Collega versioni selezionate</value></data>
+  <data name="LinkSelectAll" xml:space="preserve"><value>Seleziona tutte le versioni</value></data>
+  <data name="LinkNoVersions" xml:space="preserve"><value>Nessuna versione locale. Seleziona la cartella .minecraft contenente versions.</value></data>
 </root>
