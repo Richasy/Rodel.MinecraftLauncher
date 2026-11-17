@@ -6270,4 +6270,6 @@ Szczegóły: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Połącz wybrane wersje</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Wybierz wszystkie wersje</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Brak lokalnych wersji. Wybierz folder .minecraft zawierający versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Wybierz istniejący folder gry</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Użyj przycisku folderu powyżej lub wklej ścieżkę folderu .minecraft.</value></data>
 </root>

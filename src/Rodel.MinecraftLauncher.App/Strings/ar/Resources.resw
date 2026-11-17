@@ -3255,4 +3255,6 @@ Minecraft {2} · {3}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>ربط الإصدارات المحددة</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>تحديد جميع الإصدارات</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>لم توجد إصدارات محلية. اختر مجلد .minecraft الذي يحتوي على versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>اختر مجلد لعبة موجوداً</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>استخدم زر المجلد أعلاه، أو الصق مسار مجلد .minecraft.</value></data>
 </root>

@@ -6237,4 +6237,6 @@ Ayrıntılar: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Seçili sürümleri bağla</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Tüm sürümleri seç</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>Yerel sürüm bulunamadı. versions içeren .minecraft klasörünü seçin.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Mevcut oyun klasörünü seçin</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Yukarıdaki klasör düğmesini kullanın veya .minecraft klasörünün yolunu yapıştırın.</value></data>
 </root>

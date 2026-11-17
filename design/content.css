@@ -114,6 +114,15 @@
 .instance-link-list > label:last-child { border-bottom:0; }
 .instance-link-list small { display:block; margin-top:6px; color:var(--muted); font-weight:400; }
 .instance-link-dialog footer { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.instance-link-dialog { display:grid; grid-template-rows:auto minmax(0,1fr) auto; height:min(680px,calc(100dvh - 64px)); }
+.instance-link-dialog .instance-dialog-body { display:flex; flex-direction:column; gap:12px; min-height:0; max-height:none; overflow:hidden; }
+.instance-link-dialog .instance-dialog-body > p { margin:0; }
+.instance-link-dialog .instance-link-list { flex:1; min-height:0; overflow:auto; }
+.instance-link-placeholder { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--muted); text-align:center; }
+.instance-link-placeholder svg { width:44px; height:44px; margin-bottom:8px; }
+.instance-link-placeholder strong { color:var(--ink); font-size:14px; font-weight:600; }
+.instance-link-placeholder small { max-width:400px; font-size:12px; }
+.instance-link-dialog [hidden] { display:none; }
 
 :root[data-theme="dark"] .mod-art:not(.mod-art-fallback) { background: color-mix(in srgb, var(--surface-hover) 82%, #759b72); color: #d7dcc6; }
 :root[data-theme="contrast"] :is(.mod-art, .empty-plus, .mod-switch, .mod-switch-thumb) { color: var(--ink); background: var(--surface); border-color: var(--ink); box-shadow: none; }

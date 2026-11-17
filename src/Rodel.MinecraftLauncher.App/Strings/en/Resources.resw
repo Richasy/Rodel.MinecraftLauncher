@@ -2790,4 +2790,6 @@ Details: {1}</value></data>
   <data name="LinkConfirm" xml:space="preserve"><value>Link selected versions</value></data>
   <data name="LinkSelectAll" xml:space="preserve"><value>Select all versions</value></data>
   <data name="LinkNoVersions" xml:space="preserve"><value>No local versions found. Select the .minecraft folder containing versions.</value></data>
+  <data name="LinkEmptyTitle" xml:space="preserve"><value>Choose an existing game folder</value></data>
+  <data name="LinkEmptyDescription" xml:space="preserve"><value>Use the folder button above, or paste the path to your .minecraft folder.</value></data>
 </root>
