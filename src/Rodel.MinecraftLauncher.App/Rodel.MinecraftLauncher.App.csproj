@@ -26,7 +26,7 @@
         <SproutPackageFormat>None</SproutPackageFormat>
         <SproutAppxIdentityName>60520B029E250.RodelMinecraftLauncher</SproutAppxIdentityName>
         <SproutAppxPublisher>CN=9EFA2047-A580-400B-A5B2-0C7ABB0DB5C0</SproutAppxPublisher>
-        <SproutAppxVersion>1.0.0.0</SproutAppxVersion>
+        <SproutAppxVersion>0.0.5.0</SproutAppxVersion>
         <Version>$(SproutAppxVersion)</Version>
         <SproutAppxDisplayName>RMCL</SproutAppxDisplayName>
         <SproutAppxAssetsDir>$(MSBuildProjectDirectory)/Assets/AppIcons</SproutAppxAssetsDir>
