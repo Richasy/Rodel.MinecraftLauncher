@@ -12,7 +12,9 @@ RMCL 不再通过 Microsoft Store 分发更新。正式渠道是 [GitHub Release
 
 提交前维护 `.github/release-notes.json` 的全部15语言说明。CI 校验语言与非空说明，从两个实际安装包计算长度、SHA256及当前源码SHA，生成 `release-note.json`。日志采用简短纯文本，不能将内部构建通过描述为Minecraft实际运行通过。未完整生成全部安装包与清单时不发布。单架构验证仅生成该架构artifact，不生成可被玩家发现的不完整更新清单。
 
-全部构建成功后，以 `v<version>` 和准确源码SHA创建draft，附加以下五个文件，再公开为latest：
+全部构建成功后，先将 `v<version>` 标签绑定准确源码SHA，再以该既有标签创建draft，附加以下五个文件，再公开为latest。GitHub不会为无标签draft立即创建Git引用，按tag读取的REST入口也只返回已发布版本，因此草稿回读使用准确的release ID，不以published-by-tag接口检查draft。
+
+完整附件为：
 
 ```text
 RMCL-<version>-win-x64-setup.exe
